@@ -19,7 +19,6 @@
 import PostMeta from '~/components/PostMeta'
 import PostTags from '~/components/PostTags'
 
-debugger;
 export default {
   components: {
     PostMeta,
