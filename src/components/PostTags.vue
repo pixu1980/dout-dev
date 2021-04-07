@@ -14,16 +14,16 @@ export default {
 
 <style lang="scss">
 .post-tags {
-  margin: 1em 0 0;
+  margin: 1rem 0 0;
 
   &__link {
-  	margin-right: .7em;
-  	font-size: .8em;
+  	margin-right: .7rem;
+  	font-size: .8rem;
   	color: currentColor;
   	text-decoration: none;
   	background-color: var(--bg-color);
   	color: currentColor!important; //Todo: remove important;
-  	padding: .5em;
+  	padding: .5rem;
   	border-radius: var(--radius);
   }
 }

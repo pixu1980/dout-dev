@@ -5,14 +5,12 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome Blog Starter',
-  siteDescription: 'A simple, hackable & minimalistic starter for Gridsome that uses Markdown for content.',
-
+  siteName: 'Do Ut Dev',
+  siteDescription: 'Frontend Development stories, experiences and other amenities',
   templates: {
     Post: '/:title',
     Tag: '/tag/:id'
   },
-
   plugins: [
     {
       // Create posts from markdown files
@@ -30,7 +28,6 @@ module.exports = {
       }
     }
   ],
-
   transformers: {
     //Add markdown support to all file-system sources
     remark: {

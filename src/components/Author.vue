@@ -1,14 +1,14 @@
 <template>
 	<div class="author">
 
-		<g-image alt="Author image" class="author__image" src="~/assets/images/author.jpg" width="180" height="180" blur="5" />
+		<g-image alt="Author image" class="author__image" src="~/assets/images/pixu.png" width="250" height="250" blur="5" />
 
 		<h1 v-if="showTitle" class="author__site-title">
 			{{ $static.metadata.siteName }}
 		</h1>
 
 		<p class="author__intro">
-			A simple, hackable & minimalistic starter for Gridsome that uses Markdown for content.
+			{{ $static.metadata.siteDescription }}
 		</p>
 
 		<p class="author__links">
@@ -23,6 +23,7 @@
 query {
   metadata {
     siteName
+		siteDescription
   }
 }
 </static-query>
@@ -36,29 +37,30 @@ export default {
 <style lang="scss">
 .author {
 	margin: 0 auto;
-	max-width: 500px;
+	max-width: 50rem;
 	text-align: center;
 	padding: calc(var(--space) / 2) 0;
 
 	&__image {
 		border-radius: 100%;
-		width: 90px;
-		height: 90px;
-		margin-bottom: 1em;
+		width: 18rem;
+		height: 18rem;
+		margin-bottom: 1rem;
 	}
 
 	&__intro {
 		opacity: .8;
+		font-size: 1.7rem;
 	}
 
 	&__site-title {
-		font-size: 1.5em;
+		font-size: 2.5rem;
 	}
 
 	&__links {
-		margin-top: -.5em;
+		margin-top: -.5rem;
 		a {
-			margin: 0 .5em;
+			margin: 0 .5rem;
 		}
 	}
 }

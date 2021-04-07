@@ -18,14 +18,14 @@ query {
 .logo {
 	text-decoration: none;
   color: var(--body-color)!important;
-  font-size: .9em;
+  font-size: .9rem;
 
 	&__image {
 		vertical-align: middle;
-		border-radius: 99px;
-		height: 40px;
-		width: 40px;
-		margin-right: .5em;
+		border-radius: 10rem;
+		height: 4rem;
+		width: 4rem;
+		margin-right: .5rem;
 	}
 }
 </style>

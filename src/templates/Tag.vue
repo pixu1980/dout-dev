@@ -11,10 +11,14 @@
 </template>
 
 <page-query>
-query Tag ($id: ID!) {
+query Tag ($id: ID!, $page: Int) {
   tag (id: $id) {
     title
-    belongsTo {
+    belongsTo(perPage: 10, page: $page) @paginate {
+      pageInfo {
+        totalPages
+        currentPage
+      }
       edges {
         node {
           ...on Post {
