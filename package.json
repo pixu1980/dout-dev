@@ -7,13 +7,13 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+  },
+  "devDependencies": {
     "@gridsome/plugin-google-analytics": "^0.1.0",
     "@gridsome/remark-prismjs": "^0.2.0",
     "@gridsome/source-filesystem": "^0.6.0",
     "@gridsome/transformer-remark": "^0.3.0",
-    "gridsome": "^0.7.0"
-  },
-  "devDependencies": {
+    "gridsome": "^0.7.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.0"
   }
