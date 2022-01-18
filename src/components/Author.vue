@@ -3,7 +3,7 @@
     <g-image
       alt="Author image"
       class="author__image"
-      src="~/assets/images/portrait.png"
+      src="~/assets/images/portrait.jpg"
       width="250"
       height="250"
       blur="5"
