@@ -25,7 +25,6 @@ module.exports = {
     "posthtml-expressions": { locals: locals },
     "posthtml-extend": { root: './src/layouts', strict: false },
     "posthtml-include": {},
-    "posthtml-modules": {},
-    "posthtml-prism": {}
+    "posthtml-modules": {}
   }
 }

@@ -1,3 +1,13 @@
 html {
   font-size: 10px;
 }
+
+pre {
+  background: #2b2b2b;
+  color: #f8f8f2;
+
+  code {
+  }
+}
+
+@import './highlight.scss';
