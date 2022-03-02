@@ -26,7 +26,6 @@ module.exports = {
     "posthtml-extend": { root: './src/layouts', strict: false },
     "posthtml-include": {},
     "posthtml-modules": {},
-    "posthtml-markdownit": {},
     "posthtml-prism": {}
   }
 }

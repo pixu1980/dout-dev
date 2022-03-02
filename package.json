@@ -19,12 +19,11 @@
   "devDependencies": {
     "@parcel/transformer-sass": "2.3.2",
     "parcel": "^2.3.2",
-    "parcel-transformer-md": "0.1.1",
+    "parcel-transformer-md-blog": "0.0.1",
     "posthtml": "^0.16.6",
     "posthtml-doctype": "^1.1.1",
     "posthtml-extend": "^0.6.2",
     "posthtml-include": "^1.7.2",
-    "posthtml-markdownit": "^1.3.0",
     "posthtml-modules": "^0.8.0",
     "posthtml-prism": "^1.0.4",
     "posthtml-render": "^3.0.0"
