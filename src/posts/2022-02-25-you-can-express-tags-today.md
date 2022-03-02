@@ -1,4 +1,5 @@
 ---
+layout: '../layouts/post.html'
 title: You can use express tags… TODAY!
 date: 2022-02-25
 published: true
@@ -18,7 +19,7 @@ Since the introduction of XHTML, naming tags anyway you want is possible and pas
 
 Which means you can code HTML like this:
 
-```
+```html
 <logo>
   <img src="http:/domain.ext/path/to/image.jpg" />
 </logo>
@@ -26,7 +27,7 @@ Which means you can code HTML like this:
 
 Which also means you can code CSS (here SCSS) as this:
 
-```
+```scss
 logo {
   width: 10rem;
   aspect-ratio: 2 / 1;

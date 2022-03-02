@@ -1,3 +1,5 @@
+import hljs from 'highlight.js';
+
 window.addEventListener('DOMContentLoaded', () => {
-  console.log('started!!!');
+  hljs.highlightAll();
 });
