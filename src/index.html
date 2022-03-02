@@ -1,42 +1,16 @@
 <!DOCTYPE html>
-<html ${htmlAttrs}>
+<html lang="en">
   <head>
-    ${head}
+    <meta charset="utf-8" />
+    <title>My First Parcel App</title>
+    <link rel="stylesheet" href="./styles/index.scss" />
   </head>
-  <body ${bodyAttrs}>
-    <script>
-      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
-      (function() {
-        window.__onThemeChange = function() {};
-        function setTheme(newTheme) {
-          window.__theme = newTheme;
-          preferredTheme = newTheme;
-          document.body.setAttribute('data-theme', newTheme);
-          window.__onThemeChange(newTheme);
-        }
-
-        var preferredTheme;
-        try {
-          preferredTheme = localStorage.getItem('theme');
-        } catch (err) { }
-
-        window.__setPreferredTheme = function(newTheme) {
-          setTheme(newTheme);
-          try {
-            localStorage.setItem('theme', newTheme);
-          } catch (err) {}
-        }
-
-        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        darkQuery.addListener(function(e) {
-          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
-        });
-
-        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
-      })();
-    </script>
-
-    ${app}
-    ${scripts}
+  <body>
+    <h1>Hello, World!</h1>
+    <a href="./pages/about.html">About</a>
+    <each loop="item, index in posts">
+      <a href="{{item.path}}">{{item.name}}</a>
+    </each>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

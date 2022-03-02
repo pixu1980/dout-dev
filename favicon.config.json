@@ -1,67 +1,67 @@
 {
-	"masterPicture": "./src/assets/images/favicon.svg",
-	"iconsPath": "/",
-	"design": {
-		"ios": {
-			"pictureAspect": "backgroundAndMargin",
-			"backgroundColor": "#ffffff",
-			"margin": "14%",
-			"assets": {
-				"ios6AndPriorIcons": true,
-				"ios7AndLaterIcons": true,
-				"precomposedIcons": true,
-				"declareOnlyDefaultIcon": true
-			},
-			"appName": "dout.dev"
-		},
-		"desktopBrowser": {
-			"design": "raw"
-		},
-		"windows": {
-			"pictureAspect": "noChange",
-			"backgroundColor": "#00aba9",
-			"onConflict": "override",
-			"assets": {
-				"windows80Ie10Tile": false,
-				"windows10Ie11EdgeTiles": {
-					"small": false,
-					"medium": true,
-					"big": false,
-					"rectangle": false
-				}
-			},
-			"appName": "dout.dev"
-		},
-		"androidChrome": {
-			"pictureAspect": "noChange",
-			"themeColor": "#ffffff",
-			"manifest": {
-				"name": "dout.dev",
-				"startUrl": "https://dout.dev",
-				"display": "standalone",
-				"orientation": "notSet",
-				"onConflict": "override",
-				"declared": true
-			},
-			"assets": {
-				"legacyIcon": false,
-				"lowResolutionIcons": false
-			}
-		},
-		"safariPinnedTab": {
-			"pictureAspect": "silhouette",
-			"themeColor": "#5bbad5"
-		}
-	},
-	"settings": {
-		"scalingAlgorithm": "Mitchell",
-		"errorOnImageTooSmall": false,
-		"readmeFile": true,
-		"htmlCodeFile": true,
-		"usePathAsIs": false
-	},
-	"versioning": {
-		"paramName": "v",
-		"paramValue": "1"
-	}
+  "masterPicture": "./src/assets/favicon/favicon.svg",
+  "iconsPath": "/",
+  "design": {
+    "ios": {
+      "pictureAspect": "backgroundAndMargin",
+      "backgroundColor": "#ffffff",
+      "margin": "14%",
+      "assets": {
+        "ios6AndPriorIcons": true,
+        "ios7AndLaterIcons": true,
+        "precomposedIcons": true,
+        "declareOnlyDefaultIcon": true
+      },
+      "appName": "dout.dev"
+    },
+    "desktopBrowser": {
+      "design": "raw"
+    },
+    "windows": {
+      "pictureAspect": "noChange",
+      "backgroundColor": "#00aba9",
+      "onConflict": "override",
+      "assets": {
+        "windows80Ie10Tile": false,
+        "windows10Ie11EdgeTiles": {
+          "small": false,
+          "medium": true,
+          "big": false,
+          "rectangle": false
+        }
+      },
+      "appName": "dout.dev"
+    },
+    "androidChrome": {
+      "pictureAspect": "noChange",
+      "themeColor": "#ffffff",
+      "manifest": {
+        "name": "dout.dev",
+        "startUrl": "https://dout.dev",
+        "display": "standalone",
+        "orientation": "notSet",
+        "onConflict": "override",
+        "declared": true
+      },
+      "assets": {
+        "legacyIcon": false,
+        "lowResolutionIcons": false
+      }
+    },
+    "safariPinnedTab": {
+      "pictureAspect": "silhouette",
+      "themeColor": "#5bbad5"
+    }
+  },
+  "settings": {
+    "scalingAlgorithm": "Mitchell",
+    "errorOnImageTooSmall": false,
+    "readmeFile": true,
+    "htmlCodeFile": true,
+    "usePathAsIs": false
+  },
+  "versioning": {
+    "paramName": "v",
+    "paramValue": "1"
+  }
 }

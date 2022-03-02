@@ -1,5 +1,6 @@
 *.log
 .cache
+.parcel-cache
 .DS_Store
 src/.temp
 node_modules
