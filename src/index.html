@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>My First Parcel App</title>
-    <link rel="stylesheet" href="./styles/index.scss" />
-  </head>
-  <body>
+<extends src="./layouts/default.html" locals='{"title": ""}'>
+  <block name="content">
     <h1>Hello, World!</h1>
-    <a href="./pages/about.html">About</a>
+    <a href="./about.html">About</a>
     <each loop="item, index in posts">
       <a href="{{item.path}}">{{item.name}}</a>
     </each>
-    <script type="module" src="./scripts/index.js"></script>
-  </body>
-</html>
+  </block>
+</extends>

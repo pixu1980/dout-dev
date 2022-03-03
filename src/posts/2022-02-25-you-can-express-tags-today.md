@@ -1,5 +1,5 @@
 ---
-layout: '../layouts/post.html'
+layout: './layouts/post.html'
 title: You can use express tags… TODAY!
 date: 2022-02-25
 published: true
@@ -11,11 +11,11 @@ description: 'You can use express tags… TODAY!'
 
 # You can use express tags… TODAY!
 
-HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described [here](https://www.htmlgoodies.com/guides/expected-new-features-in-html6/).
+HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described [here](https://www.htmlgoodies.com/guides/expected-new-features-in-html6/ 'Expected new features in HTML6').
 
 ## Let's take a look
 
-Since the introduction of XHTML, naming tags anyway you want is possible and passes HTMl validators. Browser engines computes unknown element names as normal a `<div>`.
+Since the introduction of XHTML, naming tags anyway you want is possible and passes HTMl validators. Browser engines computes unknown element names as a normal block element.
 
 Which means you can code HTML like this:
 

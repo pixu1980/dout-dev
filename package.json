@@ -15,11 +15,8 @@
     "build": "parcel build  ./src/index.html --no-content-hash --no-source-maps --public-url=https://dout.dev"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
-  "dependencies": {
-    "highlight.js": "^11.4.0",
-    "prismjs": "^1.27.0"
-  },
   "devDependencies": {
+    "highlight.js": "^1.27.0",
     "@parcel/transformer-sass": "2.3.2",
     "parcel": "^2.3.2",
     "parcel-transformer-md-blog": "0.0.1",
