@@ -12,9 +12,9 @@
         :root {
           --gs--container--width: #{$container-width};
 
-          @if not $container-gutter {
-            --gs--container--gutter: 0;
-          }
+          // @if not $container-gutter {
+          //   --gs--container--gutter: 0;
+          // }
         }
       }
     }
