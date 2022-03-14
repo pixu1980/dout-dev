@@ -1,0 +1,21 @@
+[aria-busy='true'] {
+  cursor: progress;
+}
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+[aria-disabled='true'],
+[disabled] {
+  cursor: not-allowed;
+}
+
+[aria-hidden='false'][hidden='false'] {
+  display: initial;
+
+  &:not(:focus) {
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+  }
+}

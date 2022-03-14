@@ -1,0 +1,28 @@
+// TODO: check this https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/
+@mixin rows() {
+  row {
+    display: grid;
+    grid-row-gap: var(--gs--gutter);
+    grid-column-gap: 0;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(var(--gs--columns), 1fr);
+    grid-auto-flow: row;
+    width: 100%;
+    margin: 0;
+
+    // ! NOTE: add this class when you need to collapse rows and columns v-gutter
+    &[collapse] {
+      grid-row-gap: 0;
+    }
+
+    &:not([collapse]) {
+      ~ row {
+        margin-top: var(--gs--v-gutter);
+      }
+    }
+
+    @include media($min-width: #{get-breakpoint-value(sm)}) {
+      grid-column-gap: var(--gs--gutter);
+    }
+  }
+}

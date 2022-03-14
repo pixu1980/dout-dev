@@ -1,0 +1,95 @@
+@mixin column-size-selector($breakpoint-key, $breakpoints-first-key, $column-index) {
+  $breakpoint-prefix: '';
+
+  @if ($breakpoint-key != $breakpoints-first-key) {
+    $breakpoint-prefix: '#{$breakpoint-key}-';
+  }
+
+  column[#{$breakpoint-prefix}size='#{$column-index}'] {
+    grid-column-end: span $column-index;
+  }
+}
+
+@mixin column-size-media-query($breakpoint-key, $breakpoints-first-key, $column-index, $min-viewport-width) {
+  @if $breakpoint-key == $breakpoints-first-key {
+    @include column-size-selector($breakpoint-key, $breakpoints-first-key, $column-index);
+  } @else {
+    @include media($media-type: screen, $min-width: $min-viewport-width) {
+      @include column-size-selector($breakpoint-key, $breakpoints-first-key, $column-index);
+    }
+  }
+}
+
+@mixin column-size-offset-media-query(
+  $breakpoint-key,
+  $breakpoints-first-key,
+  $column-index,
+  $min-viewport-width,
+  $max-viewport-width
+) {
+  @include media($media-type: screen, $min-width: $min-viewport-width, $max-width: $max-viewport-width) {
+    $breakpoint-prefix: '';
+
+    @if ($breakpoint-key != $breakpoints-first-key) {
+      $breakpoint-prefix: '#{$breakpoint-key}-';
+    }
+
+    column[#{$breakpoint-prefix}offset='#{$column-index}'] {
+      grid-column-start: ($column-index + 1);
+    }
+  }
+}
+
+@mixin columns-sizes(
+  $columns: $gs-columns,
+  $breakpoint,
+  $breakpoint-key: '',
+  $breakpoints-first-key: $gs-breakpoints-first-key
+) {
+  $min-viewport-width: map.get($breakpoint, 'min-viewport-width');
+  $max-viewport-width: map.get($breakpoint, 'max-viewport-width');
+
+  @for $i from 1 through $columns {
+    @include column-size-media-query($breakpoint-key, $breakpoints-first-key, $i, $min-viewport-width);
+    @include column-size-offset-media-query(
+      $breakpoint-key,
+      $breakpoints-first-key,
+      $i,
+      $min-viewport-width,
+      $max-viewport-width
+    );
+  }
+}
+
+@mixin columns-breakpoints(
+  $columns: $columns-default,
+  $breakpoints: $gs-breakpoints,
+  $breakpoints-first-key: $gs-breakpoints-first-key
+) {
+  @each $breakpoint-key, $breakpoint in $breakpoints {
+    @include columns-sizes($columns, $breakpoint, $breakpoint-key, $breakpoints-first-key);
+  }
+}
+
+@mixin columns(
+  $columns: $columns-default,
+  $breakpoints: $gs-breakpoints,
+  $breakpoints-first-key: $gs-breakpoints-first-key
+) {
+  column {
+    display: flex;
+    flex-flow: column;
+    grid-column: auto / span var(--gs--columns);
+    line-height: 1;
+  }
+
+  [eq-height] {
+    column {
+      > * {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  @include columns-breakpoints($columns, $breakpoints, $breakpoints-first-key);
+}

@@ -1,0 +1,39 @@
+@function get-breakpoint-value($breakpoint-key, $breakpoint-value: min-viewport-width, $breakpoints: $gs-breakpoints) {
+  $breakpoint: map.get($breakpoints, $breakpoint-key);
+
+  @return map.get($breakpoint, $breakpoint-value);
+}
+
+@function extend-breakpoints($breakpoints: $gs-breakpoints-base) {
+  $breakpoints-keys: map.keys($breakpoints);
+  $breakpoint-actual: null;
+  $breakpoint-previous: null;
+
+  @for $i from length($breakpoints-keys) * -1 through -1 {
+    $breakpoint-key: nth($breakpoints-keys, abs($i));
+    $breakpoint-actual: map.get($breakpoints, $breakpoint-key);
+
+    $max-viewport-width: null;
+
+    @if $breakpoint-previous != null {
+      $max-viewport-width: map.get($breakpoint-previous, min-viewport-width) - 0.01px;
+
+      $breakpoints: map.deep-merge(
+        $breakpoints,
+        (
+          $breakpoint-key:
+            map.deep-merge(
+              $breakpoint-actual,
+              (
+                max-viewport-width: $max-viewport-width,
+              )
+            ),
+        )
+      );
+
+      $breakpoint-previous: $breakpoint-actual;
+    }
+
+    @return $breakpoints;
+  }
+}

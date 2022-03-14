@@ -1,0 +1,156 @@
+:root {
+  --base-font-size: 10px;
+  --base-line-height: 1.5;
+  --base-font-weight: 400;
+  --base-font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --base-direction: ltr;
+
+  --base-gutter: 1rem;
+  --base-block-margin: 0 0 var(--base-gutter);
+
+  --base-color-primary: hsl(0, 0%, 96%);
+  --base-color-secondary: hsl(0, 0%, 92%);
+  --base-background-color-primary: hsl(192, 11%, 18%);
+  --base-background-color-secondary: hsl(192, 11%, 13%);
+
+  --breakpoint-phone: 320px;
+  --breakpoint-phone-big: 375px;
+  --breakpoint-phone-bigger: 414px;
+  --breakpoint-small: 540px;
+  --breakpoint-medium: 992px;
+  --breakpoint-large: 1200px;
+  --breakpoint-extra-large: 1600px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation-delay: -1ms;
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
+    background-attachment: initial;
+    scroll-behavior: auto;
+    transition-delay: 0s;
+    transition-duration: 0s;
+  }
+}
+
+html {
+  // font-size: var(--base-font-size);
+  // line-height: var(--base-line-height);
+  // font-weight: var(--base-font-weight);
+  // font-family: var(--base-font-family);
+  background: inherit;
+  vertical-align: baseline;
+  word-break: normal;
+  color: inherit;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-block-size: 100vh;
+  // color: var(--base-color-primary);
+  // background-color: var(--base-background-color-primary);
+  margin: 0;
+  padding: 0;
+}
+
+@import 'semantic';
+@import 'focus';
+@import 'typography';
+@import 'code';
+@import 'media';
+@import 'tables';
+@import 'forms';
+@import 'touch';
+
+caption {
+  padding-top: calc(var(--base-gutter) / 2);
+  padding-bottom: calc(var(--base-gutter) / 2);
+  color: inherit;
+  text-align: left;
+}
+
+legend {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin-bottom: calc(var(--base-gutter) / 2);
+  font-size: calc(1.275rem + 0.3vw);
+  line-height: inherit;
+  max-width: 100%;
+  white-space: normal;
+
+  @media (max-width: 1200px) {
+    font-size: 1.5rem;
+  }
+
+  & + * {
+    clear: left;
+  }
+}
+
+dialog {
+  background-color: inherit;
+  border: solid;
+  color: inherit;
+  display: block;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: var(--base-gutter);
+  position: absolute;
+  right: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+
+  &:not([open]) {
+    display: none;
+  }
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+::-moz-ui-invalid {
+  box-shadow: none;
+}
+
+::-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+output {
+  display: inline-block;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+@import 'wai-aria';

@@ -1,0 +1,19 @@
+*:where([inline],[block]) {
+  display: var(--display);
+}
+
+*[inline] {
+  --display: inline;
+}
+
+*[inline='block'] {
+  --display: inline-block;
+}
+
+*[inline='flex'] {
+  --display: inline-flex;
+}
+
+*[block] {
+  --display: block;
+}

@@ -1,0 +1,27 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+  padding: 0;
+}
+
+hr {
+  margin: var(--base-gutter) 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+  overflow: visible;
+
+  &:not([size]) {
+    height: 1px;
+  }
+}
