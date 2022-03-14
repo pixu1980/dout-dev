@@ -1,0 +1,57 @@
+$gs-columns: 12 !default;
+$gs-gutter: 1.5rem !default;
+$gs-v-gutter: 1.5rem !default;
+$gs-breakpoints-first-key: 'sp' !default;
+
+$gs-breakpoints-base: (
+  sp: (
+    // default breakpoint (small smartphones)
+    container-width: 100%,
+    container-gutter: true,
+    min-viewport-width: 320px,
+  ),
+  xs: (
+    // extra small devices
+    container-width: 480px,
+    container-gutter: true,
+    min-viewport-width: 576px,
+  ),
+  sm: (
+    // small devices
+    container-width: 720px,
+    container-gutter: true,
+    min-viewport-width: 768px,
+  ),
+  md: (
+    // medium devices
+    container-width: 960px,
+    min-viewport-width: 992px,
+  ),
+  lg: (
+    // large devices
+    container-width: 1140px,
+    min-viewport-width: 1200px,
+  ),
+  xl: (
+    // extra large devices
+    container-width: 1440px,
+    min-viewport-width: 1600px,
+  ),
+  fhd: (
+    // full HD devices
+    container-width: 1440px,
+    min-viewport-width: 1920px,
+  ),
+  qhd: (
+    // quad HD (2k) devices
+    container-width: 1920px,
+    min-viewport-width: 2560px,
+  ),
+  uhd: (
+    // ultra HD (4k) devices
+    container-width: 2560px,
+    min-viewport-width: 3840px,
+  ),
+) !default;
+
+$gs-breakpoints: extend-breakpoints() !default;

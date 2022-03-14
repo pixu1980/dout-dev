@@ -1,0 +1,29 @@
+[animation] {
+  --ani--duration: 400ms;
+  --ani--easing: ease-in-out;
+  --ani--name: initial;
+  --ani--delay: 0;
+  --ani--fill: forwards;
+
+  > * {
+    animation-duration: var(--ani--duration);
+    animation-timing-function: var(--ani--easing);
+    animation-name: var(--ani--name);
+    animation-delay: var(--ani--delay);
+    animation-fill-mode: var(--ani--fill);
+  }
+}
+
+stagger[animation='fade-in'] {
+  --ani--name: fade-in;
+
+  > * {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}

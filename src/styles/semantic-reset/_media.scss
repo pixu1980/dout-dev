@@ -1,0 +1,50 @@
+iframe,
+img,
+input,
+select,
+textarea {
+  height: auto;
+  max-width: 100%;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+svg {
+  &:not([fill]) {
+    fill: currentColor;
+  }
+
+  &:not(:root) {
+    overflow: hidden;
+  }
+}
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+iframe {
+  border: none;
+}
+
+audio,
+canvas,
+video {
+  display: inline;
+  display: inline-block;
+  zoom: 1;
+  max-width: 100%;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}

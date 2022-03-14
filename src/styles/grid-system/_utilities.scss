@@ -1,0 +1,50 @@
+$display-values: (
+  inline: inline,
+  inline-block: inline-block,
+  block: block,
+  grid: grid,
+  table: table,
+  table-row: table-row,
+  table-cell: table-cell,
+  flex: flex,
+  inline-flex: inline-flex,
+  none: none,
+);
+
+@mixin display-breakpoint-selector($breakpoint-key, $breakpoints-first-key) {
+  $breakpoint-prefix: '';
+
+  @if ($breakpoint-key != $breakpoints-first-key) {
+    $breakpoint-prefix: #{$breakpoint-key}-;
+  }
+
+  @each $key, $value in $display-values {
+    [display~='#{$breakpoint-prefix}#{$value}'] {
+      --d-value: #{$value};
+    }
+  }
+}
+
+@mixin display($breakpoints: $gs-breakpoints, $breakpoints-first-key: $gs-breakpoints-first-key) {
+  [display] {
+    --d-value: initial;
+
+    display: var(--d-value);
+  }
+
+  @each $breakpoint-key, $breakpoint in $breakpoints {
+    $min-viewport-width: map.get($breakpoint, 'min-viewport-width');
+
+    @if $breakpoint-key == $breakpoints-first-key {
+      @include display-breakpoint-selector($breakpoint-key, $breakpoints-first-key);
+    } @else {
+      @include media($media-type: screen, $min-width: $min-viewport-width) {
+        @include display-breakpoint-selector($breakpoint-key, $breakpoints-first-key);
+      }
+    }
+  }
+}
+
+@mixin utilities($breakpoints: $gs-breakpoints, $breakpoints-first-key: $gs-breakpoints-first-key) {
+  @include display($breakpoints, $breakpoints-first-key);
+}

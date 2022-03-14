@@ -1,0 +1,31 @@
+@use 'sass:map';
+
+@import 'functions';
+@import 'variables';
+@import 'containers';
+@import 'rows';
+@import 'columns';
+@import 'utilities';
+
+@mixin grid-system(
+  $columns: $gs-columns,
+  $gutter: $gs-gutter,
+  $v-gutter: $gs-v-gutter,
+  $breakpoints: $gs-breakpoints,
+  $breakpoints-first-key: $gs-breakpoints-first-key
+) {
+  :root {
+    --gs--columns: #{$columns};
+    --gs--gutter: #{$gutter};
+    --gs--v-gutter: #{$v-gutter};
+    --gs--container--width: 100%;
+    --gs--container--gutter: 0 var(--gs--gutter);
+  }
+
+  @include containers($breakpoints);
+  @include rows();
+  @include columns($columns, $breakpoints, $breakpoints-first-key);
+  @include utilities($breakpoints, $breakpoints-first-key);
+}
+
+@include grid-system();
