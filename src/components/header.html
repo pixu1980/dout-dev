@@ -6,6 +6,10 @@
       </h1>
     </logo>
     <menu user>user-menu</menu>
-    <categories> categories menu </categories>
+    <categories>
+      <each loop="tag, index in tags">
+        <a href="#">{{tag}}</a>
+      </each>
+    </categories>
   </container>
 </header>

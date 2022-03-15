@@ -1,9 +1,0 @@
-<extends src="./layouts/default.html" locals='{"title": ""}'>
-  <block name="content">
-    <h1>Hello, World!</h1>
-    <a href="../pages/about.html">About</a>
-    <each loop="item, index in posts">
-      <a href="{{item.path}}">{{item.name}}</a>
-    </each>
-  </block>
-</extends>
