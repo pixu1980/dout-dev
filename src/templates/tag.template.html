@@ -1,0 +1,21 @@
+<extends src="./layouts/leaf.html" locals='{"title": " - ###LABEL###"}'>
+  <block name="content">
+    <h3>###LABEL###</h3>
+    <row>
+      <column size="6">
+        <ol>
+          <each
+            loop="post, index in posts.filter(post => 
+              post.tags.find(tag => tag.key === '###KEY###'))
+            "
+          >
+            <li><a href="{{post.path.replace('./pages/', '../')}}">{{post.title}}{{post.date}}</a></li>
+          </each>
+        </ol>
+      </column>
+      <column size="6">
+        <include src="./components/archive.html"></include>
+      </column>
+    </row>
+  </block>
+</extends>

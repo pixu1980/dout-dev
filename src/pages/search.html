@@ -1,0 +1,8 @@
+<extends src="./layouts/page.html" locals='{"title": " - Search"}'>
+  <input type="text" list="autocomplete-data" />
+  <datalist id="autocomplete-data">
+    <each loop="post, index in posts">
+      <option>{{post.title}}</option>
+    </each>
+  </datalist>
+</extends>

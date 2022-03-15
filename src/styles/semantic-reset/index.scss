@@ -2,8 +2,8 @@
   --base-font-size: 10px;
   --base-line-height: 1.5;
   --base-font-weight: 400;
-  --base-font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --base-font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times,
+    Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, serif;
   --base-direction: ltr;
 
   --base-gutter: 1rem;
@@ -44,7 +44,7 @@ html {
   // font-size: var(--base-font-size);
   // line-height: var(--base-line-height);
   // font-weight: var(--base-font-weight);
-  // font-family: var(--base-font-family);
+  font-family: var(--base-font-family);
   background: inherit;
   vertical-align: baseline;
   word-break: normal;

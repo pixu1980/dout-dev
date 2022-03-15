@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>DoUt.Dev{{title}}</title>
+    <link rel="stylesheet" href="../styles/index.scss" />
+  </head>
+  <body>
+    <include src="./components/header.html" locals='{"basePath":".."}'></include>
+    <main>
+      <container fluid>
+        <block name="content"></block>
+      </container>
+    </main>
+    <include src="./components/footer.html" locals='{"basePath":".."}'></include>
+    <script src="../scripts/index.js"></script>
+  </body>
+</html>

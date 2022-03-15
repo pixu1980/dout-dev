@@ -1,0 +1,90 @@
+<extends src="./layouts/leaf.html" locals='{"title":" - CSS Properties Hierarchy","date":"2022-03-18T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"},{"key":"css","label":"CSS"}],"canonicalUrl":false,"description":"CSS Properties Hierarchy","name":"2022-03-18-css-properties-hierarchy","path":"./pages/posts/2022-03-18-css-properties-hierarchy.html"}'>
+  <block name="content"><pre><code class="language-scss"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-comment">// css custom properties</span>
+  <span class="hljs-attr">--var--example</span>: <span class="hljs-number">1</span>;
+​
+  <span class="hljs-comment">// position</span>
+  <span class="hljs-attribute">position</span>: absolute;
+​
+  <span class="hljs-comment">// display</span>
+  <span class="hljs-attribute">display</span>: block;
+  <span class="hljs-attribute">display</span>: flex;
+  justify-self: unset;
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+​
+  <span class="hljs-comment">// box-model</span>
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">10rem</span>;
+  aspect-ratio: <span class="hljs-number">16</span> / <span class="hljs-number">9</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">1rem</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">0.1rem</span> solid black;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">0.4rem</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1rem</span>;
+​
+  <span class="hljs-comment">// colors &amp; background</span>
+  <span class="hljs-attribute">color</span>: white;
+  <span class="hljs-attribute">background-color</span>: black;
+  <span class="hljs-attribute">background-image</span>: url();
+  <span class="hljs-attribute">box-shadow</span>: rgba(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">1</span>);
+​
+  <span class="hljs-comment">// text</span>
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&#x27;Courier New&#x27;</span>, Courier, monospace;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1rem</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">700</span>;
+  <span class="hljs-attribute">line-height</span>: normal;
+  <span class="hljs-attribute">white-space</span>: nowrap;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">text-shadow</span>: none;
+​
+  <span class="hljs-comment">// transform &amp; animations</span>
+  <span class="hljs-attribute">transform</span>: translate();
+  <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">300ms</span> ease-in, width <span class="hljs-number">500ms</span> linear;
+  <span class="hljs-attribute">will-change</span>: opacity, width;
+  <span class="hljs-attribute">animation</span>: test <span class="hljs-number">300ms</span> forwards alternate-reverse;
+​
+  <span class="hljs-comment">// helpers</span>
+  <span class="hljs-attribute">cursor</span>: pointer;
+  <span class="hljs-attribute">outline</span>: <span class="hljs-number">0</span>;
+  appearance: none;
+  <span class="hljs-attribute">filter</span>: drop-shadow();
+​
+  <span class="hljs-comment">// pseudo elements</span>
+  &amp;<span class="hljs-selector-pseudo">::after</span> {
+  }
+​
+  <span class="hljs-comment">// variants &amp; pseudo selectors</span>
+  &amp;<span class="hljs-selector-class">.error</span> {
+    <span class="hljs-attribute">color</span>: red;
+  }
+
+  &amp;<span class="hljs-selector-attr">[aria-hidden=true]</span> {
+    <span class="hljs-attribute">display</span>: none;
+  }
+​
+  &amp;<span class="hljs-selector-pseudo">:hover</span> {
+  }
+​
+  <span class="hljs-comment">// sass includes</span>
+  <span class="hljs-keyword">@include</span> helpers.media(<span class="hljs-variable">$min-width</span>: #{helpers<span class="hljs-selector-class">.get-breakpoint-value</span>(md)}) {
+    <span class="hljs-attribute">display</span>: none;
+  }
+​
+  <span class="hljs-comment">// ------------ children</span>
+  <span class="hljs-selector-tag">span</span> {
+    <span class="hljs-comment">// hierarchy</span>
+  }
+​
+  <span class="hljs-selector-tag">input</span> {
+    <span class="hljs-comment">// hierarchy</span>
+  }
+​
+  &gt; * {
+    <span class="hljs-comment">// hierarchy</span>
+  }
+}
+</code></pre>
+</block>
+</extends>
+<script locals>
+  module.exports = {"title":" - CSS Properties Hierarchy","date":"2022-03-18T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"},{"key":"css","label":"CSS"}],"canonicalUrl":false,"description":"CSS Properties Hierarchy","name":"2022-03-18-css-properties-hierarchy","path":"./pages/posts/2022-03-18-css-properties-hierarchy.html"}
+</script>

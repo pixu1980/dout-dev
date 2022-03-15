@@ -1,61 +1,30 @@
-<extends src="./layouts/default.html" locals='{"title": ""}'>
+<extends src="./layouts/root.html" locals='{"title": ""}'>
   <block name="content">
-    <h1>Hello, World!</h1>
+    <h1>Welcome Home</h1>
     <row>
-      <column md-size="6">
-        <h1>Heading 1</h1>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
-        <h4>Heading 4</h4>
-        <h5>Heading 5</h5>
-        <h6>Heading 6</h6>
-        <span>this is a span</span>
-        <p>
-          Morbi leo <mark>risus</mark>, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
-          scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non
-          metus auctor fringilla. <br /><br />
-          Maecenas faucibus mollis interdum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras
-          justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit.
-        </p>
-        <p>
-          Morbi leo <mark>risus</mark>, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
-          scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non
-          metus auctor fringilla. <br /><br />
-          Maecenas faucibus mollis interdum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras
-          justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit.
-        </p>
-        <p>
-          Morbi leo <mark>risus</mark>, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
-          scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non
-          metus auctor fringilla. <br /><br />
-          Maecenas faucibus mollis interdum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras
-          justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit.
-        </p>
-        <p>
-          Morbi leo <mark>risus</mark>, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
-          scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non
-          metus auctor fringilla. <br /><br />
-          Maecenas faucibus mollis interdum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras
-          justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit.
-        </p>
-      </column>
-      <column md-size="6">
-        <a href="./about.html">About</a>
-        <ul>
-          <each loop="tag, index in tags">
-            <li><a href="#">{{tag}}</a></li>
-          </each>
-        </ul>
+      <column size="6">
         <ol>
-          <each loop="item, index in posts">
-            <li><a href="{{item.path}}">{{item.title}}{{new Date(item.date)}}</a></li>
+          <each loop="post, index in posts.filter(post => post.date >= months[0].from && post.date <= months[0].to)">
+            <li><a href="{{post.path}}">{{post.title}}{{post.date}}</a></li>
           </each>
         </ol>
+      </column>
+      <column size="6">
+        <include src="./components/archive.html"></include>
       </column>
     </row>
   </block>
 </extends>
+
+<!-- 
+  https://www.markdownguide.org/cheat-sheet/
+  https://discourse.getgrav.org/t/multi-line-strings-in-frontmatter/1226
+  https://www.joelonsoftware.com
+  https://scottberkun.com/blog/
+  https://preview.colorlib.com/#webmag
+  
+  https://www.aleksandrhovhannisyan.com/blog/static-site-comments-github-issues/
+  https://docs.github.com/en/rest/reference/issues#create-an-issue-comment
+  
+  https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file
+ -->
