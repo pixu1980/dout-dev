@@ -1,7 +1,7 @@
 :root {
   --focus--parent--bg-color: var(--theme--background-color);
   --focus--color: var(--theme--focus-color);
-  --focus--outline--offset: 0.3rem;
+  --focus--outline--offset: 0.15rem;
   --focus--outline: 0 0 0 var(--focus--outline--offset) var(--focus--parent--bg-color),
     0 0 0 calc(var(--focus--outline--offset) * 2) var(--focus--color);
 

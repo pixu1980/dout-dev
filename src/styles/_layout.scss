@@ -1,4 +1,7 @@
 body {
+  color: var(--theme--color);
+  background-color: var(--theme--background-color);
+
   > footer {
     position: sticky;
     top: 100vh;
