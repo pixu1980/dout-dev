@@ -1,0 +1,7 @@
+body {
+  > footer {
+    position: sticky;
+    top: 100vh;
+    background-color: var(--theme--background-color);
+  }
+}

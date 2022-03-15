@@ -7,21 +7,26 @@ const matter = require('gray-matter');
 const dir = '/src/posts';
 const dirPath = path.join(__dirname, dir);
 const posts = [];
+const tags = [];
 
 fs.readdirSync(dirPath).forEach((file) => {
   if (file.endsWith('.md')) {
     const mdMatter = matter(fs.readFileSync('.' + [dir, file].join('/')));
+
+    tags.push(...mdMatter.data.tags || []);
 
     posts.push({
       ...mdMatter.data,
       name: file.split('.').slice(0, -1).join('.'),
       path: [dir, file].join('/').replace('/src', '.'),
     });
+
   }
 });
 
 const locals = {
-  posts
+  posts,
+  tags: [...new Set(tags)]
 }
 
 module.exports = {

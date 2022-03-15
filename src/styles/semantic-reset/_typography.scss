@@ -118,7 +118,8 @@ address {
 }
 
 :where(ol, ul) {
-  padding-left: calc(var(--base-gutter) * 2);
+  list-style-position: inside;
+  padding: 0;
 
   :where(ol, ul) {
     margin: 0;
@@ -161,14 +162,14 @@ a {
     border: none;
   }
 
-  &:focus {
-    outline: thin dotted;
-  }
+  // &:focus {
+  //   outline: thin dotted;
+  // }
 
-  &:not([href]):not(class),
-  &:not([href]):not([class]):hover {
-    // cursor: default;
-    color: inherit;
-    text-decoration: none;
-  }
+  // &:not([href]):not(class),
+  // &:not([href]):not([class]):hover {
+  //   // cursor: default;
+  //   color: inherit;
+  //   text-decoration: none;
+  // }
 }
