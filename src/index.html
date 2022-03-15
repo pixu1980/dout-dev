@@ -11,10 +11,9 @@
         <h6>Heading 6</h6>
         <span>this is a span</span>
         <p>
-          Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque
-          nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor
-          fringilla.
-          <br /><br />
+          Morbi leo <mark>risus</mark>, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
+          scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non
+          metus auctor fringilla. <br /><br />
           Maecenas faucibus mollis interdum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras
           justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit.
@@ -23,7 +22,7 @@
       <column md-size="6">
         <a href="./about.html">About</a>
         <each loop="item, index in posts">
-          <a href="{{item.path}}">{{item.name}}</a>
+          <a href="{{item.path}}">{{item.title}}{{new Date(item.date)}}</a>
         </each>
       </column>
     </row>

@@ -16,7 +16,8 @@
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "devDependencies": {
-    "highlight.js": "^1.27.0",
+    "highlight.js": "^11.5.0",
+    "gray-matter": "^4.0.3",
     "@parcel/transformer-sass": "2.3.2",
     "parcel": "^2.3.2",
     "parcel-transformer-md-blog": "0.0.1",

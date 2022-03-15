@@ -76,8 +76,8 @@ small {
 }
 
 mark {
-  padding: 0.2em;
-  background-color: currentColor;
+  padding: 0 0.2em;
+  background-color: var(--theme--highlight-color);
 }
 
 sub,

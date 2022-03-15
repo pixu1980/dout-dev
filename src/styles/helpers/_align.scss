@@ -1,5 +1,8 @@
-*:where([align], [valign]) {
+[align] {
   text-align: var(--t--align);
+}
+
+[valign] {
   vertical-align: var(--v--align);
 }
 
