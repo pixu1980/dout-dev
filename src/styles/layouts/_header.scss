@@ -1,7 +1,16 @@
-body {
-  > header {
-    position: sticky;
-    top: 0;
-    background-color: var(--theme--background-color);
+header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+
+  padding: var(--theme--gutter) 0;
+
+  background-color: var(--theme--background-color);
+  
+  logo a {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
   }
 }

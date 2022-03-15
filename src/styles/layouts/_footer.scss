@@ -2,6 +2,9 @@ body {
   > footer {
     position: sticky;
     top: 100vh;
+
+    padding: var(--theme--gutter) 0;
+
     background-color: var(--theme--background-color);
   }
 }

@@ -1,6 +1,11 @@
-body {
+:root {
+  --theme--gutter: 1rem;
+}
+
+:where(html, body) {
   color: var(--theme--color);
   background-color: var(--theme--background-color);
+  -webkit-overflow-scrolling: touch;
 }
 
 @import 'header';

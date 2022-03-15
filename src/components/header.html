@@ -1,15 +1,18 @@
 <header>
   <container fluid>
     <logo>
-      <h1>
-        <img src="{{basePath}}assets/images/logo.png" alt="Do Ut Dev" style="width: 3rem" />
-      </h1>
+      <a href="/" title="Do Ut Dev">
+        <img src="{{basePath}}/assets/images/logo.svg" alt="Do Ut Dev" style="width: 3rem" />
+        <span>Do Ut Dev</span>
+      </a>
     </logo>
-    <menu user>user-menu</menu>
+    <menu user>
+      <a href="{{basePath}}/pages/about.html">About</a>
+      <a href="{{basePath}}/pages/playground.html">Playground</a>
+      <a href="{{basePath}}/pages/404.html">404</a>
+    </menu>
     <categories>
-      <each loop="tag, index in tags">
-        <a href="#">{{tag}}</a>
-      </each>
+      <include src="./components/tags.html"></include>
     </categories>
   </container>
 </header>
