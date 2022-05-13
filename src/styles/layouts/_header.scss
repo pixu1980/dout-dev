@@ -6,11 +6,18 @@ header {
   padding: var(--theme--gutter) 0;
 
   background-color: var(--theme--background-color);
-  
-  logo a {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
+
+  logo {
+    a {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: center;
+      gap: .5ch;
+    }
+    
+    img {
+      width: 2rem;
+    }
   }
 }

@@ -2,8 +2,10 @@
   --base-font-size: 10px;
   --base-line-height: 1.5;
   --base-font-weight: 400;
-  --base-font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times,
+  --base-font-family--serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times,
     Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, serif;
+  --base-font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica,
+    Ubuntu, roboto, noto, arial, sans-serif;
   --base-direction: ltr;
 
   --base-gutter: 1rem;

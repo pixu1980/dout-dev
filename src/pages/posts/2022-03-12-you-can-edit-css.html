@@ -1,8 +1,15 @@
 <extends src="./layouts/leaf.html" locals='{"title":" - You can edit CSS","date":"2022-03-12T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":true,"canonicalUrl":false,"description":"One line only description","name":"2022-03-12-you-can-edit-css","path":"./pages/posts/2022-03-12-you-can-edit-css.html"}'>
-  <block name="content"><p>
+  <block name="content">
+    <row>
+      <column size="9"> <p>
       <a href="https://codepen.io/davatron5000/pen/mddmRJe" target="_blank" rel="noopener noreferrer" title="null">You can edit CSS</a>
     </p>
-</block>
+ </column>
+      <column size="3">
+        <include src="./components/archive.html"></include>
+      </column>
+    </row>
+  </block>
 </extends>
 <script locals>
   module.exports = {"title":" - You can edit CSS","date":"2022-03-12T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":true,"canonicalUrl":false,"description":"One line only description","name":"2022-03-12-you-can-edit-css","path":"./pages/posts/2022-03-12-you-can-edit-css.html"}

@@ -1,8 +1,8 @@
-<extends src="./layouts/leaf.html" locals='{"title": "- March 2022"}'>
+<extends src="./layouts/leaf.html" locals='{"title": " - March 2022"}'>
   <block name="content">
     <h3>March 2022</h3>
     <row>
-      <column size="6">
+      <column size="9">
         <ol>
           <each
             loop="post, index in posts.filter(post => 
@@ -13,7 +13,7 @@
           </each>
         </ol>
       </column>
-      <column size="6">
+      <column size="3">
         <include src="./components/archive.html"></include>
       </column>
     </row>

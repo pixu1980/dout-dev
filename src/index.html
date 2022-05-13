@@ -2,14 +2,14 @@
   <block name="content">
     <h1>Welcome Home</h1>
     <row>
-      <column size="6">
+      <column size="9">
         <ol>
           <each loop="post, index in posts.filter(post => post.date >= months[0].from && post.date <= months[0].to)">
             <li><a href="{{post.path}}">{{post.title}}{{post.date}}</a></li>
           </each>
         </ol>
       </column>
-      <column size="6">
+      <column size="3">
         <include src="./components/archive.html"></include>
       </column>
     </row>

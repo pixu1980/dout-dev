@@ -1,5 +1,7 @@
 <extends src="./layouts/leaf.html" locals='{"title":" - No Matter","date":"2022-03-03T15:41:22.000Z","tags":[],"description":"One line only description","name":"2022-03-03-no-matter","path":"./pages/posts/2022-03-03-no-matter.html"}'>
-  <block name="content"><h1 id="marked---markdown-parser">Marked - Markdown Parser</h1>
+  <block name="content">
+    <row>
+      <column size="9"> <h1 id="marked---markdown-parser">Marked - Markdown Parser</h1>
 <p>
       <a href="https://github.com/markedjs/marked/" target="_blank" rel="noopener noreferrer" title="null">Marked</a>
      lets you convert 
@@ -41,7 +43,12 @@ or formatting instructions.</p>
 
       <a href="/demo/?text=" target="_blank" rel="noopener noreferrer" title="null">clear everything</a>
      with a simple click.</p>
-</block>
+ </column>
+      <column size="3">
+        <include src="./components/archive.html"></include>
+      </column>
+    </row>
+  </block>
 </extends>
 <script locals>
   module.exports = {"title":" - No Matter","date":"2022-03-03T15:41:22.000Z","tags":[],"description":"One line only description","name":"2022-03-03-no-matter","path":"./pages/posts/2022-03-03-no-matter.html"}

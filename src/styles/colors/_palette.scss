@@ -28,15 +28,23 @@
 
   --theme--color: var(--color--white-200);
   --theme--background-color: var(--color--black-400);
+  --theme--accent-color: var(--color--yellow-400);
+  --theme--accent-color--hover: var(--color--green-300);
+  --theme--accent-color--alt: var(--color--yellow-400);
+  --theme--accent-color--alt--hover: var(--color--yellow-400);
   --theme--highlight-color: var(--color--yellow-400);
-  --theme--focus-color: #f6b900c5;
+  --theme--focus-color: #277987cc;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --theme--color: var(--color--black-400);
     --theme--background-color: var(--color--white-400);
+    --theme--accent-color: var(--color--green-300);
+    --theme--accent-color--hover: var(--color--green-400);
+    --theme--accent-color--alt: var(--color--yellow-400);
+    --theme--accent-color--alt--hover: var(--color--yellow-400);
     --theme--highlight-color: var(--color--yellow-400);
-    --theme--focus-color: #fdd45b90;
+    --theme--focus-color: #277987cc;
   }
 }

@@ -1,5 +1,7 @@
 <extends src="./layouts/leaf.html" locals='{"title":" - CSS Properties Hierarchy","date":"2022-03-18T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"},{"key":"css","label":"CSS"}],"canonicalUrl":false,"description":"CSS Properties Hierarchy","name":"2022-03-18-css-properties-hierarchy","path":"./pages/posts/2022-03-18-css-properties-hierarchy.html"}'>
-  <block name="content"><pre><code class="language-scss"><span class="hljs-selector-class">.element</span> {
+  <block name="content">
+    <row>
+      <column size="9"> <pre><code class="language-scss"><span class="hljs-selector-class">.element</span> {
   <span class="hljs-comment">// css custom properties</span>
   <span class="hljs-attr">--var--example</span>: <span class="hljs-number">1</span>;
 ​
@@ -83,7 +85,12 @@
   }
 }
 </code></pre>
-</block>
+ </column>
+      <column size="3">
+        <include src="./components/archive.html"></include>
+      </column>
+    </row>
+  </block>
 </extends>
 <script locals>
   module.exports = {"title":" - CSS Properties Hierarchy","date":"2022-03-18T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"},{"key":"css","label":"CSS"}],"canonicalUrl":false,"description":"CSS Properties Hierarchy","name":"2022-03-18-css-properties-hierarchy","path":"./pages/posts/2022-03-18-css-properties-hierarchy.html"}

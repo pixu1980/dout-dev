@@ -146,18 +146,19 @@ dd {
 
 a {
   cursor: pointer;
-  color: rgb(51, 51, 225);
+  color: var(--theme--accent-color);
   background-color: transparent;
   text-decoration: none;
   transition: var(--focus--transition), color 0.15s ease;
 
+  
+  
   &:hover {
-    color: rgb(52, 52, 224);
     text-decoration: underline;
   }
 
   &:is(:hover, :visited) {
-    color: #bea8d7;
+    color: var(--theme--accent-color--hover);
     text-shadow: none;
     border: none;
   }
