@@ -1,12 +1,12 @@
-<extends src="./layouts/leaf.html" locals='{"title": " - February 2019"}'>
+<extends src="./layouts/leaf.html" locals='{"title": " - Generic"}'>
   <block name="content">
-    <h3>February 2019</h3>
+    <h3>Generic</h3>
     <row>
       <column size="9">
         <ol>
           <each
             loop="post, index in posts.filter(post => 
-              post.date >= new Date('2019-02-01') && post.date <= new Date('2019-02-28'))
+              post.tags.find(tag => tag.key === 'generic'))
             "
           >
             <li><a href="{{post.path.replace('./pages/', '../')}}">{{post.title}}{{post.date}}</a></li>

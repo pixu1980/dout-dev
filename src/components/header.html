@@ -1,18 +1,29 @@
 <header>
   <container fluid>
-    <logo>
-      <a href="/" title="Do Ut Dev">
-        <img src="{{basePath}}/assets/images/logo.svg" alt="Do Ut Dev" style="width: 3rem" />
-        <span>Do Ut Dev</span>
-      </a>
-    </logo>
-    <menu user>
-      <a href="{{basePath}}/pages/about.html">About</a>
-      <a href="{{basePath}}/pages/playground.html">Playground</a>
-      <a href="{{basePath}}/pages/404.html">404</a>
+    <menu primary>
+      <main-menu>
+        <a href="{{basePath}}/pages/search.html"> Search </a>
+        <a href="{{basePath}}/pages/about.html">About</a>
+        <a href="{{basePath}}/pages/playground.html">Playground</a>
+        <a href="{{basePath}}/pages/404.html">404</a>
+      </main-menu>
+      <user-menu>
+        <a href="#"> Settings </a>
+        <a href="#">Login</a>
+      </user-menu>
     </menu>
-    <categories>
-      <include src="./components/tags.html"></include>
-    </categories>
+    <menu secondary>
+      <categories>
+        <include src="./components/tags.html"></include>
+      </categories>
+    </menu>
+    <logo>
+      <h1>
+        <a href="/" title="Do Ut Dev">
+          <img src="{{basePath}}/assets/images/logo.svg" alt="" />
+          DoUtDev
+        </a>
+      </h1>
+    </logo>
   </container>
 </header>
