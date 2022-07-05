@@ -1,3 +1,6 @@
-<each loop="tag, index in tags">
-  <a href="{{basePath}}/{{tag.path}}">{{tag.label}}</a>
-</each>
+<tags>
+  <a href="{{basePath}}/index.html">All</a>
+  <each loop="tag, index in tags">
+    <a href="{{basePath}}/{{tag.path}}">{{tag.label}}</a>
+  </each>
+</tags>

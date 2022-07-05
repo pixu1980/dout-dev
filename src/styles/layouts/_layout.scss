@@ -2,11 +2,19 @@
   --theme--gutter: 1rem;
 }
 
-:where(html, body) {
+body {
   color: var(--theme--color);
   background-color: var(--theme--background-color);
   -webkit-overflow-scrolling: touch;
+  
+  transition: color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+body:has(input[type="checkbox"]:checked) {
+  color: var(--theme--color--switch);
+  background-color: var(--theme--background-color--switch);
 }
 
 @import 'header';
+@import 'archive';
 @import 'footer';

@@ -1,29 +1,21 @@
 <header>
-  <container fluid>
-    <menu primary>
-      <main-menu>
-        <a href="{{basePath}}/pages/search.html"> Search </a>
-        <a href="{{basePath}}/pages/about.html">About</a>
-        <a href="{{basePath}}/pages/playground.html">Playground</a>
-        <a href="{{basePath}}/pages/404.html">404</a>
-      </main-menu>
-      <user-menu>
-        <a href="#"> Settings </a>
-        <a href="#">Login</a>
-      </user-menu>
-    </menu>
-    <menu secondary>
-      <categories>
-        <include src="./components/tags.html"></include>
-      </categories>
-    </menu>
-    <logo>
+  <logo>
+    <a href="/" title="Do Ut Dev">
       <h1>
-        <a href="/" title="Do Ut Dev">
-          <img src="{{basePath}}/assets/images/logo.svg" alt="" />
-          DoUtDev
-        </a>
+        <img src="{{basePath}}/assets/images/logo.svg" alt="" />
+        DoUtDev
       </h1>
-    </logo>
-  </container>
+    </a>
+  </logo>
+  <menu primary>
+    <main-menu>
+      <a href="{{basePath}}/pages/about.html">About</a>
+      <a href="{{basePath}}/pages/playground.html">Playground</a>
+      <a href="{{basePath}}/pages/404.html">404</a>
+    </main-menu>
+    <user-menu>
+      <a href="{{basePath}}/pages/search.html">Search</a>
+      <label for="theme-switcher">switch</label>
+    </user-menu>
+  </menu>
 </header>
