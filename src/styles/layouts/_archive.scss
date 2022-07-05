@@ -1,0 +1,7 @@
+archive {
+  position: sticky;
+  top: var(--header--height);
+  
+  display: flex;
+  flex-flow: column wrap;
+}

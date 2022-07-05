@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="./styles/index.scss" />
   </head>
   <body>
+    <include src="./components/theme-switcher.html" locals='{"basePath":"."}'></include>
     <include src="./components/header.html" locals='{"basePath":"."}'></include>
     <main>
       <container fluid>
+        <include src="./components/tags.html" locals='{"basePath":"."}'></include>
         <block name="content"></block>
       </container>
     </main>

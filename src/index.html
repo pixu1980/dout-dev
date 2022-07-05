@@ -1,8 +1,8 @@
 <extends src="./layouts/root.html" locals='{"title": ""}'>
   <block name="content">
-    <h1>Welcome Home</h1>
     <row>
       <column size="9">
+        <h3>Welcome Home</h3>
         <ol>
           <each loop="post, index in posts.filter(post => post.date >= months[0].from && post.date <= months[0].to)">
             <li><a href="{{post.path}}">{{post.title}}{{post.date}}</a></li>
