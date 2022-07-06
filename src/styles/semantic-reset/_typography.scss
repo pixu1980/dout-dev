@@ -75,6 +75,11 @@ small {
   font-size: 0.875em;
 }
 
+smaller {
+  display: inline;
+  font-size: 0.65em;
+}
+
 mark {
   padding: 0 0.2em;
   background-color: var(--theme--highlight-color);

@@ -30,6 +30,7 @@
   --color--secondary: #f5d861;
 
   --color--white-400: #f1f1f1;
+  --color--white-500: #f6f6f6;
 
   --color--gray-300: #c7c7c7;
   --color--gray-400: #909196;
@@ -39,16 +40,18 @@
   --color--gray-800: #141519;
 
   --theme--color: var(--color--gray-400);
-  --theme--background-color: var(--color--gray-700);
+  --theme--background-color: var(--color--gray-800);
+  --theme--header--background-color: var(--color--gray-700);
   --theme--accent-color: var(--color--secondary);
   --theme--accent-color--hover: var(--color--secondary--hover);
   --theme--accent-color--alt: var(--color--primary);
   --theme--accent-color--alt--hover: var(--color--primary);
   --theme--highlight-color: var(--color--secondary);
-  --theme--focus-color: #277987cc;
+  --theme--focus-color: #f5d761cc;
 
   --theme--color--switch: var(--color--black-400);
   --theme--background-color--switch: var(--color--white-400);
+  --theme--header--background-color--switch: var(--color--white-500);
   --theme--accent-color--switch: var(--color--green-300);
   --theme--accent-color--hover--switch: var(--color--green-400);
   --theme--accent-color--alt--switch: var(--color--yellow-400);
@@ -61,6 +64,7 @@
   :root {
     --theme--color: var(--color--black-400);
     --theme--background-color: var(--color--white-400);
+    --theme--header--background-color: var(--color--white-500);
     --theme--accent-color: var(--color--green-300);
     --theme--accent-color--hover: var(--color--green-400);
     --theme--accent-color--alt: var(--color--yellow-400);
@@ -70,11 +74,12 @@
 
     --theme--color--switch: var(--color--gray-400);
     --theme--background-color--switch: var(--color--gray-700);
+    --theme--header--background-color--switch: var(--color--gray-700);
     --theme--accent-color--switch: var(--color--secondary);
     --theme--accent-color--hover--switch: var(--color--secondary--hover);
     --theme--accent-color--alt--switch: var(--color--primary);
     --theme--accent-color--alt--hover--switch: var(--color--primary);
     --theme--highlight-color--switch: var(--color--secondary);
-    --theme--focus-color--switch: #277987cc;
+    --theme--focus-color--switch: #f5d761cc;
   }
 }

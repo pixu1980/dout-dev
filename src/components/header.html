@@ -3,19 +3,21 @@
     <a href="/" title="Do Ut Dev">
       <h1>
         <img src="{{basePath}}/assets/images/logo.svg" alt="" />
-        DoUtDev
+        <smaller>DoUtDev</smaller>
       </h1>
     </a>
   </logo>
   <menu primary>
-    <main-menu>
-      <a href="{{basePath}}/pages/about.html">About</a>
-      <a href="{{basePath}}/pages/playground.html">Playground</a>
-      <a href="{{basePath}}/pages/404.html">404</a>
-    </main-menu>
-    <user-menu>
-      <a href="{{basePath}}/pages/search.html">Search</a>
-      <label for="theme-switcher">switch</label>
-    </user-menu>
+    <a href="{{basePath}}/pages/about.html">About</a>
+    <a href="{{basePath}}/pages/playground.html">Playground</a>
+    <a href="{{basePath}}/pages/404.html">404</a>
+  </menu>
+  <menu secondary>
+    <a href="{{basePath}}/pages/search.html">
+      <i class="icons-search"></i>
+    </a>
+    <label for="theme-switcher" tabindex="0">
+      <i class="icons-theme-dark"></i>
+    </label>
   </menu>
 </header>
