@@ -12,45 +12,62 @@ body > header {
   justify-content: space-between;
   align-items: center;
   gap: 0;
- 
+
   height: var(--header--height);
-  
-  background-color: var(--theme--background-color);
+
+  background-color: var(--theme--header--background-color);
   border-bottom: 1px solid var(--color--gray-500);
   padding: 0 var(--theme--gutter);
-  
-  line-height: var(--header--height);
 
-  transition: color .3s ease-in-out, background-color .3s ease-in-out;
-  
+  transition: background-color 0.3s linear;
+
   logo {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
     flex-grow: 0;
     flex-shrink: 0;
 
     a {
-      display: flex;
-      flex-flow: row;
-      align-items: center;
-      justify-content: center;
-      gap: .5ch;
-    }
-    
-    img {
-      width: 2rem;
+      h1 {
+        display: inline-flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3ch;
+        
+        line-height: 1;
+        vertical-align: middle;
+      }
+      
+      img {
+        width: 1.5rem;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
-  
+
   menu[primary] {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5ch;
     flex-grow: 1;
   }
-  
+
   menu[secondary] {
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .5ch;
     flex-grow: 0;
     flex-shrink: 0;
   }
 }
 
-body > input[type="checkbox"]:checked ~ header {
-  background-color: var(--theme--background-color--switch);
+body > input[type='checkbox']:checked ~ header {
+  background-color: var(--theme--header--background-color--switch);
 }
-

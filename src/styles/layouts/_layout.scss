@@ -7,14 +7,32 @@ body {
   background-color: var(--theme--background-color);
   -webkit-overflow-scrolling: touch;
   
-  transition: color .3s ease-in-out, background-color .3s ease-in-out;
+  transition: color .3s linear, background-color .3s linear;
+  
+  label[for='theme-switcher'] {
+    .icons-theme-dark {
+      &:before {
+        content: "\e91b";
+      }
+    }
+  }
 }
 
 body:has(input[type="checkbox"]:checked) {
   color: var(--theme--color--switch);
   background-color: var(--theme--background-color--switch);
+  
+  label[for='theme-switcher'] {
+    .icons-theme-dark {
+      &:before {
+        content: "\e91d";
+      }
+    }
+  }
 }
 
 @import 'header';
+@import 'last-article';
+@import 'tags';
 @import 'archive';
 @import 'footer';
