@@ -34,7 +34,7 @@ fs.readdirSync(paths.posts).forEach((file) => {
     const postTags = (postParsed.data.tags || []).map(tag => ({
       key: slugify(tag), label: tag,
     }));
-
+    
     tags.push(...postTags);
 
     const postData = {
