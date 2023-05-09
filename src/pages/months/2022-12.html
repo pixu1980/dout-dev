@@ -1,0 +1,21 @@
+<extends src="./layouts/leaf.html" locals='{"title": " - December 2022"}'>
+  <block name="content">
+    <row>
+      <column size="9">
+        <h3>December 2022</h3>
+        <ol>
+          <each
+            loop="post, index in posts.filter(post => 
+              post.date >= new Date('2022-12-01') && post.date <= new Date('2022-12-31'))
+            "
+          >
+            <li><a href="{{post.path.replace('./pages/', '../')}}">{{post.title}}{{post.date}}</a></li>
+          </each>
+        </ol>
+      </column>
+      <column size="3">
+        <include src="./components/archive.html"></include>
+      </column>
+    </row>
+  </block>
+</extends>

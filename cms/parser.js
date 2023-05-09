@@ -9,6 +9,7 @@ module.exports = class MarkdownParser {
   parse(path) {
     const content = fs.readFileSync(path);
     const data = matter(content);
+    
     const html = marked.marked(data.content, {
       breaks: false,
       gfm: true,

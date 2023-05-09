@@ -38,7 +38,7 @@ logo {
 }
 ```
 
-<iframe height="300" style="width: 100%; min-height: 70rem;" scrolling="no" title="blog-2022-02-25-01" src="https://codepen.io/pixu1980/embed/LYOJpBz?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="300" style="width: 100%; min-height: 70vh;" scrolling="no" title="blog-2022-02-25-01" src="https://codepen.io/pixu1980/embed/LYOJpBz?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/pixu1980/pen/LYOJpBz">
   blog-2022-02-25-01</a> by pixu1980 (<a href="https://codepen.io/pixu1980">@pixu1980</a>)
   on <a href="https://codepen.io">CodePen</a>.
