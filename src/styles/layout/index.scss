@@ -1,0 +1,20 @@
+@layer layout {
+  body {
+    display: grid;
+
+    width: 100vw;
+    min-height: 100vh;
+    
+    grid-template-areas:
+      'header'
+      'main'
+      'footer';
+
+    grid-template-rows: var(--dout--header--height) 1fr auto;
+  }
+
+  @import 'header';
+  @import 'main';
+  @import 'aside';
+  @import 'footer';
+}

@@ -1,0 +1,48 @@
+<!-- <extends src='./layouts/leaf.html' locals='{"title":" - Say hello to Gridsome 🎉","date":"2019-02-07T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"releases","label":"Releases"}],"canonicalUrl":false,"description":"One line only description","name":"2019-02-07-say-hello-to-gridsome","path":"./posts/2019-02-07-say-hello-to-gridsome.html"}'> -->
+<extends src='./layouts/leaf.html' locals='{"title":" - Say hello to Gridsome 🎉","date":"2019-02-07T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"releases","label":"Releases"}],"canonicalUrl":false,"description":"One line only description","name":"2019-02-07-say-hello-to-gridsome","path":"./posts/2019-02-07-say-hello-to-gridsome.html"}'>
+  <block name="content"><p>A new static site generator baby is born. It&#39;s highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta ready soon. You can expect this baby to grow up fast!</p>
+<p>We think <strong>Gridsome</strong> is a missing piece to the Vue.js ecosystem. What Gatsby.js does for React.js is a game changer in how we build websites. React.js is excellent, but we think Vue.js is more approachable for most web designers and devs getting started with JAMstack. Gridsome is the Vue.js alternative to Gatsby.</p>
+<p>With <strong>Gridsome</strong> you get a <strong>universal GraphQL layer</strong> for all your connected data sources. It&#39;s like a single source of truth for your website data ready to be used in any page or components. Connect to any CMS or APIs like Google Spreadsheet, Airtable, Instagram Feed, local markdown files, etc.</p>
+<p>Here is an example on how to query posts from the GraphQL layer in a page:</p>
+<pre><code class="language-html"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Layout</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Latest blog posts<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+     
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Layout</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">page-query</span>&gt;</span> query Blog </span><span class="hljs-template-variable">{ allWordPressPost (limit: 5) { edges { node { _id title }</span><span class="language-xml"> } } } <span class="hljs-tag">&lt;/<span class="hljs-name">page-query</span>&gt;</span></span>
+</code></pre>
+<p>You don&#39;t need to know GraphQL or Vue to get started with Gridsome - It&#39;s a great way to get introduced to both.</p>
+<p>The GraphQL layer and all the data can be explored in a local GraphQL playground. The playground is usually located at <code>https://localhost:8080/___explore</code> when a Gridsome development project is running.</p>
+<h4 id="perfect-scores-on-google-lighthouse---automagically-💚">Perfect scores on Google Lighthouse - automagically 💚</h4>
+<p>One of the main goals of Gridsome is to make a framework that let you build websites that are optimized &quot;out-of-the-box.&quot; It follows the 
+      <a href="https://developers.google.com/web/fundamentals/performance/prpl-pattern/" target="_blank" rel="noopener noreferrer" title="null">PRPL-pattern by Google.</a>
+     You don&#39;t need to be a performance expert to make fast websites with Gridsome. Your site gets almost perfect scores on Google lighthouse out-of-the-box. These are some of the performance steps that Gridsome takes care of:</p>
+<ul>
+<li>Image compressing &amp; lazy-loading ⚡️</li>
+<li>CSS &amp; JS minification ⚡️</li>
+<li>Code-splitting ⚡️</li>
+<li>HTML compressing ⚡️</li>
+<li>Critical CSS (Plugin) ⚡️</li>
+<li>Full PWA &amp; Offline-support (plugin) ⚡️</li>
+</ul>
+<h4 id="a-better-way-to-build-websites">A better way to build websites</h4>
+<p>Gridsome is built for the JAMstack workflow - a new way to build websites that gives you better performance, higher security, cheaper hosting, and a better developer experience. Generate prerendered (static) pages at build time for SEO-purpose and add powerful dynamic functionality with APIs and Vue.js.</p>
+<p>We believe the SSGs / JAMstack trend is just getting started. When you have first started to make websites this way there is no way back. You feel almost &quot;dirty&quot; when going back to a traditional WordPress / CMS setup.</p>
+<p>Try running the new Chrome Lighthouse (Audit tab in Developer tools) on a WordPress site - It is impossible to get good scores even with the best caching plugins and hosting. With Gridsome you don&#39;t even need caching plugins. Website optimization is taken care of at build time.</p>
+<p>This is what we think is very exciting and is why we are building Gridsome. It is the <strong>perfect SPA &amp; PWA front-end solution</strong> for any headless CMS or content APIs.</p>
+<h4 id="whats-next">Whats next</h4>
+<p>In the next couple of months we&#39;re going to continue to improve the docs, create tutorials, add more source &amp; transformer plugins and fix bugs.</p>
+<h4 id="contribute-to-gridsome">Contribute to Gridsome</h4>
+<p>We&#39;re currently just two brothers working on this, so any contribution is very welcome. We&#39;re passionate about building a faster web and make website building fun again.</p>
+<p>You can also support us by giving 
+      <a href="https://github.com/gridsome/gridsome/stargazers" target="_blank" rel="noopener noreferrer" title="null">a GitHub star ★</a>
+     and spread the word :)</p>
+</block>
+  <block name="aside">
+    <include src="./components/archive.html"></include>
+  </block>
+</extends>

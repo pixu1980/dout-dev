@@ -1,10 +1,7 @@
-<extends src="###LAYOUT###" locals='###LOCALS###'>
-  <block name="content">
-    <row>
-      <column size="9">###CONTENT###</column>
-      <column size="3">
-        <include src="./components/archive.html"></include>
-      </column>
-    </row>
+<!-- <extends src='###LAYOUT###' locals='###LOCALS###'> -->
+<extends src='###LAYOUT###' locals='###LOCALS###'>
+  <block name="content">###CONTENT###</block>
+  <block name="aside">
+    <include src="./components/archive.html"></include>
   </block>
 </extends>

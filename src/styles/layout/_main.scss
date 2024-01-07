@@ -1,0 +1,15 @@
+@layer main {
+  body > main {
+    grid-area: main;
+    
+    padding: var(--dout--gutter);
+
+    content {
+      row {
+        column {
+          // padding: var(--dout--gutter);
+        }
+      }
+    }
+  }
+}

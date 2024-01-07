@@ -1,0 +1,17 @@
+<extends src="./layouts/leaf.html" locals='{"title": " - Generic"}'>
+  <block name="content">
+    <h3>Generic</h3>
+    <ol>
+      <each
+        loop="post, index in posts.filter(post => 
+              post.tags.find(tag => tag.key === 'generic'))
+            "
+      >
+        <li><a href="{{post.path.replace('./', '../')}}">{{post.title}}{{post.date}}</a></li>
+      </each>
+    </ol>
+  </block>
+  <block name="aside">
+    <include src="./components/archive.html"></include>
+  </block>
+</extends>

@@ -63,8 +63,8 @@
 		"compression": 1,
 		"scalingAlgorithm": "Mitchell",
 		"errorOnImageTooSmall": false,
-		"readmeFile": true,
-		"htmlCodeFile": true,
+		"readmeFile": false,
+		"htmlCodeFile": false,
 		"usePathAsIs": false
 	}
 }

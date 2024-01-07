@@ -8,43 +8,47 @@ $display-values: (
   table-cell: table-cell,
   flex: flex,
   inline-flex: inline-flex,
-  none: none,
+  none: none
 );
 
-@mixin display-breakpoint-selector($breakpoint-key, $breakpoints-first-key) {
-  $breakpoint-prefix: '';
+/// Display breakpoint selector mixin
+/// @param {string} $key ['']
+@mixin display-breakpoint-selector($key: '') {
+  $prefix: '';
 
-  @if ($breakpoint-key != $breakpoints-first-key) {
-    $breakpoint-prefix: #{$breakpoint-key}-;
+  @if $key != '' {
+    $prefix: '#{$key}-';
   }
 
   @each $key, $value in $display-values {
-    [display~='#{$breakpoint-prefix}#{$value}'] {
+    [display~='#{$prefix}#{$value}'] {
       --d-value: #{$value};
     }
   }
 }
 
-@mixin display($breakpoints: $gs-breakpoints, $breakpoints-first-key: $gs-breakpoints-first-key) {
+/// Display utility mixin
+/// @param {object} $breakpoints [$dout-gs-breakpoints]
+@mixin display($breakpoints) {
   [display] {
     --d-value: initial;
 
     display: var(--d-value);
   }
 
-  @each $breakpoint-key, $breakpoint in $breakpoints {
-    $min-viewport-width: map.get($breakpoint, 'min-viewport-width');
+  @include display-breakpoint-selector();
 
-    @if $breakpoint-key == $breakpoints-first-key {
-      @include display-breakpoint-selector($breakpoint-key, $breakpoints-first-key);
-    } @else {
-      @include media($media-type: screen, $min-width: $min-viewport-width) {
-        @include display-breakpoint-selector($breakpoint-key, $breakpoints-first-key);
-      }
+  @each $key, $breakpoint in $breakpoints {
+    $min-vw: map.get($breakpoint, min-vw);
+
+    @include helpers.media($media-type: screen, $min-width: $min-vw) {
+      @include display-breakpoint-selector($key);
     }
   }
 }
 
-@mixin utilities($breakpoints: $gs-breakpoints, $breakpoints-first-key: $gs-breakpoints-first-key) {
-  @include display($breakpoints, $breakpoints-first-key);
+/// Utilities mixin
+/// @param {object} $breakpoints [$dout-gs-breakpoints]
+@mixin utilities($breakpoints: $dout-gs-breakpoints) {
+  @include display($breakpoints);
 }

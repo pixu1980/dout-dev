@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "description": "The DoUtDev Blog",
   "repository": "git@github.com:pixu1980/dout-dev.git",
-  "author": "Pixu",
+  "author": "Emiliano \"Pixu\" Pisu",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "favicon": "real-favicon generate favicon.config.json favicon.data.json ./src/assets/favicon",
-    "favicon:inject": "real-favicon inject favicon.data.json ./dist ./dist/*.html && real-favicon inject favicon.data.json ./dist/pages ./dist/pages/*.html && real-favicon inject favicon.data.json ./dist/pages/months ./dist/pages/months/*.html && real-favicon inject favicon.data.json ./dist/pages/tags ./dist/pages/tags/*.html && real-favicon inject favicon.data.json ./dist/pages/posts ./dist/pages/posts/*.html",
+    "favicon:generate": "real-favicon generate favicon.config.json favicon.data.json ./src/assets/favicon",
+    "favicon:inject": "real-favicon inject favicon.data.json ./dist ./dist/*.html && real-favicon inject favicon.data.json ./dist/months ./dist/months/*.html && real-favicon inject favicon.data.json ./dist/tags ./dist/tags/*.html && real-favicon inject favicon.data.json ./dist/posts ./dist/posts/*.html",
+    "favicon:copy": "cp ./src/assets/favicon/* ./dist",
     "html:minify": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true --input-dir ./dist --output-dir ./dist --file-ext html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clear:cache": "rm -rf .parcel-cache dist",
@@ -18,26 +19,30 @@
     "cms": "node --experimental-modules ./cms/index.js",
     "prestart": "yarn clear:cache && yarn cms",
     "start": "parcel serve ./src/index.html",
-    "prebuild": "yarn clear:cache && yarn favicon && yarn cms",
+    "prebuild": "yarn clear:cache && yarn favicon:generate && yarn cms",
     "build": "parcel build ./src/index.html --no-content-hash --no-source-maps --public-url=https://dout.dev",
-    "postbuild": "yarn favicon:inject && yarn html:minify"
+    "postbuild": "yarn favicon:inject && yarn favicon:copy && yarn html:minify"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
+  "staticFiles": {
+    "staticPath": "src/assets/favicon"
+  },
   "devDependencies": {
-    "@parcel/transformer-sass": "2.8.3",
+    "@parcel/transformer-sass": "2.9.3",
     "cli-real-favicon": "0.0.8",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.8.0",
-    "marked": "^5.0.1",
     "html-minifier": "^4.0.0",
-    "parcel": "^2.8.3",
-    "postcss": "^8.4.23",
+    "marked": "5.1.2",
+    "parcel": "^2.9.3",
+    "parcel-reporter-bundle-manifest": "^1.0.0",
+    "parcel-reporter-sitemap": "^1.0.3",
+    "parcel-reporter-static-files-copy": "^1.5.3",
+    "postcss": "^8.4.31",
     "postcss-combine-media-query": "^1.0.1",
     "posthtml": "^0.16.6",
     "posthtml-doctype": "^1.1.1",
     "posthtml-extend": "^0.6.5",
-    "posthtml-include": "^1.7.4",
-    "posthtml-modules": "^0.9.1",
-    "posthtml-render": "^3.0.0"
+    "posthtml-include": "^1.7.4"
   }
 }

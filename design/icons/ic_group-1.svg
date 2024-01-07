@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3_HP_CARD" transform="translate(-909.000000, -370.000000)" fill="#277987">
+            <g id="Group-2" transform="translate(909.000000, 370.000000)">
+                <rect id="Rectangle" x="0" y="0" width="9" height="9" rx="1"></rect>
+                <rect id="Rectangle" x="12" y="0" width="9" height="9" rx="1"></rect>
+                <rect id="Rectangle" x="0" y="12" width="9" height="9" rx="1"></rect>
+                <rect id="Rectangle" x="12" y="12" width="9" height="9" rx="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

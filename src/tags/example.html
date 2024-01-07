@@ -1,0 +1,17 @@
+<extends src="./layouts/leaf.html" locals='{"title": " - Example"}'>
+  <block name="content">
+    <h3>Example</h3>
+    <ol>
+      <each
+        loop="post, index in posts.filter(post => 
+              post.tags.find(tag => tag.key === 'example'))
+            "
+      >
+        <li><a href="{{post.path.replace('./', '../')}}">{{post.title}}{{post.date}}</a></li>
+      </each>
+    </ol>
+  </block>
+  <block name="aside">
+    <include src="./components/archive.html"></include>
+  </block>
+</extends>

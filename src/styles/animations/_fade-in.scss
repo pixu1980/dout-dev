@@ -1,21 +1,21 @@
 [animation] {
-  --ani--duration: 400ms;
-  --ani--easing: ease-in-out;
-  --ani--name: initial;
-  --ani--delay: 0;
-  --ani--fill: forwards;
+  --dout--ani--duration: 400ms;
+  --dout--ani--easing: ease-in-out;
+  --dout--ani--name: initial;
+  --dout--ani--delay: 0;
+  --dout--ani--fill: forwards;
 
   > * {
-    animation-duration: var(--ani--duration);
-    animation-timing-function: var(--ani--easing);
-    animation-name: var(--ani--name);
-    animation-delay: var(--ani--delay);
-    animation-fill-mode: var(--ani--fill);
+    animation-duration: var(--dout--ani--duration);
+    animation-timing-function: var(--dout--ani--easing);
+    animation-name: var(--dout--ani--name);
+    animation-delay: var(--dout--ani--delay);
+    animation-fill-mode: var(--dout--ani--fill);
   }
 }
 
 stagger[animation='fade-in'] {
-  --ani--name: fade-in;
+  --dout--ani--name: fade-in;
 
   > * {
     opacity: 0;

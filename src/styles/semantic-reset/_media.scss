@@ -1,18 +1,10 @@
-iframe,
-img,
-input,
-select,
-textarea {
-  height: auto;
-  max-width: 100%;
-}
-
 audio,
 canvas,
 iframe,
 img,
 svg,
 video {
+  max-width: 100%;
   vertical-align: middle;
 }
 

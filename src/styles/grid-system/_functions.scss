@@ -1,39 +1,43 @@
-@function get-breakpoint-value($breakpoint-key, $breakpoint-value: min-viewport-width, $breakpoints: $gs-breakpoints) {
-  $breakpoint: map.get($breakpoints, $breakpoint-key);
+@use 'sass:map';
 
-  @return map.get($breakpoint, $breakpoint-value);
+@function get-breakpoint-value($breakpoint-key, $breakpoint-value: min-vw, $breakpoints) {
+  @return map.get($breakpoints, $breakpoint-key, $breakpoint-value);
 }
 
-@function extend-breakpoints($breakpoints: $gs-breakpoints-base) {
+/// Extends the breakpoints objects by adding the max viewport width value
+/// @param {object} $breakpoints [$dout-gs-breakpoints] - definition of all the breakpoints
+@function extend-breakpoints($breakpoints: $dout-gs-breakpoints-base) {
   $breakpoints-keys: map.keys($breakpoints);
-  $breakpoint-actual: null;
-  $breakpoint-previous: null;
+  $breakpoints-values: map.values($breakpoints);
+
+  $breakpoint: null;
+  $breakpoint-prev: null;
 
   @for $i from length($breakpoints-keys) * -1 through -1 {
     $breakpoint-key: nth($breakpoints-keys, abs($i));
-    $breakpoint-actual: map.get($breakpoints, $breakpoint-key);
+    $breakpoint: nth($breakpoints-values, abs($i));
 
-    $max-viewport-width: null;
+    $max-vw: null;
 
-    @if $breakpoint-previous != null {
-      $max-viewport-width: map.get($breakpoint-previous, min-viewport-width) - 0.01px;
+    @if $breakpoint-prev != null {
+      $max-vw: map.get($breakpoint-prev, min-vw) - 0.01px;
 
       $breakpoints: map.deep-merge(
         $breakpoints,
         (
           $breakpoint-key:
             map.deep-merge(
-              $breakpoint-actual,
+              $breakpoint,
               (
-                max-viewport-width: $max-viewport-width,
+                max-vw: $max-vw
               )
-            ),
+            )
         )
       );
-
-      $breakpoint-previous: $breakpoint-actual;
     }
 
-    @return $breakpoints;
+    $breakpoint-prev: $breakpoint;
   }
+
+  @return $breakpoints;
 }

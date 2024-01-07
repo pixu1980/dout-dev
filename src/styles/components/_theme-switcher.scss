@@ -1,0 +1,30 @@
+@layer theme-switcher {
+  label[for='theme-switcher'] {
+    .icons-theme-dark {
+      &:before {
+        content: '\e91b';
+      }
+    }
+  }
+
+  body {
+    color: var(--dout--theme--color);
+    background-color: var(--dout--theme--background-color);
+    -webkit-overflow-scrolling: touch;
+
+    transition: color 0.3s linear, background-color 0.2s linear;
+  }
+
+  :has([name='theme-switcher']:checked) {
+    color: var(--dout--theme--color--switch);
+    background-color: var(--dout--theme--background-color--switch);
+
+    label[for='theme-switcher'] {
+      .icons-theme-dark {
+        &:before {
+          content: '\e91d';
+        }
+      }
+    }
+  }
+}

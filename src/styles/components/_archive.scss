@@ -1,0 +1,10 @@
+@layer archive {
+  archive {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    justify-content: start;
+
+    gap: var(--dout--gutter);
+  }
+}

@@ -48,7 +48,7 @@ determines the header level.)
 
 Images are added with `![Image Alt](./images/image.jpg)`
 
-![Image](../../assets/favicon/android-chrome-512x512.png)
+![Image](../assets/favicon/android-chrome-512x512.png)
 
 ### Blockquotes
 
