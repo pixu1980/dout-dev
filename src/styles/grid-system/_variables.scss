@@ -1,57 +1,73 @@
-$gs-columns: 12 !default;
-$gs-gutter: 1.5em !default;
-$gs-v-gutter: 1.5em !default;
-$gs-breakpoints-first-key: 'sp' !default;
+$dout-gs-cols: 12 !default;
+$dout-gs-gutter: 3rem !default;
+$dout-gs-v-gutter: $dout-gs-gutter !default;
 
-$gs-breakpoints-base: (
-  sp: (
-    // default breakpoint (small smartphones)
-    container-width: 100%,
-    container-gutter: true,
-    min-viewport-width: 320px,
+$dout-gs-breakpoints-base: (
+  ip: (
+    // iphone (iphone6 and above)
+    min-vw: 375px,
+    cw: 100vw
+  ),
+  ipp: (
+    // iphone plus (iphone6 plus and above)
+    min-vw: 414px,
+    cw: 100vw
   ),
   xs: (
     // extra small devices
-    container-width: 480px,
-    container-gutter: true,
-    min-viewport-width: 576px,
+    min-vw: 576px,
+    cw: 100vw
   ),
   sm: (
     // small devices
-    container-width: 720px,
-    container-gutter: true,
-    min-viewport-width: 768px,
+    min-vw: 768px,
+    cw: 100vw
+  ),
+  ipad10p: (
+    // ipad pro 10" portrait
+    min-vw: 834px,
+    cw: 70rem
   ),
   md: (
-    // medium devices
-    container-width: 960px,
-    min-viewport-width: 992px,
+    // medium devices (ipad pro 12" portrait)
+    min-vw: 1024px,
+    cw: 86rem
+  ),
+  ipad10l: (
+    // ipad pro 10" landscape
+    min-vw: 1112px,
+    cw: 94rem
   ),
   lg: (
     // large devices
-    container-width: 1140px,
-    min-viewport-width: 1200px,
+    min-vw: 1200px,
+    cw: 102.4rem
   ),
   xl: (
-    // extra large devices
-    container-width: 1440px,
-    min-viewport-width: 1600px,
+    // extra large devices (ipad pro 12" landscape)
+    min-vw: 1366px,
+    cw: 102.4rem
+  ),
+  xxl: (
+    // extra extra large devices
+    min-vw: 1600px,
+    cw: 106.6rem
   ),
   fhd: (
     // full HD devices
-    container-width: 1440px,
-    min-viewport-width: 1920px,
+    min-vw: 1920px,
+    cw: 128rem
   ),
   qhd: (
     // quad HD (2k) devices
-    container-width: 1920px,
-    min-viewport-width: 2560px,
+    min-vw: 2560px,
+    cw: 192rem
   ),
   uhd: (
     // ultra HD (4k) devices
-    container-width: 2560px,
-    min-viewport-width: 3840px,
-  ),
+    min-vw: 3840px,
+    cw: 256rem
+  )
 ) !default;
 
-$gs-breakpoints: extend-breakpoints() !default;
+$dout-gs-breakpoints: functions.extend-breakpoints($dout-gs-breakpoints-base) !default;

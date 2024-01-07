@@ -1,20 +1,16 @@
 <extends src="./layouts/root.html" locals='{"title": ""}'>
   <block name="content">
-    <include src="./components/last-article.html" locals='{"post": posts[0]}'></include>
-    <include src="./components/tags.html" locals='{"basePath":"."}'></include>
-    <row>
-      <column size="9">
-        <h3>Welcome Home</h3>
-        <ol>
-          <each loop="post, index in posts.filter(post => post.date >= months[1].from && post.date <= months[0].to)">
-            <li><a href="{{post.path}}">{{post.title}}{{post.date}}</a></li>
-          </each>
-        </ol>
-      </column>
-      <column size="3">
-        <include src="./components/archive.html"></include>
-      </column>
-    </row>
+    <articles>
+      <h3>Welcome Home</h3>
+      <ol>
+        <each loop="post, index in posts.filter(post => post.date >= months[3].from && post.date <= months[0].to)">
+          <li><a href="{{post.path}}">{{post.title}}{{post.date}}</a></li>
+        </each>
+      </ol>
+    </articles>
+  </block>
+  <block name="aside">
+    <include src="./components/archive.html"></include>
   </block>
 </extends>
 

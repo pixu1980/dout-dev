@@ -1,0 +1,78 @@
+@use 'sass:math';
+
+$ft--ratio: 1.125; // major second
+
+@layer font-sizes {
+  h1 {
+    --dout--t--fs: 2.027em;
+  }
+
+  h2 {
+    --dout--t--fs: 1.802em;
+  }
+
+  h3 {
+    --dout--t--fs: 1.602em;
+  }
+
+  h4 {
+    --dout--t--fs: 1.424em;
+  }
+
+  h5 {
+    --dout--t--fs: 1.266em;
+  }
+
+  h6 {
+    --dout--t--fs: 1.125em;
+  }
+
+  p {
+    --dout--t--fs: 1em;
+  }
+
+  small {
+    --dout--t--fs: 0.875em;
+  }
+
+  // *** fluid-typography
+  [fluid] {
+    --dout--t--fs: clamp(
+      calc(var(--dout--ft--min--fs) * var(--dout--ft--clamp--ratio) + var(--dout--ft--clamp--th)),
+      calc(var(--dout--t--fs--base) * var(--dout--ft--clamp--ratio) + var(--dout--ft--clamp--th)),
+      calc(var(--dout--ft--max--fs) * var(--dout--ft--clamp--ratio) + var(--dout--ft--clamp--th))
+    );
+
+    * {
+      --dout--t--fs: clamp(
+        calc(var(--dout--ft--min--fs) * var(--dout--ft--clamp--ratio) + var(--dout--ft--clamp--th)),
+        calc(var(--dout--t--fs--base) * var(--dout--ft--clamp--ratio) + var(--dout--ft--clamp--th)),
+        calc(var(--dout--ft--max--fs) * var(--dout--ft--clamp--ratio) + var(--dout--ft--clamp--th))
+      );
+    }
+
+    h1 {
+      --dout--ft--clamp--ratio: #{math.pow($ft--ratio, 6)};
+    }
+
+    h2 {
+      --dout--ft--clamp--ratio: #{math.pow($ft--ratio, 5)};
+    }
+
+    h3 {
+      --dout--ft--clamp--ratio: #{math.pow($ft--ratio, 4)};
+    }
+
+    h4 {
+      --dout--ft--clamp--ratio: #{math.pow($ft--ratio, 3)};
+    }
+
+    h5 {
+      --dout--ft--clamp--ratio: #{math.pow($ft--ratio, 2)};
+    }
+
+    h6 {
+      --dout--ft--clamp--ratio: #{math.pow($ft--ratio, 1)};
+    }
+  }
+}

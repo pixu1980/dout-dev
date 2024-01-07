@@ -1,22 +1,22 @@
 stagger {
-  --stagger--delay: 400ms;
+  --dout--ani--stagger--delay: 400ms;
 
   display: block;
 
   > * {
-    --stagger--index: 0;
-    --ani--delay: calc(var(--stagger--delay) * var(--stagger--index));
+    --dout--ani--stagger--index: 0;
+    --dout--ani--delay: calc(var(--dout--ani--stagger--delay) * var(--dout--ani--stagger--index));
   }
 }
 
 .stack.present {
   > :not(.present) {
     stagger:not(.fragment) {
-      --ani--name: none;
+      --dout--ani--name: none;
     }
   }
 }
 
 stagger.fragment:not(.visible) {
-  --ani--name: none;
+  --dout--ani--name: none;
 }

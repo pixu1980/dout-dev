@@ -1,12 +1,14 @@
-<last-article>
+<last-article container>
   <h2>My Last Article</h2>
   <article>
     <header>
-      <h1><smaller>{{posts[0].title}}</smaller></h1>
-      <h2><smaller>{{posts[0].tags[0].label}}</smaller></h2>
+      <a href="{{lastPost.path.replace('.', basePath)}}">
+        <h1>{{lastPost.title}}</h1>
+      </a>
+      <a href="{{basePath}}/tags/{{lastPost.tags[0].key}}.html">
+        <h2>{{lastPost.tags[0].label}}</h2>
+      </a>
     </header>
-    <content>
-      {{posts[0].description}}
-    </content>
+    <content>{{lastPost.description}}</content>
   </article>
 </last-article>

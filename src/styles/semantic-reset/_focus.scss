@@ -1,23 +1,22 @@
 :root {
-  --focus--color: var(--theme--focus-color);
-  --focus--width: 3px;
-  --focus--offset-from: 10px;
-  --focus--offset-to: 3px;
+  --dout--focus--width: 2px;
+  --dout--focus--offset-from: 8px;
+  --dout--focus--offset-to: 2px;
 
-  --focus--transition: outline 450ms ease-out, outline-offset 350ms ease-out;
+  --dout--focus--transition: outline 450ms ease-out, outline-offset 350ms ease-out;
 }
 
 :where(a, area, button, input, label:has(input), select, summary, textarea, [tabindex]) {
   color: inherit;
   background-color: transparent;
 
-  outline: var(--focus--width) dashed transparent;
-  outline-offset: var(--focus--offset-from);
-  transition: var(--focus--transition);
+  outline: var(--dout--focus--width) dashed transparent;
+  outline-offset: var(--dout--focus--offset-from);
+  transition: var(--dout--focus--transition);
 
   &:focus {
-    outline: var(--focus--width) solid var(--focus--color);
-    outline-offset: var(--focus--offset-to);
+    outline: var(--dout--focus--width) solid var(--dout--theme--focus-color);
+    outline-offset: var(--dout--focus--offset-to);
   }
 }
 
@@ -25,10 +24,11 @@
   outline: 0;
 }
 
-body:has(input[type='checkbox']:checked) :where(a, area, button, input, label:has(input), select, summary, textarea, [tabindex]) {
-  --focus--color: var(--theme--focus-color--switch);
-}
-
+// body:has([name='theme-switcher']:checked) {
+//   :where(a, area, button, input, label:has(input), select, summary, textarea, [tabindex]) {
+//     --dout--focus--color: var(--dout--theme--focus-color--switch);
+//   }
+// }
 
 @include detect(firefox) {
   * {

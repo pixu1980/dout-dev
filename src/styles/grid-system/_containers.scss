@@ -1,36 +1,39 @@
-@use 'sass:map';
+/// Generates Grid System container breakpoints selectors
+/// @param {object} $breakpoints [$dout-gs-breakpoints] - definition of all the breakpoints
+@mixin container-breakpoints($breakpoints: $dout-gs-breakpoints) {
+  @each $breakpoint-key, $breakpoint in $breakpoints {
+    $cw: map.get($breakpoint, cw);
+    $min-vw: map.get($breakpoint, min-vw);
+    $max-vw: map.get($breakpoint, max-vw);
 
-@mixin container-breakpoints($breakpoints: $gs-breakpoints) {
-  @each $key, $breakpoint in $breakpoints {
-    $container-width: map.get($breakpoint, container-width);
-    $container-gutter: map.get($breakpoint, container-gutter);
-    $min-viewport-width: map.get($breakpoint, min-viewport-width);
-    $max-viewport-width: map.get($breakpoint, max-viewport-width);
-
-    @include media($media-type: screen, $min-width: $min-viewport-width) {
+    @include helpers.media($media-type: screen, $min-width: $min-vw) {
       @at-root {
         :root {
-          --gs--container--width: #{$container-width};
-
-          // @if not $container-gutter {
-          //   --gs--container--gutter: 0;
-          // }
+          --dout--gs--container--width: #{$cw};
         }
       }
     }
   }
 }
 
-@mixin containers($breakpoints: $gs-breakpoints) {
-  :where(container, [container]) {
-    display: block;
-    width: var(--gs--container--width);
+/// Generates Grid System container selectors
+/// @param {object} $breakpoints [$dout-gs-breakpoints] - definition of all the breakpoints
+@mixin containers($breakpoints: $dout-gs-breakpoints) {
+  :where(container, .container, [container]) {
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: var(--dout--gs--container--width);
     height: auto;
-    padding: var(--gs--container--gutter);
+    padding: 0;
     margin: 0 auto;
 
-    &[fluid] {
-      width: 100%;
+    gap: var(--dout--gs--v-gutter);
+  }
+
+  [fluid] {
+    :where(container, .container, [container]) {
+      --dout--gs--container--width: 100%;
     }
   }
 

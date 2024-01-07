@@ -1,85 +1,131 @@
 :root {
-  // --color--cyan-300: #a2eae4;
-  // --color--cyan-400: #87dbff;
-  // --color--cyan-500: #3ca7ff;
-  // --color--cyan-600: #0c3d5c;
-  // --color--yellow-400: #fdd45b;
-  // --color--red-400: #e86a58;
-  // --color--green-300: #277987;
-  // --color--green-400: #4fd4ae;
-  // --color--green-500: #2fb28c;
-  // --color--salmon-300: #fdd7bd;
-  // --color--salmon-400: #fac5aa;
-  // --color--salmon-500: #f58c79;
-  // --color--white-200: #dedede;
-  // --color--white-300: #fefefe;
-  // --color--white-400: #ffffff;
-  // --color--black-300: #333333;
-  // --color--black-400: #2c292a;
-  // --color--black-500: #222222;
-  // --color--black-600: #0d0b0b;
-  // --color--black-700: #010101;
-  // --color--gray-300: #d8d8d8;
-  // --color--gray-400: #999387;
-  // --color--gray-500: #828282;
-  // --color--gray-600: #717171;
-  // --color--gray-700: #585858;
-  // --color--gray-800: #424242;
+  --dout--color--cyan-300: #a2eae4;
+  --dout--color--cyan-400: #87dbff;
+  --dout--color--cyan-500: #3ca7ff;
+  --dout--color--cyan-600: #0c3d5c;
 
-  --color--primary: #277987;
-  --color--secondary: #f5d861;
+  --dout--color--yellow-400: #fdd45b;
 
-  --color--white-400: #f1f1f1;
-  --color--white-500: #f6f6f6;
+  --dout--color--red-400: #e86a58;
 
-  --color--gray-300: #c7c7c7;
-  --color--gray-400: #909196;
-  --color--gray-500: #434343;
-  --color--gray-600: #2a2b33;
-  --color--gray-700: #1e1f24;
-  --color--gray-800: #141519;
+  --dout--color--green-400: #4fd4ae;
+  --dout--color--green-500: #2fb28c;
+  --dout--color--green-600: #277987;
 
-  --theme--color: var(--color--gray-400);
-  --theme--background-color: var(--color--gray-800);
-  --theme--header--background-color: var(--color--gray-700);
-  --theme--accent-color: var(--color--secondary);
-  --theme--accent-color--hover: var(--color--secondary--hover);
-  --theme--accent-color--alt: var(--color--primary);
-  --theme--accent-color--alt--hover: var(--color--primary);
-  --theme--highlight-color: var(--color--secondary);
-  --theme--focus-color: #f5d761cc;
+  --dout--color--salmon-300: #fdd7bd;
+  --dout--color--salmon-400: #fac5aa;
+  --dout--color--salmon-500: #f58c79;
 
-  --theme--color--switch: var(--color--black-400);
-  --theme--background-color--switch: var(--color--white-400);
-  --theme--header--background-color--switch: var(--color--white-500);
-  --theme--accent-color--switch: var(--color--green-300);
-  --theme--accent-color--hover--switch: var(--color--green-400);
-  --theme--accent-color--alt--switch: var(--color--yellow-400);
-  --theme--accent-color--alt--hover--switch: var(--color--yellow-400);
-  --theme--highlight-color--switch: var(--color--yellow-400);
-  --theme--focus-color--switch: #277987cc;
+  --dout--color--white-100: #dedede;
+  --dout--color--white-200: #f6f6f6;
+  --dout--color--white-300: #fefefe;
+  --dout--color--white-400: #ffffff;
+
+  --dout--color--black-300: #333333;
+  --dout--color--black-400: #2c292a;
+  --dout--color--black-500: #222222;
+  --dout--color--black-600: #0d0b0b;
+  --dout--color--black-700: #010101;
+
+  --dout--color--gray-300: #c7c7c7;
+  --dout--color--gray-400: #909196;
+  --dout--color--gray-500: #434343;
+  --dout--color--gray-600: #2a2b33;
+  --dout--color--gray-700: #141519;
+  --dout--color--gray-800: #1e1f24;
+
+  --dout--color--lightgray-300: #d8d8d8;
+  --dout--color--lightgray-400: #999387;
+  --dout--color--lightgray-500: #828282;
+  --dout--color--lightgray-600: #717171;
+  --dout--color--lightgray-700: #585858;
+  --dout--color--lightgray-800: #424242;
+
+  --dout--color--primary: #277987;
+  --dout--color--primary--hover: color-mix(in srgb, var(--dout--color--primary), #fff 20%);
+
+  --dout--color--secondary: #f5d861;
+  --dout--color--secondary--hover: color-mix(in srgb, var(--dout--color--secondary), #000 20%);
+
+  --dout--color--white-400: #f1f1f1;
+  --dout--color--white-500: #f6f6f6;
+
+  --dout--color--gray-300: #c7c7c7;
+  --dout--color--gray-400: #909196;
+  --dout--color--gray-500: #434343;
+  --dout--color--gray-600: #2a2b33;
+  --dout--color--gray-700: #1e1f24;
+  --dout--color--gray-800: #141519;
+
+  --dout--theme--dark--dout--color: var(--dout--color--gray-400);
+  --dout--theme--dark--background-color: var(--dout--color--gray-800);
+  --dout--theme--dark--header--background-color: var(--dout--color--gray-700);
+  --dout--theme--dark--accent-color: var(--dout--color--secondary);
+  --dout--theme--dark--accent-color--hover: var(--dout--color--secondary--hover);
+  --dout--theme--dark--accent-color--secondary: var(--dout--color--primary);
+  --dout--theme--dark--accent-color--secondary--hover: var(--dout--color--primary--hover);
+  --dout--theme--dark--highlight-color: var(--dout--color--secondary);
+  // --dout--theme--dark--dout--focus-color: #f5d761cc;
+  --dout--theme--dark--dout--focus-color: color-mix(in srgb, var(--dout--color--secondary), transparent 30%);
+
+  --dout--theme--bright--dout--color: var(--dout--color--black-400);
+  --dout--theme--bright--background-color: var(--dout--color--white-400);
+  --dout--theme--bright--header--background-color: var(--dout--color--white-500);
+  --dout--theme--bright--accent-color: var(--dout--color--primary);
+  --dout--theme--bright--accent-color--hover: var(--dout--color--primary--hover);
+  --dout--theme--bright--accent-color--secondary: var(--dout--color--secondary);
+  --dout--theme--bright--accent-color--secondary--hover: var(--dout--color--secondary--hover);
+  --dout--theme--bright--highlight-color: var(--dout--color--primary);
+  // --dout--theme--bright--dout--focus-color: #277987cc;
+  --dout--theme--bright--dout--focus-color: color-mix(in srgb, var(--dout--color--primary), transparent 30%);
+
+  :has([name='theme-switcher']:not(:checked)) {
+    --dout--theme--color: var(--dout--theme--dark--dout--color);
+    --dout--theme--background-color: var(--dout--theme--dark--background-color);
+    --dout--theme--header--background-color: var(--dout--theme--dark--header--background-color);
+    --dout--theme--accent-color: var(--dout--theme--dark--accent-color);
+    --dout--theme--accent-color--hover: var(--dout--theme--dark--accent-color--hover);
+    --dout--theme--accent-color--secondary: var(--dout--theme--dark--accent-color--secondary);
+    --dout--theme--accent-color--secondary--hover: var(--dout--theme--dark--accent-color--secondary--hover);
+    --dout--theme--highlight-color: var(--dout--theme--dark--highlight-color);
+    --dout--theme--focus-color: var(--dout--theme--dark--dout--focus-color);
+  }
+  :has([name='theme-switcher']:checked) {
+    --dout--theme--color: var(--dout--theme--bright--dout--color);
+    --dout--theme--background-color: var(--dout--theme--bright--background-color);
+    --dout--theme--header--background-color: var(--dout--theme--bright--header--background-color);
+    --dout--theme--accent-color: var(--dout--theme--bright--accent-color);
+    --dout--theme--accent-color--hover: var(--dout--theme--bright--accent-color--hover);
+    --dout--theme--accent-color--secondary: var(--dout--theme--bright--accent-color--secondary);
+    --dout--theme--accent-color--secondary--hover: var(--dout--theme--bright--accent-color--secondary--hover);
+    --dout--theme--highlight-color: var(--dout--theme--bright--highlight-color);
+    --dout--theme--focus-color: var(--dout--theme--bright--dout--focus-color);
+  }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --theme--color: var(--color--black-400);
-    --theme--background-color: var(--color--white-400);
-    --theme--header--background-color: var(--color--white-500);
-    --theme--accent-color: var(--color--green-300);
-    --theme--accent-color--hover: var(--color--green-400);
-    --theme--accent-color--alt: var(--color--yellow-400);
-    --theme--accent-color--alt--hover: var(--color--yellow-400);
-    --theme--highlight-color: var(--color--yellow-400);
-    --theme--focus-color: #277987cc;
-
-    --theme--color--switch: var(--color--gray-400);
-    --theme--background-color--switch: var(--color--gray-700);
-    --theme--header--background-color--switch: var(--color--gray-700);
-    --theme--accent-color--switch: var(--color--secondary);
-    --theme--accent-color--hover--switch: var(--color--secondary--hover);
-    --theme--accent-color--alt--switch: var(--color--primary);
-    --theme--accent-color--alt--hover--switch: var(--color--primary);
-    --theme--highlight-color--switch: var(--color--secondary);
-    --theme--focus-color--switch: #f5d761cc;
+    :has([theme-switcher]:not(:checked)) {
+      --dout--theme--color: var(--dout--theme--bright--dout--color);
+      --dout--theme--background-color: var(--dout--theme--bright--background-color);
+      --dout--theme--header--background-color: var(--dout--theme--bright--header--background-color);
+      --dout--theme--accent-color: var(--dout--theme--bright--accent-color);
+      --dout--theme--accent-color--hover: var(--dout--theme--bright--accent-color--hover);
+      --dout--theme--accent-color--secondary: var(--dout--theme--bright--accent-color--secondary);
+      --dout--theme--accent-color--secondary--hover: var(--dout--theme--bright--accent-color--secondary--hover);
+      --dout--theme--highlight-color: var(--dout--theme--bright--highlight-color);
+      --dout--theme--focus-color: var(--dout--theme--bright--dout--focus-color);
+    }
+    :has([theme-switcher]:checked) {
+      --dout--theme--color: var(--dout--theme--dark--dout--color);
+      --dout--theme--background-color: var(--dout--theme--dark--background-color);
+      --dout--theme--header--background-color: var(--dout--theme--dark--header--background-color);
+      --dout--theme--accent-color: var(--dout--theme--dark--accent-color);
+      --dout--theme--accent-color--hover: var(--dout--theme--dark--accent-color--hover);
+      --dout--theme--accent-color--secondary: var(--dout--theme--dark--accent-color--secondary);
+      --dout--theme--accent-color--secondary--hover: var(--dout--theme--dark--accent-color--secondary--hover);
+      --dout--theme--highlight-color: var(--dout--theme--dark--highlight-color);
+      --dout--theme--focus-color: var(--dout--theme--dark--dout--focus-color);
+    }
   }
 }

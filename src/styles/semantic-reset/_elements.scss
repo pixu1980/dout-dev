@@ -1,0 +1,109 @@
+ // article,
+  // aside,
+  // details,
+  // figcaption,
+  // figure,
+  // footer,
+  // header,
+  // hgroup,
+  // menu,
+  // nav,
+  // section {
+  //   display: block;
+  //   padding: 0;
+  // }
+
+  // hr {
+  //   margin: var(--dout--gutter) 0;
+  //   color: inherit;
+  //   background-color: currentColor;
+  //   border: 0;
+  //   opacity: 0.25;
+  //   overflow: visible;
+
+  //   &:not([size]) {
+  //     height: 1px;
+  //   }
+  // }
+
+  // caption {
+  //   padding-top: calc(var(--dout--gutter) / 2);
+  //   padding-bottom: calc(var(--dout--gutter) / 2);
+  //   color: inherit;
+  //   text-align: left;
+  // }
+
+  // legend {
+  //   float: left;
+  //   width: 100%;
+  //   padding: 0;
+  //   margin-bottom: calc(var(--dout--gutter) / 2);
+  //   font-size: calc(1.275rem + 0.3vw);
+  //   line-height: inherit;
+  //   max-width: 100%;
+  //   white-space: normal;
+
+  //   @media (max-width: 1200px) {
+  //     font-size: 1.5rem;
+  //   }
+
+  //   & + * {
+  //     clear: left;
+  //   }
+  // }
+
+  // dialog {
+  //   background-color: inherit;
+  //   border: solid;
+  //   color: inherit;
+  //   display: block;
+  //   height: -webkit-fit-content;
+  //   height: -moz-fit-content;
+  //   height: fit-content;
+  //   left: 0;
+  //   margin: auto;
+  //   padding: var(--dout--gutter);
+  //   position: absolute;
+  //   right: 0;
+  //   width: -webkit-fit-content;
+  //   width: -moz-fit-content;
+  //   width: fit-content;
+
+  //   &:not([open]) {
+  //     display: none;
+  //   }
+  // }
+
+  // ::-moz-focus-inner {
+  //   padding: 0;
+  //   border-style: none;
+  // }
+
+  // ::-moz-ui-invalid {
+  //   box-shadow: none;
+  // }
+
+  // ::-moz-focusring {
+  //   outline: 1px dotted ButtonText;
+  // }
+
+  // output {
+  //   display: inline-block;
+  // }
+
+  // summary {
+  //   display: list-item;
+  // }
+
+  // progress {
+  //   display: inline-block;
+  //   vertical-align: baseline;
+  // }
+
+  // template {
+  //   display: none;
+  // }
+
+  // [hidden] {
+  //   display: none;
+  // }

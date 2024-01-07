@@ -1,0 +1,10 @@
+@layer footer {
+  body > footer {
+    grid-area: footer;
+
+    position: sticky;
+    top: 100vh;
+
+    padding: var(--dout--gutter);
+  }
+}

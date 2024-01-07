@@ -1,0 +1,10 @@
+button,
+[type='button'],
+[type='reset'],
+[type='submit'],
+[type='image'],
+[type='checkbox'],
+[type='radio'],
+summary {
+  cursor: pointer;
+}

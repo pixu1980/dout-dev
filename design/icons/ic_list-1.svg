@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>ic_list</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2_HP_CARD" transform="translate(-947.000000, -363.000000)">
+            <g id="ic_list" transform="translate(947.000000, 363.000000)">
+                <g id="Group-5">
+                    <g id="Group-3" fill="#2A2B33">
+                        <rect id="Rectangle" x="0" y="0" width="35" height="35" rx="5"></rect>
+                    </g>
+                    <g id="Group-2" transform="translate(7.000000, 7.000000)" fill="#909196">
+                        <rect id="Rectangle" x="0" y="0" width="13" height="9" rx="1"></rect>
+                        <rect id="Rectangle" x="0" y="12" width="21" height="9" rx="1"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

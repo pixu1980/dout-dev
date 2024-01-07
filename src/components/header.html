@@ -1,23 +1,30 @@
-<header>
+<header container>
   <logo>
-    <a href="/" title="Do Ut Dev">
+    <a href="/" title="DoUt.dev">
       <h1>
-        <img src="{{basePath}}/assets/images/logo.svg" alt="" />
-        <smaller>DoUtDev</smaller>
+        <img src="{{basePath}}/assets/images/logo.svg" height="30" alt="DoUt.dev" />
+        DoUtDev
       </h1>
     </a>
   </logo>
   <menu primary>
-    <a href="{{basePath}}/pages/about.html">About</a>
-    <a href="{{basePath}}/pages/playground.html">Playground</a>
-    <a href="{{basePath}}/pages/404.html">404</a>
+    <a href="{{basePath}}/about.html" title="About" aria-label="Go to the About page">About</a>
+    <a href="{{basePath}}/playground.html" title="Playground" aria-label="Go to the Playground page">Playground</a>
+    <a href="{{basePath}}/404.html" title="Error" aria-label="Go to the Error page">404</a>
   </menu>
   <menu secondary>
-    <a href="{{basePath}}/pages/search.html">
+    <a href="{{basePath}}/search.html" title="Search" aria-label="Go to the Search page">
       <i class="icons-search"></i>
+      <span sr-only>Go to the Search page</span>
     </a>
-    <label for="theme-switcher" tabindex="0">
+    <label
+      for="theme-switcher"
+      title="Switch theme"
+      aria-label="Select this in order to cycle between bright and dark themes"
+      tabindex="0"
+    >
       <i class="icons-theme-dark"></i>
+      <span sr-only>Select this in order to cycle between bright and dark themes</span>
     </label>
   </menu>
 </header>

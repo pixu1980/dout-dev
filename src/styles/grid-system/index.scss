@@ -1,31 +1,41 @@
 @use 'sass:map';
+@use 'sass:meta';
+@use '../helpers';
+@use './functions';
 
-@import 'functions';
+@forward './helpers';
+
 @import 'variables';
 @import 'containers';
 @import 'rows';
 @import 'columns';
 @import 'utilities';
 
+/// Defines the grid system
+/// @param {number} $cols [$dout-gs-cols] - cols number
+/// @param {size | length} $gutter [$dout-gs-gutter] - horizontal gutter between grid cols
+/// @param {size | length} $v-gutter [$dout-gs-v-gutter] - vertical gutter between grid rows
+/// @param {object} $breakpoints [$dout-gs-breakpoints] - definition of all the breakpoints
 @mixin grid-system(
-  $columns: $gs-columns,
-  $gutter: $gs-gutter,
-  $v-gutter: $gs-v-gutter,
-  $breakpoints: $gs-breakpoints,
-  $breakpoints-first-key: $gs-breakpoints-first-key
+  $cols: $dout-gs-cols,
+  $gutter: $dout-gs-gutter,
+  $v-gutter: $dout-gs-v-gutter,
+  $breakpoints: $dout-gs-breakpoints
 ) {
   :root {
-    --gs--columns: #{$columns};
-    --gs--gutter: #{$gutter};
-    --gs--v-gutter: #{$v-gutter};
-    --gs--container--width: 100%;
-    --gs--container--gutter: 0 var(--gs--gutter);
+    --dout--gs--container--width: 100vw;
+    --dout--gs--cols: #{$cols};
+    --dout--gs--gutter: #{$gutter};
+    --dout--gs--v-gutter: #{$v-gutter};
   }
 
   @include containers($breakpoints);
-  @include rows();
-  @include columns($columns, $breakpoints, $breakpoints-first-key);
-  @include utilities($breakpoints, $breakpoints-first-key);
+  @include rows($breakpoints);
+  @include cols($cols, $breakpoints);
+  @include utilities($breakpoints);
 }
 
-@include grid-system();
+@layer grid-system {
+  // activates the grid system
+  @include grid-system();
+}

@@ -1,0 +1,17 @@
+<extends src="./layouts/leaf.html" locals='{"title": " - February 2022"}'>
+  <block name="content">
+    <h3>February 2022</h3>
+    <ol>
+      <each
+        loop="post, index in posts.filter(post => 
+              post.date >= new Date('2022-02-01') && post.date <= new Date('2022-02-28'))
+            "
+      >
+        <li><a href="{{post.path.replace('./', '../')}}">{{post.title}}{{post.date}}</a></li>
+      </each>
+    </ol>
+  </block>
+  <block name="aside">
+    <include src="./components/archive.html"></include>
+  </block>
+</extends>

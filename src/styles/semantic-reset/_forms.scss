@@ -42,7 +42,7 @@ input {
   &[type='url'],
   &[type='email'],
   &[type='number'] {
-    direction: var(--base-direction);
+    direction: var(--dout--direction);
   }
 }
 
@@ -123,6 +123,7 @@ select {
 select {
   -moz-appearance: none;
   -webkit-appearance: none;
+  appearance: none;
   text-transform: none;
   word-wrap: normal;
 
@@ -144,8 +145,17 @@ button,
 [type='reset'],
 [type='submit'] {
   -webkit-appearance: button;
+  appearance: button;
 
   &:not(disabled) {
     cursor: pointer;
   }
+}
+
+iframe,
+input,
+select,
+textarea {
+  height: auto;
+  max-width: 100%;
 }
