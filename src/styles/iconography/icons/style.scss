@@ -33,6 +33,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   [class^='path'] {
+    font-family: '#{$doutdev-icons--font-family}' !important;
+
     + [class^='path'] {
       position: absolute;
     }

@@ -5,53 +5,8 @@
   @import 'helpers';
   @import 'colors';
   @import 'semantic-reset';
-  @import 'grid-system';
   @import 'typography';
   @import 'iconography';
   @import 'layout';
   @import 'components';
-
-
-  // html {
-  //   // font-size: var(--dout--font-size);
-  //   // line-height: var(--dout--line-height);
-  //   // font-weight: var(--dout--font-weight);
-  //   font-family: var(--dout--font-family);
-  //   background: inherit;
-  //   vertical-align: baseline;
-  //   word-break: normal;
-  //   color: inherit;
-  //   accent-color: var(--dout--theme--accent-color);
-
-  //   -webkit-text-size-adjust: 100%;
-  //   -webkit-tap-highlight-color: transparent;
-  // }
-
-  // body {
-  //   min-block-size: 100vh;
-  //   color: var(--dout--theme--color);
-  //   background-color: var(--dout--theme--background-color);
-  //   margin: 0;
-  //   padding: 0;
-  // }
-
-  // @import 'iconography';
-  // @import 'a11y';
-  // @import 'layouts';
-  // @import 'code';
-
-  // :root {
-  //   --gs--v-gutter: 0;
-  // }
-
-  // layout-switch {
-  //   display: inline-flex;
-  //   flex-flow: row nowrap;
-  //   gap: var(--dout--gutter);
-
-  //   height: 100%;
-
-  //   justify-content: start;
-  //   align-items: center;
-  // }
 }

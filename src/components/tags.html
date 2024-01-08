@@ -1,16 +1,11 @@
-<tags container>
-  <div row>
-    <div col size="md-10">
-      <tags-wrapper>
-        <tags>
-          <a href="{{basePath}}/index.html">All</a>
-          <each loop="tag, index in tags">
-            <a href="{{basePath}}/{{tag.path}}">{{tag.label}}</a>
-          </each>
-          <span>&nbsp;</span>
-        </tags>
-      </tags-wrapper>
-    </div>
-    <div col size="md-2"></div>
-  </div>
+<tags>
+  <tags-wrapper>
+    <tags>
+      <a href="{{basePath}}/index.html">All</a>
+      <each loop="tag, index in tags">
+        <a href="{{basePath}}/{{tag.path}}">{{tag.label}}</a>
+      </each>
+      <span>&nbsp;</span>
+    </tags>
+  </tags-wrapper>
 </tags>

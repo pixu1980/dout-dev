@@ -1,11 +1,11 @@
 last-article {
   display: flex;
   flex-flow: row nowrap;
-  // gap: var(--dout--gutter);
+  gap: var(--dout--gutter);
   // padding: var(--dout--gutter);
 
-  // background-color: var(--dout--theme--header--background-color);
-  // transition: background-color 0.2s linear;
+  background-color: var(--dout--theme--header--background-color);
+  transition: background-color 0.2s linear;
 
   article {
     display: flex;
@@ -25,6 +25,6 @@ last-article {
 
 body:has([name='theme-switcher']:checked) {
   last-article {
-    // background-color: var(--dout--theme--header--background-color--switch);
+    background-color: var(--dout--theme--header--background-color--switch);
   }
 }
