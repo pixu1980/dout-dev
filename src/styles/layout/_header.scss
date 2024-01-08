@@ -1,9 +1,11 @@
 @layer header {
   :root {
-    --dout--header--height: calc(4rem + var(--dout--gutter) * 2);
+    --dout--header--height: calc(6rem + var(--dout--gutter) * 2);
   }
 
   body > header {
+    // --dout--t--line-height: var(--dout--header--height);
+
     grid-area: header;
 
     position: sticky;
@@ -70,9 +72,15 @@
       flex-shrink: 0;
 
       > * {
+        --dout--t--lh: 1;
         display: inline-block;
-        width: var(--dout--t--fs);
+        
+        // width: var(--dout--t--fs);
+        // height: var(--dout--t--fs);
+        // line-height: var(--dout--t--fs);
         aspect-ratio: 1;
+        border-radius: 50%;
+        padding: 1rem;
       }
     }
   }

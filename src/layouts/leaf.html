@@ -14,18 +14,12 @@
     <main>
       <include src="./components/last-article.html" locals='{"basePath": ".."}'></include>
       <include src="./components/tags.html" locals='{"basePath": ".."}'></include>
-      <div container>
-        <div row>
-          <div col size="md-10">
-            <block name="content"></block>
-          </div>
-          <div col size="md-2">
-            <aside>
-              <block name="aside"></block>
-            </aside>
-          </div>
-        </div>
-      </div>
+      <content>
+        <block name="content"></block>
+      </content>
+      <aside>
+        <block name="aside"></block>
+      </aside>
     </main>
     <include src="./components/footer.html" locals='{"basePath": ".."}'></include>
     <script src="../scripts/index.js" type="module"></script>

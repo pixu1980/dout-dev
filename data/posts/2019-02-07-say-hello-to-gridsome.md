@@ -45,7 +45,7 @@ One of the main goals of Gridsome is to make a framework that let you build webs
 
 #### A better way to build websites
 
-Gridsome is built for the JAMstack workflow - a new way to build websites that gives you better performance, higher security, cheaper hosting, and a better developer experience. Generate prerendered (static) pages at build time for SEO-purpose and add powerful dynamic functionality with APIs and Vue.js.
+Gridsome is built for the JAMstack workflow - a new way to build websites that gives you better performance, higher security, cheaper hosting, and a better developer experience. Generate pre-rendered (static) pages at build time for SEO-purpose and add powerful dynamic functionality with APIs and Vue.js.
 
 We believe the SSGs / JAMstack trend is just getting started. When you have first started to make websites this way there is no way back. You feel almost "dirty" when going back to a traditional WordPress / CMS setup.
 

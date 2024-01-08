@@ -1,10 +1,15 @@
 @layer elements {
   a {
-    cursor: pointer;
     color: var(--dout--theme--accent-color);
     background-color: transparent;
+    padding-inline: 0.5rem;
+    border-radius: 0.6rem;
+
     text-decoration: none;
+
     transition: var(--dout--focus--transition), color 0.3s ease-in-out;
+
+    cursor: pointer;
 
     &:hover {
       text-decoration: underline;
@@ -12,8 +17,9 @@
 
     &:is(:hover, :visited) {
       color: var(--dout--theme--accent-color--hover);
-      text-shadow: none;
       border: none;
+
+      text-shadow: none;
     }
   }
 
