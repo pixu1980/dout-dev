@@ -1,8 +1,10 @@
 last-article {
+  grid-area: last;
+  
   display: flex;
   flex-flow: row nowrap;
   gap: var(--dout--gutter);
-  // padding: var(--dout--gutter);
+  padding: var(--dout--gutter);
 
   background-color: var(--dout--theme--header--background-color);
   transition: background-color 0.2s linear;

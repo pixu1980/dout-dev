@@ -12,7 +12,10 @@
     <include src="./components/theme-switcher.html" locals='{"basePath": ".."}'></include>
     <include src="./components/header.html" locals='{"basePath": ".."}'></include>
     <main>
-      <include src="./components/last-article.html" locals='{"basePath": ".."}'></include>
+      <hero>
+        <include src="./components/about-me.html" locals='{"basePath": ".."}'></include>
+        <include src="./components/last-article.html" locals='{"basePath": ".."}'></include>
+      </hero>
       <include src="./components/tags.html" locals='{"basePath": ".."}'></include>
       <content>
         <block name="content"></block>
@@ -22,7 +25,9 @@
       </aside>
     </main>
     <include src="./components/footer.html" locals='{"basePath": ".."}'></include>
-    <script src="../scripts/index.js" type="module"></script>
-    <block name="scripts"></block>
+    <block name="scripts">
+      <script src="../scripts/index.js" type="module"></script>
+      <script src="../scripts/search.js" type="module"></script>
+    </block>
   </body>
 </html>

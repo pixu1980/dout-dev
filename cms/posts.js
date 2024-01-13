@@ -60,7 +60,7 @@ module.exports = (parser, paths) => {
 
   posts.sort((postA, postB) => postB.date.getTime() - postA.date.getTime());
 
-  fs.writeFileSync(path.join(paths.data, 'posts.json'), JSON.stringify(posts));
+  fs.writeFileSync(path.join(paths.data, 'posts.json'), JSON.stringify(posts, null, 2));
   console.log('posts.json file written in ', path.join(paths.data, 'posts.json'));
 
   return posts;

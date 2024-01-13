@@ -4,7 +4,7 @@
 
     width: 100vw;
     min-height: 100vh;
-    
+
     grid-template-areas:
       'header'
       'main'
@@ -15,6 +15,7 @@
 
   @import 'header';
   @import 'main';
+  @import 'content';
   @import 'aside';
   @import 'footer';
 }

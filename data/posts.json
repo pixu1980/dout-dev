@@ -1,1 +1,365 @@
-[{"title":"Say hello to 2023 🎉","date":"2023-01-01T14:41:22.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"releases","label":"Releases"}],"canonicalUrl":false,"coverImage":"../assets/images/alexandr-podvalny-220262-unsplash.jpg","description":"Blog under construction","name":"2023-01-01-say-hello-2023","path":"./posts/2023-01-01-say-hello-2023.html"},{"title":"No Matter","date":"2022-12-20T15:41:22.000Z","tags":[{"key":"markdown","label":"Markdown"},{"key":"example","label":"Example"}],"description":"One line only description","name":"2022-12-20-no-matter-new","path":"./posts/2022-12-20-no-matter-new.html"},{"title":"Concerning…","date":"2022-03-25T00:00:00.000Z","published":true,"tags":[{"key":"generic","label":"Generic"}],"series":["Concerning…"],"description":"Concerning…","name":"2022-03-25-concerning","path":"./posts/2022-03-25-concerning.html"},{"title":"Welcome to dout.dev","date":"2022-03-24T00:00:00.000Z","published":true,"tags":[{"key":"generic","label":"Generic"}],"description":"Welcome to dout.dev","name":"2022-03-24-welcome-to-dout-dev","path":"./posts/2022-03-24-welcome-to-dout-dev.html"},{"title":"Building dout.dev blog - Part II","date":"2022-03-22T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"}],"canonicalUrl":false,"description":"Building dout.dev blog - Part II","name":"2022-03-22-building-dout-dev-blog-part-2","path":"./posts/2022-03-22-building-dout-dev-blog-part-2.html"},{"title":"Building dout.dev blog","date":"2022-03-21T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"}],"canonicalUrl":false,"description":"Building dout.dev blog","name":"2022-03-21-building-dout-dev-blog","path":"./posts/2022-03-21-building-dout-dev-blog.html"},{"title":"CSS Properties Hierarchy","date":"2022-03-18T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"},{"key":"css","label":"CSS"}],"canonicalUrl":false,"description":"CSS Properties Hierarchy","name":"2022-03-18-css-properties-hierarchy","path":"./posts/2022-03-18-css-properties-hierarchy.html"},{"title":"Testing CodePen","date":"2022-03-16T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":true,"canonicalUrl":false,"description":"One line only description","name":"2022-03-16-test-codepen","path":"./posts/2022-03-16-test-codepen.html"},{"title":"You can edit CSS","date":"2022-03-12T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":true,"canonicalUrl":false,"description":"One line only description","name":"2022-03-12-you-can-edit-css","path":"./posts/2022-03-12-you-can-edit-css.html"},{"title":"No Matter","date":"2022-03-03T15:41:22.000Z","tags":[],"description":"One line only description","name":"2022-03-03-no-matter","path":"./posts/2022-03-03-no-matter.html"},{"title":"Custom Grid System","date":"2022-03-03T14:41:22.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"releases","label":"Releases"}],"canonicalUrl":false,"coverImage":"./images/alexandr-podvalny-220262-unsplash.jpg","description":"Blog under construction","name":"2022-03-03-custom-grid-system","path":"./posts/2022-03-03-custom-grid-system.html"},{"title":"You can use express tags… TODAY!","date":"2022-02-25T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"},{"key":"css","label":"CSS"}],"canonicalUrl":false,"coverImage":"./images/svg-code.jpg","description":"You can use express tags… TODAY!","name":"2022-02-25-you-can-express-tags-today","path":"./posts/2022-02-25-you-can-express-tags-today.html"},{"title":"Say hello to 2022 🎉","date":"2022-01-01T14:41:22.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"releases","label":"Releases"}],"canonicalUrl":false,"coverImage":"../assets/images/alexandr-podvalny-220262-unsplash.jpg","description":"Blog under construction","name":"2022-01-01-say-hello-2022","path":"./posts/2022-01-01-say-hello-2022.html"},{"title":"A NEW post with a NEW cover image","date":"2021-03-08T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":false,"canonicalUrl":false,"description":"One line only description","name":"2021-03-08-a-new-post-with-a-new-cover","path":"./posts/2021-03-08-a-new-post-with-a-new-cover.html"},{"title":"Testing CodePen","date":"2021-03-07T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":true,"canonicalUrl":false,"description":"One line only description","name":"2021-03-07-hating-css-utility-classes","path":"./posts/2021-03-07-hating-css-utility-classes.html"},{"title":"Testing CodePen","date":"2021-03-05T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":true,"canonicalUrl":false,"description":"One line only description","name":"2021-03-05-gradient-borders","path":"./posts/2021-03-05-gradient-borders.html"},{"title":"Say Hello to Gridsome NEW","date":"2021-03-01T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":true,"canonicalUrl":false,"description":"One line only description","name":"2021-03-01-say-hello-to-gridsome-new","path":"./posts/2021-03-01-say-hello-to-gridsome-new.html"},{"title":"Say hello to Gridsome 🎉","date":"2019-02-07T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"releases","label":"Releases"}],"canonicalUrl":false,"description":"One line only description","name":"2019-02-07-say-hello-to-gridsome","path":"./posts/2019-02-07-say-hello-to-gridsome.html"},{"title":"Markdown test file","date":"2019-02-06T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"test-files","label":"Test files"}],"canonicalUrl":false,"description":"One line only description","name":"2019-02-06-markdown-test-file","path":"./posts/2019-02-06-markdown-test-file.html"},{"title":"A post with a cover image","date":"2019-01-07T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":false,"canonicalUrl":false,"description":"One line only description","name":"2019-01-07-a-post-with-a-cover","path":"./posts/2019-01-07-a-post-with-a-cover.html"}]
+[
+  {
+    "title": "Say hello to 2023 🎉",
+    "date": "2023-01-01T14:41:22.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown"
+      },
+      {
+        "key": "releases",
+        "label": "Releases"
+      }
+    ],
+    "canonicalUrl": false,
+    "coverImage": "../assets/images/alexandr-podvalny-220262-unsplash.jpg",
+    "description": "Blog under construction",
+    "name": "2023-01-01-say-hello-2023",
+    "path": "./posts/2023-01-01-say-hello-2023.html"
+  },
+  {
+    "title": "No Matter",
+    "date": "2022-12-20T15:41:22.000Z",
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown"
+      },
+      {
+        "key": "example",
+        "label": "Example"
+      }
+    ],
+    "description": "One line only description",
+    "name": "2022-12-20-no-matter-new",
+    "path": "./posts/2022-12-20-no-matter-new.html"
+  },
+  {
+    "title": "Concerning…",
+    "date": "2022-03-25T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "generic",
+        "label": "Generic"
+      }
+    ],
+    "series": [
+      "Concerning…"
+    ],
+    "description": "Concerning…",
+    "name": "2022-03-25-concerning",
+    "path": "./posts/2022-03-25-concerning.html"
+  },
+  {
+    "title": "Welcome to dout.dev",
+    "date": "2022-03-24T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "generic",
+        "label": "Generic"
+      }
+    ],
+    "description": "Welcome to dout.dev",
+    "name": "2022-03-24-welcome-to-dout-dev",
+    "path": "./posts/2022-03-24-welcome-to-dout-dev.html"
+  },
+  {
+    "title": "Building dout.dev blog - Part II",
+    "date": "2022-03-22T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "html",
+        "label": "HTML"
+      }
+    ],
+    "canonicalUrl": false,
+    "description": "Building dout.dev blog - Part II",
+    "name": "2022-03-22-building-dout-dev-blog-part-2",
+    "path": "./posts/2022-03-22-building-dout-dev-blog-part-2.html"
+  },
+  {
+    "title": "Building dout.dev blog",
+    "date": "2022-03-21T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "html",
+        "label": "HTML"
+      }
+    ],
+    "canonicalUrl": false,
+    "description": "Building dout.dev blog",
+    "name": "2022-03-21-building-dout-dev-blog",
+    "path": "./posts/2022-03-21-building-dout-dev-blog.html"
+  },
+  {
+    "title": "CSS Properties Hierarchy",
+    "date": "2022-03-18T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "html",
+        "label": "HTML"
+      },
+      {
+        "key": "css",
+        "label": "CSS"
+      }
+    ],
+    "canonicalUrl": false,
+    "description": "CSS Properties Hierarchy",
+    "name": "2022-03-18-css-properties-hierarchy",
+    "path": "./posts/2022-03-18-css-properties-hierarchy.html"
+  },
+  {
+    "title": "Testing CodePen",
+    "date": "2022-03-16T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown"
+      },
+      {
+        "key": "cover-image",
+        "label": "Cover Image"
+      }
+    ],
+    "series": true,
+    "canonicalUrl": false,
+    "description": "One line only description",
+    "name": "2022-03-16-test-codepen",
+    "path": "./posts/2022-03-16-test-codepen.html"
+  },
+  {
+    "title": "You can edit CSS",
+    "date": "2022-03-12T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown"
+      },
+      {
+        "key": "cover-image",
+        "label": "Cover Image"
+      }
+    ],
+    "series": true,
+    "canonicalUrl": false,
+    "description": "One line only description",
+    "name": "2022-03-12-you-can-edit-css",
+    "path": "./posts/2022-03-12-you-can-edit-css.html"
+  },
+  {
+    "title": "No Matter",
+    "date": "2022-03-03T15:41:22.000Z",
+    "tags": [],
+    "description": "One line only description",
+    "name": "2022-03-03-no-matter",
+    "path": "./posts/2022-03-03-no-matter.html"
+  },
+  {
+    "title": "Custom Grid System",
+    "date": "2022-03-03T14:41:22.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown"
+      },
+      {
+        "key": "releases",
+        "label": "Releases"
+      }
+    ],
+    "canonicalUrl": false,
+    "coverImage": "./images/alexandr-podvalny-220262-unsplash.jpg",
+    "description": "Blog under construction",
+    "name": "2022-03-03-custom-grid-system",
+    "path": "./posts/2022-03-03-custom-grid-system.html"
+  },
+  {
+    "title": "You can use express tags… TODAY!",
+    "date": "2022-02-25T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "html",
+        "label": "HTML"
+      },
+      {
+        "key": "css",
+        "label": "CSS"
+      }
+    ],
+    "canonicalUrl": false,
+    "coverImage": "./images/svg-code.jpg",
+    "description": "You can use express tags… TODAY!",
+    "name": "2022-02-25-you-can-express-tags-today",
+    "path": "./posts/2022-02-25-you-can-express-tags-today.html"
+  },
+  {
+    "title": "Say hello to 2022 🎉",
+    "date": "2022-01-01T14:41:22.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown"
+      },
+      {
+        "key": "releases",
+        "label": "Releases"
+      }
+    ],
+    "canonicalUrl": false,
+    "coverImage": "../assets/images/alexandr-podvalny-220262-unsplash.jpg",
+    "description": "Blog under construction",
+    "name": "2022-01-01-say-hello-2022",
+    "path": "./posts/2022-01-01-say-hello-2022.html"
+  },
+  {
+    "title": "A NEW post with a NEW cover image",
+    "date": "2021-03-08T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown"
+      },
+      {
+        "key": "cover-image",
+        "label": "Cover Image"
+      }
+    ],
+    "series": false,
+    "canonicalUrl": false,
+    "description": "One line only description",
+    "name": "2021-03-08-a-new-post-with-a-new-cover",
+    "path": "./posts/2021-03-08-a-new-post-with-a-new-cover.html"
+  },
+  {
+    "title": "Testing CodePen",
+    "date": "2021-03-07T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown"
+      },
+      {
+        "key": "cover-image",
+        "label": "Cover Image"
+      }
+    ],
+    "series": true,
+    "canonicalUrl": false,
+    "description": "One line only description",
+    "name": "2021-03-07-hating-css-utility-classes",
+    "path": "./posts/2021-03-07-hating-css-utility-classes.html"
+  },
+  {
+    "title": "Testing CodePen",
+    "date": "2021-03-05T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown"
+      },
+      {
+        "key": "cover-image",
+        "label": "Cover Image"
+      }
+    ],
+    "series": true,
+    "canonicalUrl": false,
+    "description": "One line only description",
+    "name": "2021-03-05-gradient-borders",
+    "path": "./posts/2021-03-05-gradient-borders.html"
+  },
+  {
+    "title": "Say Hello to Gridsome NEW",
+    "date": "2021-03-01T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown"
+      },
+      {
+        "key": "cover-image",
+        "label": "Cover Image"
+      }
+    ],
+    "series": true,
+    "canonicalUrl": false,
+    "description": "One line only description",
+    "name": "2021-03-01-say-hello-to-gridsome-new",
+    "path": "./posts/2021-03-01-say-hello-to-gridsome-new.html"
+  },
+  {
+    "title": "Say hello to Gridsome 🎉",
+    "date": "2019-02-07T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown"
+      },
+      {
+        "key": "releases",
+        "label": "Releases"
+      }
+    ],
+    "canonicalUrl": false,
+    "description": "One line only description",
+    "name": "2019-02-07-say-hello-to-gridsome",
+    "path": "./posts/2019-02-07-say-hello-to-gridsome.html"
+  },
+  {
+    "title": "Markdown test file",
+    "date": "2019-02-06T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown"
+      },
+      {
+        "key": "test-files",
+        "label": "Test files"
+      }
+    ],
+    "canonicalUrl": false,
+    "description": "One line only description",
+    "name": "2019-02-06-markdown-test-file",
+    "path": "./posts/2019-02-06-markdown-test-file.html"
+  },
+  {
+    "title": "A post with a cover image",
+    "date": "2019-01-07T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown"
+      },
+      {
+        "key": "cover-image",
+        "label": "Cover Image"
+      }
+    ],
+    "series": false,
+    "canonicalUrl": false,
+    "description": "One line only description",
+    "name": "2019-01-07-a-post-with-a-cover",
+    "path": "./posts/2019-01-07-a-post-with-a-cover.html"
+  }
+]

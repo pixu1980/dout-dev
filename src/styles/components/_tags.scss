@@ -1,9 +1,11 @@
-tags-wrapper {
+tags {
+  grid-area: tags;
+  
   display: block;
   width: 100%;
   padding: calc(1rem - var(--dout--focus--offset-from)) calc(var(--dout--gutter) - var(--dout--focus--offset-from));
 
-  tags {
+  tags-list {
     display: flex;
     flex-flow: row nowrap;
     gap: calc(1rem - (var(--dout--focus--offset-from) * 2));
@@ -25,7 +27,7 @@ tags-wrapper {
   a {
     // TODO: use color variables
     display: inline-flex;
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 0.3rem 1rem;
     color: #909196;
     background-color: #2a2b33;

@@ -1,16 +1,25 @@
 <extends src="./layouts/root.html" locals='{"title": ""}'>
   <block name="content">
     <articles>
-      <h3>Welcome Home</h3>
-      <ol>
-        <each loop="post, index in posts.filter(post => post.date >= months[3].from && post.date <= months[0].to)">
-          <li><a href="{{post.path}}">{{post.title}}{{post.date}}</a></li>
-        </each>
-      </ol>
+      <h3>{{months[0].label}}</h3>
+      <each loop="post, index in posts.filter(post => post.date >= months[0].from && post.date <= months[0].to)">
+        {{post.date.toLocaleDateString('it-IT')}}<a href="{{post.path}}">{{post.title}}</a>
+      </each>
+      <h3>{{months[1].label}}</h3>
+      <each loop="post, index in posts.filter(post => post.date >= months[1].from && post.date <= months[1].to)">
+        {{post.date.toLocaleDateString('it-IT')}}<a href="{{post.path}}">{{post.title}}</a>
+      </each>
+      <h3>{{months[2].label}}</h3>
+      <each loop="post, index in posts.filter(post => post.date >= months[2].from && post.date <= months[2].to)">
+        {{post.date.toLocaleDateString('it-IT')}}<a href="{{post.path}}">{{post.title}}</a>
+      </each>
     </articles>
   </block>
   <block name="aside">
     <include src="./components/archive.html"></include>
+  </block>
+  <block name="scripts">
+    <script src="./scripts/search.js"></script>
   </block>
 </extends>
 

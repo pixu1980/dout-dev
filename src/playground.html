@@ -50,7 +50,7 @@
     </p>
     <ol>
       <each loop="post, index in posts">
-        <li><a href="{{post.path}}">{{post.title}}{{new Date(post.date)}}</a></li>
+        <li>{{post.date.toLocaleDateString('it-IT')}}<a href="{{post.path}}">{{post.title}}</a></li>
       </each>
     </ol>
   </block>
