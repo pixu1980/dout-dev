@@ -1,7 +1,8 @@
 @layer api {
   :root {
     --dout--gutter: 1rem;
-    --dout--block-margin: 0 0 var(--dout--gutter);
+    // --dout--block-margin: 0 0 var(--dout--gutter);
+    --dout--block-margin: 0;
 
     --dout--color-primary: hsl(0, 0%, 96%);
     --dout--color-secondary: hsl(0, 0%, 92%);

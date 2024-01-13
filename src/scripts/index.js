@@ -1,5 +1,5 @@
-import packageJSON from '../../package.json';
+import { version } from '../../package.json';
 
 window.addEventListener('DOMContentLoaded', () => {
-  console.log(`Welcome to the DoUt.dev blog, version ${packageJSON.version}`);
+  console.log(`Welcome to the DoUt.dev blog, v${version}`);
 });

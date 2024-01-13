@@ -1,1 +1,42 @@
-[{"key":"markdown","label":"Markdown","path":"./tags/markdown.html"},{"key":"releases","label":"Releases","path":"./tags/releases.html"},{"key":"example","label":"Example","path":"./tags/example.html"},{"key":"generic","label":"Generic","path":"./tags/generic.html"},{"key":"html","label":"HTML","path":"./tags/html.html"},{"key":"css","label":"CSS","path":"./tags/css.html"},{"key":"cover-image","label":"Cover Image","path":"./tags/cover-image.html"},{"key":"test-files","label":"Test files","path":"./tags/test-files.html"}]
+[
+  {
+    "key": "markdown",
+    "label": "Markdown",
+    "path": "./tags/markdown.html"
+  },
+  {
+    "key": "releases",
+    "label": "Releases",
+    "path": "./tags/releases.html"
+  },
+  {
+    "key": "example",
+    "label": "Example",
+    "path": "./tags/example.html"
+  },
+  {
+    "key": "generic",
+    "label": "Generic",
+    "path": "./tags/generic.html"
+  },
+  {
+    "key": "html",
+    "label": "HTML",
+    "path": "./tags/html.html"
+  },
+  {
+    "key": "css",
+    "label": "CSS",
+    "path": "./tags/css.html"
+  },
+  {
+    "key": "cover-image",
+    "label": "Cover Image",
+    "path": "./tags/cover-image.html"
+  },
+  {
+    "key": "test-files",
+    "label": "Test files",
+    "path": "./tags/test-files.html"
+  }
+]

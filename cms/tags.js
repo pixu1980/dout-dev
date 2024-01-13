@@ -27,7 +27,9 @@ module.exports = (parser, paths, posts) => {
       tags.map((tag) => ({
         ...tag,
         path: tag.path.replaceAll(paths.src, '.'),
-      }))
+      })),
+      null,
+      2
     )
   );
 

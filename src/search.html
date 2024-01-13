@@ -1,9 +1,11 @@
 <extends src="./layouts/root.html" locals='{"title": " - Search"}'>
   <block name="content">
-    <input type="text" list="autocomplete-data" aria-label="Filter and select a post to open its page" />
+    <input type="text" list="autocomplete-data" aria-label="Search a post by title" />
     <datalist id="autocomplete-data">
       <each loop="post, index in posts">
-        <option value="{{post.path}}">{{post.title}}</option>
+        <option value="{{post.path.replace('.', '').replace('html', '.html')}}">
+          {{post.title}} (<each loop="tag, index in post.tags">{{index!==0?', ':''}}{{tag.label}}</each>)
+        </option>
       </each>
     </datalist>
   </block>

@@ -39,7 +39,7 @@
           flex-flow: row nowrap;
           align-items: center;
           justify-content: center;
-          gap: 0.3ch;
+          gap: 1.5rem;
 
           line-height: 1;
           vertical-align: middle;
@@ -71,7 +71,7 @@
       flex-grow: 0;
       flex-shrink: 0;
 
-      > * {
+      > a, label {
         --dout--t--lh: 1;
         display: inline-block;
         

@@ -1,10 +1,12 @@
 @layer archive {
   archive {
+    grid-area: archive;
+    
     display: flex;
     flex-flow: column nowrap;
     align-items: start;
     justify-content: start;
 
-    gap: var(--dout--gutter);
+    gap: calc(var(--dout--gutter) / 3);
   }
 }

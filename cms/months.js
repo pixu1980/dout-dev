@@ -45,7 +45,9 @@ module.exports = (parser, paths, posts) => {
       months.map((month) => ({
         ...month,
         path: month.path.replaceAll(paths.src, '.'),
-      }))
+      })),
+      null,
+      2
     )
   );
   console.log('months.json file written in ', path.join(paths.data, 'months.json'));

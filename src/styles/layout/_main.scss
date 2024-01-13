@@ -2,8 +2,12 @@
   body > main {
     grid-area: main;
 
-    * {
-      padding: var(--dout--gutter);
-    }
+    display: grid;
+    grid-template-rows: 15rem;
+    grid-template-columns: 1fr 30rem;
+    grid-template-areas:
+      'hero hero'
+      'tags tags'
+      'content archive';
   }
 }
