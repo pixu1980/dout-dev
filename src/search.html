@@ -1,6 +1,7 @@
 <extends src="./layouts/root.html" locals='{"title": " - Search"}'>
   <block name="content">
-    <input type="text" list="autocomplete-data" aria-label="Search a post by title" />
+    <!-- TODO: implement search datalist -->
+    <input type="search" list="autocomplete-data" aria-label="Search a post by title" />
     <datalist id="autocomplete-data">
       <each loop="post, index in posts">
         <option value="{{post.path.replace('.', '').replace('html', '.html')}}">

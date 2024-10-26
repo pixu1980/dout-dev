@@ -1,0 +1,23 @@
+@layer semantic-reset {
+  // TODO
+  // https://krdevnotes.com/5-best-css-reset-normalization-libraries/
+  // https://piccalil.li/blog/a-more-modern-css-reset/
+  // https://github.com/Semantic-Org/UI-Reset
+  // https://mattbrictson.com/blog/css-normalize-and-reset
+  // https://gist.github.com/devinschumacher/6cbd52c082040f0e4c414836aebdb36f
+  // https://nuejs.org/docs/css-best-practices.html
+  // https://www.reddit.com/r/Frontend/comments/1bdsqpr/ecss_simple_rules_for_efficient_css/
+  // https://ecss.info/en/#intro
+  // https://github.com/cferdinandi/kraken/blob/master/src/scss/components/_reset.scss
+    
+  // https://github.com/5t3ph/course-accessible-cross-browser-forms
+  
+  
+  // https://projects.dutchcelt.com/system.css/
+  // https://simplecss.org/demo
+  // https://picocss.com
+  // https://watercss.kognise.dev
+   * {
+    box-sizing: border-box;
+   }
+}

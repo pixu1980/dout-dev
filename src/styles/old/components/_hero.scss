@@ -1,0 +1,21 @@
+@layer hero {
+  hero {
+    grid-area: hero;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'last about';
+
+    // background-color: var(--dude--theme--header--background-color);
+    // transition: background-color 0.2s linear;
+  }
+
+  :has([name='color-scheme-switcher']:checked) {
+    hero {
+      background-color: var(--dude--theme--header--background-color--switch);
+    }
+  }
+
+  @import 'last-article';
+  @import 'about-me';
+}

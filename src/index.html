@@ -1,5 +1,8 @@
 <extends src="./layouts/root.html" locals='{"title": ""}'>
   <block name="content">
+    <include src="./components/last-article/last-article.html" locals='{"basePath": "."}'></include>
+    <include src="./components/animated-logo/animated-logo.html" locals='{"basePath": "."}'></include>
+    <include src="./components/tags/tags.html" locals='{"basePath": "."}'></include>
     <articles>
       <h3>{{months[0].label}}</h3>
       <each loop="post, index in posts.filter(post => post.date >= months[0].from && post.date <= months[0].to)">
@@ -16,7 +19,7 @@
     </articles>
   </block>
   <block name="aside">
-    <include src="./components/archive.html"></include>
+    <include src="./components/archive/archive.html" locals='{"basePath": "."}'></include>
   </block>
   <block name="scripts">
     <script src="./scripts/search.js"></script>

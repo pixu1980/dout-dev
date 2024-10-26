@@ -1,0 +1,32 @@
+// last-article {
+//   grid-area: last;
+  
+//   display: flex;
+//   flex-flow: row nowrap;
+//   gap: var(--dude--gutter);
+//   padding: var(--dude--gutter);
+
+//   // background-color: var(--dude--theme--header--background-color);
+//   // transition: background-color 0.2s linear;
+
+//   article {
+//     display: flex;
+//     flex-flow: column nowrap;
+
+//     header {
+//       display: flex;
+//       flex-flow: column-reverse nowrap;
+//       gap: 0;
+//     }
+
+//     content {
+//       display: flex;
+//     }
+//   }
+// }
+
+// body:has([name='color-scheme-switcher']:checked) {
+//   last-article {
+//     background-color: var(--dude--theme--header--background-color--switch);
+//   }
+// }

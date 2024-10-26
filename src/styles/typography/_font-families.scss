@@ -1,9 +1,0 @@
-@layer font-families {
-  body {
-    --dout--t--ff: var(--dout--t--ff--sans-serif);
-  }
-
-  :where(h1, h2, h3, h4, h5, h6) {
-    --dout--t--ff: var(--dout--t--ff--serif);
-  }
-}

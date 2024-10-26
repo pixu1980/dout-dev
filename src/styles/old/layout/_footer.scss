@@ -1,0 +1,14 @@
+@layer footer {
+  :root {
+    
+  }
+  
+  body > footer {
+    grid-area: footer;
+
+    position: sticky;
+    top: 100vh;
+
+    padding: var(--dude--gutter);
+  }
+}

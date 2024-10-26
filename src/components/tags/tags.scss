@@ -1,0 +1,63 @@
+// tags {
+//   grid-area: tags;
+  
+//   display: block;
+//   width: 100%;
+//   padding: calc(1rem - var(--dude--focus--offset-from)) calc(var(--dude--gutter) - var(--dude--focus--offset-from));
+
+//   tags-list {
+//     display: flex;
+//     flex-flow: row nowrap;
+//     gap: calc(1rem - (var(--dude--focus--offset-from) * 2));
+//     padding: 0;
+//     overflow-y: hidden;
+//     overflow-x: auto;
+
+//     &::-webkit-scrollbar {
+//       // TODO: check cross-browser scrollbar hiding
+//       display: none;
+//     }
+
+//     > span {
+//       display: inline-block;
+//       width: 1px;
+//     }
+//   }
+
+//   a {
+//     // TODO: use color variables
+//     display: inline-flex;
+//     font-size: 2rem;
+//     padding: 0.3rem 1rem;
+//     color: #909196;
+//     background-color: #2a2b33;
+//     border: 1px solid #2a2b33;
+//     border-radius: 0.3rem;
+//     margin: var(--dude--focus--offset-from);
+//     text-transform: uppercase;
+//     white-space: nowrap;
+//     // transition: var(--dude--focus--transition), color 0.3s ease-in-out, background-color 0.2s ease-in-out,
+//     //   border-color 0.2s ease-in-out;
+
+//     &:hover,
+//     &.active {
+//       color: #f1f1f1;
+//       background-color: #277987;
+//       border: 1px solid #277987;
+//       text-decoration: none;
+//     }
+//   }
+// }
+
+// body:has([name='color-scheme-switcher']:checked) {
+//   tags {
+//     a {
+//       background-color: transparent;
+
+//       &:hover,
+//       &.active {
+//         background-color: #277987;
+//       }
+//     }
+//   }
+// }

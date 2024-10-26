@@ -1,0 +1,40 @@
+:root {
+  --dude--focus--width: 2px;
+  --dude--focus--offset-from: 8px;
+  --dude--focus--offset-to: 2px;
+
+  --dude--focus--transition: outline 450ms ease-out, outline-offset 350ms ease-out;
+}
+
+:where(a, area, button, input, label:has(input), select, summary, textarea, [tabindex]) {
+  color: inherit;
+  background-color: transparent;
+
+  outline: var(--dude--focus--width) dashed transparent;
+  outline-offset: var(--dude--focus--offset-from);
+  transition: var(--dude--focus--transition);
+
+  &:focus {
+    outline: var(--dude--focus--width) solid var(--dude--theme--focus-color);
+    outline-offset: var(--dude--focus--offset-to);
+  }
+}
+
+[tabindex='-1']:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+// body:has([name='color-scheme-switcher']:checked) {
+//   :where(a, area, button, input, label:has(input), select, summary, textarea, [tabindex]) {
+//     --dude--focus--color: var(--dude--theme--focus-color--switch);
+//   }
+// }
+
+@include detect(firefox) {
+  * {
+    &::-moz-focus-inner,
+    &::-moz-focus-outer {
+      border: 0;
+    }
+  }
+}

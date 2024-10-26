@@ -1,0 +1,7 @@
+articles {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: start;
+  gap: var(--dude--gutter);
+}

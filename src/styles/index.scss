@@ -1,12 +1,66 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
-@layer dout {
-  @import 'api';
-  @import 'helpers';
-  @import 'colors';
+@layer dude {
   @import 'semantic-reset';
-  @import 'typography';
   @import 'iconography';
-  @import 'layout';
-  @import 'components';
+  @import 'typography';
+
+  @import '../components';
+
+  :root {
+    --dude--gap: 1.5rem;
+    --dude--color-scheme--transition: color 0.1s linear, background-color 0.2s linear;
+  }
+
+  html,
+  body {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    display: grid;
+    grid-template-areas:
+      'header'
+      'main'
+      'footer';
+    grid-template-rows: 6.6rem 1fr 4.6rem;
+
+    margin-inline: 10vw;
+
+    color: CanvasText;
+    background-color: Canvas;
+  }
+
+  [sr-only] {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    margin: -1px;
+
+    clip: rect(0, 0, 0, 0);
+
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  * {
+    --dude--transition: var(--dude--color-scheme--transition);
+    
+    transition: var(--dude--transition);
+  }
 }
+
+// https://github.com/web-platform-dx/baseline-status

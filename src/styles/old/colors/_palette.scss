@@ -1,0 +1,131 @@
+:root {
+  --dude--color--cyan-300: #a2eae4;
+  --dude--color--cyan-400: #87dbff;
+  --dude--color--cyan-500: #3ca7ff;
+  --dude--color--cyan-600: #0c3d5c;
+
+  --dude--color--yellow-400: #fdd45b;
+
+  --dude--color--red-400: #e86a58;
+
+  --dude--color--green-400: #4fd4ae;
+  --dude--color--green-500: #2fb28c;
+  --dude--color--green-600: #277987;
+
+  --dude--color--salmon-300: #fdd7bd;
+  --dude--color--salmon-400: #fac5aa;
+  --dude--color--salmon-500: #f58c79;
+
+  --dude--color--white-100: #dedede;
+  --dude--color--white-200: #f6f6f6;
+  --dude--color--white-300: #fefefe;
+  --dude--color--white-400: #ffffff;
+
+  --dude--color--black-300: #333333;
+  --dude--color--black-400: #2c292a;
+  --dude--color--black-500: #222222;
+  --dude--color--black-600: #0d0b0b;
+  --dude--color--black-700: #010101;
+
+  --dude--color--gray-300: #c7c7c7;
+  --dude--color--gray-400: #909196;
+  --dude--color--gray-500: #434343;
+  --dude--color--gray-600: #2a2b33;
+  --dude--color--gray-700: #141519;
+  --dude--color--gray-800: #1e1f24;
+
+  --dude--color--lightgray-300: #d8d8d8;
+  --dude--color--lightgray-400: #999387;
+  --dude--color--lightgray-500: #828282;
+  --dude--color--lightgray-600: #717171;
+  --dude--color--lightgray-700: #585858;
+  --dude--color--lightgray-800: #424242;
+
+  --dude--color--primary: #277987;
+  --dude--color--primary--hover: color-mix(in srgb, var(--dude--color--primary), #fff 20%);
+
+  --dude--color--secondary: #f5d861;
+  --dude--color--secondary--hover: color-mix(in srgb, var(--dude--color--secondary), #000 20%);
+
+  --dude--color--white-400: #f1f1f1;
+  --dude--color--white-500: #f6f6f6;
+
+  --dude--color--gray-300: #c7c7c7;
+  --dude--color--gray-400: #909196;
+  --dude--color--gray-500: #434343;
+  --dude--color--gray-600: #2a2b33;
+  --dude--color--gray-700: #1e1f24;
+  --dude--color--gray-800: #141519;
+
+  --dude--theme--dark--dude--color: var(--dude--color--gray-400);
+  --dude--theme--dark--background-color: var(--dude--color--gray-800);
+  --dude--theme--dark--header--background-color: var(--dude--color--gray-700);
+  --dude--theme--dark--accent-color: var(--dude--color--secondary);
+  --dude--theme--dark--accent-color--hover: var(--dude--color--secondary--hover);
+  --dude--theme--dark--accent-color--secondary: var(--dude--color--primary);
+  --dude--theme--dark--accent-color--secondary--hover: var(--dude--color--primary--hover);
+  --dude--theme--dark--highlight-color: var(--dude--color--secondary);
+  // --dude--theme--dark--dude--focus-color: #f5d761cc;
+  --dude--theme--dark--dude--focus-color: color-mix(in srgb, var(--dude--color--secondary), transparent 30%);
+
+  --dude--theme--light--dude--color: var(--dude--color--black-400);
+  --dude--theme--light--background-color: var(--dude--color--white-400);
+  --dude--theme--light--header--background-color: var(--dude--color--white-500);
+  --dude--theme--light--accent-color: var(--dude--color--primary);
+  --dude--theme--light--accent-color--hover: var(--dude--color--primary--hover);
+  --dude--theme--light--accent-color--secondary: var(--dude--color--secondary);
+  --dude--theme--light--accent-color--secondary--hover: var(--dude--color--secondary--hover);
+  --dude--theme--light--highlight-color: var(--dude--color--primary);
+  // --dude--theme--light--dude--focus-color: #277987cc;
+  --dude--theme--light--dude--focus-color: color-mix(in srgb, var(--dude--color--primary), transparent 30%);
+
+  :has([name='color-scheme-switcher']:not(:checked)) {
+    --dude--theme--color: var(--dude--theme--dark--dude--color);
+    --dude--theme--background-color: var(--dude--theme--dark--background-color);
+    --dude--theme--header--background-color: var(--dude--theme--dark--header--background-color);
+    --dude--theme--accent-color: var(--dude--theme--dark--accent-color);
+    --dude--theme--accent-color--hover: var(--dude--theme--dark--accent-color--hover);
+    --dude--theme--accent-color--secondary: var(--dude--theme--dark--accent-color--secondary);
+    --dude--theme--accent-color--secondary--hover: var(--dude--theme--dark--accent-color--secondary--hover);
+    --dude--theme--highlight-color: var(--dude--theme--dark--highlight-color);
+    --dude--theme--focus-color: var(--dude--theme--dark--dude--focus-color);
+  }
+  :has([name='color-scheme-switcher']:checked) {
+    --dude--theme--color: var(--dude--theme--light--dude--color);
+    --dude--theme--background-color: var(--dude--theme--light--background-color);
+    --dude--theme--header--background-color: var(--dude--theme--light--header--background-color);
+    --dude--theme--accent-color: var(--dude--theme--light--accent-color);
+    --dude--theme--accent-color--hover: var(--dude--theme--light--accent-color--hover);
+    --dude--theme--accent-color--secondary: var(--dude--theme--light--accent-color--secondary);
+    --dude--theme--accent-color--secondary--hover: var(--dude--theme--light--accent-color--secondary--hover);
+    --dude--theme--highlight-color: var(--dude--theme--light--highlight-color);
+    --dude--theme--focus-color: var(--dude--theme--light--dude--focus-color);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    :has([color-scheme-switcher]:not(:checked)) {
+      --dude--theme--color: var(--dude--theme--light--dude--color);
+      --dude--theme--background-color: var(--dude--theme--light--background-color);
+      --dude--theme--header--background-color: var(--dude--theme--light--header--background-color);
+      --dude--theme--accent-color: var(--dude--theme--light--accent-color);
+      --dude--theme--accent-color--hover: var(--dude--theme--light--accent-color--hover);
+      --dude--theme--accent-color--secondary: var(--dude--theme--light--accent-color--secondary);
+      --dude--theme--accent-color--secondary--hover: var(--dude--theme--light--accent-color--secondary--hover);
+      --dude--theme--highlight-color: var(--dude--theme--light--highlight-color);
+      --dude--theme--focus-color: var(--dude--theme--light--dude--focus-color);
+    }
+    :has([color-scheme-switcher]:checked) {
+      --dude--theme--color: var(--dude--theme--dark--dude--color);
+      --dude--theme--background-color: var(--dude--theme--dark--background-color);
+      --dude--theme--header--background-color: var(--dude--theme--dark--header--background-color);
+      --dude--theme--accent-color: var(--dude--theme--dark--accent-color);
+      --dude--theme--accent-color--hover: var(--dude--theme--dark--accent-color--hover);
+      --dude--theme--accent-color--secondary: var(--dude--theme--dark--accent-color--secondary);
+      --dude--theme--accent-color--secondary--hover: var(--dude--theme--dark--accent-color--secondary--hover);
+      --dude--theme--highlight-color: var(--dude--theme--dark--highlight-color);
+      --dude--theme--focus-color: var(--dude--theme--dark--dude--focus-color);
+    }
+  }
+}

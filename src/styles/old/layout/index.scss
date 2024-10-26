@@ -1,0 +1,30 @@
+@layer layout {
+  :root {
+    --dude--header--height: calc(6rem + var(--dude--gutter) * 2);
+    --dude--footer--height: calc(4rem + var(--dude--gutter) * 2);
+  }
+
+  html {
+    min-height: 100vh;
+  }
+
+  body {
+    display: grid;
+
+    width: 100vw;
+    min-height: 100vh;
+
+    grid-template-areas:
+      'header'
+      'main'
+      'footer';
+
+    grid-template-rows: var(--dude--header--height) 1fr var(--dude--footer--height);
+  }
+
+  @import 'header';
+  // @import 'main';
+  // @import 'content';
+  // @import 'aside';
+  // @import 'footer';
+}

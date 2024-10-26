@@ -1,6 +1,6 @@
 <!-- <extends src='./layouts/leaf.html' locals='{"title":" - Welcome to dout.dev","date":"2022-03-24T00:00:00.000Z","published":true,"tags":[{"key":"generic","label":"Generic"}],"description":"Welcome to dout.dev","name":"2022-03-24-welcome-to-dout-dev","path":"./posts/2022-03-24-welcome-to-dout-dev.html"}'> -->
 <extends src='./layouts/leaf.html' locals='{"title":" - Welcome to dout.dev","date":"2022-03-24T00:00:00.000Z","published":true,"tags":[{"key":"generic","label":"Generic"}],"description":"Welcome to dout.dev","name":"2022-03-24-welcome-to-dout-dev","path":"./posts/2022-03-24-welcome-to-dout-dev.html"}'>
-  <block name="content"><h2 id="welcome-to-doutdev">Welcome to dout.dev</h2>
+  <block name="content"><h2>Welcome to dout.dev</h2>
 <p>Hi, i&#39;m Emiliano &quot;Pixu&quot; Pisu.</p>
 <p>I&#39;m a &quot;vintage&quot; developer who loves to code and to share ideas, thoughts, knowledge.</p>
 <p>I&#39;m starting this blog to talk and discuss about web-based technology, honestly most of times i&#39;ll focus in UI/UX, because i love it.</p>
@@ -16,6 +16,22 @@
 <p>Let&#39;s start a new trip together in the world HTML, CSS and JS.</p>
 </block>
   <block name="aside">
-    <include src="./components/archive.html"></include>
+    <include src="./components/archive/archive.html" locals='{"basePath": ".."}'></include>
+    <!-- <script src="https://giscus.app/client.js"
+        data-repo="pixu1980/dout-dev"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+        data-category="General"
+        data-category-id="DIC_kwDOFJulQc4CjlkE"
+        data-mapping="url"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="it"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+    </script> -->
   </block>
 </extends>

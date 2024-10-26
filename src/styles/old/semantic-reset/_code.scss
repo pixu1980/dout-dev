@@ -1,0 +1,48 @@
+pre,
+code,
+kbd,
+samp {
+  font: 1.05em 'Fira Code', 'Cascadia Code', Consolas, 'Inconsolata', Monaco, Menlo, 'Noto Mono', 'Roboto Mono',
+    'Droid Sans Mono', 'Ubuntu Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Oxygen Mono', 'Liberation Mono',
+    'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+}
+
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: var(--dude--gutter);
+  font-size: 0.875em;
+  overflow: auto;
+  -ms-overflow-style: scrollbar;
+
+  code {
+    font-size: inherit;
+    color: inherit;
+    word-break: normal;
+  }
+}
+
+code {
+  font-size: 0.875em;
+  color: inherit;
+  word-wrap: break-word;
+}
+
+a > code {
+  color: inherit;
+}
+
+kbd {
+  padding: 0.2rem 0.4rem;
+  font-size: 0.875em;
+  color: inherit;
+  background-color: inherit;
+  border-radius: 0.2rem;
+
+  kbd {
+    padding: 0;
+    font-size: 1em;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,31 @@
+@layer api {
+  :root {
+    /// --t stands for typography
+    /// --ft stands for fluid-typography
+    /// --ff stands for font-family
+    /// --fs stands for font-size
+    /// --lh stands for line-height
+    /// --fw stands for font-weight
+    /// --th stands for threshold
+
+    --dude--t--ff--serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times,
+      Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, serif;
+
+    --dude--t--ff--sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
+      helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+
+    --dude--t--fs--base: 1.6rem;
+
+    --dude--t--fs: var(--dude--t--fs--base);
+    --dude--t--lh: 1.3;
+    --dude--t--fw: 400;
+
+    --dude--t--direction: ltr;
+
+    --dude--ft--clamp--ratio: 1;
+    --dude--ft--clamp--th: 0.4vw;
+
+    --dude--ft--min--fs: var(--dude--t--fs--base);
+    --dude--ft--max--fs: 2.6rem;
+  }
+}

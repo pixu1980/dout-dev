@@ -1,0 +1,20 @@
+@layer api {
+  :root {
+    --dude--gutter: 1rem;
+    // --dude--block-margin: 0 0 var(--dude--gutter);
+    --dude--block-margin: 0;
+
+    --dude--color-primary: hsl(0, 0%, 96%);
+    --dude--color-secondary: hsl(0, 0%, 92%);
+    --dude--background-color-primary: hsl(192, 11%, 18%);
+    --dude--background-color-secondary: hsl(192, 11%, 13%);
+
+    // --dude--breakpoint--phone: 320px;
+    // --dude--breakpoint--phone-big: 375px;
+    // --dude--breakpoint--phone-bigger: 414px;
+    // --dude--breakpoint--small: 540px;
+    // --dude--breakpoint--medium: 992px;
+    // --dude--breakpoint--large: 1200px;
+    // --dude--breakpoint--extra-large: 1600px;
+  }
+}
