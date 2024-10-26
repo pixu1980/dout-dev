@@ -1,0 +1,15 @@
+@layer core {
+  body {
+    font-family: var(--dude--t--ff);
+    font-size: var(--dude--t--fs);
+    line-height: var(--dude--t--lh);
+    font-weight: var(--dude--t--fw);
+
+    * {
+      font-family: var(--dude--t--ff);
+      font-size: var(--dude--t--fs);
+      line-height: var(--dude--t--lh);
+      font-weight: var(--dude--t--fw);
+    }
+  }
+}

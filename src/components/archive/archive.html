@@ -1,0 +1,6 @@
+<archive>
+  <h4>Archive</h4>
+  <each loop="month, index in months">
+    <a role="button" href="{{month.path.replace('./', basePath+'/')}}">{{month.label}}</a>
+  </each>
+</archive>

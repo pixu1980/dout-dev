@@ -1,0 +1,9 @@
+@layer font-families {
+  body {
+    --dude--t--ff: var(--dude--t--ff--sans-serif);
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    --dude--t--ff: var(--dude--t--ff--serif);
+  }
+}

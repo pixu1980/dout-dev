@@ -1,0 +1,22 @@
+stagger {
+  --dude--ani--stagger--delay: 400ms;
+
+  display: block;
+
+  > * {
+    --dude--ani--stagger--index: 0;
+    --dude--ani--delay: calc(var(--dude--ani--stagger--delay) * var(--dude--ani--stagger--index));
+  }
+}
+
+.stack.present {
+  > :not(.present) {
+    stagger:not(.fragment) {
+      --dude--ani--name: none;
+    }
+  }
+}
+
+stagger.fragment:not(.visible) {
+  --dude--ani--name: none;
+}

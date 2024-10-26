@@ -1,97 +1,105 @@
 @import 'variables';
 
 @font-face {
-  font-family: '#{$doutdev-icons--font-family}';
-  src: url('./iconography/icons/fonts/icons.ttf') format('truetype'),
-    url('./iconography/icons/fonts/icons.woff') format('woff'), url('./iconography/icons/fonts/icons.svg') format('svg');
+  font-family: '#{$dude-dude-icon-font-family}';
+  src: url('./iconography/icons/fonts/dude.ttf') format('truetype'),
+    url('./iconography/icons/fonts/dude.woff') format('woff'), url('./iconography/icons/fonts/dude.svg') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class*='icons-'] {
+[class^='dude-icon'] {
+  --dude--t--font-family: '#{$dude-dude-icon-font-family}';
+  --dude--t--font-size: inherit;
+  --dude--t--font-weight: 400;
+  --dude--t--line-height: 1;
+  --dude--t--font-style: normal;
+
   /* use !important to prevent issues with browser extensions that change fonts */
   position: relative;
-  display: inline-flex;
   place-content: center;
   place-items: center;
-  font-family: '#{$doutdev-icons--font-family}' !important;
   speak: never;
-  font-style: normal;
-  font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
-
-  font-size: inherit;
-  line-height: 1;
 
   inline-size: 1ch;
+  aspect-ratio: 1;
+
+  color: CanvasText;
+  background-color: transparent;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   [class^='path'] {
-    font-family: '#{$doutdev-icons--font-family}' !important;
+    // font-family: '#{$dude-dude-icon-font-family}' !important;
 
     + [class^='path'] {
       position: absolute;
+      inset: 0;
     }
   }
 }
 
-.icons-logo .path1 {
+.dude-icon-logo .path1 {
   &:before {
-    content: $icons-logo-path1;
+    content: $dude-icon-logo-path1;
     color: rgb(39, 121, 135);
   }
 }
-.icons-logo .path2 {
+.dude-icon-logo .path2 {
   &:before {
-    content: $icons-logo-path2;
+    content: $dude-icon-logo-path2;
     color: rgb(245, 245, 247);
   }
 }
-.icons-logo .path3 {
+.dude-icon-logo .path3 {
   &:before {
-    content: $icons-logo-path3;
+    content: $dude-icon-logo-path3;
     color: rgb(245, 216, 97);
   }
 }
-.icons-logo .path4 {
+.dude-icon-logo .path4 {
   &:before {
-    content: $icons-logo-path4;
+    content: $dude-icon-logo-path4;
     color: rgb(245, 245, 247);
   }
 }
-.icons-search {
+.dude-icon-search {
   &:before {
-    content: $icons-search;
+    content: $dude-icon-search;
   }
 }
-.icons-arrow {
+.dude-icon-arrow {
   &:before {
-    content: $icons-arrow;
+    content: $dude-icon-arrow;
   }
 }
-.icons-layout-cards {
+.dude-icon-layout-cards {
   &:before {
-    content: $icons-layout-cards;
+    content: $dude-icon-layout-cards;
   }
 }
-.icons-layout-list {
+.dude-icon-layout-list {
   &:before {
-    content: $icons-layout-list;
+    content: $dude-icon-layout-list;
   }
 }
-.icons-theme-dark {
+.dude-icon-theme-dark {
   &:before {
-    content: $icons-theme-dark;
+    content: $dude-icon-theme-dark;
   }
 }
-.icons-theme-bright {
+.dude-icon-theme-light {
   &:before {
-    content: $icons-theme-bright;
+    content: $dude-icon-theme-light;
+  }
+}
+.dude-icon-theme-os {
+  &:before {
+    content: $dude-icon-theme-os;
   }
 }

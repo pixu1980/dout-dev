@@ -1,14 +1,18 @@
-$doutdev-icons--font-family: "icons" !default;
-$doutdev-icons--font-path: "../fonts" !default;
+$dude-dude-icon-font-family: "dude" !default;
+$dude-dude-icon-font-path: "../fonts" !default;
 
-$icons-logo-path1: "\e91e";
-$icons-logo-path2: "\e91f";
-$icons-logo-path3: "\e920";
-$icons-logo-path4: "\e921";
-$icons-search: "\e90f";
-$icons-arrow: "\e910";
-$icons-layout-cards: "\e916";
-$icons-layout-list: "\e91a";
-$icons-theme-dark: "\e91b";
-$icons-theme-bright: "\e91d";
+$dude-icon-logo-path1: unquote('"\\e91e"');
+$dude-icon-logo-path2: unquote('"\\e91f"');
+$dude-icon-logo-path3: unquote('"\\e920"');
+$dude-icon-logo-path4: unquote('"\\e921"');
+$dude-icon-search: unquote('"\\e90f"');
+$dude-icon-arrow: unquote('"\\e910"');
+$dude-icon-layout-cards: unquote('"\\e916"');
+$dude-icon-layout-list: unquote('"\\e91a"');
+$dude-icon-theme-dark: unquote('"\\e91b"');
+$dude-icon-theme-light: unquote('"\\e91d"');
+$dude-icon-theme-os: unquote('"\\e900"');
+
+
+
 

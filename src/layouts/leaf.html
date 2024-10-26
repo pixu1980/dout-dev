@@ -5,18 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="The DoUt.dev Blog" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
     <title>DoUt.Dev{{title}}</title>
+    <link rel="preload" href="../styles/iconography/icons/fonts/dude.woff" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../styles/iconography/icons/fonts/dude.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="../styles/iconography/icons/fonts/dude.svg" as="font" type="font/svg" crossorigin />
     <link rel="stylesheet" href="../styles/index.scss" />
   </head>
-  <body fluid>
-    <include src="./components/theme-switcher.html" locals='{"basePath": ".."}'></include>
-    <include src="./components/header.html" locals='{"basePath": ".."}'></include>
+  <body>
+    <include src="./components/color-scheme-switcher/color-scheme-switcher.html" locals='{"basePath": ".."}'></include>
+    <include src="./components/header/header.html" locals='{"basePath": ".."}'></include>
     <main>
-      <hero>
-        <include src="./components/about-me.html" locals='{"basePath": ".."}'></include>
-        <include src="./components/last-article.html" locals='{"basePath": ".."}'></include>
-      </hero>
-      <include src="./components/tags.html" locals='{"basePath": ".."}'></include>
+      <!-- <hero> -->
+      <!-- TODO: find another place for the about me -->
+      <!-- <include src="./components/about-me/about-me.html" locals='{"basePath": ".."}'></include> -->
+      <!-- <include src="./components/last-article/last-article.html" locals='{"basePath": ".."}'></include> -->
+      <!-- <include src="./components/animated-logo/animated-logo.html" locals='{"basePath": ".."}'></include> -->
+      <!-- </hero> -->
+      <!-- <include src="./components/tags/tags.html" locals='{"basePath": ".."}'></include> -->
       <content>
         <block name="content"></block>
       </content>
@@ -24,10 +30,11 @@
         <block name="aside"></block>
       </aside>
     </main>
-    <include src="./components/footer.html" locals='{"basePath": ".."}'></include>
+    <include src="./components/footer/footer.html" locals='{"basePath": ".."}'></include>
+    <script src="../scripts/index.js" type="module"></script>
     <block name="scripts">
-      <script src="../scripts/index.js" type="module"></script>
-      <script src="../scripts/search.js" type="module"></script>
+      <!-- <script src="../scripts/index.js" type="module"></script>
+      <script src="../scripts/search.js" type="module"></script> -->
     </block>
   </body>
 </html>

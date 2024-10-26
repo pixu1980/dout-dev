@@ -1,81 +1,81 @@
 <!-- <extends src='./layouts/leaf.html' locals='{"title":" - CSS Properties Hierarchy","date":"2022-03-18T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"},{"key":"css","label":"CSS"}],"canonicalUrl":false,"description":"CSS Properties Hierarchy","name":"2022-03-18-css-properties-hierarchy","path":"./posts/2022-03-18-css-properties-hierarchy.html"}'> -->
 <extends src='./layouts/leaf.html' locals='{"title":" - CSS Properties Hierarchy","date":"2022-03-18T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"},{"key":"css","label":"CSS"}],"canonicalUrl":false,"description":"CSS Properties Hierarchy","name":"2022-03-18-css-properties-hierarchy","path":"./posts/2022-03-18-css-properties-hierarchy.html"}'>
-  <block name="content"><pre><code class="language-scss"><span class="hljs-selector-class">.element</span> {
+  <block name="content"><pre><code class="language-scss">.element {
   // css custom properties
-  <span class="hljs-attr">--var--example</span>: <span class="hljs-number">1</span>;
+  --var--example: 1;
 ​
-  // <span class="hljs-attribute">position</span>
-  <span class="hljs-attribute">position</span>: absolute;
+  // position
+  position: absolute;
 ​
-  // <span class="hljs-attribute">display</span>
-  <span class="hljs-attribute">display</span>: block;
-  <span class="hljs-attribute">display</span>: flex;
+  // display
+  display: block;
+  display: flex;
   justify-self: unset;
-  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+  opacity: 1;
 ​
   // box-model
-  <span class="hljs-attribute">box-sizing</span>: border-box;
-  <span class="hljs-attribute">width</span>: <span class="hljs-number">10rem</span>;
-  aspect-ratio: <span class="hljs-number">16</span> / <span class="hljs-number">9</span>;
-  <span class="hljs-attribute">padding</span>: <span class="hljs-number">1rem</span>;
-  <span class="hljs-attribute">border</span>: <span class="hljs-number">0.1rem</span> solid black;
-  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">0.4rem</span>;
-  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1rem</span>;
+  box-sizing: border-box;
+  width: 10rem;
+  aspect-ratio: 16 / 9;
+  padding: 1rem;
+  border: 0.1rem solid black;
+  border-radius: 0.4rem;
+  margin: 1rem;
 ​
-  // colors &amp; <span class="hljs-attribute">background</span>
-  <span class="hljs-attribute">color</span>: white;
-  <span class="hljs-attribute">background-color</span>: black;
-  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>();
-  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">1</span>);
+  // colors &amp; background
+  color: white;
+  background-color: black;
+  background-image: url();
+  box-shadow: rgba(50, 50, 50, 1);
 ​
   // text
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&#x27;Courier New&#x27;</span>, Courier, monospace;
-  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1rem</span>;
-  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">700</span>;
-  <span class="hljs-attribute">line-height</span>: normal;
-  <span class="hljs-attribute">white-space</span>: nowrap;
-  <span class="hljs-attribute">text-align</span>: center;
-  <span class="hljs-attribute">text-shadow</span>: none;
+  font-family: &#39;Courier New&#39;, Courier, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap;
+  text-align: center;
+  text-shadow: none;
 ​
-  // <span class="hljs-attribute">transform</span> &amp; animations
-  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>();
-  <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">300ms</span> ease-in, width <span class="hljs-number">500ms</span> linear;
-  <span class="hljs-attribute">will-change</span>: opacity, width;
-  <span class="hljs-attribute">animation</span>: test <span class="hljs-number">300ms</span> forwards alternate-reverse;
+  // transform &amp; animations
+  transform: translate();
+  transition: opacity 300ms ease-in, width 500ms linear;
+  will-change: opacity, width;
+  animation: test 300ms forwards alternate-reverse;
 ​
   // helpers
-  <span class="hljs-attribute">cursor</span>: pointer;
-  <span class="hljs-attribute">outline</span>: <span class="hljs-number">0</span>;
+  cursor: pointer;
+  outline: 0;
   appearance: none;
-  <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">drop-shadow</span>();
+  filter: drop-shadow();
 ​
   // pseudo elements
-  &amp;<span class="hljs-selector-pseudo">::after</span> {
+  &amp;::after {
   }
 ​
   // variants &amp; pseudo selectors
-  &amp;<span class="hljs-selector-class">.error</span> {
-    <span class="hljs-attribute">color</span>: red;
+  &amp;.error {
+    color: red;
   }
 
-  &amp;<span class="hljs-selector-attr">[aria-hidden=true]</span> {
-    <span class="hljs-attribute">display</span>: none;
+  &amp;[aria-hidden=true] {
+    display: none;
   }
 ​
-  &amp;<span class="hljs-selector-pseudo">:hover</span> {
+  &amp;:hover {
   }
 ​
   // sass includes
-  <span class="hljs-keyword">@include</span> helpers.media($<span class="hljs-attribute">min-width</span>: #{helpers<span class="hljs-selector-class">.get-breakpoint-value</span>(md)}) {
-    <span class="hljs-attribute">display</span>: none;
+  @include helpers.media($min-width: #{helpers.get-breakpoint-value(md)}) {
+    display: none;
   }
 ​
   // ------------ children
-  <span class="hljs-selector-tag">span</span> {
+  span {
     // hierarchy
   }
 ​
-  <span class="hljs-selector-tag">input</span> {
+  input {
     // hierarchy
   }
 ​
@@ -86,6 +86,22 @@
 </code></pre>
 </block>
   <block name="aside">
-    <include src="./components/archive.html"></include>
+    <include src="./components/archive/archive.html" locals='{"basePath": ".."}'></include>
+    <!-- <script src="https://giscus.app/client.js"
+        data-repo="pixu1980/dout-dev"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+        data-category="General"
+        data-category-id="DIC_kwDOFJulQc4CjlkE"
+        data-mapping="url"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="it"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+    </script> -->
   </block>
 </extends>

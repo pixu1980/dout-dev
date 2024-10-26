@@ -1,0 +1,13 @@
+@layer main {
+  body > main {
+    grid-area: main;
+
+    display: grid;
+    grid-template-rows: 15rem;
+    grid-template-columns: 1fr 30rem;
+    grid-template-areas:
+      'hero logo'
+      'tags view-mode'
+      'content archive';
+  }
+}

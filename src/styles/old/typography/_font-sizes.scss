@@ -1,0 +1,78 @@
+@use 'sass:math';
+
+$ft--ratio: 1.125; // major second
+
+@layer font-sizes {
+  h1 {
+    --dude--t--fs: 2.027em;
+  }
+
+  h2 {
+    --dude--t--fs: 1.802em;
+  }
+
+  h3 {
+    --dude--t--fs: 1.602em;
+  }
+
+  h4 {
+    --dude--t--fs: 1.424em;
+  }
+
+  h5 {
+    --dude--t--fs: 1.266em;
+  }
+
+  h6 {
+    --dude--t--fs: 1.125em;
+  }
+
+  p {
+    --dude--t--fs: 1em;
+  }
+
+  small {
+    --dude--t--fs: 0.875em;
+  }
+
+  // *** fluid-typography
+  [fluid] {
+    --dude--t--fs: clamp(
+      calc(var(--dude--ft--min--fs) * var(--dude--ft--clamp--ratio) + var(--dude--ft--clamp--th)),
+      calc(var(--dude--t--fs--base) * var(--dude--ft--clamp--ratio) + var(--dude--ft--clamp--th)),
+      calc(var(--dude--ft--max--fs) * var(--dude--ft--clamp--ratio) + var(--dude--ft--clamp--th))
+    );
+
+    * {
+      --dude--t--fs: clamp(
+        calc(var(--dude--ft--min--fs) * var(--dude--ft--clamp--ratio) + var(--dude--ft--clamp--th)),
+        calc(var(--dude--t--fs--base) * var(--dude--ft--clamp--ratio) + var(--dude--ft--clamp--th)),
+        calc(var(--dude--ft--max--fs) * var(--dude--ft--clamp--ratio) + var(--dude--ft--clamp--th))
+      );
+    }
+
+    h1 {
+      --dude--ft--clamp--ratio: #{math.pow($ft--ratio, 6)};
+    }
+
+    h2 {
+      --dude--ft--clamp--ratio: #{math.pow($ft--ratio, 5)};
+    }
+
+    h3 {
+      --dude--ft--clamp--ratio: #{math.pow($ft--ratio, 4)};
+    }
+
+    h4 {
+      --dude--ft--clamp--ratio: #{math.pow($ft--ratio, 3)};
+    }
+
+    h5 {
+      --dude--ft--clamp--ratio: #{math.pow($ft--ratio, 2)};
+    }
+
+    h6 {
+      --dude--ft--clamp--ratio: #{math.pow($ft--ratio, 1)};
+    }
+  }
+}

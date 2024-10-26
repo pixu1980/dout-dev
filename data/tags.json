@@ -1,5 +1,20 @@
 [
   {
+    "key": "a11y",
+    "label": "A11y",
+    "path": "./tags/a11y.html"
+  },
+  {
+    "key": "design",
+    "label": "Design",
+    "path": "./tags/design.html"
+  },
+  {
+    "key": "responsive",
+    "label": "Responsive",
+    "path": "./tags/responsive.html"
+  },
+  {
     "key": "markdown",
     "label": "Markdown",
     "path": "./tags/markdown.html"

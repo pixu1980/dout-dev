@@ -1,5 +1,28 @@
 [
   {
+    "title": "Accessibility by Design",
+    "date": "2024-05-19T00:41:22.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "a11y",
+        "label": "A11y"
+      },
+      {
+        "key": "design",
+        "label": "Design"
+      },
+      {
+        "key": "responsive",
+        "label": "Responsive"
+      }
+    ],
+    "canonicalUrl": false,
+    "description": "Accessibility by Design",
+    "name": "2024-05-19-a11y-by-design",
+    "path": "./posts/2024-05-19-a11y-by-design.html"
+  },
+  {
     "title": "Say hello to 2023 🎉",
     "date": "2023-01-01T14:41:22.000Z",
     "published": true,

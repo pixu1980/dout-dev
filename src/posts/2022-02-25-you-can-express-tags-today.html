@@ -1,24 +1,24 @@
 <!-- <extends src='./layouts/leaf.html' locals='{"title":" - You can use express tags… TODAY!","date":"2022-02-25T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"},{"key":"css","label":"CSS"}],"canonicalUrl":false,"coverImage":"./images/svg-code.jpg","description":"You can use express tags… TODAY!","name":"2022-02-25-you-can-express-tags-today","path":"./posts/2022-02-25-you-can-express-tags-today.html"}'> -->
 <extends src='./layouts/leaf.html' locals='{"title":" - You can use express tags… TODAY!","date":"2022-02-25T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"},{"key":"css","label":"CSS"}],"canonicalUrl":false,"coverImage":"./images/svg-code.jpg","description":"You can use express tags… TODAY!","name":"2022-02-25-you-can-express-tags-today","path":"./posts/2022-02-25-you-can-express-tags-today.html"}'>
-  <block name="content"><h1 id="you-can-use-express-tags-today">You can use express tags… TODAY!</h1>
+  <block name="content"><h1>You can use express tags… TODAY!</h1>
 <p>HTML6 is coming, we know it very well, &#39;cause we&#39;re strongly waiting for features like described 
-      <a href="https://www.htmlgoodies.com/guides/expected-new-features-in-html6/" target="_blank" rel="noopener noreferrer" title="Expected new features in HTML6">here</a>
+      <a href="[object Object]" target="_blank" rel="noopener noreferrer" title="undefined">undefined</a>
     .</p>
-<h2 id="lets-take-a-look">Let&#39;s take a look</h2>
+<h2>Let&#39;s take a look</h2>
 <p>Since the introduction of XHTML, naming tags anyway you want is possible and passes HTMl validators. Browser engines computes unknown element names as a normal block element.</p>
 <p>Which means you can code HTML like this:</p>
-<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">logo</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http:/domain.ext/path/to/image.jpg&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">logo</span>&gt;</span>
+<pre><code class="language-html">&lt;logo&gt;
+  &lt;img src=&quot;http:/domain.ext/path/to/image.jpg&quot; /&gt;
+&lt;/logo&gt;
 </code></pre>
 <p>Which also means you can code CSS (here SCSS) as this:</p>
 <pre><code class="language-scss">logo {
-  <span class="hljs-attribute">width</span>: <span class="hljs-number">10rem</span>;
-  aspect-ratio: <span class="hljs-number">2</span> / <span class="hljs-number">1</span>;
+  width: 10rem;
+  aspect-ratio: 2 / 1;
 
-  <span class="hljs-selector-tag">img</span> {
-    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
-    <span class="hljs-attribute">object-fit</span>: cover;
+  img {
+    width: 100%;
+    object-fit: cover;
   }
 }
 </code></pre>
@@ -29,6 +29,22 @@
 </iframe>
 </block>
   <block name="aside">
-    <include src="./components/archive.html"></include>
+    <include src="./components/archive/archive.html" locals='{"basePath": ".."}'></include>
+    <!-- <script src="https://giscus.app/client.js"
+        data-repo="pixu1980/dout-dev"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+        data-category="General"
+        data-category-id="DIC_kwDOFJulQc4CjlkE"
+        data-mapping="url"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="it"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+    </script> -->
   </block>
 </extends>

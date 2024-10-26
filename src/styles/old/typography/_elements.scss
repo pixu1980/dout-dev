@@ -1,0 +1,91 @@
+@layer elements {
+  a {
+    color: var(--dude--theme--accent-color);
+    background-color: transparent;
+    padding: 0.7rem;
+    border-radius: 0.7rem;
+
+    text-decoration: none;
+
+    // transition: var(--dude--focus--transition), color 0.3s ease-in-out;
+
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:is(:hover, :visited) {
+      color: var(--dude--theme--accent-color--hover);
+      border: none;
+
+      text-shadow: none;
+    }
+  }
+
+  mark {
+    padding: 0 0.2em;
+    background-color: var(--dude--theme--highlight-color);
+  }
+
+  sub,
+  sup {
+    position: relative;
+    font-size: 0.75em;
+    line-height: 0;
+    vertical-align: baseline;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  p,
+  address,
+  ol,
+  ul,
+  dl,
+  blockquote,
+  figure {
+    margin: var(--dude--block-margin);
+  }
+
+  abbr[title],
+  abbr[data-bs-original-title] {
+    text-decoration: underline dotted;
+    cursor: help;
+    text-decoration-skip-ink: none;
+  }
+
+  address {
+    font: normal inherit inherit/inherit inherit;
+  }
+
+  :where(ol, ul) {
+    list-style-position: inside;
+    padding: 0;
+
+    :where(ol, ul) {
+      margin: 0;
+    }
+  }
+
+  dd {
+    margin-bottom: calc(var(--dude--gutter) / 2);
+    margin-left: 0;
+  }
+
+  body:has([name='color-scheme-switcher']:checked) {
+    a {
+      color: var(--dude--theme--accent-color--switch);
+
+      &:is(:hover, :visited) {
+        color: var(--dude--theme--accent-color--hover--switch);
+      }
+    }
+  }
+}
