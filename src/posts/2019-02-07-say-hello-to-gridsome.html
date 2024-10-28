@@ -4,22 +4,22 @@
 <p>We think <strong>Gridsome</strong> is a missing piece to the Vue.js ecosystem. What Gatsby.js does for React.js is a game changer in how we build websites. React.js is excellent, but we think Vue.js is more approachable for most web designers and devs getting started with JAMstack. Gridsome is the Vue.js alternative to Gatsby.</p>
 <p>With <strong>Gridsome</strong> you get a <strong>universal GraphQL layer</strong> for all your connected data sources. It&#39;s like a single source of truth for your website data ready to be used in any page or components. Connect to any CMS or APIs like Google Spreadsheet, Airtable, Instagram Feed, local markdown files, etc.</p>
 <p>Here is an example on how to query posts from the GraphQL layer in a page:</p>
-<pre><code class="language-html">&lt;template&gt;
-  &lt;Layout&gt;
-    &lt;h2&gt;Latest blog posts&lt;/h2&gt;
-    &lt;ul&gt;
+<pre><code class="line-numbers language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Layout</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Latest blog posts<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
      
-    &lt;/ul&gt;
-  &lt;/Layout&gt;
-&lt;/template&gt;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Layout</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-&lt;page-query&gt; query Blog { allWordPressPost (limit: 5) { edges { node { _id title } } } } &lt;/page-query&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>page-query</span><span class="token punctuation">></span></span> query Blog { allWordPressPost (limit: 5) { edges { node { _id title } } } } <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>page-query</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>You don&#39;t need to know GraphQL or Vue to get started with Gridsome - It&#39;s a great way to get introduced to both.</p>
 <p>The GraphQL layer and all the data can be explored in a local GraphQL playground. The playground is usually located at <code>https://localhost:8080/___explore</code> when a Gridsome development project is running.</p>
 <h4>Perfect scores on Google Lighthouse - automagically 💚</h4>
 <p>One of the main goals of Gridsome is to make a framework that let you build websites that are optimized &quot;out-of-the-box.&quot; It follows the 
-      <a href="[object Object]" target="_blank" rel="noopener noreferrer" title="undefined">undefined</a>
+      <a href="https://developers.google.com/web/fundamentals/performance/prpl-pattern/" target="_blank" rel="noopener noreferrer" title="null">PRPL-pattern by Google.</a>
      You don&#39;t need to be a performance expert to make fast websites with Gridsome. Your site gets almost perfect scores on Google lighthouse out-of-the-box. These are some of the performance steps that Gridsome takes care of:</p>
 <ul>
 <li>Image compressing &amp; lazy-loading ⚡️</li>
@@ -39,7 +39,7 @@
 <h4>Contribute to Gridsome</h4>
 <p>We&#39;re currently just two brothers working on this, so any contribution is very welcome. We&#39;re passionate about building a faster web and make website building fun again.</p>
 <p>You can also support us by giving 
-      <a href="[object Object]" target="_blank" rel="noopener noreferrer" title="undefined">undefined</a>
+      <a href="https://github.com/gridsome/gridsome/stargazers" target="_blank" rel="noopener noreferrer" title="null">a GitHub star ★</a>
      and spread the word :)</p>
 </block>
   <block name="aside">

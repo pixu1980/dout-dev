@@ -9,15 +9,18 @@
   // https://www.reddit.com/r/Frontend/comments/1bdsqpr/ecss_simple_rules_for_efficient_css/
   // https://ecss.info/en/#intro
   // https://github.com/cferdinandi/kraken/blob/master/src/scss/components/_reset.scss
-    
+
   // https://github.com/5t3ph/course-accessible-cross-browser-forms
-  
-  
+
   // https://projects.dutchcelt.com/system.css/
   // https://simplecss.org/demo
   // https://picocss.com
   // https://watercss.kognise.dev
-   * {
+  * {
     box-sizing: border-box;
-   }
+  }
+
+  img {
+    max-width: 100%;
+  }
 }

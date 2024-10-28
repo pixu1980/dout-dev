@@ -11,6 +11,9 @@
     --dude--gap: 1.5rem;
     --dude--color-scheme--transition: color 0.1s linear, background-color 0.2s linear;
   }
+  
+  @import 'code';
+
 
   html,
   body {
@@ -27,7 +30,7 @@
       'footer';
     grid-template-rows: 6.6rem 1fr 4.6rem;
 
-    margin-inline: 10vw;
+    margin-inline: 20vw;
 
     color: CanvasText;
     background-color: Canvas;
