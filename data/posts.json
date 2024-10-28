@@ -1,5 +1,33 @@
 [
   {
+    "title": "Introducing CSS Grid - The Future of Web Layout 🎨",
+    "date": "2024-10-28T10:00:00.000Z",
+    "published": true,
+    "tags": [
+      {
+        "key": "css",
+        "label": "CSS"
+      },
+      {
+        "key": "web-design",
+        "label": "Web Design"
+      },
+      {
+        "key": "frontend",
+        "label": "Frontend"
+      },
+      {
+        "key": "grid-layout",
+        "label": "Grid Layout"
+      }
+    ],
+    "canonicalUrl": false,
+    "coverImage": "../assets/images/css-grid-cover.jpg",
+    "description": "Discover how CSS Grid is transforming the way we design modern and flexible web layouts.",
+    "name": "2024-10-28-concerning-css-grid",
+    "path": "./posts/2024-10-28-concerning-css-grid.html"
+  },
+  {
     "title": "Accessibility by Design",
     "date": "2024-05-19T00:41:22.000Z",
     "published": true,

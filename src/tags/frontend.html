@@ -1,0 +1,15 @@
+<extends src="./layouts/leaf.html" locals='{"title": " - Frontend"}'>
+  <block name="content">
+    <h3>Frontend</h3>
+    <each
+      loop="post, index in posts.filter(post => 
+              post.tags.find(tag => tag.key === 'frontend'))
+            "
+    >
+      {{post.date.toLocaleDateString('it-IT')}}<a href="{{post.path.replace('./', '../')}}">{{post.title}}</a>
+    </each>
+  </block>
+  <block name="aside">
+    <include src="./components/archive/archive.html" locals='{"basePath": ".."}'></include>
+  </block>
+</extends>

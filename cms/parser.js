@@ -1,10 +1,27 @@
 const fs = require('fs');
 const matter = require('gray-matter');
-const highlightJS = require('highlight.js');
 const marked = require('marked');
-// const { gfmHeadingId: markedHeadingId } = require('marked-gfm-heading-id');
-// const { markedHighlight } = require('marked-highlight');
-// const { mangle: markedMangle } = require('marked-mangle');
+const prism = require("prismjs");
+
+require("prismjs/components");
+require("prismjs/components/prism-bash");
+require("prismjs/components/prism-css");
+require("prismjs/components/prism-css-extras");
+require("prismjs/components/prism-scss");
+require("prismjs/components/prism-javascript");
+require("prismjs/components/prism-javascript");
+require("prismjs/components/prism-js-extras");
+require("prismjs/components/prism-js-templates");
+// require("prismjs/components/prism-jsdoc");
+require("prismjs/components/prism-json");
+require("prismjs/components/prism-markdown");
+// require("prismjs/components/prism-php");
+require("prismjs/components/prism-regex");
+// require("prismjs/components/prism-tsx");
+require("prismjs/components/prism-typescript");
+require("prismjs/components/prism-yaml");
+require("prismjs/components/prism-toml");
+
 module.exports = class MarkdownParser {
   renderer;
 
@@ -12,46 +29,21 @@ module.exports = class MarkdownParser {
     const content = fs.readFileSync(path);
     const data = matter(content);
 
-    // marked.use(markedHeadingId({ prefix: '' }));
-
-    // marked.use(
-    //   markedHighlight({
-    //     langPrefix: 'hljs language-',
-    //     highlight(code, lang) {
-    //       const language = highlightJS.getLanguage(lang) ? lang : 'plaintext';
-    //       return highlightJS.highlight(code, { language }).value;
-    //       // return highlightJS.highlightAuto(code).value;
-    //     },
-    //   })
-    // );
-
-    // marked.use(markedMangle());
-
-    // const html = marked.marked(data.content, {
-    //   breaks: false,
-    //   gfm: true,
-    //   pedantic: false,
-    //   sanitize: false,
-    //   silent: false,
-    //   smartLists: false,
-    //   smartypants: false,
-    //   xhtml: false,
-    //   renderer: this.renderer,
-    // });
-
     const html = marked.marked(data.content, {
       breaks: false,
       gfm: true,
-      headerIds: true,
+      headerIds: false,
       headerPrefix: '',
+      langPrefix: 'line-numbers language-',
       highlight: function (code, lang) {
-        // https://benborgers.com/posts/marked-prism
         // https://prismjs.com/#basic-usage
-        // duotone 
-        return highlightJS.highlightAuto(code).value;
+        if (prism.languages[lang]) {
+          return prism.highlight(code, prism.languages[lang], lang);
+        } else {
+          return code;
+        }
       },
-      langPrefix: 'language-',
-      mangle: true,
+      mangle: false,
       pedantic: false,
       sanitize: false,
       silent: false,

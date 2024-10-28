@@ -1,5 +1,25 @@
 [
   {
+    "key": "css",
+    "label": "CSS",
+    "path": "./tags/css.html"
+  },
+  {
+    "key": "web-design",
+    "label": "Web Design",
+    "path": "./tags/web-design.html"
+  },
+  {
+    "key": "frontend",
+    "label": "Frontend",
+    "path": "./tags/frontend.html"
+  },
+  {
+    "key": "grid-layout",
+    "label": "Grid Layout",
+    "path": "./tags/grid-layout.html"
+  },
+  {
     "key": "a11y",
     "label": "A11y",
     "path": "./tags/a11y.html"
@@ -38,11 +58,6 @@
     "key": "html",
     "label": "HTML",
     "path": "./tags/html.html"
-  },
-  {
-    "key": "css",
-    "label": "CSS",
-    "path": "./tags/css.html"
   },
   {
     "key": "cover-image",
