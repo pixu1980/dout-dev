@@ -2,7 +2,7 @@
 
 const path = require('path');
 const fs = require('fs');
-const { slugify, dateToMonthLabel, dateToMonthKey, dateToFilterFormat } = require('./utils');
+const { slugify, dateToMonthLabel, dateToMonthKey, dateToFilterFormat, dateToString } = require('./utils');
 
 module.exports = (parser, paths) => {
   const posts = [];
@@ -45,6 +45,9 @@ module.exports = (parser, paths) => {
       const postHtml = postTemplate
         .replaceAll('###LAYOUT###', postData.layout || './layouts/leaf.html')
         .replaceAll('###LOCALS###', postJson)
+        .replaceAll('###TITLE###', `<h1>${postData.title ? postData.title : 'No Post Title Provided'}</h1>`)
+        .replaceAll('###DATE###', `<time datetime="${postParsed.data.date}">${dateToString(postData.date)}</time>`)
+        .replaceAll('###DESCRIPTION###', postData.description ? `<p>${postData.description}</p>` : '')
         .replaceAll('###CONTENT###', postParsed.html)
         .trim();
 

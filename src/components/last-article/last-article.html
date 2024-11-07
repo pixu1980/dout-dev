@@ -1,13 +1,24 @@
 <last-article>
-  <h2>My Last Article</h2>
   <article>
     <header>
-      <a href="{{lastPost.path.replace('./', basePath+'/')}}">
-        <h1>{{lastPost.title}}</h1>
+      <a href="{{lastPost.path}}">
+        <h2>{{lastPost.title}}</h2>
       </a>
-      <!-- <a href="{{basePath}}/tags/{{lastPost.tags[0].key}}.html">
-        <h2>{{lastPost.tags[0].label}}</h2>
-      </a> -->
+      <time datetime="{{lastPost.date}}">
+        {{lastPost.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}}
+      </time>
+      <if condition="!!lastPost.tags.length">
+        <tags>
+          <tags-list>
+            <if condition="!!lastPost.tags[0]">
+              <a href="{{lastPost.tags[0].url}}" tag>{{lastPost.tags[0].label}}</a>
+            </if>
+            <if condition="!!lastPost.tags[1]">
+              <a href="{{lastPost.tags[1].url}}" tag>{{lastPost.tags[1].label}}</a>
+            </if>
+          </tags-list>
+        </tags>
+      </if>
     </header>
     <content>{{lastPost.description}}</content>
   </article>

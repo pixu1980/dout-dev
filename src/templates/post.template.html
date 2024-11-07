@@ -1,8 +1,14 @@
 <!-- <extends src='###LAYOUT###' locals='###LOCALS###'> -->
-<extends src='###LAYOUT###' locals='###LOCALS###'>
-  <block name="content">###CONTENT###</block>
+<!-- NOTE: Do not change the indentation of this file -->
+<extends src="###LAYOUT###" locals="###LOCALS###">
+  <block name="content">
+    ###TITLE###
+    ###DATE###
+    ###DESCRIPTION###
+    ###CONTENT###
+  </block>
   <block name="aside">
-    <include src="./components/archive/archive.html" locals='{"basePath": ".."}'></include>
+    <!-- <include src="./components/archive/archive.html" locals='{"basePath": "..", "months": months}'></include> -->
     <!-- <script src="https://giscus.app/client.js"
         data-repo="pixu1980/dout-dev"
         data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="

@@ -1,19 +1,23 @@
 @charset 'UTF-8';
 
-@layer dude {
-  @import 'semantic-reset';
-  @import 'iconography';
-  @import 'typography';
+@layer dude.typography, dude.tags;
 
-  @import '../components';
+@layer dude {
+  @import 'palette';
+  @import 'semantic-reset';
 
   :root {
     --dude--gap: 1.5rem;
     --dude--color-scheme--transition: color 0.1s linear, background-color 0.2s linear;
   }
-  
-  @import 'code';
 
+  @import 'iconography';
+  @import 'typography';
+
+  @import '../components';
+
+  @import 'code';
+  @import 'tags';
 
   html,
   body {
@@ -30,10 +34,14 @@
       'footer';
     grid-template-rows: 6.6rem 1fr 4.6rem;
 
-    margin-inline: 20vw;
+    margin-inline: 25vw;
 
     color: CanvasText;
     background-color: Canvas;
+  }
+  
+  main {
+    inline-size: 50vw;
   }
 
   [sr-only] {
@@ -53,16 +61,30 @@
 
   main {
     grid-area: main;
+
+    max-inline-size: 100%;
+    overflow: visible;
+  }
+
+  hero {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    flex-basis: auto;
+
+    margin-block-start: -10rem;
   }
 
   footer {
     grid-area: footer;
   }
 
-  * {
-    --dude--transition: var(--dude--color-scheme--transition);
-    
-    transition: var(--dude--transition);
+  :is(.dude-loaded) {
+    * {
+      --dude--transition: var(--dude--color-scheme--transition);
+
+      transition: var(--dude--transition);
+    }
   }
 }
 

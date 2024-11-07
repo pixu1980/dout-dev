@@ -1,8 +1,10 @@
-<extends src="./layouts/root.html" locals='{"title": ""}'>
+<extends src="./layouts/root.html" locals='{"basePath": ".", "title": ""}'>
   <block name="content">
-    <include src="./components/last-article/last-article.html" locals='{"basePath": "."}'></include>
-    <include src="./components/animated-logo/animated-logo.html" locals='{"basePath": "."}'></include>
-    <include src="./components/tags/tags.html" locals='{"basePath": "."}'></include>
+    <hero>
+      <include src="./components/last-article/last-article.html"></include>
+      <include src="./components/animated-logo/animated-logo.html"></include>
+    </hero>
+    <include src="./components/tags/tags.html" locals='{"basePath": ".", "tags": tags}'></include>
     <articles>
       <h3>{{months[0].label}}</h3>
       <each loop="post, index in posts.filter(post => post.date >= months[0].from && post.date <= months[0].to)">
@@ -19,10 +21,10 @@
     </articles>
   </block>
   <block name="aside">
-    <include src="./components/archive/archive.html" locals='{"basePath": "."}'></include>
+    <include src="./components/archive/archive.html" locals='{"basePath": ".", "months": months}'></include>
   </block>
   <block name="scripts">
-    <script src="./scripts/search.js"></script>
+    <!-- <script src="./scripts/search.js"></script> -->
   </block>
 </extends>
 
@@ -37,4 +39,5 @@
   https://docs.github.com/en/rest/reference/issues#create-an-issue-comment
   
   https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file
+  https://expressionstatement.com/html-form-validation-is-heavily-underused
  -->

@@ -1,6 +1,6 @@
 @layer typography {
   :root {
-    --dude--t--ratio: 1.2;
+    --dude--t--ratio: 1.125;
 
     --dude--t--font-family: system-ui, sans-serif;
     --dude--t--font-size--base: 1.8rem;
@@ -76,14 +76,18 @@
   }
 
   :where(hgroup, h1, h2, h3, h4, h5, h6) {
-    --dude--t--font-weight: 600;
+    --dude--t--font-weight: 500;
   }
 
   :where(hgroup, h1, h2, h3, h4, h5, h6, p, blockquote, pre) {
     margin: 0;
 
+    + :where(hgroup, h1, h2, h3, h4, h5, h6) {
+      margin-block-start: calc(var(--dude--t--gap) * 1.5);
+    }
+
     + :where(p, blockquote, pre) {
-      margin-block-start: var(--dude--t--gap);
+      margin-block-start: calc(var(--dude--t--gap) / 2);
     }
   }
 }

@@ -14,6 +14,12 @@ const dateToMonthKey = (d) => d.toLocaleDateString('fr-CA', {
   month: '2-digit',
 });
 
+const dateToString = (d) => d.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+
 const dateToFilterFormat = (d) => d.toLocaleDateString('fr-CA', {
   year: 'numeric',
   month: '2-digit',
@@ -24,6 +30,7 @@ module.exports = {
   slugify,
   dateToMonthLabel,
   dateToMonthKey,
-  dateToFilterFormat
+  dateToFilterFormat,
+  dateToString
 }
 

@@ -6,102 +6,16 @@
     <meta name="description" content="The DoUt.dev Blog" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <title>DoUt.Dev{{title}}</title>
+    <title>DoUt.Dev</title>
     <link rel="preload" href="./styles/iconography/icons/fonts/dude.woff" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="./styles/iconography/icons/fonts/dude.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="./styles/iconography/icons/fonts/dude.svg" as="font" type="font/svg" crossorigin />
     <link rel="stylesheet" href="./styles/index.scss" />
   </head>
   <body>
-    <include src="./components/color-scheme-switcher/color-scheme-switcher.html" locals='{"basePath": "."}'></include>
+    <include src="./components/color-scheme-switcher/color-scheme-switcher.html"></include>
     <include src="./components/header/header.html" locals='{"basePath": "."}'></include>
     <main>
-      <!-- <h1>Heading 1</h1>
-      <h2>Heading 2</h2>
-      <h3>Heading 3</h3>
-      <h4>Heading 4</h4>
-      <h5>Heading 5</h5>
-      <h6>Heading 6</h6>
-      <p>
-        Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum. Donec sed odio dui.
-        Curabitur blandit tempus porttitor.
-        <br /><br />
-        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
-        risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed
-        consectetur. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non
-        magna. Aenean lacinia bibendum nulla sed consectetur.
-        <br /><br />
-        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla
-        non metus auctor fringilla. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-        eget lacinia odio sem nec elit.
-      </p>
-      <p>
-        Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-        auctor. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Vivamus
-        sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum
-        faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna.
-        <br /><br />
-        Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum. Donec sed odio dui.
-        Curabitur blandit tempus porttitor.
-        <br /><br />
-        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
-        risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed
-        consectetur. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non
-        magna. Aenean lacinia bibendum nulla sed consectetur.
-      </p>
-      <p>
-        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla
-        non metus auctor fringilla. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-        eget lacinia odio sem nec elit.
-        <br /><br />
-        Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-        auctor. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Vivamus
-        sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum
-        faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna.
-        <br /><br />
-        Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum. Donec sed odio dui.
-        Curabitur blandit tempus porttitor.
-        <br /><br />
-        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
-        risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed
-        consectetur. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non
-        magna. Aenean lacinia bibendum nulla sed consectetur.
-      </p>
-      <p>
-        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla
-        non metus auctor fringilla. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-        eget lacinia odio sem nec elit.
-        <br /><br />
-        Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-        auctor. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Vivamus
-        sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum
-        faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna.
-        <br /><br />
-        Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum. Donec sed odio dui.
-        Curabitur blandit tempus porttitor.
-        <br /><br />
-        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
-        risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed
-        consectetur. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non
-        magna. Aenean lacinia bibendum nulla sed consectetur.
-      </p>
-      <p>
-        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla
-        non metus auctor fringilla. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-        eget lacinia odio sem nec elit.
-        <br /><br />
-        Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-        auctor. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Vivamus
-        sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum
-        faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna.
-      </p> -->
-      <!-- <hero> -->
-      <!-- TODO: find another place for the about me -->
-      <!-- <include src="./components/about-me/about-me.html" locals='{"basePath": "."}'></include> -->
-      <!-- <include src="./components/last-article/last-article.html" locals='{"basePath": "."}'></include>
-      <include src="./components/animated-logo/animated-logo.html" locals='{"basePath": "."}'></include> -->
-      <!-- </hero> -->
-      <!-- <include src="./components/tags/tags.html" locals='{"basePath": "."}'></include> -->
       <content>
         <block name="content"></block>
       </content>
@@ -109,7 +23,7 @@
         <block name="aside"></block>
       </aside>
     </main>
-    <include src="./components/footer/footer.html" locals='{"basePath": "."}'></include>
+    <include src="./components/footer/footer.html" locals='{"basePath": ".", "currentYear": currentYear}'></include>
     <script src="./scripts/index.js" type="module"></script>
     <block name="scripts">
       <!-- 

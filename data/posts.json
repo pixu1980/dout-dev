@@ -46,7 +46,7 @@
       }
     ],
     "canonicalUrl": false,
-    "description": "Accessibility by Design",
+    "description": "The Importance of Accessibility by Design: Inclusivity, Responsiveness, Usability, and Marketing",
     "name": "2024-05-19-a11y-by-design",
     "path": "./posts/2024-05-19-a11y-by-design.html"
   },
@@ -69,23 +69,6 @@
     "description": "Blog under construction",
     "name": "2023-01-01-say-hello-2023",
     "path": "./posts/2023-01-01-say-hello-2023.html"
-  },
-  {
-    "title": "No Matter",
-    "date": "2022-12-20T15:41:22.000Z",
-    "tags": [
-      {
-        "key": "markdown",
-        "label": "Markdown"
-      },
-      {
-        "key": "example",
-        "label": "Example"
-      }
-    ],
-    "description": "One line only description",
-    "name": "2022-12-20-no-matter-new",
-    "path": "./posts/2022-12-20-no-matter-new.html"
   },
   {
     "title": "Concerning…",
@@ -208,12 +191,12 @@
     "path": "./posts/2022-03-12-you-can-edit-css.html"
   },
   {
-    "title": "No Matter",
+    "title": "Marked - Markdown Parser",
     "date": "2022-03-03T15:41:22.000Z",
     "tags": [],
-    "description": "One line only description",
-    "name": "2022-03-03-no-matter",
-    "path": "./posts/2022-03-03-no-matter.html"
+    "description": "[Marked] lets you convert [Markdown] into HTML. Markdown is a simple text format whose goal is to be very easy to read and write, even when not converted to HTML. This demo page will let you type anything you like and see how it gets converted. Live. No more waiting around.",
+    "name": "2022-03-03-marked-markdown-parser",
+    "path": "./posts/2022-03-03-marked-markdown-parser.html"
   },
   {
     "title": "Custom Grid System",

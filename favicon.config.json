@@ -1,70 +1,32 @@
 {
-  "masterPicture": "./src/assets/favicon/favicon.png",
-	"iconsPath": "/",
-	"design": {
-		"ios": {
-			"pictureAspect": "backgroundAndMargin",
-			"backgroundColor": "#ffffff",
-			"margin": "5%",
-			"assets": {
-				"ios6AndPriorIcons": true,
-				"ios7AndLaterIcons": true,
-				"precomposedIcons": true,
-				"declareOnlyDefaultIcon": true
-			},
-			"appName": "Dout.dev"
-		},
-		"desktopBrowser": {
-			"design": "background",
-			"backgroundColor": "#fff",
-			"backgroundRadius": 0.55,
-			"imageScale": 0.9
-		},
-		"windows": {
-			"pictureAspect": "noChange",
-			"backgroundColor": "#da532c",
-			"onConflict": "override",
-			"assets": {
-				"windows80Ie10Tile": true,
-				"windows10Ie11EdgeTiles": {
-					"small": true,
-					"medium": true,
-					"big": true,
-					"rectangle": true
-				}
-			},
-			"appName": "Dout.dev"
-		},
-		"androidChrome": {
-			"pictureAspect": "backgroundAndMargin",
-			"margin": "7%",
-			"backgroundColor": "#ffffff",
-			"themeColor": "#ffffff",
-			"manifest": {
-				"name": "Dout.dev",
-				"startUrl": "https://dout.dev",
-				"display": "standalone",
-				"orientation": "notSet",
-				"onConflict": "override",
-				"declared": true
-			},
-			"assets": {
-				"legacyIcon": true,
-				"lowResolutionIcons": true
-			}
-		},
-		"safariPinnedTab": {
-			"pictureAspect": "blackAndWhite",
-			"threshold": 57.34375,
-			"themeColor": "#277987"
-		}
-	},
-	"settings": {
-		"compression": 1,
-		"scalingAlgorithm": "Mitchell",
-		"errorOnImageTooSmall": false,
-		"readmeFile": false,
-		"htmlCodeFile": false,
-		"usePathAsIs": false
-	}
+  "icon": {
+    "desktop": {
+      "regularIconTransformation": {
+        "type": "none"
+      },
+      "darkIconType": "none"
+    },
+    "touch": {
+      "transformation": {
+        "type": "background",
+        "backgroundColor": "#ffffff",
+        "backgroundRadius": 0,
+        "imageScale": 0.7
+      },
+      "appTitle": "DoUt.dev"
+    },
+    "webAppManifest": {
+      "transformation": {
+        "type": "background",
+        "backgroundColor": "#ffffff",
+        "backgroundRadius": 0,
+        "imageScale": 0.7
+      },
+      "backgroundColor": "#ffffff",
+      "name": "DoUt.dev",
+      "shortName": "DoUt.dev",
+      "themeColor": "#ffffff"
+    }
+  },
+  "path": "/"
 }

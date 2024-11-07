@@ -6,23 +6,16 @@
     <meta name="description" content="The DoUt.dev Blog" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <title>DoUt.Dev{{title}}</title>
+    <title>DoUt.Dev</title>
     <link rel="preload" href="../styles/iconography/icons/fonts/dude.woff" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="../styles/iconography/icons/fonts/dude.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="../styles/iconography/icons/fonts/dude.svg" as="font" type="font/svg" crossorigin />
     <link rel="stylesheet" href="../styles/index.scss" />
   </head>
   <body>
-    <include src="./components/color-scheme-switcher/color-scheme-switcher.html" locals='{"basePath": ".."}'></include>
+    <include src="./components/color-scheme-switcher/color-scheme-switcher.html"></include>
     <include src="./components/header/header.html" locals='{"basePath": ".."}'></include>
     <main>
-      <!-- <hero> -->
-      <!-- TODO: find another place for the about me -->
-      <!-- <include src="./components/about-me/about-me.html" locals='{"basePath": ".."}'></include> -->
-      <!-- <include src="./components/last-article/last-article.html" locals='{"basePath": ".."}'></include> -->
-      <!-- <include src="./components/animated-logo/animated-logo.html" locals='{"basePath": ".."}'></include> -->
-      <!-- </hero> -->
-      <!-- <include src="./components/tags/tags.html" locals='{"basePath": ".."}'></include> -->
       <content>
         <block name="content"></block>
       </content>
@@ -30,7 +23,7 @@
         <block name="aside"></block>
       </aside>
     </main>
-    <include src="./components/footer/footer.html" locals='{"basePath": ".."}'></include>
+    <include src="./components/footer/footer.html" locals='{"basePath": "..", "currentYear": currentYear}'></include>
     <script src="../scripts/index.js" type="module"></script>
     <block name="scripts">
       <!-- <script src="../scripts/index.js" type="module"></script>

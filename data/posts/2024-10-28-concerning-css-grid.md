@@ -58,11 +58,25 @@ And the corresponding CSS:
   gap: 20px;
 }
 
-header { grid-area: header; }
-nav { grid-area: nav; }
-main { grid-area: main; }
-aside { grid-area: aside; }
-footer { grid-area: footer; }
+header {
+  grid-area: header;
+}
+
+nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: main;
+}
+
+aside {
+  grid-area: aside;
+}
+
+footer {
+  grid-area: footer;
+}
 ```
 
 In this example, we use `grid-template-areas` to assign names to sections and define the layout structure in a readable way.
@@ -72,4 +86,3 @@ In this example, we use `grid-template-areas` to assign names to sections and de
 CSS Grid is an essential tool for every frontend developer. If you want to create modern, responsive, and easily maintainable layouts, CSS Grid is the way to go. Don't be afraid to experiment and play with grids: once you learn it, you won't look back!
 
 Do you want to learn more about how to use CSS Grid in your projects? Feel free to ask questions or share your experiments in the comments! 😊
-

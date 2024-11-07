@@ -1,16 +1,16 @@
-<extends src="./layouts/root.html" locals='{"title": " - Search"}'>
+<extends src="./layouts/root.html" locals='{"basePath": ".", "title": " - Search"}'>
   <block name="content">
     <!-- TODO: implement search datalist -->
     <input type="search" list="autocomplete-data" aria-label="Search a post by title" />
     <datalist id="autocomplete-data">
       <each loop="post, index in posts">
-        <option value="{{post.path.replace('.', '').replace('html', '.html')}}">
+        <option value="{{post.path.replace('./', '/')}}">
           {{post.title}} (<each loop="tag, index in post.tags">{{index!==0?', ':''}}{{tag.label}}</each>)
         </option>
       </each>
     </datalist>
   </block>
   <block name="scripts">
-    <script src="./scripts/search.js"></script>
+    <!-- <script src="./scripts/search.js"></script> -->
   </block>
 </extends>

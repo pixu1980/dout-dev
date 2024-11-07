@@ -8,8 +8,6 @@ cover_image: ./images/svg-code.jpg
 description: You can use express tags… TODAY!
 ---
 
-# You can use express tags… TODAY!
-
 HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described [here](https://www.htmlgoodies.com/guides/expected-new-features-in-html6/ 'Expected new features in HTML6').
 
 ## Let's take a look

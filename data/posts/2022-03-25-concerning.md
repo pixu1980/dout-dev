@@ -7,7 +7,7 @@ series: ['Concerning…']
 description: Concerning…
 ---
 
-### Concerning Core Web Technologies
+## Concerning Core Web Technologies
 
 I truly believe in the following idea:
 
@@ -17,13 +17,13 @@ We'll explore in detail... Building a CSS codebase from scratch can be very hard
 
 ---
 
-### Concerning UI/UX
+## Concerning UI/UX
 
 Analyzing and implementing a Design and its related User Experience can be one of the funniest and challenging things to do.
 
 ---
 
-### Concerning a11y
+## Concerning a11y
 
 Let' start with a basic concept...
 
@@ -34,7 +34,7 @@ Let' start with a basic concept...
 
 ---
 
-### Concerning Responsiveness
+## Concerning Responsiveness
 
 Responsiveness is a concept, an idea, to me is...
 
