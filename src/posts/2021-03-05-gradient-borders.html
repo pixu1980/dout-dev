@@ -1,6 +1,11 @@
 <!-- <extends src='./layouts/leaf.html' locals='{"title":" - Testing CodePen","date":"2021-03-05T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":true,"canonicalUrl":false,"description":"One line only description","name":"2021-03-05-gradient-borders","path":"./posts/2021-03-05-gradient-borders.html"}'> -->
-<extends src='./layouts/leaf.html' locals='{"title":" - Testing CodePen","date":"2021-03-05T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":true,"canonicalUrl":false,"description":"One line only description","name":"2021-03-05-gradient-borders","path":"./posts/2021-03-05-gradient-borders.html"}'>
-  <block name="content"><p>GRADIENT BORDERS</p>
+<!-- NOTE: Do not change the indentation of this file -->
+<extends src="./layouts/leaf.html" locals="{"title":" - Testing CodePen","date":"2021-03-05T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":true,"canonicalUrl":false,"description":"One line only description","name":"2021-03-05-gradient-borders","path":"./posts/2021-03-05-gradient-borders.html"}">
+  <block name="content">
+    <h1>Testing CodePen</h1>
+    <time datetime="Fri Mar 05 2021 01:00:00 GMT+0100 (Ora standard dell’Europa centrale)">March 5, 2021</time>
+    <p>One line only description</p>
+    <p>GRADIENT BORDERS</p>
 <p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible. Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it&#39;s been marked up with tags or formatting instructions.</p>
 <style>
   .white-grad {
@@ -68,9 +73,10 @@
   class="white-grad"
   style="--b: 20px 20px 0 20px; --r: 50% 50% 0 0; --c: conic-gradient(pink, orange, red, pink)"
 ></div>
-</block>
+
+  </block>
   <block name="aside">
-    <include src="./components/archive/archive.html" locals='{"basePath": ".."}'></include>
+    <!-- <include src="./components/archive/archive.html" locals='{"basePath": "..", "months": months}'></include> -->
     <!-- <script src="https://giscus.app/client.js"
         data-repo="pixu1980/dout-dev"
         data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="

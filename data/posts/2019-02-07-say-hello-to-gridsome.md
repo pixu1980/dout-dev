@@ -32,7 +32,7 @@ You don't need to know GraphQL or Vue to get started with Gridsome - It's a grea
 
 The GraphQL layer and all the data can be explored in a local GraphQL playground. The playground is usually located at `https://localhost:8080/___explore` when a Gridsome development project is running.
 
-#### Perfect scores on Google Lighthouse - automagically 💚
+## Perfect scores on Google Lighthouse - automagically 💚
 
 One of the main goals of Gridsome is to make a framework that let you build websites that are optimized "out-of-the-box." It follows the [PRPL-pattern by Google.](https://developers.google.com/web/fundamentals/performance/prpl-pattern/) You don't need to be a performance expert to make fast websites with Gridsome. Your site gets almost perfect scores on Google lighthouse out-of-the-box. These are some of the performance steps that Gridsome takes care of:
 
@@ -43,7 +43,7 @@ One of the main goals of Gridsome is to make a framework that let you build webs
 - Critical CSS (Plugin) ⚡️
 - Full PWA & Offline-support (plugin) ⚡️
 
-#### A better way to build websites
+## A better way to build websites
 
 Gridsome is built for the JAMstack workflow - a new way to build websites that gives you better performance, higher security, cheaper hosting, and a better developer experience. Generate pre-rendered (static) pages at build time for SEO-purpose and add powerful dynamic functionality with APIs and Vue.js.
 
@@ -53,11 +53,11 @@ Try running the new Chrome Lighthouse (Audit tab in Developer tools) on a WordPr
 
 This is what we think is very exciting and is why we are building Gridsome. It is the **perfect SPA & PWA front-end solution** for any headless CMS or content APIs.
 
-#### Whats next
+## Whats next
 
 In the next couple of months we're going to continue to improve the docs, create tutorials, add more source & transformer plugins and fix bugs.
 
-#### Contribute to Gridsome
+## Contribute to Gridsome
 
 We're currently just two brothers working on this, so any contribution is very welcome. We're passionate about building a faster web and make website building fun again.
 

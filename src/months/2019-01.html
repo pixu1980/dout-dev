@@ -1,15 +1,11 @@
-<extends src="./layouts/leaf.html" locals='{"title": " - January 2019"}'>
+<extends src="./layouts/leaf.html" locals='{"basePath": "..", "title": " - January 2019"}'>
   <block name="content">
     <h3>January 2019</h3>
-    <each
-      loop="post, index in posts.filter(post => 
-              post.date >= new Date('2019-01-01') && post.date <= new Date('2019-01-31'))
-            "
-    >
+    <each loop="post, index in posts.filter(post => post.date >= new Date('2019-01-01') && post.date <= new Date('2019-01-31'))">
       {{post.date.toLocaleDateString('it-IT')}}<a href="{{post.path.replace('./', '../')}}">{{post.title}}</a>
     </each>
   </block>
   <block name="aside">
-    <include src="./components/archive/archive.html" locals='{"basePath": ".."}'></include>
+    <!-- <include src="./components/archive/archive.html" locals='{"basePath": "..", "months": months}'></include> -->
   </block>
 </extends>

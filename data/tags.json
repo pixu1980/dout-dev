@@ -45,11 +45,6 @@
     "path": "./tags/releases.html"
   },
   {
-    "key": "example",
-    "label": "Example",
-    "path": "./tags/example.html"
-  },
-  {
     "key": "generic",
     "label": "Generic",
     "path": "./tags/generic.html"

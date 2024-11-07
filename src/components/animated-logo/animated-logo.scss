@@ -1,13 +1,7 @@
 @layer animated-logo {
   @keyframes animate {
     0% {
-      opacity: var(--dude--animated-logo--initial--opacity, 0);
-      scale: var(--dude--animated-logo--initial--scale, 1.2);
       translate: var(--dude--animated-logo--initial--translate, none);
-    }
-
-    50% {
-      opacity: var(--dude--animated-logo--initial--opacity, 0.5);
     }
 
     100% {
@@ -16,50 +10,50 @@
   }
 
   :root {
-    --dude--animated-logo--delay: 0.1s;
+    --dude--animated-logo--delay: 0.3s;
   }
 
   .animated-logo {
+    block-size: 60rem;
+
+    overflow: visible;
+
     path {
-      animation: animate 1.5s calc(var(--dude--animated-logo--delay) * var(--dude--animated-logo--index)) forwards
-        ease-out;
+      animation: animate 1s calc(var(--dude--animated-logo--delay) * var(--dude--animated-logo--index)) forwards
+        cubic-bezier(0.215, 0.610, 0.355, 1);
+
+      will-change: opacity, translate;
       opacity: 0;
     }
 
     .do {
-      --dude--animated-logo--initial--scale: 1.3;
       --dude--animated-logo--initial--translate: -60% -60%;
-      --dude--animated-logo--index: 1;
+      --dude--animated-logo--index: 0;
     }
 
     .ut {
-      --dude--animated-logo--initial--scale: 0.8;
       --dude--animated-logo--initial--translate: 60% 0%;
-      --dude--animated-logo--index: 5;
-    }
-
-    .dev {
-      --dude--animated-logo--initial--scale: 1.2;
-      --dude--animated-logo--initial--translate: -45% 40%;
       --dude--animated-logo--index: 2;
     }
 
-    .lt {
-      --dude--animated-logo--initial--scale: 0.5;
-      --dude--animated-logo--initial--translate: -70% 80%;
+    .dev {
+      --dude--animated-logo--initial--translate: -45% 40%;
       --dude--animated-logo--index: 4;
     }
 
+    .lt {
+      --dude--animated-logo--initial--translate: -45% -20%;
+      --dude--animated-logo--index: 5;
+    }
+
     .sl {
-      --dude--animated-logo--initial--scale: 1.5;
       --dude--animated-logo--initial--translate: 20% -70%;
       --dude--animated-logo--index: 3;
     }
 
     .gt {
-      --dude--animated-logo--initial--scale: 1.2;
-      --dude--animated-logo--initial--translate: -10% 60%;
-      --dude--animated-logo--index: 6;
+      --dude--animated-logo--initial--translate: 50% 15%;
+      --dude--animated-logo--index: 1;
     }
   }
 }

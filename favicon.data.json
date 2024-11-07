@@ -1,1 +1,18 @@
-{"result":{"status":"success"},"files_location":{"type":"path","path":"/"},"favicon":{"html_code":"<link rel=\"icon\" type=\"image/png\" href=\"/favicon-48x48.png\" sizes=\"48x48\" />\n<link rel=\"icon\" type=\"image/svg+xml\" href=\"/favicon.svg\" />\n<link rel=\"shortcut icon\" href=\"/favicon.ico\" />\n<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png\" />\n<link rel=\"manifest\" href=\"/site.webmanifest\" />","overlapping_markups":["link[rel=\"icon\"][type=\"image/png\"]","link[rel=\"icon\"][type=\"image/svg\\+xml\"]","link[rel=\"shortcut icon\"]","link[rel=\"apple-touch-icon\"]","link[rel=\"manifest\"]"],"files_urls":["https://realfavicongenerator.net/files/e1ba46aa-f4ea-43fb-af27-38d48e6ad95d/favicon.svg","https://realfavicongenerator.net/files/e1ba46aa-f4ea-43fb-af27-38d48e6ad95d/favicon-48x48.png","https://realfavicongenerator.net/files/e1ba46aa-f4ea-43fb-af27-38d48e6ad95d/favicon.ico","https://realfavicongenerator.net/files/e1ba46aa-f4ea-43fb-af27-38d48e6ad95d/apple-touch-icon.png","https://realfavicongenerator.net/files/e1ba46aa-f4ea-43fb-af27-38d48e6ad95d/web-app-manifest-192x192.png","https://realfavicongenerator.net/files/e1ba46aa-f4ea-43fb-af27-38d48e6ad95d/web-app-manifest-512x512.png","https://realfavicongenerator.net/files/e1ba46aa-f4ea-43fb-af27-38d48e6ad95d/site.webmanifest"],"package_url":"https://realfavicongenerator.net/files/e1ba46aa-f4ea-43fb-af27-38d48e6ad95d/favicon.zip"},"version":"0.16"}
+{
+  "markups": [
+    "<link rel=\"icon\" type=\"image/png\" href=\"/favicon-96x96.png\" sizes=\"96x96\" />",
+    "<link rel=\"icon\" type=\"image/svg+xml\" href=\"/favicon.svg\" />",
+    "<link rel=\"shortcut icon\" href=\"/favicon.ico\" />",
+    "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png\" />",
+    "<meta name=\"apple-mobile-web-app-title\" content=\"DoUt.dev\" />",
+    "<link rel=\"manifest\" href=\"/site.webmanifest\" />"
+  ],
+  "cssSelectors": [
+    "link[rel=\"icon\"][type=\"image/png\"]",
+    "link[rel=\"icon\"][type=\"image/svg\\+xml\"]",
+    "link[rel=\"shortcut icon\"]",
+    "link[rel=\"apple-touch-icon\"]",
+    "meta[name=\"apple-mobile-web-app-title\"]",
+    "link[rel=\"manifest\"]"
+  ]
+}

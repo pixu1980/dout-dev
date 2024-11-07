@@ -1,8 +1,8 @@
 <tags>
   <tags-list>
-    <a href="{{basePath}}/index.html">All</a>
-    <each loop="tag, index in tags">
-      <a href="{{tag.path.replace('./', basePath+'/')}}">{{tag.label}}</a>
+    <a href="./index.html" tag>All</a>
+    <each loop="tag in tags">
+      <a href="{{tag.path}}" tag>{{tag.label}}</a>
     </each>
     <span>&nbsp;</span>
   </tags-list>

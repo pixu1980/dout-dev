@@ -1,9 +1,15 @@
 <!-- <extends src='./layouts/leaf.html' locals='{"title":" - Say Hello to Gridsome NEW","date":"2021-03-01T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":true,"canonicalUrl":false,"description":"One line only description","name":"2021-03-01-say-hello-to-gridsome-new","path":"./posts/2021-03-01-say-hello-to-gridsome-new.html"}'> -->
-<extends src='./layouts/leaf.html' locals='{"title":" - Say Hello to Gridsome NEW","date":"2021-03-01T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":true,"canonicalUrl":false,"description":"One line only description","name":"2021-03-01-say-hello-to-gridsome-new","path":"./posts/2021-03-01-say-hello-to-gridsome-new.html"}'>
-  <block name="content"><p>Well.... that&#39;s all</p>
-</block>
+<!-- NOTE: Do not change the indentation of this file -->
+<extends src="./layouts/leaf.html" locals="{"title":" - Say Hello to Gridsome NEW","date":"2021-03-01T00:00:00.000Z","published":true,"tags":[{"key":"markdown","label":"Markdown"},{"key":"cover-image","label":"Cover Image"}],"series":true,"canonicalUrl":false,"description":"One line only description","name":"2021-03-01-say-hello-to-gridsome-new","path":"./posts/2021-03-01-say-hello-to-gridsome-new.html"}">
+  <block name="content">
+    <h1>Say Hello to Gridsome NEW</h1>
+    <time datetime="Mon Mar 01 2021 01:00:00 GMT+0100 (Ora standard dell’Europa centrale)">March 1, 2021</time>
+    <p>One line only description</p>
+    <p>Well.... that&#39;s all</p>
+
+  </block>
   <block name="aside">
-    <include src="./components/archive/archive.html" locals='{"basePath": ".."}'></include>
+    <!-- <include src="./components/archive/archive.html" locals='{"basePath": "..", "months": months}'></include> -->
     <!-- <script src="https://giscus.app/client.js"
         data-repo="pixu1980/dout-dev"
         data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="

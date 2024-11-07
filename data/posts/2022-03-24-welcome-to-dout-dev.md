@@ -6,9 +6,7 @@ tags: ['Generic']
 description: Welcome to dout.dev
 ---
 
-## Welcome to dout.dev
-
-Hi, i'm Emiliano "Pixu" Pisu.
+Hi, I'm Emiliano "Pixu" Pisu.
 
 I'm a "vintage" developer who loves to code and to share ideas, thoughts, knowledge.
 

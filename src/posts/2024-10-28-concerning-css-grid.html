@@ -1,14 +1,17 @@
 <!-- <extends src='./layouts/leaf.html' locals='{"title":" - Introducing CSS Grid - The Future of Web Layout 🎨","date":"2024-10-28T10:00:00.000Z","published":true,"tags":[{"key":"css","label":"CSS"},{"key":"web-design","label":"Web Design"},{"key":"frontend","label":"Frontend"},{"key":"grid-layout","label":"Grid Layout"}],"canonicalUrl":false,"coverImage":"../assets/images/css-grid-cover.jpg","description":"Discover how CSS Grid is transforming the way we design modern and flexible web layouts.","name":"2024-10-28-concerning-css-grid","path":"./posts/2024-10-28-concerning-css-grid.html"}'> -->
-<extends src='./layouts/leaf.html' locals='{"title":" - Introducing CSS Grid - The Future of Web Layout 🎨","date":"2024-10-28T10:00:00.000Z","published":true,"tags":[{"key":"css","label":"CSS"},{"key":"web-design","label":"Web Design"},{"key":"frontend","label":"Frontend"},{"key":"grid-layout","label":"Grid Layout"}],"canonicalUrl":false,"coverImage":"../assets/images/css-grid-cover.jpg","description":"Discover how CSS Grid is transforming the way we design modern and flexible web layouts.","name":"2024-10-28-concerning-css-grid","path":"./posts/2024-10-28-concerning-css-grid.html"}'>
-  <block name="content"><h2>What is CSS Grid and why is it important?</h2>
+<!-- NOTE: Do not change the indentation of this file -->
+<extends src="./layouts/leaf.html" locals="{"title":" - Introducing CSS Grid - The Future of Web Layout 🎨","date":"2024-10-28T10:00:00.000Z","published":true,"tags":[{"key":"css","label":"CSS"},{"key":"web-design","label":"Web Design"},{"key":"frontend","label":"Frontend"},{"key":"grid-layout","label":"Grid Layout"}],"canonicalUrl":false,"coverImage":"../assets/images/css-grid-cover.jpg","description":"Discover how CSS Grid is transforming the way we design modern and flexible web layouts.","name":"2024-10-28-concerning-css-grid","path":"./posts/2024-10-28-concerning-css-grid.html"}">
+  <block name="content">
+    <h1>Introducing CSS Grid - The Future of Web Layout 🎨</h1>
+    <time datetime="Mon Oct 28 2024 11:00:00 GMT+0100 (Ora standard dell’Europa centrale)">October 28, 2024</time>
+    <p>Discover how CSS Grid is transforming the way we design modern and flexible web layouts.</p>
+    <h2>What is CSS Grid and why is it important?</h2>
 <p>CSS Grid is a powerful technology for creating web layouts that has changed the way we think about user interface design. Unlike older methods like <code>float</code> or <code>flexbox</code>, CSS Grid offers a true two-dimensional grid for positioning elements, making layouts simpler, more powerful, and adaptable.</p>
 <h2>How does it work?</h2>
 <p>CSS Grid introduces a system of rows and columns, allowing you to create complex layouts with just a few commands. Here is a basic example of a grid with two columns and two rows:</p>
-<pre><code class="line-numbers language-css"><span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
-<span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token unit">fr</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token property">grid-template-rows</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token unit">px</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>With these few lines of code, we can structure our pages without using hacks or complicated markup.</p>
+<pre><code class="language-css"><span code-line><span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span></span>
+<span code-line><span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span>2<span class="token punctuation">,</span> 1fr<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span code-line><span class="token property">grid-template-rows</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span>2<span class="token punctuation">,</span> 200px<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre><p>With these few lines of code, we can structure our pages without using hacks or complicated markup.</p>
 <h2>Key Benefits of CSS Grid</h2>
 <ol>
 <li><strong>Two-Dimensional Design</strong>: Allows you to work with rows and columns intuitively.</li>
@@ -17,39 +20,50 @@
 </ol>
 <h2>A Practical Example</h2>
 <p>Let&#39;s look at a practical example of using CSS Grid to create a basic layout for a web page:</p>
-<pre><code class="line-numbers language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>Header<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span>Navigation<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">></span></span>Main Content<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span><span class="token punctuation">></span></span>Sidebar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aside</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span>Footer<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-</code></pre>
-<p>And the corresponding CSS:</p>
-<pre><code class="line-numbers language-css"><span class="token selector"><span class="token class">.container</span></span> <span class="token punctuation">{</span>
-  <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
-  <span class="token property">grid-template-areas</span><span class="token punctuation">:</span>
-    <span class="token string">'header header'</span>
-    <span class="token string">'nav main'</span>
-    <span class="token string">'nav aside'</span>
-    <span class="token string">'footer footer'</span><span class="token punctuation">;</span>
-  <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token unit">fr</span> <span class="token number">3</span><span class="token unit">fr</span><span class="token punctuation">;</span>
-  <span class="token property">gap</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token unit">px</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token selector">header</span> <span class="token punctuation">{</span> <span class="token property">grid-area</span><span class="token punctuation">:</span> header<span class="token punctuation">;</span> <span class="token punctuation">}</span>
-<span class="token selector">nav</span> <span class="token punctuation">{</span> <span class="token property">grid-area</span><span class="token punctuation">:</span> nav<span class="token punctuation">;</span> <span class="token punctuation">}</span>
-<span class="token selector">main</span> <span class="token punctuation">{</span> <span class="token property">grid-area</span><span class="token punctuation">:</span> main<span class="token punctuation">;</span> <span class="token punctuation">}</span>
-<span class="token selector">aside</span> <span class="token punctuation">{</span> <span class="token property">grid-area</span><span class="token punctuation">:</span> aside<span class="token punctuation">;</span> <span class="token punctuation">}</span>
-<span class="token selector">footer</span> <span class="token punctuation">{</span> <span class="token property">grid-area</span><span class="token punctuation">:</span> footer<span class="token punctuation">;</span> <span class="token punctuation">}</span>
-</code></pre>
-<p>In this example, we use <code>grid-template-areas</code> to assign names to sections and define the layout structure in a readable way.</p>
+<pre><code class="language-html"><span code-line><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+<span code-line>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>Header<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span></span>
+<span code-line>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span>Navigation<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span></span>
+<span code-line>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">></span></span>Main Content<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span></span>
+<span code-line>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span><span class="token punctuation">></span></span>Sidebar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aside</span><span class="token punctuation">></span></span></span>
+<span code-line>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span>Footer<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span></span>
+<span code-line><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span></code></pre><p>And the corresponding CSS:</p>
+<pre><code class="language-css"><span code-line><span class="token selector">.container</span> <span class="token punctuation">{</span></span>
+<span code-line>  <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span></span>
+<span code-line>  <span class="token property">grid-template-areas</span><span class="token punctuation">:</span></span>
+<span code-line>    <span class="token string">'header header'</span></span>
+<span code-line>    <span class="token string">'nav main'</span></span>
+<span code-line>    <span class="token string">'nav aside'</span></span>
+<span code-line>    <span class="token string">'footer footer'</span><span class="token punctuation">;</span></span>
+<span code-line>  <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> 1fr 3fr<span class="token punctuation">;</span></span>
+<span code-line>  <span class="token property">gap</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span></span>
+<span code-line><span class="token punctuation">}</span></span>
+<span code-line></span>
+<span code-line><span class="token selector">header</span> <span class="token punctuation">{</span></span>
+<span code-line>  <span class="token property">grid-area</span><span class="token punctuation">:</span> header<span class="token punctuation">;</span></span>
+<span code-line><span class="token punctuation">}</span></span>
+<span code-line></span>
+<span code-line><span class="token selector">nav</span> <span class="token punctuation">{</span></span>
+<span code-line>  <span class="token property">grid-area</span><span class="token punctuation">:</span> nav<span class="token punctuation">;</span></span>
+<span code-line><span class="token punctuation">}</span></span>
+<span code-line></span>
+<span code-line><span class="token selector">main</span> <span class="token punctuation">{</span></span>
+<span code-line>  <span class="token property">grid-area</span><span class="token punctuation">:</span> main<span class="token punctuation">;</span></span>
+<span code-line><span class="token punctuation">}</span></span>
+<span code-line></span>
+<span code-line><span class="token selector">aside</span> <span class="token punctuation">{</span></span>
+<span code-line>  <span class="token property">grid-area</span><span class="token punctuation">:</span> aside<span class="token punctuation">;</span></span>
+<span code-line><span class="token punctuation">}</span></span>
+<span code-line></span>
+<span code-line><span class="token selector">footer</span> <span class="token punctuation">{</span></span>
+<span code-line>  <span class="token property">grid-area</span><span class="token punctuation">:</span> footer<span class="token punctuation">;</span></span>
+<span code-line><span class="token punctuation">}</span></span></code></pre><p>In this example, we use <code>grid-template-areas</code> to assign names to sections and define the layout structure in a readable way.</p>
 <h2>Conclusions</h2>
 <p>CSS Grid is an essential tool for every frontend developer. If you want to create modern, responsive, and easily maintainable layouts, CSS Grid is the way to go. Don&#39;t be afraid to experiment and play with grids: once you learn it, you won&#39;t look back!</p>
 <p>Do you want to learn more about how to use CSS Grid in your projects? Feel free to ask questions or share your experiments in the comments! 😊</p>
-</block>
+
+  </block>
   <block name="aside">
-    <include src="./components/archive/archive.html" locals='{"basePath": ".."}'></include>
+    <!-- <include src="./components/archive/archive.html" locals='{"basePath": "..", "months": months}'></include> -->
     <!-- <script src="https://giscus.app/client.js"
         data-repo="pixu1980/dout-dev"
         data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="

@@ -1,35 +1,34 @@
 <!-- <extends src='./layouts/leaf.html' locals='{"title":" - You can use express tags… TODAY!","date":"2022-02-25T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"},{"key":"css","label":"CSS"}],"canonicalUrl":false,"coverImage":"./images/svg-code.jpg","description":"You can use express tags… TODAY!","name":"2022-02-25-you-can-express-tags-today","path":"./posts/2022-02-25-you-can-express-tags-today.html"}'> -->
-<extends src='./layouts/leaf.html' locals='{"title":" - You can use express tags… TODAY!","date":"2022-02-25T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"},{"key":"css","label":"CSS"}],"canonicalUrl":false,"coverImage":"./images/svg-code.jpg","description":"You can use express tags… TODAY!","name":"2022-02-25-you-can-express-tags-today","path":"./posts/2022-02-25-you-can-express-tags-today.html"}'>
-  <block name="content"><h1>You can use express tags… TODAY!</h1>
-<p>HTML6 is coming, we know it very well, &#39;cause we&#39;re strongly waiting for features like described 
-      <a href="https://www.htmlgoodies.com/guides/expected-new-features-in-html6/" target="_blank" rel="noopener noreferrer" title="Expected new features in HTML6">here</a>
-    .</p>
+<!-- NOTE: Do not change the indentation of this file -->
+<extends src="./layouts/leaf.html" locals="{"title":" - You can use express tags… TODAY!","date":"2022-02-25T00:00:00.000Z","published":true,"tags":[{"key":"html","label":"HTML"},{"key":"css","label":"CSS"}],"canonicalUrl":false,"coverImage":"./images/svg-code.jpg","description":"You can use express tags… TODAY!","name":"2022-02-25-you-can-express-tags-today","path":"./posts/2022-02-25-you-can-express-tags-today.html"}">
+  <block name="content">
+    <h1>You can use express tags… TODAY!</h1>
+    <time datetime="Fri Feb 25 2022 01:00:00 GMT+0100 (Ora standard dell’Europa centrale)">February 25, 2022</time>
+    <p>You can use express tags… TODAY!</p>
+    <p>HTML6 is coming, we know it very well, &#39;cause we&#39;re strongly waiting for features like described <a href="https://www.htmlgoodies.com/guides/expected-new-features-in-html6/" target="_blank" rel="noopener noreferrer" title="Expected new features in HTML6">here</a>.</p>
 <h2>Let&#39;s take a look</h2>
 <p>Since the introduction of XHTML, naming tags anyway you want is possible and passes HTMl validators. Browser engines computes unknown element names as a normal block element.</p>
 <p>Which means you can code HTML like this:</p>
-<pre><code class="line-numbers language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>logo</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http:/domain.ext/path/to/image.jpg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>logo</span><span class="token punctuation">></span></span>
-</code></pre>
-<p>Which also means you can code CSS (here SCSS) as this:</p>
-<pre><code class="line-numbers language-scss"><span class="token selector">logo </span><span class="token punctuation">{</span>
-  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token unit">rem</span><span class="token punctuation">;</span>
-  <span class="token property">aspect-ratio</span><span class="token punctuation">:</span> <span class="token number">2</span> <span class="token operator">/</span> <span class="token number">1</span><span class="token punctuation">;</span>
-
-  <span class="token selector">img </span><span class="token punctuation">{</span>
-    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">%</span><span class="token punctuation">;</span>
-    <span class="token property">object-fit</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<iframe height="300" style="width: 100%; min-height: 70vh;" scrolling="no" title="blog-2022-02-25-01" src="https://codepen.io/pixu1980/embed/LYOJpBz?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<pre><code class="language-html"><span code-line><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>logo</span><span class="token punctuation">></span></span></span>
+<span code-line>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http:/domain.ext/path/to/image.jpg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></span>
+<span code-line><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>logo</span><span class="token punctuation">></span></span></span></code></pre><p>Which also means you can code CSS (here SCSS) as this:</p>
+<pre><code class="language-scss"><span code-line>logo {</span>
+<span code-line>  width: 10rem;</span>
+<span code-line>  aspect-ratio: 2 / 1;</span>
+<span code-line></span>
+<span code-line>  img {</span>
+<span code-line>    width: 100%;</span>
+<span code-line>    object-fit: cover;</span>
+<span code-line>  }</span>
+<span code-line>}</span></code></pre><iframe height="300" style="width: 100%; min-height: 70vh;" scrolling="no" title="blog-2022-02-25-01" src="https://codepen.io/pixu1980/embed/LYOJpBz?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/pixu1980/pen/LYOJpBz">
   blog-2022-02-25-01</a> by pixu1980 (<a href="https://codepen.io/pixu1980">@pixu1980</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
-</block>
+
+  </block>
   <block name="aside">
-    <include src="./components/archive/archive.html" locals='{"basePath": ".."}'></include>
+    <!-- <include src="./components/archive/archive.html" locals='{"basePath": "..", "months": months}'></include> -->
     <!-- <script src="https://giscus.app/client.js"
         data-repo="pixu1980/dout-dev"
         data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="

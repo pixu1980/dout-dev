@@ -9,13 +9,15 @@
   // https://blog.jim-nielsen.com/2022/avoiding-flash-of-inaccurate-color-scheme-color/
   // https://css-tricks.com/just-one-of-those-weird-things-about-css-background-on-body/
 
-  :root {
-    --primary-color: light-dark(#333, #fafafa);
-    --primary-background: light-dark(#e4e4e4, #121212);
-    --highlight-color: light-dark(hotpink, lime);
-  }
+  // :root {
+  //   --primary-color: light-dark(#333, #fafafa);
+  //   --primary-background: light-dark(#e4e4e4, #121212);
+  //   --highlight-color: light-dark(hotpink, lime);
+  // }
 
   label[for='color-scheme-switcher'] {
+    cursor: pointer;
+    
     .dude-icon {
       &:before {
         content: '\e91b';
