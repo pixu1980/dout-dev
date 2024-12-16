@@ -2,66 +2,66 @@
   {
     "key": "css",
     "label": "CSS",
-    "path": "./tags/css.html"
+    "url": "./tags/css.html"
   },
   {
     "key": "web-design",
     "label": "Web Design",
-    "path": "./tags/web-design.html"
+    "url": "./tags/web-design.html"
   },
   {
     "key": "frontend",
     "label": "Frontend",
-    "path": "./tags/frontend.html"
+    "url": "./tags/frontend.html"
   },
   {
     "key": "grid-layout",
     "label": "Grid Layout",
-    "path": "./tags/grid-layout.html"
+    "url": "./tags/grid-layout.html"
   },
   {
     "key": "a11y",
     "label": "A11y",
-    "path": "./tags/a11y.html"
+    "url": "./tags/a11y.html"
   },
   {
     "key": "design",
     "label": "Design",
-    "path": "./tags/design.html"
+    "url": "./tags/design.html"
   },
   {
     "key": "responsive",
     "label": "Responsive",
-    "path": "./tags/responsive.html"
+    "url": "./tags/responsive.html"
   },
   {
     "key": "markdown",
     "label": "Markdown",
-    "path": "./tags/markdown.html"
+    "url": "./tags/markdown.html"
   },
   {
     "key": "releases",
     "label": "Releases",
-    "path": "./tags/releases.html"
+    "url": "./tags/releases.html"
   },
   {
     "key": "generic",
     "label": "Generic",
-    "path": "./tags/generic.html"
+    "url": "./tags/generic.html"
   },
   {
     "key": "html",
     "label": "HTML",
-    "path": "./tags/html.html"
+    "url": "./tags/html.html"
   },
   {
     "key": "cover-image",
     "label": "Cover Image",
-    "path": "./tags/cover-image.html"
+    "url": "./tags/cover-image.html"
   },
   {
     "key": "test-files",
     "label": "Test files",
-    "path": "./tags/test-files.html"
+    "url": "./tags/test-files.html"
   }
 ]

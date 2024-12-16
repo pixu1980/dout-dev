@@ -16,18 +16,23 @@ module.exports = (parser, paths) => {
     if (['md', 'markdown'].includes(fileExt)) {
       const postPath = path.join(paths.posts, file);
       const postParsed = parser.parse(postPath);
+
       const postTags = (postParsed.data.tags || []).map((tag) => ({
         key: slugify(tag),
         label: tag,
+        url: `./tags/${slugify(tag)}.html`,
       }));
+
+      const date = new Date(postParsed.data.date) ?? null;
 
       const postData = {
         // ...postParsed.data,
         layout: postParsed.data.layout,
         title: postParsed.data.title,
-        date: new Date(postParsed.data.date),
-        published: postParsed.data.published,
+        date,
+        dateString: date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
         tags: postTags,
+        published: postParsed.data.published,
         series: postParsed.data.series,
         canonicalUrl: postParsed.data.canonical_url,
         coverImage: postParsed.data.cover_image,
@@ -52,7 +57,7 @@ module.exports = (parser, paths) => {
         .trim();
 
       fs.writeFileSync(postData.path, postHtml);
-      console.log('post html file written in ', postData.path);
+      // console.log('post html file written in ', postData.path);
 
       posts.push({
         ...postData,
@@ -65,6 +70,8 @@ module.exports = (parser, paths) => {
 
   fs.writeFileSync(path.join(paths.data, 'posts.json'), JSON.stringify(posts, null, 2));
   console.log('posts.json file written in ', path.join(paths.data, 'posts.json'));
+
+  console.log(`posts html files created in ${paths.pages.posts}`);
 
   return posts;
 };

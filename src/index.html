@@ -1,27 +1,14 @@
 <extends src="./layouts/root.html" locals='{"basePath": ".", "title": ""}'>
+  <block name="hero">
+    <include src="./components/last-article/last-article.html"></include>
+    <include src="./components/animated-logo/animated-logo.html"></include>
+  </block>
   <block name="content">
-    <hero>
-      <include src="./components/last-article/last-article.html"></include>
-      <include src="./components/animated-logo/animated-logo.html"></include>
-    </hero>
-    <include src="./components/tags/tags.html" locals='{"basePath": ".", "tags": tags}'></include>
-    <articles>
-      <h3>{{months[0].label}}</h3>
-      <each loop="post, index in posts.filter(post => post.date >= months[0].from && post.date <= months[0].to)">
-        {{post.date.toLocaleDateString('it-IT')}}<a href="{{post.path}}">{{post.title}}</a>
-      </each>
-      <h3>{{months[1].label}}</h3>
-      <each loop="post, index in posts.filter(post => post.date >= months[1].from && post.date <= months[1].to)">
-        {{post.date.toLocaleDateString('it-IT')}}<a href="{{post.path}}">{{post.title}}</a>
-      </each>
-      <h3>{{months[2].label}}</h3>
-      <each loop="post, index in posts.filter(post => post.date >= months[2].from && post.date <= months[2].to)">
-        {{post.date.toLocaleDateString('it-IT')}}<a href="{{post.path}}">{{post.title}}</a>
-      </each>
-    </articles>
+    <include src="./components/tags/tags.html"></include>
+    <include src="./components/articles/articles.html"></include>
   </block>
   <block name="aside">
-    <include src="./components/archive/archive.html" locals='{"basePath": ".", "months": months}'></include>
+    <include src="./components/archive/archive.html"></include>
   </block>
   <block name="scripts">
     <!-- <script src="./scripts/search.js"></script> -->

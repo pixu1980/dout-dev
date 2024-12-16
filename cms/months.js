@@ -61,8 +61,11 @@ module.exports = (parser, paths, posts) => {
       .replaceAll('###TO###', dateToFilterFormat(month.to));
 
     fs.writeFileSync(month.path, monthFileContent);
-    console.log('month html file written in ', month.path);
+    // console.log('month html file written in ', month.path);
   });
+  
+  console.log(`months html files created in ${paths.pages.months}`);
+
 
   return months;
 };

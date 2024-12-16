@@ -7,21 +7,21 @@ canonical_url: false
 description: CSS Properties Hierarchy
 ---
 
-```scss
+```css
 .element {
-  // css custom properties
+  /* css custom properties */
   --var--example: 1;
 ​
-  // position
+  /* position */
   position: absolute;
 ​
-  // display
+  /* display */
   display: block;
   display: flex;
   justify-self: unset;
   opacity: 1;
 ​
-  // box-model
+  /* box-model */
   box-sizing: border-box;
   width: 10rem;
   aspect-ratio: 16 / 9;
@@ -30,13 +30,13 @@ description: CSS Properties Hierarchy
   border-radius: 0.4rem;
   margin: 1rem;
 ​
-  // colors & background
+  /* colors & background */
   color: white;
   background-color: black;
   background-image: url();
   box-shadow: rgba(50, 50, 50, 1);
 ​
-  // text
+  /* text */
   font-family: 'Courier New', Courier, monospace;
   font-size: 1rem;
   font-weight: 700;
@@ -45,23 +45,23 @@ description: CSS Properties Hierarchy
   text-align: center;
   text-shadow: none;
 ​
-  // transform & animations
+  /* transform & animations */
   transform: translate();
   transition: opacity 300ms ease-in, width 500ms linear;
   will-change: opacity, width;
   animation: test 300ms forwards alternate-reverse;
 ​
-  // helpers
+  /* helpers */
   cursor: pointer;
   outline: 0;
   appearance: none;
   filter: drop-shadow();
 ​
-  // pseudo elements
+  /* pseudo elements */
   &::after {
   }
 ​
-  // variants & pseudo selectors
+  /* variants & pseudo selectors */
   &.error {
     color: red;
   }
@@ -73,22 +73,22 @@ description: CSS Properties Hierarchy
   &:hover {
   }
 ​
-  // sass includes
+  /* sass includes */
   @include helpers.media($min-width: #{helpers.get-breakpoint-value(md)}) {
     display: none;
   }
 ​
-  // ------------ children
+  /* ------------ children */
   span {
-    // hierarchy
+    /* repeat css hierarchy here */
   }
 ​
   input {
-    // hierarchy
+    /* repeat css hierarchy here */
   }
 ​
   > * {
-    // hierarchy
+    /* repeat css hierarchy here */
   }
 }
 ```

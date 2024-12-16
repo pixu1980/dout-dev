@@ -2,25 +2,30 @@
   {
     "title": "Introducing CSS Grid - The Future of Web Layout 🎨",
     "date": "2024-10-28T10:00:00.000Z",
-    "published": true,
+    "dateString": "October 28, 2024",
     "tags": [
       {
         "key": "css",
-        "label": "CSS"
+        "label": "CSS",
+        "url": "./tags/css.html"
       },
       {
         "key": "web-design",
-        "label": "Web Design"
+        "label": "Web Design",
+        "url": "./tags/web-design.html"
       },
       {
         "key": "frontend",
-        "label": "Frontend"
+        "label": "Frontend",
+        "url": "./tags/frontend.html"
       },
       {
         "key": "grid-layout",
-        "label": "Grid Layout"
+        "label": "Grid Layout",
+        "url": "./tags/grid-layout.html"
       }
     ],
+    "published": true,
     "canonicalUrl": false,
     "coverImage": "../assets/images/css-grid-cover.jpg",
     "description": "Discover how CSS Grid is transforming the way we design modern and flexible web layouts.",
@@ -30,21 +35,25 @@
   {
     "title": "Accessibility by Design",
     "date": "2024-05-19T00:41:22.000Z",
-    "published": true,
+    "dateString": "May 19, 2024",
     "tags": [
       {
         "key": "a11y",
-        "label": "A11y"
+        "label": "A11y",
+        "url": "./tags/a11y.html"
       },
       {
         "key": "design",
-        "label": "Design"
+        "label": "Design",
+        "url": "./tags/design.html"
       },
       {
         "key": "responsive",
-        "label": "Responsive"
+        "label": "Responsive",
+        "url": "./tags/responsive.html"
       }
     ],
+    "published": true,
     "canonicalUrl": false,
     "description": "The Importance of Accessibility by Design: Inclusivity, Responsiveness, Usability, and Marketing",
     "name": "2024-05-19-a11y-by-design",
@@ -53,17 +62,20 @@
   {
     "title": "Say hello to 2023 🎉",
     "date": "2023-01-01T14:41:22.000Z",
-    "published": true,
+    "dateString": "January 1, 2023",
     "tags": [
       {
         "key": "markdown",
-        "label": "Markdown"
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
       },
       {
         "key": "releases",
-        "label": "Releases"
+        "label": "Releases",
+        "url": "./tags/releases.html"
       }
     ],
+    "published": true,
     "canonicalUrl": false,
     "coverImage": "../assets/images/alexandr-podvalny-220262-unsplash.jpg",
     "description": "Blog under construction",
@@ -73,13 +85,15 @@
   {
     "title": "Concerning…",
     "date": "2022-03-25T00:00:00.000Z",
-    "published": true,
+    "dateString": "March 25, 2022",
     "tags": [
       {
         "key": "generic",
-        "label": "Generic"
+        "label": "Generic",
+        "url": "./tags/generic.html"
       }
     ],
+    "published": true,
     "series": [
       "Concerning…"
     ],
@@ -90,13 +104,15 @@
   {
     "title": "Welcome to dout.dev",
     "date": "2022-03-24T00:00:00.000Z",
-    "published": true,
+    "dateString": "March 24, 2022",
     "tags": [
       {
         "key": "generic",
-        "label": "Generic"
+        "label": "Generic",
+        "url": "./tags/generic.html"
       }
     ],
+    "published": true,
     "description": "Welcome to dout.dev",
     "name": "2022-03-24-welcome-to-dout-dev",
     "path": "./posts/2022-03-24-welcome-to-dout-dev.html"
@@ -104,13 +120,15 @@
   {
     "title": "Building dout.dev blog - Part II",
     "date": "2022-03-22T00:00:00.000Z",
-    "published": true,
+    "dateString": "March 22, 2022",
     "tags": [
       {
         "key": "html",
-        "label": "HTML"
+        "label": "HTML",
+        "url": "./tags/html.html"
       }
     ],
+    "published": true,
     "canonicalUrl": false,
     "description": "Building dout.dev blog - Part II",
     "name": "2022-03-22-building-dout-dev-blog-part-2",
@@ -119,13 +137,15 @@
   {
     "title": "Building dout.dev blog",
     "date": "2022-03-21T00:00:00.000Z",
-    "published": true,
+    "dateString": "March 21, 2022",
     "tags": [
       {
         "key": "html",
-        "label": "HTML"
+        "label": "HTML",
+        "url": "./tags/html.html"
       }
     ],
+    "published": true,
     "canonicalUrl": false,
     "description": "Building dout.dev blog",
     "name": "2022-03-21-building-dout-dev-blog",
@@ -134,17 +154,20 @@
   {
     "title": "CSS Properties Hierarchy",
     "date": "2022-03-18T00:00:00.000Z",
-    "published": true,
+    "dateString": "March 18, 2022",
     "tags": [
       {
         "key": "html",
-        "label": "HTML"
+        "label": "HTML",
+        "url": "./tags/html.html"
       },
       {
         "key": "css",
-        "label": "CSS"
+        "label": "CSS",
+        "url": "./tags/css.html"
       }
     ],
+    "published": true,
     "canonicalUrl": false,
     "description": "CSS Properties Hierarchy",
     "name": "2022-03-18-css-properties-hierarchy",
@@ -153,17 +176,20 @@
   {
     "title": "Testing CodePen",
     "date": "2022-03-16T00:00:00.000Z",
-    "published": true,
+    "dateString": "March 16, 2022",
     "tags": [
       {
         "key": "markdown",
-        "label": "Markdown"
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
       },
       {
         "key": "cover-image",
-        "label": "Cover Image"
+        "label": "Cover Image",
+        "url": "./tags/cover-image.html"
       }
     ],
+    "published": true,
     "series": true,
     "canonicalUrl": false,
     "description": "One line only description",
@@ -173,17 +199,20 @@
   {
     "title": "You can edit CSS",
     "date": "2022-03-12T00:00:00.000Z",
-    "published": true,
+    "dateString": "March 12, 2022",
     "tags": [
       {
         "key": "markdown",
-        "label": "Markdown"
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
       },
       {
         "key": "cover-image",
-        "label": "Cover Image"
+        "label": "Cover Image",
+        "url": "./tags/cover-image.html"
       }
     ],
+    "published": true,
     "series": true,
     "canonicalUrl": false,
     "description": "One line only description",
@@ -193,6 +222,7 @@
   {
     "title": "Marked - Markdown Parser",
     "date": "2022-03-03T15:41:22.000Z",
+    "dateString": "March 3, 2022",
     "tags": [],
     "description": "[Marked] lets you convert [Markdown] into HTML. Markdown is a simple text format whose goal is to be very easy to read and write, even when not converted to HTML. This demo page will let you type anything you like and see how it gets converted. Live. No more waiting around.",
     "name": "2022-03-03-marked-markdown-parser",
@@ -201,17 +231,20 @@
   {
     "title": "Custom Grid System",
     "date": "2022-03-03T14:41:22.000Z",
-    "published": true,
+    "dateString": "March 3, 2022",
     "tags": [
       {
         "key": "markdown",
-        "label": "Markdown"
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
       },
       {
         "key": "releases",
-        "label": "Releases"
+        "label": "Releases",
+        "url": "./tags/releases.html"
       }
     ],
+    "published": true,
     "canonicalUrl": false,
     "coverImage": "./images/alexandr-podvalny-220262-unsplash.jpg",
     "description": "Blog under construction",
@@ -221,17 +254,20 @@
   {
     "title": "You can use express tags… TODAY!",
     "date": "2022-02-25T00:00:00.000Z",
-    "published": true,
+    "dateString": "February 25, 2022",
     "tags": [
       {
         "key": "html",
-        "label": "HTML"
+        "label": "HTML",
+        "url": "./tags/html.html"
       },
       {
         "key": "css",
-        "label": "CSS"
+        "label": "CSS",
+        "url": "./tags/css.html"
       }
     ],
+    "published": true,
     "canonicalUrl": false,
     "coverImage": "./images/svg-code.jpg",
     "description": "You can use express tags… TODAY!",
@@ -241,17 +277,20 @@
   {
     "title": "Say hello to 2022 🎉",
     "date": "2022-01-01T14:41:22.000Z",
-    "published": true,
+    "dateString": "January 1, 2022",
     "tags": [
       {
         "key": "markdown",
-        "label": "Markdown"
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
       },
       {
         "key": "releases",
-        "label": "Releases"
+        "label": "Releases",
+        "url": "./tags/releases.html"
       }
     ],
+    "published": true,
     "canonicalUrl": false,
     "coverImage": "../assets/images/alexandr-podvalny-220262-unsplash.jpg",
     "description": "Blog under construction",
@@ -261,17 +300,20 @@
   {
     "title": "A NEW post with a NEW cover image",
     "date": "2021-03-08T00:00:00.000Z",
-    "published": true,
+    "dateString": "March 8, 2021",
     "tags": [
       {
         "key": "markdown",
-        "label": "Markdown"
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
       },
       {
         "key": "cover-image",
-        "label": "Cover Image"
+        "label": "Cover Image",
+        "url": "./tags/cover-image.html"
       }
     ],
+    "published": true,
     "series": false,
     "canonicalUrl": false,
     "description": "One line only description",
@@ -281,17 +323,20 @@
   {
     "title": "Testing CodePen",
     "date": "2021-03-07T00:00:00.000Z",
-    "published": true,
+    "dateString": "March 7, 2021",
     "tags": [
       {
         "key": "markdown",
-        "label": "Markdown"
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
       },
       {
         "key": "cover-image",
-        "label": "Cover Image"
+        "label": "Cover Image",
+        "url": "./tags/cover-image.html"
       }
     ],
+    "published": true,
     "series": true,
     "canonicalUrl": false,
     "description": "One line only description",
@@ -301,17 +346,20 @@
   {
     "title": "Testing CodePen",
     "date": "2021-03-05T00:00:00.000Z",
-    "published": true,
+    "dateString": "March 5, 2021",
     "tags": [
       {
         "key": "markdown",
-        "label": "Markdown"
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
       },
       {
         "key": "cover-image",
-        "label": "Cover Image"
+        "label": "Cover Image",
+        "url": "./tags/cover-image.html"
       }
     ],
+    "published": true,
     "series": true,
     "canonicalUrl": false,
     "description": "One line only description",
@@ -321,17 +369,20 @@
   {
     "title": "Say Hello to Gridsome NEW",
     "date": "2021-03-01T00:00:00.000Z",
-    "published": true,
+    "dateString": "March 1, 2021",
     "tags": [
       {
         "key": "markdown",
-        "label": "Markdown"
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
       },
       {
         "key": "cover-image",
-        "label": "Cover Image"
+        "label": "Cover Image",
+        "url": "./tags/cover-image.html"
       }
     ],
+    "published": true,
     "series": true,
     "canonicalUrl": false,
     "description": "One line only description",
@@ -341,17 +392,20 @@
   {
     "title": "Say hello to Gridsome 🎉",
     "date": "2019-02-07T00:00:00.000Z",
-    "published": true,
+    "dateString": "February 7, 2019",
     "tags": [
       {
         "key": "markdown",
-        "label": "Markdown"
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
       },
       {
         "key": "releases",
-        "label": "Releases"
+        "label": "Releases",
+        "url": "./tags/releases.html"
       }
     ],
+    "published": true,
     "canonicalUrl": false,
     "description": "One line only description",
     "name": "2019-02-07-say-hello-to-gridsome",
@@ -360,17 +414,20 @@
   {
     "title": "Markdown test file",
     "date": "2019-02-06T00:00:00.000Z",
-    "published": true,
+    "dateString": "February 6, 2019",
     "tags": [
       {
         "key": "markdown",
-        "label": "Markdown"
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
       },
       {
         "key": "test-files",
-        "label": "Test files"
+        "label": "Test files",
+        "url": "./tags/test-files.html"
       }
     ],
+    "published": true,
     "canonicalUrl": false,
     "description": "One line only description",
     "name": "2019-02-06-markdown-test-file",
@@ -379,17 +436,20 @@
   {
     "title": "A post with a cover image",
     "date": "2019-01-07T00:00:00.000Z",
-    "published": true,
+    "dateString": "January 7, 2019",
     "tags": [
       {
         "key": "markdown",
-        "label": "Markdown"
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
       },
       {
         "key": "cover-image",
-        "label": "Cover Image"
+        "label": "Cover Image",
+        "url": "./tags/cover-image.html"
       }
     ],
+    "published": true,
     "series": false,
     "canonicalUrl": false,
     "description": "One line only description",
