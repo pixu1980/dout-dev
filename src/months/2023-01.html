@@ -2,7 +2,7 @@
   <block name="content">
     <h3>January 2023</h3>
     <each loop="post, index in posts.filter(post => post.date >= new Date('2023-01-01') && post.date <= new Date('2023-01-31'))">
-      {{post.date.toLocaleDateString('it-IT')}}<a href="{{post.path.replace('./', '../')}}">{{post.title}}</a>
+      {{post.dateString}}<a href="{{post.path.replace('./', '../')}}">{{post.title}}</a>
     </each>
   </block>
   <block name="aside">

@@ -1,0 +1,51 @@
+@layer dude {
+  @layer components {
+    @layer color-scheme-switcher {
+      /* TODO: */
+      /* https://css-tricks.com/come-to-the-light-dark-side/ */
+      /* https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark */
+      /* https://codepen.io/web-dot-dev/pen/zYXdRKW */
+      /* https://css-tricks.com/flash-of-inaccurate-color-color-scheme-fart/ */
+      /* https://github.com/lyxsus/defart */
+      /* https://github.com/WICG/user-preference-media-features-headers */
+      /* https://blog.jim-nielsen.com/2022/avoiding-flash-of-inaccurate-color-scheme-color/ */
+      /* https://css-tricks.com/just-one-of-those-weird-things-about-css-background-on-body/ */
+
+      /* :root {
+        --primary-color: light-dark(#333, #fafafa);
+        --primary-background: light-dark(#e4e4e4, #121212);
+        --highlight-color: light-dark(hotpink, lime);
+      } */
+
+      label[for='color-scheme-switcher'] {
+        cursor: pointer;
+
+        .dude-icon {
+          &:before {
+            content: '\e91b';
+          }
+        }
+      }
+
+      :has([name='color-scheme-switcher']:checked) {
+        label[for='color-scheme-switcher'] {
+          .dude-icon {
+            &:before {
+              content: '\e91d';
+            }
+          }
+        }
+      }
+
+      :has([name='color-scheme-switcher']:indeterminate) {
+        label[for='color-scheme-switcher'] {
+          .dude-icon {
+            &:before {
+              content: '\e900';
+            }
+          }
+        }
+      }
+    }
+  }
+}

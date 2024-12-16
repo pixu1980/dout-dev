@@ -1,14 +1,14 @@
 <articles>
-  <h3>{{months[0].label}}</h3>
-  <each loop="post, index in posts.filter(post => post.date >= months[0].from && post.date <= months[0].to)">
-    {{post.date.toLocaleDateString('it-IT')}}<a href="{{post.path}}">{{post.title}}</a>
-  </each>
-  <h3>{{months[1].label}}</h3>
-  <each loop="post, index in posts.filter(post => post.date >= months[1].from && post.date <= months[1].to)">
-    {{post.date.toLocaleDateString('it-IT')}}<a href="{{post.path}}">{{post.title}}</a>
-  </each>
-  <h3>{{months[2].label}}</h3>
-  <each loop="post, index in posts.filter(post => post.date >= months[2].from && post.date <= months[2].to)">
-    {{post.date.toLocaleDateString('it-IT')}}<a href="{{post.path}}">{{post.title}}</a>
+  <each loop="post, index in posts.slice(1,6)">
+    <if condition="!!post.tags.length">
+      <tags>
+        <tags-list>
+          <a href="{{post.tags[0].url}}" tag>{{lastPost.tags[0].label}}</a>
+        </tags-list>
+      </tags>
+    </if>
+    <a href="{{post.path}}">{{post.title}}</a>
+    <span>{{post.dateString}}</span>
+    <p>{{post.description}}</p>
   </each>
 </articles>

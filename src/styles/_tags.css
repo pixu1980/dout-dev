@@ -1,0 +1,45 @@
+@layer dude {
+  @layer tags {
+    tags {
+      display: flex;
+
+      width: 100%;
+      padding: 1.8rem;
+      margin-inline: -1.8rem;
+
+      overflow-x: scroll;
+    }
+
+    tags-list {
+      display: inline-flex;
+      flex-flow: row nowrap;
+      gap: 1.8rem;
+
+      place-content: start;
+      place-items: start;
+    }
+
+    [tag] {
+      --dude--t--font-weight: 500;
+      --dude--t--line-height: 3.5rem;
+      --dude--t--white-space: nowrap; /* TODO: check why this is not working, layers order probably? */
+
+      display: inline-flex;
+
+      padding-inline: 1rem;
+
+      color: var(--dude--palette--yellow-400);
+      border: 1px solid var(--dude--palette--yellow-400);
+      border-radius: 0.4rem;
+
+      text-decoration: none;
+
+      white-space: nowrap;
+
+      &:hover {
+        color: initial;
+        background-color: var(--dude--palette--yellow-400);
+      }
+    }
+  }
+}

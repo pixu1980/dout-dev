@@ -7,15 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
     <title>DoUt.Dev</title>
-    <link rel="preload" href="./styles/iconography/icons/fonts/dude.woff" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="./styles/iconography/icons/fonts/dude.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="./styles/iconography/icons/fonts/dude.svg" as="font" type="font/svg" crossorigin />
-    <link rel="stylesheet" href="./styles/index.scss" />
+    <link rel="preload" href="./styles/iconography/icons/fonts/dude-icons.woff" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./styles/iconography/icons/fonts/dude-icons.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="./styles/iconography/icons/fonts/dude-icons.svg" as="font" type="font/svg" crossorigin />
+    <link rel="stylesheet" href="./styles/index.css" />
   </head>
   <body>
     <include src="./components/color-scheme-switcher/color-scheme-switcher.html"></include>
     <include src="./components/header/header.html" locals='{"basePath": "."}'></include>
     <main>
+      <hero>
+        <block name="hero"></block>
+      </hero>
       <content>
         <block name="content"></block>
       </content>

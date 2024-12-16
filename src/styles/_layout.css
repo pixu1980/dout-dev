@@ -1,0 +1,80 @@
+@layer dude {
+  @layer layout {
+    body {
+      display: grid;
+      grid-template-areas:
+        'header'
+        'main'
+        'footer';
+      grid-template-rows: 6.6rem 1fr 4.6rem;
+
+      > :where(header, main, footer) {
+        inline-size: 95vw;
+        margin: 0 auto;
+      }
+
+      main {
+        grid-area: main;
+
+        display: grid;
+        grid-template-areas:
+          'hero hero'
+          'content aside';
+        grid-template-rows: auto;
+        grid-template-columns: calc(100% - 25rem) 25rem;
+
+        overflow: visible;
+
+        hero {
+          grid-area: hero;
+
+          display: flex;
+          place-items: center;
+
+          margin-block-start: -10rem;
+
+          &:empty {
+            display: none;
+          }
+        }
+
+        content {
+          grid-area: content;
+
+          display: block;
+        }
+
+        aside {
+          grid-area: aside;
+        }
+      }
+
+      footer {
+        grid-area: footer;
+
+        inline-size: 95vw;
+        margin: 0 auto;
+      }
+    }
+
+    @media (min-width: 576px) {
+      /* Tablet styles here */
+      body > :where(header, main, footer) {
+        inline-size: 90vw;
+      }
+    }
+    
+    @media (min-width: 992px) {
+      body > :where(header, main, footer) {
+        inline-size: 70vw;
+      }
+    }
+      
+    @media (min-width: 1366px) {
+      /* Desktop styles here */
+      body > :where(header, main, footer) {
+        inline-size: 50vw;
+      }
+    }
+  }
+}

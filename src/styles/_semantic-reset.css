@@ -1,5 +1,7 @@
-@layer semantic-reset {
-  // TODO
+@layer dude {
+  @layer semantic-reset {
+    /* // TODO
+  // https://sarajoy.dev/#
   // https://krdevnotes.com/5-best-css-reset-normalization-libraries/
   // https://piccalil.li/blog/a-more-modern-css-reset/
   // https://jakelazaroff.com/words/my-modern-css-reset/
@@ -16,12 +18,14 @@
   // https://projects.dutchcelt.com/system.css/
   // https://simplecss.org/demo
   // https://picocss.com
-  // https://watercss.kognise.dev
-  * {
-    box-sizing: border-box;
-  }
+  // https://watercss.kognise.dev */
 
-  img {
-    max-width: 100%;
+    * {
+      box-sizing: border-box;
+    }
+
+    img {
+      max-width: 100%;
+    }
   }
 }
