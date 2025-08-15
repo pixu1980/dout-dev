@@ -3,8 +3,8 @@ title: Concerning…
 date: 2022-03-25
 published: true
 tags: ['Generic']
-series: ['Concerning…']
-description: Concerning…
+series: ['Concerning...']
+description: Concerning...
 ---
 
 ## Concerning Core Web Technologies

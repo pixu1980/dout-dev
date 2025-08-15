@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template Engine - Full Feature Test</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        line-height: 1.6;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        color: #333;
+      }
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+      }
+      .section {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        border-radius: 6px;
+        border-left: 4px solid #667eea;
+      }
+      .card {
+        background: white;
+        border: 1px solid #e9ecef;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .tag {
+        background: #6c757d;
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 12px;
+        font-size: 0.875rem;
+        display: inline-block;
+        margin: 0.25rem;
+      }
+      .highlight {
+        background: #fff3cd;
+        padding: 0.5rem;
+        border-radius: 4px;
+        border: 1px solid #ffeaa7;
+      }
+      .error {
+        background: #f8d7da;
+        color: #721c24;
+        padding: 0.5rem;
+        border-radius: 4px;
+        border: 1px solid #f5c6cb;
+      }
+      .success {
+        background: #d4edda;
+        color: #155724;
+        padding: 0.5rem;
+        border-radius: 4px;
+        border: 1px solid #c3e6cb;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+      dl {
+        background: #f1f3f4;
+        padding: 1rem;
+        border-radius: 4px;
+      }
+      dt {
+        font-weight: bold;
+        color: #495057;
+      }
+      dd {
+        margin-left: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      pre {
+        background: #f8f9fa;
+        padding: 1rem;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+      code {
+        background: #e9ecef;
+        padding: 0.2rem 0.4rem;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>🚀 Template Engine Complete Demo</h1>
+      <p>Testing all features: expressions, conditionals, loops, includes, filters, and more!</p>
+    </header>
+
+    <main>
+      <!-- ===== EXPRESSIONS & VARIABLES ===== -->
+      <div class="section">
+        <h2>📝 Variables &amp; Expressions</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Basic Variables</h3>
+            <ul>
+              <li><strong>Site Name:</strong> Template Engine Test Site</li>
+              <li><strong>Version:</strong> 2.0.0</li>
+              <li><strong>Environment:</strong> DEVELOPMENT</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Mathematical Expressions</h3>
+            <ul>
+              <li>2 + 3 = 5</li>
+              <li>Posts count × 2 = 12</li>
+              <li>Random number:</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- ===== CONDITIONAL STATEMENTS ===== -->
+      <div class="section">
+        <h2>🔀 Conditional Logic</h2>
+
+        <!-- Simple if -->
+
+        <div class="success">
+          <strong>✅ Welcome back, John!</strong>
+        </div>
+
+        <!-- if-else chain -->
+
+        <!-- Complex conditions -->
+
+        <div class="card">
+          <h3>🔧 Admin Panel</h3>
+          <p>Administrative functions available</p>
+        </div>
+      </div>
+
+      <!-- ===== LOOPS & ITERATIONS ===== -->
+      <div class="section">
+        <h2>🔄 Loops &amp; Iterations</h2>
+
+        <!-- Posts loop - SIMPLIFIED FOR TESTING -->
+        <div class="card">
+          <h3>📄 Latest Posts (Nested Loop Test)</h3>
+          <ol>
+            <li>
+              <strong>Getting Started with Template Engine</strong>
+              <br />
+              <small>John Doe</small>
+              <div class="tags">
+                <span class="tag">tutorial</span>
+
+                <span class="tag">javascript</span>
+
+                <span class="tag">template</span>
+              </div>
+            </li>
+
+            <li>
+              <strong>Advanced Template Features and Best Practices</strong>
+              <br />
+              <small>Jane Smith</small>
+              <div class="tags">
+                <span class="tag">advanced</span>
+
+                <span class="tag">best-practices</span>
+
+                <span class="tag">performance</span>
+              </div>
+            </li>
+            <li>
+              <strong>Building Dynamic Content with Conditionals</strong>
+              <br /><small>Mike Johnson</small>
+              <div class="tags">
+                <span class="tag">conditionals</span>
+                <span class="tag">dynamic</span>
+                <span class="tag">content</span>
+              </div>
+            </li>
+
+            <li>
+              <strong>Loop Optimization Techniques</strong>
+              <br />
+              <small>Sarah Wilson</small>
+              <div class="tags">
+                <span class="tag">loops</span>
+
+                <span class="tag">optimization</span>
+
+                <span class="tag">performance</span>
+              </div>
+            </li>
+
+            <li>
+              <strong>Filter Functions and Data Transformation</strong>
+              <br />
+              <small>David Brown</small>
+              <div class="tags">
+                <span class="tag">filters</span>
+
+                <span class="tag">data</span>
+
+                <span class="tag">transformation</span>
+              </div>
+            </li>
+
+            <li>
+              <strong>Template Inheritance and Code Reuse</strong>
+              <br />
+              <small>Lisa Garcia</small>
+              <div class="tags">
+                <span class="tag">inheritance</span>
+
+                <span class="tag">reuse</span>
+
+                <span class="tag">architecture</span>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Categories with index -->
+        <div class="card">
+          <h3>📂 Categories</h3>
+          <dl></dl>
+        </div>
+
+        <!-- Grid of features -->
+        <div class="card">
+          <h3>⚡ Features Grid</h3>
+          <div class="grid">
+            <div class="card">
+              <h4>🏗️ Template Inheritance</h4>
+              <p>Extend layouts and reuse common structures</p>
+
+              <span class="success">Available</span>
+            </div>
+
+            <div class="card">
+              <h4>🔀 Conditional Logic</h4>
+              <p>Dynamic content based on conditions</p>
+
+              <span class="success">Available</span>
+            </div>
+
+            <div class="card">
+              <h4>🔄 Loop Processing</h4>
+              <p>Iterate over arrays and objects</p>
+
+              <span class="success">Available</span>
+            </div>
+
+            <div class="card">
+              <h4>🔧 Filter Functions</h4>
+              <p>Transform and format data</p>
+
+              <span class="success">Available</span>
+            </div>
+
+            <div class="card">
+              <h4>📦 Include System</h4>
+              <p>Modular template components</p>
+
+              <span class="success">Available</span>
+            </div>
+
+            <div class="card">
+              <h4>📝 Markdown Support</h4>
+              <p>Process markdown content inline</p>
+
+              <span class="success">Available</span>
+            </div>
+
+            <div class="card">
+              <h4>🎯 Switch Statements</h4>
+              <p>Multi-way conditional logic</p>
+
+              <span class="success">Available</span>
+            </div>
+
+            <div class="card">
+              <h4>⚡ Expression Parser</h4>
+              <p>Complex JavaScript expressions</p>
+
+              <span class="success">Available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SWITCH STATEMENTS ===== -->
+      <div class="section">
+        <h2>🎯 Switch Logic</h2>
+        <div class="card">
+          <h3>User Status</h3>
+
+          <div class="success">🟢 User is active and ready to go!</div>
+        </div>
+      </div>
+
+      <!-- ===== INCLUDES & PARTIALS ===== -->
+      <div class="section">
+        <h2>📦 Includes &amp; Partials</h2>
+        <div class="grid">
+          <div class="user-card card">
+            <h3>👤 Undefined</h3>
+            <div><strong>Email:</strong> undefined</div>
+            <div>
+              <strong>Role:</strong>
+              <span class="tag">ADMIN</span>
+            </div>
+
+            <div class="error">❌ Inactive User</div>
+          </div>
+
+          <div class="user-card card">
+            <h3>👤 Undefined</h3>
+            <div><strong>Email:</strong> undefined</div>
+            <div>
+              <strong>Role:</strong>
+              <span class="tag">ADMIN</span>
+            </div>
+
+            <div class="error">❌ Inactive User</div>
+          </div>
+
+          <div class="user-card card">
+            <h3>👤 Undefined</h3>
+            <div><strong>Email:</strong> undefined</div>
+            <div>
+              <strong>Role:</strong>
+              <span class="tag">ADMIN</span>
+            </div>
+
+            <div class="error">❌ Inactive User</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== FILTERS SHOWCASE ===== -->
+      <div class="section">
+        <h2>🔧 Filters Showcase</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>String Filters</h3>
+            <ul>
+              <li><strong>Uppercase:</strong> UNDEFINED</li>
+              <li><strong>Capitalize:</strong> Undefined</li>
+              <li><strong>Truncate:</strong> This is a very long text that should be truncated ...</li>
+              <li><strong>Slug:</strong> undefined</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Array Filters</h3>
+            <ul>
+              <li><strong>Join:</strong> javascriptcsshtmlperformancetesting</li>
+              <li><strong>Length:</strong> 6 posts</li>
+              <li><strong>First:</strong> Getting Started with Template Engine</li>
+              <li><strong>Last:</strong> Template Inheritance and Code Reuse</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Date &amp; Number Filters</h3>
+            <ul>
+              <li><strong>Date Format:</strong> 2025-01-15</li>
+              <li><strong>Relative Time:</strong> 14/01/2025</li>
+              <li><strong>Number Format:</strong> 1234.57</li>
+              <li><strong>Currency:</strong> 99,99&nbsp;€</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== COMPLEX DATA STRUCTURES ===== -->
+      <div class="section">
+        <h2>🏗️ Complex Data Structures</h2>
+
+        <!-- Nested objects -->
+        <div class="card">
+          <h3>🏢 Company Info</h3>
+          <dl>
+            <dt>Company Name</dt>
+            <dd>Tech Innovations Inc.</dd>
+
+            <dt>Address</dt>
+            <dd>
+              123 Innovation Drive<br />
+              San Francisco, CA 94105<br />
+              USA
+            </dd>
+
+            <dt>Departments</dt>
+            <dd>
+              <div style="margin: 0.5rem 0">
+                <strong>Engineering</strong> - 3 employees
+                <ul style="margin-left: 1rem">
+                  <li>Alice Johnson (Senior Developer)</li>
+
+                  <li>Bob Smith (Frontend Developer)</li>
+
+                  <li>Carol Davis (Backend Developer)</li>
+                </ul>
+              </div>
+
+              <div style="margin: 0.5rem 0">
+                <strong>Design</strong> - 2 employees
+                <ul style="margin-left: 1rem">
+                  <li>David Wilson (UI/UX Designer)</li>
+
+                  <li>Eva Brown (Graphic Designer)</li>
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+
+        <!-- Statistics -->
+        <div class="card">
+          <h3>📊 Statistics</h3>
+          <div class="grid">
+            <div class="highlight">
+              <h4>Total Users</h4>
+              <div style="font-size: 2rem; font-weight: bold; color: #007bff">12547</div>
+
+              <span style="color: green">📈 +12.5%</span>
+            </div>
+
+            <div class="highlight">
+              <h4>Monthly Revenue</h4>
+              <div style="font-size: 2rem; font-weight: bold; color: #28a745">85420</div>
+
+              <span style="color: green">📈 +8.3%</span>
+            </div>
+
+            <div class="highlight">
+              <h4>Support Tickets</h4>
+              <div style="font-size: 2rem; font-weight: bold; color: #ffc107">234</div>
+
+              <span style="color: red">📉 -5.2%</span>
+            </div>
+
+            <div class="highlight">
+              <h4>Server Uptime</h4>
+              <div style="font-size: 2rem; font-weight: bold; color: #17a2b8">100</div>
+
+              <span style="color: gray">➡️ 0.1%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ATTRIBUTE MANIPULATION ===== -->
+      <div class="section">
+        <h2>🎨 Dynamic Attributes</h2>
+        <div class="card">
+          <h3>Dynamic Styling</h3>
+
+          <div
+            class="card"
+            style="border-left-color: #dc3545; font-weight: bold"
+            data-id="item-1"
+            data-category="system-updates"
+          >
+            <h4 style="color: #dc3545">Critical System Update</h4>
+            <p>Security patches and performance improvements</p>
+
+            <span class="tag" style="background-color: #dc3545">🚨 High Priority</span>
+          </div>
+
+          <div class="card" style="border-left-color: #007bff" data-id="item-2" data-category="ui-ux">
+            <h4 style="color: #007bff">Feature Enhancement</h4>
+            <p>New user interface improvements</p>
+
+            <span class="tag" style="background-color: #ffc107">⚠️ Medium Priority</span>
+          </div>
+
+          <div class="card" style="border-left-color: #28a745" data-id="item-3" data-category="documentation">
+            <h4 style="color: #28a745">Documentation Update</h4>
+            <p>Updated API documentation and examples</p>
+
+            <span class="tag" style="background-color: #28a745">✅ Low Priority</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== MARKDOWN CONTENT ===== -->
+      <div class="section">
+        <h2>📝 Markdown Support</h2>
+        <div class="card">
+          <markdown>
+            # This is a Markdown Header This content is written in **Markdown** and should be *processed* automatically.
+            ## Features: - **Bold text** - *Italic text* - `Inline code` - [Links](https://example.com) ### Code Block:
+            ```javascript function hello() { console.log('Hello from markdown!'); } ``` &gt; This is a blockquote with
+            some **important** information.
+          </markdown>
+        </div>
+      </div>
+    </main>
+
+    <footer style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 8px">
+      <p>© 2025 Template Engine Test - Generated at: 2025-08-15T20:20:34.259Z</p>
+
+      <div style="margin-top: 1rem">
+        <strong>Template rendered with 6 posts, 3 team members, and 8 features.</strong>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,290 @@
+<extends src="layout.html">
+  <block name="title">Template Engine - Full Feature Test</block>
+  <block name="page-title">🚀 Template Engine Complete Demo</block>
+  <block name="page-description">
+    Testing all features: expressions, conditionals, loops, includes, filters, and more!
+  </block>
+  <block name="content">
+    <!-- ===== EXPRESSIONS & VARIABLES ===== -->
+    <div class="section">
+      <h2>📝 Variables & Expressions</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Basic Variables</h3>
+          <ul>
+            <li><strong>Site Name:</strong> {{ site.name }}</li>
+            <li><strong>Version:</strong> {{ site.version }}</li>
+            <li><strong>Environment:</strong> {{ environment | upper }}</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Mathematical Expressions</h3>
+          <ul>
+            <li>2 + 3 = {{ 2 + 3 }}</li>
+            <li>Posts count × 2 = {{ posts.length * 2 }}</li>
+            <li>Random number: {{ Math.random() | number(2) }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- ===== CONDITIONAL STATEMENTS ===== -->
+    <div class="section">
+      <h2>🔀 Conditional Logic</h2>
+
+      <!-- Simple if -->
+      <if condition="user.isAuthenticated">
+        <div class="success">
+          <strong>✅ Welcome back, {{ user.profile.firstName }}!</strong>
+        </div>
+      </if>
+
+      <!-- if-else chain -->
+      <if condition="posts.length > 10">
+        <div class="highlight">📚 You have many posts ({{ posts.length }})!</div>
+        <else-if condition="posts.length > 5">
+          <div class="highlight">📖 You have several posts ({{ posts.length }}).</div>
+        </else-if>
+        <else>
+          <div class="highlight">📝 You're just getting started ({{ posts.length }} posts).</div>
+        </else>
+      </if>
+
+      <!-- Complex conditions -->
+      <if condition="user.role === 'admin' && site.maintenance === false">
+        <div class="card">
+          <h3>🔧 Admin Panel</h3>
+          <p>Administrative functions available</p>
+        </div>
+      </if>
+    </div>
+
+    <!-- ===== LOOPS & ITERATIONS ===== -->
+    <div class="section">
+      <h2>🔄 Loops & Iterations</h2>
+
+      <!-- Posts loop - SIMPLIFIED FOR TESTING -->
+      <div class="card">
+        <h3>📄 Latest Posts (Nested Loop Test)</h3>
+        <ol>
+          <for each="post in posts">
+            <li>
+              <strong>{{ post.title }}</strong>
+              <br />
+              <small>{{ post.author }}</small>
+              <div class="tags">
+                <for each="tag in post.tags">
+                  <span class="tag">{{ tag }}</span>
+                </for>
+              </div>
+            </li>
+          </for>
+        </ol>
+      </div>
+
+      <!-- Categories with index -->
+      <div class="card">
+        <h3>📂 Categories</h3>
+        <dl>
+          <for each="category, index in categories">
+            <dt>{{ index + 1 }}. {{ category.name }}</dt>
+            <dd>{{ category.description }} ({{ category.count }} posts)</dd>
+          </for>
+        </dl>
+      </div>
+
+      <!-- Grid of features -->
+      <div class="card">
+        <h3>⚡ Features Grid</h3>
+        <div class="grid">
+          <for each="feature in features">
+            <div class="card">
+              <h4>{{ feature.icon }} {{ feature.name }}</h4>
+              <p>{{ feature.description }}</p>
+              <if condition="feature.available">
+                <span class="success">Available</span>
+              </if>
+              <if condition="!feature.available">
+                <span class="error">Coming Soon</span>
+              </if>
+            </div>
+          </for>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SWITCH STATEMENTS ===== -->
+    <div class="section">
+      <h2>🎯 Switch Logic</h2>
+      <div class="card">
+        <h3>User Status</h3>
+        <switch expr="user.status">
+          <case value="active">
+            <div class="success">🟢 User is active and ready to go!</div>
+          </case>
+          <case value="pending">
+            <div class="highlight">🟡 User registration is pending approval.</div>
+          </case>
+          <case value="suspended">
+            <div class="error">🔴 User account is temporarily suspended.</div>
+          </case>
+          <default>
+            <div>⚪ Unknown user status: {{ user.status }}</div>
+          </default>
+        </switch>
+      </div>
+    </div>
+
+    <!-- ===== INCLUDES & PARTIALS ===== -->
+    <div class="section">
+      <h2>📦 Includes & Partials</h2>
+      <div class="grid">
+        <for each="user in teamMembers">
+          <include src="user-card.html" user="{{ user }}"></include>
+        </for>
+      </div>
+    </div>
+
+    <!-- ===== FILTERS SHOWCASE ===== -->
+    <div class="section">
+      <h2>🔧 Filters Showcase</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>String Filters</h3>
+          <ul>
+            <li><strong>Uppercase:</strong> {{ 'hello world' | upper }}</li>
+            <li><strong>Capitalize:</strong> {{ 'hello world' | capitalize }}</li>
+            <li><strong>Truncate:</strong> {{ longText | truncate(50) }}</li>
+            <li><strong>Slug:</strong> {{ 'Hello World! 123' | slug }}</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Array Filters</h3>
+          <ul>
+            <li><strong>Join:</strong> {{ tags | join(', ') }}</li>
+            <li><strong>Length:</strong> {{ posts | length }} posts</li>
+            <li><strong>First:</strong> {{ posts | first | prop('title') }}</li>
+            <li><strong>Last:</strong> {{ posts | last | prop('title') }}</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Date & Number Filters</h3>
+          <ul>
+            <li><strong>Date Format:</strong> {{ currentDate | date('YYYY-MM-DD') }}</li>
+            <li><strong>Relative Time:</strong> {{ lastUpdate | timeAgo }}</li>
+            <li><strong>Number Format:</strong> {{ 1234.5678 | number(2) }}</li>
+            <li><strong>Currency:</strong> {{ 99.99 | currency('EUR') }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== COMPLEX DATA STRUCTURES ===== -->
+    <div class="section">
+      <h2>🏗️ Complex Data Structures</h2>
+
+      <!-- Nested objects -->
+      <div class="card">
+        <h3>🏢 Company Info</h3>
+        <dl>
+          <dt>Company Name</dt>
+          <dd>{{ company.name }}</dd>
+
+          <dt>Address</dt>
+          <dd>
+            {{ company.address.street }}<br />
+            {{ company.address.city }}, {{ company.address.state }} {{ company.address.zip }}<br />
+            {{ company.address.country }}
+          </dd>
+
+          <dt>Departments</dt>
+          <dd>
+            <for each="dept in company.departments">
+              <div style="margin: 0.5rem 0">
+                <strong>{{ dept.name }}</strong> - {{ dept.employees.length }} employees
+                <ul style="margin-left: 1rem">
+                  <for each="employee in dept.employees">
+                    <li>{{ employee.firstName }} {{ employee.lastName }} ({{ employee.position }})</li>
+                  </for>
+                </ul>
+              </div>
+            </for>
+          </dd>
+        </dl>
+      </div>
+
+      <!-- Statistics -->
+      <div class="card">
+        <h3>📊 Statistics</h3>
+        <div class="grid">
+          <for each="stat in statistics">
+            <div class="highlight">
+              <h4>{{ stat.label }}</h4>
+              <div style="font-size: 2rem; font-weight: bold; color: {{ stat.color }};">
+                {{ stat.value | number(0) }}
+              </div>
+              <if condition="stat.trend === 'up'">
+                <span style="color: green">📈 +{{ stat.change }}%</span>
+              </if>
+              <if condition="stat.trend === 'down'">
+                <span style="color: red">📉 -{{ stat.change }}%</span>
+              </if>
+              <if condition="stat.trend === 'stable'">
+                <span style="color: gray">➡️ {{ stat.change }}%</span>
+              </if>
+            </div>
+          </for>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== ATTRIBUTE MANIPULATION ===== -->
+    <div class="section">
+      <h2>🎨 Dynamic Attributes</h2>
+      <div class="card">
+        <h3>Dynamic Styling</h3>
+        <for each="item in dynamicItems">
+          <div
+            class="card"
+            style="border-left-color: {{ item.color }}; {{ item.important ? 'font-weight: bold;' : '' }}"
+            data-id="{{ item.id }}"
+            data-category="{{ item.category | slug }}"
+          >
+            <h4 style="color: {{ item.color }};">{{ item.title }}</h4>
+            <p>{{ item.description }}</p>
+            <if condition="item.priority === 'high'">
+              <span class="tag" style="background-color: #dc3545">🚨 High Priority</span>
+            </if>
+            <if condition="item.priority === 'medium'">
+              <span class="tag" style="background-color: #ffc107">⚠️ Medium Priority</span>
+            </if>
+            <if condition="item.priority === 'low'">
+              <span class="tag" style="background-color: #28a745">✅ Low Priority</span>
+            </if>
+          </div>
+        </for>
+      </div>
+    </div>
+
+    <!-- ===== MARKDOWN CONTENT ===== -->
+    <div class="section">
+      <h2>📝 Markdown Support</h2>
+      <div class="card">
+        <markdown>
+          # This is a Markdown Header This content is written in **Markdown** and should be *processed* automatically.
+          ## Features: - **Bold text** - *Italic text* - `Inline code` - [Links](https://example.com) ### Code Block:
+          ```javascript function hello() { console.log('Hello from markdown!'); } ``` > This is a blockquote with some
+          **important** information.
+        </markdown>
+      </div>
+    </div>
+  </block>
+
+  <block name="footer">
+    <div style="margin-top: 1rem">
+      <strong
+        >Template rendered with {{ posts.length }} posts, {{ teamMembers.length }} team members, and {{ features.length
+        }} features.</strong
+      >
+    </div>
+  </block>
+</extends>

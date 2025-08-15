@@ -1,0 +1,129 @@
+<!--
+  Theme Switcher Component
+  Usage: include('theme-switcher')
+-->
+<div class="theme-switcher" role="group" aria-label="Theme selection">
+  <button
+    class="theme-toggle"
+    id="theme-toggle"
+    aria-label="Toggle between light and dark theme"
+    aria-pressed="false"
+    type="button"
+  >
+    <span class="theme-toggle-icon light-icon" aria-hidden="true">☀️</span>
+    <span class="theme-toggle-icon dark-icon" aria-hidden="true">🌙</span>
+    <span class="theme-toggle-text sr-only">Toggle theme</span>
+  </button>
+
+  <!-- Advanced theme selector (optional) -->
+  <div class="theme-selector" id="theme-selector" hidden>
+    <fieldset class="theme-options">
+      <legend class="theme-legend">Choose theme</legend>
+
+      <div class="theme-option">
+        <input type="radio" id="theme-light" name="theme" value="light" class="theme-radio" />
+        <label for="theme-light" class="theme-label">
+          <span class="theme-icon" aria-hidden="true">☀️</span>
+          Light
+        </label>
+      </div>
+
+      <div class="theme-option">
+        <input type="radio" id="theme-dark" name="theme" value="dark" class="theme-radio" />
+        <label for="theme-dark" class="theme-label">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+          Dark
+        </label>
+      </div>
+
+      <div class="theme-option">
+        <input type="radio" id="theme-auto" name="theme" value="auto" class="theme-radio" />
+        <label for="theme-auto" class="theme-label">
+          <span class="theme-icon" aria-hidden="true">🔄</span>
+          Auto
+        </label>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+<script>
+  (function () {
+    'use strict';
+
+    const STORAGE_KEY = 'theme';
+    const THEMES = ['light', 'dark', 'auto'];
+
+    // Get elements
+    const toggle = document.getElementById('theme-toggle');
+    const selector = document.getElementById('theme-selector');
+    const radios = document.querySelectorAll('input[name="theme"]');
+
+    if (!toggle) return;
+
+    // Get current theme
+    function getCurrentTheme() {
+      return localStorage.getItem(STORAGE_KEY) || 'auto';
+    }
+
+    // Set theme
+    function setTheme(theme) {
+      if (!THEMES.includes(theme)) theme = 'auto';
+
+      localStorage.setItem(STORAGE_KEY, theme);
+      document.documentElement.setAttribute('data-theme', theme);
+
+      // Update toggle state
+      const isDark =
+        theme === 'dark' || (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+
+      // Update radio selection
+      const targetRadio = document.getElementById(`theme-${theme}`);
+      if (targetRadio) targetRadio.checked = true;
+    }
+
+    // Initialize
+    const currentTheme = getCurrentTheme();
+    setTheme(currentTheme);
+
+    // Toggle handler
+    toggle.addEventListener('click', function () {
+      const current = getCurrentTheme();
+      let next;
+
+      if (current === 'light') next = 'dark';
+      else if (current === 'dark') next = 'auto';
+      else next = 'light';
+
+      setTheme(next);
+    });
+
+    // Radio handlers
+    radios.forEach((radio) => {
+      radio.addEventListener('change', function () {
+        if (this.checked) {
+          setTheme(this.value);
+        }
+      });
+    });
+
+    // System theme change handler
+    if (window.matchMedia) {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      mediaQuery.addEventListener('change', function () {
+        if (getCurrentTheme() === 'auto') {
+          setTheme('auto'); // Trigger update
+        }
+      });
+    }
+
+    // Keyboard navigation for toggle
+    toggle.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  })();
+</script>

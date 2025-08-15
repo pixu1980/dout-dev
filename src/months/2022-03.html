@@ -1,11 +1,1 @@
-<extends src="./layouts/leaf.html" locals='{"basePath": "..", "title": " - March 2022"}'>
-  <block name="content">
-    <h3>March 2022</h3>
-    <each loop="post, index in posts.filter(post => post.date >= new Date('2022-03-01') && post.date <= new Date('2022-03-31'))">
-      {{post.dateString}}<a href="{{post.path.replace('./', '../')}}">{{post.title}}</a>
-    </each>
-  </block>
-  <block name="aside">
-    <!-- <include src="./components/archive/archive.html" locals='{"basePath": "..", "months": months}'></include> -->
-  </block>
-</extends>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Month: March 2022</title></head><body><section><h1>Month: March 2022</h1><ul><li><a href="../posts/2022-03-03-custom-grid-system.html">Custom Grid System</a></li><li><a href="../posts/2022-03-03-marked-markdown-parser.html">Marked - Markdown Parser</a></li><li><a href="../posts/2022-03-12-you-can-edit-css.html">You can edit CSS</a></li><li><a href="../posts/2022-03-16-test-codepen.html">Testing CodePen</a></li><li><a href="../posts/2022-03-18-css-properties-hierarchy.html">CSS Properties Hierarchy</a></li><li><a href="../posts/2022-03-21-building-dout-dev-blog.html">Building dout.dev blog</a></li><li><a href="../posts/2022-03-22-building-dout-dev-blog-part-2.html">Building dout.dev blog - Part II</a></li><li><a href="../posts/2022-03-24-welcome-to-dout-dev.html">Welcome to dout.dev</a></li><li><a href="../posts/2022-03-25-concerning.html">Concerning…</a></li></ul></section></body></html>

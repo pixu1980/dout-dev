@@ -8,18 +8,29 @@ description: CSS Properties Hierarchy
 ---
 
 ```css
+:root {
+  --border-radius: 5px;
+}
+
 .element {
   /* css custom properties */
   --var--example: 1;
 ​
   /* position */
   position: absolute;
+  inset: 0; /* top, right, bottom, left */
+  z-index: 1;
 ​
   /* display */
   display: block;
   display: flex;
+  place-content: center;
+  place-items: center;
   justify-self: unset;
+  gap: 1rem;
+  
   opacity: 1;
+  visibility: visible;
 ​
   /* box-model */
   box-sizing: border-box;
@@ -29,12 +40,15 @@ description: CSS Properties Hierarchy
   border: 0.1rem solid black;
   border-radius: 0.4rem;
   margin: 1rem;
+  outline: 0.3rem solid black;
+  outline-offset: 0.3rem;
 ​
   /* colors & background */
   color: white;
   background-color: black;
   background-image: url();
   box-shadow: rgba(50, 50, 50, 1);
+  filter: drop-shadow();
 ​
   /* text */
   font-family: 'Courier New', Courier, monospace;
@@ -52,10 +66,9 @@ description: CSS Properties Hierarchy
   animation: test 300ms forwards alternate-reverse;
 ​
   /* helpers */
-  cursor: pointer;
-  outline: 0;
   appearance: none;
-  filter: drop-shadow();
+  cursor: pointer;
+  pointer-event: none;
 ​
   /* pseudo elements */
   &::after {
@@ -70,14 +83,15 @@ description: CSS Properties Hierarchy
     display: none;
   }
 ​
+  /* pseudo selectors */
   &:hover {
   }
 ​
-  /* sass includes */
-  @include helpers.media($min-width: #{helpers.get-breakpoint-value(md)}) {
-    display: none;
+  /* media queries */
+  @media screen and (width >= 1024px) {
+    /* repeat css hierarchy here */
   }
-​
+
   /* ------------ children */
   span {
     /* repeat css hierarchy here */

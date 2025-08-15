@@ -3,7 +3,6 @@ title: Testing CodePen
 date: 2022-03-16
 published: true
 tags: ['Markdown', 'Cover Image']
-series: true
 canonical_url: false
 description: One line only description
 ---

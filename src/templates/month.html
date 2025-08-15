@@ -1,0 +1,332 @@
+<extends layout="layouts/base.html">
+  <block name="title">{{ month.name }} {{ month.year }} - {{ site.title }}</block>
+
+  <block name="description"
+    >Posts from {{ month.name }} {{ month.year }} - Browse all posts published during this month.</block
+  >
+
+  <block name="meta">
+    <!-- Open Graph meta tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ month.name }} {{ month.year }} - {{ site.title }}" />
+    <meta property="og:description" content="Posts from {{ month.name }} {{ month.year }}" />
+    <meta property="og:url" content="{{ site.url }}/months/{{ month.slug }}/" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ month.name }} {{ month.year }}" />
+    <meta name="twitter:description" content="Posts from {{ month.name }} {{ month.year }}" />
+
+    <!-- Additional SEO meta -->
+    <link rel="canonical" href="{{ site.url }}/months/{{ month.slug }}/" />
+  </block>
+
+  <block name="header">
+    <include src="../components/header.html" data='{ "current": "posts" }'></include>
+  </block>
+
+  <block name="main">
+    <div class="month-page">
+      <!-- Breadcrumb navigation -->
+      <nav class="breadcrumb" role="navigation" aria-label="Breadcrumb">
+        <include
+          src="../components/nav.html"
+          data='{
+      "variant": "breadcrumb",
+      "breadcrumbs": [
+        { "name": "Posts", "url": "/posts/" },
+        { "name": "Archive", "url": "/archive/" },
+        { "name": month.name + " " + month.year }
+      ]
+    }'
+        ></include>
+      </nav>
+
+      <!-- Month header -->
+      <header class="month-header">
+        <div class="month-info">
+          <h1 class="month-title">
+            <time datetime="{{ month.year }}-{{ month.number | pad:2 }}"> {{ month.name }} {{ month.year }} </time>
+          </h1>
+
+          <div class="month-meta">
+            <span class="month-count" aria-label="Number of posts">
+              {{ posts.length }} {{ posts.length === 1 ? 'post' : 'posts' }}
+            </span>
+
+            <if condition="month.totalWords">
+              <span class="month-words" aria-label="Total words written"> {{ month.totalWords | number }} words </span>
+            </if>
+
+            <if condition="month.totalReadingTime">
+              <span class="month-reading-time" aria-label="Total reading time">
+                {{ month.totalReadingTime }} min read
+              </span>
+            </if>
+          </div>
+        </div>
+
+        <!-- Month navigation -->
+        <nav class="month-nav" aria-label="Month navigation">
+          <if condition="month.prev">
+            <a
+              href="/months/{{ month.prev.slug }}/"
+              class="month-nav-link month-nav-prev"
+              rel="prev"
+              aria-label="Previous month: {{ month.prev.name }} {{ month.prev.year }}"
+            >
+              <span class="month-nav-arrow" aria-hidden="true">←</span>
+              <span class="month-nav-text">
+                <span class="month-nav-label">Previous</span>
+                <span class="month-nav-month">{{ month.prev.name }} {{ month.prev.year }}</span>
+              </span>
+            </a>
+          </if>
+
+          <if condition="month.next">
+            <a
+              href="/months/{{ month.next.slug }}/"
+              class="month-nav-link month-nav-next"
+              rel="next"
+              aria-label="Next month: {{ month.next.name }} {{ month.next.year }}"
+            >
+              <span class="month-nav-text">
+                <span class="month-nav-label">Next</span>
+                <span class="month-nav-month">{{ month.next.name }} {{ month.next.year }}</span>
+              </span>
+              <span class="month-nav-arrow" aria-hidden="true">→</span>
+            </a>
+          </if>
+        </nav>
+      </header>
+
+      <!-- Monthly calendar view (optional) -->
+      <if condition="showCalendar">
+        <div class="month-calendar" role="table" aria-label="Calendar for {{ month.name }} {{ month.year }}">
+          <div class="calendar-header">
+            <div class="calendar-title" id="calendar-title">{{ month.name }} {{ month.year }}</div>
+          </div>
+
+          <div class="calendar-grid" role="grid" aria-labelledby="calendar-title">
+            <!-- Calendar days header -->
+            <div class="calendar-row calendar-days-header" role="row">
+              <for each="day in ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']">
+                <div class="calendar-day-header" role="columnheader">
+                  <abbr
+                    title="{{ day === 'Sun' ? 'Sunday' : day === 'Mon' ? 'Monday' : day === 'Tue' ? 'Tuesday' : day === 'Wed' ? 'Wednesday' : day === 'Thu' ? 'Thursday' : day === 'Fri' ? 'Friday' : 'Saturday' }}"
+                  >
+                    {{ day }}
+                  </abbr>
+                </div>
+              </for>
+            </div>
+
+            <!-- Calendar days -->
+            <for each="week in month.calendar">
+              <div class="calendar-row" role="row">
+                <for each="day in week">
+                  <div
+                    class="calendar-day{{ day.otherMonth ? ' calendar-day--other-month' : '' }}{{ day.hasPost ? ' calendar-day--has-post' : '' }}{{ day.isToday ? ' calendar-day--today' : '' }}"
+                    role="gridcell"
+                    tabindex="{{ day.hasPost ? '0' : '-1' }}"
+                  >
+                    <if condition="day.hasPost">
+                      <a
+                        href="#day-{{ day.date }}"
+                        class="calendar-day-link"
+                        aria-label="{{ day.posts.length }} post{{ day.posts.length !== 1 ? 's' : '' }} on {{ day.date }}"
+                      >
+                        {{ day.number }}
+                      </a>
+                      <else>
+                        <span class="calendar-day-number">{{ day.number }}</span>
+                      </else>
+                    </if>
+                  </div>
+                </for>
+              </div>
+            </for>
+          </div>
+        </div>
+      </if>
+
+      <!-- Posts listing -->
+      <main class="month-content" role="main">
+        <if condition="posts && posts.length > 0">
+          <!-- Group posts by day -->
+          <div class="posts-by-day">
+            <for each="dayGroup in posts | groupBy:'date' | sortBy:'date:desc'">
+              <section class="day-section" id="day-{{ dayGroup.key | date:'yyyy-mm-dd' }}">
+                <header class="day-header">
+                  <h2 class="day-title">
+                    <time datetime="{{ dayGroup.key | date:'iso' }}"> {{ dayGroup.key | date:'dddd, mmmm d' }} </time>
+                  </h2>
+                  <span class="day-count" aria-label="Number of posts">
+                    {{ dayGroup.posts.length }} {{ dayGroup.posts.length === 1 ? 'post' : 'posts' }}
+                  </span>
+                </header>
+
+                <div class="day-posts">
+                  <for each="post in dayGroup.posts">
+                    <include src="../components/post-card.html" data='{ "post": post, "variant": "compact" }'></include>
+                  </for>
+                </div>
+              </section>
+            </for>
+          </div>
+
+          <!-- Timeline view toggle -->
+          <div class="month-view-toggle">
+            <button class="view-toggle-button" id="timeline-toggle" aria-pressed="false" onclick="toggleTimelineView()">
+              <span class="view-toggle-icon" aria-hidden="true">📅</span>
+              <span class="view-toggle-text">Timeline View</span>
+            </button>
+          </div>
+
+          <else>
+            <div class="empty-state" role="status">
+              <div class="empty-state-content">
+                <h2 class="empty-state-title">No posts in {{ month.name }} {{ month.year }}</h2>
+                <p class="empty-state-description">No posts were published during this month.</p>
+                <div class="empty-state-actions">
+                  <a href="/posts/" class="button button--primary">Browse All Posts</a>
+                  <a href="/archive/" class="button button--secondary">View Archive</a>
+                </div>
+              </div>
+            </div>
+          </else>
+        </if>
+      </main>
+
+      <!-- Month statistics -->
+      <if condition="showStats && posts.length > 0">
+        <aside class="month-stats" role="complementary" aria-labelledby="month-stats-title">
+          <h2 id="month-stats-title" class="month-stats-title">Monthly Statistics</h2>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-value">{{ posts.length }}</span>
+              <span class="stat-label">Posts Published</span>
+            </div>
+
+            <div class="stat-item">
+              <span class="stat-value">{{ month.totalWords | number }}</span>
+              <span class="stat-label">Total Words</span>
+            </div>
+
+            <div class="stat-item">
+              <span class="stat-value">{{ month.avgWordsPerPost | default:0 | number }}</span>
+              <span class="stat-label">Avg Words per Post</span>
+            </div>
+
+            <div class="stat-item">
+              <span class="stat-value">{{ month.totalReadingTime | default:0 }}</span>
+              <span class="stat-label">Total Reading Time</span>
+            </div>
+
+            <div class="stat-item">
+              <span class="stat-value">{{ month.uniqueTags | default:0 }}</span>
+              <span class="stat-label">Unique Tags</span>
+            </div>
+
+            <div class="stat-item">
+              <span class="stat-value">{{ month.mostUsedTag | default:'N/A' }}</span>
+              <span class="stat-label">Most Used Tag</span>
+            </div>
+          </div>
+        </aside>
+      </if>
+
+      <!-- Popular tags for this month -->
+      <if condition="monthTags && monthTags.length > 0">
+        <aside class="month-tags" role="complementary" aria-labelledby="month-tags-title">
+          <h2 id="month-tags-title" class="month-tags-title">Popular Tags This Month</h2>
+          <div class="month-tag-cloud">
+            <for each="tag in monthTags | slice:0,10">
+              <a href="/tags/{{ tag.slug }}/" class="month-tag-item" title="{{ tag.count }} posts">
+                {{ tag.name }}
+                <span class="month-tag-count" aria-label="{{ tag.count }} posts">{{ tag.count }}</span>
+              </a>
+            </for>
+          </div>
+        </aside>
+      </if>
+    </div>
+  </block>
+
+  <block name="scripts">
+    <script>
+      // Timeline view toggle
+      function toggleTimelineView() {
+        const toggle = document.getElementById('timeline-toggle');
+        const container = document.querySelector('.posts-by-day');
+        const isPressed = toggle.getAttribute('aria-pressed') === 'true';
+
+        // Toggle timeline view
+        container.classList.toggle('posts-by-day--timeline', !isPressed);
+        toggle.setAttribute('aria-pressed', !isPressed);
+
+        // Update button text
+        const text = toggle.querySelector('.view-toggle-text');
+        text.textContent = isPressed ? 'Timeline View' : 'List View';
+
+        // Store preference
+        localStorage.setItem('month-timeline-view', !isPressed);
+      }
+
+      // Calendar interactions
+      document.querySelectorAll('.calendar-day--has-post').forEach((day) => {
+        day.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            const link = this.querySelector('.calendar-day-link');
+            if (link) link.click();
+          }
+        });
+      });
+
+      // Smooth scroll to day sections
+      document.querySelectorAll('.calendar-day-link').forEach((link) => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const target = document.getElementById(targetId);
+
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+
+            // Focus the target for accessibility
+            target.tabIndex = -1;
+            target.focus();
+          }
+        });
+      });
+
+      // Initialize timeline view from localStorage
+      document.addEventListener('DOMContentLoaded', function () {
+        const storedView = localStorage.getItem('month-timeline-view') === 'true';
+        if (storedView) {
+          toggleTimelineView();
+        }
+      });
+
+      // Keyboard navigation for month navigation
+      document.addEventListener('keydown', function (e) {
+        if (e.altKey) {
+          const prevLink = document.querySelector('.month-nav-prev');
+          const nextLink = document.querySelector('.month-nav-next');
+
+          if (e.key === 'ArrowLeft' && prevLink) {
+            e.preventDefault();
+            prevLink.click();
+          } else if (e.key === 'ArrowRight' && nextLink) {
+            e.preventDefault();
+            nextLink.click();
+          }
+        }
+      });
+    </script>
+  </block>
+</extends>

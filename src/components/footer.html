@@ -1,0 +1,97 @@
+<!--
+  Site Footer Component
+  Usage: include('footer')
+-->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-container">
+    <!-- Footer content grid -->
+    <div class="footer-content">
+      <!-- About section -->
+      <section class="footer-section">
+        <h2 class="footer-title">{{ site.title }}</h2>
+        <p class="footer-description">{{ site.description }}</p>
+      </section>
+
+      <!-- Quick links -->
+      <section class="footer-section">
+        <h3 class="footer-heading">Quick Links</h3>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul class="footer-nav-list">
+            <li><a href="/" class="footer-link">Home</a></li>
+            <li><a href="/posts/" class="footer-link">All Posts</a></li>
+            <li><a href="/tags/" class="footer-link">Tags</a></li>
+            <li><a href="/about/" class="footer-link">About</a></li>
+            <li><a href="/feed.xml" class="footer-link">RSS Feed</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- Social links -->
+      <section class="footer-section">
+        <h3 class="footer-heading">Connect</h3>
+        <nav class="social-nav" aria-label="Social media links">
+          <ul class="social-list">
+            <if condition="site.social.github">
+            <li>
+              <a href="{{ site.social.github }}"
+                 class="social-link"
+                 aria-label="GitHub profile"
+                 rel="noopener noreferrer"
+                 target="_blank">
+                GitHub
+              </a>
+            </li>
+            </if>
+            <if condition="site.social.twitter">
+            <li>
+              <a href="{{ site.social.twitter }}"
+                 class="social-link"
+                 aria-label="Twitter profile"
+                 rel="noopener noreferrer"
+                 target="_blank">
+                Twitter
+              </a>
+            </li>
+            </if>
+            <if condition="site.social.linkedin">
+            <li>
+              <a href="{{ site.social.linkedin }}"
+                 class="social-link"
+                 aria-label="LinkedIn profile"
+                 rel="noopener noreferrer"
+                 target="_blank">
+                LinkedIn
+              </a>
+            </li>
+            </if>
+          </ul>
+        </nav>
+      </section>
+    </div>
+
+    <!-- Copyright and legal -->
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <p class="copyright">
+          &copy; {{ site.currentYear }} {{ site.author }}.
+          <if condition="site.license">
+          Content licensed under <a href="{{ site.license.url }}" class="footer-link">{{ site.license.name }}</a>.
+          </if>
+        </p>
+        <p class="footer-meta">
+          Built with <a href="#" class="footer-link">dout-dev</a> &bull;
+          <a href="/privacy/" class="footer-link">Privacy</a> &bull;
+          <a href="/accessibility/" class="footer-link">Accessibility</a>
+        </p>
+      </div>
+
+      <!-- Back to top -->
+      <div class="footer-actions">
+        <a href="#top" class="back-to-top" aria-label="Back to top of page">
+          <span class="back-to-top-text">Back to top</span>
+          <span class="back-to-top-icon" aria-hidden="true">↑</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

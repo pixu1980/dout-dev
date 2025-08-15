@@ -1,0 +1,21 @@
+<div class="user-card card">
+    <h3>👤 {{ user.name | capitalize }}</h3>
+    <div>
+        <strong>Email:</strong> {{ user.email | lower }}
+    </div>
+    <div>
+        <strong>Role:</strong>
+        <span class="tag">{{ user.role | upper }}</span>
+    </div>
+    <if condition="user.active">
+        <div class="success">✅ Active User</div>
+    </if>
+    <if condition="!user.active">
+        <div class="error">❌ Inactive User</div>
+    </if>
+    <if condition="user.lastLogin">
+        <div>
+            <strong>Last Login:</strong> {{ user.lastLogin | date('YYYY-MM-DD HH:mm') }}
+        </div>
+    </if>
+</div>

@@ -1,0 +1,276 @@
+<extends layout="layouts/base.html">
+  <block name="title">{{ tag.name }} Posts - {{ site.title }}</block>
+
+  <block name="description">
+    Posts tagged with {{ tag.name }} - {{ tag.description | default:'Explore all posts related to ' + tag.name + '.' }}
+  </block>
+
+  <block name="meta">
+    <!-- Open Graph meta tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ tag.name }} Posts - {{ site.title }}" />
+    <meta property="og:description" content="{{ tag.description | default:'Posts tagged with ' + tag.name }}" />
+    <meta property="og:url" content="{{ site.url }}/tags/{{ tag.slug }}/" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ tag.name }} Posts" />
+    <meta name="twitter:description" content="{{ tag.description | default:'Posts tagged with ' + tag.name }}" />
+
+    <!-- Additional SEO meta -->
+    <meta name="keywords" content="{{ tag.name }}, {{ tag.relatedTags | join:', ' }}" />
+    <link rel="canonical" href="{{ site.url }}/tags/{{ tag.slug }}/" />
+  </block>
+
+  <block name="main">
+    <div class="tag-page">
+      <!-- Breadcrumb navigation -->
+      <nav class="breadcrumb" role="navigation" aria-label="Breadcrumb"></nav>
+
+      <!-- Tag header -->
+      <header class="tag-header">
+        <div class="tag-info">
+          <h1 class="tag-title">
+            <span class="tag-icon" aria-hidden="true">#</span>
+            {{ tag.name }}
+          </h1>
+
+          <if condition="tag.description">
+            <p class="tag-description">{{ tag.description }}</p>
+          </if>
+
+          <div class="tag-meta">
+            <span class="tag-count" aria-label="Number of posts">
+              {{ posts.length }} {{ posts.length === 1 ? 'post' : 'posts' }}
+            </span>
+
+            <if condition="tag.lastUpdated">
+              <time class="tag-updated" datetime="{{ tag.lastUpdated | date:'iso' }}" aria-label="Last updated">
+                Last updated {{ tag.lastUpdated | date:'relative' }}
+              </time>
+            </if>
+          </div>
+        </div>
+
+        <!-- Tag actions -->
+        <div class="tag-actions">
+          <a href="/tags/" class="tag-action-link">
+            <span class="tag-action-icon" aria-hidden="true">←</span>
+            All Tags
+          </a>
+
+          <a
+            href="/feed/tags/{{ tag.slug }}.xml"
+            class="tag-action-link"
+            aria-label="RSS feed for {{ tag.name }} posts"
+          >
+            <span class="tag-action-icon" aria-hidden="true">📡</span>
+            RSS Feed
+          </a>
+        </div>
+      </header>
+
+      <!-- Filter and sort controls -->
+      <div class="tag-controls" role="group" aria-label="Filter and sort options">
+        <div class="tag-filters">
+          <label for="sort-select" class="control-label">Sort by:</label>
+          <select id="sort-select" class="control-select" onchange="sortPosts(this.value)">
+            <option value="date-desc" selected="{{ sortBy === 'date-desc' ? 'selected' : '' }}">Newest first</option>
+            <option value="date-asc" selected="{{ sortBy === 'date-asc' ? 'selected' : '' }}">Oldest first</option>
+            <option value="title-asc" selected="{{ sortBy === 'title-asc' ? 'selected' : '' }}">Title A-Z</option>
+            <option value="title-desc" selected="{{ sortBy === 'title-desc' ? 'selected' : '' }}">Title Z-A</option>
+          </select>
+        </div>
+
+        <div class="tag-view-options">
+          <label class="control-label">View:</label>
+          <div class="view-toggle" role="radiogroup" aria-label="Layout view">
+            <button
+              class="view-button view-button--grid"
+              aria-pressed="{{ viewMode === 'grid' ? 'true' : 'false' }}"
+              onclick="setViewMode('grid')"
+              aria-label="Grid view"
+            >
+              <span aria-hidden="true">⊞</span>
+            </button>
+            <button
+              class="view-button view-button--list"
+              aria-pressed="{{ viewMode === 'list' ? 'true' : 'false' }}"
+              onclick="setViewMode('list')"
+              aria-label="List view"
+            >
+              <span aria-hidden="true">☰</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Posts listing -->
+      <main class="tag-content" id="posts-container">
+        <if condition="posts && posts.length > 0">
+          <div
+            class="posts-grid posts-grid--{{ viewMode | default:'grid' }}"
+            role="main"
+            aria-label="Posts tagged with {{ tag.name }}"
+          >
+            <for each="post in posts">
+              <include src="../components/post-card.html" data='{ "post": post, "variant": "default" }'></include>
+            </for>
+          </div>
+
+          <!-- Pagination -->
+          <if condition="pagination && pagination.totalPages > 1">
+            <div class="tag-pagination">
+              <include
+                src="../components/pagination.html"
+                data='{
+        "pagination": pagination
+      }'
+              ></include>
+            </div>
+          </if>
+
+          <else>
+            <div class="empty-state" role="status">
+              <div class="empty-state-content">
+                <h2 class="empty-state-title">No posts found</h2>
+                <p class="empty-state-description">
+                  There are currently no posts tagged with <strong>{{ tag.name }}</strong>.
+                </p>
+                <div class="empty-state-actions">
+                  <a href="/posts/" class="button button--primary">Browse All Posts</a>
+                  <a href="/tags/" class="button button--secondary">View All Tags</a>
+                </div>
+              </div>
+            </div>
+          </else>
+        </if>
+      </main>
+
+      <!-- Related tags -->
+      <if condition="relatedTags && relatedTags.length > 0">
+        <aside class="related-tags" role="complementary" aria-labelledby="related-tags-title">
+          <h2 id="related-tags-title" class="related-tags-title">Related Tags</h2>
+          <div class="tag-cloud">
+            <for each="relatedTag in relatedTags">
+              <a
+                href="/tags/{{ relatedTag.slug }}/"
+                class="tag-cloud-item"
+                style="font-size: {{ relatedTag.weight | multiply:0.8 | add:1 }}rem"
+                title="{{ relatedTag.count }} posts"
+              >
+                {{ relatedTag.name }}
+              </a>
+            </for>
+          </div>
+        </aside>
+      </if>
+
+      <!-- Tag statistics -->
+      <if condition="showStats">
+        <aside class="tag-stats" role="complementary" aria-labelledby="tag-stats-title">
+          <h2 id="tag-stats-title" class="tag-stats-title">Tag Statistics</h2>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-value">{{ posts.length }}</span>
+              <span class="stat-label">Total Posts</span>
+            </div>
+
+            <div class="stat-item">
+              <span class="stat-value">{{ tag.monthlyPosts | default:0 }}</span>
+              <span class="stat-label">This Month</span>
+            </div>
+
+            <div class="stat-item">
+              <span class="stat-value">{{ tag.avgWordsPerPost | default:0 }}</span>
+              <span class="stat-label">Avg Words</span>
+            </div>
+
+            <div class="stat-item">
+              <span class="stat-value">{{ tag.totalReadingTime | default:0 }}</span>
+              <span class="stat-label">Total Reading Time</span>
+            </div>
+          </div>
+        </aside>
+      </if>
+    </div>
+  </block>
+
+  <block name="scripts">
+    <script>
+      // Sort functionality
+      function sortPosts(sortBy) {
+        const url = new URL(window.location);
+        url.searchParams.set('sort', sortBy);
+        url.searchParams.delete('page'); // Reset pagination
+        window.location.href = url.toString();
+      }
+
+      // View mode toggle
+      function setViewMode(mode) {
+        const container = document.getElementById('posts-container');
+        const grid = container.querySelector('.posts-grid');
+
+        // Update view mode
+        grid.className = `posts-grid posts-grid--${mode}`;
+
+        // Update button states
+        document.querySelectorAll('.view-button').forEach((btn) => {
+          btn.setAttribute('aria-pressed', 'false');
+        });
+        document.querySelector(`.view-button--${mode}`).setAttribute('aria-pressed', 'true');
+
+        // Store preference
+        localStorage.setItem('tag-view-mode', mode);
+
+        // Update URL
+        const url = new URL(window.location);
+        url.searchParams.set('view', mode);
+        window.history.replaceState({}, '', url.toString());
+      }
+
+      // Initialize view mode from localStorage or URL
+      document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlView = urlParams.get('view');
+        const storedView = localStorage.getItem('tag-view-mode');
+        const defaultView = 'grid';
+
+        const viewMode = urlView || storedView || defaultView;
+
+        if (document.querySelector('.posts-grid')) {
+          setViewMode(viewMode);
+        }
+      });
+
+      // Keyboard navigation for view toggle
+      document.querySelectorAll('.view-button').forEach((button) => {
+        button.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      });
+
+      // Live search functionality (if search is implemented)
+      if (document.getElementById('tag-search')) {
+        const searchInput = document.getElementById('tag-search');
+        const postsContainer = document.getElementById('posts-container');
+        let searchTimeout;
+
+        searchInput.addEventListener('input', function () {
+          clearTimeout(searchTimeout);
+          searchTimeout = setTimeout(() => {
+            performSearch(this.value);
+          }, 300);
+        });
+
+        function performSearch(query) {
+          // Implementation would depend on search backend
+          console.log('Searching for:', query);
+        }
+      }
+    </script>
+  </block>
+</extends>
