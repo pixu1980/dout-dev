@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Loop Test</title>
+    <style>
+        .tag { background: #e9ecef; padding: 0.2rem 0.4rem; margin: 0.1rem; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>🔄 Nested Loop Test</h1>
+
+    <h2>Posts with Tags</h2>
+    <ol>
+        <for each="post in posts">
+            <li>
+                <strong>{{ post.title }}</strong>
+                <br>
+                <small>by {{ post.author }}</small>
+                <div class="tags">
+                    <for each="tag in post.tags">
+                        <span class="tag">{{ tag }}</span>
+                    </for>
+                </div>
+            </li>
+        </for>
+    </ol>
+</body>
+</html>

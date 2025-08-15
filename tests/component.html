@@ -1,0 +1,11 @@
+<div class="component">
+  <h3>{{ title }}</h3>
+  <p>{{ description }}</p>
+  <if condition="!!items">
+    <ul>
+      <for each="item" in="items">
+        <li>{{ item }}</li>
+      </for>
+    </ul>
+  </if>
+</div>

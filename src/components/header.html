@@ -1,0 +1,60 @@
+<!--
+  Site Header Component
+  Usage: include('header', { current: 'home' | 'posts' | 'about' })
+-->
+<header class="site-header" role="banner">
+  <div class="header-container">
+    <!-- Logo/Brand -->
+    <div class="brand">
+      <a href="/" class="brand-link" aria-label="Home - {{ site.title }}">
+        <h1 class="brand-title">{{ site.title }}</h1>
+        <p class="brand-tagline">{{ site.description }}</p>
+      </a>
+    </div>
+
+    <!-- Main navigation -->
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="/" class="nav-link{{ current === 'home' ? ' nav-link--current' : '' }}"
+             {{ current === 'home' ? 'aria-current="page"' : '' }}>
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/posts/" class="nav-link{{ current === 'posts' ? ' nav-link--current' : '' }}"
+             {{ current === 'posts' ? 'aria-current="page"' : '' }}>
+            Posts
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/tags/" class="nav-link{{ current === 'tags' ? ' nav-link--current' : '' }}"
+             {{ current === 'tags' ? 'aria-current="page"' : '' }}>
+            Tags
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/about/" class="nav-link{{ current === 'about' ? ' nav-link--current' : '' }}"
+             {{ current === 'about' ? 'aria-current="page"' : '' }}>
+            About
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Theme switcher -->
+    <div class="header-controls">
+      <include src="../components/theme-switcher.html"></include>
+    </div>
+
+    <!-- Mobile menu toggle -->
+    <button class="mobile-menu-toggle"
+            aria-expanded="false"
+            aria-controls="main-nav"
+            aria-label="Toggle navigation menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+</header>

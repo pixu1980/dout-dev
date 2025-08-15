@@ -1,0 +1,35 @@
+<extends src="base.html">
+  <block name="content">
+    <div class="page">
+      <h2>{{ title }}</h2>
+      <include
+        src="component.html"
+        with="{ 'title': 'Included Component', 'description': 'This is included', 'items': items }"
+      ></include>
+    </div>
+
+    <if condition="showConditional">
+      <div class="conditional">This should show when showConditional is true</div>
+      <else-if condition="!showConditional">
+        <div class="conditional">This should show when showConditional is false</div>
+      </else-if>
+      <else>
+        <div class="conditional">This should show when showConditional is false</div>
+      </else>
+    </if>
+
+    <switch status>
+      <case value="published">
+        <div class="status-published">Published content</div>
+      </case>
+      <case value="draft">
+        <div class="status-draft">Draft content</div>
+      </case>
+      <default>
+        <div class="status-unknown">Unknown status</div>
+      </default>
+    </switch>
+
+    <markdown> # Markdown Content This is **bold** and *italic* text. </markdown>
+  </block>
+</extends>

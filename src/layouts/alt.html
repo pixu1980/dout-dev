@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="{{ description | default:'A modern accessible blog about web development, technology, and digital innovation.' }}"
+    />
+
+    <title>{{ title | default:site.title }}{{ title ? ' - ' + site.title : '' }}</title>
+
+    <!-- Alternative lightweight styling -->
+    <link rel="stylesheet" href="/styles/alt.css" />
+
+    <!-- Theme detection script -->
+    <script>
+      (function () {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.classList.remove('no-js');
+      })();
+    </script>
+  </head>
+  <body class="alt-layout">
+    <!-- Skip link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Simplified header -->
+    <header>
+      <nav>
+        <a href="/" class="home-link">{{ site.title }}</a>
+        <block name="nav">
+          <!-- Optional navigation override -->
+        </block>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    <main id="main-content" tabindex="-1">
+      <block name="main">
+        <!-- Page-specific content goes here -->
+      </block>
+    </main>
+
+    <!-- Minimal footer -->
+    <footer>
+      <p>&copy; {{ site.currentYear }} {{ site.author }}. <a href="/about.html">About</a></p>
+    </footer>
+
+    <block name="scripts">
+      <!-- Page-specific scripts go here -->
+    </block>
+  </body>
+</html>

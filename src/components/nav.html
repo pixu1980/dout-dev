@@ -1,0 +1,214 @@
+<!--
+  Navigation Component
+  Usage: include('nav', {
+    current: 'home'|'posts'|'tags'|'about',
+    variant: 'main'|'breadcrumb'|'pagination'|'sidebar'
+  })
+-->
+
+<if condition="variant === 'breadcrumb'">
+  <!-- Breadcrumb navigation -->
+  <nav class="breadcrumb-nav" role="navigation" aria-label="Breadcrumb">
+    <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/" class="breadcrumb-link" itemprop="item">
+          <span itemprop="name">Home</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+
+      <for each="item in breadcrumbs">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <if condition="item.url">
+            <a href="{{ item.url }}" class="breadcrumb-link" itemprop="item">
+              <span itemprop="name">{{ item.name }}</span>
+            </a>
+            <else>
+              <span class="breadcrumb-current" aria-current="page" itemprop="name">{{ item.name }}</span>
+            </else>
+          </if>
+          <meta itemprop="position" content="{{ loop.index + 1 }}" />
+        </li>
+      </for>
+    </ol>
+  </nav>
+
+  <else-if condition="variant === 'pagination'">
+    <!-- Pagination navigation -->
+    <nav class="pagination-nav" role="navigation" aria-label="Page navigation">
+      <div class="pagination-info">
+        <p class="pagination-summary">
+          Showing {{ pagination.start }} to {{ pagination.end }} of {{ pagination.total }} posts
+        </p>
+      </div>
+
+      <ul class="pagination-list">
+        <!-- Previous page -->
+        <if condition="pagination.prev">
+          <li class="pagination-item">
+            <a
+              href="{{ pagination.prev.url }}"
+              class="pagination-link pagination-prev"
+              rel="prev"
+              aria-label="Go to previous page, page {{ pagination.prev.number }}"
+            >
+              <span class="pagination-arrow" aria-hidden="true">←</span>
+              Previous
+            </a>
+          </li>
+          <else>
+            <li class="pagination-item pagination-item--disabled">
+              <span class="pagination-link pagination-prev" aria-hidden="true">
+                <span class="pagination-arrow" aria-hidden="true">←</span>
+                Previous
+              </span>
+            </li>
+          </else>
+        </if>
+
+        <!-- Page numbers -->
+        <for each="page in pagination.pages">
+          <li class="pagination-item">
+            <if condition="page.current">
+              <span
+                class="pagination-link pagination-current"
+                aria-current="page"
+                aria-label="Current page, page {{ page.number }}"
+              >
+                {{ page.number }}
+              </span>
+              <else-if condition="page.ellipsis">
+                <span class="pagination-ellipsis" aria-hidden="true">…</span>
+              </else-if>
+              <else>
+                <a href="{{ page.url }}" class="pagination-link" aria-label="Go to page {{ page.number }}">
+                  {{ page.number }}
+                </a>
+              </else>
+            </if>
+          </li>
+        </for>
+
+        <!-- Next page -->
+        <if condition="pagination.next">
+          <li class="pagination-item">
+            <a
+              href="{{ pagination.next.url }}"
+              class="pagination-link pagination-next"
+              rel="next"
+              aria-label="Go to next page, page {{ pagination.next.number }}"
+            >
+              Next
+              <span class="pagination-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <else>
+            <li class="pagination-item pagination-item--disabled">
+              <span class="pagination-link pagination-next" aria-hidden="true">
+                Next
+                <span class="pagination-arrow" aria-hidden="true">→</span>
+              </span>
+            </li>
+          </else>
+        </if>
+      </ul>
+    </nav>
+  </else-if>
+  <else-if condition="variant === 'sidebar'">
+    <!-- Sidebar navigation -->
+    <nav class="sidebar-nav" role="navigation" aria-label="Site sections">
+      <ul class="sidebar-nav-list">
+        <li class="sidebar-nav-item">
+          <a href="/" class="sidebar-nav-link{{ current === 'home' ? ' sidebar-nav-link--current' : '' }}">
+            <span class="sidebar-nav-icon" aria-hidden="true">🏠</span>
+            Home
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="/posts/" class="sidebar-nav-link{{ current === 'posts' ? ' sidebar-nav-link--current' : '' }}">
+            <span class="sidebar-nav-icon" aria-hidden="true">📝</span>
+            All Posts
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="/tags/" class="sidebar-nav-link{{ current === 'tags' ? ' sidebar-nav-link--current' : '' }}">
+            <span class="sidebar-nav-icon" aria-hidden="true">🏷️</span>
+            Tags
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="/about/" class="sidebar-nav-link{{ current === 'about' ? ' sidebar-nav-link--current' : '' }}">
+            <span class="sidebar-nav-icon" aria-hidden="true">👤</span>
+            About
+          </a>
+        </li>
+      </ul>
+
+      <!-- Recent posts section -->
+      <if condition="recentPosts">
+        <section class="sidebar-section">
+          <h3 class="sidebar-heading">Recent Posts</h3>
+          <ul class="sidebar-list">
+            <for each="post in recentPosts | slice:0,5">
+              <li class="sidebar-list-item">
+                <a href="{{ post.url }}" class="sidebar-link"> {{ post.title }} </a>
+                <time class="sidebar-date" datetime="{{ post.date | date:'iso' }}">
+                  {{ post.date | date:'short' }}
+                </time>
+              </li>
+            </for>
+          </ul>
+        </section>
+      </if>
+    </nav>
+  </else-if>
+  <else>
+    <!-- Main navigation (default) -->
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <ul class="main-nav-list">
+        <li class="main-nav-item">
+          <a
+            href="/"
+            class="main-nav-link{{ current === 'home' ? ' main-nav-link--current' : '' }}"
+            aria-current="{{ current === 'home' ? 'page' : '' }}"
+          >
+            Home
+          </a>
+        </li>
+
+        <li class="main-nav-item">
+          <a
+            href="/posts/"
+            class="main-nav-link{{ current === 'posts' ? ' main-nav-link--current' : '' }}"
+            aria-current="{{ current === 'posts' ? 'page' : '' }}"
+          >
+            Posts
+          </a>
+        </li>
+
+        <li class="main-nav-item">
+          <a
+            href="/tags/"
+            class="main-nav-link{{ current === 'tags' ? ' main-nav-link--current' : '' }}"
+            aria-current="{{ current === 'tags' ? 'page' : '' }}"
+          >
+            Tags
+          </a>
+        </li>
+
+        <li class="main-nav-item">
+          <a
+            href="/about/"
+            class="main-nav-link{{ current === 'about' ? ' main-nav-link--current' : '' }}"
+            aria-current="{{ current === 'about' ? 'page' : '' }}"
+          >
+            About
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </else>
+</if>

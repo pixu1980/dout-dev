@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="{{ description | default:'A modern accessible blog about web development, technology, and digital innovation.' }}"
+    />
+    <meta
+      name="keywords"
+      content="{{ keywords | join:',' | default:'web development, technology, accessibility, javascript, css, html' }}"
+    />
+
+    <!-- Canonical URL -->
+    <if condition="canonicalUrl !== false">
+      <link rel="canonical" href="{{ canonicalUrl | default:site.baseUrl + '/' + path }}" />
+    </if>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ title | default:site.title }}" />
+    <meta property="og:description" content="{{ description | default:site.description }}" />
+    <meta property="og:type" content="{{ ogType | default:'website' }}" />
+    <meta property="og:url" content="{{ canonicalUrl | default:site.baseUrl + '/' + path }}" />
+    <if condition="coverImage">
+      <meta property="og:image" content="{{ site.baseUrl }}/assets/{{ coverImage }}" />
+      <meta property="og:image:alt" content="{{ coverImageAlt | default:'Cover image for ' + title }}" />
+    </if>
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ title | default:site.title }}" />
+    <meta name="twitter:description" content="{{ description | default:site.description }}" />
+    <if condition="coverImage">
+      <meta name="twitter:image" content="{{ site.baseUrl }}/assets/{{ coverImage }}" />
+    </if>
+
+    <title>{{ title | default:site.title }}{{ title ? ' - ' + site.title : '' }}</title>
+
+    <!-- Critical CSS will be inlined here by build process -->
+    <link rel="stylesheet" href="/styles/main.css" />
+
+    <!-- Preload key resources -->
+    <link rel="preload" href="/scripts/main.js" as="script" />
+
+    <!-- Theme detection script (inline to prevent FOUC) -->
+    <script>
+      (function () {
+        const theme =
+          localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.classList.remove('no-js');
+      })();
+    </script>
+
+    <!-- Reduced motion support -->
+    <style>
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Skip link for accessibility -->
+    <include src="../components/skip-link.html"></include>
+
+    <!-- Header -->
+    <include src="../components/header.html"></include>
+
+    <!-- Main content area -->
+    <main id="main-content" tabindex="-1">
+      <block name="main">
+        <!-- Page-specific content goes here -->
+      </block>
+    </main>
+
+    <!-- Footer -->
+    <include src="../components/footer.html"></include>
+
+    <!-- Scripts -->
+    <script src="/scripts/main.js" defer></script>
+    <block name="scripts">
+      <!-- Page-specific scripts go here -->
+    </block>
+  </body>
+</html>

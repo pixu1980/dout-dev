@@ -1,11 +1,1 @@
-<extends src="./layouts/leaf.html" locals='{"basePath": "..", "title": " - Frontend"}'>
-  <block name="content">
-    <h3>Frontend</h3>
-    <each loop="post, index in posts.filter(post => post.tags.find(tag => tag.key === 'frontend'))">
-      {{post.dateString}}<a href="{{post.path.replace('./', '../')}}">{{post.title}}</a>
-    </each>
-  </block>
-  <block name="aside">
-    <!-- <include src="./components/archive/archive.html" locals='{"basePath": "..", "months": months}'></include> -->
-  </block>
-</extends>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Tag: Frontend</title></head><body><section><h1>Tag: Frontend</h1><ul><li><a href="../posts/2024-10-28-concerning-css-grid.html">Introducing CSS Grid - The Future of Web Layout 🎨</a></li></ul></section></body></html>

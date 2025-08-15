@@ -3,7 +3,7 @@ title: A post with a cover image
 date: 2019-01-07
 published: true
 tags: ['Markdown', 'Cover Image']
-series: false
+series: ["Concerning..."]
 canonical_url: false
 description: One line only description
 ---

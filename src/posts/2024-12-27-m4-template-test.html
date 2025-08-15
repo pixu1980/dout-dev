@@ -1,0 +1,87 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>M4 Template Test - Cover Image e Syntax Highlighting</title></head><body><article><h1>M4 Template Test - Cover Image e Syntax Highlighting</h1><div><p>Questo è un post di test per verificare tutte le funzionalità implementate nel <strong>M4 - Post Page</strong>.</p>
+<h2>Cover Image e Pinned Badge</h2>
+<p>Questo post ha:</p>
+<ul>
+<li>✅ <strong>Cover Image</strong>: Immagine di copertina caricata con <code>fetchpriority="high"</code></li>
+<li>✅ <strong>Pinned Badge</strong>: Badge "📌 Post in evidenza" per post in evidenza</li>
+<li>✅ <strong>Metadata avanzata</strong>: Schema.org BlogPosting completo</li>
+</ul>
+<h2>Syntax Highlighting con syntax-highlight-element</h2>
+<p>Testiamo il syntax highlighting per vari linguaggi:</p>
+<h3>JavaScript</h3>
+<pre is="pix-highlighter" lang="javascript"><code>// Esempio JavaScript
+const blogPost = {
+  title: 'M4 Template Test',
+  author: 'dout.dev',
+  published: true,
+  tags: ['Test', 'M4', 'syntax-highlight-element']
+};
+
+function renderPost(post) {
+  console.log(`Rendering: ${post.title}`);
+  return `&lt;article&gt;${post.title}&lt;&#x2F;article&gt;`;
+}
+
+addEventListener('DOMContentLoaded', () =&gt; {
+  // highlighting is handled by the local &lt;syntax-highlight&gt; web component
+});</code></pre><h3>CSS</h3>
+<pre is="pix-highlighter" lang="css"><code>/* Esempio CSS con design tokens */
+.post-cover-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+}
+
+.post-badge--pinned {
+  background: var(--color-accent-primary);
+  color: var(--color-text-on-accent);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--border-radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+}</code></pre><h3>HTML</h3>
+<pre is="pix-highlighter" lang="html"><code>&lt;!-- Esempio HTML con Schema.org --&gt;
+&lt;article class="post"&gt;
+  &lt;header class="post-header"&gt;
+    &lt;div class="post-badge post-badge--pinned" data-pinned="true"&gt;
+      📌 Post in evidenza
+    &lt;&#x2F;div&gt;
+    &lt;h1&gt;{{ title }}&lt;&#x2F;h1&gt;
+    &lt;div class="post-meta"&gt;
+      &lt;time datetime="{{ date }}"&gt;{{ date | date:'%d %B %Y' }}&lt;&#x2F;time&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;header&gt;
+  &lt;div class="post-content"&gt;
+    {{ content | raw }}
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;article&gt;</code></pre><h3>JSON</h3>
+<pre is="pix-highlighter" lang="json"><code>{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "M4 Template Test",
+  "description": "Post di test per M4",
+  "datePublished": "2024-12-27T10:00:00.000Z",
+  "author": {
+    "@type": "Person",
+    "name": "dout.dev"
+  },
+  "keywords": "Test,M4,syntax-highlight-element,Cover Image"
+}</code></pre><h3>Bash</h3>
+<pre is="pix-highlighter" lang="bash"><code>#!/bin/bash
+# Script per build e test
+echo "Building CMS..."
+npm run cms:build
+
+echo "Starting dev server..."
+npm run dev</code></pre><h2>Funzionalità Testate</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>Template post.html aggiornato</strong> con layout hook</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>Metadata completa</strong>: title, meta description, canonical, JSON-LD BlogPosting</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>Support coverImage</strong>: immagine di copertina con attributi performance</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>Support pinned badge</strong>: badge per post in evidenza (mostrato solo in listings)
+[x] <strong>syntax-highlight-element integrato</strong>: syntax highlighting per tutti i linguaggi specificati</li>
+</ul>
+<p>La checklist M4 dovrebbe essere completamente implementata! 🎉</p>
+</div></article></body></html>

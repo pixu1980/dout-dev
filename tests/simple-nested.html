@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Simple Nested Loop Test</h1>
+
+    <ol>
+        <for each="post in posts">
+            <li>
+                <strong>{{post.title}}</strong>
+                <div>Tags:
+                    <for each="tag in post.tags">
+                        <span>{{tag}}</span>
+                    </for>
+                </div>
+            </li>
+        </for>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "title": "First Post",
+      "author": "John Doe",
+      "tags": ["javascript", "web", "tutorial"]
+    },
+    {
+      "title": "Second Post",
+      "author": "Jane Smith",
+      "tags": ["css", "design"]
+    },
+    {
+      "title": "Third Post",
+      "author": "Mike Johnson",
+      "tags": ["html", "accessibility", "semantic"]
+    }
+  ]
+}

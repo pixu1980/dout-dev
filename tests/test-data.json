@@ -1,0 +1,240 @@
+{
+  "site": {
+    "name": "Template Engine Test Site",
+    "version": "2.0.0",
+    "maintenance": false
+  },
+  "environment": "development",
+  "user": {
+    "isAuthenticated": true,
+    "profile": {
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    "role": "admin",
+    "status": "active"
+  },
+  "posts": [
+    {
+      "title": "Getting Started with Template Engine",
+      "date": "2025-01-15T10:00:00Z",
+      "author": "John Doe",
+      "tags": ["tutorial", "javascript", "template"]
+    },
+    {
+      "title": "Advanced Template Features and Best Practices",
+      "date": "2025-01-10T14:30:00Z",
+      "author": "Jane Smith",
+      "tags": ["advanced", "best-practices", "performance"]
+    },
+    {
+      "title": "Building Dynamic Content with Conditionals",
+      "date": "2025-01-05T09:15:00Z",
+      "author": "Mike Johnson",
+      "tags": ["conditionals", "dynamic", "content"]
+    },
+    {
+      "title": "Loop Optimization Techniques",
+      "date": "2025-01-01T16:45:00Z",
+      "author": "Sarah Wilson",
+      "tags": ["loops", "optimization", "performance"]
+    },
+    {
+      "title": "Filter Functions and Data Transformation",
+      "date": "2024-12-28T11:20:00Z",
+      "author": "David Brown",
+      "tags": ["filters", "data", "transformation"]
+    },
+    {
+      "title": "Template Inheritance and Code Reuse",
+      "date": "2024-12-25T08:00:00Z",
+      "author": "Lisa Garcia",
+      "tags": ["inheritance", "reuse", "architecture"]
+    }
+  ],
+  "categories": [
+    {
+      "name": "JavaScript",
+      "description": "Modern JavaScript techniques and patterns",
+      "count": 12
+    },
+    {
+      "name": "CSS",
+      "description": "Styling and responsive design",
+      "count": 8
+    },
+    {
+      "name": "Performance",
+      "description": "Optimization strategies and best practices",
+      "count": 6
+    },
+    {
+      "name": "Testing",
+      "description": "Unit testing and quality assurance",
+      "count": 4
+    }
+  ],
+  "features": [
+    {
+      "name": "Template Inheritance",
+      "description": "Extend layouts and reuse common structures",
+      "icon": "🏗️",
+      "available": true
+    },
+    {
+      "name": "Conditional Logic",
+      "description": "Dynamic content based on conditions",
+      "icon": "🔀",
+      "available": true
+    },
+    {
+      "name": "Loop Processing",
+      "description": "Iterate over arrays and objects",
+      "icon": "🔄",
+      "available": true
+    },
+    {
+      "name": "Filter Functions",
+      "description": "Transform and format data",
+      "icon": "🔧",
+      "available": true
+    },
+    {
+      "name": "Include System",
+      "description": "Modular template components",
+      "icon": "📦",
+      "available": true
+    },
+    {
+      "name": "Markdown Support",
+      "description": "Process markdown content inline",
+      "icon": "📝",
+      "available": true
+    },
+    {
+      "name": "Switch Statements",
+      "description": "Multi-way conditional logic",
+      "icon": "🎯",
+      "available": true
+    },
+    {
+      "name": "Expression Parser",
+      "description": "Complex JavaScript expressions",
+      "icon": "⚡",
+      "available": true
+    }
+  ],
+  "teamMembers": [
+    {
+      "name": "john doe",
+      "email": "JOHN@EXAMPLE.COM",
+      "role": "developer",
+      "active": true,
+      "lastLogin": "2025-01-15T09:30:00Z"
+    },
+    {
+      "name": "jane smith",
+      "email": "JANE@EXAMPLE.COM",
+      "role": "designer",
+      "active": true,
+      "lastLogin": "2025-01-14T15:45:00Z"
+    },
+    {
+      "name": "mike johnson",
+      "email": "MIKE@EXAMPLE.COM",
+      "role": "manager",
+      "active": false,
+      "lastLogin": null
+    }
+  ],
+  "company": {
+    "name": "Tech Innovations Inc.",
+    "address": {
+      "street": "123 Innovation Drive",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94105",
+      "country": "USA"
+    },
+    "departments": [
+      {
+        "name": "Engineering",
+        "employees": [
+          {"firstName": "Alice", "lastName": "Johnson", "position": "Senior Developer"},
+          {"firstName": "Bob", "lastName": "Smith", "position": "Frontend Developer"},
+          {"firstName": "Carol", "lastName": "Davis", "position": "Backend Developer"}
+        ]
+      },
+      {
+        "name": "Design",
+        "employees": [
+          {"firstName": "David", "lastName": "Wilson", "position": "UI/UX Designer"},
+          {"firstName": "Eva", "lastName": "Brown", "position": "Graphic Designer"}
+        ]
+      }
+    ]
+  },
+  "statistics": [
+    {
+      "label": "Total Users",
+      "value": 12547,
+      "color": "#007bff",
+      "trend": "up",
+      "change": 12.5
+    },
+    {
+      "label": "Monthly Revenue",
+      "value": 85420,
+      "color": "#28a745",
+      "trend": "up",
+      "change": 8.3
+    },
+    {
+      "label": "Support Tickets",
+      "value": 234,
+      "color": "#ffc107",
+      "trend": "down",
+      "change": 5.2
+    },
+    {
+      "label": "Server Uptime",
+      "value": 99.8,
+      "color": "#17a2b8",
+      "trend": "stable",
+      "change": 0.1
+    }
+  ],
+  "dynamicItems": [
+    {
+      "id": "item-1",
+      "title": "Critical System Update",
+      "description": "Security patches and performance improvements",
+      "category": "System Updates",
+      "color": "#dc3545",
+      "priority": "high",
+      "important": true
+    },
+    {
+      "id": "item-2",
+      "title": "Feature Enhancement",
+      "description": "New user interface improvements",
+      "category": "UI/UX",
+      "color": "#007bff",
+      "priority": "medium",
+      "important": false
+    },
+    {
+      "id": "item-3",
+      "title": "Documentation Update",
+      "description": "Updated API documentation and examples",
+      "category": "Documentation",
+      "color": "#28a745",
+      "priority": "low",
+      "important": false
+    }
+  ],
+  "longText": "This is a very long text that should be truncated when displayed using the truncate filter to show only the first part of the content and add ellipsis at the end.",
+  "tags": ["javascript", "css", "html", "performance", "testing"],
+  "currentDate": "2025-01-15T12:00:00Z",
+  "lastUpdate": "2025-01-14T18:30:00Z"
+}
