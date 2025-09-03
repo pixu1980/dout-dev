@@ -187,6 +187,43 @@ pnpm build
 # Upload dist/ to your hosting provider
 ```
 
+## Favicons e build (importante)
+
+Il processo di build si aspetta che alcuni asset di favicon/manife­st siano presenti alla radice del progetto. I nomi attesi (come riferiti in `favicon.data.json`) sono, ad esempio:
+
+- `favicon-96x96.png`
+- `favicon.svg`
+- `favicon.ico`
+- `apple-touch-icon.png` (180x180 consigliato)
+- `site.webmanifest` (web manifest)
+
+Dove posizionarli
+- Copia i file nella root del repository (stesso livello di `package.json`). Lo script `scripts/build-assets.js` cercherà i percorsi esattamente come indicati in `favicon.data.json`.
+
+Cosa fa lo script di build
+- Se i file sono mancanti, lo script ora **genera dei placeholder** (file PNG/SVG/manifest minimi) dentro `dist/` in modo da permettere preview e debug.
+- Nonostante i placeholder vengano creati, la build è comunque progettata per **fallire** quando mancano i file reali: questo provoca un errore chiaro in CI così da prevenire pubblicazioni incomplete.
+
+Test locale
+- Per verificare localmente:
+  - Installa dipendenze: `pnpm install`
+  - Esegui: `pnpm build`
+  - Se mancano i favicon reali, vedrai un errore come `Missing favicon assets` e i placeholder saranno comunque creati in `dist/`.
+
+Come risolvere il fallimento
+- Aggiungi i file reali nella root con i nomi attesi.
+- In alternativa (temporaneo) puoi creare dei file vuoti con i nomi corretti prima di eseguire la build:
+
+```bash
+touch favicon-96x96.png favicon.svg favicon.ico apple-touch-icon.png site.webmanifest
+```
+
+- Se preferisci cambiare il comportamento (es. trasformare il fallimento in warning), modifica `scripts/build-assets.js` nella funzione `processFavicons` rimuovendo il `throw` dopo la creazione dei placeholder.
+
+Suggerimenti
+- For production usa immagini reali (PNG/SVG/ICO) alle risoluzioni consigliate: 48–512px per PNG, SVG per scalabilità e `apple-touch-icon` a 180x180.
+- Aggiorna `favicon.data.json` se cambi i nomi o i percorsi.
+
 ## Contributing
 
 1. Fork the repository
