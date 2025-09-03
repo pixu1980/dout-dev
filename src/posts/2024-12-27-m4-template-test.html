@@ -1,11 +1,55 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>M4 Template Test - Cover Image e Syntax Highlighting</title></head><body><article><h1>M4 Template Test - Cover Image e Syntax Highlighting</h1><div><p>Questo è un post di test per verificare tutte le funzionalità implementate nel <strong>M4 - Post Page</strong>.</p>
+<extends src="../layouts/base.html">
+
+<block name="head">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="M4 Template Test - Cover Image e Syntax Highlighting">
+  <meta property="og:description" content="Questo è un post di test per verificare tutte le funzionalità implementate nel M4 Post Page.">
+  <meta property="og:image" content="/./assets/images/alexandr-podvalny-220262-unsplash.jpg">
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "headline": "M4 Template Test - Cover Image e Syntax Highlighting",
+        "datePublished": "2024-12-27T10:00:00.000Z",
+        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2024-12-27-m4-template-test.html"}
+      }
+  </script>
+</block>
+
+<block name="content">
+  <article itemscope="" itemtype="https://schema.org/BlogPosting">
+    <header>
+      <h1 itemprop="headline">M4 Template Test - Cover Image e Syntax Highlighting</h1>
+      <p>
+        <time datetime="2024-12-27" itemprop="datePublished">
+          27 dicembre 2024
+        </time>
+      </p>
+      
+        <figure class="post-cover">
+          <img src="/./assets/images/alexandr-podvalny-220262-unsplash.jpg" alt="M4 Template Test - Cover Image e Syntax Highlighting" fetchpriority="high" decoding="async" width="1200" height="630">
+        </figure>
+      
+      
+        <ul aria-label="Tags">
+          
+            <li><a class="tag" href="/tags/test.html">Test</a></li>
+          
+            <li><a class="tag" href="/tags/m4.html">M4</a></li>
+          
+            <li><a class="tag" href="/tags/syntax-highlight-element.html">Syntax-highlight-element</a></li>
+          
+            <li><a class="tag" href="/tags/cover-image.html">Cover-image</a></li>
+          
+        </ul>
+      
+    </header>
+
+    <section itemprop="articleBody"><p>Questo è un post di test per verificare tutte le funzionalità implementate nel <strong>M4 - Post Page</strong>.</p>
 <h2>Cover Image e Pinned Badge</h2>
 <p>Questo post ha:</p>
 <ul>
-<li>✅ <strong>Cover Image</strong>: Immagine di copertina caricata con <code>fetchpriority="high"</code></li>
-<li>✅ <strong>Pinned Badge</strong>: Badge "📌 Post in evidenza" per post in evidenza</li>
-<li>✅ <strong>Metadata avanzata</strong>: Schema.org BlogPosting completo</li>
-</ul>
+<li>[object Object]</li><li>[object Object]</li><li>[object Object]</li></ul>
 <h2>Syntax Highlighting con syntax-highlight-element</h2>
 <p>Testiamo il syntax highlighting per vari linguaggi:</p>
 <h3>JavaScript</h3>
@@ -14,7 +58,7 @@ const blogPost = {
   title: 'M4 Template Test',
   author: 'dout.dev',
   published: true,
-  tags: ['Test', 'M4', 'syntax-highlight-element']
+  tags: ['Test', 'M4', 'syntax-highlight-element'],
 };
 
 function renderPost(post) {
@@ -45,17 +89,13 @@ addEventListener('DOMContentLoaded', () =&gt; {
 <pre is="pix-highlighter" lang="html"><code>&lt;!-- Esempio HTML con Schema.org --&gt;
 &lt;article class="post"&gt;
   &lt;header class="post-header"&gt;
-    &lt;div class="post-badge post-badge--pinned" data-pinned="true"&gt;
-      📌 Post in evidenza
-    &lt;&#x2F;div&gt;
+    &lt;div class="post-badge post-badge--pinned" data-pinned="true"&gt;📌 Post in evidenza&lt;&#x2F;div&gt;
     &lt;h1&gt;{{ title }}&lt;&#x2F;h1&gt;
     &lt;div class="post-meta"&gt;
       &lt;time datetime="{{ date }}"&gt;{{ date | date:'%d %B %Y' }}&lt;&#x2F;time&gt;
     &lt;&#x2F;div&gt;
   &lt;&#x2F;header&gt;
-  &lt;div class="post-content"&gt;
-    {{ content | raw }}
-  &lt;&#x2F;div&gt;
+  &lt;div class="post-content"&gt;{{ content | raw }}&lt;&#x2F;div&gt;
 &lt;&#x2F;article&gt;</code></pre><h3>JSON</h3>
 <pre is="pix-highlighter" lang="json"><code>{
   "@context": "https://schema.org",
@@ -77,11 +117,18 @@ npm run cms:build
 echo "Starting dev server..."
 npm run dev</code></pre><h2>Funzionalità Testate</h2>
 <ul>
-<li><input checked="" disabled="" type="checkbox"> <strong>Template post.html aggiornato</strong> con layout hook</li>
-<li><input checked="" disabled="" type="checkbox"> <strong>Metadata completa</strong>: title, meta description, canonical, JSON-LD BlogPosting</li>
-<li><input checked="" disabled="" type="checkbox"> <strong>Support coverImage</strong>: immagine di copertina con attributi performance</li>
-<li><input checked="" disabled="" type="checkbox"> <strong>Support pinned badge</strong>: badge per post in evidenza (mostrato solo in listings)
-[x] <strong>syntax-highlight-element integrato</strong>: syntax highlighting per tutti i linguaggi specificati</li>
-</ul>
+<li>[object Object]</li><li>[object Object]</li><li>[object Object]</li><li>[object Object]</li></ul>
 <p>La checklist M4 dovrebbe essere completamente implementata! 🎉</p>
-</div></article></body></html>
+</section>
+
+    <nav aria-label="Post navigation">
+      
+        <a rel="prev" href="/posts/2024-10-28-concerning-css-grid.html">← Introducing CSS Grid - The Future of Web Layout 🎨</a>
+      
+      
+        <a rel="next" href="/posts/2025-08-15-welcome-to-dout-dev-2.html">Welcome to dout.dev 2.0 →</a>
+      
+    </nav>
+  </article>
+</block>
+</extends>

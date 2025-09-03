@@ -1,5 +1,5 @@
-const path = require('path');
-const fs = require('fs');
+const path = require('node:path');
+const fs = require('node:fs');
 
 // Get the DOM-based renderer
 const { DOMTemplateRenderer } = require('../scripts/template-engine/index.js');
@@ -9,13 +9,13 @@ const testData = {
   posts: [
     {
       title: 'First Post',
-      tags: ['js', 'web']
+      tags: ['js', 'web'],
     },
     {
       title: 'Second Post',
-      tags: ['css', 'design']
-    }
-  ]
+      tags: ['css', 'design'],
+    },
+  ],
 };
 
 console.log('🔄 Simple Nested Loop Test...');

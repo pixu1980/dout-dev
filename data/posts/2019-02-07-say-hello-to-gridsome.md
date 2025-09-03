@@ -19,9 +19,7 @@ Here is an example on how to query posts from the GraphQL layer in a page:
 <template>
   <Layout>
     <h2>Latest blog posts</h2>
-    <ul>
-     
-    </ul>
+    <ul></ul>
   </Layout>
 </template>
 

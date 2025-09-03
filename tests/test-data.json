@@ -160,16 +160,16 @@
       {
         "name": "Engineering",
         "employees": [
-          {"firstName": "Alice", "lastName": "Johnson", "position": "Senior Developer"},
-          {"firstName": "Bob", "lastName": "Smith", "position": "Frontend Developer"},
-          {"firstName": "Carol", "lastName": "Davis", "position": "Backend Developer"}
+          { "firstName": "Alice", "lastName": "Johnson", "position": "Senior Developer" },
+          { "firstName": "Bob", "lastName": "Smith", "position": "Frontend Developer" },
+          { "firstName": "Carol", "lastName": "Davis", "position": "Backend Developer" }
         ]
       },
       {
         "name": "Design",
         "employees": [
-          {"firstName": "David", "lastName": "Wilson", "position": "UI/UX Designer"},
-          {"firstName": "Eva", "lastName": "Brown", "position": "Graphic Designer"}
+          { "firstName": "David", "lastName": "Wilson", "position": "UI/UX Designer" },
+          { "firstName": "Eva", "lastName": "Brown", "position": "Graphic Designer" }
         ]
       }
     ]

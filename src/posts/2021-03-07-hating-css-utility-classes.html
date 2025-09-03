@@ -1,2 +1,53 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Testing CodePen</title></head><body><article><h1>Testing CodePen</h1><div><p><a href="https://codepen.io/emdeoh/pen/NWdmgVq">https://codepen.io/emdeoh/pen/NWdmgVq</a></p>
-</div></article></body></html>
+<extends src="../layouts/base.html">
+
+<block name="head">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Testing CodePen">
+  <meta property="og:description" content="https://codepen.io/emdeoh/pen/NWdmgVq">
+  
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "headline": "Testing CodePen",
+        "datePublished": "2021-03-07T00:00:00.000Z",
+        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2021-03-07-hating-css-utility-classes.html"}
+      }
+  </script>
+</block>
+
+<block name="content">
+  <article itemscope="" itemtype="https://schema.org/BlogPosting">
+    <header>
+      <h1 itemprop="headline">Testing CodePen</h1>
+      <p>
+        <time datetime="2021-03-07" itemprop="datePublished">
+          7 marzo 2021
+        </time>
+      </p>
+      
+      
+        <ul aria-label="Tags">
+          
+            <li><a class="tag" href="/tags/markdown.html">Markdown</a></li>
+          
+            <li><a class="tag" href="/tags/cover-image.html">Cover-image</a></li>
+          
+        </ul>
+      
+    </header>
+
+    <section itemprop="articleBody"><p><a href="https://codepen.io/emdeoh/pen/NWdmgVq">https://codepen.io/emdeoh/pen/NWdmgVq</a></p>
+</section>
+
+    <nav aria-label="Post navigation">
+      
+        <a rel="prev" href="/posts/2021-03-05-gradient-borders.html">← Testing CodePen</a>
+      
+      
+        <a rel="next" href="/posts/2021-03-08-a-new-post-with-a-new-cover.html">A NEW post with a NEW cover image →</a>
+      
+    </nav>
+  </article>
+</block>
+</extends>

@@ -1,10 +1,10 @@
 ---
-title: "Welcome to dout.dev 2.0"
-date: "2025-08-15"
+title: 'Welcome to dout.dev 2.0'
+date: '2025-08-15'
 published: true
-tags: ["blog", "welcome", "vanilla-js"]
-description: "Introducing the new dout.dev blog built with vanilla JavaScript and modern web standards"
-cover_image: ""
+tags: ['blog', 'welcome', 'vanilla-js']
+description: 'Introducing the new dout.dev blog built with vanilla JavaScript and modern web standards'
+cover_image: ''
 canonical_url: false
 ---
 
@@ -15,9 +15,11 @@ Welcome to the brand new version of dout.dev! This blog has been completely rebu
 ## What's New
 
 ### Zero Runtime Dependencies
+
 The new dout.dev runs entirely on vanilla JavaScript, CSS, and HTML. No frameworks, no runtime dependencies - just clean, fast, and accessible web standards.
 
 ### WCAG 2.2 AAA Accessibility
+
 Every aspect of this blog has been designed with accessibility in mind:
 
 - Semantic HTML structure
@@ -27,6 +29,7 @@ Every aspect of this blog has been designed with accessibility in mind:
 - High contrast color schemes
 
 ### Modern Build Pipeline
+
 Behind the scenes, we use:
 
 - **Custom CMS**: Processes Markdown files into static HTML
@@ -36,6 +39,7 @@ Behind the scenes, we use:
 - **PostCSS**: CSS processing and optimization
 
 ### Performance First
+
 The site is optimized for Core Web Vitals:
 
 - Lazy loading images
@@ -66,4 +70,4 @@ Stay tuned for more updates and technical deep-dives into how this blog is built
 
 ---
 
-*This post marks the beginning of a new chapter for dout.dev. Welcome aboard!*
+_This post marks the beginning of a new chapter for dout.dev. Welcome aboard!_

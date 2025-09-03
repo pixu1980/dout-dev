@@ -76,12 +76,12 @@ Do this instead ⬇️:
       </p>
     </section>
   </article>
-    <section>
-      <p>
-        Curabitur blandit tempus porttitor.
-        <br />Aenean lacinia bibendum nulla sed consectetur.
-      </p>
-    </section>
+  <section>
+    <p>
+      Curabitur blandit tempus porttitor.
+      <br />Aenean lacinia bibendum nulla sed consectetur.
+    </p>
+  </section>
 </main>
 <footer>
   <a href="#">Home</a>
@@ -272,9 +272,9 @@ Do this instead ⬇️:
 </p>
 ```
 
-* A block element can't be nested inside an inline element.
-* An inline element can be nested inside a block or an inline element.
-* An inline or a block element can be nested inside another block element.
+- A block element can't be nested inside an inline element.
+- An inline element can be nested inside a block or an inline element.
+- An inline or a block element can be nested inside another block element.
 
 NOTE: don't change display from block to inline and viceversa in CSS, change the HTML codebase instead. It's necessary to maintain the code within the W3C specs and avoid weird and un-useful validation issues and bad scores in Lighthouse (or other evaluation platforms). This saves a lot of time... meant directly working within the W3C specs.
 
@@ -284,23 +284,14 @@ NOTE: don't change display from block to inline and viceversa in CSS, change the
 
 This project uses a **custom template engine** with specific syntax. **NEVER use Liquid/Jekyll syntax.**
 
-### ❌ FORBIDDEN (Liquid/Jekyll syntax):
+### Template syntax
+
+This project uses a custom template engine. Never use Liquid/Jekyll `{% %}` syntax in templates — use the engine's tags instead.
+
+Examples (custom engine):
+
 ```html
-{% if condition %}
-  <p>Content</p>
-{% endif %}
-
-{% for item in items %}
-  <li>{{ item.name }}</li>
-{% endfor %}
-
-{% include 'header' %}
-{% extends 'base' %}
-```
-
-### ✅ CORRECT (Custom template engine syntax):
-```html
-<if condition="condition">
+<if condition="expression">
   <p>Content</p>
 </if>
 
@@ -309,23 +300,25 @@ This project uses a **custom template engine** with specific syntax. **NEVER use
 </for>
 
 <include src="header.html"></include>
-<extends layout="base.html"></extends>
+<extends src="base.html"></extends>
 ```
 
 ### Template Syntax Reference:
 
 **Conditionals:**
+
 ```html
 <if condition="expression">
   <!-- content -->
-<elseif condition="other_expression"></elseif>
+  <elseif condition="other_expression"></elseif>
   <!-- content -->
-<else></else>
+  <else></else>
   <!-- content -->
 </if>
 ```
 
 **Loops:**
+
 ```html
 <for each="item in array">
   <!-- Use {{ item.property }} -->
@@ -333,8 +326,9 @@ This project uses a **custom template engine** with specific syntax. **NEVER use
 ```
 
 **Template Inheritance:**
+
 ```html
-<extends layout="layouts/base.html"></extends>
+<extends src="layouts/base.html"></extends>
 <block name="title">Page Title</block>
 <block name="content">
   <!-- content -->
@@ -342,6 +336,7 @@ This project uses a **custom template engine** with specific syntax. **NEVER use
 ```
 
 **Includes with Data:**
+
 ```html
 <include src="../components/header.html" data='{ "current": "home" }'></include>
 ```

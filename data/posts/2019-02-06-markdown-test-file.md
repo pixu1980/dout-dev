@@ -206,7 +206,7 @@ to be indented _twice_ -- 8 spaces or two tabs:
 - A list item with a code block:
 
 ```html
-  <code goes here>
+<code goes here></code>
 ```
 
 ### Code Blocks
@@ -223,7 +223,7 @@ This is a normal paragraph:
 
 ```
     This is a code block.
-````
+```
 
 Here is an example of AppleScript:
 
@@ -243,9 +243,7 @@ it and indent it, and Markdown will handle the hassle of encoding the
 ampersands and angle brackets. For example, this:
 
 ```html
-  <div class="footer">
-    &copy; 2004 Foo Corporation
-  </div>
+<div class="footer">&copy; 2004 Foo Corporation</div>
 ```
 
 Regular Markdown syntax is not processed within code blocks. E.g.,

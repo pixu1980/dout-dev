@@ -39,22 +39,37 @@ export function parseExpression(expression) {
  * @returns {boolean} True if contains JS operators
  */
 function isJavaScriptExpression(expression) {
-  // If it contains a pipe character, it's a filter expression, not JS
-  if (expression.includes('|')) {
+  // First check: if it contains a single pipe character (not || or &&), it's a filter expression
+  if (expression.includes('|') && !expression.includes('||') && !expression.includes('&&')) {
     return false;
   }
 
   // Common JavaScript operators and patterns
   const jsOperators = [
-    '+', '-', '*', '/', '%',           // arithmetic (but check it's not in string)
-    '>', '<', '>=', '<=', '==', '===', '!=', '!==', // comparison
-    '&&', '||', '!',                   // logical
-    '?', ':',                          // ternary
-    '(', ')'                           // grouping
+    '+',
+    '-',
+    '*',
+    '/',
+    '%', // arithmetic (but check it's not in string)
+    '>',
+    '<',
+    '>=',
+    '<=',
+    '==',
+    '===',
+    '!=',
+    '!==', // comparison
+    '&&',
+    '||',
+    '!', // logical
+    '?',
+    ':', // ternary
+    '(',
+    ')', // grouping
   ];
 
   // Check for operators that indicate JavaScript expressions
-  return jsOperators.some(op => {
+  const hasJsOperator = jsOperators.some((op) => {
     if (op === '+' || op === '-') {
       // Only treat as JS if surrounded by non-string contexts
       const regex = new RegExp(`[^'"]\\s*\\${op.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*[^'"]`);
@@ -62,7 +77,14 @@ function isJavaScriptExpression(expression) {
     }
     return expression.includes(op);
   });
-}/**
+
+  // If it contains JS operators, it's a JS expression
+  if (hasJsOperator) {
+    return true;
+  }
+
+  return false;
+} /**
  * Parse a filter with optional arguments
  * Support both "filterName:arg1:arg2" and "filterName(arg1, arg2)" syntax
  * @param {string} filterStr - Filter string
@@ -76,7 +98,7 @@ function parseFilter(filterStr) {
   if (functionMatch) {
     const name = functionMatch[1];
     const argsStr = functionMatch[2].trim();
-    const args = argsStr ? argsStr.split(',').map(arg => parseValue(arg.trim())) : [];
+    const args = argsStr ? argsStr.split(',').map((arg) => parseValue(arg.trim())) : [];
     return { name, args };
   }
 
@@ -129,7 +151,7 @@ function parseValue(value) {
 export function evaluateExpression(expression, data, filters) {
   // Handle JavaScript expressions
   if (expression.jsExpression) {
-    return evaluateJavaScriptExpression(expression.jsExpression, data);
+    return evaluateJavaScriptExpression(expression.jsExpression, data, filters || {});
   }
 
   // Get initial value from data for regular variable expressions
@@ -153,31 +175,75 @@ export function evaluateExpression(expression, data, filters) {
  * @param {object} data - Data context
  * @returns {any} Evaluation result
  */
-function evaluateJavaScriptExpression(jsExpr, data) {
+function evaluateJavaScriptExpression(jsExpr, data, filters) {
   try {
+    // Convert template-style logical operators to JavaScript operators
+    let processedExpr = jsExpr.replace(/\band\b/g, '&&').replace(/\bor\b/g, '||');
+
+    // Support filter pipes inside JS expressions when wrapped in parentheses, e.g. (tag | slugify)
+    // Rewrites "(value | filter:arg1:arg2)" to "__applyFilter('filter', (value), arg1, arg2)"
+    const rewritePipes = (expr) => {
+      let changed = true;
+      let out = expr;
+      const pipeRegex = /\(([^()]*?)\s\|\s*([a-zA-Z_$][a-zA-Z0-9_$]*)\s*(?::\s*([^)]*?))?\)/g;
+      while (changed) {
+        changed = false;
+        out = out.replace(pipeRegex, (_m, inner, fname, args) => {
+          changed = true;
+          const argsList = args?.trim()
+            ? ',' +
+              args
+                .split(':')
+                .map((a) => a.trim())
+                .filter(Boolean)
+                .join(',')
+            : '';
+          return `__applyFilter('${fname}', (${inner})${argsList})`;
+        });
+      }
+      return out;
+    };
+
+    processedExpr = rewritePipes(processedExpr);
+
     // Preprocess `.length` access: for expressions like `items.length > 0`
     // treat length as array-only: if the base is not an array, length should be 0
-    const lengthRegex = /([a-zA-Z_$][a-zA-Z0-9_$.\[\]]*)\.length\b/g;
-    const modifiedExpr = jsExpr.replace(lengthRegex, (m, path) => `__len("${path}")`);
+  const lengthRegex = /([a-zA-Z_$][a-zA-Z0-9_$.[\]]*)\.length\b/g;
+    const modifiedExpr = processedExpr.replace(lengthRegex, (_, path) => `__len("${path}")`);
 
     // Use the data object with a helper __len that uses getSimpleValueFromPath
     const func = new Function(
       'data',
       'getVal',
+      'filters',
+      '__applyFilter',
       `with(data) { const __len = (p) => { const v = getVal(data, p); return Array.isArray(v) ? v.length : 0; }; return (${modifiedExpr}); }`
     );
 
-    return func(data, getSimpleValueFromPath);
+    const applyFilter = (name, value, ...args) => {
+      try {
+        if (filters && typeof filters[name] === 'function') {
+          return filters[name](value, ...args);
+        }
+        console.warn(`Unknown filter in JS expression: ${name}`);
+        return value;
+      } catch (e) {
+        console.warn(`Filter '${name}' failed:`, e?.message || e);
+        return value;
+      }
+    };
+
+    return func(data, getSimpleValueFromPath, filters || {}, applyFilter);
   } catch (error) {
     console.error(`Failed to evaluate expression: ${jsExpr}`, error);
     return undefined;
   }
-}/**
+} /**
  * Create a safe context for expression evaluation
  * @param {object} data - Original data
  * @returns {object} Safe context
  */
-function createSafeContext(data) {
+function _createSafeContext(data) {
   // Flatten nested objects to make them accessible in with() statement
   const context = {};
 
@@ -208,7 +274,7 @@ function createSafeContext(data) {
  * @param {object} context - Evaluation context
  * @returns {string} Processed expression
  */
-function processVariableReferences(expr, context) {
+function _processVariableReferences(expr, _context) {
   // For now, return as-is since we're using with() statement
   // which provides direct access to context properties
   return expr;
@@ -229,7 +295,7 @@ function getValueFromPath(obj, path) {
     try {
       // Safely evaluate simple math expressions
       return Function(`"use strict"; return (${path})`)();
-    } catch (error) {
+  } catch (_error) {
       console.warn(`Failed to evaluate math expression: ${path}`);
       return path; // Return original if evaluation fails
     }
@@ -255,7 +321,7 @@ function getValueFromPath(obj, path) {
 
       // Safely evaluate the expression
       return Function(`"use strict"; return (${expression})`)();
-    } catch (error) {
+  } catch (_error) {
       console.warn(`Failed to evaluate expression: ${path}`);
       return getSimpleValueFromPath(obj, path);
     }
@@ -303,3 +369,6 @@ export function evaluateCondition(condition, data) {
   const result = evaluateExpression(parsed, data, {});
   return Boolean(result);
 }
+
+// Export for testing
+export { isJavaScriptExpression };

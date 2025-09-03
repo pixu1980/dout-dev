@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>dout.dev — March 2021</title>
+    <link>https://dout.dev/months/2021-03/</link>
+    <description>RSS feed for posts from March 2021</description>
+    <lastBuildDate>Mon, 08 Sep 2025 11:30:37 GMT</lastBuildDate>
+    <item>
+      <title>A NEW post with a NEW cover image</title>
+      <link>https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</guid>
+      <pubDate>Mon, 08 Mar 2021 00:00:00 GMT</pubDate>
+      <description>Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it&apos;s been marked up with tags or f</description>
+    </item>
+    <item>
+      <title>Testing CodePen</title>
+      <link>https://dout.dev/posts/2021-03-07-hating-css-utility-classes.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2021-03-07-hating-css-utility-classes.html</guid>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
+      <description>https://codepen.io/emdeoh/pen/NWdmgVq</description>
+    </item>
+    <item>
+      <title>Testing CodePen</title>
+      <link>https://dout.dev/posts/2021-03-05-gradient-borders.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2021-03-05-gradient-borders.html</guid>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 GMT</pubDate>
+      <description>GRADIENT BORDERS</description>
+    </item>
+    <item>
+      <title>Say Hello to Gridsome NEW</title>
+      <link>https://dout.dev/posts/2021-03-01-say-hello-to-gridsome-new.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2021-03-01-say-hello-to-gridsome-new.html</guid>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 GMT</pubDate>
+      <description>Well.... that&apos;s all</description>
+    </item>
+  </channel>
+</rss>

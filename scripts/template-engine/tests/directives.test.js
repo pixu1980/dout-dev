@@ -17,7 +17,7 @@ const TEST_DIR = join(process.cwd(), 'test-tmp-directives');
 function setupTestDir() {
   try {
     rmSync(TEST_DIR, { recursive: true, force: true });
-  } catch (error) {
+  } catch (_error) {
     // Directory might not exist
   }
   mkdirSync(TEST_DIR, { recursive: true });
@@ -26,13 +26,12 @@ function setupTestDir() {
 function cleanupTestDir() {
   try {
     rmSync(TEST_DIR, { recursive: true, force: true });
-  } catch (error) {
+  } catch (_error) {
     // Ignore cleanup errors
   }
 }
 
 describe('TemplateEngine - Directives', () => {
-
   test('should process for loops', () => {
     setupTestDir();
 
@@ -48,7 +47,7 @@ describe('TemplateEngine - Directives', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('loop.html', {
-      items: ['Item 1', 'Item 2', 'Item 3']
+      items: ['Item 1', 'Item 2', 'Item 3'],
     });
 
     assert.ok(result.includes('Item 1'));
@@ -76,8 +75,8 @@ describe('TemplateEngine - Directives', () => {
     const result = engine.render('loop-objects.html', {
       posts: [
         { title: 'Post 1', content: 'Content 1' },
-        { title: 'Post 2', content: 'Content 2' }
-      ]
+        { title: 'Post 2', content: 'Content 2' },
+      ],
     });
 
     assert.ok(result.includes('Post 1'));
@@ -103,7 +102,7 @@ describe('TemplateEngine - Directives', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('empty-loop.html', {
-      items: []
+      items: [],
     });
 
     // Empty loop should not add content
@@ -227,5 +226,4 @@ This is **bold** text.
 
     cleanupTestDir();
   });
-
 });

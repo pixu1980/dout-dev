@@ -1,4 +1,47 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>You can use express tags… TODAY!</title></head><body><article><h1>You can use express tags… TODAY!</h1><div><p>HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described <a href="https://www.htmlgoodies.com/guides/expected-new-features-in-html6/" title="Expected new features in HTML6">here</a>.</p>
+<extends src="../layouts/base.html">
+
+<block name="head">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="You can use express tags… TODAY!">
+  <meta property="og:description" content="HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described herehttps://www.htmlgoodies.com/guides/expectednewfeaturesinhtml6/ 'Expected new f">
+  <meta property="og:image" content="/images/svg-code.jpg">
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "headline": "You can use express tags… TODAY!",
+        "datePublished": "2022-02-25T00:00:00.000Z",
+        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2022-02-25-you-can-express-tags-today.html"}
+      }
+  </script>
+</block>
+
+<block name="content">
+  <article itemscope="" itemtype="https://schema.org/BlogPosting">
+    <header>
+      <h1 itemprop="headline">You can use express tags… TODAY!</h1>
+      <p>
+        <time datetime="2022-02-25" itemprop="datePublished">
+          25 febbraio 2022
+        </time>
+      </p>
+      
+        <figure class="post-cover">
+          <img src="/images/svg-code.jpg" alt="You can use express tags… TODAY!" fetchpriority="high" decoding="async" width="" height="">
+        </figure>
+      
+      
+        <ul aria-label="Tags">
+          
+            <li><a class="tag" href="/tags/html.html">Html</a></li>
+          
+            <li><a class="tag" href="/tags/css.html">Css</a></li>
+          
+        </ul>
+      
+    </header>
+
+    <section itemprop="articleBody"><p>HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described <a href="https://www.htmlgoodies.com/guides/expected-new-features-in-html6/" title="Expected new features in HTML6">here</a>.</p>
 <h2>Let's take a look</h2>
 <p>Since the introduction of XHTML, naming tags anyway you want is possible and passes HTMl validators. Browser engines computes unknown element names as a normal block element.</p>
 <p>Which means you can code HTML like this:</p>
@@ -18,4 +61,16 @@
   blog-2022-02-25-01</a> by pixu1980 (<a href="https://codepen.io/pixu1980">@pixu1980</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
-</div></article></body></html>
+</section>
+
+    <nav aria-label="Post navigation">
+      
+        <a rel="prev" href="/posts/2022-01-01-say-hello-2022.html">← Say hello to 2022 🎉</a>
+      
+      
+        <a rel="next" href="/posts/2022-03-03-custom-grid-system.html">Custom Grid System →</a>
+      
+    </nav>
+  </article>
+</block>
+</extends>

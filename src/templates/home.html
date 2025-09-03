@@ -1,0 +1,36 @@
+<extends src="../layouts/base.html" />
+
+<block name="head">
+  <meta name="description" content="Latest posts and updates from dout.dev" />
+</block>
+
+<block name="content">
+  <section aria-labelledby="home-title">
+    <h1 id="home-title">Latest Posts</h1>
+    <if condition="posts && posts.length">
+      <div class="posts-grid" role="list">
+        <for each="p in posts">
+          <article class="post-card" role="listitem">
+            <header class="post-card__header">
+              <h2 class="post-card__title">
+                <a href="/posts/{{ p.name }}.html">{{ p.title }}</a>
+              </h2>
+              <if condition="p.pinned">
+                <span class="badge badge--pinned" aria-label="Pinned post">Pinned</span>
+              </if>
+            </header>
+            <p class="post-card__meta">
+              <time datetime="{{ p.date | date:'YYYY-MM-DD' }}">{{ p.date | date:'long' }}</time>
+            </p>
+            <if condition="p.excerpt">
+              <p class="post-card__excerpt">{{ p.excerpt }}</p>
+            </if>
+          </article>
+        </for>
+      </div>
+    </if>
+    <if condition="!posts || posts.length == 0">
+      <p>No posts yet.</p>
+    </if>
+  </section>
+</block>

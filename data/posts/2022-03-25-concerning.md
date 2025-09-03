@@ -11,9 +11,9 @@ description: Concerning...
 
 I truly believe in the following idea:
 
->Let the technologies do the job they were designed for
+> Let the technologies do the job they were designed for
 
-We'll explore in detail... Building a CSS codebase from scratch can be very hard, but also fun and productive. 
+We'll explore in detail... Building a CSS codebase from scratch can be very hard, but also fun and productive.
 
 ---
 
@@ -27,10 +27,9 @@ Analyzing and implementing a Design and its related User Experience can be one o
 
 Let' start with a basic concept...
 
->We need to raise awareness about a11y
+> We need to raise awareness about a11y
 
 20-25% have some sort of disability or uses a screen reader
-
 
 ---
 
@@ -38,8 +37,4 @@ Let' start with a basic concept...
 
 Responsiveness is a concept, an idea, to me is...
 
->Reacting to the environment
-
-
-
-
+> Reacting to the environment

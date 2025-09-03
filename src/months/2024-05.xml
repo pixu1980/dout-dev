@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>dout.dev — May 2024</title>
+    <link>https://dout.dev/months/2024-05/</link>
+    <description>RSS feed for posts from May 2024</description>
+    <lastBuildDate>Mon, 08 Sep 2025 11:30:37 GMT</lastBuildDate>
+    <item>
+      <title>Accessibility by Design</title>
+      <link>https://dout.dev/posts/2024-05-19-a11y-by-design.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2024-05-19-a11y-by-design.html</guid>
+      <pubDate>Sun, 19 May 2024 00:41:22 GMT</pubDate>
+      <description>We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Des</description>
+    </item>
+  </channel>
+</rss>

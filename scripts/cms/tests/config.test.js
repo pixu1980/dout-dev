@@ -31,7 +31,7 @@ describe('config', () => {
   test('should resolve config with simple overrides', () => {
     const config = resolveConfig({
       contentDir: 'custom/posts',
-      PAGE_SIZE: 20
+      PAGE_SIZE: 20,
     });
 
     // Overridden values
@@ -48,8 +48,8 @@ describe('config', () => {
   test('should resolve config with nested site overrides', () => {
     const config = resolveConfig({
       site: {
-        baseUrl: '/blog/'
-      }
+        baseUrl: '/blog/',
+      },
     });
 
     // Overridden nested value
@@ -65,8 +65,8 @@ describe('config', () => {
     const config = resolveConfig({
       SITE_META: {
         title: 'My Custom Blog',
-        language: 'it'
-      }
+        language: 'it',
+      },
     });
 
     // Overridden nested values

@@ -233,9 +233,8 @@ export class TemplateRenderer {
       '>': '&gt;',
       '"': '&quot;',
       "'": '&#x27;',
-      '/': '&#x2F;',
     };
-    return String(str).replace(/[&<>"'\/]/g, (s) => htmlEscapeMap[s]);
+  return String(str).replace(/[&<>"']/g, (s) => htmlEscapeMap[s]);
   }
 
   processForElement(forEl, data) {
@@ -336,16 +335,63 @@ export class TemplateRenderer {
   }
 
   processIncludeElement(includeEl, data) {
+    console.log('🔧 processIncludeElement called for:', includeEl.getAttribute('src'));
     const src = includeEl.getAttribute('src');
     if (!src) {
       includeEl.remove();
       return;
     }
 
+    // Get locals or data attributes and merge with existing data
+    let includeData = { ...data };
+
+    const localsAttr = includeEl.getAttribute('locals');
+    const dataAttr = includeEl.getAttribute('data');
+
+    if (localsAttr) {
+      try {
+        // Process template expressions in the locals attribute first
+        const processedLocals = this.processText(localsAttr, data);
+        console.log(
+          'Processing include with locals:',
+          src,
+          'Raw:',
+          localsAttr,
+          'Processed:',
+          processedLocals
+        );
+        const locals = JSON.parse(processedLocals);
+        includeData = { ...includeData, ...locals };
+        console.log('Merged data with locals for', src, '- variant:', includeData.variant);
+      } catch (err) {
+        console.warn('Failed to parse locals attribute:', err.message, 'Raw:', localsAttr);
+      }
+    }
+
+    if (dataAttr) {
+      try {
+        // Process template expressions in the data attribute first
+        const processedData = this.processText(dataAttr, data);
+        console.log(
+          'Processing include with data:',
+          src,
+          'Raw:',
+          dataAttr,
+          'Processed:',
+          processedData
+        );
+        const dataObj = JSON.parse(processedData);
+        includeData = { ...includeData, ...dataObj };
+        console.log('Merged data with data attr for', src, '- variant:', includeData.variant);
+      } catch (err) {
+        console.warn('Failed to parse data attribute:', err.message);
+      }
+    }
+
     const includePath = resolve(this._currentDir || this.rootDir, src);
     try {
       const content = readFileSync(includePath, 'utf8');
-      const includedHtml = this.renderString(content, data);
+      const includedHtml = this.renderString(content, includeData);
       const tmp = new JSDOM(includedHtml).window.document.body;
       const frag = includeEl.ownerDocument.createDocumentFragment();
       while (tmp.firstChild) frag.appendChild(tmp.firstChild);
@@ -356,5 +402,27 @@ export class TemplateRenderer {
     includeEl.remove();
   }
 
-  cleanup(_root) {}
+  cleanup(root) {
+    const r = root || null;
+    try {
+  const container = r?.querySelectorAll ? r : null;
+      if (!container) return;
+
+      // Ensure main script is marked as module to satisfy bundlers (vite/rollup)
+      const scripts = Array.from(container.querySelectorAll('script'));
+      for (const s of scripts) {
+        const src = s.getAttribute?.('src');
+        if (src && typeof src === 'string' && src.trim().endsWith('/scripts/main.js')) {
+          if (!s.hasAttribute('type')) s.setAttribute('type', 'module');
+        }
+      }
+
+      // Normalize boolean attributes: keep them but remove empty values where possible
+      for (const el of Array.from(container.querySelectorAll('[defer]'))) {
+        if (el.getAttribute('defer') === '') el.setAttribute('defer', '');
+      }
+  } catch (_err) {
+      // non-fatal - leave DOM as-is on error
+    }
+  }
 }

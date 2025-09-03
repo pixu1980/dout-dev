@@ -24,21 +24,90 @@ export function scanContent(userConfig = {}) {
       tagsMap.get(t.key).posts.push(minPost(p));
     }
   }
-  const tags = [...tagsMap.values()].map((t) => ({ ...t, url: `./tags/${t.key}.html`, count: t.posts.length }));
+  const tags = [...tagsMap.values()].map((t) => ({
+    ...t,
+    name: t.label,
+    slug: t.key,
+    url: `./tags/${t.key}.html`,
+    count: t.posts.length,
+  }));
   const monthsMap = new Map();
   for (const p of published) {
     if (!p.date) continue;
     const d = new Date(p.date);
     const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
-    if (!monthsMap.has(key)) monthsMap.set(key, { key, label: d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }), year: d.getFullYear(), month: d.getMonth() + 1, posts: [] });
+    if (!monthsMap.has(key))
+      monthsMap.set(key, {
+        key,
+        label: d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }),
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        posts: [],
+      });
     monthsMap.get(key).posts.push(minPost(p));
   }
-  const months = [...monthsMap.values()].map((m) => ({ ...m, url: `./months/${m.key}.html`, count: m.posts.length, from: m.posts[0]?.date || null, to: m.posts[m.posts.length - 1]?.date || null }));
+  const months = [...monthsMap.values()].map((m) => ({
+    ...m,
+    name: m.label,
+    number: m.month,
+    slug: m.key,
+    url: `./months/${m.key}.html`,
+    count: m.posts.length,
+    from: m.posts[0]?.date || null,
+    to: m.posts[m.posts.length - 1]?.date || null,
+  }));
+
+  // Build series index
+  const seriesMap = new Map();
+  for (const p of published) {
+    if (!p.series) continue;
+    // Handle both string and array series format
+    const seriesList = Array.isArray(p.series) ? p.series : [p.series];
+    for (const seriesName of seriesList) {
+      if (!seriesName) continue;
+      const slug = seriesName
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '');
+      if (!seriesMap.has(slug)) {
+        seriesMap.set(slug, {
+          slug,
+          title: seriesName,
+          posts: [],
+          description: `A series of posts about ${seriesName}.`,
+        });
+      }
+      seriesMap.get(slug).posts.push(minPost(p));
+    }
+  }
+  const series = [...seriesMap.values()].map((s) => ({
+    ...s,
+    url: `./series/${s.slug}.html`,
+    count: s.posts.length,
+    // Sort posts by date for series navigation
+    posts: s.posts.sort((a, b) => new Date(a.date) - new Date(b.date)),
+  }));
+
   ensureDir(config.dataDir);
   writeJson(join(config.dataDir, 'posts.json'), posts);
   writeJson(join(config.dataDir, 'tags.json'), tags);
   writeJson(join(config.dataDir, 'months.json'), months);
-  return { posts, tags, months };
+  writeJson(join(config.dataDir, 'series.json'), series);
+  return { posts, tags, months, series };
 }
-function minPost(p) { return { name: p.name, title: p.title, date: p.date, dateString: p.dateString, path: p.path, excerpt: p.excerpt, tags: p.tags, pinned: p.pinned }; }
-if (import.meta.url === `file://${process.argv[1]}`) { scanContent(); }
+function minPost(p) {
+  return {
+    name: p.name,
+    title: p.title,
+    date: p.date,
+    dateString: p.dateString,
+    path: p.path,
+    url: `/posts/${p.name}/`,
+    excerpt: p.excerpt,
+    tags: p.tags,
+    pinned: p.pinned,
+  };
+}
+if (import.meta.url === `file://${process.argv[1]}`) {
+  scanContent();
+}

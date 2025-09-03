@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>dout.dev — October 2024</title>
+    <link>https://dout.dev/months/2024-10/</link>
+    <description>RSS feed for posts from October 2024</description>
+    <lastBuildDate>Mon, 08 Sep 2025 11:30:37 GMT</lastBuildDate>
+    <item>
+      <title>Introducing CSS Grid - The Future of Web Layout 🎨</title>
+      <link>https://dout.dev/posts/2024-10-28-concerning-css-grid.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2024-10-28-concerning-css-grid.html</guid>
+      <pubDate>Mon, 28 Oct 2024 10:00:00 GMT</pubDate>
+      <description>What is CSS Grid and why is it important?</description>
+    </item>
+  </channel>
+</rss>

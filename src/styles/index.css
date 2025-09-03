@@ -1,0 +1,39 @@
+/* M0 placeholder stylesheet: exists to satisfy Vite build. */
+/* No visual styles are required at this stage. */
+
+/* Basic reset */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* M8: minimal styles for images */
+.post-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* reserve space to reduce CLS */
+  background: #eee;
+}
+
+img.is-revealed {
+  transition: opacity 200ms ease-out;
+}
+
+/* Minimal default font stack for legibility during M0 */
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Ubuntu,
+    Cantarell,
+    Noto Sans,
+    Helvetica,
+    Arial,
+    'Apple Color Emoji',
+    'Segoe UI Emoji';
+  line-height: 1.5;
+}

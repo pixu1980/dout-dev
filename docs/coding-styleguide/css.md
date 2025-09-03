@@ -269,7 +269,7 @@ element-selector--example {
   place-items: center;
   justify-self: unset;
   gap: 1rem;
-  
+
   opacity: 1;
   visibility: visible;
 ​
@@ -469,7 +469,6 @@ Oftentimes, to accomplish the style you want you may want to structure your HTML
 2. Organize CSS to match the markup order
 
    Matching the markup order is a very good practice, it allows to:
-
    - keep the structure mostly the same between HTML and CSS
    - think in specificity
    - improve both the codebase HTML and CSS (it also helps to improve and optimize your scripts)
@@ -481,7 +480,6 @@ Oftentimes, to accomplish the style you want you may want to structure your HTML
    Being crazy enough to desperately want every bit of performance out of your CSS doesn't means that unique ids are the only solution. Instead it makes more sense to use ids only when are specifically needed by the use-case, and avoid them by default.
 
    Id attributes styles are hard to overwrite, and are meant to be unique per page so follow these guidelines for id usages:
-
    - Use it for something truly unique on the page like a logo and containers
    - Don't use it on or inside components that are meant to be re-used
    - Use it on headings and sections of the website you want to link to
@@ -597,7 +595,6 @@ CSS methodologies will ensure consistency and future proof your styles.
 15. Be specific & not too specific
 
     Being specific is good as it defines which style applies to what but once you are too specific it becomes overkill, reduces performance, and increases your bundle size as well. Sometimes it is even an indication of bad CSS or design system. Example of over specific selectors:
-
     - `section#sample-section` — (ask why you need to specify "section” along with id)
     - `main div p.title` — (ask why you need to specify anything besides the .title )
     - `[disabled]` — not specific enough and expensive
@@ -622,7 +619,6 @@ CSS methodologies will ensure consistency and future proof your styles.
     Style selectors are expensive worse when nested and targeting common HTML tags like `<div>`, `<p>`, and `<a>` tags. Find strategies that allow you to efficiently render CSS but don't adopt any extreme measure like adding id or class to everything for styling purposes unless you are using a class utility first library or really need that extra performance.
 
     For a better idea, try to learn about how CSS works.
-
     - #main-navigation /_ ID (Fastest) _/
     - body #page-wrap /_ ID _/
     - .main-navigation /_ Class _/

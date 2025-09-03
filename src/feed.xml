@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>dout.dev — Latest Posts</title>
+    <link>https://dout.dev/</link>
+    <description>Vanilla-first static blog with WCAG 2.2 AAA accessibility</description>
+    <lastBuildDate>Mon, 08 Sep 2025 11:30:37 GMT</lastBuildDate>
+    <item>
+      <title>Welcome to dout.dev 2.0</title>
+      <link>https://dout.dev/posts/2025-08-15-welcome-to-dout-dev-2.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2025-08-15-welcome-to-dout-dev-2.html</guid>
+      <pubDate>Fri, 15 Aug 2025 00:00:00 GMT</pubDate>
+      <description>Welcome to the New dout.dev</description>
+    </item>
+    <item>
+      <title>M4 Template Test - Cover Image e Syntax Highlighting</title>
+      <link>https://dout.dev/posts/2024-12-27-m4-template-test.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2024-12-27-m4-template-test.html</guid>
+      <pubDate>Fri, 27 Dec 2024 10:00:00 GMT</pubDate>
+      <description>Questo è un post di test per verificare tutte le funzionalità implementate nel M4 Post Page.</description>
+    </item>
+    <item>
+      <title>Introducing CSS Grid - The Future of Web Layout 🎨</title>
+      <link>https://dout.dev/posts/2024-10-28-concerning-css-grid.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2024-10-28-concerning-css-grid.html</guid>
+      <pubDate>Mon, 28 Oct 2024 10:00:00 GMT</pubDate>
+      <description>What is CSS Grid and why is it important?</description>
+    </item>
+    <item>
+      <title>Accessibility by Design</title>
+      <link>https://dout.dev/posts/2024-05-19-a11y-by-design.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2024-05-19-a11y-by-design.html</guid>
+      <pubDate>Sun, 19 May 2024 00:41:22 GMT</pubDate>
+      <description>We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Des</description>
+    </item>
+    <item>
+      <title>Say hello to 2023 🎉</title>
+      <link>https://dout.dev/posts/2023-01-01-say-hello-2023.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2023-01-01-say-hello-2023.html</guid>
+      <pubDate>Sun, 01 Jan 2023 14:41:22 GMT</pubDate>
+      <description>!example alt text../assets/images/20220225youcanexpresstagstoday.jpg &apos;example Title&apos;</description>
+    </item>
+    <item>
+      <title>Concerning…</title>
+      <link>https://dout.dev/posts/2022-03-25-concerning.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-25-concerning.html</guid>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 GMT</pubDate>
+      <description>Concerning Core Web Technologies</description>
+    </item>
+    <item>
+      <title>Welcome to dout.dev</title>
+      <link>https://dout.dev/posts/2022-03-24-welcome-to-dout-dev.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-24-welcome-to-dout-dev.html</guid>
+      <pubDate>Thu, 24 Mar 2022 00:00:00 GMT</pubDate>
+      <description>Hi, I&apos;m Emiliano &quot;Pixu&quot; Pisu.</description>
+    </item>
+    <item>
+      <title>Building dout.dev blog - Part II</title>
+      <link>https://dout.dev/posts/2022-03-22-building-dout-dev-blog-part-2.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-22-building-dout-dev-blog-part-2.html</guid>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 GMT</pubDate>
+      <description>Building dout.dev blog Part II</description>
+    </item>
+    <item>
+      <title>Building dout.dev blog</title>
+      <link>https://dout.dev/posts/2022-03-21-building-dout-dev-blog.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-21-building-dout-dev-blog.html</guid>
+      <pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate>
+      <description>Less is more!</description>
+    </item>
+    <item>
+      <title>CSS Properties Hierarchy</title>
+      <link>https://dout.dev/posts/2022-03-18-css-properties-hierarchy.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-18-css-properties-hierarchy.html</guid>
+      <pubDate>Fri, 18 Mar 2022 00:00:00 GMT</pubDate>
+      <description>css :root { borderradius: 5px; }</description>
+    </item>
+    <item>
+      <title>Testing CodePen</title>
+      <link>https://dout.dev/posts/2022-03-16-test-codepen.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-16-test-codepen.html</guid>
+      <pubDate>Wed, 16 Mar 2022 00:00:00 GMT</pubDate>
+      <description>&lt;iframe height=&quot;521&quot; style=&quot;width: 100%; minheight: 30rem&quot; scrolling=&quot;no&quot; title=&quot;Pure CSS Slider using ScrollSnap&quot; src=&quot;https://codepen.io/blackmirror1980/embed/aPRXzv?height=521&amp;</description>
+    </item>
+    <item>
+      <title>You can edit CSS</title>
+      <link>https://dout.dev/posts/2022-03-12-you-can-edit-css.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-12-you-can-edit-css.html</guid>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 GMT</pubDate>
+      <description>You can edit CSShttps://codepen.io/davatron5000/pen/mddmRJe</description>
+    </item>
+    <item>
+      <title>Marked - Markdown Parser</title>
+      <link>https://dout.dev/posts/2022-03-03-marked-markdown-parser.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-03-marked-markdown-parser.html</guid>
+      <pubDate>Thu, 03 Mar 2022 15:41:22 GMT</pubDate>
+      <description>How To Use The Demo</description>
+    </item>
+    <item>
+      <title>Custom Grid System</title>
+      <link>https://dout.dev/posts/2022-03-03-custom-grid-system.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-03-custom-grid-system.html</guid>
+      <pubDate>Thu, 03 Mar 2022 14:41:22 GMT</pubDate>
+      <description>Blog under construction</description>
+    </item>
+    <item>
+      <title>You can use express tags… TODAY!</title>
+      <link>https://dout.dev/posts/2022-02-25-you-can-express-tags-today.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-02-25-you-can-express-tags-today.html</guid>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 GMT</pubDate>
+      <description>HTML6 is coming, we know it very well, &apos;cause we&apos;re strongly waiting for features like described herehttps://www.htmlgoodies.com/guides/expectednewfeaturesinhtml6/ &apos;Expected new f</description>
+    </item>
+    <item>
+      <title>Say hello to 2022 🎉</title>
+      <link>https://dout.dev/posts/2022-01-01-say-hello-2022.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-01-01-say-hello-2022.html</guid>
+      <pubDate>Sat, 01 Jan 2022 14:41:22 GMT</pubDate>
+      <description>!example alt text../assets/images/20220225youcanexpresstagstoday.jpg &apos;example Title&apos;</description>
+    </item>
+    <item>
+      <title>A NEW post with a NEW cover image</title>
+      <link>https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</guid>
+      <pubDate>Mon, 08 Mar 2021 00:00:00 GMT</pubDate>
+      <description>Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it&apos;s been marked up with tags or f</description>
+    </item>
+    <item>
+      <title>Testing CodePen</title>
+      <link>https://dout.dev/posts/2021-03-07-hating-css-utility-classes.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2021-03-07-hating-css-utility-classes.html</guid>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
+      <description>https://codepen.io/emdeoh/pen/NWdmgVq</description>
+    </item>
+    <item>
+      <title>Testing CodePen</title>
+      <link>https://dout.dev/posts/2021-03-05-gradient-borders.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2021-03-05-gradient-borders.html</guid>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 GMT</pubDate>
+      <description>GRADIENT BORDERS</description>
+    </item>
+    <item>
+      <title>Say Hello to Gridsome NEW</title>
+      <link>https://dout.dev/posts/2021-03-01-say-hello-to-gridsome-new.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2021-03-01-say-hello-to-gridsome-new.html</guid>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 GMT</pubDate>
+      <description>Well.... that&apos;s all</description>
+    </item>
+  </channel>
+</rss>

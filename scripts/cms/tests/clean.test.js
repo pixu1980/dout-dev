@@ -11,7 +11,13 @@ test('clean removes json outputs', () => {
   const dataDir = join(TMP, 'data');
   mkdirSync(dataDir, { recursive: true });
   writeFileSync(join(dataDir, 'posts.json'), '[]');
-  clean({ dataDir, postsOutputDir: join(TMP, 'out/posts'), tagsOutputDir: join(TMP, 'out/tags'), monthsOutputDir: join(TMP, 'out/months') });
+  clean({
+    dataDir,
+    postsOutputDir: join(TMP, 'out/posts'),
+    tagsOutputDir: join(TMP, 'out/tags'),
+    monthsOutputDir: join(TMP, 'out/months'),
+    seriesOutputDir: join(TMP, 'out/series'),
+  });
   assert.equal(existsSync(join(dataDir, 'posts.json')), false);
   rmSync(TMP, { recursive: true, force: true });
 });

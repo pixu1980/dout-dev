@@ -14,6 +14,7 @@ Questo è un post di test per verificare tutte le funzionalità implementate nel
 ## Cover Image e Pinned Badge
 
 Questo post ha:
+
 - ✅ **Cover Image**: Immagine di copertina caricata con `fetchpriority="high"`
 - ✅ **Pinned Badge**: Badge "📌 Post in evidenza" per post in evidenza
 - ✅ **Metadata avanzata**: Schema.org BlogPosting completo
@@ -23,13 +24,14 @@ Questo post ha:
 Testiamo il syntax highlighting per vari linguaggi:
 
 ### JavaScript
+
 ```javascript
 // Esempio JavaScript
 const blogPost = {
   title: 'M4 Template Test',
   author: 'dout.dev',
   published: true,
-  tags: ['Test', 'M4', 'syntax-highlight-element']
+  tags: ['Test', 'M4', 'syntax-highlight-element'],
 };
 
 function renderPost(post) {
@@ -43,6 +45,7 @@ addEventListener('DOMContentLoaded', () => {
 ```
 
 ### CSS
+
 ```css
 /* Esempio CSS con design tokens */
 .post-cover-image {
@@ -64,25 +67,23 @@ addEventListener('DOMContentLoaded', () => {
 ```
 
 ### HTML
+
 ```html
 <!-- Esempio HTML con Schema.org -->
 <article class="post">
   <header class="post-header">
-    <div class="post-badge post-badge--pinned" data-pinned="true">
-      📌 Post in evidenza
-    </div>
+    <div class="post-badge post-badge--pinned" data-pinned="true">📌 Post in evidenza</div>
     <h1>{{ title }}</h1>
     <div class="post-meta">
       <time datetime="{{ date }}">{{ date | date:'%d %B %Y' }}</time>
     </div>
   </header>
-  <div class="post-content">
-    {{ content | raw }}
-  </div>
+  <div class="post-content">{{ content | raw }}</div>
 </article>
 ```
 
 ### JSON
+
 ```json
 {
   "@context": "https://schema.org",
@@ -99,6 +100,7 @@ addEventListener('DOMContentLoaded', () => {
 ```
 
 ### Bash
+
 ```bash
 #!/bin/bash
 # Script per build e test
@@ -115,6 +117,6 @@ npm run dev
 - [x] **Metadata completa**: title, meta description, canonical, JSON-LD BlogPosting
 - [x] **Support coverImage**: immagine di copertina con attributi performance
 - [x] **Support pinned badge**: badge per post in evidenza (mostrato solo in listings)
-[x] **syntax-highlight-element integrato**: syntax highlighting per tutti i linguaggi specificati
+      [x] **syntax-highlight-element integrato**: syntax highlighting per tutti i linguaggi specificati
 
 La checklist M4 dovrebbe essere completamente implementata! 🎉

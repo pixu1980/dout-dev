@@ -13,6 +13,7 @@ I'm a "vintage" developer who loves to code and to share ideas, thoughts, knowle
 I'm starting this blog to talk and discuss about web-based technology, honestly most of times i'll focus in UI/UX, because i love it.
 
 However, in order to be able to talk about User Interaction, we'll need to discuss about:
+
 - core web technologies
 - cross browser compatibility (thanks for your time IE but… no thanks!!! 🤣)
 - a11y

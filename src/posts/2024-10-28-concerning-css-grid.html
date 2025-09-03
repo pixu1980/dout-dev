@@ -1,4 +1,51 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Introducing CSS Grid - The Future of Web Layout 🎨</title></head><body><article><h1>Introducing CSS Grid - The Future of Web Layout 🎨</h1><div><h2>What is CSS Grid and why is it important?</h2>
+<extends src="../layouts/base.html">
+
+<block name="head">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Introducing CSS Grid - The Future of Web Layout 🎨">
+  <meta property="og:description" content="What is CSS Grid and why is it important?">
+  <meta property="og:image" content="/./assets/images/css-grid-cover.jpg">
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "headline": "Introducing CSS Grid - The Future of Web Layout 🎨",
+        "datePublished": "2024-10-28T10:00:00.000Z",
+        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2024-10-28-concerning-css-grid.html"}
+      }
+  </script>
+</block>
+
+<block name="content">
+  <article itemscope="" itemtype="https://schema.org/BlogPosting">
+    <header>
+      <h1 itemprop="headline">Introducing CSS Grid - The Future of Web Layout 🎨</h1>
+      <p>
+        <time datetime="2024-10-28" itemprop="datePublished">
+          28 ottobre 2024
+        </time>
+      </p>
+      
+        <figure class="post-cover">
+          <img src="/./assets/images/css-grid-cover.jpg" alt="Introducing CSS Grid - The Future of Web Layout 🎨" fetchpriority="high" decoding="async" width="1200" height="630">
+        </figure>
+      
+      
+        <ul aria-label="Tags">
+          
+            <li><a class="tag" href="/tags/css.html">Css</a></li>
+          
+            <li><a class="tag" href="/tags/web-design.html">Web-design</a></li>
+          
+            <li><a class="tag" href="/tags/frontend.html">Frontend</a></li>
+          
+            <li><a class="tag" href="/tags/grid-layout.html">Grid-layout</a></li>
+          
+        </ul>
+      
+    </header>
+
+    <section itemprop="articleBody"><h2>What is CSS Grid and why is it important?</h2>
 <p>CSS Grid is a powerful technology for creating web layouts that has changed the way we think about user interface design. Unlike older methods like <code>float</code> or <code>flexbox</code>, CSS Grid offers a true two-dimensional grid for positioning elements, making layouts simpler, more powerful, and adaptable.</p>
 <h2>How does it work?</h2>
 <p>CSS Grid introduces a system of rows and columns, allowing you to create complex layouts with just a few commands. Here is a basic example of a grid with two columns and two rows:</p>
@@ -7,10 +54,7 @@ grid-template-columns: repeat(2, 1fr);
 grid-template-rows: repeat(2, 200px);</code></pre><p>With these few lines of code, we can structure our pages without using hacks or complicated markup.</p>
 <h2>Key Benefits of CSS Grid</h2>
 <ol>
-<li><strong>Two-Dimensional Design</strong>: Allows you to work with rows and columns intuitively.</li>
-<li><strong>Simplicity and Flexibility</strong>: Positioning elements becomes more natural and less restricted.</li>
-<li><strong>Powerful Alignment</strong>: With properties like <code>justify-items</code> and <code>align-items</code>, aligning elements is a breeze.</li>
-</ol>
+<li>[object Object]</li><li>[object Object]</li><li>[object Object]</li></ol>
 <h2>A Practical Example</h2>
 <p>Let's look at a practical example of using CSS Grid to create a basic layout for a web page:</p>
 <pre is="pix-highlighter" lang="html"><code>&lt;div class="container"&gt;
@@ -53,4 +97,16 @@ footer {
 <h2>Conclusions</h2>
 <p>CSS Grid is an essential tool for every frontend developer. If you want to create modern, responsive, and easily maintainable layouts, CSS Grid is the way to go. Don't be afraid to experiment and play with grids: once you learn it, you won't look back!</p>
 <p>Do you want to learn more about how to use CSS Grid in your projects? Feel free to ask questions or share your experiments in the comments! 😊</p>
-</div></article></body></html>
+</section>
+
+    <nav aria-label="Post navigation">
+      
+        <a rel="prev" href="/posts/2024-05-19-a11y-by-design.html">← Accessibility by Design</a>
+      
+      
+        <a rel="next" href="/posts/2024-12-27-m4-template-test.html">M4 Template Test - Cover Image e Syntax Highlighting →</a>
+      
+    </nav>
+  </article>
+</block>
+</extends>

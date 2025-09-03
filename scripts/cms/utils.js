@@ -12,7 +12,9 @@ export function readFile(filePath) {
 
 export function writeJson(filePath, data) {
   ensureDir(dirname(filePath));
-  writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
+  const json = JSON.stringify(data, null, 2);
+  // Ensure trailing newline for formatter friendliness
+  writeFileSync(filePath, json.endsWith('\n') ? json : `${json}\n`, 'utf8');
 }
 
 export function scanDirRecursive(dir, exts = ['.md']) {
@@ -27,9 +29,17 @@ export function scanDirRecursive(dir, exts = ['.md']) {
 }
 
 export function removePath(p) {
-  try { rmSync(p, { recursive: true, force: true }); } catch { /* ignore */ }
+  try {
+    rmSync(p, { recursive: true, force: true });
+  } catch {
+    /* ignore */
+  }
 }
 
 export function slugify(str) {
-  return String(str).toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  return String(str)
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }

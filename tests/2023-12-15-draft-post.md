@@ -1,8 +1,8 @@
 ---
-title: "Draft Post"
-date: "2023-12-15"
-tags: ["draft"]
-excerpt: "This is a draft post"
+title: 'Draft Post'
+date: '2023-12-15'
+tags: ['draft']
+excerpt: 'This is a draft post'
 published: false
 ---
 

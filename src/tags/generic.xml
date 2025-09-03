@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>dout.dev — Generic</title>
+    <link>https://dout.dev/tags/generic/</link>
+    <description>RSS feed for posts tagged with Generic</description>
+    <lastBuildDate>Mon, 08 Sep 2025 11:30:36 GMT</lastBuildDate>
+    <item>
+      <title>Concerning…</title>
+      <link>https://dout.dev/posts/2022-03-25-concerning.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-25-concerning.html</guid>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 GMT</pubDate>
+      <description>Concerning Core Web Technologies</description>
+    </item>
+    <item>
+      <title>Welcome to dout.dev</title>
+      <link>https://dout.dev/posts/2022-03-24-welcome-to-dout-dev.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-24-welcome-to-dout-dev.html</guid>
+      <pubDate>Thu, 24 Mar 2022 00:00:00 GMT</pubDate>
+      <description>Hi, I&apos;m Emiliano &quot;Pixu&quot; Pisu.</description>
+    </item>
+  </channel>
+</rss>

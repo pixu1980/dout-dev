@@ -1,0 +1,1294 @@
+[
+  {
+    "key": "markdown",
+    "label": "Markdown",
+    "posts": [
+      {
+        "name": "2019-01-07-a-post-with-a-cover",
+        "title": "A post with a cover image",
+        "date": "2019-01-07T00:00:00.000Z",
+        "dateString": "Mon Jan 07 2019",
+        "path": "./custom/posts/2019-01-07-a-post-with-a-cover.html",
+        "url": "/posts/2019-01-07-a-post-with-a-cover/",
+        "excerpt": "Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it's been marked up with tags or f",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2019-02-06-markdown-test-file",
+        "title": "Markdown test file",
+        "date": "2019-02-06T00:00:00.000Z",
+        "dateString": "Wed Feb 06 2019",
+        "path": "./custom/posts/2019-02-06-markdown-test-file.html",
+        "url": "/posts/2019-02-06-markdown-test-file/",
+        "excerpt": "Markdown is intended to be as easytoread and easytowrite as is feasible.Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "test-files",
+            "label": "Test-files",
+            "url": "./tags/test-files.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2019-02-07-say-hello-to-gridsome",
+        "title": "Say hello to Gridsome 🎉",
+        "date": "2019-02-07T00:00:00.000Z",
+        "dateString": "Thu Feb 07 2019",
+        "path": "./custom/posts/2019-02-07-say-hello-to-gridsome.html",
+        "url": "/posts/2019-02-07-say-hello-to-gridsome/",
+        "excerpt": "A new static site generator baby is born. It's highly inspired by Gatsby.js React based but built on top of Vue.js. We have been working on it for a year and will have a beta read",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "releases",
+            "label": "Releases",
+            "url": "./tags/releases.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2021-03-01-say-hello-to-gridsome-new",
+        "title": "Say Hello to Gridsome NEW",
+        "date": "2021-03-01T00:00:00.000Z",
+        "dateString": "Mon Mar 01 2021",
+        "path": "./custom/posts/2021-03-01-say-hello-to-gridsome-new.html",
+        "url": "/posts/2021-03-01-say-hello-to-gridsome-new/",
+        "excerpt": "Well.... that's all",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2021-03-05-gradient-borders",
+        "title": "Testing CodePen",
+        "date": "2021-03-05T00:00:00.000Z",
+        "dateString": "Fri Mar 05 2021",
+        "path": "./custom/posts/2021-03-05-gradient-borders.html",
+        "url": "/posts/2021-03-05-gradient-borders/",
+        "excerpt": "GRADIENT BORDERS",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2021-03-07-hating-css-utility-classes",
+        "title": "Testing CodePen",
+        "date": "2021-03-07T00:00:00.000Z",
+        "dateString": "Sun Mar 07 2021",
+        "path": "./custom/posts/2021-03-07-hating-css-utility-classes.html",
+        "url": "/posts/2021-03-07-hating-css-utility-classes/",
+        "excerpt": "https://codepen.io/emdeoh/pen/NWdmgVq",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2021-03-08-a-new-post-with-a-new-cover",
+        "title": "A NEW post with a NEW cover image",
+        "date": "2021-03-08T00:00:00.000Z",
+        "dateString": "Mon Mar 08 2021",
+        "path": "./custom/posts/2021-03-08-a-new-post-with-a-new-cover.html",
+        "url": "/posts/2021-03-08-a-new-post-with-a-new-cover/",
+        "excerpt": "Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it's been marked up with tags or f",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2022-01-01-say-hello-2022",
+        "title": "Say hello to 2022 🎉",
+        "date": "2022-01-01T14:41:22.000Z",
+        "dateString": "Sat Jan 01 2022",
+        "path": "./custom/posts/2022-01-01-say-hello-2022.html",
+        "url": "/posts/2022-01-01-say-hello-2022/",
+        "excerpt": "!example alt text../assets/images/20220225youcanexpresstagstoday.jpg 'example Title'",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "releases",
+            "label": "Releases",
+            "url": "./tags/releases.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2022-03-03-custom-grid-system",
+        "title": "Custom Grid System",
+        "date": "2022-03-03T14:41:22.000Z",
+        "dateString": "Thu Mar 03 2022",
+        "path": "./custom/posts/2022-03-03-custom-grid-system.html",
+        "url": "/posts/2022-03-03-custom-grid-system/",
+        "excerpt": "Blog under construction",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "releases",
+            "label": "Releases",
+            "url": "./tags/releases.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2022-03-12-you-can-edit-css",
+        "title": "You can edit CSS",
+        "date": "2022-03-12T00:00:00.000Z",
+        "dateString": "Sat Mar 12 2022",
+        "path": "./custom/posts/2022-03-12-you-can-edit-css.html",
+        "url": "/posts/2022-03-12-you-can-edit-css/",
+        "excerpt": "You can edit CSShttps://codepen.io/davatron5000/pen/mddmRJe",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2022-03-16-test-codepen",
+        "title": "Testing CodePen",
+        "date": "2022-03-16T00:00:00.000Z",
+        "dateString": "Wed Mar 16 2022",
+        "path": "./custom/posts/2022-03-16-test-codepen.html",
+        "url": "/posts/2022-03-16-test-codepen/",
+        "excerpt": "<iframe height=\"521\" style=\"width: 100%; minheight: 30rem\" scrolling=\"no\" title=\"Pure CSS Slider using ScrollSnap\" src=\"https://codepen.io/blackmirror1980/embed/aPRXzv?height=521&",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2023-01-01-say-hello-2023",
+        "title": "Say hello to 2023 🎉",
+        "date": "2023-01-01T14:41:22.000Z",
+        "dateString": "Sun Jan 01 2023",
+        "path": "./custom/posts/2023-01-01-say-hello-2023.html",
+        "url": "/posts/2023-01-01-say-hello-2023/",
+        "excerpt": "!example alt text../assets/images/20220225youcanexpresstagstoday.jpg 'example Title'",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "releases",
+            "label": "Releases",
+            "url": "./tags/releases.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Markdown",
+    "slug": "markdown",
+    "url": "./tags/markdown.html",
+    "count": 12
+  },
+  {
+    "key": "cover-image",
+    "label": "Cover-image",
+    "posts": [
+      {
+        "name": "2019-01-07-a-post-with-a-cover",
+        "title": "A post with a cover image",
+        "date": "2019-01-07T00:00:00.000Z",
+        "dateString": "Mon Jan 07 2019",
+        "path": "./custom/posts/2019-01-07-a-post-with-a-cover.html",
+        "url": "/posts/2019-01-07-a-post-with-a-cover/",
+        "excerpt": "Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it's been marked up with tags or f",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2021-03-01-say-hello-to-gridsome-new",
+        "title": "Say Hello to Gridsome NEW",
+        "date": "2021-03-01T00:00:00.000Z",
+        "dateString": "Mon Mar 01 2021",
+        "path": "./custom/posts/2021-03-01-say-hello-to-gridsome-new.html",
+        "url": "/posts/2021-03-01-say-hello-to-gridsome-new/",
+        "excerpt": "Well.... that's all",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2021-03-05-gradient-borders",
+        "title": "Testing CodePen",
+        "date": "2021-03-05T00:00:00.000Z",
+        "dateString": "Fri Mar 05 2021",
+        "path": "./custom/posts/2021-03-05-gradient-borders.html",
+        "url": "/posts/2021-03-05-gradient-borders/",
+        "excerpt": "GRADIENT BORDERS",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2021-03-07-hating-css-utility-classes",
+        "title": "Testing CodePen",
+        "date": "2021-03-07T00:00:00.000Z",
+        "dateString": "Sun Mar 07 2021",
+        "path": "./custom/posts/2021-03-07-hating-css-utility-classes.html",
+        "url": "/posts/2021-03-07-hating-css-utility-classes/",
+        "excerpt": "https://codepen.io/emdeoh/pen/NWdmgVq",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2021-03-08-a-new-post-with-a-new-cover",
+        "title": "A NEW post with a NEW cover image",
+        "date": "2021-03-08T00:00:00.000Z",
+        "dateString": "Mon Mar 08 2021",
+        "path": "./custom/posts/2021-03-08-a-new-post-with-a-new-cover.html",
+        "url": "/posts/2021-03-08-a-new-post-with-a-new-cover/",
+        "excerpt": "Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it's been marked up with tags or f",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2022-03-12-you-can-edit-css",
+        "title": "You can edit CSS",
+        "date": "2022-03-12T00:00:00.000Z",
+        "dateString": "Sat Mar 12 2022",
+        "path": "./custom/posts/2022-03-12-you-can-edit-css.html",
+        "url": "/posts/2022-03-12-you-can-edit-css/",
+        "excerpt": "You can edit CSShttps://codepen.io/davatron5000/pen/mddmRJe",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2022-03-16-test-codepen",
+        "title": "Testing CodePen",
+        "date": "2022-03-16T00:00:00.000Z",
+        "dateString": "Wed Mar 16 2022",
+        "path": "./custom/posts/2022-03-16-test-codepen.html",
+        "url": "/posts/2022-03-16-test-codepen/",
+        "excerpt": "<iframe height=\"521\" style=\"width: 100%; minheight: 30rem\" scrolling=\"no\" title=\"Pure CSS Slider using ScrollSnap\" src=\"https://codepen.io/blackmirror1980/embed/aPRXzv?height=521&",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2024-12-27-m4-template-test",
+        "title": "M4 Template Test - Cover Image e Syntax Highlighting",
+        "date": "2024-12-27T10:00:00.000Z",
+        "dateString": "Fri Dec 27 2024",
+        "path": "./custom/posts/2024-12-27-m4-template-test.html",
+        "url": "/posts/2024-12-27-m4-template-test/",
+        "excerpt": "Questo è un post di test per verificare tutte le funzionalità implementate nel M4 Post Page.",
+        "tags": [
+          {
+            "key": "test",
+            "label": "Test",
+            "url": "./tags/test.html"
+          },
+          {
+            "key": "m4",
+            "label": "M4",
+            "url": "./tags/m4.html"
+          },
+          {
+            "key": "syntax-highlight-element",
+            "label": "Syntax-highlight-element",
+            "url": "./tags/syntax-highlight-element.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": true
+      }
+    ],
+    "name": "Cover-image",
+    "slug": "cover-image",
+    "url": "./tags/cover-image.html",
+    "count": 8
+  },
+  {
+    "key": "test-files",
+    "label": "Test-files",
+    "posts": [
+      {
+        "name": "2019-02-06-markdown-test-file",
+        "title": "Markdown test file",
+        "date": "2019-02-06T00:00:00.000Z",
+        "dateString": "Wed Feb 06 2019",
+        "path": "./custom/posts/2019-02-06-markdown-test-file.html",
+        "url": "/posts/2019-02-06-markdown-test-file/",
+        "excerpt": "Markdown is intended to be as easytoread and easytowrite as is feasible.Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "test-files",
+            "label": "Test-files",
+            "url": "./tags/test-files.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Test-files",
+    "slug": "test-files",
+    "url": "./tags/test-files.html",
+    "count": 1
+  },
+  {
+    "key": "releases",
+    "label": "Releases",
+    "posts": [
+      {
+        "name": "2019-02-07-say-hello-to-gridsome",
+        "title": "Say hello to Gridsome 🎉",
+        "date": "2019-02-07T00:00:00.000Z",
+        "dateString": "Thu Feb 07 2019",
+        "path": "./custom/posts/2019-02-07-say-hello-to-gridsome.html",
+        "url": "/posts/2019-02-07-say-hello-to-gridsome/",
+        "excerpt": "A new static site generator baby is born. It's highly inspired by Gatsby.js React based but built on top of Vue.js. We have been working on it for a year and will have a beta read",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "releases",
+            "label": "Releases",
+            "url": "./tags/releases.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2022-01-01-say-hello-2022",
+        "title": "Say hello to 2022 🎉",
+        "date": "2022-01-01T14:41:22.000Z",
+        "dateString": "Sat Jan 01 2022",
+        "path": "./custom/posts/2022-01-01-say-hello-2022.html",
+        "url": "/posts/2022-01-01-say-hello-2022/",
+        "excerpt": "!example alt text../assets/images/20220225youcanexpresstagstoday.jpg 'example Title'",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "releases",
+            "label": "Releases",
+            "url": "./tags/releases.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2022-03-03-custom-grid-system",
+        "title": "Custom Grid System",
+        "date": "2022-03-03T14:41:22.000Z",
+        "dateString": "Thu Mar 03 2022",
+        "path": "./custom/posts/2022-03-03-custom-grid-system.html",
+        "url": "/posts/2022-03-03-custom-grid-system/",
+        "excerpt": "Blog under construction",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "releases",
+            "label": "Releases",
+            "url": "./tags/releases.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2023-01-01-say-hello-2023",
+        "title": "Say hello to 2023 🎉",
+        "date": "2023-01-01T14:41:22.000Z",
+        "dateString": "Sun Jan 01 2023",
+        "path": "./custom/posts/2023-01-01-say-hello-2023.html",
+        "url": "/posts/2023-01-01-say-hello-2023/",
+        "excerpt": "!example alt text../assets/images/20220225youcanexpresstagstoday.jpg 'example Title'",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "releases",
+            "label": "Releases",
+            "url": "./tags/releases.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Releases",
+    "slug": "releases",
+    "url": "./tags/releases.html",
+    "count": 4
+  },
+  {
+    "key": "html",
+    "label": "Html",
+    "posts": [
+      {
+        "name": "2022-02-25-you-can-express-tags-today",
+        "title": "You can use express tags… TODAY!",
+        "date": "2022-02-25T00:00:00.000Z",
+        "dateString": "Fri Feb 25 2022",
+        "path": "./custom/posts/2022-02-25-you-can-express-tags-today.html",
+        "url": "/posts/2022-02-25-you-can-express-tags-today/",
+        "excerpt": "HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described herehttps://www.htmlgoodies.com/guides/expectednewfeaturesinhtml6/ 'Expected new f",
+        "tags": [
+          {
+            "key": "html",
+            "label": "Html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "css",
+            "label": "Css",
+            "url": "./tags/css.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2022-03-18-css-properties-hierarchy",
+        "title": "CSS Properties Hierarchy",
+        "date": "2022-03-18T00:00:00.000Z",
+        "dateString": "Fri Mar 18 2022",
+        "path": "./custom/posts/2022-03-18-css-properties-hierarchy.html",
+        "url": "/posts/2022-03-18-css-properties-hierarchy/",
+        "excerpt": "css :root { borderradius: 5px; }",
+        "tags": [
+          {
+            "key": "html",
+            "label": "Html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "css",
+            "label": "Css",
+            "url": "./tags/css.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2022-03-21-building-dout-dev-blog",
+        "title": "Building dout.dev blog",
+        "date": "2022-03-21T00:00:00.000Z",
+        "dateString": "Mon Mar 21 2022",
+        "path": "./custom/posts/2022-03-21-building-dout-dev-blog.html",
+        "url": "/posts/2022-03-21-building-dout-dev-blog/",
+        "excerpt": "Less is more!",
+        "tags": [
+          {
+            "key": "html",
+            "label": "Html",
+            "url": "./tags/html.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2022-03-22-building-dout-dev-blog-part-2",
+        "title": "Building dout.dev blog - Part II",
+        "date": "2022-03-22T00:00:00.000Z",
+        "dateString": "Tue Mar 22 2022",
+        "path": "./custom/posts/2022-03-22-building-dout-dev-blog-part-2.html",
+        "url": "/posts/2022-03-22-building-dout-dev-blog-part-2/",
+        "excerpt": "Building dout.dev blog Part II",
+        "tags": [
+          {
+            "key": "html",
+            "label": "Html",
+            "url": "./tags/html.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Html",
+    "slug": "html",
+    "url": "./tags/html.html",
+    "count": 4
+  },
+  {
+    "key": "css",
+    "label": "Css",
+    "posts": [
+      {
+        "name": "2022-02-25-you-can-express-tags-today",
+        "title": "You can use express tags… TODAY!",
+        "date": "2022-02-25T00:00:00.000Z",
+        "dateString": "Fri Feb 25 2022",
+        "path": "./custom/posts/2022-02-25-you-can-express-tags-today.html",
+        "url": "/posts/2022-02-25-you-can-express-tags-today/",
+        "excerpt": "HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described herehttps://www.htmlgoodies.com/guides/expectednewfeaturesinhtml6/ 'Expected new f",
+        "tags": [
+          {
+            "key": "html",
+            "label": "Html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "css",
+            "label": "Css",
+            "url": "./tags/css.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2022-03-18-css-properties-hierarchy",
+        "title": "CSS Properties Hierarchy",
+        "date": "2022-03-18T00:00:00.000Z",
+        "dateString": "Fri Mar 18 2022",
+        "path": "./custom/posts/2022-03-18-css-properties-hierarchy.html",
+        "url": "/posts/2022-03-18-css-properties-hierarchy/",
+        "excerpt": "css :root { borderradius: 5px; }",
+        "tags": [
+          {
+            "key": "html",
+            "label": "Html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "css",
+            "label": "Css",
+            "url": "./tags/css.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2024-10-28-concerning-css-grid",
+        "title": "Introducing CSS Grid - The Future of Web Layout 🎨",
+        "date": "2024-10-28T10:00:00.000Z",
+        "dateString": "Mon Oct 28 2024",
+        "path": "./custom/posts/2024-10-28-concerning-css-grid.html",
+        "url": "/posts/2024-10-28-concerning-css-grid/",
+        "excerpt": "What is CSS Grid and why is it important?",
+        "tags": [
+          {
+            "key": "css",
+            "label": "Css",
+            "url": "./tags/css.html"
+          },
+          {
+            "key": "web-design",
+            "label": "Web-design",
+            "url": "./tags/web-design.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "grid-layout",
+            "label": "Grid-layout",
+            "url": "./tags/grid-layout.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Css",
+    "slug": "css",
+    "url": "./tags/css.html",
+    "count": 3
+  },
+  {
+    "key": "generic",
+    "label": "Generic",
+    "posts": [
+      {
+        "name": "2022-03-24-welcome-to-dout-dev",
+        "title": "Welcome to dout.dev",
+        "date": "2022-03-24T00:00:00.000Z",
+        "dateString": "Thu Mar 24 2022",
+        "path": "./custom/posts/2022-03-24-welcome-to-dout-dev.html",
+        "url": "/posts/2022-03-24-welcome-to-dout-dev/",
+        "excerpt": "Hi, I'm Emiliano \"Pixu\" Pisu.",
+        "tags": [
+          {
+            "key": "generic",
+            "label": "Generic",
+            "url": "./tags/generic.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2022-03-25-concerning",
+        "title": "Concerning…",
+        "date": "2022-03-25T00:00:00.000Z",
+        "dateString": "Fri Mar 25 2022",
+        "path": "./custom/posts/2022-03-25-concerning.html",
+        "url": "/posts/2022-03-25-concerning/",
+        "excerpt": "Concerning Core Web Technologies",
+        "tags": [
+          {
+            "key": "generic",
+            "label": "Generic",
+            "url": "./tags/generic.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Generic",
+    "slug": "generic",
+    "url": "./tags/generic.html",
+    "count": 2
+  },
+  {
+    "key": "a11y",
+    "label": "A11y",
+    "posts": [
+      {
+        "name": "2024-05-19-a11y-by-design",
+        "title": "Accessibility by Design",
+        "date": "2024-05-19T00:41:22.000Z",
+        "dateString": "Sun May 19 2024",
+        "path": "./custom/posts/2024-05-19-a11y-by-design.html",
+        "url": "/posts/2024-05-19-a11y-by-design/",
+        "excerpt": "We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Des",
+        "tags": [
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "design",
+            "label": "Design",
+            "url": "./tags/design.html"
+          },
+          {
+            "key": "responsive",
+            "label": "Responsive",
+            "url": "./tags/responsive.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "A11y",
+    "slug": "a11y",
+    "url": "./tags/a11y.html",
+    "count": 1
+  },
+  {
+    "key": "design",
+    "label": "Design",
+    "posts": [
+      {
+        "name": "2024-05-19-a11y-by-design",
+        "title": "Accessibility by Design",
+        "date": "2024-05-19T00:41:22.000Z",
+        "dateString": "Sun May 19 2024",
+        "path": "./custom/posts/2024-05-19-a11y-by-design.html",
+        "url": "/posts/2024-05-19-a11y-by-design/",
+        "excerpt": "We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Des",
+        "tags": [
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "design",
+            "label": "Design",
+            "url": "./tags/design.html"
+          },
+          {
+            "key": "responsive",
+            "label": "Responsive",
+            "url": "./tags/responsive.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Design",
+    "slug": "design",
+    "url": "./tags/design.html",
+    "count": 1
+  },
+  {
+    "key": "responsive",
+    "label": "Responsive",
+    "posts": [
+      {
+        "name": "2024-05-19-a11y-by-design",
+        "title": "Accessibility by Design",
+        "date": "2024-05-19T00:41:22.000Z",
+        "dateString": "Sun May 19 2024",
+        "path": "./custom/posts/2024-05-19-a11y-by-design.html",
+        "url": "/posts/2024-05-19-a11y-by-design/",
+        "excerpt": "We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Des",
+        "tags": [
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "design",
+            "label": "Design",
+            "url": "./tags/design.html"
+          },
+          {
+            "key": "responsive",
+            "label": "Responsive",
+            "url": "./tags/responsive.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Responsive",
+    "slug": "responsive",
+    "url": "./tags/responsive.html",
+    "count": 1
+  },
+  {
+    "key": "web-design",
+    "label": "Web-design",
+    "posts": [
+      {
+        "name": "2024-10-28-concerning-css-grid",
+        "title": "Introducing CSS Grid - The Future of Web Layout 🎨",
+        "date": "2024-10-28T10:00:00.000Z",
+        "dateString": "Mon Oct 28 2024",
+        "path": "./custom/posts/2024-10-28-concerning-css-grid.html",
+        "url": "/posts/2024-10-28-concerning-css-grid/",
+        "excerpt": "What is CSS Grid and why is it important?",
+        "tags": [
+          {
+            "key": "css",
+            "label": "Css",
+            "url": "./tags/css.html"
+          },
+          {
+            "key": "web-design",
+            "label": "Web-design",
+            "url": "./tags/web-design.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "grid-layout",
+            "label": "Grid-layout",
+            "url": "./tags/grid-layout.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Web-design",
+    "slug": "web-design",
+    "url": "./tags/web-design.html",
+    "count": 1
+  },
+  {
+    "key": "frontend",
+    "label": "Frontend",
+    "posts": [
+      {
+        "name": "2024-10-28-concerning-css-grid",
+        "title": "Introducing CSS Grid - The Future of Web Layout 🎨",
+        "date": "2024-10-28T10:00:00.000Z",
+        "dateString": "Mon Oct 28 2024",
+        "path": "./custom/posts/2024-10-28-concerning-css-grid.html",
+        "url": "/posts/2024-10-28-concerning-css-grid/",
+        "excerpt": "What is CSS Grid and why is it important?",
+        "tags": [
+          {
+            "key": "css",
+            "label": "Css",
+            "url": "./tags/css.html"
+          },
+          {
+            "key": "web-design",
+            "label": "Web-design",
+            "url": "./tags/web-design.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "grid-layout",
+            "label": "Grid-layout",
+            "url": "./tags/grid-layout.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Frontend",
+    "slug": "frontend",
+    "url": "./tags/frontend.html",
+    "count": 1
+  },
+  {
+    "key": "grid-layout",
+    "label": "Grid-layout",
+    "posts": [
+      {
+        "name": "2024-10-28-concerning-css-grid",
+        "title": "Introducing CSS Grid - The Future of Web Layout 🎨",
+        "date": "2024-10-28T10:00:00.000Z",
+        "dateString": "Mon Oct 28 2024",
+        "path": "./custom/posts/2024-10-28-concerning-css-grid.html",
+        "url": "/posts/2024-10-28-concerning-css-grid/",
+        "excerpt": "What is CSS Grid and why is it important?",
+        "tags": [
+          {
+            "key": "css",
+            "label": "Css",
+            "url": "./tags/css.html"
+          },
+          {
+            "key": "web-design",
+            "label": "Web-design",
+            "url": "./tags/web-design.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "grid-layout",
+            "label": "Grid-layout",
+            "url": "./tags/grid-layout.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Grid-layout",
+    "slug": "grid-layout",
+    "url": "./tags/grid-layout.html",
+    "count": 1
+  },
+  {
+    "key": "test",
+    "label": "Test",
+    "posts": [
+      {
+        "name": "2024-12-27-m4-template-test",
+        "title": "M4 Template Test - Cover Image e Syntax Highlighting",
+        "date": "2024-12-27T10:00:00.000Z",
+        "dateString": "Fri Dec 27 2024",
+        "path": "./custom/posts/2024-12-27-m4-template-test.html",
+        "url": "/posts/2024-12-27-m4-template-test/",
+        "excerpt": "Questo è un post di test per verificare tutte le funzionalità implementate nel M4 Post Page.",
+        "tags": [
+          {
+            "key": "test",
+            "label": "Test",
+            "url": "./tags/test.html"
+          },
+          {
+            "key": "m4",
+            "label": "M4",
+            "url": "./tags/m4.html"
+          },
+          {
+            "key": "syntax-highlight-element",
+            "label": "Syntax-highlight-element",
+            "url": "./tags/syntax-highlight-element.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": true
+      }
+    ],
+    "name": "Test",
+    "slug": "test",
+    "url": "./tags/test.html",
+    "count": 1
+  },
+  {
+    "key": "m4",
+    "label": "M4",
+    "posts": [
+      {
+        "name": "2024-12-27-m4-template-test",
+        "title": "M4 Template Test - Cover Image e Syntax Highlighting",
+        "date": "2024-12-27T10:00:00.000Z",
+        "dateString": "Fri Dec 27 2024",
+        "path": "./custom/posts/2024-12-27-m4-template-test.html",
+        "url": "/posts/2024-12-27-m4-template-test/",
+        "excerpt": "Questo è un post di test per verificare tutte le funzionalità implementate nel M4 Post Page.",
+        "tags": [
+          {
+            "key": "test",
+            "label": "Test",
+            "url": "./tags/test.html"
+          },
+          {
+            "key": "m4",
+            "label": "M4",
+            "url": "./tags/m4.html"
+          },
+          {
+            "key": "syntax-highlight-element",
+            "label": "Syntax-highlight-element",
+            "url": "./tags/syntax-highlight-element.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": true
+      }
+    ],
+    "name": "M4",
+    "slug": "m4",
+    "url": "./tags/m4.html",
+    "count": 1
+  },
+  {
+    "key": "syntax-highlight-element",
+    "label": "Syntax-highlight-element",
+    "posts": [
+      {
+        "name": "2024-12-27-m4-template-test",
+        "title": "M4 Template Test - Cover Image e Syntax Highlighting",
+        "date": "2024-12-27T10:00:00.000Z",
+        "dateString": "Fri Dec 27 2024",
+        "path": "./custom/posts/2024-12-27-m4-template-test.html",
+        "url": "/posts/2024-12-27-m4-template-test/",
+        "excerpt": "Questo è un post di test per verificare tutte le funzionalità implementate nel M4 Post Page.",
+        "tags": [
+          {
+            "key": "test",
+            "label": "Test",
+            "url": "./tags/test.html"
+          },
+          {
+            "key": "m4",
+            "label": "M4",
+            "url": "./tags/m4.html"
+          },
+          {
+            "key": "syntax-highlight-element",
+            "label": "Syntax-highlight-element",
+            "url": "./tags/syntax-highlight-element.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": true
+      }
+    ],
+    "name": "Syntax-highlight-element",
+    "slug": "syntax-highlight-element",
+    "url": "./tags/syntax-highlight-element.html",
+    "count": 1
+  },
+  {
+    "key": "blog",
+    "label": "Blog",
+    "posts": [
+      {
+        "name": "2025-08-15-welcome-to-dout-dev-2",
+        "title": "Welcome to dout.dev 2.0",
+        "date": "2025-08-15T00:00:00.000Z",
+        "dateString": "Fri Aug 15 2025",
+        "path": "./custom/posts/2025-08-15-welcome-to-dout-dev-2.html",
+        "url": "/posts/2025-08-15-welcome-to-dout-dev-2/",
+        "excerpt": "Welcome to the New dout.dev",
+        "tags": [
+          {
+            "key": "blog",
+            "label": "Blog",
+            "url": "./tags/blog.html"
+          },
+          {
+            "key": "welcome",
+            "label": "Welcome",
+            "url": "./tags/welcome.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Blog",
+    "slug": "blog",
+    "url": "./tags/blog.html",
+    "count": 1
+  },
+  {
+    "key": "welcome",
+    "label": "Welcome",
+    "posts": [
+      {
+        "name": "2025-08-15-welcome-to-dout-dev-2",
+        "title": "Welcome to dout.dev 2.0",
+        "date": "2025-08-15T00:00:00.000Z",
+        "dateString": "Fri Aug 15 2025",
+        "path": "./custom/posts/2025-08-15-welcome-to-dout-dev-2.html",
+        "url": "/posts/2025-08-15-welcome-to-dout-dev-2/",
+        "excerpt": "Welcome to the New dout.dev",
+        "tags": [
+          {
+            "key": "blog",
+            "label": "Blog",
+            "url": "./tags/blog.html"
+          },
+          {
+            "key": "welcome",
+            "label": "Welcome",
+            "url": "./tags/welcome.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Welcome",
+    "slug": "welcome",
+    "url": "./tags/welcome.html",
+    "count": 1
+  },
+  {
+    "key": "vanilla-js",
+    "label": "Vanilla-js",
+    "posts": [
+      {
+        "name": "2025-08-15-welcome-to-dout-dev-2",
+        "title": "Welcome to dout.dev 2.0",
+        "date": "2025-08-15T00:00:00.000Z",
+        "dateString": "Fri Aug 15 2025",
+        "path": "./custom/posts/2025-08-15-welcome-to-dout-dev-2.html",
+        "url": "/posts/2025-08-15-welcome-to-dout-dev-2/",
+        "excerpt": "Welcome to the New dout.dev",
+        "tags": [
+          {
+            "key": "blog",
+            "label": "Blog",
+            "url": "./tags/blog.html"
+          },
+          {
+            "key": "welcome",
+            "label": "Welcome",
+            "url": "./tags/welcome.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Vanilla-js",
+    "slug": "vanilla-js",
+    "url": "./tags/vanilla-js.html",
+    "count": 1
+  }
+]

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>dout.dev — March 2022</title>
+    <link>https://dout.dev/months/2022-03/</link>
+    <description>RSS feed for posts from March 2022</description>
+    <lastBuildDate>Mon, 08 Sep 2025 11:30:37 GMT</lastBuildDate>
+    <item>
+      <title>Concerning…</title>
+      <link>https://dout.dev/posts/2022-03-25-concerning.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-25-concerning.html</guid>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 GMT</pubDate>
+      <description>Concerning Core Web Technologies</description>
+    </item>
+    <item>
+      <title>Welcome to dout.dev</title>
+      <link>https://dout.dev/posts/2022-03-24-welcome-to-dout-dev.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-24-welcome-to-dout-dev.html</guid>
+      <pubDate>Thu, 24 Mar 2022 00:00:00 GMT</pubDate>
+      <description>Hi, I&apos;m Emiliano &quot;Pixu&quot; Pisu.</description>
+    </item>
+    <item>
+      <title>Building dout.dev blog - Part II</title>
+      <link>https://dout.dev/posts/2022-03-22-building-dout-dev-blog-part-2.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-22-building-dout-dev-blog-part-2.html</guid>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 GMT</pubDate>
+      <description>Building dout.dev blog Part II</description>
+    </item>
+    <item>
+      <title>Building dout.dev blog</title>
+      <link>https://dout.dev/posts/2022-03-21-building-dout-dev-blog.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-21-building-dout-dev-blog.html</guid>
+      <pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate>
+      <description>Less is more!</description>
+    </item>
+    <item>
+      <title>CSS Properties Hierarchy</title>
+      <link>https://dout.dev/posts/2022-03-18-css-properties-hierarchy.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-18-css-properties-hierarchy.html</guid>
+      <pubDate>Fri, 18 Mar 2022 00:00:00 GMT</pubDate>
+      <description>css :root { borderradius: 5px; }</description>
+    </item>
+    <item>
+      <title>Testing CodePen</title>
+      <link>https://dout.dev/posts/2022-03-16-test-codepen.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-16-test-codepen.html</guid>
+      <pubDate>Wed, 16 Mar 2022 00:00:00 GMT</pubDate>
+      <description>&lt;iframe height=&quot;521&quot; style=&quot;width: 100%; minheight: 30rem&quot; scrolling=&quot;no&quot; title=&quot;Pure CSS Slider using ScrollSnap&quot; src=&quot;https://codepen.io/blackmirror1980/embed/aPRXzv?height=521&amp;</description>
+    </item>
+    <item>
+      <title>You can edit CSS</title>
+      <link>https://dout.dev/posts/2022-03-12-you-can-edit-css.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-12-you-can-edit-css.html</guid>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 GMT</pubDate>
+      <description>You can edit CSShttps://codepen.io/davatron5000/pen/mddmRJe</description>
+    </item>
+    <item>
+      <title>Marked - Markdown Parser</title>
+      <link>https://dout.dev/posts/2022-03-03-marked-markdown-parser.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-03-marked-markdown-parser.html</guid>
+      <pubDate>Thu, 03 Mar 2022 15:41:22 GMT</pubDate>
+      <description>How To Use The Demo</description>
+    </item>
+    <item>
+      <title>Custom Grid System</title>
+      <link>https://dout.dev/posts/2022-03-03-custom-grid-system.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-03-custom-grid-system.html</guid>
+      <pubDate>Thu, 03 Mar 2022 14:41:22 GMT</pubDate>
+      <description>Blog under construction</description>
+    </item>
+  </channel>
+</rss>
