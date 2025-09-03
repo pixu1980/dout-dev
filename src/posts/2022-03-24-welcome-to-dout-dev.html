@@ -1,14 +1,57 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Welcome to dout.dev</title></head><body><article><h1>Welcome to dout.dev</h1><div><p>Hi, I'm Emiliano "Pixu" Pisu.</p>
+<extends src="../layouts/base.html">
+
+<block name="head">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Welcome to dout.dev">
+  <meta property="og:description" content="Hi, I'm Emiliano &quot;Pixu&quot; Pisu.">
+  
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "headline": "Welcome to dout.dev",
+        "datePublished": "2022-03-24T00:00:00.000Z",
+        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2022-03-24-welcome-to-dout-dev.html"}
+      }
+  </script>
+</block>
+
+<block name="content">
+  <article itemscope="" itemtype="https://schema.org/BlogPosting">
+    <header>
+      <h1 itemprop="headline">Welcome to dout.dev</h1>
+      <p>
+        <time datetime="2022-03-24" itemprop="datePublished">
+          24 marzo 2022
+        </time>
+      </p>
+      
+      
+        <ul aria-label="Tags">
+          
+            <li><a class="tag" href="/tags/generic.html">Generic</a></li>
+          
+        </ul>
+      
+    </header>
+
+    <section itemprop="articleBody"><p>Hi, I'm Emiliano "Pixu" Pisu.</p>
 <p>I'm a "vintage" developer who loves to code and to share ideas, thoughts, knowledge.</p>
 <p>I'm starting this blog to talk and discuss about web-based technology, honestly most of times i'll focus in UI/UX, because i love it.</p>
 <p>However, in order to be able to talk about User Interaction, we'll need to discuss about:</p>
 <ul>
-<li>core web technologies</li>
-<li>cross browser compatibility (thanks for your time IE but… no thanks!!! 🤣)</li>
-<li>a11y</li>
-<li>performances</li>
-<li>best practices</li>
-<li>responsiveness</li>
-</ul>
+<li>[object Object]</li><li>[object Object]</li><li>[object Object]</li><li>[object Object]</li><li>[object Object]</li><li>[object Object]</li></ul>
 <p>Let's start a new trip together in the world HTML, CSS and JS.</p>
-</div></article></body></html>
+</section>
+
+    <nav aria-label="Post navigation">
+      
+        <a rel="prev" href="/posts/2022-03-22-building-dout-dev-blog-part-2.html">← Building dout.dev blog - Part II</a>
+      
+      
+        <a rel="next" href="/posts/2022-03-25-concerning.html">Concerning… →</a>
+      
+    </nav>
+  </article>
+</block>
+</extends>

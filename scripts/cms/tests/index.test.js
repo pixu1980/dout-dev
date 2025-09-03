@@ -78,7 +78,9 @@ describe('CMS - Main Class', () => {
     const postsDir = join(testDir, 'posts');
     await mkdir(postsDir, { recursive: true });
 
-    await writeFile(join(postsDir, '2023-01-01-test-post.md'), `---
+    await writeFile(
+      join(postsDir, '2023-01-01-test-post.md'),
+      `---
 title: Test Post
 date: 2023-01-01
 tags: [test, sample]
@@ -88,7 +90,8 @@ published: true
 # Test Post
 
 This is a test post.
-`);
+`
+    );
 
     const { CMS } = await import('../index.js');
     const cms = new CMS({
@@ -98,13 +101,15 @@ This is a test post.
     });
 
     // Mock the generators to avoid complex template requirements
-    cms.postProcessor.processAllPosts = async () => [{
-      name: '2023-01-01-test-post.md',
-      title: 'Test Post',
-      date: '2023-01-01',
-      tags: [{ key: 'test', name: 'Test' }],
-      published: true,
-    }];
+    cms.postProcessor.processAllPosts = async () => [
+      {
+        name: '2023-01-01-test-post.md',
+        title: 'Test Post',
+        date: '2023-01-01',
+        tags: [{ key: 'test', name: 'Test' }],
+        published: true,
+      },
+    ];
 
     cms.indexGenerator.generateIndices = async () => ({
       tags: [{ key: 'test', name: 'Test', count: 1 }],
@@ -120,11 +125,11 @@ This is a test post.
     assert.strictEqual(result.posts.length, 1);
 
     // Check console output
-    assert.ok(consoleOutput.some(msg => msg.includes('🚀 Starting CMS build')));
-    assert.ok(consoleOutput.some(msg => msg.includes('📝 Processing markdown posts')));
-    assert.ok(consoleOutput.some(msg => msg.includes('📊 Generating indices')));
-    assert.ok(consoleOutput.some(msg => msg.includes('📄 Generating static pages')));
-    assert.ok(consoleOutput.some(msg => msg.includes('🎉 CMS build completed successfully')));
+    assert.ok(consoleOutput.some((msg) => msg.includes('🚀 Starting CMS build')));
+    assert.ok(consoleOutput.some((msg) => msg.includes('📝 Processing markdown posts')));
+    assert.ok(consoleOutput.some((msg) => msg.includes('📊 Generating indices')));
+    assert.ok(consoleOutput.some((msg) => msg.includes('📄 Generating static pages')));
+    assert.ok(consoleOutput.some((msg) => msg.includes('🎉 CMS build completed successfully')));
   });
 
   test('should handle build errors', async () => {
@@ -144,7 +149,7 @@ This is a test post.
       assert.fail('Should have thrown error');
     } catch (error) {
       assert.strictEqual(error.message, 'Test error');
-      assert.ok(consoleErrors.some(msg => msg.includes('❌ CMS build failed')));
+      assert.ok(consoleErrors.some((msg) => msg.includes('❌ CMS build failed')));
     }
   });
 
@@ -158,7 +163,10 @@ This is a test post.
         name: '2023-01-01-post1.md',
         title: 'Post 1',
         date: '2023-01-01',
-        tags: [{ key: 'test', name: 'Test' }, { key: 'sample', name: 'Sample' }],
+        tags: [
+          { key: 'test', name: 'Test' },
+          { key: 'sample', name: 'Sample' },
+        ],
         published: true,
       },
       {
@@ -183,11 +191,11 @@ This is a test post.
     assert.strictEqual(stats.monthCounts['2023-02'], 1);
 
     // Check console output
-    assert.ok(consoleOutput.some(msg => msg.includes('🔍 Scanning content')));
-    assert.ok(consoleOutput.some(msg => msg.includes('📊 Content Statistics')));
-    assert.ok(consoleOutput.some(msg => msg.includes('Total posts: 2')));
-    assert.ok(consoleOutput.some(msg => msg.includes('Published: 1')));
-    assert.ok(consoleOutput.some(msg => msg.includes('Drafts: 1')));
+    assert.ok(consoleOutput.some((msg) => msg.includes('🔍 Scanning content')));
+    assert.ok(consoleOutput.some((msg) => msg.includes('📊 Content Statistics')));
+    assert.ok(consoleOutput.some((msg) => msg.includes('Total posts: 2')));
+    assert.ok(consoleOutput.some((msg) => msg.includes('Published: 1')));
+    assert.ok(consoleOutput.some((msg) => msg.includes('Drafts: 1')));
   });
 
   test('should validate content with no errors', async () => {
@@ -210,8 +218,8 @@ This is a test post.
     assert.strictEqual(result.errors.length, 0);
     assert.strictEqual(result.warnings.length, 0);
 
-    assert.ok(consoleOutput.some(msg => msg.includes('🔍 Validating content')));
-    assert.ok(consoleOutput.some(msg => msg.includes('✅ Content validation passed')));
+    assert.ok(consoleOutput.some((msg) => msg.includes('🔍 Validating content')));
+    assert.ok(consoleOutput.some((msg) => msg.includes('✅ Content validation passed')));
   });
 
   test('should validate content with errors and warnings', async () => {
@@ -235,12 +243,14 @@ This is a test post.
     assert.ok(result.errors.length > 0);
     assert.ok(result.warnings.length > 0);
 
-    assert.ok(result.errors.some(err => err.includes('Missing title')));
-    assert.ok(result.errors.some(err => err.includes('Missing date')));
-    assert.ok(result.warnings.some(warn => warn.includes("doesn't follow YYYY-MM-DD-slug format")));
+    assert.ok(result.errors.some((err) => err.includes('Missing title')));
+    assert.ok(result.errors.some((err) => err.includes('Missing date')));
+    assert.ok(
+      result.warnings.some((warn) => warn.includes("doesn't follow YYYY-MM-DD-slug format"))
+    );
 
-    assert.ok(consoleOutput.some(msg => msg.includes('❌ Validation errors')));
-    assert.ok(consoleOutput.some(msg => msg.includes('⚠️  Validation warnings')));
+    assert.ok(consoleOutput.some((msg) => msg.includes('❌ Validation errors')));
+    assert.ok(consoleOutput.some((msg) => msg.includes('⚠️  Validation warnings')));
   });
 
   test('should handle validation errors during processing', async () => {
@@ -257,7 +267,7 @@ This is a test post.
       assert.fail('Should have thrown error');
     } catch (error) {
       assert.strictEqual(error.message, 'Processing error');
-      assert.ok(consoleErrors.some(msg => msg.includes('❌ Validation failed')));
+      assert.ok(consoleErrors.some((msg) => msg.includes('❌ Validation failed')));
     }
   });
 
@@ -267,5 +277,4 @@ This is a test post.
 
     assert.strictEqual(CMSDefault, CMS);
   });
-
 });

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>dout.dev — Test-files</title>
+    <link>https://dout.dev/tags/test-files/</link>
+    <description>RSS feed for posts tagged with Test-files</description>
+    <lastBuildDate>Mon, 08 Sep 2025 11:30:36 GMT</lastBuildDate>
+    <item>
+      <title>Markdown test file</title>
+      <link>https://dout.dev/posts/2019-02-06-markdown-test-file.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2019-02-06-markdown-test-file.html</guid>
+      <pubDate>Wed, 06 Feb 2019 00:00:00 GMT</pubDate>
+      <description>Markdown is intended to be as easytoread and easytowrite as is feasible.Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis</description>
+    </item>
+  </channel>
+</rss>

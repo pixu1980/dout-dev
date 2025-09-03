@@ -4,11 +4,12 @@ import { generatePages } from '../page-generator.js';
 
 describe('page-generator', () => {
   test('generatePages should process empty datasets without errors', () => {
-    const dataset = { posts: [], tags: [], months: [] };
+    const dataset = { posts: [], tags: [], months: [], series: [] };
     const config = {
       postsOutputDir: '/tmp/test-posts',
       tagsOutputDir: '/tmp/test-tags',
-      monthsOutputDir: '/tmp/test-months'
+      monthsOutputDir: '/tmp/test-months',
+      seriesOutputDir: '/tmp/test-series',
     };
 
     // Should not throw errors with empty datasets
@@ -20,19 +21,19 @@ describe('page-generator', () => {
   test('generatePages should process all content types', () => {
     const dataset = {
       posts: [
-        { name: 'post1', title: 'Test Post', published: true, content: '<p>Test content</p>' }
+        { name: 'post1', title: 'Test Post', published: true, content: '<p>Test content</p>' },
       ],
       tags: [
-        { key: 'javascript', label: 'JavaScript', posts: [{ name: 'post1', title: 'Test Post' }] }
+        { key: 'javascript', label: 'JavaScript', posts: [{ name: 'post1', title: 'Test Post' }] },
       ],
       months: [
-        { key: '2023-12', label: 'December 2023', posts: [{ name: 'post1', title: 'Test Post' }] }
-      ]
+        { key: '2023-12', label: 'December 2023', posts: [{ name: 'post1', title: 'Test Post' }] },
+      ],
     };
     const config = {
       postsOutputDir: '/tmp/test-posts',
       tagsOutputDir: '/tmp/test-tags',
-      monthsOutputDir: '/tmp/test-months'
+      monthsOutputDir: '/tmp/test-months',
     };
 
     // Should not throw errors
@@ -48,17 +49,15 @@ describe('page-generator', () => {
         {
           key: 'test-tag',
           label: 'Test & Demo <script>',
-          posts: [
-            { name: 'post1', title: 'Post with "quotes" & <tags>' }
-          ]
-        }
+          posts: [{ name: 'post1', title: 'Post with "quotes" & <tags>' }],
+        },
       ],
-      months: []
+      months: [],
     };
     const config = {
       postsOutputDir: '/tmp/test-posts',
       tagsOutputDir: '/tmp/test-tags',
-      monthsOutputDir: '/tmp/test-months'
+      monthsOutputDir: '/tmp/test-months',
     };
 
     // Should not throw errors and should handle escaping
@@ -72,15 +71,15 @@ describe('page-generator', () => {
       posts: [
         { name: 'published', title: 'Published Post', published: true, content: '<p>Content</p>' },
         { name: 'draft', title: 'Draft Post', published: false, content: '<p>Draft</p>' },
-        { name: 'another', title: 'Another Post', published: true, content: '<p>Another</p>' }
+        { name: 'another', title: 'Another Post', published: true, content: '<p>Another</p>' },
       ],
       tags: [],
-      months: []
+      months: [],
     };
     const config = {
       postsOutputDir: '/tmp/test-posts',
       tagsOutputDir: '/tmp/test-tags',
-      monthsOutputDir: '/tmp/test-months'
+      monthsOutputDir: '/tmp/test-months',
     };
 
     // Should not throw errors
@@ -92,18 +91,16 @@ describe('page-generator', () => {
   test('generateGroups should handle both tags and months', () => {
     const dataset = {
       posts: [],
-      tags: [
-        { key: 'js', label: 'JavaScript', posts: [] }
-      ],
+      tags: [{ key: 'js', label: 'JavaScript', posts: [] }],
       months: [
         { key: '2023-12', label: 'December 2023', posts: [] },
-        { key: '2024-01', label: 'January 2024', posts: [] }
-      ]
+        { key: '2024-01', label: 'January 2024', posts: [] },
+      ],
     };
     const config = {
       postsOutputDir: '/tmp/test-posts',
       tagsOutputDir: '/tmp/test-tags',
-      monthsOutputDir: '/tmp/test-months'
+      monthsOutputDir: '/tmp/test-months',
     };
 
     // Should not throw errors with empty tags and months

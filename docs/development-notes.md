@@ -8,13 +8,13 @@ It's almost two years since I decided to build a Developer Blog for Developers.
 
 ### Assumptions
 
-* Author content in Markdown with YAML front‑matter
-* Zero runtime dependencies (vanilla-first)
-* Lightweight, modular ES modules only where strictly needed
-* System & user preference-aware CSS (color scheme, reduced motion)
-* Deterministic build outputs (idempotent)
-* Accessibility (WCAG 2.2 AAA) as a gating requirement
-* Extensible front‑matter (series, pinned, keywords, layout, cover image)
+- Author content in Markdown with YAML front‑matter
+- Zero runtime dependencies (vanilla-first)
+- Lightweight, modular ES modules only where strictly needed
+- System & user preference-aware CSS (color scheme, reduced motion)
+- Deterministic build outputs (idempotent)
+- Accessibility (WCAG 2.2 AAA) as a gating requirement
+- Extensible front‑matter (series, pinned, keywords, layout, cover image)
 
 ### Design System
 
@@ -32,8 +32,8 @@ Once I built an interesting talk about Typography, with the friendship of Albert
 
 I spent a lot of time defining typography goals; I finally picked system-ui + monospace fallback pairs:
 
-* No external font fetching (performance, privacy, resilience)
-* Consistent rendering across devices with minor acceptable variance
+- No external font fetching (performance, privacy, resilience)
+- Consistent rendering across devices with minor acceptable variance
 
 Future consideration: optional variable font self‑hosted subset if it adds measurable readability / accessibility improvements without regressing performance.
 
@@ -41,35 +41,37 @@ Future consideration: optional variable font self‑hosted subset if it adds mea
 
 Current direction:
 
-* Base layout (`layouts/base.html`) encapsulates semantic landmarks (header > nav, main, complementary aside when relevant, footer)
-* Theme & Accent switchers are progressive enhancement: baseline prefers-color-scheme respected even without JS; once hydration script runs, user overrides persisted (localStorage)
-* Header: responsive navigation using a CSS-first hamburger with an accessible disclosure pattern (ARIA attributes, focus management, escape to close)
-* Aside region usage:
-	* Post pages: scroll-spy / table of contents (progressive enhancement) + series navigation if multi-part
-	* Search page: popular posts / quick filters (deferred until search telemetry exists)
-* Cards: post-card, series-card share a tokenized spacing/typography system
-* Pagination component is layout-neutral (works inside tag/month/series/home listings)
+- Base layout (`layouts/base.html`) encapsulates semantic landmarks (header > nav, main, complementary aside when relevant, footer)
+- Theme & Accent switchers are progressive enhancement: baseline prefers-color-scheme respected even without JS; once hydration script runs, user overrides persisted (localStorage)
+- Header: responsive navigation using a CSS-first hamburger with an accessible disclosure pattern (ARIA attributes, focus management, escape to close)
+- Aside region usage:
+  - Post pages: scroll-spy / table of contents (progressive enhancement) + series navigation if multi-part
+  - Search page: popular posts / quick filters (deferred until search telemetry exists)
+- Cards: post-card, series-card share a tokenized spacing/typography system
+- Pagination component is layout-neutral (works inside tag/month/series/home listings)
 
 Open tasks:
-* Decide whether series aggregate landing (`/series/`) ships MVP
-* Evaluate print stylesheet (target minimal reading mode)
-* Confirm minimal offline experience (offline.html) + service worker scope
+
+- Decide whether series aggregate landing (`/series/`) ships MVP
+- Evaluate print stylesheet (target minimal reading mode)
+- Confirm minimal offline experience (offline.html) + service worker scope
 
 ### CMS
 
 Responsibilities snapshot:
 
-* Parse & normalize Markdown front‑matter → structured post objects
-* Generate indices: posts, tags, months, series (+ counts & stable ordering)
-* Ensure template scaffolding exists (idempotent creation) without overwriting manual edits
-* Render pages using template engine; uphold formatting & accessibility invariants
-* Provide watch mode with granular invalidation (only re-render affected artifacts)
-* Emit build & validation diagnostics (JSON report candidate)
+- Parse & normalize Markdown front‑matter → structured post objects
+- Generate indices: posts, tags, months, series (+ counts & stable ordering)
+- Ensure template scaffolding exists (idempotent creation) without overwriting manual edits
+- Render pages using template engine; uphold formatting & accessibility invariants
+- Provide watch mode with granular invalidation (only re-render affected artifacts)
+- Emit build & validation diagnostics (JSON report candidate)
 
 Upcoming enhancements:
-* Partial rebuild heuristics (dependency graph between components/templates and pages)
-* Diff-based index regeneration (avoid rewriting unchanged indices)
-* Pluggable hook system (`preRender`, `postRender`, `afterIndices`) to allow future features (feeds, sitemap) without core churn
+
+- Partial rebuild heuristics (dependency graph between components/templates and pages)
+- Diff-based index regeneration (avoid rewriting unchanged indices)
+- Pluggable hook system (`preRender`, `postRender`, `afterIndices`) to allow future features (feeds, sitemap) without core churn
 
 ---
 
@@ -77,22 +79,22 @@ Upcoming enhancements:
 
 ### 🎉 Major Milestones Completed
 
-* Template Engine core (includes inheritance, filters, loops, conditionals)
-* Layout system + design tokens (layered CSS approach)
-* Post / Tag / Month pages generation
-* Series model & `series.json` specification drafted (implementation pending)
+- Template Engine core (includes inheritance, filters, loops, conditionals)
+- Layout system + design tokens (layered CSS approach)
+- Post / Tag / Month pages generation
+- Series model & `series.json` specification drafted (implementation pending)
 
 ### 🔄 In Progress
 
-* Series page template & integration
-* Header navigation responsive + keyboard interactions
-* Theme & accent persistence script
+- Series page template & integration
+- Header navigation responsive + keyboard interactions
+- Theme & accent persistence script
 
 ### 🧪 Testing Focus
 
-* Add unit tests for series normalization & index integrity
-* Snapshot tests for multi-series membership ordering
-* Validation tests ensuring unpublished / scheduled posts excluded consistently
+- Add unit tests for series normalization & index integrity
+- Snapshot tests for multi-series membership ordering
+- Validation tests ensuring unpublished / scheduled posts excluded consistently
 
 ### 🗺 Next Steps
 

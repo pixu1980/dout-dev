@@ -1,4 +1,43 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Markdown test file</title></head><body><article><h1>Markdown test file</h1><div><p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted
+<extends src="../layouts/base.html">
+
+<block name="head">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markdown test file">
+  <meta property="og:description" content="Markdown is intended to be as easytoread and easytowrite as is feasible.Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis">
+  
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "headline": "Markdown test file",
+        "datePublished": "2019-02-06T00:00:00.000Z",
+        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2019-02-06-markdown-test-file.html"}
+      }
+  </script>
+</block>
+
+<block name="content">
+  <article itemscope="" itemtype="https://schema.org/BlogPosting">
+    <header>
+      <h1 itemprop="headline">Markdown test file</h1>
+      <p>
+        <time datetime="2019-02-06" itemprop="datePublished">
+          6 febbraio 2019
+        </time>
+      </p>
+      
+      
+        <ul aria-label="Tags">
+          
+            <li><a class="tag" href="/tags/markdown.html">Markdown</a></li>
+          
+            <li><a class="tag" href="/tags/test-files.html">Test-files</a></li>
+          
+        </ul>
+      
+    </header>
+
+    <section itemprop="articleBody"><p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted
 document should be publishable as-is, as plain text, without looking
 like it's been marked up with tags or formatting instructions.</p>
 <p>While Markdown's syntax has been influenced by several existing text-to-HTML
@@ -27,7 +66,7 @@ used to open the header. (The number of opening hashes
 determines the header level.)</p>
 <h3>Images</h3>
 <p>Images are added with <code>![Image Alt](./images/image.jpg)</code></p>
-<p><img src="../assets/favicon/android-chrome-512x512.png" alt="Image"></p>
+<p><img data-src="../assets/favicon/android-chrome-512x512.png" alt="Image" loading="lazy" decoding="async" fetchpriority="low"><noscript><img src="../assets/favicon/android-chrome-512x512.png" alt="Image"></noscript></p>
 <h3>Blockquotes</h3>
 <p>Markdown uses email-style <code>&gt;</code> characters for blockquoting. If you're
 familiar with quoting passages of text in an email message, then you
@@ -65,9 +104,7 @@ and code blocks:</p>
 <blockquote>
 <h2>This is a h2 header.</h2>
 <ol>
-<li>This is the first list item.</li>
-<li>This is the second list item.</li>
-</ol>
+<li>[object Object]</li><li>[object Object]</li></ol>
 <p>Here's some example code:</p>
 <pre is="pix-highlighter"><code>return shell_exec("echo $input | $markdown_script");</code></pre></blockquote>
 <p>Any decent text editor should make email-style quoting easy. For
@@ -78,104 +115,54 @@ Quote Level from the Text menu.</p>
 <p>Unordered lists use asterisks, pluses, and hyphens -- interchangably
 -- as list markers:</p>
 <ul>
-<li>Red</li>
-<li>Green</li>
-<li>Blue</li>
-</ul>
+<li>[object Object]</li><li>[object Object]</li><li>[object Object]</li></ul>
 <p>is equivalent to:</p>
 <ul>
-<li>Red</li>
-<li>Green</li>
-<li>Blue</li>
-</ul>
+<li>[object Object]</li><li>[object Object]</li><li>[object Object]</li></ul>
 <p>and:</p>
 <ul>
-<li>Red</li>
-<li>Green</li>
-<li>Blue</li>
-</ul>
+<li>[object Object]</li><li>[object Object]</li><li>[object Object]</li></ul>
 <p>Ordered lists use numbers followed by periods:</p>
 <ol>
-<li>Bird</li>
-<li>McHale</li>
-<li>Parish</li>
-</ol>
+<li>[object Object]</li><li>[object Object]</li><li>[object Object]</li></ol>
 <p>It's important to note that the actual numbers you use to mark the
 list have no effect on the HTML output Markdown produces. The HTML
 Markdown produces from the above list is:</p>
 <p>If you instead wrote the list in Markdown like this:</p>
 <ol>
-<li>Bird</li>
-<li>McHale</li>
-<li>Parish</li>
-</ol>
+<li>[object Object]</li><li>[object Object]</li><li>[object Object]</li></ol>
 <p>or even:</p>
 <ol start="3">
-<li>Bird</li>
-<li>McHale</li>
-<li>Parish</li>
-</ol>
+<li>[object Object]</li><li>[object Object]</li><li>[object Object]</li></ol>
 <p>you'd get the exact same HTML output. The point is, if you want to,
 you can use ordinal numbers in your ordered Markdown lists, so that
 the numbers in your source match the numbers in your published HTML.
 But if you want to be lazy, you don't have to.</p>
 <p>To make lists look nice, you can wrap items with hanging indents:</p>
 <ul>
-<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-viverra nec, fringilla in, laoreet vitae, risus.</li>
-<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-Suspendisse id sem consectetuer libero luctus adipiscing.</li>
-</ul>
+<li>[object Object]</li><li>[object Object]</li></ul>
 <p>But if you want to be lazy, you don't have to:</p>
 <ul>
-<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-viverra nec, fringilla in, laoreet vitae, risus.</li>
-<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-Suspendisse id sem consectetuer libero luctus adipiscing.</li>
-</ul>
+<li>[object Object]</li><li>[object Object]</li></ul>
 <p>List items may consist of multiple paragraphs. Each subsequent
 paragraph in a list item must be indented by either 4 spaces
 or one tab:</p>
 <ol>
-<li><p>This is a list item with two paragraphs. Lorem ipsum dolor
-sit amet, consectetuer adipiscing elit. Aliquam hendrerit
-mi posuere lectus.</p>
-<p>Vestibulum enim wisi, viverra nec, fringilla in, laoreet
-vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
-sit amet velit.</p>
-</li>
-<li><p>Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-</li>
-</ol>
+<li>[object Object]</li><li>[object Object]</li></ol>
 <p>It looks nice if you indent every line of the subsequent
 paragraphs, but here again, Markdown will allow you to be
 lazy:</p>
 <ul>
-<li><p>This is a list item with two paragraphs.</p>
-<pre is="pix-highlighter"><code>This is the second paragraph in the list item. You're</code></pre><p>only required to indent the first line. Lorem ipsum dolor
-sit amet, consectetuer adipiscing elit.</p>
-</li>
-<li><p>Another item in the same list.</p>
-</li>
-</ul>
+<li>[object Object]</li><li>[object Object]</li></ul>
 <p>To put a blockquote within a list item, the blockquote's <code>&gt;</code>
 delimiters need to be indented:</p>
 <ul>
-<li><p>A list item with a blockquote:</p>
-<blockquote>
-<p>This is a blockquote
-inside a list item.</p>
-</blockquote>
-</li>
-</ul>
+<li>[object Object]</li></ul>
 <p>To put a code block within a list item, the code block needs
 to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
 <ul>
-<li>A list item with a code block:</li>
-</ul>
-<pre is="pix-highlighter" lang="html"><code>  &lt;code goes here&gt;</code></pre><h3>Code Blocks</h3>
+<li>[object Object]</li></ul>
+<pre is="pix-highlighter" lang="html"><code>&lt;code goes here&gt;&lt;&#x2F;code&gt;</code></pre><h3>Code Blocks</h3>
 <p>Pre-formatted code blocks are used for writing about programming or
 markup source code. Rather than forming normal paragraphs, the lines
 of a code block are interpreted literally. Markdown wraps a code block
@@ -193,9 +180,7 @@ are automatically converted into HTML entities. This makes it very
 easy to include example HTML source code using Markdown -- just paste
 it and indent it, and Markdown will handle the hassle of encoding the
 ampersands and angle brackets. For example, this:</p>
-<pre is="pix-highlighter" lang="html"><code>  &lt;div class="footer"&gt;
-    &amp;copy; 2004 Foo Corporation
-  &lt;&#x2F;div&gt;</code></pre><p>Regular Markdown syntax is not processed within code blocks. E.g.,
+<pre is="pix-highlighter" lang="html"><code>&lt;div class="footer"&gt;&amp;copy; 2004 Foo Corporation&lt;&#x2F;div&gt;</code></pre><p>Regular Markdown syntax is not processed within code blocks. E.g.,
 asterisks are just literal asterisks within a code block. This means
 it's also easy to use Markdown to write about Markdown's own syntax.</p>
 <pre is="pix-highlighter"><code>tell application "Foo"
@@ -224,4 +209,16 @@ HTML <code>&lt;em&gt;</code> tag; double <code>*</code>'s or <code>_</code>'s wi
 Unlike a pre-formatted code block, a code span indicates code within a
 normal paragraph. For example:</p>
 <p>Use the <code>printf()</code> function.</p>
-</div></article></body></html>
+</section>
+
+    <nav aria-label="Post navigation">
+      
+        <a rel="prev" href="/posts/2019-01-07-a-post-with-a-cover.html">← A post with a cover image</a>
+      
+      
+        <a rel="next" href="/posts/2019-02-07-say-hello-to-gridsome.html">Say hello to Gridsome 🎉 →</a>
+      
+    </nav>
+  </article>
+</block>
+</extends>

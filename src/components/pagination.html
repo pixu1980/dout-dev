@@ -1,142 +1,21 @@
-<!--
-  Pagination Component
-  Usage: include('pagination', { pagination: paginationObject })
--->
-<nav class="pagination" role="navigation" aria-label="Pagination Navigation">
-  <!-- Page info -->
-  <div class="pagination-info">
-    <p class="pagination-summary" id="pagination-summary">
-      <if condition="pagination.total > 0">
-        Showing {{ pagination.start }} to {{ pagination.end }} of {{ pagination.total }} {{ pagination.itemType |
-        default:'items' }}
-        <else> No {{ pagination.itemType | default:'items' }} found </else>
-      </if>
-    </p>
-  </div>
-
-  <if condition="pagination.totalPages > 1">
-    <div class="pagination-controls" aria-describedby="pagination-summary">
-      <ul class="pagination-list" role="list">
-        <!-- First page -->
-        <if condition="pagination.current > 2">
-          <li class="pagination-item">
-            <a href="{{ pagination.firstUrl }}" class="pagination-link pagination-first" aria-label="Go to first page">
-              <span class="pagination-text">First</span>
-              <span class="pagination-icon" aria-hidden="true">⟪</span>
-            </a>
-          </li>
-        </if>
-
-        <!-- Previous page -->
-        <if condition="pagination.prev">
-          <li class="pagination-item">
-            <a
-              href="{{ pagination.prev.url }}"
-              class="pagination-link pagination-prev"
-              rel="prev"
-              aria-label="Go to previous page, page {{ pagination.prev.number }}"
-            >
-              <span class="pagination-icon" aria-hidden="true">‹</span>
-              <span class="pagination-text">Previous</span>
-            </a>
-          </li>
-          <else>
-            <li class="pagination-item pagination-item--disabled">
-              <span class="pagination-link pagination-prev" aria-hidden="true">
-                <span class="pagination-icon" aria-hidden="true">‹</span>
-                <span class="pagination-text">Previous</span>
-              </span>
-            </li>
-          </else>
-        </if>
-
-        <!-- Page numbers -->
-        <for each="page in pagination.pages">
-          <li class="pagination-item{{ page.current ? ' pagination-item--current' : '' }}">
-            <if condition="page.current">
-              <span
-                class="pagination-link pagination-current"
-                aria-current="page"
-                aria-label="Current page, page {{ page.number }}"
-              >
-                {{ page.number }}
-              </span>
-              <else-if condition="page.ellipsis">
-                <span class="pagination-ellipsis" aria-hidden="true">…</span>
-              </else-if>
-              <else>
-                <a
-                  href="{{ page.url }}"
-                  class="pagination-link pagination-number"
-                  aria-label="Go to page {{ page.number }}"
-                >
-                  {{ page.number }}
-                </a>
-              </else>
+<if condition="pagination">
+  <nav class="pagination" aria-label="Pagination">
+    <if condition="pagination.prevHref"><a rel="prev" href="{{ pagination.prevHref }}">Prev</a></if>
+    <ul>
+      <for each="pg in pagination.pages">
+        <li>
+          <if condition="pg.gap">…</if>
+          <if condition="!pg.gap">
+            <if condition="pg.current">
+              <a href="{{ pg.href }}" aria-current="page">{{ pg.page }}</a>
             </if>
-          </li>
-        </for>
-
-        <!-- Next page -->
-        <if condition="pagination.next">
-          <li class="pagination-item">
-            <a
-              href="{{ pagination.next.url }}"
-              class="pagination-link pagination-next"
-              rel="next"
-              aria-label="Go to next page, page {{ pagination.next.number }}"
-            >
-              <span class="pagination-text">Next</span>
-              <span class="pagination-icon" aria-hidden="true">›</span>
-            </a>
-          </li>
-          <else>
-            <li class="pagination-item pagination-item--disabled">
-              <span class="pagination-link pagination-next" aria-hidden="true">
-                <span class="pagination-text">Next</span>
-                <span class="pagination-icon" aria-hidden="true">›</span>
-              </span>
-            </li>
-          </else>
-        </if>
-
-        <!-- Last page -->
-        <if condition="pagination.current < pagination.totalPages - 1">
-          <li class="pagination-item">
-            <a
-              href="{{ pagination.lastUrl }}"
-              class="pagination-link pagination-last"
-              aria-label="Go to last page, page {{ pagination.totalPages }}"
-            >
-              <span class="pagination-icon" aria-hidden="true">⟫</span>
-              <span class="pagination-text">Last</span>
-            </a>
-          </li>
-        </if>
-      </ul>
-
-      <!-- Page size selector (optional) -->
-      <if condition="pagination.showPageSize">
-        <div class="pagination-page-size">
-          <label for="page-size-select" class="pagination-label"> Items per page: </label>
-          <select id="page-size-select" class="pagination-select" onchange="changePaginationSize(this.value)">
-            <for each="size in pagination.pageSizeOptions">
-              <option value="{{ size }}" selected="{{ size === pagination.pageSize }}">{{ size }}</option>
-            </for>
-          </select>
-        </div>
-      </if>
-    </div>
-  </if>
-</nav>
-
-<if condition="pagination.showPageSize">
-  <script>
-    function changePaginationSize(newSize) {
-      const url = new URL(window.location);
-      url.searchParams.set('pageSize', newSize);
-      url.searchParams.set('page', '1'); // Reset to first page
-      window.location.href = url.toString();
-    }
-  </script>
+            <if condition="!pg.current">
+              <a href="{{ pg.href }}">{{ pg.page }}</a>
+            </if>
+          </if>
+        </li>
+      </for>
+    </ul>
+    <if condition="pagination.nextHref"><a rel="next" href="{{ pagination.nextHref }}">Next</a></if>
+  </nav>
 </if>

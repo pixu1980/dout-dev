@@ -3,7 +3,7 @@ title: A NEW post with a NEW cover image
 date: 2021-03-08
 published: true
 tags: ['Markdown', 'Cover Image']
-series: "Images"
+series: 'Images'
 canonical_url: false
 description: One line only description
 ---

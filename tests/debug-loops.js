@@ -1,5 +1,5 @@
-const path = require('path');
-const fs = require('fs');
+const path = require('node:path');
+const fs = require('node:fs');
 
 // Get the template engine
 const cms = require('../scripts/template-engine/index.js');
@@ -11,19 +11,19 @@ const testData = {
     {
       title: 'First Post',
       author: 'John Doe',
-      tags: ['javascript', 'web', 'tutorial']
+      tags: ['javascript', 'web', 'tutorial'],
     },
     {
       title: 'Second Post',
       author: 'Jane Smith',
-      tags: ['css', 'design']
+      tags: ['css', 'design'],
     },
     {
       title: 'Third Post',
       author: 'Bob Wilson',
-      tags: ['html', 'accessibility', 'semantic']
-    }
-  ]
+      tags: ['html', 'accessibility', 'semantic'],
+    },
+  ],
 };
 
 console.log('🔄 Debug Loop Testing...');

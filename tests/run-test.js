@@ -19,26 +19,32 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
  * @param {string} html - HTML da validare
  * @returns {object} Risultato della validazione
  */
-function validateHTMLStructure(html) {
+const SELF_CLOSING_TAGS = [
+  'img',
+  'br',
+  'hr',
+  'input',
+  'meta',
+  'link',
+  'area',
+  'base',
+  'col',
+  'embed',
+  'source',
+  'track',
+  'wbr',
+];
+
+function collectUnbalancedTagErrors(html) {
   const errors = [];
-
-  // Check for unclosed HTML tags
-  const openTags = html.match(/<[^/][^>]*>/g) || [];
-  const closeTags = html.match(/<\/[^>]*>/g) || [];
-
-  // Verifica tag HTML bilanciati
-  const tagStack = [];
-  const selfClosingTags = ['img', 'br', 'hr', 'input', 'meta', 'link', 'area', 'base', 'col', 'embed', 'source', 'track', 'wbr'];
-
   const tagRegex = /<\/?([a-zA-Z][a-zA-Z0-9]*)[^>]*>/g;
+  const tagStack = [];
   let match;
 
   while ((match = tagRegex.exec(html)) !== null) {
     const fullTag = match[0];
     const tagName = match[1].toLowerCase();
-
     if (fullTag.startsWith('</')) {
-      // Closing tag
       if (tagStack.length === 0) {
         errors.push(`Unexpected closing tag: ${fullTag}`);
       } else {
@@ -47,19 +53,19 @@ function validateHTMLStructure(html) {
           errors.push(`Mismatched tag: expected ${lastOpenTag}, found ${tagName}`);
         }
       }
-    } else if (!fullTag.endsWith('/>') && !selfClosingTags.includes(tagName)) {
-      // Opening tag (not self-closing)
+    } else if (!fullTag.endsWith('/>') && !SELF_CLOSING_TAGS.includes(tagName)) {
       tagStack.push(tagName);
     }
-    // Self-closing tags are ignored
   }
 
-  // Check for unclosed tags
   if (tagStack.length > 0) {
     errors.push(`Unclosed tags: ${tagStack.join(', ')}`);
   }
+  return errors;
+}
 
-  // Check for template engine artifacts
+function collectTemplateArtifactErrors(html) {
+  const errors = [];
   const templateArtifacts = [
     /<else-if/,
     /<else(?:\s|>)/,
@@ -80,24 +86,26 @@ function validateHTMLStructure(html) {
     /<extends\s/,
     /<\/extends>/,
     /<block\s/,
-    /<\/block>/
+    /<\/block>/,
   ];
-
   for (const artifact of templateArtifacts) {
     if (artifact.test(html)) {
       errors.push(`Template engine artifact found: ${artifact.source}`);
     }
   }
+  return errors;
+}
 
-  // Check for empty or malformed tags
-  if (/<\s*\/?\s*>/.test(html)) {
-    errors.push('Empty or malformed tags found');
-  }
+function collectMalformedTagErrors(html) {
+  return /<\s*\/?\s*>/.test(html) ? ['Empty or malformed tags found'] : [];
+}
 
-  return {
-    isValid: errors.length === 0,
-    errors
-  };
+function validateHTMLStructure(html) {
+  const errors = [];
+  errors.push(...collectUnbalancedTagErrors(html));
+  errors.push(...collectTemplateArtifactErrors(html));
+  errors.push(...collectMalformedTagErrors(html));
+  return { isValid: errors.length === 0, errors };
 }
 
 console.log('🚀 Starting Template Engine Complete Test...\n');
@@ -122,7 +130,7 @@ try {
   // Inizializza il template engine
   console.log('⚙️  Initializing Template Engine...');
   const engine = new TemplateEngine({
-    rootDir: __dirname
+    rootDir: __dirname,
   });
   console.log('✅ Template Engine initialized\n');
 
@@ -145,18 +153,18 @@ try {
   try {
     execSync(`npx prettier --check "${outputPath}"`, {
       cwd: join(__dirname, '../..'),
-      stdio: 'pipe'
+      stdio: 'pipe',
     });
     console.log('✅ HTML is properly formatted');
-  } catch (prettierError) {
+  } catch (_prettierError) {
     console.log('⚠️  HTML formatting issues detected, attempting to fix...');
     try {
       execSync(`npx prettier --write "${outputPath}"`, {
         cwd: join(__dirname, '../..'),
-        stdio: 'pipe'
+        stdio: 'pipe',
       });
       console.log('✅ HTML has been formatted with Prettier');
-    } catch (fixError) {
+  } catch (_fixError) {
       console.error('❌ Prettier could not format the HTML file');
       console.error('   This indicates serious HTML structure issues');
       throw new Error('HTML formatting validation failed');
@@ -170,7 +178,7 @@ try {
     console.log('✅ HTML structure is valid');
   } else {
     console.error('❌ HTML structure issues found:');
-    htmlValidation.errors.forEach(error => {
+    htmlValidation.errors.forEach((error) => {
       console.error(`   - ${error}`);
     });
     throw new Error('HTML structure validation failed');
@@ -220,7 +228,6 @@ try {
     console.log('⚠️  Some features may need attention');
     process.exit(1);
   }
-
 } catch (error) {
   console.error('❌ Test failed:', error.message);
   console.error(error.stack);

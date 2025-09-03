@@ -3,7 +3,7 @@ title: You can edit CSS
 date: 2022-03-12
 published: true
 tags: ['Markdown', 'Cover Image']
-series: "Testing Codepen"
+series: 'Testing Codepen'
 canonical_url: false
 description: One line only description
 ---

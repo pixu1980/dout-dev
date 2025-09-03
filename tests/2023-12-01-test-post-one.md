@@ -1,14 +1,14 @@
 ---
-title: "Test Post One"
-date: "2023-12-01"
-tags: ["javascript", "web"]
-excerpt: "This is the first test post"
+title: 'Test Post One'
+date: '2023-12-01'
+tags: ['javascript', 'web']
+excerpt: 'This is the first test post'
 published: true
 ---
 
 # Test Post One
 
-This is the content of the first test post. It contains **bold text** and *italic text*.
+This is the content of the first test post. It contains **bold text** and _italic text_.
 
 ## Section
 

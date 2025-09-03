@@ -14,7 +14,7 @@ describe('watch', () => {
     watcher.close();
   });
 
-  test('should call onBuild callback when triggered', (t, done) => {
+  test('should call onBuild callback when triggered', (_t, done) => {
     let callbackCalled = false;
 
     const onBuild = (dataset) => {
@@ -40,7 +40,7 @@ describe('watch', () => {
 
   test('should work with custom configuration', () => {
     const customConfig = {
-      contentDir: 'data/posts'
+      contentDir: 'data/posts',
     };
 
     const watcher = startWatch(customConfig);

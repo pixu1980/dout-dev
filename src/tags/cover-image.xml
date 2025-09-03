@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>dout.dev — Cover-image</title>
+    <link>https://dout.dev/tags/cover-image/</link>
+    <description>RSS feed for posts tagged with Cover-image</description>
+    <lastBuildDate>Mon, 08 Sep 2025 11:30:36 GMT</lastBuildDate>
+    <item>
+      <title>M4 Template Test - Cover Image e Syntax Highlighting</title>
+      <link>https://dout.dev/posts/2024-12-27-m4-template-test.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2024-12-27-m4-template-test.html</guid>
+      <pubDate>Fri, 27 Dec 2024 10:00:00 GMT</pubDate>
+      <description>Questo è un post di test per verificare tutte le funzionalità implementate nel M4 Post Page.</description>
+    </item>
+    <item>
+      <title>Testing CodePen</title>
+      <link>https://dout.dev/posts/2022-03-16-test-codepen.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-16-test-codepen.html</guid>
+      <pubDate>Wed, 16 Mar 2022 00:00:00 GMT</pubDate>
+      <description>&lt;iframe height=&quot;521&quot; style=&quot;width: 100%; minheight: 30rem&quot; scrolling=&quot;no&quot; title=&quot;Pure CSS Slider using ScrollSnap&quot; src=&quot;https://codepen.io/blackmirror1980/embed/aPRXzv?height=521&amp;</description>
+    </item>
+    <item>
+      <title>You can edit CSS</title>
+      <link>https://dout.dev/posts/2022-03-12-you-can-edit-css.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-03-12-you-can-edit-css.html</guid>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 GMT</pubDate>
+      <description>You can edit CSShttps://codepen.io/davatron5000/pen/mddmRJe</description>
+    </item>
+    <item>
+      <title>A NEW post with a NEW cover image</title>
+      <link>https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</guid>
+      <pubDate>Mon, 08 Mar 2021 00:00:00 GMT</pubDate>
+      <description>Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it&apos;s been marked up with tags or f</description>
+    </item>
+    <item>
+      <title>Testing CodePen</title>
+      <link>https://dout.dev/posts/2021-03-07-hating-css-utility-classes.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2021-03-07-hating-css-utility-classes.html</guid>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
+      <description>https://codepen.io/emdeoh/pen/NWdmgVq</description>
+    </item>
+    <item>
+      <title>Testing CodePen</title>
+      <link>https://dout.dev/posts/2021-03-05-gradient-borders.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2021-03-05-gradient-borders.html</guid>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 GMT</pubDate>
+      <description>GRADIENT BORDERS</description>
+    </item>
+    <item>
+      <title>Say Hello to Gridsome NEW</title>
+      <link>https://dout.dev/posts/2021-03-01-say-hello-to-gridsome-new.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2021-03-01-say-hello-to-gridsome-new.html</guid>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 GMT</pubDate>
+      <description>Well.... that&apos;s all</description>
+    </item>
+    <item>
+      <title>A post with a cover image</title>
+      <link>https://dout.dev/posts/2019-01-07-a-post-with-a-cover.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2019-01-07-a-post-with-a-cover.html</guid>
+      <pubDate>Mon, 07 Jan 2019 00:00:00 GMT</pubDate>
+      <description>Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it&apos;s been marked up with tags or f</description>
+    </item>
+  </channel>
+</rss>

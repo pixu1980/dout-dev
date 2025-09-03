@@ -32,7 +32,6 @@ function cleanupTestDir() {
 }
 
 describe('TemplateEngine - Template Inheritance', () => {
-
   test('should process extends and blocks', () => {
     setupTestDir();
 
@@ -70,7 +69,7 @@ describe('TemplateEngine - Template Inheritance', () => {
     const result = engine.render('child.html', {
       title: 'Test Page',
       pageTitle: 'Welcome',
-      pageContent: 'Hello World'
+      pageContent: 'Hello World',
     });
 
     assert.ok(result.includes('Test Page'));
@@ -106,7 +105,7 @@ describe('TemplateEngine - Template Inheritance', () => {
     const result = engine.render('main.html', {
       title: 'Main Page',
       componentTitle: 'Component Title',
-      componentText: 'Component Text'
+      componentText: 'Component Text',
     });
 
     assert.ok(result.includes('Main Page'));
@@ -143,7 +142,7 @@ describe('TemplateEngine - Template Inheritance', () => {
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('main.html', {
       outerTitle: 'Outer Title',
-      innerText: 'Inner Text'
+      innerText: 'Inner Text',
     });
 
     assert.ok(result.includes('Outer Title'));
@@ -205,7 +204,7 @@ describe('TemplateEngine - Template Inheritance', () => {
       pageTitle: 'Welcome to Complex Page',
       year: '2023',
       siteName: 'My Site',
-      sidebarContent: 'Sidebar information'
+      sidebarContent: 'Sidebar information',
     });
 
     assert.ok(result.includes('Complex Page'));
@@ -216,5 +215,4 @@ describe('TemplateEngine - Template Inheritance', () => {
 
     cleanupTestDir();
   });
-
 });

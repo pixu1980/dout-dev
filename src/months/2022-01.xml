@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>dout.dev — January 2022</title>
+    <link>https://dout.dev/months/2022-01/</link>
+    <description>RSS feed for posts from January 2022</description>
+    <lastBuildDate>Mon, 08 Sep 2025 11:30:37 GMT</lastBuildDate>
+    <item>
+      <title>Say hello to 2022 🎉</title>
+      <link>https://dout.dev/posts/2022-01-01-say-hello-2022.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2022-01-01-say-hello-2022.html</guid>
+      <pubDate>Sat, 01 Jan 2022 14:41:22 GMT</pubDate>
+      <description>!example alt text../assets/images/20220225youcanexpresstagstoday.jpg &apos;example Title&apos;</description>
+    </item>
+  </channel>
+</rss>

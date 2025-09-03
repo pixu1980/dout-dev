@@ -28,7 +28,7 @@ description: CSS Properties Hierarchy
   place-items: center;
   justify-self: unset;
   gap: 1rem;
-  
+
   opacity: 1;
   visibility: visible;
 ​

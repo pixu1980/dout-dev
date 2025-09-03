@@ -26,7 +26,7 @@ export class CMS {
       processAllPosts: async () => {
         const dataset = scanContent(this.config);
         return dataset.posts;
-      }
+      },
     };
 
     this.indexGenerator = {
@@ -34,16 +34,16 @@ export class CMS {
         const dataset = scanContent(this.config);
         return {
           tags: dataset.tags,
-          months: dataset.months
+          months: dataset.months,
         };
-      }
+      },
     };
 
     this.pageGenerator = {
       generateAllPages: async () => {
         const dataset = scanContent(this.config);
         return generatePages(dataset, this.config);
-      }
+      },
     };
   }
 
@@ -81,14 +81,14 @@ export class CMS {
 
       const posts = await this.postProcessor.processAllPosts();
 
-      const published = posts.filter(p => p.published);
-      const drafts = posts.filter(p => !p.published);
+      const published = posts.filter((p) => p.published);
+      const drafts = posts.filter((p) => !p.published);
 
       // Count tags
       const tagCounts = {};
       const uniqueTags = new Set();
-      posts.forEach(post => {
-        post.tags.forEach(tag => {
+      posts.forEach((post) => {
+        post.tags.forEach((tag) => {
           const tagKey = typeof tag === 'string' ? tag : tag.key;
           uniqueTags.add(tagKey);
           tagCounts[tagKey] = (tagCounts[tagKey] || 0) + 1;
@@ -98,7 +98,7 @@ export class CMS {
       // Count months
       const monthCounts = {};
       const uniqueMonths = new Set();
-      posts.forEach(post => {
+      posts.forEach((post) => {
         if (post.date) {
           const date = new Date(post.date);
           const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
@@ -114,7 +114,7 @@ export class CMS {
         tags: uniqueTags.size,
         months: uniqueMonths.size,
         tagCounts,
-        monthCounts
+        monthCounts,
       };
 
       console.log('📊 Content Statistics');
@@ -140,7 +140,7 @@ export class CMS {
       const errors = [];
       const warnings = [];
 
-      posts.forEach(post => {
+      posts.forEach((post) => {
         // Check for missing title
         if (!post.title || post.title.trim() === '') {
           errors.push(`${post.name}: Missing title`);

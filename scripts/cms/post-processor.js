@@ -3,6 +3,7 @@ import matter from 'gray-matter';
 import { marked } from 'marked';
 import { createMarkedOptions } from './marked-syntax.js';
 import { slugify } from './utils.js';
+import { resolveAssetPathFromHref, readImageSizeSync } from './image-utils.js';
 
 /**
  * Converts a markdown file (with front-matter) into a normalized post object
@@ -10,6 +11,14 @@ import { slugify } from './utils.js';
  * @param {string} raw raw file content
  * @returns {object} normalized post
  */
+function readCoverSize(data) {
+  const href = data.coverImage || data.cover_image;
+  if (!href) return null;
+  const abs = resolveAssetPathFromHref(href);
+  const size = abs ? readImageSizeSync(abs) : null;
+  return size?.width && size?.height ? size : null;
+}
+
 export function processMarkdown(filePath, raw) {
   const { data, content } = matter(raw);
   const slug = filePath.split('/').pop().replace(/\.md$/i, '');
@@ -18,6 +27,8 @@ export function processMarkdown(filePath, raw) {
   const published = data.published !== false;
   const tagList = normalizeTags(data.tags).map((t) => ({ key: t, label: capitalize(t) }));
   const html = marked(content, createMarkedOptions());
+  // Determine cover dimensions if coverImage points to a local asset
+  const coverSize = readCoverSize(data);
   return {
     name: slug,
     title,
@@ -25,8 +36,15 @@ export function processMarkdown(filePath, raw) {
     dateString: date ? date.toDateString() : null,
     published,
     tags: tagList,
+    series: data.series || null,
     excerpt: buildExcerpt(content),
     content: html,
+    // Cover image support (M4)
+  coverImage: data.coverImage || data.cover_image || null,
+  coverWidth: coverSize?.width,
+  coverHeight: coverSize?.height,
+    coverAlt: data.coverAlt || data.cover_alt || title,
+    coverTitle: data.coverTitle || data.cover_title || undefined,
     pinned: !!data.pinned,
     layout: data.layout || 'post',
   };
@@ -64,7 +82,8 @@ function normalizeTags(tags) {
 function buildExcerpt(md) {
   const first = md.split(/\n\n+/)[0];
   return first
-    .replace(/[#>*`~_\-\[\]()]/g, '')  // Remove markdown symbols
+  // biome-ignore lint/complexity/noUselessEscapeInRegex: '[' and ']' need escaping inside character classes
+  .replace(/[>#*`~_()\[\]-]/g, '') // Remove markdown symbols
     .replace(/\[[^\]]*\]\([^)]*\)/g, '') // Remove complete links [text](url)
     .replace(/\s+/g, ' ') // Normalize multiple spaces
     .slice(0, 180)

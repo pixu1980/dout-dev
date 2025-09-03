@@ -1,5 +1,5 @@
-const path = require('path');
-const fs = require('fs');
+const path = require('node:path');
+const fs = require('node:fs');
 
 // Get the template engine
 const { TemplateRenderer } = require('../scripts/template-engine/renderer.js');
@@ -10,14 +10,14 @@ const testData = {
     {
       title: 'First Post',
       author: 'John Doe',
-      tags: ['javascript', 'web', 'tutorial']
+      tags: ['javascript', 'web', 'tutorial'],
     },
     {
       title: 'Second Post',
       author: 'Jane Smith',
-      tags: ['css', 'design']
-    }
-  ]
+      tags: ['css', 'design'],
+    },
+  ],
 };
 
 console.log('🔄 Array Access Testing...');

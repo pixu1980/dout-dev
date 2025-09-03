@@ -1,2 +1,57 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Say hello to 2022 🎉</title></head><body><article><h1>Say hello to 2022 🎉</h1><div><p><img src="../assets/images/2022-02-25-you-can-express-tags-today.jpg" alt="example alt text" title="example Title"></p>
-</div></article></body></html>
+<extends src="../layouts/base.html">
+
+<block name="head">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Say hello to 2022 🎉">
+  <meta property="og:description" content="!example alt text../assets/images/20220225youcanexpresstagstoday.jpg 'example Title'">
+  <meta property="og:image" content="/./assets/images/alexandr-podvalny-220262-unsplash.jpg">
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "headline": "Say hello to 2022 🎉",
+        "datePublished": "2022-01-01T14:41:22.000Z",
+        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2022-01-01-say-hello-2022.html"}
+      }
+  </script>
+</block>
+
+<block name="content">
+  <article itemscope="" itemtype="https://schema.org/BlogPosting">
+    <header>
+      <h1 itemprop="headline">Say hello to 2022 🎉</h1>
+      <p>
+        <time datetime="2022-01-01" itemprop="datePublished">
+          1 gennaio 2022
+        </time>
+      </p>
+      
+        <figure class="post-cover">
+          <img src="/./assets/images/alexandr-podvalny-220262-unsplash.jpg" alt="Say hello to 2022 🎉" fetchpriority="high" decoding="async" width="1200" height="630">
+        </figure>
+      
+      
+        <ul aria-label="Tags">
+          
+            <li><a class="tag" href="/tags/markdown.html">Markdown</a></li>
+          
+            <li><a class="tag" href="/tags/releases.html">Releases</a></li>
+          
+        </ul>
+      
+    </header>
+
+    <section itemprop="articleBody"><p><picture><source type="image/webp" data-srcset="../assets/images/2022-02-25-you-can-express-tags-today-320.webp 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.webp 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.webp 960w"><source type="image/jpeg" data-srcset="../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w"><img data-src="../assets/images/2022-02-25-you-can-express-tags-today.jpg" alt="example alt text" loading="lazy" decoding="async" fetchpriority="low" data-srcset="../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w" width="1200" height="630" title="example Title"></picture><noscript><img src="../assets/images/2022-02-25-you-can-express-tags-today.jpg" alt="example alt text" srcset="../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w" width="1200" height="630" title="example Title"></noscript></p>
+</section>
+
+    <nav aria-label="Post navigation">
+      
+        <a rel="prev" href="/posts/2021-03-08-a-new-post-with-a-new-cover.html">← A NEW post with a NEW cover image</a>
+      
+      
+        <a rel="next" href="/posts/2022-02-25-you-can-express-tags-today.html">You can use express tags… TODAY! →</a>
+      
+    </nav>
+  </article>
+</block>
+</extends>

@@ -23,7 +23,7 @@ export function validate(userConfig = {}) {
       }
 
       // Check for duplicate names
-      const duplicates = posts.filter(p => p.name === post.name);
+      const duplicates = posts.filter((p) => p.name === post.name);
       if (duplicates.length > 1) {
         errors.push(`Duplicate post name: ${post.name}`);
       }
@@ -58,4 +58,6 @@ export async function main() {
   }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) { main(); }
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main();
+}

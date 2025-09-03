@@ -1,9 +1,46 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Concerning…</title></head><body><article><h1>Concerning…</h1><div><h2>Concerning Core Web Technologies</h2>
+<extends src="../layouts/base.html">
+
+<block name="head">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Concerning…">
+  <meta property="og:description" content="Concerning Core Web Technologies">
+  
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "headline": "Concerning…",
+        "datePublished": "2022-03-25T00:00:00.000Z",
+        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2022-03-25-concerning.html"}
+      }
+  </script>
+</block>
+
+<block name="content">
+  <article itemscope="" itemtype="https://schema.org/BlogPosting">
+    <header>
+      <h1 itemprop="headline">Concerning…</h1>
+      <p>
+        <time datetime="2022-03-25" itemprop="datePublished">
+          25 marzo 2022
+        </time>
+      </p>
+      
+      
+        <ul aria-label="Tags">
+          
+            <li><a class="tag" href="/tags/generic.html">Generic</a></li>
+          
+        </ul>
+      
+    </header>
+
+    <section itemprop="articleBody"><h2>Concerning Core Web Technologies</h2>
 <p>I truly believe in the following idea:</p>
 <blockquote>
 <p>Let the technologies do the job they were designed for</p>
 </blockquote>
-<p>We'll explore in detail... Building a CSS codebase from scratch can be very hard, but also fun and productive. </p>
+<p>We'll explore in detail... Building a CSS codebase from scratch can be very hard, but also fun and productive.</p>
 <hr>
 <h2>Concerning UI/UX</h2>
 <p>Analyzing and implementing a Design and its related User Experience can be one of the funniest and challenging things to do.</p>
@@ -20,4 +57,16 @@
 <blockquote>
 <p>Reacting to the environment</p>
 </blockquote>
-</div></article></body></html>
+</section>
+
+    <nav aria-label="Post navigation">
+      
+        <a rel="prev" href="/posts/2022-03-24-welcome-to-dout-dev.html">← Welcome to dout.dev</a>
+      
+      
+        <a rel="next" href="/posts/2023-01-01-say-hello-2023.html">Say hello to 2023 🎉 →</a>
+      
+    </nav>
+  </article>
+</block>
+</extends>

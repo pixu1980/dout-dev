@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test:
@@ -15,52 +15,78 @@ jobs:
         node-version: [22.x]
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Validate Template Syntax
-      run: |
-        echo "🔍 Checking for forbidden Liquid/Jekyll syntax in templates..."
-        LIQUID_FILES=$(grep -r "{%" src/ || true)
-        if [ ! -z "$LIQUID_FILES" ]; then
-          echo "❌ ERROR: Found forbidden Liquid/Jekyll syntax in templates:"
-          echo "$LIQUID_FILES"
-          echo ""
-          echo "This project uses CUSTOM template engine syntax:"
-          echo "  ❌ {% if %} → ✅ <if condition=\"...\">"
-          echo "  ❌ {% for %} → ✅ <for each=\"... in ...\">"
-          echo "  ❌ {% include %} → ✅ <include src=\"...\">"
-          echo "  ❌ {% extends %} → ✅ <extends layout=\"...\">"
-          echo ""
-          echo "See COPILOT_RULES.md and docs/technical-specs.md for complete syntax reference."
-          exit 1
-        fi
-        echo "✅ Template syntax validation passed!"
+      - name: Verify favicons present (fail fast)
+        run: |
+          echo "🔍 Verifying required favicons are present..."
+          node scripts/check-favicons.js
 
-    - name: Run tests
-      run: npm test
+      - name: Check CSS formatting
+        run: |
+          echo "🔧 Checking CSS formatting with Prettier..."
+          npx prettier --check "src/styles/**/*.css"
 
-    - name: Lint code
-      run: npm run lint
+      - name: Validate Template Syntax
+        run: |
+          echo "🔍 Checking for forbidden Liquid/Jekyll syntax in templates..."
+          # Use an escaped pattern so this workflow file doesn't itself contain the literal '{%'
+          LIQUID_FILES=$(grep -r "\\{\%" src/ || true)
+          if [ ! -z "$LIQUID_FILES" ]; then
+            echo "❌ ERROR: Found forbidden Liquid/Jekyll syntax in templates:"
+            echo "$LIQUID_FILES"
+            echo ""
+            echo "This project uses CUSTOM template engine syntax:"
+            echo "  ❌ {%% if %%} → ✅ <if condition=\"...\">"
+            echo "  ❌ {%% for %%} → ✅ <for each=\"... in ...\">"
+            echo "  ❌ {%% include %%} → ✅ <include src=\"...\">"
+            echo "  ❌ {%% extends %%} → ✅ <extends layout=\"...\">"
+            echo ""
+            echo "See COPILOT_RULES.md and docs/technical-specs.md for complete syntax reference."
+            exit 1
+          fi
+          echo "✅ Template syntax validation passed!"
 
-    - name: Build CMS
-      run: npm run cms:build
+      - name: Run tests
+        run: npm test
 
-    - name: Build site
-      run: npm run build
+      - name: Lint code
+        run: npm run lint
 
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: dist
-        path: dist/
-        retention-days: 7
+      - name: Build CMS
+        run: npm run cms:build
+
+      - name: Build site
+        run: npm run build
+
+      - name: Verify manifest contains CSS assets
+        run: |
+          echo "🔍 Verifying build manifest for CSS assets..."
+          node scripts/verify-manifest.cjs
+
+      - name: Verify index includes CSS
+        run: |
+          echo "🔍 Verifying dist/index.html includes CSS link to /assets/*.css..."
+          node scripts/verify-index-css.cjs
+
+      - name: Compare manifest and index
+        run: |
+          echo "🔍 Ensuring manifest CSS assets are referenced in dist/index.html..."
+          node scripts/compare-manifest-index.cjs
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 7

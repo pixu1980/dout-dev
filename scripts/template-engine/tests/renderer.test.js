@@ -8,10 +8,7 @@ describe('TemplateEngine - Renderer', () => {
   test('DOM renderer - nested loops and include', () => {
     const renderer = new TemplateRenderer(path.resolve('./'));
     // Percorsi corretti (prima erano 'tests/example/...')
-    const template = fs.readFileSync(
-      path.join(process.cwd(), 'tests/debug-template.html'),
-      'utf8'
-    );
+    const template = fs.readFileSync(path.join(process.cwd(), 'tests/debug-template.html'), 'utf8');
     const data = JSON.parse(
       fs.readFileSync(path.join(process.cwd(), 'tests/simple-test-data.json'), 'utf8')
     );
@@ -199,7 +196,7 @@ describe('TemplateEngine - Renderer', () => {
     const result = renderer.renderString(template, {}, { currentDir: path.resolve('./') });
 
     // Should include warning about failed include
-    assert.ok(warnings.some(warn => warn.includes('Include failed')));
+    assert.ok(warnings.some((warn) => warn.includes('Include failed')));
     assert.ok(result.includes('Regular content'));
 
     // Restore console.warn

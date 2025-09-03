@@ -13,8 +13,10 @@ global.HTMLPreElement = dom.window.HTMLPreElement || class extends HTMLElement {
 if (!global.customElements) {
   const registry = new Map();
   global.customElements = {
-    define: (n, c) => { registry.set(n, c); },
-    get: (n) => registry.get(n)
+    define: (n, c) => {
+      registry.set(n, c);
+    },
+    get: (n) => registry.get(n),
   };
 }
 
@@ -22,12 +24,28 @@ if (!global.customElements) {
 if (!document.createRange) {
   document.createRange = () => ({
     setStart() {},
-    setEnd() {}
+    setEnd() {},
   });
 }
 
 // Dynamically import module AFTER globals prepared
-let PixHighlighter, normalizeLang, lexJS, lexTS, lexCSS, lexJSON, lexHTML, lexPython, lexRust, lexC, lexCPP, lexPHP, lexCSharp, lexGo, lexMarkdown, lexYAML, lexBash;
+let PixHighlighter,
+  normalizeLang,
+  lexJS,
+  lexTS,
+  lexCSS,
+  lexJSON,
+  lexHTML,
+  lexPython,
+  lexRust,
+  lexC,
+  lexCPP,
+  lexPHP,
+  lexCSharp,
+  lexGo,
+  lexMarkdown,
+  lexYAML,
+  lexBash;
 before(async () => {
   const mod = await import(new URL('./pix-highlighter.js', import.meta.url));
   ({
@@ -47,18 +65,28 @@ before(async () => {
     lexGo,
     lexMarkdown,
     lexYAML,
-    lexBash
+    lexBash,
   } = mod);
 });
 // NOTE: Highlight behavior with the real CSS Highlight API isn't reliably testable in pure Node + JSDOM
 // for customized built-ins, so we focus on lexer + utility coverage which represents the bulk of logic.
 
-function createPseudoInstance({ supportsHighlight = true, code = 'let n = 10;', lang = 'js' } = {}) {
+function createPseudoInstance({
+  supportsHighlight = true,
+  code = 'let n = 10;',
+  lang = 'js',
+} = {}) {
   if (!global.MutationObserver) {
     global.MutationObserver = class {
-      constructor(cb){ this._cb = cb; }
-      observe(){ /* noop */ }
-      disconnect(){ /* noop */ }
+      constructor(cb) {
+        this._cb = cb;
+      }
+      observe() {
+        /* noop */
+      }
+      disconnect() {
+        /* noop */
+      }
     };
   }
   const host = document.createElement('pre');
@@ -81,8 +109,12 @@ describe('lexer + util coverage', () => {
   test('constructor and lifecycle', () => {
     global.window.CSS = { highlights: new Map() };
     global.CSS = global.window.CSS;
-    function Highlight() { this._r = []; }
-    Highlight.prototype.add = function(r) { this._r.push(r); };
+    function Highlight() {
+      this._r = [];
+    }
+    Highlight.prototype.add = function (r) {
+      this._r.push(r);
+    };
     global.Highlight = Highlight;
     global.window.Highlight = Highlight;
     const inst = createPseudoInstance({ code: 'let n = 10;' });
@@ -104,8 +136,12 @@ describe('lexer + util coverage', () => {
   test('_observe sets mutation observer and reacts', () => {
     global.window.CSS = { highlights: new Map() };
     global.CSS = global.window.CSS;
-    function Highlight() { this._r = []; }
-    Highlight.prototype.add = function(r) { this._r.push(r); };
+    function Highlight() {
+      this._r = [];
+    }
+    Highlight.prototype.add = function (r) {
+      this._r.push(r);
+    };
     global.Highlight = Highlight;
     const inst = createPseudoInstance({ code: 'let a=1;' });
     document.body.appendChild(inst);
@@ -119,9 +155,13 @@ describe('lexer + util coverage', () => {
   test('internal highlight mechanics', () => {
     // Setup highlight support
     global.window.CSS = { highlights: new Map() };
-  global.CSS = global.window.CSS;
-    function Highlight() { this._r = []; }
-    Highlight.prototype.add = function(r) { this._r.push(r); };
+    global.CSS = global.window.CSS;
+    function Highlight() {
+      this._r = [];
+    }
+    Highlight.prototype.add = function (r) {
+      this._r.push(r);
+    };
     global.window.Highlight = Highlight;
     global.Highlight = Highlight;
     // ensure CSS.highlights.set is available
@@ -131,10 +171,10 @@ describe('lexer + util coverage', () => {
     }
 
     // Create pseudo instance without calling real constructor (customized built-in complexity)
-  const host = document.createElement('pre');
-  const inst = Object.setPrototypeOf(host, PixHighlighter.prototype);
-  inst._id = 'test';
-  inst.dataset.pixId = 'test';
+    const host = document.createElement('pre');
+    const inst = Object.setPrototypeOf(host, PixHighlighter.prototype);
+    inst._id = 'test';
+    inst.dataset.pixId = 'test';
     inst._names = [];
     inst._mo = null;
     inst._lastText = '';
@@ -142,7 +182,10 @@ describe('lexer + util coverage', () => {
     const codeEl = {
       textContent: 'const answer = 42;\n// comment',
       firstChild: null,
-      appendChild(node) { this.firstChild = node; return node; }
+      appendChild(node) {
+        this.firstChild = node;
+        return node;
+      },
     };
     inst.querySelector = (sel) => (sel === 'code' ? codeEl : null);
     inst.getAttribute = () => 'js';
@@ -159,7 +202,7 @@ describe('lexer + util coverage', () => {
     // Provide document.createRange implementation returning object with setStart/setEnd
     document.createRange = () => ({
       setStart() {},
-      setEnd() {}
+      setEnd() {},
     });
     PixHighlighter.prototype._reHighlight.call(inst);
     assert.ok(inst._names.length > 0, 'highlight names populated');
@@ -216,35 +259,61 @@ describe('lexer + util coverage', () => {
   test('lexYAML', () => ensureTokens(lexYAML, 'a: 1\nlist:\n  - item'));
 
   test('lexer branch stress', () => {
-    ensureTokens(lexJS, `/* multi */ // line\nconst x = 0x1f + 0b1010 + 0o77 + 1.23e-4; let s = "str"; let t = 'a'; let tmpl = \`hi ${'${'}x}${'`'}; /\\w+/i.test("abc");`);
-    ensureTokens(lexCSS, `@media screen { body#id.class[data-x="y"]::before { content: "hi"; color: #fff; margin: 0 1rem; } } /* c */`);
+    ensureTokens(
+      lexJS,
+      `/* multi */ // line\nconst x = 0x1f + 0b1010 + 0o77 + 1.23e-4; let s = "str"; let t = 'a'; let tmpl = \`hi ${'${'}x}${'`'}; /\\w+/i.test("abc");`
+    );
+    ensureTokens(
+      lexCSS,
+      `@media screen { body#id.class[data-x="y"]::before { content: "hi"; color: #fff; margin: 0 1rem; } } /* c */`
+    );
     ensureTokens(lexHTML, '<!--c--><div class="c" data-x=1><span/>Text</div>');
-    ensureTokens(lexMarkdown, '# H1\n\n> Quote\n\n- item\n\n---\n\n![alt](img.png) `code` **bold** *em*');
+    ensureTokens(
+      lexMarkdown,
+      '# H1\n\n> Quote\n\n- item\n\n---\n\n![alt](img.png) `code` **bold** *em*'
+    );
     ensureTokens(lexBash, '#!/bin/bash\n# c\nVAR=1; if [ "$VAR" -eq 1 ]; then echo done; fi');
-    ensureTokens(lexPython, '# c\n@decorator\nclass X:\n    def f(self):\n        s = f"val={1}"\n        return s');
-    ensureTokens(lexGo, 'package main\nimport "fmt"\nfunc main(){ type S struct{}; fmt.Println("ok") }');
+    ensureTokens(
+      lexPython,
+      '# c\n@decorator\nclass X:\n    def f(self):\n        s = f"val={1}"\n        return s'
+    );
+    ensureTokens(
+      lexGo,
+      'package main\nimport "fmt"\nfunc main(){ type S struct{}; fmt.Println("ok") }'
+    );
     ensureTokens(lexRust, 'fn main(){ let mut x: i32 = 5; println!("{}", x); }');
     ensureTokens(lexC, '#define X 1\nint main(){ /*c*/ return X; }');
     ensureTokens(lexCPP, '#include <vector>\nnamespace N { template<class T> class X{}; }');
     ensureTokens(lexPHP, '<?php /*c*/ function f($x){ echo $x; } ?>');
     ensureTokens(lexCSharp, 'using System; class X<T>{ int F()=>1; }');
     ensureTokens(lexYAML, 'list:\n  - a\n  - b\nobj:\n  k: v');
-  ensureTokens(lexPython, '"""docstring"""\n"""multi\nline"""');
-  ensureTokens(lexJS, 'const n = 1.2e+10; const tpl = "a-" + (1+2);');
-  // Additional edge cases per language to exercise rare branches
-  ensureTokens(lexJS, 'class A extends B { #p = 1; static get [Symbol.toStringTag](){return "A";} } // private field');
-  ensureTokens(lexCSS, ':root { --var: 10px; } @supports(display:grid){ [data-x^="a"], a:hover::after { content:"" } }');
-  ensureTokens(lexHTML, '<!DOCTYPE html><div data-x=1 data-y=2 class=one id="i">Text<!--c--></div>');
-  ensureTokens(lexJSON, '{"num":-12.5e+2,"hex":0x1f,"arr":[1,2,3],"nested":{"k":true}}');
-  ensureTokens(lexMarkdown, '## Heading2\n`inline`***bold+em***___emphasis___');
-  ensureTokens(lexBash, 'VAR="str with spaces"; for f in *.js; do echo "$f"; done');
-  ensureTokens(lexPython, 'r"raw" u"unic" f"fstr{1}" b"bytes"');
-  ensureTokens(lexRust, 'macro_rules! m { ($name:ident)=>{}} fn main(){ let c = b"bytes"; }');
-  ensureTokens(lexC, '#ifdef X\n#define Y 2\n#endif\nchar c=\'x\';');
-  ensureTokens(lexCPP, 'template<typename T> struct X { const char* s = "str"; }; // comment');
-  ensureTokens(lexPHP, '<?php $x = function($a){return $a+1;}; /* multi */ ?>');
-  ensureTokens(lexCSharp, '@attribute using static System.Math; class G{ string s = @"multi\\nline"; }');
-  ensureTokens(lexYAML, 'a: |\n  multi\n  line\n# comment');
+    ensureTokens(lexPython, '"""docstring"""\n"""multi\nline"""');
+    ensureTokens(lexJS, 'const n = 1.2e+10; const tpl = "a-" + (1+2);');
+    // Additional edge cases per language to exercise rare branches
+    ensureTokens(
+      lexJS,
+      'class A extends B { #p = 1; static get [Symbol.toStringTag](){return "A";} } // private field'
+    );
+    ensureTokens(
+      lexCSS,
+      ':root { --var: 10px; } @supports(display:grid){ [data-x^="a"], a:hover::after { content:"" } }'
+    );
+    ensureTokens(
+      lexHTML,
+      '<!DOCTYPE html><div data-x=1 data-y=2 class=one id="i">Text<!--c--></div>'
+    );
+    ensureTokens(lexJSON, '{"num":-12.5e+2,"hex":0x1f,"arr":[1,2,3],"nested":{"k":true}}');
+    ensureTokens(lexMarkdown, '## Heading2\n`inline`***bold+em***___emphasis___');
+    ensureTokens(lexBash, 'VAR="str with spaces"; for f in *.js; do echo "$f"; done');
+    ensureTokens(lexPython, 'r"raw" u"unic" f"fstr{1}" b"bytes"');
+    ensureTokens(lexRust, 'macro_rules! m { ($name:ident)=>{}} fn main(){ let c = b"bytes"; }');
+    ensureTokens(lexC, "#ifdef X\n#define Y 2\n#endif\nchar c='x';");
+    ensureTokens(lexCPP, 'template<typename T> struct X { const char* s = "str"; }; // comment');
+    ensureTokens(lexPHP, '<?php $x = function($a){return $a+1;}; /* multi */ ?>');
+    ensureTokens(
+      lexCSharp,
+      '@attribute using static System.Math; class G{ string s = @"multi\\nline"; }'
+    );
+    ensureTokens(lexYAML, 'a: |\n  multi\n  line\n# comment');
   });
 });
-

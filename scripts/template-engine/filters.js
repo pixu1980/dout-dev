@@ -2,6 +2,40 @@
 import { marked } from 'marked';
 import { createMarkedOptions } from '../cms/marked-syntax.js';
 
+// Small internal helpers (kept outside filters to keep per-filter complexity low)
+function utilSlug(value) {
+  return String(value)
+    .toLowerCase()
+    .trim()
+    .replace(/[\s\W-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function ensureRootAbsolute(url) {
+  if (url === undefined || url === null) return '';
+  const s = String(url).trim();
+  if (!s) return '';
+  if (/^https?:\/\//i.test(s)) return s; // absolute external
+  if (s.startsWith('/')) return s; // already root-absolute
+  if (s.startsWith('./')) return s.slice(1); // "./tags/x.html" -> "/tags/x.html"
+  return `/${s.replace(/^\.?\/*/, '')}`; // "tags/x.html" -> "/tags/x.html"
+}
+
+function getTagHref(tag) {
+  if (!tag) return '/tags/';
+  if (typeof tag === 'object') {
+    if (tag.url) return ensureRootAbsolute(tag.url);
+    const keyOrName = tag.key || tag.name || tag.label || String(tag);
+    return `/tags/${utilSlug(keyOrName)}.html`;
+  }
+  return `/tags/${utilSlug(tag)}.html`;
+}
+
+function getTagLabel(tag) {
+  if (!tag) return '';
+  return typeof tag === 'object' ? tag.label || tag.name || String(tag) : String(tag);
+}
+
 /**
  * Register all built-in filters
  * @param {TemplateRenderer} renderer
@@ -16,13 +50,10 @@ export function registerBuiltinFilters(renderer) {
   });
 
   // URL and slug filters
-  renderer.registerFilter('slug', (value) => {
-    return String(value)
-      .toLowerCase()
-      .trim()
-      .replace(/[\s\W-]+/g, '-')
-      .replace(/^-+|-+$/g, '');
-  });
+  renderer.registerFilter('slug', (value) => utilSlug(value));
+
+  // Normalize URL to root-absolute when appropriate
+  renderer.registerFilter('absUrl', (value) => ensureRootAbsolute(value));
 
   // HTML and security filters
   renderer.registerFilter('escapeHtml', (value) => {
@@ -32,9 +63,9 @@ export function registerBuiltinFilters(renderer) {
       '>': '&gt;',
       '"': '&quot;',
       "'": '&#x27;',
-      '/': '&#x2F;',
+      // '/' not required in modern escaping map
     };
-    return String(value).replace(/[&<>"'/]/g, (s) => htmlEscapeMap[s]);
+    return String(value).replace(/[&<>"']/g, (s) => htmlEscapeMap[s]);
   });
 
   renderer.registerFilter('raw', (value) => value); // No escaping
@@ -67,6 +98,7 @@ export function registerBuiltinFilters(renderer) {
   });
 
   // Date formatting filter
+  // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: filter intentionally supports many formats/locales
   renderer.registerFilter('date', (value, format = 'it-IT') => {
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return value;
@@ -87,28 +119,28 @@ export function registerBuiltinFilters(renderer) {
           weekday: 'long',
           year: 'numeric',
           month: 'long',
-          day: 'numeric'
+          day: 'numeric',
         });
 
       case 'long':
         return date.toLocaleDateString('it-IT', {
           year: 'numeric',
           month: 'long',
-          day: 'numeric'
+          day: 'numeric',
         });
 
       case 'medium':
         return date.toLocaleDateString('it-IT', {
           year: 'numeric',
           month: 'short',
-          day: 'numeric'
+          day: 'numeric',
         });
 
       case 'short':
         return date.toLocaleDateString('it-IT', {
           year: '2-digit',
           month: 'numeric',
-          day: 'numeric'
+          day: 'numeric',
         });
 
       case 'iso':
@@ -118,8 +150,20 @@ export function registerBuiltinFilters(renderer) {
         return date.toISOString().split('T')[0];
 
       case 'DD MMM YYYY': {
-        const months = ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu',
-                       'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'];
+        const months = [
+          'Gen',
+          'Feb',
+          'Mar',
+          'Apr',
+          'Mag',
+          'Giu',
+          'Lug',
+          'Ago',
+          'Set',
+          'Ott',
+          'Nov',
+          'Dic',
+        ];
         const day = date.getDate().toString().padStart(2, '0');
         const month = months[date.getMonth()];
         const year = date.getFullYear();
@@ -130,7 +174,8 @@ export function registerBuiltinFilters(renderer) {
         return date.toLocaleTimeString('it-IT');
 
       case 'datetime':
-        return date.toLocaleString('it-IT');      default: {
+        return date.toLocaleString('it-IT');
+      default: {
         // If it's not a predefined format, treat as locale
         const options = {
           year: 'numeric',
@@ -138,7 +183,13 @@ export function registerBuiltinFilters(renderer) {
           day: 'numeric',
         };
 
-        return date.toLocaleDateString(format, options);
+        // Try to use as locale, fallback to 'it-IT' if invalid
+        try {
+          return date.toLocaleDateString(format, options);
+        } catch (_e) {
+          console.warn(`Invalid locale "${format}", falling back to 'it-IT'`);
+          return date.toLocaleDateString('it-IT', options);
+        }
       }
     }
   });
@@ -147,19 +198,21 @@ export function registerBuiltinFilters(renderer) {
   renderer.registerFilter('trim', (value) => String(value).trim());
   renderer.registerFilter('truncate', (value, length = 100) => {
     const str = String(value);
-    return str.length > length ? str.substring(0, length) + '...' : str;
+  return str.length > length ? `${str.substring(0, length)}...` : str;
   });
 
   // Array filters
   renderer.registerFilter('join', (value, separator = ', ') => {
     if (Array.isArray(value)) {
-      return value.map(item => {
-        // Handle tag objects {key, label}
-        if (typeof item === 'object' && item.label) {
-          return item.label;
-        }
-        return String(item);
-      }).join(separator);
+      return value
+        .map((item) => {
+          // Handle tag objects {key, label}
+          if (typeof item === 'object' && item.label) {
+            return item.label;
+          }
+          return String(item);
+        })
+        .join(separator);
     }
     return value;
   });
@@ -176,6 +229,15 @@ export function registerBuiltinFilters(renderer) {
     return value !== undefined && value !== null && value !== '' ? value : defaultValue;
   });
 
+  // Serialize value as JSON string (useful for JSON-LD strings)
+  renderer.registerFilter('json', (value) => {
+    try {
+      return JSON.stringify(value);
+    } catch {
+      return JSON.stringify(String(value));
+    }
+  });
+
   // Additional filters for comprehensive testing
   renderer.registerFilter('number', (value, decimals = 0) => {
     const num = Number(value);
@@ -188,7 +250,7 @@ export function registerBuiltinFilters(renderer) {
     if (Number.isNaN(num)) return value;
     return new Intl.NumberFormat('it-IT', {
       style: 'currency',
-      currency: currency
+      currency: currency,
     }).format(num);
   });
 
@@ -213,6 +275,7 @@ export function registerBuiltinFilters(renderer) {
     return value;
   });
 
+  // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: readable step-wise logic for UX strings
   renderer.registerFilter('timeAgo', (value) => {
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return value;
@@ -229,5 +292,87 @@ export function registerBuiltinFilters(renderer) {
     if (diffDays < 30) return `${diffDays} ${diffDays === 1 ? 'giorno' : 'giorni'} fa`;
 
     return date.toLocaleDateString('it-IT');
+  });
+
+  // Additional missing filters
+  renderer.registerFilter('slugify', (value) => {
+    return String(value)
+      .toLowerCase()
+      .trim()
+      .replace(/[\s\W-]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  });
+
+  renderer.registerFilter('urlencode', (value) => {
+    return encodeURIComponent(String(value));
+  });
+
+  // Derive tag href from tag object or string
+  renderer.registerFilter('tagHref', (tag) => getTagHref(tag));
+
+  // Derive tag label from tag object or string
+  renderer.registerFilter('tagLabel', (tag) => getTagLabel(tag));
+
+  renderer.registerFilter('slice', (value, start = 0, end = undefined) => {
+    if (Array.isArray(value)) {
+      return value.slice(start, end);
+    }
+    if (typeof value === 'string') {
+      return value.slice(start, end);
+    }
+    return value;
+  });
+
+  renderer.registerFilter('markdown', (value) => {
+    try {
+      return marked(String(value), createMarkedOptions());
+    } catch {
+      return String(value);
+    }
+  });
+
+  renderer.registerFilter('pad', (value, length = 2, char = '0') => {
+    return String(value).padStart(length, char);
+  });
+
+  renderer.registerFilter('groupBy', (array, property) => {
+    if (!Array.isArray(array)) return array;
+
+    const groups = {};
+    array.forEach((item) => {
+      const key = item[property];
+      if (!groups[key]) {
+        groups[key] = [];
+      }
+      groups[key].push(item);
+    });
+    return groups;
+  });
+
+  renderer.registerFilter('sortBy', (array, property, direction = 'asc') => {
+    if (!Array.isArray(array)) return array;
+
+  // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: comparator handles date and direction branches
+    return [...array].sort((a, b) => {
+      let valueA = a[property];
+      let valueB = b[property];
+
+      // Handle dates
+      if (property === 'date') {
+        valueA = new Date(valueA);
+        valueB = new Date(valueB);
+      }
+
+      if (direction === 'desc') {
+        return valueA < valueB ? 1 : valueA > valueB ? -1 : 0;
+      }
+      return valueA > valueB ? 1 : valueA < valueB ? -1 : 0;
+    });
+  });
+
+  // Handle property access (like post.next)
+  renderer.registerFilter('', (value) => {
+    // Empty filter - just return the value as-is
+    return value;
   });
 }

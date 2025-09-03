@@ -32,7 +32,6 @@ function cleanupTestDir() {
 }
 
 describe('TemplateEngine - Built-in Filters', () => {
-
   // === Basic Filters ===
 
   test('should apply date filter', () => {
@@ -44,7 +43,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('date.html', {
-      date: '2023-12-25'
+      date: '2023-12-25',
     });
 
     assert.ok(result.includes('<time>'));
@@ -62,7 +61,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('markdown.html', {
-      content: '# Heading\n\nThis is **bold** text.'
+      content: '# Heading\n\nThis is **bold** text.',
     });
 
     // The markdown output gets HTML escaped in template rendering
@@ -81,7 +80,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('truncate.html', {
-      text: 'This is a long text that should be truncated'
+      text: 'This is a long text that should be truncated',
     });
 
     // Should be truncated
@@ -100,7 +99,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('slug.html', {
-      title: 'My First Blog Post!'
+      title: 'My First Blog Post!',
     });
 
     assert.ok(result.includes('href="/posts/'));
@@ -118,7 +117,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('capitalize.html', {
-      title: 'hello world'
+      title: 'hello world',
     });
 
     // Should capitalize first letter
@@ -136,7 +135,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('join.html', {
-      tags: ['javascript', 'nodejs', 'web']
+      tags: ['javascript', 'nodejs', 'web'],
     });
 
     assert.ok(result.includes('Tags: javascript, nodejs, web'));
@@ -153,7 +152,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('upper.html', {
-      title: 'test title'
+      title: 'test title',
     });
 
     assert.ok(result.includes('TEST TITLE'));
@@ -170,7 +169,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('lower.html', {
-      title: 'TEST TITLE'
+      title: 'TEST TITLE',
     });
 
     assert.ok(result.includes('test title'));
@@ -187,7 +186,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('length.html', {
-      items: ['a', 'b', 'c']
+      items: ['a', 'b', 'c'],
     });
 
     assert.ok(result.includes('Length: 3'));
@@ -239,7 +238,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('escape.html', {
-      html: '<script>alert("xss")</script> & "quotes" & \'apostrophes\' & /slashes/'
+      html: '<script>alert("xss")</script> & "quotes" & \'apostrophes\' & /slashes/',
     });
 
     // Check if the content contains escaped characters (may be double-escaped)
@@ -258,7 +257,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('raw.html', {
-      html: '<b>Bold Text</b>'
+      html: '<b>Bold Text</b>',
     });
 
     assert.ok(result.includes('<b>Bold Text</b>'));
@@ -275,7 +274,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('striptags.html', {
-      html: '<h1>Title</h1><p>Content with <strong>bold</strong> text</p>'
+      html: '<h1>Title</h1><p>Content with <strong>bold</strong> text</p>',
     });
 
     assert.ok(result.includes('Title'));
@@ -295,7 +294,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('trim.html', {
-      text: '  spaced text  '
+      text: '  spaced text  ',
     });
 
     assert.ok(result.includes('"spaced text"'));
@@ -343,7 +342,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('baddate.html', {
-      badDate: 'not-a-date'
+      badDate: 'not-a-date',
     });
 
     assert.ok(result.includes('not-a-date'));
@@ -363,8 +362,8 @@ describe('TemplateEngine - Built-in Filters', () => {
       tags: [
         { key: 'js', label: 'JavaScript' },
         { key: 'node', label: 'Node.js' },
-        'simple-string'
-      ]
+        'simple-string',
+      ],
     });
 
     assert.ok(result.includes('JavaScript, Node.js, simple-string'));
@@ -381,7 +380,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('join-non-array.html', {
-      notArray: 'single-value'
+      notArray: 'single-value',
     });
 
     assert.ok(result.includes('single-value'));
@@ -398,7 +397,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('length-object.html', {
-      obj: { key: 'value' }
+      obj: { key: 'value' },
     });
 
     assert.ok(result.includes('0'));
@@ -415,7 +414,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('locale.html', {
-      date: '2023-12-25'
+      date: '2023-12-25',
     });
 
     assert.ok(result.includes('<time>') && result.includes('</time>'));
@@ -455,14 +454,14 @@ describe('TemplateEngine - Built-in Filters', () => {
     // Test with length 0
     const result1 = engine.render('truncate-edge.html', {
       text: 'Hello World',
-      length: 0
+      length: 0,
     });
     assert.ok(result1.includes('...') || result1.includes(''));
 
     // Test with negative length
     const result2 = engine.render('truncate-edge.html', {
       text: 'Hello World',
-      length: -5
+      length: -5,
     });
     assert.ok(typeof result2 === 'string');
 
@@ -481,7 +480,7 @@ describe('TemplateEngine - Built-in Filters', () => {
     // Test with code blocks - markdown gets processed then escaped
     const markdownWithCode = '```javascript\nconst x = 1;\n```';
     const result1 = engine.render('markdown-complex.html', {
-      content: markdownWithCode
+      content: markdownWithCode,
     });
     // The markdown is processed but then HTML-escaped in the template
     assert.ok(result1.includes('javascript') && result1.includes('const x = 1'));
@@ -489,7 +488,7 @@ describe('TemplateEngine - Built-in Filters', () => {
     // Test with tables
     const markdownWithTable = '| Col1 | Col2 |\n|------|------|\n| A | B |';
     const result2 = engine.render('markdown-complex.html', {
-      content: markdownWithTable
+      content: markdownWithTable,
     });
     // Check that table content is present
     assert.ok(result2.includes('Col1') && result2.includes('Col2'));
@@ -508,13 +507,13 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     // Test with accents
     const result1 = engine.render('slug-special.html', {
-      title: 'Café & Résumé'
+      title: 'Café & Résumé',
     });
     assert.ok(!result1.includes('&') && !result1.includes(' '));
 
     // Test with numbers and symbols
     const result2 = engine.render('slug-special.html', {
-      title: 'Test #1: 100% Success!'
+      title: 'Test #1: 100% Success!',
     });
     assert.ok(!result2.includes('#') && !result2.includes('%'));
 
@@ -534,7 +533,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('multiple-filters.html', {
-      text: 'hello world'
+      text: 'hello world',
     });
 
     assert.ok(result.includes('HELLO WORLD'));
@@ -553,7 +552,7 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('number.html', {
-      value: 'not-a-number'
+      value: 'not-a-number',
     });
 
     // Should return original value if NaN
@@ -570,12 +569,11 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('currency.html', {
-      price: 'invalid-price'
+      price: 'invalid-price',
     });
 
     // Should return original value if NaN
     assert.ok(result.includes('invalid-price'));
     cleanupTestDir();
   });
-
 });

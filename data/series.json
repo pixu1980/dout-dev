@@ -1,0 +1,187 @@
+[
+  {
+    "slug": "concerning",
+    "title": "Concerning...",
+    "posts": [
+      {
+        "name": "2019-01-07-a-post-with-a-cover",
+        "title": "A post with a cover image",
+        "date": "2019-01-07T00:00:00.000Z",
+        "dateString": "Mon Jan 07 2019",
+        "path": "./src/posts/2019-01-07-a-post-with-a-cover.html",
+        "url": "/posts/2019-01-07-a-post-with-a-cover/",
+        "excerpt": "Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it's been marked up with tags or f",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2022-03-25-concerning",
+        "title": "Concerning…",
+        "date": "2022-03-25T00:00:00.000Z",
+        "dateString": "Fri Mar 25 2022",
+        "path": "./src/posts/2022-03-25-concerning.html",
+        "url": "/posts/2022-03-25-concerning/",
+        "excerpt": "Concerning Core Web Technologies",
+        "tags": [
+          {
+            "key": "generic",
+            "label": "Generic",
+            "url": "./tags/generic.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "description": "A series of posts about Concerning....",
+    "url": "./series/concerning.html",
+    "count": 2
+  },
+  {
+    "slug": "testing-posts",
+    "title": "Testing Posts",
+    "posts": [
+      {
+        "name": "2021-03-01-say-hello-to-gridsome-new",
+        "title": "Say Hello to Gridsome NEW",
+        "date": "2021-03-01T00:00:00.000Z",
+        "dateString": "Mon Mar 01 2021",
+        "path": "./src/posts/2021-03-01-say-hello-to-gridsome-new.html",
+        "url": "/posts/2021-03-01-say-hello-to-gridsome-new/",
+        "excerpt": "Well.... that's all",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2021-03-05-gradient-borders",
+        "title": "Testing CodePen",
+        "date": "2021-03-05T00:00:00.000Z",
+        "dateString": "Fri Mar 05 2021",
+        "path": "./src/posts/2021-03-05-gradient-borders.html",
+        "url": "/posts/2021-03-05-gradient-borders/",
+        "excerpt": "GRADIENT BORDERS",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2021-03-07-hating-css-utility-classes",
+        "title": "Testing CodePen",
+        "date": "2021-03-07T00:00:00.000Z",
+        "dateString": "Sun Mar 07 2021",
+        "path": "./src/posts/2021-03-07-hating-css-utility-classes.html",
+        "url": "/posts/2021-03-07-hating-css-utility-classes/",
+        "excerpt": "https://codepen.io/emdeoh/pen/NWdmgVq",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "description": "A series of posts about Testing Posts.",
+    "url": "./series/testing-posts.html",
+    "count": 3
+  },
+  {
+    "slug": "images",
+    "title": "Images",
+    "posts": [
+      {
+        "name": "2021-03-08-a-new-post-with-a-new-cover",
+        "title": "A NEW post with a NEW cover image",
+        "date": "2021-03-08T00:00:00.000Z",
+        "dateString": "Mon Mar 08 2021",
+        "path": "./src/posts/2021-03-08-a-new-post-with-a-new-cover.html",
+        "url": "/posts/2021-03-08-a-new-post-with-a-new-cover/",
+        "excerpt": "Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it's been marked up with tags or f",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "description": "A series of posts about Images.",
+    "url": "./series/images.html",
+    "count": 1
+  },
+  {
+    "slug": "testing-codepen",
+    "title": "Testing Codepen",
+    "posts": [
+      {
+        "name": "2022-03-12-you-can-edit-css",
+        "title": "You can edit CSS",
+        "date": "2022-03-12T00:00:00.000Z",
+        "dateString": "Sat Mar 12 2022",
+        "path": "./src/posts/2022-03-12-you-can-edit-css.html",
+        "url": "/posts/2022-03-12-you-can-edit-css/",
+        "excerpt": "You can edit CSShttps://codepen.io/davatron5000/pen/mddmRJe",
+        "tags": [
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "cover-image",
+            "label": "Cover-image",
+            "url": "./tags/cover-image.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "description": "A series of posts about Testing Codepen.",
+    "url": "./series/testing-codepen.html",
+    "count": 1
+  }
+]

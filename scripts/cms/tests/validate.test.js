@@ -32,7 +32,7 @@ describe('validate', () => {
 
   test('should work with custom configuration', () => {
     const customConfig = {
-      contentDir: 'tests' // Use test directory that might have different structure
+      contentDir: 'tests', // Use test directory that might have different structure
     };
 
     const result = validate(customConfig);
@@ -61,7 +61,7 @@ describe('validate', () => {
 
     // Should have captured the error
     assert.ok(result.errors.length > 0);
-    assert.ok(result.errors.some(err => err.includes('Validation error:')));
+    assert.ok(result.errors.some((err) => err.includes('Validation error:')));
     assert.strictEqual(result.posts.length, 0);
   });
 
@@ -122,7 +122,7 @@ describe('validate', () => {
     // Should have called process.exit(0) for success or process.exit(1) for errors
     // Let's check both cases - both are valid outcomes
     if (exitCode === 0) {
-      assert.ok(logOutput.some(msg => msg.includes('Validation passed')));
+      assert.ok(logOutput.some((msg) => msg.includes('Validation passed')));
     } else if (exitCode === 1) {
       // If there are actual validation errors, that's acceptable for this test
       assert.ok(errorOutput.length > 0 || warnOutput.length > 0);

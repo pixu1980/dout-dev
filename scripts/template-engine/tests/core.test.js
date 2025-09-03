@@ -18,7 +18,7 @@ const TEST_DIR = join(process.cwd(), 'test-tmp');
 function setupTestDir() {
   try {
     rmSync(TEST_DIR, { recursive: true, force: true });
-  } catch (error) {
+  } catch (_error) {
     // Directory might not exist
   }
   mkdirSync(TEST_DIR, { recursive: true });
@@ -28,13 +28,12 @@ function setupTestDir() {
 function cleanupTestDir() {
   try {
     rmSync(TEST_DIR, { recursive: true, force: true });
-  } catch (error) {
+  } catch (_error) {
     // Ignore cleanup errors
   }
 }
 
 describe('TemplateEngine - Core Functionality', () => {
-
   test('should create template engine instance', () => {
     const engine = new TemplateEngine();
     assert.ok(engine instanceof TemplateEngine);
@@ -51,7 +50,7 @@ describe('TemplateEngine - Core Functionality', () => {
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('simple.html', {
       title: 'Test Title',
-      description: 'Test Description'
+      description: 'Test Description',
     });
 
     assert.strictEqual(result, '<h1>Test Title</h1><p>Test Description</p>');
@@ -68,7 +67,7 @@ describe('TemplateEngine - Core Functionality', () => {
 
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
     const result = engine.render('missing.html', {
-      title: 'Test Title'
+      title: 'Test Title',
     });
 
     assert.strictEqual(result, '<h1>Test Title</h1><p></p>');
@@ -88,9 +87,9 @@ describe('TemplateEngine - Core Functionality', () => {
       post: {
         title: 'Post Title',
         meta: {
-          author: 'John Doe'
-        }
-      }
+          author: 'John Doe',
+        },
+      },
     });
 
     assert.strictEqual(result, '<h1>Post Title</h1><p>John Doe</p>');
@@ -109,7 +108,7 @@ describe('TemplateEngine - Core Functionality', () => {
     engine.registerFilter('uppercase', (value) => String(value).toUpperCase());
 
     const result = engine.render('filter.html', {
-      title: 'test title'
+      title: 'test title',
     });
 
     assert.strictEqual(result, '<h1>TEST TITLE</h1>');
@@ -120,11 +119,13 @@ describe('TemplateEngine - Core Functionality', () => {
   test('should handle template rendering errors', () => {
     const engine = new TemplateEngine({ rootDir: TEST_DIR });
 
-    assert.throws(() => {
-      engine.render('nonexistent.html', {});
-    }, {
-      name: 'Error'
-    });
+    assert.throws(
+      () => {
+        engine.render('nonexistent.html', {});
+      },
+      {
+        name: 'Error',
+      }
+    );
   });
-
 });

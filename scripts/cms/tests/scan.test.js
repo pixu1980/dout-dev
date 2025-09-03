@@ -87,7 +87,7 @@ describe('scan', () => {
   test('should work with custom configuration', () => {
     const customConfig = {
       postsOutputDir: 'custom/posts',
-      dataDir: 'custom/data'
+      dataDir: 'custom/data',
     };
 
     const result = scanContent(customConfig);

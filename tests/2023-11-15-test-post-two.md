@@ -1,8 +1,8 @@
 ---
-title: "Test Post Two"
-date: "2023-11-15"
-tags: ["nodejs", "javascript"]
-excerpt: "This is the second test post"
+title: 'Test Post Two'
+date: '2023-11-15'
+tags: ['nodejs', 'javascript']
+excerpt: 'This is the second test post'
 published: true
 ---
 

@@ -8,14 +8,9 @@
 import assert, { equal } from 'node:assert';
 import { describe, test } from 'node:test';
 
-import {
-  evaluateCondition,
-  evaluateExpression,
-  parseExpression
-} from '../expression-parser.js';
+import { evaluateCondition, evaluateExpression, parseExpression } from '../expression-parser.js';
 
 describe('TemplateEngine - Expression Parser', () => {
-
   // === Basic Parsing Tests ===
 
   test('should parse simple variable expressions', () => {
@@ -54,7 +49,7 @@ describe('TemplateEngine - Expression Parser', () => {
     const expr = parseExpression('title | upper');
     const data = { title: 'Hello World' };
     const filters = {
-      upper: (value) => String(value).toUpperCase()
+      upper: (value) => String(value).toUpperCase(),
     };
 
     const result = evaluateExpression(expr, data, filters);
@@ -150,7 +145,7 @@ describe('TemplateEngine - Expression Parser', () => {
       isActive: true,
       hasPermission: true,
       items: ['a', 'b', 'c'],
-      emptyArray: []
+      emptyArray: [],
     };
 
     assert.strictEqual(evaluateCondition('isActive && hasPermission', data), true);
@@ -162,7 +157,7 @@ describe('TemplateEngine - Expression Parser', () => {
     const data = {
       items: ['a', 'b'],
       emptyItems: [],
-      notArray: 'string'
+      notArray: 'string',
     };
 
     assert.strictEqual(evaluateCondition('items.length > 0', data), true);
@@ -177,10 +172,10 @@ describe('TemplateEngine - Expression Parser', () => {
       user: {
         profile: {
           settings: {
-            theme: 'dark'
-          }
-        }
-      }
+            theme: 'dark',
+          },
+        },
+      },
     };
 
     const filters = {};
@@ -195,11 +190,7 @@ describe('TemplateEngine - Expression Parser', () => {
 
   test('should handle empty path gracefully (advanced)', () => {
     const filters = {};
-    const result = evaluateExpression(
-      parseExpression(''),
-      { data: 'value' },
-      filters
-    );
+    const result = evaluateExpression(parseExpression(''), { data: 'value' }, filters);
 
     assert.strictEqual(result, undefined);
   });
@@ -207,7 +198,7 @@ describe('TemplateEngine - Expression Parser', () => {
   test('should apply multiple filters in sequence (advanced)', () => {
     const filters = {
       upper: (value) => String(value).toUpperCase(),
-      truncate: (value, length) => String(value).substring(0, length)
+      truncate: (value, length) => String(value).substring(0, length),
     };
 
     const result = evaluateExpression(
@@ -259,7 +250,7 @@ describe('TemplateEngine - Expression Parser', () => {
       emptyString: '',
       nullValue: null,
       undefinedValue: undefined,
-      falseValue: false
+      falseValue: false,
     };
 
     // Test falsy values
@@ -293,10 +284,7 @@ describe('TemplateEngine - Expression Parser', () => {
 
   test('should handle complex nested paths with arrays', () => {
     const data = {
-      posts: [
-        { author: { name: 'John' } },
-        { author: { name: 'Jane' } }
-      ]
+      posts: [{ author: { name: 'John' } }, { author: { name: 'Jane' } }],
     };
 
     const expr = parseExpression('posts.0.author.name');
@@ -416,5 +404,4 @@ describe('TemplateEngine - Expression Parser', () => {
     const result3 = evaluateCondition('count - posts.length == 2', data);
     assert.strictEqual(result3, true);
   });
-
 });

@@ -7,6 +7,6 @@ canonical_url: false
 description: Building dout.dev blog
 ---
 
->Less is more!
+> Less is more!
 
 I started
