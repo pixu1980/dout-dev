@@ -208,7 +208,9 @@ async function handleMissingFavicons(missing, faviconConfigPath) {
   const themeColor = config.icon?.webAppManifest?.themeColor || '#ffffff';
 
   const desc = {
-    masterPicture: existsSync(logoDest) ? logoDest : join(projectRoot, 'design', 'icons', 'logo.svg'),
+    masterPicture: existsSync(logoDest)
+      ? logoDest
+      : join(projectRoot, 'design', 'icons', 'logo.svg'),
     iconsPath,
     design: {
       ios: { pictureAspect: 'noChange' },
@@ -236,7 +238,9 @@ async function handleMissingFavicons(missing, faviconConfigPath) {
 
     const strict = !(process.env.FAVICON_STRICT === '0' || process.env.FAVICON_STRICT === 'false');
     if (strict) throw new Error(`Missing favicon assets: ${stillMissing.join(', ')}`);
-    console.warn('⚠️ Favicon strict mode disabled via FAVICON_STRICT; continuing despite missing assets.');
+    console.warn(
+      '⚠️ Favicon strict mode disabled via FAVICON_STRICT; continuing despite missing assets.'
+    );
   }
 }
 

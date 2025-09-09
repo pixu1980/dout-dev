@@ -198,7 +198,7 @@ export function registerBuiltinFilters(renderer) {
   renderer.registerFilter('trim', (value) => String(value).trim());
   renderer.registerFilter('truncate', (value, length = 100) => {
     const str = String(value);
-  return str.length > length ? `${str.substring(0, length)}...` : str;
+    return str.length > length ? `${str.substring(0, length)}...` : str;
   });
 
   // Array filters
@@ -352,7 +352,7 @@ export function registerBuiltinFilters(renderer) {
   renderer.registerFilter('sortBy', (array, property, direction = 'asc') => {
     if (!Array.isArray(array)) return array;
 
-  // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: comparator handles date and direction branches
+    // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: comparator handles date and direction branches
     return [...array].sort((a, b) => {
       let valueA = a[property];
       let valueB = b[property];

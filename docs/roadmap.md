@@ -6,18 +6,19 @@
 
 ## 📊 Project Status Overview
 
-### ✅ Completed Milestones (10/19)
+### ✅ Completed Milestones (11/19)
 
-- M0 — Bootstrap repository & structure
-- M1 — Template Engine (TE) core
-- M2 — CMS core
-- M3 — Layouts & fundamental components
-- M4 — Post Page
-- M5 — Archive pages (tag, months)
-- M6 — Universal pagination
-- M7 — Home, About, 404, Playground, Offline
-- M8 — Responsive images & lazy on-reveal
-- M9 — Light/dark theme + accents + header/nav
+- M0 - Bootstrap repository & structure
+- M1 - Template Engine (TE) core
+- M2 - CMS core
+- M3 - Layouts & fundamental components
+- M4 - Post Page
+- M5 - Archive pages (tag, months)
+- M6 - Universal pagination
+- M7 - Home, About, 404, Playground, Offline
+- M8 - Responsive images & lazy on-reveal
+- M9 - Light/dark theme + accents + header/nav
+- M10 - Client-side search
 
 ### ⚠️ Mostly Complete - Issues to Address (0/19)
 
@@ -25,18 +26,19 @@
 
 ### 🔄 Partially Implemented (0/19)
 
-### ❌ Not Started (9/19)
+- None
 
-- Upcoming milestones M9+ (header/nav, theming, search, a11y hardening, etc.)
+### ❌ Not Started (8/19)
+
+- Upcoming milestones M11+ (SEO/OG-image, feeds, PE/micro-UX, a11y hardening, security/CSP, i18n, analytics, CI/CD, quality/regressions)
 
 ### 🎯 Ready for Implementation
-
 
 ---
 
 ## Product Parameters (fixed)
 
-- **Title/Author**: dout.dev — Emiliano "pixu1980" Pisu
+- **Title/Author**: dout.dev - Emiliano "pixu1980" Pisu
 - **Base Domain**: [https://dout.dev](https://dout.dev) (canonical)
 - **Languages**: default **en**, localization **it** (scaffold)
 - **Front-matter**: supports common fields + specified ones (series, scheduledAt, link, coverImage, pinned, keywords, layout)
@@ -57,7 +59,7 @@
 
 ---
 
-## M0 — Bootstrap repository & structure
+## M0 - Bootstrap repository & structure
 
 **Status**: ✅ **COMPLETED**
 
@@ -95,7 +97,7 @@
 
 ---
 
-## M1 — Template Engine (TE) core
+## M1 - Template Engine (TE) core
 
 **Status**: ✅ **COMPLETED**
 
@@ -125,7 +127,7 @@
 
 ---
 
-## M2 — CMS core
+## M2 - CMS core
 
 **Status**: ✅ **COMPLETED**
 
@@ -157,7 +159,7 @@
 
 ---
 
-## M3 — Layouts & fundamental components
+## M3 - Layouts & fundamental components
 
 **Status**: ✅ **COMPLETED**
 
@@ -198,7 +200,7 @@
 
 ---
 
-## M4 — Post Page
+## M4 - Post Page
 
 **Status**: ✅ **COMPLETED**
 
@@ -235,7 +237,7 @@
 
 ---
 
-## M5 — Archive pages (tag, months)
+## M5 - Archive pages (tag, months)
 
 **Status**: ✅ **COMPLETED**
 
@@ -245,7 +247,7 @@
 
 - [x] Templates: `./src/templates/tag.html`, `./src/templates/month.html`.
 - [x] Generate `./src/tags/<tag>.html`, `./src/months/YYYY-MM.html`.
-- [ ] Pagination — deferred to M6 (universal pagination)
+- [ ] Pagination - deferred to M6 (universal pagination)
 - [x] RSS feeds at archive level (tags and months XML)
 
 **DoD**
@@ -274,7 +276,7 @@
 
 ---
 
-## M6 — Universal pagination
+## M6 - Universal pagination
 
 **Status**: ✅ COMPLETED
 
@@ -302,12 +304,12 @@
 
 **Follow-ups**:
 
-- Lint fixabili (template literals, optional chaining, import `node:`) — non bloccanti
+- Lint fixabili (template literals, optional chaining, import `node:`) - non bloccanti
 - Ricerca: integrazione della paginazione in M12
 
 ---
 
-## M7 — Home, About, 404, Playground, Offline
+## M7 - Home, About, 404, Playground, Offline
 
 **Status**: ✅ **COMPLETED**
 
@@ -317,7 +319,7 @@
 
 - [x] `index.html` with latest posts (pinned on-top), `about.html`, `404.html`, `playground.html`, `offline.html`.
 - [ ] Accessible breadcrumb and TOC (if present).  
-	Note: not required for current pages; breadcrumbs can be introduced alongside header/nav in M9.
+       Note: not required for current pages; breadcrumbs can be introduced alongside header/nav in M9.
 
 **DoD**
 
@@ -336,7 +338,7 @@
 
 ---
 
-## M8 — Responsive images & lazy on-reveal
+## M8 - Responsive images & lazy on-reveal
 
 **Status**: ✅ **COMPLETED**
 
@@ -368,7 +370,7 @@
 
 ---
 
-## M9 — Light/dark theme + accents + header/nav
+## M9 - Light/dark theme + accents + header/nav
 
 **Status**: ✅ **COMPLETED**
 
@@ -394,39 +396,36 @@
 
 ---
 
-## M10 — Client-side search
+## M10 - Client-side search
 
-**Status**: ❌ **NOT STARTED**
+**Status**: ✅ **COMPLETED**
 
 **Goal**: `search.html` page with local indexing.
 
 **Checklist**
 
-- [ ] Load `posts.json`, `tags.json`, `months.json`, `series.json` (same domain).
-- [ ] **Keyword** extraction from content (build-time) for light boosting.
-- [ ] Accessible UI: `role="search"`, announcements in `aria-live` for results.
-- [ ] Client-side pagination shared with `pagination.html` component.
-- [ ] Keyboard shortcut `/` for search focus.
+- [x] Load `posts.json`, `tags.json`, `months.json`, `series.json` (same domain).
+- [x] **Keyword** extraction from content (build-time) and boost in ranking.
+- [x] Accessible UI: `role="search"`, announcements in `aria-live` for results and page changes.
+- [x] Type filters UI (posts/tags/series/months) wired to results and URL (`?type=...`).
+- [x] Client-side pagination strictly unified with `pagination.html` include (semantics and markup aligned).
+- [x] Keyboard shortcut `/` for search focus.
 
 **DoD**
 
-- [ ] Stable search, deep-link via `?q=...&page=...`.
+- [x] Stable search, deep-link via `?q=...&page=...` (posts, tags, series, months; basic scoring)
 
 **Missing Implementation**:
 
-- ❌ No search page template
-- ❌ No search index generation
-- ❌ No client-side search script
-- ❌ No search UI components
+- None
 
 **Dependencies**:
 
-- 🚨 **BLOCKED by M3** - CSS system required for search UI
-- 🚨 **BLOCKED by M7** - Need static pages system
+- None (M3/M7 complete)
 
 ---
 
-## M11 — SEO & OG-image in build
+## M11 - SEO & OG-image in build
 
 **Status**: ❌ **NOT STARTED**
 
@@ -454,7 +453,7 @@
 
 ---
 
-## M12 — Feed (RSS + JSON Feed)
+## M12 - Feed (RSS + JSON Feed)
 
 **Status**: ❌ **NOT STARTED**
 
@@ -482,7 +481,7 @@
 
 ---
 
-## M13 — Cutting-edge APIs (PE) & micro-UX
+## M13 - Cutting-edge APIs (PE) & micro-UX
 
 **Status**: ❌ **NOT STARTED**
 
@@ -501,7 +500,7 @@
 
 ---
 
-## M14 — Accessibility dedicated pass
+## M14 - Accessibility dedicated pass
 
 **Status**: ❌ **NOT STARTED**
 
@@ -520,7 +519,7 @@
 
 ---
 
-## M15 — Security & CSP
+## M15 - Security & CSP
 
 **Status**: ❌ **NOT STARTED**
 
@@ -538,7 +537,7 @@
 
 ---
 
-## M16 — i18n (IT scaffold)
+## M16 - i18n (IT scaffold)
 
 **Status**: ❌ **NOT STARTED**
 
@@ -556,7 +555,7 @@
 
 ---
 
-## M17 — Analytics (page hits only)
+## M17 - Analytics (page hits only)
 
 **Status**: ❌ **NOT STARTED**
 
@@ -574,7 +573,7 @@
 
 ---
 
-## M18 — Final CI/CD & automatic deploy
+## M18 - Final CI/CD & automatic deploy
 
 **Status**: ❌ **NOT STARTED**
 
@@ -593,7 +592,7 @@
 
 ---
 
-## M19 — Quality & regressions
+## M19 - Quality & regressions
 
 **Status**: ❌ **NOT STARTED**
 

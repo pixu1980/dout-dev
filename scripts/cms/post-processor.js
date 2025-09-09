@@ -29,6 +29,7 @@ export function processMarkdown(filePath, raw) {
   const html = marked(content, createMarkedOptions());
   // Determine cover dimensions if coverImage points to a local asset
   const coverSize = readCoverSize(data);
+  const keywords = extractKeywords(`${title}\n${content}`);
   return {
     name: slug,
     title,
@@ -39,10 +40,11 @@ export function processMarkdown(filePath, raw) {
     series: data.series || null,
     excerpt: buildExcerpt(content),
     content: html,
+    keywords,
     // Cover image support (M4)
-  coverImage: data.coverImage || data.cover_image || null,
-  coverWidth: coverSize?.width,
-  coverHeight: coverSize?.height,
+    coverImage: data.coverImage || data.cover_image || null,
+    coverWidth: coverSize?.width,
+    coverHeight: coverSize?.height,
     coverAlt: data.coverAlt || data.cover_alt || title,
     coverTitle: data.coverTitle || data.cover_title || undefined,
     pinned: !!data.pinned,
@@ -81,14 +83,207 @@ function normalizeTags(tags) {
 }
 function buildExcerpt(md) {
   const first = md.split(/\n\n+/)[0];
-  return first
-  // biome-ignore lint/complexity/noUselessEscapeInRegex: '[' and ']' need escaping inside character classes
-  .replace(/[>#*`~_()\[\]-]/g, '') // Remove markdown symbols
-    .replace(/\[[^\]]*\]\([^)]*\)/g, '') // Remove complete links [text](url)
-    .replace(/\s+/g, ' ') // Normalize multiple spaces
-    .slice(0, 180)
-    .trim();
+  return (
+    first
+      // biome-ignore lint/complexity/noUselessEscapeInRegex: '[' and ']' need escaping inside character classes
+      .replace(/[>#*`~_()\[\]-]/g, '') // Remove markdown symbols
+      .replace(/\[[^\]]*\]\([^)]*\)/g, '') // Remove complete links [text](url)
+      .replace(/\s+/g, ' ') // Normalize multiple spaces
+      .slice(0, 180)
+      .trim()
+  );
 }
 function capitalize(s) {
   return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+}
+
+// Basic keyword extraction (en/it stopwords), frequency-based top terms
+function extractKeywords(text) {
+  const STOP = new Set([
+    // English
+    'the',
+    'a',
+    'an',
+    'and',
+    'or',
+    'but',
+    'if',
+    'then',
+    'else',
+    'for',
+    'to',
+    'of',
+    'in',
+    'on',
+    'at',
+    'by',
+    'with',
+    'from',
+    'as',
+    'is',
+    'are',
+    'was',
+    'were',
+    'be',
+    'been',
+    'this',
+    'that',
+    'these',
+    'those',
+    'it',
+    'its',
+    'into',
+    'about',
+    'over',
+    'under',
+    'after',
+    'before',
+    'between',
+    'within',
+    'without',
+    'your',
+    'you',
+    'we',
+    'they',
+    'I',
+    'me',
+    'my',
+    'our',
+    'their',
+    'them',
+    'us',
+    'not',
+    'no',
+    'yes',
+    'do',
+    'does',
+    'did',
+    'done',
+    'can',
+    'could',
+    'should',
+    'would',
+    'will',
+    'just',
+    'also',
+    'so',
+    'than',
+    'too',
+    'very',
+    'more',
+    'most',
+    'such',
+    'any',
+    'some',
+    'each',
+    'other',
+    'only',
+    'own',
+    'same',
+    'how',
+    'when',
+    'where',
+    'why',
+    'what',
+    'which',
+    'who',
+    'whom',
+    'because',
+    // Italian
+    'il',
+    'lo',
+    'la',
+    'i',
+    'gli',
+    'le',
+    'un',
+    'uno',
+    'una',
+    'di',
+    'a',
+    'da',
+    'in',
+    'con',
+    'su',
+    'per',
+    'tra',
+    'fra',
+    'che',
+    'e',
+    'o',
+    'ma',
+    'se',
+    'all',
+    'alla',
+    'alle',
+    'agli',
+    'della',
+    'delle',
+    'degli',
+    'dei',
+    'del',
+    'nel',
+    'nella',
+    'nelle',
+    'negli',
+    'nei',
+    'sul',
+    'sulla',
+    'sulle',
+    'sugli',
+    'sui',
+    'come',
+    'piu',
+    'meno',
+    'molto',
+    'poco',
+    'troppo',
+    'quasi',
+    'sempre',
+    'mai',
+    'anche',
+    'solo',
+    'stesso',
+    'stessa',
+    'stessi',
+    'stesse',
+    'quello',
+    'quella',
+    'quelli',
+    'quelle',
+    'questo',
+    'questa',
+    'questi',
+    'queste',
+    'cui',
+    'qual',
+    'quale',
+    'quali',
+    'perche',
+    'quando',
+    'dove',
+    'cosa',
+    'chi',
+    'noi',
+    'voi',
+    'loro',
+  ]);
+  const plain = String(text)
+    // remove code fences and markdown links/images
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/\!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/\[[^\]]*\]\([^)]*\)/g, ' ')
+    // strip punctuation
+    .replace(/[^a-zA-Z0-9àèéìòóùÀÈÉÌÒÓÙ\s]/g, ' ')
+    .toLowerCase();
+  const freq = new Map();
+  for (const raw of plain.split(/\s+/)) {
+    const w = raw.normalize('NFD').replace(/\p{Diacritic}/gu, '');
+    if (!w || w.length < 3 || STOP.has(w)) continue;
+    freq.set(w, (freq.get(w) || 0) + 1);
+  }
+  return [...freq.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 12)
+    .map((x) => x[0]);
 }

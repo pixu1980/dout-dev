@@ -93,14 +93,16 @@ describe('CMS - Marked Syntax', () => {
     const md = '![Alt text](../assets/images/example.jpg "Title")';
     const html = marked(md, createMarkedOptions());
     // data-src and lazy attrs present
-    if (!html.includes('data-src="../assets/images/example.jpg"')) throw new Error('data-src missing');
+    if (!html.includes('data-src="../assets/images/example.jpg"'))
+      throw new Error('data-src missing');
     if (!html.includes('loading="lazy"')) throw new Error('loading lazy missing');
     if (!html.includes('<noscript><img src="../assets/images/example.jpg"'))
       throw new Error('noscript fallback missing');
   });
 
   it('should support srcset/sizes meta and keep them in noscript', () => {
-    const md = '![Alt text](../assets/images/example.jpg "Hero | srcset=../img/320.jpg 320w, ../img/640.jpg 640w | sizes=(max-width: 640px) 100vw, 640px")';
+    const md =
+      '![Alt text](../assets/images/example.jpg "Hero | srcset=../img/320.jpg 320w, ../img/640.jpg 640w | sizes=(max-width: 640px) 100vw, 640px")';
     const html = marked(md, createMarkedOptions());
     if (!html.includes('data-srcset="../img/320.jpg 320w, ../img/640.jpg 640w"'))
       throw new Error('data-srcset missing');
@@ -114,9 +116,11 @@ describe('CMS - Marked Syntax', () => {
   });
 
   it('should render eager/high-priority images with real srcset/sizes', () => {
-    const md = '![Alt text](../assets/images/example.jpg "Hero | loading=eager | priority=high | srcset=../img/320.jpg 320w, ../img/640.jpg 640w | sizes=100vw")';
+    const md =
+      '![Alt text](../assets/images/example.jpg "Hero | loading=eager | priority=high | srcset=../img/320.jpg 320w, ../img/640.jpg 640w | sizes=100vw")';
     const html = marked(md, createMarkedOptions());
-    if (html.includes('<noscript>')) throw new Error('noscript should not be present for eager images');
+    if (html.includes('<noscript>'))
+      throw new Error('noscript should not be present for eager images');
     if (!html.includes('loading="eager"')) throw new Error('loading eager missing');
     if (!html.includes('fetchpriority="high"')) throw new Error('priority high missing');
     if (!html.includes(' srcset="../img/320.jpg 320w, ../img/640.jpg 640w"'))

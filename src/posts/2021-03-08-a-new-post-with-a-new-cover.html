@@ -1,58 +1,62 @@
 <extends src="../layouts/base.html">
+  <block name="head">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="A NEW post with a NEW cover image" />
+    <meta
+      property="og:description"
+      content="Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it's been marked up with tags or f"
+    />
 
-<block name="head">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="A NEW post with a NEW cover image">
-  <meta property="og:description" content="Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it's been marked up with tags or f">
-  
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BlogPosting",
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
         "headline": "A NEW post with a NEW cover image",
         "datePublished": "2021-03-08T00:00:00.000Z",
-        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html"}
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html"
+        }
       }
-  </script>
-</block>
+    </script>
+  </block>
 
-<block name="content">
-  <article itemscope="" itemtype="https://schema.org/BlogPosting">
-    <header>
-      <h1 itemprop="headline">A NEW post with a NEW cover image</h1>
-      <p>
-        <time datetime="2021-03-08" itemprop="datePublished">
-          8 marzo 2021
-        </time>
-      </p>
-      
-      
+  <block name="content">
+    <article itemscope="" itemtype="https://schema.org/BlogPosting">
+      <header>
+        <h1 itemprop="headline">A NEW post with a NEW cover image</h1>
+        <p>
+          <time datetime="2021-03-08" itemprop="datePublished"> 8 marzo 2021 </time>
+        </p>
+
         <ul aria-label="Tags">
-          
-            <li><a class="tag" href="/tags/markdown.html">Markdown</a></li>
-          
-            <li><a class="tag" href="/tags/cover-image.html">Cover-image</a></li>
-          
+          <li><a class="tag" href="/tags/markdown.html">Markdown</a></li>
+
+          <li><a class="tag" href="/tags/cover-image.html">Cover-image</a></li>
         </ul>
-      
-    </header>
+      </header>
 
-    <section itemprop="articleBody"><p>Readability, however, is emphasized above all else. A Markdown-formatted
-document should be publishable as-is, as plain text, without looking
-like it's been marked up with tags or formatting instructions.</p>
-<p>While Markdown's syntax has been influenced by several existing text-to-HTML filters -- including <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a>, <a href="http://www.aaronsw.com/2002/atx/">atx</a>, <a href="http://textism.com/tools/textile/">Textile</a>, <a href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>,
-<a href="http://www.triptico.com/software/grutatxt.html">Grutatext</a>, and <a href="http://ettext.taint.org/doc/">EtText</a> -- the single biggest source of
-inspiration for Markdown's syntax is the format of plain text email.</p>
-</section>
+      <section itemprop="articleBody">
+        <p>
+          Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is,
+          as plain text, without looking like it's been marked up with tags or formatting instructions.
+        </p>
+        <p>
+          While Markdown's syntax has been influenced by several existing text-to-HTML filters -- including
+          <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a>,
+          <a href="http://www.aaronsw.com/2002/atx/">atx</a>, <a href="http://textism.com/tools/textile/">Textile</a>,
+          <a href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>,
+          <a href="http://www.triptico.com/software/grutatxt.html">Grutatext</a>, and
+          <a href="http://ettext.taint.org/doc/">EtText</a> -- the single biggest source of inspiration for Markdown's
+          syntax is the format of plain text email.
+        </p>
+      </section>
 
-    <nav aria-label="Post navigation">
-      
+      <nav aria-label="Post navigation">
         <a rel="prev" href="/posts/2021-03-07-hating-css-utility-classes.html">← Testing CodePen</a>
-      
-      
+
         <a rel="next" href="/posts/2022-01-01-say-hello-2022.html">Say hello to 2022 🎉 →</a>
-      
-    </nav>
-  </article>
-</block>
+      </nav>
+    </article>
+  </block>
 </extends>

@@ -21,9 +21,9 @@ async function checkFormatting() {
 
   try {
     // Check JavaScript/TypeScript with Biome
-    console.log('📋 Checking Biome formatting...');
+    console.log('📋 Checking Biome formatting (JS only)...');
     try {
-      // Run formatter in dry mode and fail on diagnostics by promoting them to errors
+      // Run formatter in dry mode at repo root (config controls includes)
       const { stdout: biomeStdout } = await execAsync(
         'npx biome format --reporter=summary --diagnostic-level=error .',
         { cwd: projectRoot }
@@ -38,10 +38,10 @@ async function checkFormatting() {
     }
 
     // Check other files with Prettier
-    console.log('\n🎯 Checking Prettier formatting...');
+    console.log('\n🎯 Checking Prettier formatting (HTML/CSS/MD/JSON/YAML)...');
     try {
       const { stdout: prettierStdout } = await execAsync(
-        'npx prettier --check "**/*.{html,css,md,json,yml,yaml}" --ignore-path .gitignore',
+        'npx prettier --check "**/*.{css,md,json,yml,yaml}" --ignore-path .prettierignore',
         { cwd: projectRoot }
       );
 

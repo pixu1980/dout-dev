@@ -2,7 +2,8 @@
 function reveal(img) {
   if (!img) return;
   // If within a <picture>, first promote any <source data-srcset>
-  const picture = img.parentElement && img.parentElement.tagName === 'PICTURE' ? img.parentElement : null;
+  const picture =
+    img.parentElement && img.parentElement.tagName === 'PICTURE' ? img.parentElement : null;
   if (picture) {
     const sources = picture.querySelectorAll('source[data-srcset]');
     sources.forEach((s) => {
@@ -42,15 +43,18 @@ export function initLazyImages() {
     return;
   }
 
-  const io = new IntersectionObserver((entries, observer) => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        reveal(img);
-        observer.unobserve(img);
+  const io = new IntersectionObserver(
+    (entries, observer) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          reveal(img);
+          observer.unobserve(img);
+        }
       }
-    }
-  }, { rootMargin: '200px 0px', threshold: 0.01 });
+    },
+    { rootMargin: '200px 0px', threshold: 0.01 }
+  );
 
   lazyImgs.forEach((img) => {
     io.observe(img);

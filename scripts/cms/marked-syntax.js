@@ -1,6 +1,11 @@
 // Marked configuration / custom renderer producing <pre is="pix-highlighter"> blocks
 import { Renderer } from 'marked';
-import { resolveAssetPathFromHref, readImageSizeSync, isLikelyImage, srcDir } from './image-utils.js';
+import {
+  resolveAssetPathFromHref,
+  readImageSizeSync,
+  isLikelyImage,
+  srcDir,
+} from './image-utils.js';
 import { existsSync, readFileSync } from 'node:fs';
 import { join, extname } from 'node:path';
 
@@ -97,8 +102,12 @@ export function createMarkedOptions() {
     const eagerAttrs = buildAttrsEager(meta, sizeAttrs, titleAttr);
     const { rasterType, rasterSrcset, webpSrcset } = computeSrcsets(href, meta);
     if (webpSrcset || rasterSrcset) {
-      const webp = webpSrcset ? `<source type="image/webp" srcset="${escapeHtml(webpSrcset)}">` : '';
-      const raster = rasterSrcset ? `<source type="${rasterType}" srcset="${escapeHtml(rasterSrcset)}">` : '';
+      const webp = webpSrcset
+        ? `<source type="image/webp" srcset="${escapeHtml(webpSrcset)}">`
+        : '';
+      const raster = rasterSrcset
+        ? `<source type="${rasterType}" srcset="${escapeHtml(rasterSrcset)}">`
+        : '';
       return `<picture>${webp}${raster}<img src="${src}" alt="${alt}"${eagerAttrs}${rasterSrcset ? ` srcset="${escapeHtml(rasterSrcset)}"` : ''} /></picture>`;
     }
     return `<img src="${src}" alt="${alt}"${eagerAttrs} />`;
@@ -111,15 +120,26 @@ export function createMarkedOptions() {
       const sources = buildPictureSources({ rasterType, rasterSrcset, webpSrcset, lazy: true });
       const imgDataSrcset = rasterSrcset ? ` data-srcset="${escapeHtml(rasterSrcset)}"` : '';
       const picture = `<picture>${sources}<img data-src="${src}" alt="${alt}"${lazyAttrs}${imgDataSrcset} /></picture>`;
-      const noscript = renderLazyNoscript({ src, alt, rasterSrcset, sizes: meta.sizes, sizeAttrs, titleAttr });
+      const noscript = renderLazyNoscript({
+        src,
+        alt,
+        rasterSrcset,
+        sizes: meta.sizes,
+        sizeAttrs,
+        titleAttr,
+      });
       return picture + noscript;
     }
     return renderLazyFallback({ src, alt, lazyAttrs, sizeAttrs, titleAttr });
   }
 
   function buildPictureSources({ rasterType, rasterSrcset, webpSrcset, lazy }) {
-    const webp = webpSrcset ? `<source type="image/webp" ${lazy ? 'data-' : ''}srcset="${escapeHtml(webpSrcset)}">` : '';
-    const raster = rasterSrcset ? `<source type="${rasterType}" ${lazy ? 'data-' : ''}srcset="${escapeHtml(rasterSrcset)}">` : '';
+    const webp = webpSrcset
+      ? `<source type="image/webp" ${lazy ? 'data-' : ''}srcset="${escapeHtml(webpSrcset)}">`
+      : '';
+    const raster = rasterSrcset
+      ? `<source type="${rasterType}" ${lazy ? 'data-' : ''}srcset="${escapeHtml(rasterSrcset)}">`
+      : '';
     return webp + raster;
   }
 
@@ -137,7 +157,10 @@ export function createMarkedOptions() {
   }
   function parseTitleMeta(raw) {
     if (!raw || typeof raw !== 'string') return { title: undefined, meta: {} };
-    const parts = raw.split('|').map((s) => s.trim()).filter(Boolean);
+    const parts = raw
+      .split('|')
+      .map((s) => s.trim())
+      .filter(Boolean);
     if (parts.length === 0) return { title: undefined, meta: {} };
     const title = parts[0] || undefined;
     const meta = parts.slice(1).reduce((acc, seg) => {
@@ -145,7 +168,8 @@ export function createMarkedOptions() {
       if (eq > 0) {
         const key = seg.slice(0, eq).trim().toLowerCase();
         const val = seg.slice(eq + 1).trim();
-        if (key === 'srcset' || key === 'sizes' || key === 'loading' || key === 'priority') acc[key] = val;
+        if (key === 'srcset' || key === 'sizes' || key === 'loading' || key === 'priority')
+          acc[key] = val;
       }
       return acc;
     }, {});
@@ -210,8 +234,8 @@ export function createMarkedOptions() {
     const alt = escapeHtml(String(text || ''));
     const { title: cleanTitle, meta } = parseTitleMeta(title);
     const titleAttr = cleanTitle ? ` title="${escapeHtml(String(cleanTitle))}"` : '';
-  // Try to add width/height to reduce CLS only for local images (PNG/JPEG/WEBP)
-  const sizeAttrs = getSizeAttrs(href);
+    // Try to add width/height to reduce CLS only for local images (PNG/JPEG/WEBP)
+    const sizeAttrs = getSizeAttrs(href);
     // If no explicit srcset is provided, try to build it from the images-manifest
     if (!meta.srcset) {
       const auto = autoSrcsetFromManifest(href);

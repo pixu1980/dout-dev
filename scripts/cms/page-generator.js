@@ -49,7 +49,7 @@ function generatePosts(posts, config, renderer) {
     const prevPost = i < publishedPosts.length - 1 ? publishedPosts[i + 1] : null;
 
     // Add navigation properties to post
-  const postWithNav = {
+    const postWithNav = {
       ...post,
       // Ensure post url is available for templates (share links, canonical, etc.)
       url: `/posts/${post.name}.html`,
@@ -69,7 +69,7 @@ function generatePosts(posts, config, renderer) {
         post: postWithNav,
         title: post.title,
         current: 'posts',
-  canonicalUrl: joinUrl(url, `posts/${post.name}.html`),
+        canonicalUrl: joinUrl(url, `posts/${post.name}.html`),
         description: post.excerpt || post.description,
         relatedPosts: relatedPosts, // Always provide as array
         relatedSeries: [], // TODO: implementare serie correlate
@@ -111,11 +111,11 @@ function generateTags(tags, config, renderer) {
 
   for (const tag of tags) {
     const tagForTpl = { ...tag, name: tag.label || tag.name, slug: tag.key || tag.slug };
-  const { baseUrl, url, title } = getSiteMeta(config);
-  const feedPath = join(config.tagsOutputDir, `${tag.key}.xml`);
-  const baseHtmlHref = joinUrl(baseUrl, `tags/${tagForTpl.slug}.html`);
-  const baseFolderHref = joinUrl(baseUrl, `tags/${tagForTpl.slug}/`);
-  const items = (tag.posts || []).slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+    const { baseUrl, url, title } = getSiteMeta(config);
+    const feedPath = join(config.tagsOutputDir, `${tag.key}.xml`);
+    const baseHtmlHref = joinUrl(baseUrl, `tags/${tagForTpl.slug}.html`);
+    const baseFolderHref = joinUrl(baseUrl, `tags/${tagForTpl.slug}/`);
+    const items = (tag.posts || []).slice().sort((a, b) => new Date(b.date) - new Date(a.date));
     generatePaginatedList({
       items,
       pageSize: config.PAGE_SIZE || 10,
@@ -127,13 +127,16 @@ function generateTags(tags, config, renderer) {
         renderer.render('src/templates/tag.html', {
           tag: tagForTpl,
           posts: ctx.itemsPage,
-          title: ctx.page === 1 ? `${tagForTpl.name} Posts` : `${tagForTpl.name} Posts — Page ${ctx.page}`,
+          title:
+            ctx.page === 1
+              ? `${tagForTpl.name} Posts`
+              : `${tagForTpl.name} Posts — Page ${ctx.page}`,
           current: 'tags',
           canonicalUrl:
             ctx.page === 1
               ? joinUrl(url, `tags/${tagForTpl.slug}.html`)
               : joinUrl(url, `tags/${tagForTpl.slug}/${ctx.page}/`),
-      feedUrl: joinUrl(url, `tags/${tagForTpl.slug}.xml`),
+          feedUrl: joinUrl(url, `tags/${tagForTpl.slug}.xml`),
           description: `Posts tagged with ${tagForTpl.name}${ctx.page > 1 ? ` — Page ${ctx.page}` : ''}`,
           sortBy: 'date-desc',
           viewMode: 'list',
@@ -145,11 +148,11 @@ function generateTags(tags, config, renderer) {
 
     // Feed
     const tagFeedXml = buildRssFeed({
-    title: `${title} — ${tagForTpl.name}`,
-    link: `${url}/tags/${tagForTpl.slug}/`,
+      title: `${title} — ${tagForTpl.name}`,
+      link: `${url}/tags/${tagForTpl.slug}/`,
       description: `RSS feed for posts tagged with ${tagForTpl.name}`,
       items,
-    siteUrl: url,
+      siteUrl: url,
     });
     writeFileSync(feedPath, tagFeedXml, 'utf8');
   }
@@ -176,10 +179,10 @@ function generateMonths(months, config, renderer) {
       number: month.month || month.number,
       slug: month.key || month.slug,
     };
-  const { baseUrl, url, title } = getSiteMeta(config);
-  const feedPath = join(config.monthsOutputDir, `${month.key}.xml`);
-  const baseHtmlHref = joinUrl(baseUrl, `months/${monthForTpl.slug}.html`);
-  const baseFolderHref = joinUrl(baseUrl, `months/${monthForTpl.slug}/`);
+    const { baseUrl, url, title } = getSiteMeta(config);
+    const feedPath = join(config.monthsOutputDir, `${month.key}.xml`);
+    const baseHtmlHref = joinUrl(baseUrl, `months/${monthForTpl.slug}.html`);
+    const baseFolderHref = joinUrl(baseUrl, `months/${monthForTpl.slug}/`);
     const items = (month.posts || []).slice().sort((a, b) => new Date(b.date) - new Date(a.date));
     generatePaginatedList({
       items,
@@ -199,7 +202,7 @@ function generateMonths(months, config, renderer) {
             ctx.page === 1
               ? joinUrl(url, `months/${monthForTpl.slug}.html`)
               : joinUrl(url, `months/${monthForTpl.slug}/${ctx.page}/`),
-      feedUrl: joinUrl(url, `months/${monthForTpl.slug}.xml`),
+          feedUrl: joinUrl(url, `months/${monthForTpl.slug}.xml`),
           description: `Posts from ${monthForTpl.name}${ctx.page > 1 ? ` — Page ${ctx.page}` : ''}`,
           showStats: true,
           variant: 'month',
@@ -210,11 +213,11 @@ function generateMonths(months, config, renderer) {
 
     // Feed
     const monthFeedXml = buildRssFeed({
-    title: `${title} — ${monthForTpl.name}`,
-    link: `${url}/months/${monthForTpl.slug}/`,
+      title: `${title} — ${monthForTpl.name}`,
+      link: `${url}/months/${monthForTpl.slug}/`,
       description: `RSS feed for posts from ${monthForTpl.name}`,
       items,
-    siteUrl: url,
+      siteUrl: url,
     });
     writeFileSync(feedPath, monthFeedXml, 'utf8');
   }
@@ -224,9 +227,9 @@ function generateSeries(series, config, renderer) {
   if (!series || !Array.isArray(series)) return;
 
   for (const serie of series) {
-  const { baseUrl, url } = getSiteMeta(config);
-  const baseHtmlHref = joinUrl(baseUrl, `series/${serie.slug}.html`);
-  const baseFolderHref = joinUrl(baseUrl, `series/${serie.slug}/`);
+    const { baseUrl, url } = getSiteMeta(config);
+    const baseHtmlHref = joinUrl(baseUrl, `series/${serie.slug}.html`);
+    const baseFolderHref = joinUrl(baseUrl, `series/${serie.slug}/`);
     const items = (serie.posts || []).slice().sort((a, b) => new Date(a.date) - new Date(b.date));
     generatePaginatedList({
       items,
@@ -276,8 +279,8 @@ export function buildRssFeed({ title, link, description, items, siteUrl }) {
     .slice(0, 20)
     .map((p) => {
       const itemTitle = escapeXml(p.title || p.name);
-  const itemLink = `${siteUrl}/posts/${p.name}.html`;
-  const guid = `${siteUrl}/posts/${p.name}.html`;
+      const itemLink = `${siteUrl}/posts/${p.name}.html`;
+      const guid = `${siteUrl}/posts/${p.name}.html`;
       const pubDate = p.date ? new Date(p.date).toUTCString() : now;
       const desc = escapeXml(p.excerpt || '');
       return (
@@ -300,7 +303,7 @@ export function buildRssFeed({ title, link, description, items, siteUrl }) {
     `    <link>${escapeXml(link)}</link>\n` +
     `    <description>${safeDesc}</description>\n` +
     `    <lastBuildDate>${now}</lastBuildDate>\n` +
-  (channelItems ? `${channelItems}\n` : '') +
+    (channelItems ? `${channelItems}\n` : '') +
     `  </channel>\n` +
     `</rss>\n`;
   return xml;
@@ -312,9 +315,7 @@ function generateStaticPages(dataset, config, renderer) {
 
   // Home: latest posts with pinned on top
   try {
-    const published = (dataset.posts || [])
-      .filter((p) => p?.published)
-      .slice();
+    const published = (dataset.posts || []).filter((p) => p?.published).slice();
     // Pinned first, then by date desc
     published.sort((a, b) => {
       const pinA = a.pinned ? 1 : 0;
@@ -390,7 +391,11 @@ function buildPagination(page, pageCount, baseHtmlHref, baseFolderHref) {
   const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
   const pages = [];
   const addPage = (p) => {
-    pages.push({ page: p, href: p === 1 ? baseHtmlHref : `${baseFolderHref}${p}/`, current: p === page });
+    pages.push({
+      page: p,
+      href: p === 1 ? baseHtmlHref : `${baseFolderHref}${p}/`,
+      current: p === page,
+    });
   };
   const addEllipsis = () => pages.push({ gap: true, label: '…' });
 
@@ -434,7 +439,8 @@ function generatePaginatedList({
       const start = (page - 1) * pageSize;
       const end = start + pageSize;
       const itemsPage = sorted.slice(start, end);
-      const pagination = pageCount > 1 ? buildPagination(page, pageCount, baseHtmlHref, baseFolderHref) : null;
+      const pagination =
+        pageCount > 1 ? buildPagination(page, pageCount, baseHtmlHref, baseFolderHref) : null;
       const canonicalUrl = page === 1 ? baseHtmlHref : `${baseFolderHref}${page}/`;
       const html = render({ page, pageCount, itemsPage, pagination, canonicalUrl });
       ensureDir(outDir);

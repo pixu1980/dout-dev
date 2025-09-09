@@ -51,7 +51,7 @@ async function checkHTMLFormatting() {
     console.log(`📄 Checking ${htmlFiles.length} HTML files`);
 
     // Check with Prettier
-  const { stdout } = await execAsync(
+    const { stdout } = await execAsync(
       `npx prettier --check ${htmlFiles.map((f) => `"${f}"`).join(' ')}`,
       { cwd: projectRoot }
     );
@@ -63,8 +63,31 @@ async function checkHTMLFormatting() {
   } catch (error) {
     console.error('❌ HTML formatting issues found:');
     console.error(error.stdout || error.message);
-    console.log('\n💡 Run `pnpm format:html` to fix formatting issues');
-    return { success: false, message: 'HTML formatting issues found', error };
+    console.log('\n�️  Attempting to auto-format HTML (Prettier --write)...');
+
+    try {
+      // Auto-fix and re-check once
+      const htmlFiles = await findHTMLFiles(join(projectRoot, 'src'));
+      await execAsync(`npx prettier --write ${htmlFiles.map((f) => `"${f}"`).join(' ')}`, {
+        cwd: projectRoot,
+      });
+
+      const { stdout: recheckOut } = await execAsync(
+        `npx prettier --check ${htmlFiles.map((f) => `"${f}"`).join(' ')}`,
+        { cwd: projectRoot }
+      );
+
+      if (recheckOut) console.log(recheckOut);
+      console.log('✅ HTML formatting is correct after auto-fix');
+      return { success: true, message: 'HTML formatting corrected automatically' };
+    } catch (retryError) {
+      console.log('\n�💡 Run `pnpm format:html` to fix formatting issues');
+      return {
+        success: false,
+        message: 'HTML formatting issues persist after auto-fix',
+        error: retryError,
+      };
+    }
   }
 }
 

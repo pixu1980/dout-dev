@@ -1,53 +1,44 @@
 <extends src="../layouts/base.html">
+  <block name="head">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="You can edit CSS" />
+    <meta property="og:description" content="You can edit CSShttps://codepen.io/davatron5000/pen/mddmRJe" />
 
-<block name="head">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="You can edit CSS">
-  <meta property="og:description" content="You can edit CSShttps://codepen.io/davatron5000/pen/mddmRJe">
-  
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BlogPosting",
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
         "headline": "You can edit CSS",
         "datePublished": "2022-03-12T00:00:00.000Z",
-        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2022-03-12-you-can-edit-css.html"}
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dout.dev/posts/2022-03-12-you-can-edit-css.html" }
       }
-  </script>
-</block>
+    </script>
+  </block>
 
-<block name="content">
-  <article itemscope="" itemtype="https://schema.org/BlogPosting">
-    <header>
-      <h1 itemprop="headline">You can edit CSS</h1>
-      <p>
-        <time datetime="2022-03-12" itemprop="datePublished">
-          12 marzo 2022
-        </time>
-      </p>
-      
-      
+  <block name="content">
+    <article itemscope="" itemtype="https://schema.org/BlogPosting">
+      <header>
+        <h1 itemprop="headline">You can edit CSS</h1>
+        <p>
+          <time datetime="2022-03-12" itemprop="datePublished"> 12 marzo 2022 </time>
+        </p>
+
         <ul aria-label="Tags">
-          
-            <li><a class="tag" href="/tags/markdown.html">Markdown</a></li>
-          
-            <li><a class="tag" href="/tags/cover-image.html">Cover-image</a></li>
-          
+          <li><a class="tag" href="/tags/markdown.html">Markdown</a></li>
+
+          <li><a class="tag" href="/tags/cover-image.html">Cover-image</a></li>
         </ul>
-      
-    </header>
+      </header>
 
-    <section itemprop="articleBody"><p><a href="https://codepen.io/davatron5000/pen/mddmRJe">You can edit CSS</a></p>
-</section>
+      <section itemprop="articleBody">
+        <p><a href="https://codepen.io/davatron5000/pen/mddmRJe">You can edit CSS</a></p>
+      </section>
 
-    <nav aria-label="Post navigation">
-      
+      <nav aria-label="Post navigation">
         <a rel="prev" href="/posts/2022-03-03-marked-markdown-parser.html">← Marked - Markdown Parser</a>
-      
-      
+
         <a rel="next" href="/posts/2022-03-16-test-codepen.html">Testing CodePen →</a>
-      
-    </nav>
-  </article>
-</block>
+      </nav>
+    </article>
+  </block>
 </extends>

@@ -234,7 +234,7 @@ export class TemplateRenderer {
       '"': '&quot;',
       "'": '&#x27;',
     };
-  return String(str).replace(/[&<>"']/g, (s) => htmlEscapeMap[s]);
+    return String(str).replace(/[&<>"']/g, (s) => htmlEscapeMap[s]);
   }
 
   processForElement(forEl, data) {
@@ -405,7 +405,7 @@ export class TemplateRenderer {
   cleanup(root) {
     const r = root || null;
     try {
-  const container = r?.querySelectorAll ? r : null;
+      const container = r?.querySelectorAll ? r : null;
       if (!container) return;
 
       // Ensure main script is marked as module to satisfy bundlers (vite/rollup)
@@ -421,7 +421,7 @@ export class TemplateRenderer {
       for (const el of Array.from(container.querySelectorAll('[defer]'))) {
         if (el.getAttribute('defer') === '') el.setAttribute('defer', '');
       }
-  } catch (_err) {
+    } catch (_err) {
       // non-fatal - leave DOM as-is on error
     }
   }

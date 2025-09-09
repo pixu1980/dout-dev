@@ -1,36 +1,30 @@
 <extends src="../layouts/base.html">
+  <block name="head">
+    <link rel="alternate" type="application/rss+xml" title="dout.dev — Generic" href="/tags/generic.xml" />
+    <link rel="canonical" href="https://dout.dev/tags/generic.html" />
+    <meta name="description" content="Posts tagged with Generic" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tag: Generic" />
+    <meta property="og:description" content="Posts tagged with Generic" />
+    <meta property="og:url" content="https://dout.dev/tags/generic.html" />
+    <meta name="twitter:card" content="summary" />
+  </block>
 
-<block name="head">
-  <link rel="alternate" type="application/rss+xml" title="dout.dev — Generic" href="/tags/generic.xml">
-  <link rel="canonical" href="https://dout.dev/tags/generic.html">
-  <meta name="description" content="Posts tagged with Generic">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Tag: Generic">
-  <meta property="og:description" content="Posts tagged with Generic">
-  <meta property="og:url" content="https://dout.dev/tags/generic.html">
-  <meta name="twitter:card" content="summary">
-</block>
-
-<block name="content">
-  <section aria-labelledby="tag-title">
-    <h1 id="tag-title">Tag: Generic</h1>
-    <p><a href="/tags/generic.xml">RSS feed</a></p>
-    <ul>
-      
+  <block name="content">
+    <section aria-labelledby="tag-title">
+      <h1 id="tag-title">Tag: Generic</h1>
+      <p><a href="/tags/generic.xml">RSS feed</a></p>
+      <ul>
         <li>
           <a href="/posts/2022-03-25-concerning.html">Concerning…</a>
           <time datetime="2022-03-25">25 marzo 2022</time>
         </li>
-      
+
         <li>
           <a href="/posts/2022-03-24-welcome-to-dout-dev.html">Welcome to dout.dev</a>
           <time datetime="2022-03-24">24 marzo 2022</time>
         </li>
-      
-    </ul>
-
-    
-
-  </section>
-</block>
+      </ul>
+    </section>
+  </block>
 </extends>

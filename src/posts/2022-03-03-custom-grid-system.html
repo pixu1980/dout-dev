@@ -1,57 +1,53 @@
 <extends src="../layouts/base.html">
-
-<block name="head">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Custom Grid System">
-  <meta property="og:description" content="Blog under construction">
-  <meta property="og:image" content="/images/alexandr-podvalny-220262-unsplash.jpg">
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BlogPosting",
+  <block name="head">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Custom Grid System" />
+    <meta property="og:description" content="Blog under construction" />
+    <meta property="og:image" content="/images/alexandr-podvalny-220262-unsplash.jpg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
         "headline": "Custom Grid System",
         "datePublished": "2022-03-03T14:41:22.000Z",
-        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2022-03-03-custom-grid-system.html"}
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dout.dev/posts/2022-03-03-custom-grid-system.html" }
       }
-  </script>
-</block>
+    </script>
+  </block>
 
-<block name="content">
-  <article itemscope="" itemtype="https://schema.org/BlogPosting">
-    <header>
-      <h1 itemprop="headline">Custom Grid System</h1>
-      <p>
-        <time datetime="2022-03-03" itemprop="datePublished">
-          3 marzo 2022
-        </time>
-      </p>
-      
+  <block name="content">
+    <article itemscope="" itemtype="https://schema.org/BlogPosting">
+      <header>
+        <h1 itemprop="headline">Custom Grid System</h1>
+        <p>
+          <time datetime="2022-03-03" itemprop="datePublished"> 3 marzo 2022 </time>
+        </p>
+
         <figure class="post-cover">
-          <img src="/images/alexandr-podvalny-220262-unsplash.jpg" alt="Custom Grid System" fetchpriority="high" decoding="async" width="" height="">
+          <img
+            src="/images/alexandr-podvalny-220262-unsplash.jpg"
+            alt="Custom Grid System"
+            fetchpriority="high"
+            decoding="async"
+            width=""
+            height=""
+          />
         </figure>
-      
-      
+
         <ul aria-label="Tags">
-          
-            <li><a class="tag" href="/tags/markdown.html">Markdown</a></li>
-          
-            <li><a class="tag" href="/tags/releases.html">Releases</a></li>
-          
+          <li><a class="tag" href="/tags/markdown.html">Markdown</a></li>
+
+          <li><a class="tag" href="/tags/releases.html">Releases</a></li>
         </ul>
-      
-    </header>
+      </header>
 
-    <section itemprop="articleBody"><p>Blog under construction</p>
-</section>
+      <section itemprop="articleBody"><p>Blog under construction</p></section>
 
-    <nav aria-label="Post navigation">
-      
+      <nav aria-label="Post navigation">
         <a rel="prev" href="/posts/2022-02-25-you-can-express-tags-today.html">← You can use express tags… TODAY!</a>
-      
-      
+
         <a rel="next" href="/posts/2022-03-03-marked-markdown-parser.html">Marked - Markdown Parser →</a>
-      
-    </nav>
-  </article>
-</block>
+      </nav>
+    </article>
+  </block>
 </extends>

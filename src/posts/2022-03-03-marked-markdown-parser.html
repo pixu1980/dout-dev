@@ -1,64 +1,73 @@
 <extends src="../layouts/base.html">
+  <block name="head">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Marked - Markdown Parser" />
+    <meta property="og:description" content="How To Use The Demo" />
 
-<block name="head">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Marked - Markdown Parser">
-  <meta property="og:description" content="How To Use The Demo">
-  
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BlogPosting",
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
         "headline": "Marked - Markdown Parser",
         "datePublished": "2022-03-03T15:41:22.000Z",
-        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2022-03-03-marked-markdown-parser.html"}
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2022-03-03-marked-markdown-parser.html"
+        }
       }
-  </script>
-</block>
+    </script>
+  </block>
 
-<block name="content">
-  <article itemscope="" itemtype="https://schema.org/BlogPosting">
-    <header>
-      <h1 itemprop="headline">Marked - Markdown Parser</h1>
-      <p>
-        <time datetime="2022-03-03" itemprop="datePublished">
-          3 marzo 2022
-        </time>
-      </p>
-      
-      
-    </header>
+  <block name="content">
+    <article itemscope="" itemtype="https://schema.org/BlogPosting">
+      <header>
+        <h1 itemprop="headline">Marked - Markdown Parser</h1>
+        <p>
+          <time datetime="2022-03-03" itemprop="datePublished"> 3 marzo 2022 </time>
+        </p>
+      </header>
 
-    <section itemprop="articleBody"><h2>How To Use The Demo</h2>
-<ol>
-<li>[object Object]</li><li>[object Object]</li></ol>
-<p>That's it. Pretty simple. There's also a drop-down option in the upper right to switch between various views:</p>
-<ul>
-<li>[object Object]</li><li>[object Object]</li><li>[object Object]</li><li>[object Object]</li></ul>
-<h2>Why Markdown?</h2>
-<pre is="pix-highlighter" lang="html"><code>&lt;div&gt;&lt;&#x2F;div&gt;</code></pre><p>It's easy. It's not overly bloated, unlike HTML. Also, as the creator of <a href="http://daringfireball.net/projects/markdown/">markdown</a> says,</p>
-<blockquote>
-<p>The overriding design goal for Markdown's
-formatting syntax is to make it as readable
-as possible. The idea is that a
-Markdown-formatted document should be
-publishable as-is, as plain text, without
-looking like it's been marked up with tags
-or formatting instructions.</p>
-</blockquote>
-<pre is="pix-highlighter" lang="scss"><code>div {
-}</code></pre><p>Ready to start writing? Either start changing stuff on the left or
-<a href="/demo/?text=">clear everything</a> with a simple click.</p>
-</section>
+      <section itemprop="articleBody">
+        <h2>How To Use The Demo</h2>
+        <ol>
+          <li>[object Object]</li>
+          <li>[object Object]</li>
+        </ol>
+        <p>
+          That's it. Pretty simple. There's also a drop-down option in the upper right to switch between various views:
+        </p>
+        <ul>
+          <li>[object Object]</li>
+          <li>[object Object]</li>
+          <li>[object Object]</li>
+          <li>[object Object]</li>
+        </ul>
+        <h2>Why Markdown?</h2>
+        <pre is="pix-highlighter" lang="html"><code>&lt;div&gt;&lt;&#x2F;div&gt;</code></pre>
+        <p>
+          It's easy. It's not overly bloated, unlike HTML. Also, as the creator of
+          <a href="http://daringfireball.net/projects/markdown/">markdown</a> says,
+        </p>
+        <blockquote>
+          <p>
+            The overriding design goal for Markdown's formatting syntax is to make it as readable as possible. The idea
+            is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it's
+            been marked up with tags or formatting instructions.
+          </p>
+        </blockquote>
+        <pre is="pix-highlighter" lang="scss"><code>div {
+}</code></pre>
+        <p>
+          Ready to start writing? Either start changing stuff on the left or
+          <a href="/demo/?text=">clear everything</a> with a simple click.
+        </p>
+      </section>
 
-    <nav aria-label="Post navigation">
-      
+      <nav aria-label="Post navigation">
         <a rel="prev" href="/posts/2022-03-03-custom-grid-system.html">← Custom Grid System</a>
-      
-      
+
         <a rel="next" href="/posts/2022-03-12-you-can-edit-css.html">You can edit CSS →</a>
-      
-    </nav>
-  </article>
-</block>
+      </nav>
+    </article>
+  </block>
 </extends>

@@ -59,9 +59,7 @@ function initNavigation() {
   if (!nav || !toggle) return;
   let lastFocused = null;
   const getFocusable = () =>
-    nav.querySelectorAll(
-      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
-    );
+    nav.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
   const open = (value) => {
     nav.dataset.open = String(value);
     toggle.setAttribute('aria-expanded', String(value));
@@ -224,6 +222,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initPerformanceMonitoring();
   initServiceWorker();
   initLazyImages();
+  // Load search logic only on /search.html
+  if (location.pathname.endsWith('/search.html') || location.pathname === '/search') {
+    import('./search.js').catch(() => {});
+  }
 });
 
 // Export for testing
