@@ -1,0 +1,14 @@
+# Folders
+node_modules/
+dist/
+pnpm-lock.yaml
+
+# Generated JSON datasets (rebuilt by tests/build)
+data/*.json
+custom/data/*.json
+src/assets/images-manifest.json
+src/data/*.json
+
+# Vite cache
+.vite/
+.parcel-cache/

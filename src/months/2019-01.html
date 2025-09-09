@@ -1,34 +1,28 @@
 <extends src="../layouts/base.html">
+  <block name="head">
+    <link rel="alternate" type="application/rss+xml" title="dout.dev — January 2019" href="/months/2019-01.xml" />
+    <link rel="canonical" href="https://dout.dev/months/2019-01.html" />
+    <meta name="description" content="Posts from January 2019" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="January 2019" />
+    <meta property="og:description" content="Posts from January 2019" />
+    <meta property="og:url" content="https://dout.dev/months/2019-01.html" />
+    <meta name="twitter:card" content="summary" />
+  </block>
 
-<block name="head">
-  <link rel="alternate" type="application/rss+xml" title="dout.dev — January 2019" href="/months/2019-01.xml">
-  <link rel="canonical" href="https://dout.dev/months/2019-01.html">
-  <meta name="description" content="Posts from January 2019">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="January 2019">
-  <meta property="og:description" content="Posts from January 2019">
-  <meta property="og:url" content="https://dout.dev/months/2019-01.html">
-  <meta name="twitter:card" content="summary">
-</block>
+  <block name="content">
+    <section aria-labelledby="month-title">
+      <h1 id="month-title">January 2019</h1>
+      <p><a href="/months/2019-01.xml">RSS feed</a></p>
 
-<block name="content">
-  <section aria-labelledby="month-title">
-    <h1 id="month-title">January 2019</h1>
-    <p><a href="/months/2019-01.xml">RSS feed</a></p>
-    
       <p>Tags: Markdown, Cover-image</p>
-    
-    <ul>
-      
+
+      <ul>
         <li>
           <a href="/posts/2019-01-07-a-post-with-a-cover.html">A post with a cover image</a>
           <time datetime="2019-01-07">7 gennaio 2019</time>
         </li>
-      
-    </ul>
-
-    
-
-  </section>
-</block>
+      </ul>
+    </section>
+  </block>
 </extends>

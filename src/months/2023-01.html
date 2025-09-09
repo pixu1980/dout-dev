@@ -1,34 +1,28 @@
 <extends src="../layouts/base.html">
+  <block name="head">
+    <link rel="alternate" type="application/rss+xml" title="dout.dev — January 2023" href="/months/2023-01.xml" />
+    <link rel="canonical" href="https://dout.dev/months/2023-01.html" />
+    <meta name="description" content="Posts from January 2023" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="January 2023" />
+    <meta property="og:description" content="Posts from January 2023" />
+    <meta property="og:url" content="https://dout.dev/months/2023-01.html" />
+    <meta name="twitter:card" content="summary" />
+  </block>
 
-<block name="head">
-  <link rel="alternate" type="application/rss+xml" title="dout.dev — January 2023" href="/months/2023-01.xml">
-  <link rel="canonical" href="https://dout.dev/months/2023-01.html">
-  <meta name="description" content="Posts from January 2023">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="January 2023">
-  <meta property="og:description" content="Posts from January 2023">
-  <meta property="og:url" content="https://dout.dev/months/2023-01.html">
-  <meta name="twitter:card" content="summary">
-</block>
+  <block name="content">
+    <section aria-labelledby="month-title">
+      <h1 id="month-title">January 2023</h1>
+      <p><a href="/months/2023-01.xml">RSS feed</a></p>
 
-<block name="content">
-  <section aria-labelledby="month-title">
-    <h1 id="month-title">January 2023</h1>
-    <p><a href="/months/2023-01.xml">RSS feed</a></p>
-    
       <p>Tags: Markdown, Releases</p>
-    
-    <ul>
-      
+
+      <ul>
         <li>
           <a href="/posts/2023-01-01-say-hello-2023.html">Say hello to 2023 🎉</a>
           <time datetime="2023-01-01">1 gennaio 2023</time>
         </li>
-      
-    </ul>
-
-    
-
-  </section>
-</block>
+      </ul>
+    </section>
+  </block>
 </extends>

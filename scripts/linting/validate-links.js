@@ -66,12 +66,12 @@ function resolveInternalLink(href, basePath, srcDir) {
 function targetExistsAt(path) {
   if (existsSync(path)) return true;
   if (path.endsWith('/')) {
-  const htmlPath = `${path.slice(0, -1)}.html`;
+    const htmlPath = `${path.slice(0, -1)}.html`;
     if (existsSync(htmlPath)) return true;
-  const indexHtml = `${path}index.html`;
+    const indexHtml = `${path}index.html`;
     if (existsSync(indexHtml)) return true;
   } else if (!path.endsWith('.html')) {
-  const htmlPath = `${path}.html`;
+    const htmlPath = `${path}.html`;
     if (existsSync(htmlPath)) return true;
   }
   return false;

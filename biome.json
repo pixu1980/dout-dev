@@ -78,7 +78,7 @@
   },
   "css": {
     "formatter": {
-      "enabled": true,
+      "enabled": false,
       "indentStyle": "space",
       "indentWidth": 2,
       "lineEnding": "lf",
@@ -86,12 +86,12 @@
       "quoteStyle": "single"
     },
     "linter": {
-      "enabled": true
+      "enabled": false
     }
   },
   "json": {
     "formatter": {
-      "enabled": true,
+      "enabled": false,
       "indentStyle": "space",
       "indentWidth": 2,
       "lineEnding": "lf"

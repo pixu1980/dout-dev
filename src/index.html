@@ -1,170 +1,154 @@
 <extends src="../layouts/base.html">
+  <block name="head">
+    <meta name="description" content="Latest posts and updates from dout.dev" />
+  </block>
 
-<block name="head">
-  <meta name="description" content="Latest posts and updates from dout.dev">
-</block>
+  <block name="content">
+    <section aria-labelledby="home-title">
+      <h1 id="home-title">Latest Posts</h1>
 
-<block name="content">
-  <section aria-labelledby="home-title">
-    <h1 id="home-title">Latest Posts</h1>
-    
       <div class="posts-grid" role="list">
-        
-          <article class="post-card" role="listitem">
-            <header class="post-card__header">
-              <h2 class="post-card__title">
-                <a href="/posts/2024-12-27-m4-template-test.html">M4 Template Test - Cover Image e Syntax Highlighting</a>
-              </h2>
-              
-                <span class="badge badge--pinned" aria-label="Pinned post">Pinned</span>
-              
-            </header>
-            <p class="post-card__meta">
-              <time datetime="2024-12-27">27 dicembre 2024</time>
-            </p>
-            
-              <p class="post-card__excerpt">Questo è un post di test per verificare tutte le funzionalità implementate nel M4 Post Page.</p>
-            
-          </article>
-        
-          <article class="post-card" role="listitem">
-            <header class="post-card__header">
-              <h2 class="post-card__title">
-                <a href="/posts/2025-08-15-welcome-to-dout-dev-2.html">Welcome to dout.dev 2.0</a>
-              </h2>
-              
-            </header>
-            <p class="post-card__meta">
-              <time datetime="2025-08-15">15 agosto 2025</time>
-            </p>
-            
-              <p class="post-card__excerpt">Welcome to the New dout.dev</p>
-            
-          </article>
-        
-          <article class="post-card" role="listitem">
-            <header class="post-card__header">
-              <h2 class="post-card__title">
-                <a href="/posts/2024-10-28-concerning-css-grid.html">Introducing CSS Grid - The Future of Web Layout 🎨</a>
-              </h2>
-              
-            </header>
-            <p class="post-card__meta">
-              <time datetime="2024-10-28">28 ottobre 2024</time>
-            </p>
-            
-              <p class="post-card__excerpt">What is CSS Grid and why is it important?</p>
-            
-          </article>
-        
-          <article class="post-card" role="listitem">
-            <header class="post-card__header">
-              <h2 class="post-card__title">
-                <a href="/posts/2024-05-19-a11y-by-design.html">Accessibility by Design</a>
-              </h2>
-              
-            </header>
-            <p class="post-card__meta">
-              <time datetime="2024-05-19">19 maggio 2024</time>
-            </p>
-            
-              <p class="post-card__excerpt">We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Des</p>
-            
-          </article>
-        
-          <article class="post-card" role="listitem">
-            <header class="post-card__header">
-              <h2 class="post-card__title">
-                <a href="/posts/2023-01-01-say-hello-2023.html">Say hello to 2023 🎉</a>
-              </h2>
-              
-            </header>
-            <p class="post-card__meta">
-              <time datetime="2023-01-01">1 gennaio 2023</time>
-            </p>
-            
-              <p class="post-card__excerpt">!example alt text../assets/images/20220225youcanexpresstagstoday.jpg 'example Title'</p>
-            
-          </article>
-        
-          <article class="post-card" role="listitem">
-            <header class="post-card__header">
-              <h2 class="post-card__title">
-                <a href="/posts/2022-03-25-concerning.html">Concerning…</a>
-              </h2>
-              
-            </header>
-            <p class="post-card__meta">
-              <time datetime="2022-03-25">25 marzo 2022</time>
-            </p>
-            
-              <p class="post-card__excerpt">Concerning Core Web Technologies</p>
-            
-          </article>
-        
-          <article class="post-card" role="listitem">
-            <header class="post-card__header">
-              <h2 class="post-card__title">
-                <a href="/posts/2022-03-24-welcome-to-dout-dev.html">Welcome to dout.dev</a>
-              </h2>
-              
-            </header>
-            <p class="post-card__meta">
-              <time datetime="2022-03-24">24 marzo 2022</time>
-            </p>
-            
-              <p class="post-card__excerpt">Hi, I'm Emiliano "Pixu" Pisu.</p>
-            
-          </article>
-        
-          <article class="post-card" role="listitem">
-            <header class="post-card__header">
-              <h2 class="post-card__title">
-                <a href="/posts/2022-03-22-building-dout-dev-blog-part-2.html">Building dout.dev blog - Part II</a>
-              </h2>
-              
-            </header>
-            <p class="post-card__meta">
-              <time datetime="2022-03-22">22 marzo 2022</time>
-            </p>
-            
-              <p class="post-card__excerpt">Building dout.dev blog Part II</p>
-            
-          </article>
-        
-          <article class="post-card" role="listitem">
-            <header class="post-card__header">
-              <h2 class="post-card__title">
-                <a href="/posts/2022-03-21-building-dout-dev-blog.html">Building dout.dev blog</a>
-              </h2>
-              
-            </header>
-            <p class="post-card__meta">
-              <time datetime="2022-03-21">21 marzo 2022</time>
-            </p>
-            
-              <p class="post-card__excerpt">Less is more!</p>
-            
-          </article>
-        
-          <article class="post-card" role="listitem">
-            <header class="post-card__header">
-              <h2 class="post-card__title">
-                <a href="/posts/2022-03-18-css-properties-hierarchy.html">CSS Properties Hierarchy</a>
-              </h2>
-              
-            </header>
-            <p class="post-card__meta">
-              <time datetime="2022-03-18">18 marzo 2022</time>
-            </p>
-            
-              <p class="post-card__excerpt">css :root { borderradius: 5px; }</p>
-            
-          </article>
-        
+        <article class="post-card" role="listitem">
+          <header class="post-card__header">
+            <h2 class="post-card__title">
+              <a href="/posts/2024-12-27-m4-template-test.html">M4 Template Test - Cover Image e Syntax Highlighting</a>
+            </h2>
+
+            <span class="badge badge--pinned" aria-label="Pinned post">Pinned</span>
+          </header>
+          <p class="post-card__meta">
+            <time datetime="2024-12-27">27 dicembre 2024</time>
+          </p>
+
+          <p class="post-card__excerpt">
+            Questo è un post di test per verificare tutte le funzionalità implementate nel M4 Post Page.
+          </p>
+        </article>
+
+        <article class="post-card" role="listitem">
+          <header class="post-card__header">
+            <h2 class="post-card__title">
+              <a href="/posts/2025-08-15-welcome-to-dout-dev-2.html">Welcome to dout.dev 2.0</a>
+            </h2>
+          </header>
+          <p class="post-card__meta">
+            <time datetime="2025-08-15">15 agosto 2025</time>
+          </p>
+
+          <p class="post-card__excerpt">Welcome to the New dout.dev</p>
+        </article>
+
+        <article class="post-card" role="listitem">
+          <header class="post-card__header">
+            <h2 class="post-card__title">
+              <a href="/posts/2024-10-28-concerning-css-grid.html"
+                >Introducing CSS Grid - The Future of Web Layout 🎨</a
+              >
+            </h2>
+          </header>
+          <p class="post-card__meta">
+            <time datetime="2024-10-28">28 ottobre 2024</time>
+          </p>
+
+          <p class="post-card__excerpt">What is CSS Grid and why is it important?</p>
+        </article>
+
+        <article class="post-card" role="listitem">
+          <header class="post-card__header">
+            <h2 class="post-card__title">
+              <a href="/posts/2024-05-19-a11y-by-design.html">Accessibility by Design</a>
+            </h2>
+          </header>
+          <p class="post-card__meta">
+            <time datetime="2024-05-19">19 maggio 2024</time>
+          </p>
+
+          <p class="post-card__excerpt">
+            We live in an era where technology permeates every aspect of our daily lives. However, not everyone can
+            benefit equally from these advancements. This is where Accessibility by Des
+          </p>
+        </article>
+
+        <article class="post-card" role="listitem">
+          <header class="post-card__header">
+            <h2 class="post-card__title">
+              <a href="/posts/2023-01-01-say-hello-2023.html">Say hello to 2023 🎉</a>
+            </h2>
+          </header>
+          <p class="post-card__meta">
+            <time datetime="2023-01-01">1 gennaio 2023</time>
+          </p>
+
+          <p class="post-card__excerpt">
+            !example alt text../assets/images/20220225youcanexpresstagstoday.jpg 'example Title'
+          </p>
+        </article>
+
+        <article class="post-card" role="listitem">
+          <header class="post-card__header">
+            <h2 class="post-card__title">
+              <a href="/posts/2022-03-25-concerning.html">Concerning…</a>
+            </h2>
+          </header>
+          <p class="post-card__meta">
+            <time datetime="2022-03-25">25 marzo 2022</time>
+          </p>
+
+          <p class="post-card__excerpt">Concerning Core Web Technologies</p>
+        </article>
+
+        <article class="post-card" role="listitem">
+          <header class="post-card__header">
+            <h2 class="post-card__title">
+              <a href="/posts/2022-03-24-welcome-to-dout-dev.html">Welcome to dout.dev</a>
+            </h2>
+          </header>
+          <p class="post-card__meta">
+            <time datetime="2022-03-24">24 marzo 2022</time>
+          </p>
+
+          <p class="post-card__excerpt">Hi, I'm Emiliano "Pixu" Pisu.</p>
+        </article>
+
+        <article class="post-card" role="listitem">
+          <header class="post-card__header">
+            <h2 class="post-card__title">
+              <a href="/posts/2022-03-22-building-dout-dev-blog-part-2.html">Building dout.dev blog - Part II</a>
+            </h2>
+          </header>
+          <p class="post-card__meta">
+            <time datetime="2022-03-22">22 marzo 2022</time>
+          </p>
+
+          <p class="post-card__excerpt">Building dout.dev blog Part II</p>
+        </article>
+
+        <article class="post-card" role="listitem">
+          <header class="post-card__header">
+            <h2 class="post-card__title">
+              <a href="/posts/2022-03-21-building-dout-dev-blog.html">Building dout.dev blog</a>
+            </h2>
+          </header>
+          <p class="post-card__meta">
+            <time datetime="2022-03-21">21 marzo 2022</time>
+          </p>
+
+          <p class="post-card__excerpt">Less is more!</p>
+        </article>
+
+        <article class="post-card" role="listitem">
+          <header class="post-card__header">
+            <h2 class="post-card__title">
+              <a href="/posts/2022-03-18-css-properties-hierarchy.html">CSS Properties Hierarchy</a>
+            </h2>
+          </header>
+          <p class="post-card__meta">
+            <time datetime="2022-03-18">18 marzo 2022</time>
+          </p>
+
+          <p class="post-card__excerpt">css :root { borderradius: 5px; }</p>
+        </article>
       </div>
-    
-    
-  </section>
-</block>
+    </section>
+  </block>
 </extends>

@@ -163,6 +163,7 @@ Example:
 `![Alt](../assets/images/example.jpg "Hero | srcset=../img/320.jpg 320w, ../img/640.jpg 640w | sizes=(max-width: 640px) 100vw, 640px")`
 
 Notes:
+
 - For local PNG/JPEG assets the engine tries to add `width`/`height` to reduce CLS.
 - If `srcset` isn’t provided, it’s built automatically from `src/assets/images-manifest.json`.
 - Output uses `<picture>`: WebP `<source>` + raster `<source>`; eager mode emits real `srcset`, lazy uses `data-srcset` and a `<noscript>` `<img>` fallback.
@@ -199,6 +200,7 @@ The `pnpm build` script runs this step automatically before CMS and Vite.
   - Series: `src/series/<slug>.html`
 
 Quick use:
+
 - In a listing template, include the shared UI:
   - `<include src="../components/pagination.html"></include>`
 - Expose `pagination` from your generator to drive the component.
@@ -207,7 +209,7 @@ Quick use:
 
 ### Code highlighting
 
-- Use fenced code blocks in Markdown (```js, ```css, ```html, etc.).
+- Use fenced code blocks in Markdown (`js, `css, ```html, etc.).
 - Renderer outputs `<pre is="pix-highlighter" lang="..."><code>…</code></pre>`.
 - Supported lexers: js, ts, css, html, json, md, bash, python, go, rust, c, cpp, php, csharp, yaml.
 
@@ -323,3 +325,15 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 **Live Site**: [https://dout.dev](https://dout.dev)  
 **Repository**: [https://github.com/pixu1980/dout-dev](https://github.com/pixu1980/dout-dev)
+
+### Search (M10)
+
+- The search page (`/search.html`) loads static JSON datasets from `/data/posts.json`, `/data/tags.json`, `/data/months.json`, `/data/series.json`.
+- URL parameters:
+  - `q`: the search term
+  - `page`: the page number (1-based)
+  - `type`: optional, repeated param to filter result types. Allowed values: `post`, `tag`, `series`, `month`. Example: `?q=css&type=post&type=tag`
+- Accessibility: the form has `role="search"`; results summary uses `aria-live="polite"` and announces page changes.
+- Filters: a fieldset of checkboxes lets you include/exclude types (posts, tags, series, months). Selection is reflected in the URL (`type=...`).
+- Pagination: client-side (10 items/page). UI and semantics aligned with the shared pagination component (Prev/Next, `aria-current`, links preserve `q` and `type`).
+- Ranking: simple text matching with light boosts for title/tags; extra boost applied on exact keyword matches (keywords are extracted at build time).

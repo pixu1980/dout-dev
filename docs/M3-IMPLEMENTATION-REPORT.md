@@ -34,4 +34,3 @@ This report summarizes what was implemented for M3 (Layouts & fundamental compon
 - Apply `content-visibility`/`contain` selectively (done for listing/card components; extend if beneficial).
 - Introduce theme toggle and accent system in M9.
 - Address minor A11y warnings (landmarks on demo/404/privacy; single H1 on example post).
-

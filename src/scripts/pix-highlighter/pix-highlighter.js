@@ -290,7 +290,7 @@ export {
   lexTS,
   lexYAML,
   normalizeLang,
-  PixHighlighter
+  PixHighlighter,
 };
 
 /* <pre is="pix-highlighter" lang="markdown">

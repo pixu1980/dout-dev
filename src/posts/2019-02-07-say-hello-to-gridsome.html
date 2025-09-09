@@ -1,79 +1,132 @@
 <extends src="../layouts/base.html">
+  <block name="head">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Say hello to Gridsome 🎉" />
+    <meta
+      property="og:description"
+      content="A new static site generator baby is born. It's highly inspired by Gatsby.js React based but built on top of Vue.js. We have been working on it for a year and will have a beta read"
+    />
 
-<block name="head">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Say hello to Gridsome 🎉">
-  <meta property="og:description" content="A new static site generator baby is born. It's highly inspired by Gatsby.js React based but built on top of Vue.js. We have been working on it for a year and will have a beta read">
-  
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BlogPosting",
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
         "headline": "Say hello to Gridsome 🎉",
         "datePublished": "2019-02-07T00:00:00.000Z",
-        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html"}
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html"
+        }
       }
-  </script>
-</block>
+    </script>
+  </block>
 
-<block name="content">
-  <article itemscope="" itemtype="https://schema.org/BlogPosting">
-    <header>
-      <h1 itemprop="headline">Say hello to Gridsome 🎉</h1>
-      <p>
-        <time datetime="2019-02-07" itemprop="datePublished">
-          7 febbraio 2019
-        </time>
-      </p>
-      
-      
+  <block name="content">
+    <article itemscope="" itemtype="https://schema.org/BlogPosting">
+      <header>
+        <h1 itemprop="headline">Say hello to Gridsome 🎉</h1>
+        <p>
+          <time datetime="2019-02-07" itemprop="datePublished"> 7 febbraio 2019 </time>
+        </p>
+
         <ul aria-label="Tags">
-          
-            <li><a class="tag" href="/tags/markdown.html">Markdown</a></li>
-          
-            <li><a class="tag" href="/tags/releases.html">Releases</a></li>
-          
-        </ul>
-      
-    </header>
+          <li><a class="tag" href="/tags/markdown.html">Markdown</a></li>
 
-    <section itemprop="articleBody"><p>A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta ready soon. You can expect this baby to grow up fast!</p>
-<p>We think <strong>Gridsome</strong> is a missing piece to the Vue.js ecosystem. What Gatsby.js does for React.js is a game changer in how we build websites. React.js is excellent, but we think Vue.js is more approachable for most web designers and devs getting started with JAMstack. Gridsome is the Vue.js alternative to Gatsby.</p>
-<p>With <strong>Gridsome</strong> you get a <strong>universal GraphQL layer</strong> for all your connected data sources. It's like a single source of truth for your website data ready to be used in any page or components. Connect to any CMS or APIs like Google Spreadsheet, Airtable, Instagram Feed, local markdown files, etc.</p>
-<p>Here is an example on how to query posts from the GraphQL layer in a page:</p>
-<pre is="pix-highlighter" lang="html"><code>&lt;template&gt;
+          <li><a class="tag" href="/tags/releases.html">Releases</a></li>
+        </ul>
+      </header>
+
+      <section itemprop="articleBody">
+        <p>
+          A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of
+          Vue.js. We have been working on it for a year and will have a beta ready soon. You can expect this baby to
+          grow up fast!
+        </p>
+        <p>
+          We think <strong>Gridsome</strong> is a missing piece to the Vue.js ecosystem. What Gatsby.js does for
+          React.js is a game changer in how we build websites. React.js is excellent, but we think Vue.js is more
+          approachable for most web designers and devs getting started with JAMstack. Gridsome is the Vue.js alternative
+          to Gatsby.
+        </p>
+        <p>
+          With <strong>Gridsome</strong> you get a <strong>universal GraphQL layer</strong> for all your connected data
+          sources. It's like a single source of truth for your website data ready to be used in any page or components.
+          Connect to any CMS or APIs like Google Spreadsheet, Airtable, Instagram Feed, local markdown files, etc.
+        </p>
+        <p>Here is an example on how to query posts from the GraphQL layer in a page:</p>
+        <pre is="pix-highlighter" lang="html"><code>&lt;template&gt;
   &lt;Layout&gt;
     &lt;h2&gt;Latest blog posts&lt;&#x2F;h2&gt;
     &lt;ul&gt;&lt;&#x2F;ul&gt;
   &lt;&#x2F;Layout&gt;
 &lt;&#x2F;template&gt;
 
-&lt;page-query&gt; query Blog { allWordPressPost (limit: 5) { edges { node { _id title } } } } &lt;&#x2F;page-query&gt;</code></pre><p>You don't need to know GraphQL or Vue to get started with Gridsome - It's a great way to get introduced to both.</p>
-<p>The GraphQL layer and all the data can be explored in a local GraphQL playground. The playground is usually located at <code>https://localhost:8080/___explore</code> when a Gridsome development project is running.</p>
-<h2>Perfect scores on Google Lighthouse - automagically 💚</h2>
-<p>One of the main goals of Gridsome is to make a framework that let you build websites that are optimized "out-of-the-box." It follows the <a href="https://developers.google.com/web/fundamentals/performance/prpl-pattern/">PRPL-pattern by Google.</a> You don't need to be a performance expert to make fast websites with Gridsome. Your site gets almost perfect scores on Google lighthouse out-of-the-box. These are some of the performance steps that Gridsome takes care of:</p>
-<ul>
-<li>[object Object]</li><li>[object Object]</li><li>[object Object]</li><li>[object Object]</li><li>[object Object]</li><li>[object Object]</li></ul>
-<h2>A better way to build websites</h2>
-<p>Gridsome is built for the JAMstack workflow - a new way to build websites that gives you better performance, higher security, cheaper hosting, and a better developer experience. Generate pre-rendered (static) pages at build time for SEO-purpose and add powerful dynamic functionality with APIs and Vue.js.</p>
-<p>We believe the SSGs / JAMstack trend is just getting started. When you have first started to make websites this way there is no way back. You feel almost "dirty" when going back to a traditional WordPress / CMS setup.</p>
-<p>Try running the new Chrome Lighthouse (Audit tab in Developer tools) on a WordPress site - It is impossible to get good scores even with the best caching plugins and hosting. With Gridsome you don't even need caching plugins. Website optimization is taken care of at build time.</p>
-<p>This is what we think is very exciting and is why we are building Gridsome. It is the <strong>perfect SPA &amp; PWA front-end solution</strong> for any headless CMS or content APIs.</p>
-<h2>Whats next</h2>
-<p>In the next couple of months we're going to continue to improve the docs, create tutorials, add more source &amp; transformer plugins and fix bugs.</p>
-<h2>Contribute to Gridsome</h2>
-<p>We're currently just two brothers working on this, so any contribution is very welcome. We're passionate about building a faster web and make website building fun again.</p>
-<p>You can also support us by giving <a href="https://github.com/gridsome/gridsome/stargazers">a GitHub star ★</a> and spread the word :)</p>
-</section>
+&lt;page-query&gt; query Blog { allWordPressPost (limit: 5) { edges { node { _id title } } } } &lt;&#x2F;page-query&gt;</code></pre>
+        <p>
+          You don't need to know GraphQL or Vue to get started with Gridsome - It's a great way to get introduced to
+          both.
+        </p>
+        <p>
+          The GraphQL layer and all the data can be explored in a local GraphQL playground. The playground is usually
+          located at <code>https://localhost:8080/___explore</code> when a Gridsome development project is running.
+        </p>
+        <h2>Perfect scores on Google Lighthouse - automagically 💚</h2>
+        <p>
+          One of the main goals of Gridsome is to make a framework that let you build websites that are optimized
+          "out-of-the-box." It follows the
+          <a href="https://developers.google.com/web/fundamentals/performance/prpl-pattern/">PRPL-pattern by Google.</a>
+          You don't need to be a performance expert to make fast websites with Gridsome. Your site gets almost perfect
+          scores on Google lighthouse out-of-the-box. These are some of the performance steps that Gridsome takes care
+          of:
+        </p>
+        <ul>
+          <li>[object Object]</li>
+          <li>[object Object]</li>
+          <li>[object Object]</li>
+          <li>[object Object]</li>
+          <li>[object Object]</li>
+          <li>[object Object]</li>
+        </ul>
+        <h2>A better way to build websites</h2>
+        <p>
+          Gridsome is built for the JAMstack workflow - a new way to build websites that gives you better performance,
+          higher security, cheaper hosting, and a better developer experience. Generate pre-rendered (static) pages at
+          build time for SEO-purpose and add powerful dynamic functionality with APIs and Vue.js.
+        </p>
+        <p>
+          We believe the SSGs / JAMstack trend is just getting started. When you have first started to make websites
+          this way there is no way back. You feel almost "dirty" when going back to a traditional WordPress / CMS setup.
+        </p>
+        <p>
+          Try running the new Chrome Lighthouse (Audit tab in Developer tools) on a WordPress site - It is impossible to
+          get good scores even with the best caching plugins and hosting. With Gridsome you don't even need caching
+          plugins. Website optimization is taken care of at build time.
+        </p>
+        <p>
+          This is what we think is very exciting and is why we are building Gridsome. It is the
+          <strong>perfect SPA &amp; PWA front-end solution</strong> for any headless CMS or content APIs.
+        </p>
+        <h2>Whats next</h2>
+        <p>
+          In the next couple of months we're going to continue to improve the docs, create tutorials, add more source
+          &amp; transformer plugins and fix bugs.
+        </p>
+        <h2>Contribute to Gridsome</h2>
+        <p>
+          We're currently just two brothers working on this, so any contribution is very welcome. We're passionate about
+          building a faster web and make website building fun again.
+        </p>
+        <p>
+          You can also support us by giving
+          <a href="https://github.com/gridsome/gridsome/stargazers">a GitHub star ★</a> and spread the word :)
+        </p>
+      </section>
 
-    <nav aria-label="Post navigation">
-      
+      <nav aria-label="Post navigation">
         <a rel="prev" href="/posts/2019-02-06-markdown-test-file.html">← Markdown test file</a>
-      
-      
+
         <a rel="next" href="/posts/2021-03-01-say-hello-to-gridsome-new.html">Say Hello to Gridsome NEW →</a>
-      
-    </nav>
-  </article>
-</block>
+      </nav>
+    </article>
+  </block>
 </extends>

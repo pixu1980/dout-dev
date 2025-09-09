@@ -1,0 +1,28 @@
+<extends src="../layouts/base.html">
+  <block name="head">
+    <meta name="description" content="Search posts, tags and series on dout.dev" />
+  </block>
+  <block name="content">
+    <section aria-labelledby="search-title">
+      <h1 id="search-title">Search</h1>
+      <form id="search-form" role="search" aria-label="Site search" class="card" action="/search.html" method="get">
+        <label for="q">Query</label>
+        <input id="q" name="q" type="search" placeholder="Search posts, tags..." value="{{ query || '' }}" />
+        <button type="submit">Search</button>
+        <fieldset class="cluster" aria-labelledby="type-filters-label">
+          <legend id="type-filters-label">Filter by type</legend>
+          <label><input type="checkbox" name="type" value="post" checked /> Posts</label>
+          <label><input type="checkbox" name="type" value="tag" checked /> Tags</label>
+          <label><input type="checkbox" name="type" value="series" checked /> Series</label>
+          <label><input type="checkbox" name="type" value="month" checked /> Months</label>
+        </fieldset>
+      </form>
+
+      <div class="cluster" aria-live="polite" aria-atomic="true" id="results-summary"></div>
+
+      <div id="search-results" role="list" class="posts-grid"></div>
+
+      <nav id="search-pagination" class="pagination" aria-label="Search results pagination"></nav>
+    </section>
+  </block>
+</extends>

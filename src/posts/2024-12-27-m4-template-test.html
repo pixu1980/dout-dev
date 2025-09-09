@@ -1,59 +1,69 @@
 <extends src="../layouts/base.html">
-
-<block name="head">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="M4 Template Test - Cover Image e Syntax Highlighting">
-  <meta property="og:description" content="Questo è un post di test per verificare tutte le funzionalità implementate nel M4 Post Page.">
-  <meta property="og:image" content="/./assets/images/alexandr-podvalny-220262-unsplash.jpg">
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BlogPosting",
+  <block name="head">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="M4 Template Test - Cover Image e Syntax Highlighting" />
+    <meta
+      property="og:description"
+      content="Questo è un post di test per verificare tutte le funzionalità implementate nel M4 Post Page."
+    />
+    <meta property="og:image" content="/./assets/images/alexandr-podvalny-220262-unsplash.jpg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
         "headline": "M4 Template Test - Cover Image e Syntax Highlighting",
         "datePublished": "2024-12-27T10:00:00.000Z",
-        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2024-12-27-m4-template-test.html"}
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dout.dev/posts/2024-12-27-m4-template-test.html" }
       }
-  </script>
-</block>
+    </script>
+  </block>
 
-<block name="content">
-  <article itemscope="" itemtype="https://schema.org/BlogPosting">
-    <header>
-      <h1 itemprop="headline">M4 Template Test - Cover Image e Syntax Highlighting</h1>
-      <p>
-        <time datetime="2024-12-27" itemprop="datePublished">
-          27 dicembre 2024
-        </time>
-      </p>
-      
+  <block name="content">
+    <article itemscope="" itemtype="https://schema.org/BlogPosting">
+      <header>
+        <h1 itemprop="headline">M4 Template Test - Cover Image e Syntax Highlighting</h1>
+        <p>
+          <time datetime="2024-12-27" itemprop="datePublished"> 27 dicembre 2024 </time>
+        </p>
+
         <figure class="post-cover">
-          <img src="/./assets/images/alexandr-podvalny-220262-unsplash.jpg" alt="M4 Template Test - Cover Image e Syntax Highlighting" fetchpriority="high" decoding="async" width="1200" height="630">
+          <img
+            src="/./assets/images/alexandr-podvalny-220262-unsplash.jpg"
+            alt="M4 Template Test - Cover Image e Syntax Highlighting"
+            fetchpriority="high"
+            decoding="async"
+            width="1200"
+            height="630"
+          />
         </figure>
-      
-      
-        <ul aria-label="Tags">
-          
-            <li><a class="tag" href="/tags/test.html">Test</a></li>
-          
-            <li><a class="tag" href="/tags/m4.html">M4</a></li>
-          
-            <li><a class="tag" href="/tags/syntax-highlight-element.html">Syntax-highlight-element</a></li>
-          
-            <li><a class="tag" href="/tags/cover-image.html">Cover-image</a></li>
-          
-        </ul>
-      
-    </header>
 
-    <section itemprop="articleBody"><p>Questo è un post di test per verificare tutte le funzionalità implementate nel <strong>M4 - Post Page</strong>.</p>
-<h2>Cover Image e Pinned Badge</h2>
-<p>Questo post ha:</p>
-<ul>
-<li>[object Object]</li><li>[object Object]</li><li>[object Object]</li></ul>
-<h2>Syntax Highlighting con syntax-highlight-element</h2>
-<p>Testiamo il syntax highlighting per vari linguaggi:</p>
-<h3>JavaScript</h3>
-<pre is="pix-highlighter" lang="javascript"><code>// Esempio JavaScript
+        <ul aria-label="Tags">
+          <li><a class="tag" href="/tags/test.html">Test</a></li>
+
+          <li><a class="tag" href="/tags/m4.html">M4</a></li>
+
+          <li><a class="tag" href="/tags/syntax-highlight-element.html">Syntax-highlight-element</a></li>
+
+          <li><a class="tag" href="/tags/cover-image.html">Cover-image</a></li>
+        </ul>
+      </header>
+
+      <section itemprop="articleBody">
+        <p>
+          Questo è un post di test per verificare tutte le funzionalità implementate nel
+          <strong>M4 - Post Page</strong>.
+        </p>
+        <h2>Cover Image e Pinned Badge</h2>
+        <p>Questo post ha:</p>
+        <ul>
+          <li>[object Object]</li>
+          <li>[object Object]</li>
+          <li>[object Object]</li>
+        </ul>
+        <h2>Syntax Highlighting con syntax-highlight-element</h2>
+        <p>Testiamo il syntax highlighting per vari linguaggi:</p>
+        <h3>JavaScript</h3>
+        <pre is="pix-highlighter" lang="javascript"><code>// Esempio JavaScript
 const blogPost = {
   title: 'M4 Template Test',
   author: 'dout.dev',
@@ -68,8 +78,9 @@ function renderPost(post) {
 
 addEventListener('DOMContentLoaded', () =&gt; {
   // highlighting is handled by the local &lt;syntax-highlight&gt; web component
-});</code></pre><h3>CSS</h3>
-<pre is="pix-highlighter" lang="css"><code>/* Esempio CSS con design tokens */
+});</code></pre>
+        <h3>CSS</h3>
+        <pre is="pix-highlighter" lang="css"><code>/* Esempio CSS con design tokens */
 .post-cover-image {
   width: 100%;
   height: auto;
@@ -85,8 +96,9 @@ addEventListener('DOMContentLoaded', () =&gt; {
   border-radius: var(--border-radius-full);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
-}</code></pre><h3>HTML</h3>
-<pre is="pix-highlighter" lang="html"><code>&lt;!-- Esempio HTML con Schema.org --&gt;
+}</code></pre>
+        <h3>HTML</h3>
+        <pre is="pix-highlighter" lang="html"><code>&lt;!-- Esempio HTML con Schema.org --&gt;
 &lt;article class="post"&gt;
   &lt;header class="post-header"&gt;
     &lt;div class="post-badge post-badge--pinned" data-pinned="true"&gt;📌 Post in evidenza&lt;&#x2F;div&gt;
@@ -96,8 +108,9 @@ addEventListener('DOMContentLoaded', () =&gt; {
     &lt;&#x2F;div&gt;
   &lt;&#x2F;header&gt;
   &lt;div class="post-content"&gt;{{ content | raw }}&lt;&#x2F;div&gt;
-&lt;&#x2F;article&gt;</code></pre><h3>JSON</h3>
-<pre is="pix-highlighter" lang="json"><code>{
+&lt;&#x2F;article&gt;</code></pre>
+        <h3>JSON</h3>
+        <pre is="pix-highlighter" lang="json"><code>{
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "M4 Template Test",
@@ -108,27 +121,32 @@ addEventListener('DOMContentLoaded', () =&gt; {
     "name": "dout.dev"
   },
   "keywords": "Test,M4,syntax-highlight-element,Cover Image"
-}</code></pre><h3>Bash</h3>
-<pre is="pix-highlighter" lang="bash"><code>#!/bin/bash
+}</code></pre>
+        <h3>Bash</h3>
+        <pre is="pix-highlighter" lang="bash"><code>#!/bin/bash
 # Script per build e test
 echo "Building CMS..."
 npm run cms:build
 
 echo "Starting dev server..."
-npm run dev</code></pre><h2>Funzionalità Testate</h2>
-<ul>
-<li>[object Object]</li><li>[object Object]</li><li>[object Object]</li><li>[object Object]</li></ul>
-<p>La checklist M4 dovrebbe essere completamente implementata! 🎉</p>
-</section>
+npm run dev</code></pre>
+        <h2>Funzionalità Testate</h2>
+        <ul>
+          <li>[object Object]</li>
+          <li>[object Object]</li>
+          <li>[object Object]</li>
+          <li>[object Object]</li>
+        </ul>
+        <p>La checklist M4 dovrebbe essere completamente implementata! 🎉</p>
+      </section>
 
-    <nav aria-label="Post navigation">
-      
-        <a rel="prev" href="/posts/2024-10-28-concerning-css-grid.html">← Introducing CSS Grid - The Future of Web Layout 🎨</a>
-      
-      
+      <nav aria-label="Post navigation">
+        <a rel="prev" href="/posts/2024-10-28-concerning-css-grid.html"
+          >← Introducing CSS Grid - The Future of Web Layout 🎨</a
+        >
+
         <a rel="next" href="/posts/2025-08-15-welcome-to-dout-dev-2.html">Welcome to dout.dev 2.0 →</a>
-      
-    </nav>
-  </article>
-</block>
+      </nav>
+    </article>
+  </block>
 </extends>

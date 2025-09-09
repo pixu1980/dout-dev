@@ -18,8 +18,8 @@ async function runFormatting() {
   console.log('🎨 Running code formatting...\n');
 
   try {
-    // Format JavaScript/TypeScript with Biome
-    console.log('📋 Formatting with Biome...');
+    // Format JavaScript/TypeScript with Biome (project root; config controls includes)
+    console.log('📋 Formatting with Biome (JS only)...');
     const { stdout: biomeStdout, stderr: biomeStderr } = await execAsync(
       'npx biome format --write .',
       { cwd: projectRoot }
@@ -29,9 +29,9 @@ async function runFormatting() {
     if (biomeStderr && !biomeStderr.includes('No files')) console.warn(biomeStderr);
 
     // Format other files with Prettier
-    console.log('🎯 Formatting with Prettier...');
+    console.log('🎯 Formatting with Prettier (CSS/MD/JSON/YAML)...');
     const { stdout: prettierStdout, stderr: prettierStderr } = await execAsync(
-      'npx prettier --write "**/*.{html,css,md,json,yml,yaml}" --ignore-path .gitignore',
+      'npx prettier --write "**/*.{css,md,json,yml,yaml}" --ignore-path .prettierignore',
       { cwd: projectRoot }
     );
 

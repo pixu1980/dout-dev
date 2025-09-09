@@ -73,11 +73,13 @@ dist-ssr
 # Lock files
 yarn.lock
 package-lock.json
+pnpm-lock.yaml
 
 # Local Netlify folder
 .netlify
 
 # Generated files
-src/posts.json
-src/tags.json
-src/months.json
+src/data/posts.json
+src/data/tags.json
+src/data/months.json
+src/data/series.json

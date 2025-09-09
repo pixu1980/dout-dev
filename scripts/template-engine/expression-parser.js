@@ -208,7 +208,7 @@ function evaluateJavaScriptExpression(jsExpr, data, filters) {
 
     // Preprocess `.length` access: for expressions like `items.length > 0`
     // treat length as array-only: if the base is not an array, length should be 0
-  const lengthRegex = /([a-zA-Z_$][a-zA-Z0-9_$.[\]]*)\.length\b/g;
+    const lengthRegex = /([a-zA-Z_$][a-zA-Z0-9_$.[\]]*)\.length\b/g;
     const modifiedExpr = processedExpr.replace(lengthRegex, (_, path) => `__len("${path}")`);
 
     // Use the data object with a helper __len that uses getSimpleValueFromPath
@@ -295,7 +295,7 @@ function getValueFromPath(obj, path) {
     try {
       // Safely evaluate simple math expressions
       return Function(`"use strict"; return (${path})`)();
-  } catch (_error) {
+    } catch (_error) {
       console.warn(`Failed to evaluate math expression: ${path}`);
       return path; // Return original if evaluation fails
     }
@@ -321,7 +321,7 @@ function getValueFromPath(obj, path) {
 
       // Safely evaluate the expression
       return Function(`"use strict"; return (${expression})`)();
-  } catch (_error) {
+    } catch (_error) {
       console.warn(`Failed to evaluate expression: ${path}`);
       return getSimpleValueFromPath(obj, path);
     }

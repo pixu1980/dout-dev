@@ -164,7 +164,7 @@ try {
         stdio: 'pipe',
       });
       console.log('✅ HTML has been formatted with Prettier');
-  } catch (_fixError) {
+    } catch (_fixError) {
       console.error('❌ Prettier could not format the HTML file');
       console.error('   This indicates serious HTML structure issues');
       throw new Error('HTML formatting validation failed');

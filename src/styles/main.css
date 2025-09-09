@@ -164,7 +164,9 @@
     color: var(--color-fg);
     background: var(--color-bg);
     accent-color: var(--color-accent);
-  transition: background-color 150ms ease, color 150ms ease;
+    transition:
+      background-color 150ms ease,
+      color 150ms ease;
   }
   a {
     color: var(--color-accent);
@@ -234,24 +236,86 @@
     gap: var(--space-4);
     padding: var(--space-3) 0;
   }
-  .header-bar .brand { font-weight: 700; color: var(--color-fg); }
-  .menu-toggle { display: none; background: transparent; border: 1px solid var(--color-border); border-radius: var(--radius-1); padding: 0.4rem 0.5rem; }
-  .main-nav { display: flex; align-items: center; gap: var(--space-4); }
-  .main-links { display: flex; gap: var(--space-2); }
-  .main-links a { padding: var(--space-2) var(--space-3); border-radius: var(--radius-1); }
-  .main-links a:hover { background: color-mix(in hsl, var(--color-accent) 12%, transparent); text-decoration: none; }
-  .header-actions { display: flex; gap: var(--space-2); align-items: center; }
-  .theme-switcher { inline-size: 2rem; block-size: 2rem; border-radius: var(--radius-round); border: 1px solid var(--color-border); background: var(--color-surface); }
-  .accent-picker { display: inline-flex; gap: 0.4rem; }
-  .accent-dot { inline-size: 1rem; block-size: 1rem; border-radius: 50%; border: 1px solid var(--color-border); background: var(--color-surface); }
-  .accent-dot[data-accent='violet'] { background: hsl(270 100% 45% / 0.5); }
-  .accent-dot[data-accent='green'] { background: hsl(140 100% 35% / 0.5); }
+  .header-bar .brand {
+    font-weight: 700;
+    color: var(--color-fg);
+  }
+  .menu-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-1);
+    padding: 0.4rem 0.5rem;
+  }
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  .main-links {
+    display: flex;
+    gap: var(--space-2);
+  }
+  .main-links a {
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-1);
+  }
+  .main-links a:hover {
+    background: color-mix(in hsl, var(--color-accent) 12%, transparent);
+    text-decoration: none;
+  }
+  .header-actions {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+  }
+  .theme-switcher {
+    inline-size: 2rem;
+    block-size: 2rem;
+    border-radius: var(--radius-round);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+  .accent-picker {
+    display: inline-flex;
+    gap: 0.4rem;
+  }
+  .accent-dot {
+    inline-size: 1rem;
+    block-size: 1rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+  .accent-dot[data-accent='violet'] {
+    background: hsl(270 100% 45% / 0.5);
+  }
+  .accent-dot[data-accent='green'] {
+    background: hsl(140 100% 35% / 0.5);
+  }
   @media (max-width: 800px) {
-    .menu-toggle { display: inline-flex; }
-    .main-nav { position: absolute; inset-inline: 0; top: 64px; background: var(--color-surface); border-block-start: 1px solid var(--color-border); padding: var(--space-3); display: none; }
-    .main-nav[data-open='true'] { display: block; }
-    .main-links { display: grid; gap: var(--space-2); }
-    .header-actions { margin-block-start: var(--space-3); }
+    .menu-toggle {
+      display: inline-flex;
+    }
+    .main-nav {
+      position: absolute;
+      inset-inline: 0;
+      top: 64px;
+      background: var(--color-surface);
+      border-block-start: 1px solid var(--color-border);
+      padding: var(--space-3);
+      display: none;
+    }
+    .main-nav[data-open='true'] {
+      display: block;
+    }
+    .main-links {
+      display: grid;
+      gap: var(--space-2);
+    }
+    .header-actions {
+      margin-block-start: var(--space-3);
+    }
   }
 
   main[aria-label] {
@@ -304,9 +368,16 @@
     /* Perf containment for isolated component */
     contain: layout paint;
   }
-  .post-card__header { margin-bottom: var(--space-2); }
-  .post-card__title { margin: 0; }
-  .post-card__meta { color: var(--color-muted); margin-bottom: var(--space-3); }
+  .post-card__header {
+    margin-bottom: var(--space-2);
+  }
+  .post-card__title {
+    margin: 0;
+  }
+  .post-card__meta {
+    color: var(--color-muted);
+    margin-bottom: var(--space-3);
+  }
   /* Skip link */
   .skip-link {
     position: absolute;
