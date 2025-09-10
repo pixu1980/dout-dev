@@ -2,9 +2,14 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const manifestPath = path.resolve(__dirname, '../dist/manifest.json');
+const manifestCandidates = [
+  path.resolve(__dirname, '../dist/.vite/manifest.json'),
+  path.resolve(__dirname, '../dist/manifest.json'),
+];
 
-if (!fs.existsSync(manifestPath)) {
+const manifestPath = manifestCandidates.find((candidate) => fs.existsSync(candidate));
+
+if (!manifestPath) {
   console.error('❌ manifest.json not found in dist/. Did the build generate a manifest?');
   process.exit(1);
 }

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dout.dev — Grid-layout</title>
     <link>https://dout.dev/tags/grid-layout/</link>
     <description>RSS feed for posts tagged with Grid-layout</description>
-    <lastBuildDate>Tue, 09 Sep 2025 08:29:12 GMT</lastBuildDate>
+    <atom:link href="https://dout.dev/tags/grid-layout.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 20 Apr 2026 11:44:21 GMT</lastBuildDate>
     <item>
       <title>Introducing CSS Grid - The Future of Web Layout 🎨</title>
       <link>https://dout.dev/posts/2024-10-28-concerning-css-grid.html</link>

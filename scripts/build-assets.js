@@ -15,6 +15,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = join(__dirname, '..');
 const srcDir = join(projectRoot, 'src');
 const distDir = join(projectRoot, 'dist');
+const manifestSourcePath = join(srcDir, 'manifest.json');
 
 async function ensureDir(dir) {
   try {
@@ -144,6 +145,58 @@ async function copyDirectoryRecursive(src, dest) {
     if (stats.isDirectory()) {
       await copyDirectoryRecursive(srcPath, destPath);
     } else {
+      await copyFile(srcPath, destPath);
+    }
+  }
+}
+
+async function copyRootFile(relativePath) {
+  const sourcePath = join(projectRoot, relativePath);
+  const destPath = join(distDir, basename(relativePath));
+  if (!existsSync(sourcePath)) return;
+  await copyFile(sourcePath, destPath);
+}
+
+async function copyGeneratedSiteFiles() {
+  console.log('📦 Copying generated feeds, data, and deploy metadata...');
+
+  await copyRootFile('CNAME');
+  await copyRootFile('_headers');
+
+  const rootFiles = ['feed.rss', 'feed.json', 'feed.xml', 'sitemap.xml', 'sw.js'];
+  for (const file of rootFiles) {
+    const sourcePath = join(srcDir, file);
+    const destPath = join(distDir, file);
+    if (existsSync(sourcePath)) {
+      await copyFile(sourcePath, destPath);
+    }
+  }
+
+  const dataDir = join(srcDir, 'data');
+  if (existsSync(dataDir)) {
+    await copyDirectoryRecursive(dataDir, join(distDir, 'data'));
+  }
+
+  await copyFilesByExtension(join(srcDir, 'tags'), join(distDir, 'tags'), '.xml');
+  await copyFilesByExtension(join(srcDir, 'months'), join(distDir, 'months'), '.xml');
+
+  await writeFile(join(distDir, '.nojekyll'), '', 'utf8');
+  console.log('✅ Generated feeds, data, and deploy metadata copied');
+}
+
+async function copyFilesByExtension(src, dest, extension) {
+  if (!existsSync(src)) return;
+  await ensureDir(dest);
+
+  const entries = await readdir(src, { withFileTypes: true });
+  for (const entry of entries) {
+    const srcPath = join(src, entry.name);
+    const destPath = join(dest, entry.name);
+    if (entry.isDirectory()) {
+      await copyFilesByExtension(srcPath, destPath, extension);
+      continue;
+    }
+    if (entry.name.endsWith(extension)) {
       await copyFile(srcPath, destPath);
     }
   }
@@ -289,28 +342,8 @@ async function generateFaviconsWithCli(desc, outDir) {
 async function generateManifest() {
   console.log('📱 Generating web manifest...');
 
-  const manifest = {
-    name: 'dout.dev',
-    short_name: 'dout.dev',
-    description: 'The DoUtDev Blog - Development insights and tutorials',
-    start_url: '/',
-    display: 'standalone',
-    background_color: '#ffffff',
-    theme_color: '#3b82f6',
-    orientation: 'portrait-primary',
-    icons: [
-      {
-        src: '/android-chrome-192x192.png',
-        sizes: '192x192',
-        type: 'image/png',
-      },
-      {
-        src: '/android-chrome-512x512.png',
-        sizes: '512x512',
-        type: 'image/png',
-      },
-    ],
-  };
+  const manifestSource = await readFile(manifestSourcePath, 'utf8');
+  const manifest = JSON.parse(manifestSource);
 
   await writeFile(join(distDir, 'manifest.json'), JSON.stringify(manifest, null, 2));
 
@@ -338,6 +371,7 @@ async function buildAssets() {
     // Ensure favicons exist in src/assets (create placeholders if necessary) before copying
     await processFavicons();
     await copyAssets();
+    await copyGeneratedSiteFiles();
     await generateManifest();
     await generateRobotsTxt();
 

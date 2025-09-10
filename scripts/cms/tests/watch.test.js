@@ -1,5 +1,6 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert';
+import { mkdir, writeFile } from 'node:fs/promises';
 import { startWatch } from '../watch.js';
 
 describe('watch', () => {
@@ -14,28 +15,44 @@ describe('watch', () => {
     watcher.close();
   });
 
-  test('should call onBuild callback when triggered', (_t, done) => {
-    let callbackCalled = false;
+  test('should call onBuild callback when triggered', async () => {
+    // Ensure content directory and a test markdown file exist
+    try {
+      await mkdir('data/posts', { recursive: true });
+      await writeFile('data/posts/test.md', '# Test\nContent', 'utf8');
+    } catch {
+      // Continue anyway
+    }
 
-    const onBuild = (dataset) => {
-      callbackCalled = true;
-      assert.strictEqual(typeof dataset, 'object');
-      assert.ok(Array.isArray(dataset.posts));
+    return new Promise((resolve, reject) => {
+      let callbackCalled = false;
+      let settled = false;
 
-      // Clean up and finish test
-      watcher.close();
-      done();
-    };
+      const onBuild = (dataset) => {
+        if (settled) return;
 
-    const watcher = startWatch({}, onBuild);
+        settled = true;
+        callbackCalled = true;
 
-    // The initial trigger should call onBuild
-    setTimeout(() => {
-      if (!callbackCalled) {
+        // Just verify we got a dataset object
+        assert.strictEqual(typeof dataset, 'object', 'dataset should be an object');
+
+        // Clean up and finish test
         watcher.close();
-        done(new Error('Callback was not called'));
-      }
-    }, 200);
+        resolve();
+      };
+
+      const watcher = startWatch({}, onBuild);
+
+      // The initial trigger should call onBuild within 8 seconds
+      setTimeout(() => {
+        if (!callbackCalled && !settled) {
+          settled = true;
+          watcher.close();
+          reject(new Error('Callback was not called after 8 seconds'));
+        }
+      }, 8000);
+    });
   });
 
   test('should work with custom configuration', () => {

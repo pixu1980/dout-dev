@@ -6,12 +6,20 @@
 
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { dirname, join, relative } from 'node:path';
+import { dirname, join, relative, resolve } from 'node:path';
 import { existsSync } from 'node:fs';
 import { JSDOM } from 'jsdom';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = join(__dirname, '..', '..');
+
+function resolveTargetDir(arg) {
+  if (arg) {
+    return resolve(projectRoot, arg);
+  }
+
+  return join(projectRoot, 'src');
+}
 
 async function findHTMLFiles(dir) {
   const files = [];
@@ -41,6 +49,8 @@ async function findHTMLFiles(dir) {
 
 function isExternalLink(href) {
   return (
+    href.startsWith('data:') ||
+    href.startsWith('blob:') ||
     href.startsWith('http://') ||
     href.startsWith('https://') ||
     href.startsWith('//') ||
@@ -154,7 +164,7 @@ function checkScripts(document, filePath, srcDir) {
   return errors;
 }
 
-async function validateLinksInFile(filePath) {
+async function validateLinksInFile(filePath, sourceRoot) {
   try {
     const content = await readFile(filePath, 'utf-8');
     const dom = new JSDOM(content);
@@ -163,19 +173,17 @@ async function validateLinksInFile(filePath) {
     const errors = [];
     const warnings = [];
 
-    const srcDir = join(projectRoot, 'src');
-
     // Check all links
-    errors.push(...checkLinks(document, filePath, srcDir));
+    errors.push(...checkLinks(document, filePath, sourceRoot));
 
     // Check image sources
-    errors.push(...checkImages(document, filePath, srcDir));
+    errors.push(...checkImages(document, filePath, sourceRoot));
 
     // Check CSS links
-    errors.push(...checkStylesheets(document, filePath, srcDir));
+    errors.push(...checkStylesheets(document, filePath, sourceRoot));
 
     // Check script sources
-    errors.push(...checkScripts(document, filePath, srcDir));
+    errors.push(...checkScripts(document, filePath, sourceRoot));
 
     // Check for orphaned files (files not linked to)
     // const relativePath = relative(srcDir, filePath);
@@ -187,11 +195,11 @@ async function validateLinksInFile(filePath) {
   }
 }
 
-async function validateLinks() {
+async function validateLinks(targetDir = resolveTargetDir(process.argv[2])) {
   console.log('🔗 Validating links and references...\n');
 
   try {
-    const htmlFiles = await findHTMLFiles(join(projectRoot, 'src'));
+    const htmlFiles = await findHTMLFiles(targetDir);
 
     if (htmlFiles.length === 0) {
       console.log('⚠️  No HTML files found to validate');
@@ -205,7 +213,7 @@ async function validateLinks() {
 
     for (const file of htmlFiles) {
       const relativePath = relative(projectRoot, file);
-      const { errors, warnings } = await validateLinksInFile(file, htmlFiles);
+      const { errors, warnings } = await validateLinksInFile(file, targetDir);
 
       if (errors.length > 0 || warnings.length > 0) {
         console.log(`\n📄 ${relativePath}:`);

@@ -6,11 +6,19 @@
 
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+import { dirname, join, resolve, relative } from 'node:path';
 import { JSDOM } from 'jsdom';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = join(__dirname, '..', '..');
+
+function resolveTargetDir(arg) {
+  if (arg) {
+    return resolve(projectRoot, arg);
+  }
+
+  return join(projectRoot, 'src');
+}
 
 async function findHTMLFiles(dir) {
   const files = [];
@@ -54,7 +62,7 @@ async function validateA11yFile(filePath) {
     if (!isTemplateSource) {
       // Check for lang attribute
       const html = document.querySelector('html');
-      if (!html || !html.getAttribute('lang')) {
+      if (!html?.getAttribute('lang')) {
         errors.push('Missing or empty lang attribute on <html> element');
       }
 
@@ -64,6 +72,11 @@ async function validateA11yFile(filePath) {
       );
       if (!skipLink) {
         warnings.push('Consider adding a skip link for keyboard navigation');
+      }
+
+      const announcer = document.getElementById('page-announcer');
+      if (!announcer || announcer.getAttribute('aria-live') !== 'polite') {
+        warnings.push('Consider adding a polite live region for enhanced navigation updates');
       }
     }
 
@@ -157,6 +170,16 @@ async function validateA11yFile(filePath) {
       const main = document.querySelector('main, [role="main"]');
       if (!main) {
         warnings.push('Consider adding a main landmark');
+      } else {
+        if (main.getAttribute('id') !== 'main') {
+          warnings.push(
+            'Main landmark should expose id="main" for skip links and focus restoration'
+          );
+        }
+
+        if (main.getAttribute('tabindex') !== '-1') {
+          warnings.push('Main landmark should be programmatically focusable with tabindex="-1"');
+        }
       }
 
       const nav = document.querySelector('nav, [role="navigation"]');
@@ -164,6 +187,25 @@ async function validateA11yFile(filePath) {
         warnings.push('Consider adding navigation landmarks');
       }
     }
+
+    const searchSummary = document.getElementById('results-summary');
+    if (searchSummary && searchSummary.getAttribute('aria-live') !== 'polite') {
+      errors.push('Search results summary should use aria-live="polite"');
+    }
+
+    document.querySelectorAll('nav.pagination, #search-pagination').forEach((pagination, index) => {
+      if (!pagination.getAttribute('aria-label')) {
+        warnings.push(`Pagination ${index + 1} should have an accessible label`);
+      }
+
+      pagination.querySelectorAll('a').forEach((link, linkIndex) => {
+        if (!link.getAttribute('aria-label') && !link.textContent.trim()) {
+          errors.push(
+            `Pagination link ${linkIndex + 1} in pagination ${index + 1} needs accessible text`
+          );
+        }
+      });
+    });
 
     // Check color contrast (basic check for inline styles)
     const elementsWithStyle = document.querySelectorAll('[style]');
@@ -180,11 +222,11 @@ async function validateA11yFile(filePath) {
   }
 }
 
-async function validateA11y() {
+async function validateA11y(targetDir = resolveTargetDir(process.argv[2])) {
   console.log('♿ Validating accessibility...\n');
 
   try {
-    const htmlFiles = await findHTMLFiles(join(projectRoot, 'src'));
+    const htmlFiles = await findHTMLFiles(targetDir);
 
     if (htmlFiles.length === 0) {
       console.log('⚠️  No HTML files found to validate');
@@ -197,7 +239,7 @@ async function validateA11y() {
     let totalWarnings = 0;
 
     for (const file of htmlFiles) {
-      const relativePath = file.replace(projectRoot, '.');
+      const relativePath = `./${relative(projectRoot, file)}`;
       const { errors, warnings } = await validateA11yFile(file);
 
       if (errors.length > 0 || warnings.length > 0) {

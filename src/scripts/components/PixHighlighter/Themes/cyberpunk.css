@@ -1,0 +1,32 @@
+@layer components {
+  :root[data-pix-highlighter-theme='cyberpunk'] pre[is='pix-highlighter'] {
+    --pix-bg: #090412;
+    --pix-fg: #f9f7ff;
+    --pix-kw: #ff4fd8;
+    --pix-str: #ffe45e;
+    --pix-num: #62f3ff;
+    --pix-com: #8b7aa8;
+    --pix-id: #7ef7c9;
+    --pix-op: #ff8b39;
+    --pix-tag: #ff4fd8;
+    --pix-attr: #4cc9f0;
+    --pix-key: #62f3ff;
+    --pix-var: #7ef7c9;
+    --pix-mac: #ff6ad5;
+    --pix-pp: #ff9f1c;
+    --pix-prop: #9d7dff;
+    --pix-type: #4cc9f0;
+    --pix-mdh: #ff4fd8;
+    --pix-mde: #ff8b39;
+    --pix-mds: #ffe45e;
+    --pix-mdc: #62f3ff;
+    --pix-mdl: #7ef7c9;
+    --pix-mdbq: #a59ac7;
+    --pix-mdli: #ff9f1c;
+    --pix-mdhr: #453363;
+    --pix-mdimg: #4cc9f0;
+    --pix-tab-size: 2;
+    --pix-line-height: 1.55;
+    --pix-text-shadow: 0 0 18px rgba(255, 79, 216, 0.18);
+  }
+}

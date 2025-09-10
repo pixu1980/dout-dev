@@ -1,0 +1,33 @@
+@layer components {
+  :root[data-pix-highlighter-theme='prism'] pre[is='pix-highlighter'] {
+    --pix-bg: #f5f2f0;
+    --pix-fg: #000000;
+    --pix-kw: #07a;
+    --pix-str: #690;
+    --pix-num: #905;
+    --pix-com: slategray;
+    --pix-id: #5f5a57;
+    --pix-op: #9a6e3a;
+    --pix-tag: #905;
+    --pix-attr: #690;
+    --pix-key: #905;
+    --pix-var: #e90;
+    --pix-mac: #dd4a68;
+    --pix-pp: slategray;
+    --pix-prop: #905;
+    --pix-type: #dd4a68;
+    --pix-mdh: #07a;
+    --pix-mde: #dd4a68;
+    --pix-mds: #000000;
+    --pix-mdc: #690;
+    --pix-mdl: #07a;
+    --pix-mdbq: slategray;
+    --pix-mdli: #905;
+    --pix-mdhr: #999;
+    --pix-mdimg: #e90;
+    --pix-tab-size: 2;
+    --pix-font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    --pix-line-height: 1.5;
+    --pix-text-shadow: 0 1px white;
+  }
+}

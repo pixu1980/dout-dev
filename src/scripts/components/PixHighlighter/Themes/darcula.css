@@ -1,0 +1,32 @@
+@layer components {
+  :root[data-pix-highlighter-theme='darcula'] pre[is='pix-highlighter'] {
+    --pix-bg: #2b2b2b;
+    --pix-fg: #a9b7c6;
+    --pix-kw: #cc7832;
+    --pix-str: #6a8759;
+    --pix-num: #6897bb;
+    --pix-com: #808080;
+    --pix-id: #a9b7c6;
+    --pix-op: #a9b7c6;
+    --pix-tag: #e8bf6a;
+    --pix-attr: #bababa;
+    --pix-key: #9876aa;
+    --pix-var: #9876aa;
+    --pix-mac: #bbb529;
+    --pix-pp: #ffc66d;
+    --pix-prop: #ffc66d;
+    --pix-type: #a9b7c6;
+    --pix-mdh: #ffc66d;
+    --pix-mde: #cc7832;
+    --pix-mds: #e8bf6a;
+    --pix-mdc: #6a8759;
+    --pix-mdl: #6897bb;
+    --pix-mdbq: #808080;
+    --pix-mdli: #9876aa;
+    --pix-mdhr: #5c6370;
+    --pix-mdimg: #bbb529;
+    --pix-tab-size: 2;
+    --pix-line-height: 1.55;
+    --pix-text-shadow: none;
+  }
+}

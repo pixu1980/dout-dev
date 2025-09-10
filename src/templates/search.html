@@ -1,26 +1,76 @@
 <extends src="../layouts/base.html">
   <block name="head">
-    <meta name="description" content="Search posts, tags and series on dout.dev" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:url" content="{{ canonicalUrl }}" />
+    <meta property="og:image" content="{{ ogImageUrl }}" />
+    <meta property="og:image:alt" content="Preview image for {{ title }}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:title" content="{{ title }}" />
+    <meta name="twitter:description" content="{{ description }}" />
+    <meta name="twitter:image" content="{{ ogImageUrl }}" />
+    <meta name="twitter:image:alt" content="Preview image for {{ title }}" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SearchResultsPage",
+        "name": {{ title | json | raw }},
+        "url": "{{ canonicalUrl }}",
+        "description": {{ description | json | raw }}
+      }
+    </script>
   </block>
   <block name="content">
-    <section aria-labelledby="search-title">
-      <h1 id="search-title">Search</h1>
-      <form id="search-form" role="search" aria-label="Site search" class="card" action="/search.html" method="get">
+    <section class="page-hero" aria-labelledby="search-title">
+      <p class="eyebrow">Search</p>
+      <h1 id="search-title">Search across posts, tags, series, and monthly archives.</h1>
+      <p>Fast, static, and entirely client-side.</p>
+    </section>
+
+    <section class="search-shell" aria-label="Search interface">
+      <form
+        id="search-form"
+        role="search"
+        aria-label="Site search"
+        class="card search-form"
+        action="/search.html"
+        method="get"
+      >
         <label for="q">Query</label>
-        <input id="q" name="q" type="search" placeholder="Search posts, tags..." value="{{ query || '' }}" />
+        <input
+          id="q"
+          name="q"
+          type="search"
+          placeholder="Search posts, tags, and series..."
+          value="{{ query | default:'' }}"
+        />
         <button type="submit">Search</button>
         <fieldset class="cluster" aria-labelledby="type-filters-label">
           <legend id="type-filters-label">Filter by type</legend>
-          <label><input type="checkbox" name="type" value="post" checked /> Posts</label>
-          <label><input type="checkbox" name="type" value="tag" checked /> Tags</label>
-          <label><input type="checkbox" name="type" value="series" checked /> Series</label>
-          <label><input type="checkbox" name="type" value="month" checked /> Months</label>
+          <input id="type-post" type="checkbox" name="type" value="post" checked />
+          <label for="type-post">Posts</label>
+          <input id="type-tag" type="checkbox" name="type" value="tag" checked />
+          <label for="type-tag">Tags</label>
+          <input id="type-series" type="checkbox" name="type" value="series" checked />
+          <label for="type-series">Series</label>
+          <input id="type-month" type="checkbox" name="type" value="month" checked />
+          <label for="type-month">Months</label>
         </fieldset>
       </form>
 
-      <div class="cluster" aria-live="polite" aria-atomic="true" id="results-summary"></div>
+      <div class="search-toolbar">
+        <div
+          class="cluster search-summary"
+          aria-live="polite"
+          aria-atomic="true"
+          id="results-summary"
+          tabindex="-1"
+        ></div>
+      </div>
 
-      <div id="search-results" role="list" class="posts-grid"></div>
+      <ul id="search-results" class="post-feed post-feed--feature-list" data-post-feed aria-label="Search results"></ul>
 
       <nav id="search-pagination" class="pagination" aria-label="Search results pagination"></nav>
     </section>

@@ -1,9 +1,53 @@
 <extends src="../layouts/base.html" />
 
+<block name="head">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:url" content="{{ canonicalUrl }}" />
+  <meta property="og:image" content="{{ ogImageUrl }}" />
+  <meta property="og:image:alt" content="Preview image for {{ title }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:title" content="{{ title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:image" content="{{ ogImageUrl }}" />
+  <meta name="twitter:image:alt" content="Preview image for {{ title }}" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": {{ title | json | raw }},
+      "url": "{{ canonicalUrl }}",
+      "description": {{ description | json | raw }}
+    }
+  </script>
+</block>
+
 <block name="content">
-  <section aria-labelledby="about-title">
-    <h1 id="about-title">About</h1>
-    <p>Hi, I'm Emiliano "pixu1980" Pisu. This is the dout.dev blog.</p>
-    <p>More content will be added here.</p>
+  <section class="page-hero" aria-labelledby="about-title">
+    <p class="eyebrow">About</p>
+    <h1 id="about-title">dout.dev is an editorial lab for frontend craft.</h1>
+    <p>
+      The site is written from markdown, rendered through a custom CMS, and shaped around performance, accessibility,
+      and a strong visual point of view instead of a generic theme.
+    </p>
+  </section>
+
+  <section class="info-grid" aria-label="About the site">
+    <article class="card">
+      <h2>What gets published</h2>
+      <p>
+        CSS systems, accessibility, design choices, build tooling, and the practical reality of maintaining a modern
+        static site by hand.
+      </p>
+    </article>
+    <article class="card">
+      <h2>How it is built</h2>
+      <p>
+        Markdown source files are transformed into static HTML through the in-repo CMS and deployed to GitHub Pages
+        under the custom domain <strong>dout.dev</strong>.
+      </p>
+    </article>
   </section>
 </block>

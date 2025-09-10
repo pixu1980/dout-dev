@@ -1,6 +1,9 @@
-<header role="banner">
+<header role="banner" class="site-header">
   <div class="container header-bar">
-    <a class="brand" href="/">dout.dev</a>
+    <a class="brand" href="/">
+      <span class="brand__mark">dout.dev</span>
+      <span class="brand__tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
+    </a>
     <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
       <span aria-hidden="true">☰</span>
     </button>
@@ -12,12 +15,8 @@
         <li><a href="/about.html">About</a></li>
       </ul>
       <div class="header-actions">
-        <button class="theme-switcher" type="button" aria-label="Toggle theme" title="Toggle theme"></button>
-        <div class="accent-picker" role="group" aria-label="Accent color">
-          <button type="button" class="accent-dot" data-accent="default" title="Default" aria-pressed="false"></button>
-          <button type="button" class="accent-dot" data-accent="violet" title="Violet" aria-pressed="false"></button>
-          <button type="button" class="accent-dot" data-accent="green" title="Green" aria-pressed="false"></button>
-        </div>
+        <color-scheme-switcher></color-scheme-switcher>
+        <display-preferences-popover></display-preferences-popover>
       </div>
     </nav>
   </div>

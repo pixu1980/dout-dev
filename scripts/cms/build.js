@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 // CMS Build - orchestrates scan and page generation
 import { scanContent } from './scan.js';
-import { generatePages, buildRssFeed } from './page-generator.js';
+import { buildOgImages } from './og-image-generator.js';
+import { generatePages, buildJsonFeed, buildRssFeed, buildSitemap } from './page-generator.js';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { resolveConfig } from './config.js';
 
-export function build(userConfig = {}) {
+export async function build(userConfig = {}) {
   const config = resolveConfig(userConfig);
   const dataset = scanContent(config);
+  await buildOgImages({ dataset, config });
   generatePages(dataset, config);
   // Emit searchable JSON indexes under src/data for client-side features (e.g., M10 Search)
   try {
@@ -26,23 +28,46 @@ export function build(userConfig = {}) {
     const posts = (dataset.posts || [])
       .filter((p) => p.published)
       .sort((a, b) => new Date(b.date) - new Date(a.date));
+    const rssPath = config.SITE_META.rssFeedPath || '/feed.rss';
+    const jsonFeedPath = config.SITE_META.jsonFeedPath || '/feed.json';
+    const legacyRssFeedPath = config.SITE_META.legacyRssFeedPath || '/feed.xml';
     const xml = buildRssFeed({
       title: `${config.SITE_META.title} — Latest Posts`,
       link: `${config.SITE_META.url}/`,
       description: config.SITE_META.description,
       items: posts,
       siteUrl: config.SITE_META.url,
+      feedUrl: `${config.SITE_META.url}${rssPath}`,
+      language: config.SITE_META.language,
     });
-    writeFileSync(join('src', 'feed.xml'), xml, 'utf8');
+    const json = buildJsonFeed({
+      title: `${config.SITE_META.title} — Latest Posts`,
+      homePageUrl: `${config.SITE_META.url}/`,
+      feedUrl: `${config.SITE_META.url}${jsonFeedPath}`,
+      description: config.SITE_META.description,
+      items: posts,
+      siteUrl: config.SITE_META.url,
+      author: config.SITE_META.author,
+      language: config.SITE_META.language,
+    });
+    writeFileSync(join('src', rssPath.replace(/^\//, '')), xml, 'utf8');
+    writeFileSync(join('src', legacyRssFeedPath.replace(/^\//, '')), xml, 'utf8');
+    writeFileSync(join('src', jsonFeedPath.replace(/^\//, '')), json, 'utf8');
   } catch (e) {
-    console.warn('Warning: failed to generate global feed.xml', e?.message || e);
+    console.warn('Warning: failed to generate global feeds', e?.message || e);
+  }
+  try {
+    const sitemap = buildSitemap({ dataset, siteUrl: config.SITE_META.url });
+    writeFileSync(join('src', 'sitemap.xml'), sitemap, 'utf8');
+  } catch (e) {
+    console.warn('Warning: failed to generate sitemap.xml', e?.message || e);
   }
   return dataset;
 }
 
 export async function main() {
   try {
-    const dataset = build();
+    const dataset = await build();
     console.log(
       `Built ${dataset.posts.length} posts, ${dataset.tags.length} tags, ${dataset.months.length} months, ${dataset.series.length} series`
     );

@@ -1,83 +1,208 @@
-<extends src="../layouts/base.html">
-  <block name="head">
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Introducing CSS Grid - The Future of Web Layout 🎨" />
-    <meta property="og:description" content="What is CSS Grid and why is it important?" />
-    <meta property="og:image" content="/./assets/images/css-grid-cover.jpg" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Introducing CSS Grid - The Future of Web Layout 🎨",
-        "datePublished": "2024-10-28T10:00:00.000Z",
-        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dout.dev/posts/2024-10-28-concerning-css-grid.html" }
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Introducing CSS Grid - The Future of Web Layout 🎨</title>
+    <meta name="theme-color" content="#ff6b3d">
+    <meta name="description" content="What is CSS Grid and why is it important?">
+    <meta name="author" content="Emiliano &quot;pixu1980&quot; Pisu">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="dout:analytics-endpoint" content="">
+    <meta name="dout:analytics-dashboard" content="/privacy.html">
+    <link rel="canonical" href="https://dout.dev/posts/2024-10-28-concerning-css-grid.html">
+    <meta property="og:site_name" content="dout.dev">
+    <meta property="og:locale" content="en-US">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss">
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json">
+    <script>
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
       }
     </script>
-  </block>
+    <style>
+      .file-preview-warning {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid #d9a441;
+        background: #fff3cd;
+        color: #5c3b00;
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
 
-  <block name="content">
-    <article itemscope="" itemtype="https://schema.org/BlogPosting">
-      <header>
-        <h1 itemprop="headline">Introducing CSS Grid - The Future of Web Layout 🎨</h1>
-        <p>
-          <time datetime="2024-10-28" itemprop="datePublished"> 28 ottobre 2024 </time>
-        </p>
+      html[data-preview-mode='file'] .file-preview-warning {
+        display: block;
+      }
 
-        <figure class="post-cover">
-          <img
-            src="/./assets/images/css-grid-cover.jpg"
-            alt="Introducing CSS Grid - The Future of Web Layout 🎨"
-            fetchpriority="high"
-            decoding="async"
-            width="1200"
-            height="630"
-          />
-        </figure>
+      .file-preview-warning code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+    
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Introducing CSS Grid - The Future of Web Layout 🎨">
+  <meta property="og:description" content="What is CSS Grid and why is it important?">
+  <meta property="og:url" content="https://dout.dev/posts/2024-10-28-concerning-css-grid.html">
+  <meta property="og:image" content="https://dout.dev/assets/og/posts/2024-10-28-concerning-css-grid.png">
+  <meta property="og:image:alt" content="Preview image for Introducing CSS Grid - The Future of Web Layout 🎨">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:published_time" content="2024-10-28T10:00:00.000Z">
+  <meta property="article:modified_time" content="2024-10-28T10:00:00.000Z">
+  <meta property="article:author" content="Emiliano &quot;pixu1980&quot; Pisu">
+  <meta name="twitter:title" content="Introducing CSS Grid - The Future of Web Layout 🎨">
+  <meta name="twitter:description" content="What is CSS Grid and why is it important?">
+  <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2024-10-28-concerning-css-grid.png">
+  <meta name="twitter:image:alt" content="Preview image for Introducing CSS Grid - The Future of Web Layout 🎨">
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "headline": "Introducing CSS Grid - The Future of Web Layout 🎨",
+        "description": "What is CSS Grid and why is it important?",
+        "datePublished": "2024-10-28T10:00:00.000Z",
+        "dateModified": "2024-10-28T10:00:00.000Z",
+        "author": {
+          "@type":"Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url":"https://dout.dev"
+        },
+        "publisher": {
+          "@type":"Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url":"https://dout.dev"
+        },
+        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2024-10-28-concerning-css-grid.html"},
+        "image": ["https://dout.dev/assets/og/posts/2024-10-28-concerning-css-grid.png"],
+        "keywords": "grid, css, layouts, two, example, web, layout, powerful, way, elements, rows, columns"
+      }
+  </script>
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://dout.dev"},
+          {"@type":"ListItem","position":2,"name":"Archive","item":"https://dout.dev/archive.html"},
+          {"@type":"ListItem","position":3,"name": "Introducing CSS Grid - The Future of Web Layout 🎨","item":"https://dout.dev/posts/2024-10-28-concerning-css-grid.html"}
+        ]
+      }
+  </script>
 
-        <ul aria-label="Tags">
-          <li><a class="tag" href="/tags/css.html">Css</a></li>
+    <link rel="stylesheet" href="/styles/main.css">
+  </head>
+  <body class="site-shell">
+    <p class="file-preview-warning" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div id="page-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" class="site-header">
+  <div class="container header-bar">
+    <a class="brand" href="/">
+      <span class="brand__mark">dout.dev</span>
+      <span class="brand__tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
+    </a>
+    <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+      <span aria-hidden="true">☰</span>
+    </button>
+    <nav id="mainmenu" class="main-nav" aria-label="Main">
+      <ul class="main-links" role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/archive.html">Archive</a></li>
+        <li><a href="/search.html">Search</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      <div class="header-actions">
+        <color-scheme-switcher></color-scheme-switcher>
+        <display-preferences-popover></display-preferences-popover>
+      </div>
+    </nav>
+  </div>
+</header>
 
-          <li><a class="tag" href="/tags/web-design.html">Web-design</a></li>
 
-          <li><a class="tag" href="/tags/frontend.html">Frontend</a></li>
+    <main class="site-main" id="main" tabindex="-1" aria-label="Main content">
+      
+  <article class="post-layout" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
+    <div class="post-frame">
+      <div class="post-main">
+        <header class="post-hero" aria-labelledby="post-title">
+          <p class="eyebrow">Article</p>
+          <p class="post-hero__meta">
+            <time datetime="2024-10-28" itemprop="datePublished">
+              28 ottobre 2024
+            </time>
+            <span class="post-divider">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 id="post-title" itemprop="headline" tabindex="0">Introducing CSS Grid - The Future of Web Layout 🎨</h1>
+          
+            <p class="post-hero__lede">What is CSS Grid and why is it important?</p>
+          
+          
+            <ul class="tag-list" aria-label="Tags">
+              
+                <li><a class="tag" href="/tags/css.html">CSS</a></li>
+              
+                <li><a class="tag" href="/tags/web-design.html">Web-design</a></li>
+              
+                <li><a class="tag" href="/tags/frontend.html">Frontend</a></li>
+              
+                <li><a class="tag" href="/tags/grid-layout.html">Grid-layout</a></li>
+              
+            </ul>
+          
+          <nav class="post-landmarks" aria-label="Article shortcuts">
+            <a class="tag tag--small" href="#article-content">Jump to article</a>
+            
+              <a class="tag tag--small" href="#post-outline">Jump to outline</a>
+            
+          </nav>
+          
+            <figure class="post-cover">
+              <img src="/./assets/images/css-grid-cover.jpg" alt="Introducing CSS Grid - The Future of Web Layout 🎨" fetchpriority="high" decoding="async" width="1600" height="900">
+            </figure>
+          
+        </header>
 
-          <li><a class="tag" href="/tags/grid-layout.html">Grid-layout</a></li>
-        </ul>
-      </header>
-
-      <section itemprop="articleBody">
-        <h2>What is CSS Grid and why is it important?</h2>
-        <p>
-          CSS Grid is a powerful technology for creating web layouts that has changed the way we think about user
-          interface design. Unlike older methods like <code>float</code> or <code>flexbox</code>, CSS Grid offers a true
-          two-dimensional grid for positioning elements, making layouts simpler, more powerful, and adaptable.
-        </p>
-        <h2>How does it work?</h2>
-        <p>
-          CSS Grid introduces a system of rows and columns, allowing you to create complex layouts with just a few
-          commands. Here is a basic example of a grid with two columns and two rows:
-        </p>
-        <pre is="pix-highlighter" lang="css"><code>display: grid;
+        <section class="post-shell" id="article-content" role="region" aria-labelledby="article-content-title">
+          <h2 id="article-content-title" class="visually-hidden">Article content</h2>
+          <section class="prose" itemprop="articleBody"><h2 id="what-is-css-grid-and-why-is-it-important" tabindex="0" data-toc-anchor="true">What is CSS Grid and why is it important?</h2>
+<p>CSS Grid is a powerful technology for creating web layouts that has changed the way we think about user interface design. Unlike older methods like <code>float</code> or <code>flexbox</code>, CSS Grid offers a true two-dimensional grid for positioning elements, making layouts simpler, more powerful, and adaptable.</p>
+<h2 id="how-does-it-work" tabindex="0" data-toc-anchor="true">How does it work?</h2>
+<p>CSS Grid introduces a system of rows and columns, allowing you to create complex layouts with just a few commands. Here is a basic example of a grid with two columns and two rows:</p>
+<pre is="pix-highlighter" data-lang="css"><code>display: grid;
 grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(2, 200px);</code></pre>
-        <p>With these few lines of code, we can structure our pages without using hacks or complicated markup.</p>
-        <h2>Key Benefits of CSS Grid</h2>
-        <ol>
-          <li>[object Object]</li>
-          <li>[object Object]</li>
-          <li>[object Object]</li>
-        </ol>
-        <h2>A Practical Example</h2>
-        <p>Let's look at a practical example of using CSS Grid to create a basic layout for a web page:</p>
-        <pre is="pix-highlighter" lang="html"><code>&lt;div class="container"&gt;
+grid-template-rows: repeat(2, 200px);</code></pre><p>With these few lines of code, we can structure our pages without using hacks or complicated markup.</p>
+<h2 id="key-benefits-of-css-grid" tabindex="0" data-toc-anchor="true">Key Benefits of CSS Grid</h2>
+<ol>
+<li><strong>Two-Dimensional Design</strong>: Allows you to work with rows and columns intuitively.</li><li><strong>Simplicity and Flexibility</strong>: Positioning elements becomes more natural and less restricted.</li><li><strong>Powerful Alignment</strong>: With properties like <code>justify-items</code> and <code>align-items</code>, aligning elements is a breeze.</li></ol>
+<h2 id="a-practical-example" tabindex="0" data-toc-anchor="true">A Practical Example</h2>
+<p>Let's look at a practical example of using CSS Grid to create a basic layout for a web page:</p>
+<pre is="pix-highlighter" data-lang="html"><code>&lt;div class="container"&gt;
   &lt;header&gt;Header&lt;&#x2F;header&gt;
   &lt;nav&gt;Navigation&lt;&#x2F;nav&gt;
   &lt;main&gt;Main Content&lt;&#x2F;main&gt;
   &lt;aside&gt;Sidebar&lt;&#x2F;aside&gt;
   &lt;footer&gt;Footer&lt;&#x2F;footer&gt;
-&lt;&#x2F;div&gt;</code></pre>
-        <p>And the corresponding CSS:</p>
-        <pre is="pix-highlighter" lang="css"><code>.container {
+&lt;&#x2F;div&gt;</code></pre><p>And the corresponding CSS:</p>
+<pre is="pix-highlighter" data-lang="css"><code>.container {
   display: grid;
   grid-template-areas:
     'header header'
@@ -106,30 +231,87 @@ aside {
 
 footer {
   grid-area: footer;
-}</code></pre>
-        <p>
-          In this example, we use <code>grid-template-areas</code> to assign names to sections and define the layout
-          structure in a readable way.
-        </p>
-        <h2>Conclusions</h2>
-        <p>
-          CSS Grid is an essential tool for every frontend developer. If you want to create modern, responsive, and
-          easily maintainable layouts, CSS Grid is the way to go. Don't be afraid to experiment and play with grids:
-          once you learn it, you won't look back!
-        </p>
-        <p>
-          Do you want to learn more about how to use CSS Grid in your projects? Feel free to ask questions or share your
-          experiments in the comments! 😊
-        </p>
-      </section>
+}</code></pre><p>In this example, we use <code>grid-template-areas</code> to assign names to sections and define the layout structure in a readable way.</p>
+<h2 id="conclusions" tabindex="0" data-toc-anchor="true">Conclusions</h2>
+<p>CSS Grid is an essential tool for every frontend developer. If you want to create modern, responsive, and easily maintainable layouts, CSS Grid is the way to go. Don't be afraid to experiment and play with grids: once you learn it, you won't look back!</p>
+<p>Do you want to learn more about how to use CSS Grid in your projects? Feel free to ask questions or share your experiments in the comments! 😊</p>
+</section>
+        </section>
+      </div>
 
-      <nav aria-label="Post navigation">
-        <a rel="prev" href="/posts/2024-05-19-a11y-by-design.html">← Accessibility by Design</a>
+      
+        <aside class="post-sidebar" role="complementary" aria-labelledby="post-outline">
+          <nav class="post-sidebar__panel post-toc" aria-labelledby="post-outline">
+            <p class="eyebrow eyebrow--muted">Outline</p>
+            <h2 id="post-outline">On this page</h2>
+            <ol class="post-toc__list">
+              
+                <li class="post-toc__item">
+                  <a class="post-toc__link" data-level="2" href="#what-is-css-grid-and-why-is-it-important">What is CSS Grid and why is it important?</a>
+                </li>
+              
+                <li class="post-toc__item">
+                  <a class="post-toc__link" data-level="2" href="#how-does-it-work">How does it work?</a>
+                </li>
+              
+                <li class="post-toc__item">
+                  <a class="post-toc__link" data-level="2" href="#key-benefits-of-css-grid">Key Benefits of CSS Grid</a>
+                </li>
+              
+                <li class="post-toc__item">
+                  <a class="post-toc__link" data-level="2" href="#a-practical-example">A Practical Example</a>
+                </li>
+              
+                <li class="post-toc__item">
+                  <a class="post-toc__link" data-level="2" href="#conclusions">Conclusions</a>
+                </li>
+              
+            </ol>
+          </nav>
+        </aside>
+      
+    </div>
+  </article>
 
-        <a rel="next" href="/posts/2024-12-27-m4-template-test.html"
-          >M4 Template Test - Cover Image e Syntax Highlighting →</a
-        >
-      </nav>
-    </article>
-  </block>
-</extends>
+  
+
+  <nav class="post-nav" aria-label="Post navigation">
+    
+      <a class="post-nav__card" rel="prev" href="/posts/2024-05-19-a11y-by-design.html">
+        <span class="post-nav__label">Previous</span>
+        <strong>Accessibility by Design</strong>
+      </a>
+    
+    
+      <a class="post-nav__card" rel="next" href="/posts/2024-12-27-m4-template-test.html">
+        <span class="post-nav__label">Next</span>
+        <strong>M4 Template Test - Cover Image e Syntax Highlighting</strong>
+      </a>
+    
+  </nav>
+
+    </main>
+
+    <footer role="contentinfo" class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-copy">
+      <p class="footer-brand">dout.dev</p>
+      <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+      <p>© 2026 dout.dev</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/archive.html">Archive</a>
+      <a href="/search.html">Search</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/feed.rss">RSS</a>
+      <a href="/feed.json">JSON Feed</a>
+    </nav>
+  </div>
+</footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  
+
+</body></html>

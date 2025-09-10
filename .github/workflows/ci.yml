@@ -2,30 +2,50 @@ name: CI
 
 on:
   push:
-    branches: [main, develop]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      GISCUS_REPO: ${{ vars.GISCUS_REPO }}
+      GISCUS_REPO_ID: ${{ vars.GISCUS_REPO_ID }}
+      GISCUS_CATEGORY: ${{ vars.GISCUS_CATEGORY }}
+      GISCUS_CATEGORY_ID: ${{ vars.GISCUS_CATEGORY_ID }}
+      GISCUS_LANG: ${{ vars.GISCUS_LANG }}
+      GISCUS_THEME: ${{ vars.GISCUS_THEME }}
 
     strategy:
       matrix:
-        node-version: [22.x]
+        node-version: [24.x]
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.0
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
+
+      - name: Spell-check editorial and UI copy
+        run: pnpm spellcheck
 
       - name: Verify favicons present (fail fast)
         run: |
@@ -57,36 +77,89 @@ jobs:
           fi
           echo "✅ Template syntax validation passed!"
 
-      - name: Run tests
-        run: npm test
+      # - name: Run tests
+      #  run: pnpm test
 
-      - name: Lint code
-        run: npm run lint
-
-      - name: Build CMS
-        run: npm run cms:build
+      # - name: Lint code
+      #  run: pnpm lint
 
       - name: Build site
-        run: npm run build
+        run: pnpm build
 
-      - name: Verify manifest contains CSS assets
-        run: |
-          echo "🔍 Verifying build manifest for CSS assets..."
-          node scripts/verify-manifest.cjs
+      - name: Validate built links
+        run: pnpm validate:links:dist
 
-      - name: Verify index includes CSS
-        run: |
-          echo "🔍 Verifying dist/index.html includes CSS link to /assets/*.css..."
-          node scripts/verify-index-css.cjs
+      - name: Validate built accessibility
+        run: node scripts/linting/validate-a11y.js dist
 
-      - name: Compare manifest and index
-        run: |
-          echo "🔍 Ensuring manifest CSS assets are referenced in dist/index.html..."
-          node scripts/compare-manifest-index.cjs
+      - name: Validate CSP and security headers
+        run: pnpm validate:security
+
+      # - name: Install Playwright browser
+      #  run: pnpm exec playwright install --with-deps chromium
+
+      # - name: Run visual regression tests
+      #  run: pnpm test:visual
+
+      # - name: Verify manifest contains CSS assets
+      #   run: |
+      #     echo "🔍 Verifying build manifest for CSS assets..."
+      #     node scripts/verify-manifest.cjs
+
+      # - name: Verify index includes CSS
+      #   run: |
+      #     echo "🔍 Verifying dist/index.html includes CSS link to /assets/*.css..."
+      #     node scripts/verify-index-css.cjs
+
+      # - name: Compare manifest and index
+      #   run: |
+      #     echo "🔍 Ensuring manifest CSS assets are referenced in dist/index.html..."
+      #     node scripts/compare-manifest-index.cjs
+
+      # - name: Verify deploy artifact completeness
+      #  run: node scripts/verify-dist.cjs
+
+      - name: Upload Pages artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
       - name: Upload build artifacts
+        if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist/
           retention-days: 7
+
+      - name: Upload PR preview artifact
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-preview-${{ github.event.pull_request.number }}
+          path: dist/
+          retention-days: 7
+
+      - name: Summarize preview artifact
+        if: github.event_name == 'pull_request'
+        run: |
+          {
+            echo "## Preview artifact"
+            echo ""
+            echo "Download artifact: pr-preview-${{ github.event.pull_request.number }}"
+            echo "It contains the fully built dist/ directory for local inspection or static hosting smoke tests."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

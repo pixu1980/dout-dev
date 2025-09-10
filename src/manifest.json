@@ -1,0 +1,22 @@
+{
+  "name": "dout.dev",
+  "short_name": "dout.dev",
+  "description": "Editorial notes on frontend systems, design, accessibility, and the open web.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5efe6",
+  "theme_color": "#ff6b3d",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

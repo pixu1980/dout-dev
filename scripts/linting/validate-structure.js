@@ -76,12 +76,12 @@ async function checkNamingConventions() {
   console.log('\n📝 Checking naming conventions...');
 
   const srcDir = join(projectRoot, 'src');
-  await checkDirectoryNaming(srcDir, '', errors, warnings);
+  await checkDirectoryNaming(srcDir, '', errors, warnings, ['scripts']);
 
   return { errors, warnings };
 }
 
-async function checkDirectoryNaming(dir, relativePath, errors, warnings) {
+async function checkDirectoryNaming(dir, relativePath, errors, warnings, excludePaths = []) {
   try {
     const entries = await readdir(dir);
 
@@ -100,8 +100,10 @@ async function checkDirectoryNaming(dir, relativePath, errors, warnings) {
           warnings.push(`Directory not lowercase: ${entryRelativePath}`);
         }
 
-        // Recursively check subdirectories
-        await checkDirectoryNaming(fullPath, entryRelativePath, errors, warnings);
+        // Recursively check subdirectories (skip excluded paths like scripts/components)
+        if (!excludePaths.includes(entry)) {
+          await checkDirectoryNaming(fullPath, entryRelativePath, errors, warnings, excludePaths);
+        }
       } else if (stats.isFile()) {
         // Check file naming
         const ext = extname(entry);

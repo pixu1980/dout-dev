@@ -7,31 +7,71 @@
     title="{{ site.title }} — {{ month.name }}"
     href="/months/{{ month.slug }}.xml"
   />
-  <if condition="canonicalUrl"><link rel="canonical" href="{{ canonicalUrl }}" /></if>
-  <if condition="description"><meta name="description" content="{{ description }}" /></if>
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ month.name }}" />
-  <if condition="description"><meta property="og:description" content="{{ description }}" /></if>
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
   <meta property="og:url" content="{{ canonicalUrl }}" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="{{ ogImageUrl }}" />
+  <meta property="og:image:alt" content="Preview image for {{ title }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:title" content="{{ title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:image" content="{{ ogImageUrl }}" />
+  <meta name="twitter:image:alt" content="Preview image for {{ title }}" />
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"CollectionPage",
+        "name": {{ title | json | raw }},
+        "url":"{{ canonicalUrl }}",
+        "description": {{ description | json | raw }},
+        "isPartOf":{"@type":"Blog","name": {{ site.title | json | raw }},"url":"{{ site.url }}"}
+      }
+  </script>
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"{{ site.url }}"},
+          {"@type":"ListItem","position":2,"name":"Archive","item":"{{ site.url }}/archive.html"},
+          {"@type":"ListItem","position":3,"name": {{ month.name | json | raw }},"item":"{{ canonicalUrl }}"}
+        ]
+      }
+  </script>
 </block>
 
 <block name="content">
-  <section aria-labelledby="month-title">
+  <section class="page-hero" aria-labelledby="month-title">
+    <p class="eyebrow">Monthly archive</p>
     <h1 id="month-title">{{ month.name }}</h1>
-    <p><a href="/months/{{ month.slug }}.xml">RSS feed</a></p>
+    <p>Everything published in {{ month.name }}.</p>
     <if condition="monthTags && monthTags.length">
-      <p>Tags: {{ monthTags | join:", " }}</p>
+      <p>Topics: {{ monthTags | join:", " }}</p>
     </if>
-    <ul>
+    <a class="text-link" href="/months/{{ month.slug }}.xml">RSS feed</a>
+  </section>
+
+  <section class="post-feed-shell" aria-labelledby="month-posts-title">
+    <div class="section-heading section-heading--feed">
+      <div>
+        <p class="eyebrow eyebrow--muted">Posts</p>
+        <h2 id="month-posts-title">Posts in {{ month.name }}</h2>
+      </div>
+    </div>
+
+    <ul class="post-feed post-feed--feature-list" data-post-feed>
       <for each="p in posts">
-        <li>
-          <a href="/posts/{{ p.name }}.html">{{ p.title }}</a>
-          <time datetime="{{ p.date | date:'YYYY-MM-DD' }}">{{ p.date | date:'long' }}</time>
+        <li class="post-feed__item">
+          <include
+            src="../components/post-card.html"
+            data='{"post": {{ p | json | raw }}, "headingLevel": "2", "showCover": true, "showExcerpt": true, "showTags": true}'
+          ></include>
         </li>
       </for>
     </ul>
-
-    <include src="../components/pagination.html"></include>
   </section>
+
+  <include src="../components/pagination.html"></include>
 </block>

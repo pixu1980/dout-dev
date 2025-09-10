@@ -1,0 +1,72 @@
+post-feed-layout-selector {
+  display: inline-flex;
+}
+
+post-feed-layout-selector .post-feed-layout {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+}
+
+post-feed-layout-selector .post-feed-layout__label {
+  color: var(--text-muted);
+  font-size: var(--step--1, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+post-feed-layout-selector .post-feed-layout__group {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--surface-strong) 82%, transparent);
+}
+
+post-feed-layout-selector .post-feed-layout__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: var(--control-height-sm, 2.5rem);
+  padding: 0.5rem 0.8rem;
+  border: 0;
+  border-radius: calc(var(--radius-pill) - 0.2rem);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease,
+    transform 140ms ease;
+}
+
+post-feed-layout-selector .post-feed-layout__button svg {
+  width: var(--icon-size-md, 1rem);
+  height: var(--icon-size-md, 1rem);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+post-feed-layout-selector .post-feed-layout__button[aria-pressed='true'] {
+  background: color-mix(in srgb, var(--accent-soft) 64%, var(--surface-strong) 36%);
+  color: var(--text);
+}
+
+post-feed-layout-selector .post-feed-layout__button:hover {
+  color: var(--text);
+}
+
+@media (max-width: 720px) {
+  post-feed-layout-selector .post-feed-layout {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  post-feed-layout-selector .post-feed-layout__button {
+    flex: 1 1 auto;
+  }
+}

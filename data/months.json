@@ -12,7 +12,7 @@
         "dateString": "Mon Jan 07 2019",
         "path": "./src/posts/2019-01-07-a-post-with-a-cover.html",
         "url": "/posts/2019-01-07-a-post-with-a-cover/",
-        "excerpt": "Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it's been marked up with tags or f",
+        "excerpt": "Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or",
         "tags": [
           {
             "key": "markdown",
@@ -49,7 +49,7 @@
         "dateString": "Wed Feb 06 2019",
         "path": "./src/posts/2019-02-06-markdown-test-file.html",
         "url": "/posts/2019-02-06-markdown-test-file/",
-        "excerpt": "Markdown is intended to be as easytoread and easytowrite as is feasible.Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis",
+        "excerpt": "Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable",
         "tags": [
           {
             "key": "markdown",
@@ -71,7 +71,7 @@
         "dateString": "Thu Feb 07 2019",
         "path": "./src/posts/2019-02-07-say-hello-to-gridsome.html",
         "url": "/posts/2019-02-07-say-hello-to-gridsome/",
-        "excerpt": "A new static site generator baby is born. It's highly inspired by Gatsby.js React based but built on top of Vue.js. We have been working on it for a year and will have a beta read",
+        "excerpt": "A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea",
         "tags": [
           {
             "key": "markdown",
@@ -174,7 +174,7 @@
         "dateString": "Mon Mar 08 2021",
         "path": "./src/posts/2021-03-08-a-new-post-with-a-new-cover.html",
         "url": "/posts/2021-03-08-a-new-post-with-a-new-cover/",
-        "excerpt": "Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it's been marked up with tags or f",
+        "excerpt": "Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or",
         "tags": [
           {
             "key": "markdown",
@@ -211,7 +211,7 @@
         "dateString": "Sat Jan 01 2022",
         "path": "./src/posts/2022-01-01-say-hello-2022.html",
         "url": "/posts/2022-01-01-say-hello-2022/",
-        "excerpt": "!example alt text../assets/images/20220225youcanexpresstagstoday.jpg 'example Title'",
+        "excerpt": "",
         "tags": [
           {
             "key": "markdown",
@@ -248,7 +248,7 @@
         "dateString": "Fri Feb 25 2022",
         "path": "./src/posts/2022-02-25-you-can-express-tags-today.html",
         "url": "/posts/2022-02-25-you-can-express-tags-today/",
-        "excerpt": "HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described herehttps://www.htmlgoodies.com/guides/expectednewfeaturesinhtml6/ 'Expected new f",
+        "excerpt": "HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described here.",
         "tags": [
           {
             "key": "html",
@@ -318,7 +318,7 @@
         "dateString": "Sat Mar 12 2022",
         "path": "./src/posts/2022-03-12-you-can-edit-css.html",
         "url": "/posts/2022-03-12-you-can-edit-css/",
-        "excerpt": "You can edit CSShttps://codepen.io/davatron5000/pen/mddmRJe",
+        "excerpt": "You can edit CSS",
         "tags": [
           {
             "key": "markdown",
@@ -340,7 +340,7 @@
         "dateString": "Wed Mar 16 2022",
         "path": "./src/posts/2022-03-16-test-codepen.html",
         "url": "/posts/2022-03-16-test-codepen/",
-        "excerpt": "<iframe height=\"521\" style=\"width: 100%; minheight: 30rem\" scrolling=\"no\" title=\"Pure CSS Slider using ScrollSnap\" src=\"https://codepen.io/blackmirror1980/embed/aPRXzv?height=521&",
+        "excerpt": "See the Pen <a href='https://codepen.io/blackmirror1980/pen/aPRXzv'>Pure CSS Slider using Scroll-Snap</a> by blackmirror1980 (<a href='https://codepen.io/blackmirror1980'>@blackmir",
         "tags": [
           {
             "key": "markdown",
@@ -362,7 +362,7 @@
         "dateString": "Fri Mar 18 2022",
         "path": "./src/posts/2022-03-18-css-properties-hierarchy.html",
         "url": "/posts/2022-03-18-css-properties-hierarchy/",
-        "excerpt": "css :root { borderradius: 5px; }",
+        "excerpt": ":root { --border-radius: 5px; } .element { /* css custom properties */ --var--example: 1; ​ /* position */ position: absolute; inset: 0; /* top, right, bottom, left */ z-index: 1; ",
         "tags": [
           {
             "key": "html",
@@ -401,7 +401,7 @@
         "dateString": "Tue Mar 22 2022",
         "path": "./src/posts/2022-03-22-building-dout-dev-blog-part-2.html",
         "url": "/posts/2022-03-22-building-dout-dev-blog-part-2/",
-        "excerpt": "Building dout.dev blog Part II",
+        "excerpt": "Building dout.dev blog - Part II",
         "tags": [
           {
             "key": "html",
@@ -467,7 +467,7 @@
         "dateString": "Sun Jan 01 2023",
         "path": "./src/posts/2023-01-01-say-hello-2023.html",
         "url": "/posts/2023-01-01-say-hello-2023/",
-        "excerpt": "!example alt text../assets/images/20220225youcanexpresstagstoday.jpg 'example Title'",
+        "excerpt": "addEventListener('DOMContentLoaded', (e) => { console.log(e); }); anotherFunctionCallGoesHere({}, () => { selectOther(); });",
         "tags": [
           {
             "key": "markdown",
@@ -504,7 +504,7 @@
         "dateString": "Sun May 19 2024",
         "path": "./src/posts/2024-05-19-a11y-by-design.html",
         "url": "/posts/2024-05-19-a11y-by-design/",
-        "excerpt": "We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Des",
+        "excerpt": "We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Desi",
         "tags": [
           {
             "key": "a11y",
@@ -593,7 +593,7 @@
         "dateString": "Fri Dec 27 2024",
         "path": "./src/posts/2024-12-27-m4-template-test.html",
         "url": "/posts/2024-12-27-m4-template-test/",
-        "excerpt": "Questo è un post di test per verificare tutte le funzionalità implementate nel M4 Post Page.",
+        "excerpt": "Questo è un post di test per verificare tutte le funzionalità implementate nel M4 - Post Page.",
         "tags": [
           {
             "key": "test",
@@ -668,5 +668,52 @@
     "count": 1,
     "from": "2025-08-15T00:00:00.000Z",
     "to": "2025-08-15T00:00:00.000Z"
+  },
+  {
+    "key": "2026-04",
+    "label": "April 2026",
+    "year": 2026,
+    "month": 4,
+    "posts": [
+      {
+        "name": "2026-04-04-how-i-built-dout-dev",
+        "title": "How I Built dout.dev",
+        "date": "2026-04-04T00:00:00.000Z",
+        "dateString": "Sat Apr 04 2026",
+        "path": "./src/posts/2026-04-04-how-i-built-dout-dev.html",
+        "url": "/posts/2026-04-04-how-i-built-dout-dev/",
+        "excerpt": "The Goal: an editorial blog without runtime ballast",
+        "tags": [
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "Static-site",
+            "url": "./tags/static-site.html"
+          },
+          {
+            "key": "design-systems",
+            "label": "Design-systems",
+            "url": "./tags/design-systems.html"
+          },
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "April 2026",
+    "number": 4,
+    "slug": "2026-04",
+    "url": "./months/2026-04.html",
+    "count": 1,
+    "from": "2026-04-04T00:00:00.000Z",
+    "to": "2026-04-04T00:00:00.000Z"
   }
 ]

@@ -81,4 +81,14 @@ describe('config', () => {
     assert.strictEqual(config.contentDir, 'data/posts');
     assert.strictEqual(config.site.baseUrl, '/');
   });
+
+  test('should keep header-only CSP directives out of the HTML meta policy', () => {
+    const config = resolveConfig();
+
+    assert.ok(config.SITE_META.security.csp.includes("default-src 'self'"));
+    assert.ok(!config.SITE_META.security.csp.includes('frame-ancestors'));
+    assert.ok(!config.SITE_META.security.csp.includes('upgrade-insecure-requests'));
+    assert.ok(config.SITE_META.security.headerCsp.includes("frame-ancestors 'none'"));
+    assert.ok(config.SITE_META.security.headerCsp.includes('upgrade-insecure-requests'));
+  });
 });

@@ -1,0 +1,71 @@
+<extends src="../layouts/base.html" />
+
+<block name="head">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:url" content="{{ canonicalUrl }}" />
+  <meta property="og:image" content="{{ ogImageUrl }}" />
+  <meta property="og:image:alt" content="Preview image for {{ title }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:title" content="{{ title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:image" content="{{ ogImageUrl }}" />
+  <meta name="twitter:image:alt" content="Preview image for {{ title }}" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": {{ title | json | raw }},
+      "url": "{{ canonicalUrl }}",
+      "description": {{ description | json | raw }}
+    }
+  </script>
+</block>
+
+<block name="content">
+  <section class="page-hero" aria-labelledby="archive-title">
+    <p class="eyebrow">Archive</p>
+    <h1 id="archive-title">The complete dout.dev archive.</h1>
+    <p>Browse everything by time, by topic, or by longer-running series.</p>
+  </section>
+
+  <section class="archive-grid" aria-label="Archive navigation">
+    <article class="card archive-panel">
+      <h2>By month</h2>
+      <ul class="archive-links" role="list">
+        <for each="month in months">
+          <li>
+            <a href="/months/{{ month.slug }}.html">{{ month.name }}</a>
+            <span>{{ month.count }} posts</span>
+          </li>
+        </for>
+      </ul>
+    </article>
+
+    <article class="card archive-panel">
+      <h2>By topic</h2>
+      <ul class="archive-links" role="list">
+        <for each="tag in tags">
+          <li>
+            <a href="/tags/{{ tag.slug }}.html">{{ tag.name }}</a>
+            <span>{{ tag.count }} posts</span>
+          </li>
+        </for>
+      </ul>
+    </article>
+
+    <article class="card archive-panel">
+      <h2>By series</h2>
+      <ul class="archive-links" role="list">
+        <for each="entry in series">
+          <li>
+            <a href="/series/{{ entry.slug }}.html">{{ entry.title }}</a>
+            <span>{{ entry.count }} posts</span>
+          </li>
+        </for>
+      </ul>
+    </article>
+  </section>
+</block>

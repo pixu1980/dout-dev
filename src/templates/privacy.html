@@ -1,0 +1,76 @@
+<extends src="../layouts/base.html" />
+
+<block name="head">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:url" content="{{ canonicalUrl }}" />
+  <meta property="og:image" content="{{ ogImageUrl }}" />
+  <meta property="og:image:alt" content="Preview image for {{ title }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:title" content="{{ title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:image" content="{{ ogImageUrl }}" />
+  <meta name="twitter:image:alt" content="Preview image for {{ title }}" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": {{ title | json | raw }},
+      "url": "{{ canonicalUrl }}",
+      "description": {{ description | json | raw }}
+    }
+  </script>
+</block>
+
+<block name="content">
+  <section class="page-hero" aria-labelledby="privacy-title">
+    <p class="eyebrow">Privacy</p>
+    <h1 id="privacy-title">Page hits stay lightweight, transparent, and easy to disable.</h1>
+    <p>
+      dout.dev stores page-hit counts in your own browser by default. No cookies, no cross-site identifiers, and no
+      profiling. If a server endpoint is configured later, the client still respects Do Not Track and your local
+      opt-out.
+    </p>
+  </section>
+
+  <section class="privacy-grid" aria-label="Privacy controls and dashboard">
+    <article class="card privacy-card">
+      <p class="eyebrow eyebrow--muted">What is recorded</p>
+      <h2>Only page paths and visit counts.</h2>
+      <ul role="list" class="privacy-list">
+        <li>Local storage keeps a simple per-page counter in this browser.</li>
+        <li>Do Not Track and Global Privacy Control disable tracking automatically when supported.</li>
+        <li>You can opt out or clear the stored counts at any time from this page.</li>
+      </ul>
+    </article>
+
+    <article class="card privacy-card">
+      <p class="eyebrow eyebrow--muted">Your controls</p>
+      <h2>Tracking status</h2>
+      <p id="analytics-status" data-analytics-status>Loading analytics status…</p>
+      <div class="privacy-actions">
+        <button type="button" class="button button--primary" data-analytics-toggle>Disable page-hit tracking</button>
+        <button type="button" class="button button--ghost" data-analytics-clear>Clear local page-hit data</button>
+      </div>
+      <p class="muted">Downloads below export only the counts stored in this browser.</p>
+      <div class="privacy-downloads">
+        <a class="text-link" href="#" data-analytics-download="json">Download JSON</a>
+        <a class="text-link" href="#" data-analytics-download="csv">Download CSV</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="card privacy-card" aria-labelledby="analytics-dashboard-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow eyebrow--muted">Dashboard</p>
+        <h2 id="analytics-dashboard-title">Local page-hit summary</h2>
+      </div>
+    </div>
+    <div data-analytics-dashboard>
+      <p class="muted">No local analytics data recorded yet.</p>
+    </div>
+  </section>
+</block>

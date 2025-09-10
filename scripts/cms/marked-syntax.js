@@ -224,7 +224,7 @@ export function createMarkedOptions() {
   renderer.code = (code, infostring) => {
     const actualCode = typeof code === 'object' && code && 'text' in code ? code.text : code;
     const lang = (infostring || code?.lang || '').trim().split(/\s+/)[0] || '';
-    const langAttr = lang ? ` lang="${lang}"` : '';
+    const langAttr = lang ? ` data-lang="${lang}"` : '';
     return `<pre is="pix-highlighter"${langAttr}><code>${escapeHtml(actualCode)}</code></pre>`;
   };
   // Lazy images with noscript fallback
@@ -247,20 +247,44 @@ export function createMarkedOptions() {
     }
     return renderLazyPicture({ src, alt, meta, sizeAttrs, titleAttr, href });
   };
-  // Accessible task list items: ensure inputs have labels (and stay non-interactive)
-  renderer.listitem = (text, task, checked) => {
+  // Support Marked's token-based list item API while keeping accessible task lists.
+  renderer.listitem = function listitem(tokenOrText, task, checked) {
+    if (tokenOrText && typeof tokenOrText === 'object' && 'type' in tokenOrText) {
+      const token = tokenOrText;
+      const parsed = this.parser.parse(token.tokens, !!token.loose).trim();
+
+      if (token.task) {
+        taskCounter += 1;
+        const id = `md-task-${taskCounter}`;
+        const aria = String(token.text || '')
+          .replace(/\s+/g, ' ')
+          .trim();
+        const checkedAttr = token.checked ? ' checked' : '';
+        const visual = parsed
+          .replace(/^<p>([\s\S]*)<\/p>$/i, '$1')
+          .replace(/^<input\b[^>]*type=(['"]?)checkbox\1[^>]*>\s*/i, '')
+          .trim();
+        return `<li class="task-list-item"><input type="checkbox" id="${id}" class="task-list-item-checkbox" disabled aria-label="${escapeHtml(aria)}"${checkedAttr} /><label for="${id}">${visual}</label></li>`;
+      }
+
+      return `<li>${parsed}</li>`;
+    }
+
     if (task) {
       taskCounter += 1;
       const id = `md-task-${taskCounter}`;
       // Strip HTML to produce a compact aria-label; leave rich text in the visual label
-      const aria = String(text)
+      const aria = String(tokenOrText)
         .replace(/<[^>]*>/g, '')
         .replace(/\s+/g, ' ')
         .trim();
       const checkedAttr = checked ? ' checked' : '';
-      return `<li class="task-list-item"><input type="checkbox" id="${id}" class="task-list-item-checkbox" disabled aria-label="${escapeHtml(aria)}"${checkedAttr} /><label for="${id}">${text}</label></li>`;
+      const visual = String(tokenOrText)
+        .replace(/^<input\b[^>]*type=(['"]?)checkbox\1[^>]*>\s*/i, '')
+        .trim();
+      return `<li class="task-list-item"><input type="checkbox" id="${id}" class="task-list-item-checkbox" disabled aria-label="${escapeHtml(aria)}"${checkedAttr} /><label for="${id}">${visual}</label></li>`;
     }
-    return `<li>${text}</li>`;
+    return `<li>${tokenOrText}</li>`;
   };
   return { renderer, headerIds: false, mangle: false };
 }

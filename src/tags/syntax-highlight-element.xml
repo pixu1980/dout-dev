@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dout.dev — Syntax-highlight-element</title>
     <link>https://dout.dev/tags/syntax-highlight-element/</link>
     <description>RSS feed for posts tagged with Syntax-highlight-element</description>
-    <lastBuildDate>Tue, 09 Sep 2025 08:29:12 GMT</lastBuildDate>
+    <atom:link href="https://dout.dev/tags/syntax-highlight-element.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 20 Apr 2026 11:44:21 GMT</lastBuildDate>
     <item>
       <title>M4 Template Test - Cover Image e Syntax Highlighting</title>
       <link>https://dout.dev/posts/2024-12-27-m4-template-test.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2024-12-27-m4-template-test.html</guid>
       <pubDate>Fri, 27 Dec 2024 10:00:00 GMT</pubDate>
-      <description>Questo è un post di test per verificare tutte le funzionalità implementate nel M4 Post Page.</description>
+      <description>Questo è un post di test per verificare tutte le funzionalità implementate nel M4 - Post Page.</description>
     </item>
   </channel>
 </rss>

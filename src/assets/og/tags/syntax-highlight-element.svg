@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="98" y1="72" x2="1102" y2="558" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08111E" />
+      <stop offset="1" stop-color="#112743" />
+    </linearGradient>
+    <linearGradient id="glow" x1="178" y1="118" x2="1046" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4d9cf8" stop-opacity="0.34" />
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#060B14" />
+  <circle cx="1008" cy="104" r="214" fill="url(#glow)" />
+  <rect x="72" y="72" width="1056" height="486" rx="34" fill="url(#bg)" stroke="#FFFFFF" stroke-opacity="0.18" />
+  <rect x="72" y="72" width="10" height="486" rx="10" fill="#4d9cf8" />
+  <rect x="102" y="112" width="140" height="40" rx="999" fill="#FFFFFF" fill-opacity="0.08" />
+  <text x="126" y="138" fill="#F5F7FA" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="0.12em">TOPIC ARCHIVE</text>
+  <text x="118" y="246" fill="#F8FBFF" font-family="Georgia, Times New Roman, serif" font-size="74" font-weight="700" letter-spacing="-0.04em"><tspan x="118" dy="0">Syntax-highlight-element</tspan></text>
+  <text x="124" y="442" fill="#B6C2D4" font-family="Helvetica, Arial, sans-serif" font-size="29" font-weight="400"><tspan x="124" dy="0">Posts tagged with Syntax-highlight-element.</tspan></text>
+  <text x="120" y="530" fill="#E5ECF5" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700">dout.dev</text>
+  <text x="1048" y="530" text-anchor="end" fill="#B6C2D4" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="400">https://dout.dev</text>
+</svg>

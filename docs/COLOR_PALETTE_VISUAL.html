@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Palette - dout.dev</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #f9f9f9;
+        padding: 2rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+        color: #111;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        border-bottom: 3px solid #f56a66;
+        padding-bottom: 0.5rem;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        color: #555;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .color-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .color-swatch {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background: white;
+        transition: transform 0.2s;
+      }
+
+      .color-swatch:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .color-preview {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        font-weight: bold;
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 0.5rem;
+      }
+
+      .color-info {
+        padding: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .color-name {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #111;
+      }
+
+      .color-value {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.85rem;
+        word-break: break-all;
+        color: #666;
+        line-height: 1.4;
+      }
+
+      .theme-section {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      .gradient-showcase {
+        border-radius: 8px;
+        padding: 2rem;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        margin: 1rem 0;
+      }
+
+      .component-example {
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 6px;
+        background: white;
+        border: 1px solid #ddd;
+      }
+
+      .button-primary {
+        display: inline-block;
+        background: hsl(16 95% 58%);
+        color: #0f0b0a;
+        padding: 0.8rem 1.2rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .button-primary:hover {
+        transform: translateY(-2px);
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 0.42rem 0.8rem;
+        border-radius: 999px;
+        background: hsl(16 100% 92%);
+        border: 1px solid rgba(255, 153, 80, 0.28);
+        margin: 0.25rem;
+        color: #131117;
+        font-size: 0.9rem;
+      }
+
+      .reference-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+        margin: 1rem 0;
+      }
+
+      .reference-table th,
+      .reference-table td {
+        padding: 0.8rem;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .reference-table th {
+        background: #f5efe6;
+        font-weight: bold;
+        color: #131117;
+      }
+
+      .reference-table tr:hover {
+        background: #fafaf8;
+      }
+
+      .var-name {
+        font-family: 'IBM Plex Mono', monospace;
+        background: #f5f5f5;
+        padding: 0.2rem 0.4rem;
+        border-radius: 3px;
+        color: #2c3e50;
+      }
+
+      .dark-preview {
+        background: #0f0e13;
+        color: #f7f1eb;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+      }
+
+      .dark-preview h3 {
+        color: #f7f1eb;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        h2 {
+          font-size: 1.2rem;
+        }
+      }
+
+      .footer {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #ddd;
+        font-size: 0.9rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎨 Palette Colori - dout.dev</h1>
+      <p style="color: #666; margin-bottom: 2rem">
+        Visualizzazione interattiva del sistema di colori e stili del progetto
+      </p>
+
+      <!-- ACCENTI PRINCIPALI -->
+      <h2>Accenti Principali</h2>
+      <p>Tre accenti disponibili tramite <code>body[data-accent]</code></p>
+      <div class="color-grid">
+        <div class="color-swatch">
+          <div class="color-preview" style="background: hsl(16 95% 58%)">Default<br />Orange</div>
+          <div class="color-info">
+            <div class="color-name">Accent Default</div>
+            <div class="color-value">
+              HSL 16° 95% 58%<br />
+              #ff6b3d (approx)<br />
+              <code>--accent-h: 16</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="color-swatch">
+          <div class="color-preview" style="background: hsl(322 72% 62%)">Violet<br />Accent</div>
+          <div class="color-info">
+            <div class="color-name">Accent Violet</div>
+            <div class="color-value">
+              HSL 322 72% 62%<br />
+              <code>body[data-accent="violet"]</code><br />
+              <code>--accent-h: 322</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="color-swatch">
+          <div class="color-preview" style="background: hsl(145 64% 48%)">Green<br />Accent</div>
+          <div class="color-info">
+            <div class="color-name">Accent Green</div>
+            <div class="color-value">
+              HSL 145 64% 48%<br />
+              <code>body[data-accent="green"]</code><br />
+              <code>--accent-h: 145</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEMA LIGHT -->
+      <div class="theme-section">
+        <h2>☀️ Tema Light (Predefinito)</h2>
+        <p>Applica automaticamente o tramite <code>:root[data-theme="light"]</code></p>
+
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="color-preview" style="background: #f5efe6; color: #131117; border: 1px solid #eae3d9">
+              Background
+            </div>
+            <div class="color-info">
+              <div class="color-name">--bg</div>
+              <div class="color-value">#f5efe6</div>
+            </div>
+          </div>
+
+          <div class="color-swatch">
+            <div class="color-preview" style="background: #131117">Text</div>
+            <div class="color-info">
+              <div class="color-name">--text</div>
+              <div class="color-value">#131117</div>
+            </div>
+          </div>
+
+          <div class="color-swatch">
+            <div class="color-preview" style="background: #625c67; border: 1px solid #5d5660">Text Muted</div>
+            <div class="color-info">
+              <div class="color-name">--text-muted</div>
+              <div class="color-value">#625c67</div>
+            </div>
+          </div>
+
+          <div class="color-swatch">
+            <div
+              class="color-preview"
+              style="background: rgba(255, 255, 255, 0.74); color: #000; border: 1px solid #e0e0e0"
+            >
+              Surface
+            </div>
+            <div class="color-info">
+              <div class="color-name">--surface</div>
+              <div class="color-value">rgba(255, 255, 255, 0.74)</div>
+            </div>
+          </div>
+
+          <div class="color-swatch">
+            <div
+              class="color-preview"
+              style="background: rgba(255, 255, 255, 0.92); color: #000; border: 1px solid #e0e0e0"
+            >
+              Surface Strong
+            </div>
+            <div class="color-info">
+              <div class="color-name">--surface-strong</div>
+              <div class="color-value">rgba(255, 255, 255, 0.92)</div>
+            </div>
+          </div>
+
+          <div class="color-swatch">
+            <div class="color-preview" style="background: hsl(16 100% 92%); color: #131117">Accent Soft</div>
+            <div class="color-info">
+              <div class="color-name">--accent-soft</div>
+              <div class="color-value">hsl(16 100% 92%)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEMA DARK -->
+      <div class="dark-preview">
+        <h2>🌙 Tema Dark</h2>
+        <p>
+          Applica automaticamente su <code>@media (prefers-color-scheme: dark)</code> o tramite
+          <code>:root[data-theme="dark"]</code>
+        </p>
+
+        <div class="color-grid" style="margin-top: 1.5rem">
+          <div class="color-swatch" style="background: #2a2630; border: 1px solid #4a4450">
+            <div class="color-preview" style="background: #0f0e13; color: #f7f1eb">Background</div>
+            <div class="color-info" style="background: #2a2630; color: #f7f1eb">
+              <div class="color-name">--bg</div>
+              <div class="color-value">#0f0e13</div>
+            </div>
+          </div>
+
+          <div class="color-swatch" style="background: #2a2630; border: 1px solid #4a4450">
+            <div class="color-preview" style="background: #f7f1eb; color: #0f0e13">Text</div>
+            <div class="color-info" style="background: #2a2630; color: #f7f1eb">
+              <div class="color-name">--text</div>
+              <div class="color-value">#f7f1eb</div>
+            </div>
+          </div>
+
+          <div class="color-swatch" style="background: #2a2630; border: 1px solid #4a4450">
+            <div class="color-preview" style="background: #b9aebd">Text Muted</div>
+            <div class="color-info" style="background: #2a2630; color: #f7f1eb">
+              <div class="color-name">--text-muted</div>
+              <div class="color-value">#b9aebd</div>
+            </div>
+          </div>
+
+          <div class="color-swatch" style="background: #2a2630; border: 1px solid #4a4450">
+            <div
+              class="color-preview"
+              style="background: rgba(27, 24, 33, 0.72); color: #f7f1eb; border: 1px solid rgba(255, 245, 238, 0.1)"
+            >
+              Surface
+            </div>
+            <div class="color-info" style="background: #2a2630; color: #f7f1eb">
+              <div class="color-name">--surface</div>
+              <div class="color-value">rgba(27, 24, 33, 0.72)</div>
+            </div>
+          </div>
+
+          <div class="color-swatch" style="background: #2a2630; border: 1px solid #4a4450">
+            <div class="color-preview" style="background: hsl(16 80% 18%)">Accent Soft</div>
+            <div class="color-info" style="background: #2a2630; color: #f7f1eb">
+              <div class="color-name">--accent-soft</div>
+              <div class="color-value">hsl(16 80% 18%)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRADIENTI -->
+      <h2>🌊 Gradienti</h2>
+
+      <h3>Body Background (Sfondo Principale)</h3>
+      <p style="color: #666">Composizione di 2 gradienti radiali + 1 lineare verticale</p>
+      <div
+        class="gradient-showcase"
+        style="
+          background:
+            radial-gradient(
+              circle at top left,
+              color-mix(in srgb, hsl(16 95% 58%) 24%, transparent) 0,
+              transparent 36%
+            ),
+            radial-gradient(circle at 90% 12%, rgba(255, 255, 255, 0.34) 0, transparent 24%),
+            linear-gradient(180deg, #f5efe6 0%, color-mix(in srgb, #f5efe6 86%, #ffffff 14%) 100%);
+          color: #131117;
+        "
+      >
+        Main Body Background (Light Theme)
+      </div>
+
+      <h3>Feature Card Gradient</h3>
+      <p style="color: #666">Gradiente 160° dal soft accent al surface strong</p>
+      <div
+        class="gradient-showcase"
+        style="
+          background: linear-gradient(
+            160deg,
+            color-mix(in srgb, hsl(16 100% 92%) 64%, rgba(255, 255, 255, 0.92) 36%) 0%,
+            rgba(255, 255, 255, 0.92) 100%
+          );
+          color: #131117;
+        "
+      >
+        Feature Card Gradient
+      </div>
+
+      <!-- COMPONENTI COLORATE -->
+      <h2>🧩 Componenti Colorate</h2>
+
+      <div class="component-example">
+        <h3>Pulsanti (Button Primary)</h3>
+        <button class="button-primary">Click me →</button>
+        <p style="margin-top: 1rem; color: #666; font-size: 0.9rem">
+          <code>background: var(--accent)</code> | <code>color: #0f0b0a</code>
+        </p>
+      </div>
+
+      <div class="component-example">
+        <h3>Tag</h3>
+        <div>
+          <span class="tag">#frontend</span>
+          <span class="tag">#design</span>
+          <span class="tag">#css</span>
+        </div>
+        <p style="margin-top: 1rem; color: #666; font-size: 0.9rem">
+          <code>background: color-mix(in srgb, var(--accent-soft) 66%, var(--surface-strong) 34%)</code>
+        </p>
+      </div>
+
+      <div class="component-example">
+        <h3>Text Link</h3>
+        <a href="#" style="color: hsl(16 96% 46%); text-decoration: none; font-weight: bold"> Esplora → </a>
+        <p style="margin-top: 1rem; color: #666; font-size: 0.9rem">
+          <code>color: var(--accent-strong)</code>
+        </p>
+      </div>
+
+      <!-- TABELLA VARIABILI -->
+      <h2>📋 Tabella Variabili CSS</h2>
+
+      <h3>Accenti (Variabili)</h3>
+      <table class="reference-table">
+        <tr>
+          <th>Variabile</th>
+          <th>Light (default)</th>
+          <th>Dark</th>
+          <th>Note</th>
+        </tr>
+        <tr>
+          <td><span class="var-name">--accent</span></td>
+          <td>hsl(16 95% 58%)</td>
+          <td>hsl(16 95% 58%)</td>
+          <td>Non cambia tra i temi, solo con data-accent</td>
+        </tr>
+        <tr>
+          <td><span class="var-name">--accent-soft</span></td>
+          <td>hsl(16 100% 92%)</td>
+          <td>hsl(16 80% 18%)</td>
+          <td>Sfondo chiaro (light) o scuro (dark)</td>
+        </tr>
+        <tr>
+          <td><span class="var-name">--accent-strong</span></td>
+          <td>hsl(16 96% 46%)</td>
+          <td>hsl(16 96% 46%)</td>
+          <td>Versione più scura dell'accent</td>
+        </tr>
+      </table>
+
+      <h3>Background & Text</h3>
+      <table class="reference-table">
+        <tr>
+          <th>Variabile</th>
+          <th>Light</th>
+          <th>Dark</th>
+        </tr>
+        <tr>
+          <td><span class="var-name">--bg</span></td>
+          <td>#f5efe6</td>
+          <td>#0f0e13</td>
+        </tr>
+        <tr>
+          <td><span class="var-name">--text</span></td>
+          <td>#131117</td>
+          <td>#f7f1eb</td>
+        </tr>
+        <tr>
+          <td><span class="var-name">--text-muted</span></td>
+          <td>#625c67</td>
+          <td>#b9aebd</td>
+        </tr>
+        <tr>
+          <td><span class="var-name">--surface</span></td>
+          <td>rgba(255, 255, 255, 0.74)</td>
+          <td>rgba(27, 24, 33, 0.72)</td>
+        </tr>
+        <tr>
+          <td><span class="var-name">--surface-strong</span></td>
+          <td>rgba(255, 255, 255, 0.92)</td>
+          <td>rgba(29, 25, 36, 0.92)</td>
+        </tr>
+        <tr>
+          <td><span class="var-name">--border</span></td>
+          <td>rgba(26, 17, 23, 0.08)</td>
+          <td>rgba(255, 245, 238, 0.08)</td>
+        </tr>
+      </table>
+
+      <!-- ACCESSO AI FILE -->
+      <h2>📁 File da Consultare</h2>
+      <table class="reference-table">
+        <tr>
+          <th>File</th>
+          <th>Contenuto</th>
+          <th>Link</th>
+        </tr>
+        <tr>
+          <td><strong>main.css</strong></td>
+          <td>Tutte variabili, componenti, gradienti</td>
+          <td><a href="../src/styles/main.css" target="_blank">src/styles/main.css</a></td>
+        </tr>
+        <tr>
+          <td><strong>header.html</strong></td>
+          <td>Header con theme/accent picker</td>
+          <td><a href="../src/components/header.html" target="_blank">src/components/header.html</a></td>
+        </tr>
+        <tr>
+          <td><strong>main.js</strong></td>
+          <td>Theme switcher + accent picker logic</td>
+          <td><a href="../src/scripts/main.js" target="_blank">src/scripts/main.js</a></td>
+        </tr>
+      </table>
+
+      <div class="footer">
+        <p>📌 Ultima versione: Aprile 2026</p>
+        <p>
+          Vedi anche: <a href="COLOR_STYLES_MAP.md" style="color: #ff6b3d">COLOR_STYLES_MAP.md</a> (mappa completa con
+          righe exact e spiegazioni dettagliate)
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

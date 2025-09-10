@@ -18,11 +18,14 @@ async function runLinting() {
   console.log('🔍 Running linting checks...\n');
 
   try {
-    // Run Biome linting
+    // Run Biome linting with increased diagnostic limit
     console.log('📋 Biome lint check...');
-    const { stdout: biomeStdout, stderr: biomeStderr } = await execAsync('npx biome lint .', {
-      cwd: projectRoot,
-    });
+    const { stdout: biomeStdout, stderr: biomeStderr } = await execAsync(
+      'npx biome lint . --max-diagnostics=500',
+      {
+        cwd: projectRoot,
+      }
+    );
 
     if (biomeStdout) console.log(biomeStdout);
     if (biomeStderr) console.warn(biomeStderr);

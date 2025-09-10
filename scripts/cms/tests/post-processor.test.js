@@ -173,4 +173,31 @@ Minimal content.`;
     assert.ok(result.excerpt.includes('Emiliano'));
     assert.strictEqual(result.layout, 'post');
   });
+
+  test('processMarkdown should sanitize raw HTML and build a readable excerpt', () => {
+    const filePath = '/test/embed-heavy-post.md';
+    const raw = `---
+title: "Embed Heavy Post"
+---
+
+<script>alert('xss')</script>
+
+<iframe height="300" title="CodePen demo" src="https://codepen.io/pixu1980/embed/LYOJpBz"></iframe>
+
+## Safe heading
+
+The first readable paragraph should become the excerpt.`;
+
+    const result = processMarkdown(filePath, raw);
+
+    assert.equal(result.content.includes('<script'), false);
+    assert.equal(
+      result.content.includes('sandbox="allow-popups allow-same-origin allow-scripts"'),
+      true
+    );
+    assert.match(
+      result.excerpt,
+      /(Safe heading|The first readable paragraph should become the excerpt\.)/
+    );
+  });
 });

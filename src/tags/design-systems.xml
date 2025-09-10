@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dout.dev — Design-systems</title>
+    <link>https://dout.dev/tags/design-systems/</link>
+    <description>RSS feed for posts tagged with Design-systems</description>
+    <atom:link href="https://dout.dev/tags/design-systems.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 20 Apr 2026 11:44:21 GMT</lastBuildDate>
+    <item>
+      <title>How I Built dout.dev</title>
+      <link>https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</guid>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The Goal: an editorial blog without runtime ballast</description>
+    </item>
+  </channel>
+</rss>

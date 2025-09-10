@@ -1,206 +1,68 @@
 {
-  "assets/images/2022-02-25-you-can-express-tags-today-320-320.jpg": [
-    "assets/images/2022-02-25-you-can-express-tags-today-320-320-320.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-320-320.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-320-320-320.webp"
-  ],
-  "assets/images/2022-02-25-you-can-express-tags-today-320.jpg": [
-    "assets/images/2022-02-25-you-can-express-tags-today-320-320.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-320.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-320-320.webp"
-  ],
-  "assets/images/2022-02-25-you-can-express-tags-today-640-320.jpg": [
-    "assets/images/2022-02-25-you-can-express-tags-today-640-320-320.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-640-320.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-640-320-320.webp"
-  ],
-  "assets/images/2022-02-25-you-can-express-tags-today-640-640.jpg": [
-    "assets/images/2022-02-25-you-can-express-tags-today-640-640-320.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-640-640-640.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-640-640.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-640-640-320.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-640-640-640.webp"
-  ],
-  "assets/images/2022-02-25-you-can-express-tags-today-640.jpg": [
-    "assets/images/2022-02-25-you-can-express-tags-today-640-320.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-640-640.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-640.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-640-320.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-640-640.webp"
-  ],
-  "assets/images/2022-02-25-you-can-express-tags-today-960-320.jpg": [
-    "assets/images/2022-02-25-you-can-express-tags-today-960-320-320.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-320.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-320-320.webp"
-  ],
-  "assets/images/2022-02-25-you-can-express-tags-today-960-640.jpg": [
-    "assets/images/2022-02-25-you-can-express-tags-today-960-640-320.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-640-640.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-640.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-640-320.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-640-640.webp"
-  ],
-  "assets/images/2022-02-25-you-can-express-tags-today-960-960.jpg": [
-    "assets/images/2022-02-25-you-can-express-tags-today-960-960-320.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-960-640.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-960-960.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-960.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-960-320.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-960-640.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-960-960.webp"
-  ],
-  "assets/images/2022-02-25-you-can-express-tags-today-960.jpg": [
-    "assets/images/2022-02-25-you-can-express-tags-today-960-320.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-640.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-960.jpg",
-    "assets/images/2022-02-25-you-can-express-tags-today-960.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-320.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-640.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-960-960.webp"
-  ],
   "assets/images/2022-02-25-you-can-express-tags-today.jpg": [
     "assets/images/2022-02-25-you-can-express-tags-today-320.jpg",
     "assets/images/2022-02-25-you-can-express-tags-today-640.jpg",
     "assets/images/2022-02-25-you-can-express-tags-today-960.jpg",
+    "assets/images/2022-02-25-you-can-express-tags-today-1280.jpg",
     "assets/images/2022-02-25-you-can-express-tags-today.webp",
     "assets/images/2022-02-25-you-can-express-tags-today-320.webp",
     "assets/images/2022-02-25-you-can-express-tags-today-640.webp",
-    "assets/images/2022-02-25-you-can-express-tags-today-960.webp"
+    "assets/images/2022-02-25-you-can-express-tags-today-960.webp",
+    "assets/images/2022-02-25-you-can-express-tags-today-1280.webp"
   ],
-  "assets/images/alexandr-podvalny-220262-unsplash-320-320.jpg": [
-    "assets/images/alexandr-podvalny-220262-unsplash-320-320-320.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-320-320.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-320-320-320.webp"
-  ],
-  "assets/images/alexandr-podvalny-220262-unsplash-320.jpg": [
-    "assets/images/alexandr-podvalny-220262-unsplash-320-320.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-320.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-320-320.webp"
-  ],
-  "assets/images/alexandr-podvalny-220262-unsplash-640-320.jpg": [
-    "assets/images/alexandr-podvalny-220262-unsplash-640-320-320.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-640-320.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-640-320-320.webp"
-  ],
-  "assets/images/alexandr-podvalny-220262-unsplash-640-640.jpg": [
-    "assets/images/alexandr-podvalny-220262-unsplash-640-640-320.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-640-640-640.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-640-640.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-640-640-320.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-640-640-640.webp"
-  ],
-  "assets/images/alexandr-podvalny-220262-unsplash-640.jpg": [
-    "assets/images/alexandr-podvalny-220262-unsplash-640-320.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-640-640.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-640.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-640-320.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-640-640.webp"
-  ],
-  "assets/images/alexandr-podvalny-220262-unsplash-960-320.jpg": [
-    "assets/images/alexandr-podvalny-220262-unsplash-960-320-320.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-320.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-320-320.webp"
-  ],
-  "assets/images/alexandr-podvalny-220262-unsplash-960-640.jpg": [
-    "assets/images/alexandr-podvalny-220262-unsplash-960-640-320.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-640-640.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-640.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-640-320.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-640-640.webp"
-  ],
-  "assets/images/alexandr-podvalny-220262-unsplash-960-960.jpg": [
-    "assets/images/alexandr-podvalny-220262-unsplash-960-960-320.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-960-640.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-960-960.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-960.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-960-320.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-960-640.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-960-960.webp"
-  ],
-  "assets/images/alexandr-podvalny-220262-unsplash-960.jpg": [
-    "assets/images/alexandr-podvalny-220262-unsplash-960-320.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-640.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-960.jpg",
-    "assets/images/alexandr-podvalny-220262-unsplash-960.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-320.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-640.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-960-960.webp"
+  "assets/images/a11y-by-design-cover.jpg": [
+    "assets/images/a11y-by-design-cover-320.jpg",
+    "assets/images/a11y-by-design-cover-640.jpg",
+    "assets/images/a11y-by-design-cover-960.jpg",
+    "assets/images/a11y-by-design-cover-1280.jpg",
+    "assets/images/a11y-by-design-cover.webp",
+    "assets/images/a11y-by-design-cover-320.webp",
+    "assets/images/a11y-by-design-cover-640.webp",
+    "assets/images/a11y-by-design-cover-960.webp",
+    "assets/images/a11y-by-design-cover-1280.webp"
   ],
   "assets/images/alexandr-podvalny-220262-unsplash.jpg": [
     "assets/images/alexandr-podvalny-220262-unsplash-320.jpg",
     "assets/images/alexandr-podvalny-220262-unsplash-640.jpg",
     "assets/images/alexandr-podvalny-220262-unsplash-960.jpg",
+    "assets/images/alexandr-podvalny-220262-unsplash-1280.jpg",
     "assets/images/alexandr-podvalny-220262-unsplash.webp",
     "assets/images/alexandr-podvalny-220262-unsplash-320.webp",
     "assets/images/alexandr-podvalny-220262-unsplash-640.webp",
-    "assets/images/alexandr-podvalny-220262-unsplash-960.webp"
+    "assets/images/alexandr-podvalny-220262-unsplash-960.webp",
+    "assets/images/alexandr-podvalny-220262-unsplash-1280.webp"
   ],
-  "assets/images/css-grid-cover-320-320.jpg": [
-    "assets/images/css-grid-cover-320-320-320.jpg",
-    "assets/images/css-grid-cover-320-320.webp",
-    "assets/images/css-grid-cover-320-320-320.webp"
-  ],
-  "assets/images/css-grid-cover-320.jpg": [
-    "assets/images/css-grid-cover-320-320.jpg",
-    "assets/images/css-grid-cover-320.webp",
-    "assets/images/css-grid-cover-320-320.webp"
-  ],
-  "assets/images/css-grid-cover-640-320.jpg": [
-    "assets/images/css-grid-cover-640-320-320.jpg",
-    "assets/images/css-grid-cover-640-320.webp",
-    "assets/images/css-grid-cover-640-320-320.webp"
-  ],
-  "assets/images/css-grid-cover-640-640.jpg": [
-    "assets/images/css-grid-cover-640-640-320.jpg",
-    "assets/images/css-grid-cover-640-640-640.jpg",
-    "assets/images/css-grid-cover-640-640.webp",
-    "assets/images/css-grid-cover-640-640-320.webp",
-    "assets/images/css-grid-cover-640-640-640.webp"
-  ],
-  "assets/images/css-grid-cover-640.jpg": [
-    "assets/images/css-grid-cover-640-320.jpg",
-    "assets/images/css-grid-cover-640-640.jpg",
-    "assets/images/css-grid-cover-640.webp",
-    "assets/images/css-grid-cover-640-320.webp",
-    "assets/images/css-grid-cover-640-640.webp"
-  ],
-  "assets/images/css-grid-cover-960-320.jpg": [
-    "assets/images/css-grid-cover-960-320-320.jpg",
-    "assets/images/css-grid-cover-960-320.webp",
-    "assets/images/css-grid-cover-960-320-320.webp"
-  ],
-  "assets/images/css-grid-cover-960-640.jpg": [
-    "assets/images/css-grid-cover-960-640-320.jpg",
-    "assets/images/css-grid-cover-960-640-640.jpg",
-    "assets/images/css-grid-cover-960-640.webp",
-    "assets/images/css-grid-cover-960-640-320.webp",
-    "assets/images/css-grid-cover-960-640-640.webp"
-  ],
-  "assets/images/css-grid-cover-960-960.jpg": [
-    "assets/images/css-grid-cover-960-960-320.jpg",
-    "assets/images/css-grid-cover-960-960-640.jpg",
-    "assets/images/css-grid-cover-960-960-960.jpg",
-    "assets/images/css-grid-cover-960-960.webp",
-    "assets/images/css-grid-cover-960-960-320.webp",
-    "assets/images/css-grid-cover-960-960-640.webp",
-    "assets/images/css-grid-cover-960-960-960.webp"
-  ],
-  "assets/images/css-grid-cover-960.jpg": [
-    "assets/images/css-grid-cover-960-320.jpg",
-    "assets/images/css-grid-cover-960-640.jpg",
-    "assets/images/css-grid-cover-960-960.jpg",
-    "assets/images/css-grid-cover-960.webp",
-    "assets/images/css-grid-cover-960-320.webp",
-    "assets/images/css-grid-cover-960-640.webp",
-    "assets/images/css-grid-cover-960-960.webp"
+  "assets/images/building-dout-dev-cover.jpg": [
+    "assets/images/building-dout-dev-cover-320.jpg",
+    "assets/images/building-dout-dev-cover-640.jpg",
+    "assets/images/building-dout-dev-cover-960.jpg",
+    "assets/images/building-dout-dev-cover-1280.jpg",
+    "assets/images/building-dout-dev-cover.webp",
+    "assets/images/building-dout-dev-cover-320.webp",
+    "assets/images/building-dout-dev-cover-640.webp",
+    "assets/images/building-dout-dev-cover-960.webp",
+    "assets/images/building-dout-dev-cover-1280.webp"
   ],
   "assets/images/css-grid-cover.jpg": [
     "assets/images/css-grid-cover-320.jpg",
     "assets/images/css-grid-cover-640.jpg",
     "assets/images/css-grid-cover-960.jpg",
+    "assets/images/css-grid-cover-1280.jpg",
     "assets/images/css-grid-cover.webp",
     "assets/images/css-grid-cover-320.webp",
     "assets/images/css-grid-cover-640.webp",
-    "assets/images/css-grid-cover-960.webp"
+    "assets/images/css-grid-cover-960.webp",
+    "assets/images/css-grid-cover-1280.webp"
+  ],
+  "assets/images/how-dout-dev-is-built-cover.jpg": [
+    "assets/images/how-dout-dev-is-built-cover-320.jpg",
+    "assets/images/how-dout-dev-is-built-cover-640.jpg",
+    "assets/images/how-dout-dev-is-built-cover-960.jpg",
+    "assets/images/how-dout-dev-is-built-cover-1280.jpg",
+    "assets/images/how-dout-dev-is-built-cover.webp",
+    "assets/images/how-dout-dev-is-built-cover-320.webp",
+    "assets/images/how-dout-dev-is-built-cover-640.webp",
+    "assets/images/how-dout-dev-is-built-cover-960.webp",
+    "assets/images/how-dout-dev-is-built-cover-1280.webp"
   ]
 }

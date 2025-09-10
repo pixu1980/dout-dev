@@ -18,7 +18,7 @@ describe('CMS - Marked Syntax', () => {
     const result = renderer.code('console.log("hello");', 'javascript');
     assert.strictEqual(
       result,
-      '<pre is="pix-highlighter" lang="javascript"><code>console.log("hello");</code></pre>'
+      '<pre is="pix-highlighter" data-lang="javascript"><code>console.log("hello");</code></pre>'
     );
   });
 
@@ -53,7 +53,7 @@ describe('CMS - Marked Syntax', () => {
     const result = renderer.code(codeToken, 'typescript');
     assert.strictEqual(
       result,
-      '<pre is="pix-highlighter" lang="typescript"><code>console.log("hello");</code></pre>'
+      '<pre is="pix-highlighter" data-lang="typescript"><code>console.log("hello");</code></pre>'
     );
   });
 
@@ -65,7 +65,7 @@ describe('CMS - Marked Syntax', () => {
     const result = renderer.code(codeToken, '');
     assert.strictEqual(
       result,
-      '<pre is="pix-highlighter" lang="javascript"><code>console.log("hello");</code></pre>'
+      '<pre is="pix-highlighter" data-lang="javascript"><code>console.log("hello");</code></pre>'
     );
   });
 
@@ -76,7 +76,7 @@ describe('CMS - Marked Syntax', () => {
     const result = renderer.code('<script>alert("xss")</script>', 'html');
     assert.strictEqual(
       result,
-      '<pre is="pix-highlighter" lang="html"><code>&lt;script&gt;alert("xss")&lt;/script&gt;</code></pre>'
+      '<pre is="pix-highlighter" data-lang="html"><code>&lt;script&gt;alert("xss")&lt;/script&gt;</code></pre>'
     );
   });
 
@@ -86,7 +86,7 @@ describe('CMS - Marked Syntax', () => {
 
     // Test non-string code (should be converted to string)
     const result = renderer.code(123, 'text');
-    assert.strictEqual(result, '<pre is="pix-highlighter" lang="text"><code>123</code></pre>');
+    assert.strictEqual(result, '<pre is="pix-highlighter" data-lang="text"><code>123</code></pre>');
   });
 
   it('should render images with lazy attributes and noscript fallback', () => {
@@ -126,5 +126,30 @@ describe('CMS - Marked Syntax', () => {
     if (!html.includes(' srcset="../img/320.jpg 320w, ../img/640.jpg 640w"'))
       throw new Error('srcset missing');
     if (!html.includes(' sizes="100vw"')) throw new Error('sizes missing');
+  });
+
+  it('should render markdown list items from token objects without object coercion', () => {
+    const md = '- Semantic HTML structure\n- **Keyboard** navigation support\n';
+    const html = marked(md, createMarkedOptions());
+
+    assert.ok(html.includes('<li>Semantic HTML structure</li>'));
+    assert.ok(html.includes('<li><strong>Keyboard</strong> navigation support</li>'));
+    assert.ok(!html.includes('[object Object]'));
+  });
+
+  it('should render task lists without nested checkbox inputs inside labels', () => {
+    const md = '- [x] **Updated post template** with layout hook\n- [ ] Support cover image\n';
+    const html = marked(md, createMarkedOptions());
+
+    assert.ok(html.includes('id="md-task-1"'));
+    assert.ok(html.includes('id="md-task-2"'));
+    assert.ok(
+      html.includes(
+        '<label for="md-task-1"><strong>Updated post template</strong> with layout hook</label>'
+      )
+    );
+    assert.ok(html.includes('<label for="md-task-2">Support cover image</label>'));
+    assert.ok(!html.includes('<label for="md-task-1"><input'));
+    assert.ok(!html.includes('<label for="md-task-2"><input'));
   });
 });

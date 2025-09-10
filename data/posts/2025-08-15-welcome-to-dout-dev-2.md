@@ -8,7 +8,7 @@ cover_image: ''
 canonical_url: false
 ---
 
-# Welcome to the New dout.dev
+## Welcome to the New dout.dev
 
 Welcome to the brand new version of dout.dev! This blog has been completely rebuilt from the ground up using modern web technologies while maintaining a **vanilla-first** approach.
 
@@ -18,7 +18,7 @@ Welcome to the brand new version of dout.dev! This blog has been completely rebu
 
 The new dout.dev runs entirely on vanilla JavaScript, CSS, and HTML. No frameworks, no runtime dependencies - just clean, fast, and accessible web standards.
 
-### WCAG 2.2 AAA Accessibility
+### WCAG 2.2 AA Accessibility
 
 Every aspect of this blog has been designed with accessibility in mind:
 

@@ -1,36 +1,109 @@
 <extends src="../layouts/base.html" />
 
 <block name="head">
-  <meta name="description" content="Latest posts and updates from dout.dev" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:url" content="{{ canonicalUrl }}" />
+  <meta property="og:image" content="{{ ogImageUrl }}" />
+  <meta property="og:image:alt" content="Preview image for {{ title }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:title" content="{{ title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:image" content="{{ ogImageUrl }}" />
+  <meta name="twitter:image:alt" content="Preview image for {{ title }}" />
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"WebSite",
+        "name": {{ title | json | raw }},
+        "url":"{{ canonicalUrl }}",
+        "description": {{ description | json | raw }},
+        "publisher": {
+          "@type":"Person",
+          "name": {{ site.author | json | raw }},
+          "url":"{{ site.url }}"
+        }
+      }
+  </script>
 </block>
 
 <block name="content">
-  <section aria-labelledby="home-title">
-    <h1 id="home-title">Latest Posts</h1>
-    <if condition="posts && posts.length">
-      <div class="posts-grid" role="list">
-        <for each="p in posts">
-          <article class="post-card" role="listitem">
-            <header class="post-card__header">
-              <h2 class="post-card__title">
-                <a href="/posts/{{ p.name }}.html">{{ p.title }}</a>
-              </h2>
-              <if condition="p.pinned">
-                <span class="badge badge--pinned" aria-label="Pinned post">Pinned</span>
-              </if>
-            </header>
-            <p class="post-card__meta">
-              <time datetime="{{ p.date | date:'YYYY-MM-DD' }}">{{ p.date | date:'long' }}</time>
-            </p>
-            <if condition="p.excerpt">
-              <p class="post-card__excerpt">{{ p.excerpt }}</p>
-            </if>
-          </article>
-        </for>
+  <section class="hero hero--home" aria-labelledby="home-title">
+    <div class="hero__copy">
+      <p class="eyebrow">Editorial static publishing</p>
+      <h1 id="home-title">A handcrafted frontend journal for dout.dev.</h1>
+      <p class="hero__lede">
+        Field notes on CSS, accessibility, design systems, and the mechanics of publishing a fast static site without
+        the usual framework gloss.
+      </p>
+      <div class="hero__actions">
+        <a class="button button--primary" href="/archive.html">Browse the archive</a>
+        <a class="button button--ghost" href="{{ site.rssFeedPath | default:'/feed.rss' }}">Follow via RSS</a>
       </div>
-    </if>
-    <if condition="!posts || posts.length == 0">
-      <p>No posts yet.</p>
-    </if>
+      <if condition="topTags && topTags.length">
+        <div class="hero__topics" aria-label="Popular topics">
+          <for each="tag in topTags">
+            <a class="tag" href="/tags/{{ tag.slug }}.html">{{ tag.name }}</a>
+          </for>
+        </div>
+      </if>
+    </div>
+    <div class="hero__panel">
+      <p class="eyebrow eyebrow--muted">Featured dispatch</p>
+      <if condition="featuredPost">
+        <article class="feature-card">
+          <p class="feature-card__meta">
+            <time datetime="{{ featuredPost.date | date:'YYYY-MM-DD' }}">{{ featuredPost.date | date:'long' }}</time>
+          </p>
+          <h2><a href="/posts/{{ featuredPost.name }}.html">{{ featuredPost.title }}</a></h2>
+          <p>{{ featuredPost.excerpt }}</p>
+          <a class="text-link" href="/posts/{{ featuredPost.name }}.html">Read the post</a>
+        </article>
+      </if>
+      <dl class="hero-stats">
+        <div>
+          <dt>Posts</dt>
+          <dd>{{ stats.posts }}</dd>
+        </div>
+        <div>
+          <dt>Topics</dt>
+          <dd>{{ stats.tags }}</dd>
+        </div>
+        <div>
+          <dt>Series</dt>
+          <dd>{{ stats.series }}</dd>
+        </div>
+      </dl>
+    </div>
   </section>
+
+  <section class="section-heading" aria-labelledby="latest-title">
+    <div>
+      <p class="eyebrow">Latest writing</p>
+      <h2 id="latest-title">Fresh from the markdown source</h2>
+    </div>
+    <div class="section-heading__actions">
+      <a class="text-link" href="/archive.html">See the full archive</a>
+    </div>
+  </section>
+
+  <if condition="posts && posts.length">
+    <section class="post-feed-shell" aria-labelledby="latest-title">
+      <ul class="post-feed post-feed--feature-list" data-post-feed>
+        <for each="p in posts">
+          <li class="post-feed__item">
+            <include
+              src="../components/post-card.html"
+              data='{"post": {{ p | json | raw }}, "headingLevel": "3", "showCover": true, "showExcerpt": true, "showTags": true}'
+            ></include>
+          </li>
+        </for>
+      </ul>
+    </section>
+  </if>
+  <if condition="!posts || posts.length == 0">
+    <p>No posts yet.</p>
+  </if>
 </block>

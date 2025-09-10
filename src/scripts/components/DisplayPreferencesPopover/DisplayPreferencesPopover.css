@@ -1,0 +1,249 @@
+display-preferences-popover {
+  display: inline-flex;
+}
+
+display-preferences-popover .preferences-shell {
+  position: relative;
+  display: inline-flex;
+}
+
+display-preferences-popover .preferences-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+  color: var(--text);
+  box-shadow: none;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+  cursor: pointer;
+}
+
+display-preferences-popover .preferences-toggle:hover {
+  border-color: color-mix(in srgb, var(--accent) 36%, var(--border));
+}
+
+display-preferences-popover[data-open='true'] .preferences-toggle {
+  border-color: color-mix(in srgb, var(--accent) 38%, var(--border));
+  background: color-mix(in srgb, var(--accent-soft) 68%, var(--surface-strong) 32%);
+}
+
+display-preferences-popover .preferences-toggle svg {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 160ms ease;
+}
+
+display-preferences-popover[data-open='true'] .preferences-toggle svg {
+  transform: rotate(180deg);
+}
+
+display-preferences-popover .preferences-panel {
+  position: fixed;
+  z-index: 30;
+  display: none;
+  width: min(30rem, calc(100vw - 2rem));
+  max-height: min(80vh, 44rem);
+  margin: 0;
+  padding: 1rem;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--surface-strong) 88%, transparent);
+  color: var(--text);
+  box-shadow: var(--shadow-strong);
+  backdrop-filter: blur(22px);
+  opacity: 0;
+  transform: translateY(-0.35rem);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    overlay 180ms ease allow-discrete,
+    display 180ms ease allow-discrete;
+}
+
+display-preferences-popover .preferences-panel:popover-open,
+display-preferences-popover .preferences-panel[data-open='true'] {
+  display: grid;
+  gap: 1rem;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@starting-style {
+  display-preferences-popover .preferences-panel:popover-open {
+    opacity: 0;
+    transform: translateY(-0.35rem);
+  }
+}
+
+display-preferences-popover .preferences-panel::backdrop {
+  background: transparent;
+}
+
+display-preferences-popover .preferences-panel__header {
+  display: grid;
+  gap: 0.35rem;
+}
+
+display-preferences-popover .preferences-panel__eyebrow {
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+display-preferences-popover .preferences-panel__header h2 {
+  font-size: clamp(1.25rem, 1.05rem + 0.7vw, 1.6rem);
+}
+
+display-preferences-popover .preferences-panel__lede,
+display-preferences-popover .preferences-group__title p,
+display-preferences-popover .preferences-checkbox__hint {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+display-preferences-popover .preferences-group,
+display-preferences-popover .preferences-group--fieldset {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+}
+
+display-preferences-popover .preferences-group__title {
+  display: grid;
+  gap: 0.2rem;
+}
+
+display-preferences-popover .preferences-group__title h3,
+display-preferences-popover .preferences-group--fieldset legend {
+  font-size: 1rem;
+}
+
+display-preferences-popover .preferences-group--fieldset {
+  min-width: 0;
+  padding-top: 0.8rem;
+}
+
+display-preferences-popover .preferences-group--fieldset legend {
+  padding: 0 0.25rem;
+}
+
+display-preferences-popover .preferences-checklist {
+  display: grid;
+  gap: 0.65rem;
+}
+
+display-preferences-popover .preferences-checkbox {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
+  cursor: pointer;
+}
+
+display-preferences-popover .preferences-checkbox input {
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.2rem;
+}
+
+display-preferences-popover .preferences-checkbox__copy {
+  display: grid;
+  gap: 0.12rem;
+  cursor: pointer;
+}
+
+display-preferences-popover .preferences-checkbox__label {
+  font-weight: 600;
+}
+
+display-preferences-popover .preferences-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+display-preferences-popover .preferences-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+display-preferences-popover .preferences-field label {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+display-preferences-popover .preferences-field select {
+  min-height: 2.9rem;
+}
+
+display-preferences-popover accent-color-selector {
+  display: block;
+}
+
+display-preferences-popover accent-color-selector .accent-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  width: 100%;
+}
+
+display-preferences-popover accent-color-selector .accent-selector-label {
+  padding: 0;
+  flex-basis: 100%;
+}
+
+display-preferences-popover .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+:root[data-reduce-transparency='true'] display-preferences-popover .preferences-panel {
+  background: var(--surface-strong);
+  backdrop-filter: none;
+}
+
+:root[data-reduce-motion='true'] display-preferences-popover .preferences-toggle,
+:root[data-reduce-motion='true'] display-preferences-popover .preferences-toggle svg,
+:root[data-reduce-motion='true'] display-preferences-popover .preferences-panel {
+  transform: none !important;
+}
+
+@media (max-width: 720px) {
+  display-preferences-popover .preferences-panel {
+    width: min(26rem, calc(100vw - 1rem));
+    max-height: min(78vh, 38rem);
+  }
+
+  display-preferences-popover .preferences-grid {
+    grid-template-columns: 1fr;
+  }
+
+  display-preferences-popover accent-color-selector .accent-selector {
+    gap: 0.65rem;
+  }
+}

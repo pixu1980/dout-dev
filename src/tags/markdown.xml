@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dout.dev — Markdown</title>
     <link>https://dout.dev/tags/markdown/</link>
     <description>RSS feed for posts tagged with Markdown</description>
-    <lastBuildDate>Tue, 09 Sep 2025 08:29:12 GMT</lastBuildDate>
+    <atom:link href="https://dout.dev/tags/markdown.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 20 Apr 2026 11:44:20 GMT</lastBuildDate>
     <item>
       <title>Say hello to 2023 🎉</title>
       <link>https://dout.dev/posts/2023-01-01-say-hello-2023.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2023-01-01-say-hello-2023.html</guid>
       <pubDate>Sun, 01 Jan 2023 14:41:22 GMT</pubDate>
-      <description>!example alt text../assets/images/20220225youcanexpresstagstoday.jpg &apos;example Title&apos;</description>
+      <description>addEventListener(&apos;DOMContentLoaded&apos;, (e) =&gt; { console.log(e); }); anotherFunctionCallGoesHere({}, () =&gt; { selectOther(); });</description>
     </item>
     <item>
       <title>Testing CodePen</title>
       <link>https://dout.dev/posts/2022-03-16-test-codepen.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2022-03-16-test-codepen.html</guid>
       <pubDate>Wed, 16 Mar 2022 00:00:00 GMT</pubDate>
-      <description>&lt;iframe height=&quot;521&quot; style=&quot;width: 100%; minheight: 30rem&quot; scrolling=&quot;no&quot; title=&quot;Pure CSS Slider using ScrollSnap&quot; src=&quot;https://codepen.io/blackmirror1980/embed/aPRXzv?height=521&amp;</description>
+      <description>See the Pen &lt;a href=&apos;https://codepen.io/blackmirror1980/pen/aPRXzv&apos;&gt;Pure CSS Slider using Scroll-Snap&lt;/a&gt; by blackmirror1980 (&lt;a href=&apos;https://codepen.io/blackmirror1980&apos;&gt;@blackmir</description>
     </item>
     <item>
       <title>You can edit CSS</title>
       <link>https://dout.dev/posts/2022-03-12-you-can-edit-css.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2022-03-12-you-can-edit-css.html</guid>
       <pubDate>Sat, 12 Mar 2022 00:00:00 GMT</pubDate>
-      <description>You can edit CSShttps://codepen.io/davatron5000/pen/mddmRJe</description>
+      <description>You can edit CSS</description>
     </item>
     <item>
       <title>Custom Grid System</title>
@@ -38,14 +40,13 @@
       <link>https://dout.dev/posts/2022-01-01-say-hello-2022.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2022-01-01-say-hello-2022.html</guid>
       <pubDate>Sat, 01 Jan 2022 14:41:22 GMT</pubDate>
-      <description>!example alt text../assets/images/20220225youcanexpresstagstoday.jpg &apos;example Title&apos;</description>
     </item>
     <item>
       <title>A NEW post with a NEW cover image</title>
       <link>https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</guid>
       <pubDate>Mon, 08 Mar 2021 00:00:00 GMT</pubDate>
-      <description>Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it&apos;s been marked up with tags or f</description>
+      <description>Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it&apos;s been marked up with tags or</description>
     </item>
     <item>
       <title>Testing CodePen</title>
@@ -73,21 +74,21 @@
       <link>https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html</guid>
       <pubDate>Thu, 07 Feb 2019 00:00:00 GMT</pubDate>
-      <description>A new static site generator baby is born. It&apos;s highly inspired by Gatsby.js React based but built on top of Vue.js. We have been working on it for a year and will have a beta read</description>
+      <description>A new static site generator baby is born. It&apos;s highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea</description>
     </item>
     <item>
       <title>Markdown test file</title>
       <link>https://dout.dev/posts/2019-02-06-markdown-test-file.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2019-02-06-markdown-test-file.html</guid>
       <pubDate>Wed, 06 Feb 2019 00:00:00 GMT</pubDate>
-      <description>Markdown is intended to be as easytoread and easytowrite as is feasible.Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis</description>
+      <description>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable</description>
     </item>
     <item>
       <title>A post with a cover image</title>
       <link>https://dout.dev/posts/2019-01-07-a-post-with-a-cover.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2019-01-07-a-post-with-a-cover.html</guid>
       <pubDate>Mon, 07 Jan 2019 00:00:00 GMT</pubDate>
-      <description>Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it&apos;s been marked up with tags or f</description>
+      <description>Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it&apos;s been marked up with tags or</description>
     </item>
   </channel>
 </rss>

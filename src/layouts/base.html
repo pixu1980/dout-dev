@@ -1,27 +1,82 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ site.language | default:'en' }}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ title | default: site.title }}</title>
-    <if condition="description">
-      <meta name="description" content="{{ description }}" />
-    </if>
-    <if condition="canonicalUrl">
-      <link rel="canonical" href="{{ canonicalUrl }}" />
-    </if>
-    <if condition="feedUrl">
-      <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ feedUrl }}" />
-    </if>
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="{{ description | default: site.description }}" />
+    <meta name="author" content="{{ site.author | default:'Emiliano Pisu' }}" />
+    <meta name="robots" content="{{ robots | default:'index,follow' }}" />
+    <meta http-equiv="Content-Security-Policy" content="{{ site.security.csp }}" />
+    <meta name="referrer" content="{{ site.security.referrerPolicy }}" />
+    <meta name="dout:analytics-endpoint" content="{{ site.analytics.endpoint }}" />
+    <meta name="dout:analytics-dashboard" content="{{ site.analytics.dashboardPath }}" />
+    <link rel="canonical" href="{{ canonicalUrl | default: site.url }}" />
+    <meta property="og:site_name" content="{{ site.title | default:'dout.dev' }}" />
+    <meta property="og:locale" content="{{ site.locale | default:'en-US' }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="{{ site.title | default:'dout.dev' }}"
+      href="{{ site.rssFeedPath | default:'/feed.rss' }}"
+    />
+    <link
+      rel="alternate"
+      type="application/feed+json"
+      title="{{ site.title | default:'dout.dev' }} JSON Feed"
+      href="{{ site.jsonFeedPath | default:'/feed.json' }}"
+    />
+    <script>
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      .file-preview-warning {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid #d9a441;
+        background: #fff3cd;
+        color: #5c3b00;
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] .file-preview-warning {
+        display: block;
+      }
+
+      .file-preview-warning code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
     <block name="head"></block>
     <link rel="stylesheet" href="/styles/main.css" />
   </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
+  <body class="site-shell">
+    <p class="file-preview-warning" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div id="page-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
     <include src="../components/header.html" />
 
-    <main id="main" tabindex="-1" aria-label="Main content">
+    <main class="site-main" id="main" tabindex="-1" aria-label="Main content">
       <block name="content">Content</block>
     </main>
 

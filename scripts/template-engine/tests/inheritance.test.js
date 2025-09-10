@@ -81,6 +81,49 @@ describe('TemplateEngine - Template Inheritance', () => {
     cleanupTestDir();
   });
 
+  test('should process self-closing extends syntax used by project templates', () => {
+    setupTestDir();
+
+    const baseContent = `
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title }}</title>
+</head>
+<body>
+  <header>Site Header</header>
+  <main>
+    <block name="content">Default content</block>
+  </main>
+</body>
+</html>`.trim();
+
+    const childContent = `
+<extends src="base.html" />
+
+<block name="content">
+<h1>{{ pageTitle }}</h1>
+<p>{{ pageContent }}</p>
+</block>`.trim();
+
+    writeFileSync(join(TEST_DIR, 'base.html'), baseContent);
+    writeFileSync(join(TEST_DIR, 'child.html'), childContent);
+
+    const engine = new TemplateEngine({ rootDir: TEST_DIR });
+    const result = engine.render('child.html', {
+      title: 'Self Closing',
+      pageTitle: 'Rendered',
+      pageContent: 'Extends works',
+    });
+
+    assert.ok(result.includes('<!DOCTYPE html>'));
+    assert.ok(result.includes('Site Header'));
+    assert.ok(result.includes('Rendered'));
+    assert.ok(!result.includes('<extends'));
+
+    cleanupTestDir();
+  });
+
   test('should process includes', () => {
     setupTestDir();
 

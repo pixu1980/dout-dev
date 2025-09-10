@@ -10,6 +10,9 @@ import { mkdir, readdir, stat, writeFile, readFile } from 'node:fs/promises';
 import { basename, dirname, extname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
+import { resolveConfig } from './config.js';
+import { buildOgImages } from './og-image-generator.js';
+import { scanContent } from './scan.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = join(__dirname, '..', '..');
@@ -28,6 +31,21 @@ async function ensureDir(dir) {
 function isProcessable(path) {
   const ext = extname(path).toLowerCase();
   return ext === '.jpg' || ext === '.jpeg' || ext === '.png';
+}
+
+function isGeneratedVariant(path) {
+  const ext = extname(path).toLowerCase();
+  const stem = basename(path, ext);
+  const parts = stem.split('-');
+  if (parts.length < 2) return false;
+
+  const suffixes = [];
+  for (let i = parts.length - 1; i >= 0; i -= 1) {
+    if (!/^\d+$/.test(parts[i])) break;
+    suffixes.unshift(parts[i]);
+  }
+
+  return suffixes.length > 0 && suffixes.every((value) => SIZES.includes(Number(value)));
 }
 
 async function* walk(dir) {
@@ -142,7 +160,7 @@ async function buildManifest() {
   if (!existsSync(IMG_ROOT)) return {};
   const manifest = {};
   for await (const file of walk(IMG_ROOT)) {
-    if (!isProcessable(file)) continue;
+    if (!isProcessable(file) || isGeneratedVariant(file)) continue;
     const rel = relFromSrc(file);
     try {
       const variants = await processImage(file);
@@ -162,6 +180,11 @@ async function main() {
     const manifest = await buildManifest();
     console.log('✅ Image manifest written:', MANIFEST_PATH);
     console.log('   Entries:', Object.keys(manifest).length);
+    const config = resolveConfig();
+    const dataset = scanContent(config);
+    const ogManifest = await buildOgImages({ dataset, config });
+    console.log('✅ OG image manifest written:', ogManifest.manifestPath);
+    console.log('   Entries:', Object.keys(ogManifest.entries).length);
     process.exit(0);
   } catch (err) {
     console.error('❌ Image pipeline failed:', err);
