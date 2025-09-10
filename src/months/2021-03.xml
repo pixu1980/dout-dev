@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dout.dev — March 2021</title>
     <link>https://dout.dev/months/2021-03/</link>
     <description>RSS feed for posts from March 2021</description>
-    <lastBuildDate>Tue, 09 Sep 2025 08:29:12 GMT</lastBuildDate>
+    <atom:link href="https://dout.dev/months/2021-03.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 20 Apr 2026 11:44:21 GMT</lastBuildDate>
     <item>
       <title>A NEW post with a NEW cover image</title>
       <link>https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</guid>
       <pubDate>Mon, 08 Mar 2021 00:00:00 GMT</pubDate>
-      <description>Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it&apos;s been marked up with tags or f</description>
+      <description>Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it&apos;s been marked up with tags or</description>
     </item>
     <item>
       <title>Testing CodePen</title>

@@ -20,6 +20,45 @@ describe('TemplateEngine - Renderer', () => {
     assert.ok(!out.includes('<for')); // ensure no leftover <for> tags
   });
 
+  test('render should preserve include data for DOM include processing', () => {
+    const tmpDir = fs.mkdtempSync(path.join(process.cwd(), 'tmp-renderer-'));
+
+    try {
+      fs.writeFileSync(
+        path.join(tmpDir, 'card.html'),
+        `<article>
+          <if condition="showCover && post.coverImage">
+            <img src="{{ post.coverImage }}" alt="" />
+          </if>
+          <switch expr="headingLevel">
+            <case value="3"><h3>{{ post.title }}</h3></case>
+            <default><h2>{{ post.title }}</h2></default>
+          </switch>
+        </article>`
+      );
+
+      fs.writeFileSync(
+        path.join(tmpDir, 'page.html'),
+        `<for each="p in posts">
+          <include
+            src="./card.html"
+            data='{"post": {{ p | json | raw }}, "headingLevel": "3", "showCover": true}'
+          ></include>
+        </for>`
+      );
+
+      const renderer = new TemplateRenderer(tmpDir);
+      const result = renderer.render('page.html', {
+        posts: [{ title: 'Card Title', coverImage: '/assets/cover.jpg' }],
+      });
+
+      assert.ok(result.includes('<h3>Card Title</h3>'));
+      assert.ok(result.includes('src="/assets/cover.jpg"'));
+    } finally {
+      fs.rmSync(tmpDir, { recursive: true, force: true });
+    }
+  });
+
   test('should handle missing template files gracefully', () => {
     const renderer = new TemplateRenderer(path.resolve('./'));
 

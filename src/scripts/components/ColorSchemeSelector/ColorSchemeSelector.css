@@ -1,0 +1,78 @@
+color-scheme-switcher {
+  display: inline-flex;
+}
+
+color-scheme-switcher .color-scheme-selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface-strong);
+}
+
+color-scheme-switcher label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0 0.75rem;
+  background: var(--surface-strong);
+  color: var(--text);
+  cursor: pointer;
+  position: relative;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+color-scheme-switcher label:hover {
+  background: var(--surface);
+}
+
+color-scheme-switcher label + label {
+  border-left: 1px solid var(--border);
+}
+
+color-scheme-switcher label[data-active] {
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+color-scheme-switcher label[data-active]:hover {
+  background: var(--accent-strong);
+}
+
+color-scheme-switcher svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  pointer-events: none;
+  fill: currentColor;
+}
+
+color-scheme-switcher input[type='radio'] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+color-scheme-switcher .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

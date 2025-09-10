@@ -1,73 +1,257 @@
-<extends src="../layouts/base.html">
-  <block name="head">
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Marked - Markdown Parser" />
-    <meta property="og:description" content="How To Use The Demo" />
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Marked - Markdown Parser",
-        "datePublished": "2022-03-03T15:41:22.000Z",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://dout.dev/posts/2022-03-03-marked-markdown-parser.html"
-        }
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Marked - Markdown Parser</title>
+    <meta name="theme-color" content="#ff6b3d">
+    <meta name="description" content="How To Use The Demo">
+    <meta name="author" content="Emiliano &quot;pixu1980&quot; Pisu">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="dout:analytics-endpoint" content="">
+    <meta name="dout:analytics-dashboard" content="/privacy.html">
+    <link rel="canonical" href="https://dout.dev/posts/2022-03-03-marked-markdown-parser.html">
+    <meta property="og:site_name" content="dout.dev">
+    <meta property="og:locale" content="en-US">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss">
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json">
+    <script>
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
       }
     </script>
-  </block>
+    <style>
+      .file-preview-warning {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid #d9a441;
+        background: #fff3cd;
+        color: #5c3b00;
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
 
-  <block name="content">
-    <article itemscope="" itemtype="https://schema.org/BlogPosting">
-      <header>
-        <h1 itemprop="headline">Marked - Markdown Parser</h1>
-        <p>
-          <time datetime="2022-03-03" itemprop="datePublished"> 3 marzo 2022 </time>
-        </p>
-      </header>
+      html[data-preview-mode='file'] .file-preview-warning {
+        display: block;
+      }
 
-      <section itemprop="articleBody">
-        <h2>How To Use The Demo</h2>
-        <ol>
-          <li>[object Object]</li>
-          <li>[object Object]</li>
-        </ol>
-        <p>
-          That's it. Pretty simple. There's also a drop-down option in the upper right to switch between various views:
-        </p>
-        <ul>
-          <li>[object Object]</li>
-          <li>[object Object]</li>
-          <li>[object Object]</li>
-          <li>[object Object]</li>
-        </ul>
-        <h2>Why Markdown?</h2>
-        <pre is="pix-highlighter" lang="html"><code>&lt;div&gt;&lt;&#x2F;div&gt;</code></pre>
-        <p>
-          It's easy. It's not overly bloated, unlike HTML. Also, as the creator of
-          <a href="http://daringfireball.net/projects/markdown/">markdown</a> says,
-        </p>
-        <blockquote>
-          <p>
-            The overriding design goal for Markdown's formatting syntax is to make it as readable as possible. The idea
-            is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it's
-            been marked up with tags or formatting instructions.
+      .file-preview-warning code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+    
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Marked - Markdown Parser">
+  <meta property="og:description" content="How To Use The Demo">
+  <meta property="og:url" content="https://dout.dev/posts/2022-03-03-marked-markdown-parser.html">
+  <meta property="og:image" content="https://dout.dev/assets/og/posts/2022-03-03-marked-markdown-parser.png">
+  <meta property="og:image:alt" content="Preview image for Marked - Markdown Parser">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:published_time" content="2022-03-03T15:41:22.000Z">
+  <meta property="article:modified_time" content="2022-03-03T15:41:22.000Z">
+  <meta property="article:author" content="Emiliano &quot;pixu1980&quot; Pisu">
+  <meta name="twitter:title" content="Marked - Markdown Parser">
+  <meta name="twitter:description" content="How To Use The Demo">
+  <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2022-03-03-marked-markdown-parser.png">
+  <meta name="twitter:image:alt" content="Preview image for Marked - Markdown Parser">
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "headline": "Marked - Markdown Parser",
+        "description": "How To Use The Demo",
+        "datePublished": "2022-03-03T15:41:22.000Z",
+        "dateModified": "2022-03-03T15:41:22.000Z",
+        "author": {
+          "@type":"Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url":"https://dout.dev"
+        },
+        "publisher": {
+          "@type":"Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url":"https://dout.dev"
+        },
+        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2022-03-03-marked-markdown-parser.html"},
+        "image": ["https://dout.dev/assets/og/posts/2022-03-03-marked-markdown-parser.png"],
+        "keywords": "markdown, marked, html, stuff, like, left, live, right, pretty, simple, down, generated"
+      }
+  </script>
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://dout.dev"},
+          {"@type":"ListItem","position":2,"name":"Archive","item":"https://dout.dev/archive.html"},
+          {"@type":"ListItem","position":3,"name": "Marked - Markdown Parser","item":"https://dout.dev/posts/2022-03-03-marked-markdown-parser.html"}
+        ]
+      }
+  </script>
+
+    <link rel="stylesheet" href="/styles/main.css">
+  </head>
+  <body class="site-shell">
+    <p class="file-preview-warning" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div id="page-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" class="site-header">
+  <div class="container header-bar">
+    <a class="brand" href="/">
+      <span class="brand__mark">dout.dev</span>
+      <span class="brand__tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
+    </a>
+    <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+      <span aria-hidden="true">☰</span>
+    </button>
+    <nav id="mainmenu" class="main-nav" aria-label="Main">
+      <ul class="main-links" role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/archive.html">Archive</a></li>
+        <li><a href="/search.html">Search</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      <div class="header-actions">
+        <color-scheme-switcher></color-scheme-switcher>
+        <display-preferences-popover></display-preferences-popover>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <main class="site-main" id="main" tabindex="-1" aria-label="Main content">
+      
+  <article class="post-layout" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
+    <div class="post-frame">
+      <div class="post-main">
+        <header class="post-hero" aria-labelledby="post-title">
+          <p class="eyebrow">Article</p>
+          <p class="post-hero__meta">
+            <time datetime="2022-03-03" itemprop="datePublished">
+              3 marzo 2022
+            </time>
+            <span class="post-divider">/</span>
+            <a href="/archive.html">Archive</a>
           </p>
-        </blockquote>
-        <pre is="pix-highlighter" lang="scss"><code>div {
-}</code></pre>
-        <p>
-          Ready to start writing? Either start changing stuff on the left or
-          <a href="/demo/?text=">clear everything</a> with a simple click.
-        </p>
-      </section>
+          <h1 id="post-title" itemprop="headline" tabindex="0">Marked - Markdown Parser</h1>
+          
+            <p class="post-hero__lede">How To Use The Demo</p>
+          
+          
+          <nav class="post-landmarks" aria-label="Article shortcuts">
+            <a class="tag tag--small" href="#article-content">Jump to article</a>
+            
+              <a class="tag tag--small" href="#post-outline">Jump to outline</a>
+            
+          </nav>
+          
+        </header>
 
-      <nav aria-label="Post navigation">
-        <a rel="prev" href="/posts/2022-03-03-custom-grid-system.html">← Custom Grid System</a>
+        <section class="post-shell" id="article-content" role="region" aria-labelledby="article-content-title">
+          <h2 id="article-content-title" class="visually-hidden">Article content</h2>
+          <section class="prose" itemprop="articleBody"><h2 id="how-to-use-the-demo" tabindex="0" data-toc-anchor="true">How To Use The Demo</h2>
+<ol>
+<li>Type in stuff on the left.</li><li>See the live updates on the right.</li></ol>
+<p>That's it. Pretty simple. There's also a drop-down option in the upper right to switch between various views:</p>
+<ul>
+<li><strong>Preview:</strong> A live display of the generated HTML as it would render in a browser.</li><li><strong>HTML Source:</strong> The generated HTML before your browser makes it pretty.</li><li><strong>Lexer Data:</strong> What <a href="https://github.com/markedjs/marked/" rel="noopener noreferrer">marked</a> uses internally, in case you like gory stuff like this.</li><li><strong>Quick Reference:</strong> A brief run-down of how to format things using markdown.</li></ul>
+<h2 id="why-markdown" tabindex="0" data-toc-anchor="true">Why Markdown?</h2>
+<pre is="pix-highlighter" data-lang="html"><code>&lt;div&gt;&lt;&#x2F;div&gt;</code></pre><p>It's easy. It's not overly bloated, unlike HTML. Also, as the creator of <a href="http://daringfireball.net/projects/markdown/" rel="noopener noreferrer">markdown</a> says,</p>
+<blockquote>
+<p>The overriding design goal for Markdown's
+formatting syntax is to make it as readable
+as possible. The idea is that a
+Markdown-formatted document should be
+publishable as-is, as plain text, without
+looking like it's been marked up with tags
+or formatting instructions.</p>
+</blockquote>
+<pre is="pix-highlighter" data-lang="scss"><code>div {
+}</code></pre><p>Ready to start writing? Either start changing stuff on the left or
+<a href="/demo/?text=">clear everything</a> with a simple click.</p>
+</section>
+        </section>
+      </div>
 
-        <a rel="next" href="/posts/2022-03-12-you-can-edit-css.html">You can edit CSS →</a>
-      </nav>
-    </article>
-  </block>
-</extends>
+      
+        <aside class="post-sidebar" role="complementary" aria-labelledby="post-outline">
+          <nav class="post-sidebar__panel post-toc" aria-labelledby="post-outline">
+            <p class="eyebrow eyebrow--muted">Outline</p>
+            <h2 id="post-outline">On this page</h2>
+            <ol class="post-toc__list">
+              
+                <li class="post-toc__item">
+                  <a class="post-toc__link" data-level="2" href="#how-to-use-the-demo">How To Use The Demo</a>
+                </li>
+              
+                <li class="post-toc__item">
+                  <a class="post-toc__link" data-level="2" href="#why-markdown">Why Markdown?</a>
+                </li>
+              
+            </ol>
+          </nav>
+        </aside>
+      
+    </div>
+  </article>
+
+  
+
+  <nav class="post-nav" aria-label="Post navigation">
+    
+      <a class="post-nav__card" rel="prev" href="/posts/2022-03-03-custom-grid-system.html">
+        <span class="post-nav__label">Previous</span>
+        <strong>Custom Grid System</strong>
+      </a>
+    
+    
+      <a class="post-nav__card" rel="next" href="/posts/2022-03-12-you-can-edit-css.html">
+        <span class="post-nav__label">Next</span>
+        <strong>You can edit CSS</strong>
+      </a>
+    
+  </nav>
+
+    </main>
+
+    <footer role="contentinfo" class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-copy">
+      <p class="footer-brand">dout.dev</p>
+      <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+      <p>© 2026 dout.dev</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/archive.html">Archive</a>
+      <a href="/search.html">Search</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/feed.rss">RSS</a>
+      <a href="/feed.json">JSON Feed</a>
+    </nav>
+  </div>
+</footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  
+
+</body></html>

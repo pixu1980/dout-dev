@@ -1,0 +1,55 @@
+accent-color-selector {
+  display: inline-flex;
+}
+
+accent-color-selector .accent-selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+}
+
+accent-color-selector .accent-selector-label {
+  padding: 0 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+accent-color-selector .accent-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  padding: 0;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  background: hsl(var(--accent-preview-h), var(--accent-preview-s), var(--accent-preview-l));
+  cursor: pointer;
+  transition: all 120ms ease;
+  position: relative;
+}
+
+accent-color-selector .accent-button:hover {
+  transform: scale(1.08);
+  border-color: var(--text-muted);
+}
+
+accent-color-selector .accent-button[aria-checked='true'] {
+  border-color: var(--text);
+  border-width: 3px;
+  box-shadow: 0 0 0 2px var(--surface-strong);
+  transform: scale(1.1);
+}
+
+accent-color-selector .accent-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+:root[data-reduce-motion='true'] accent-color-selector .accent-button:hover,
+:root[data-reduce-motion='true'] accent-color-selector .accent-button[aria-checked='true'] {
+  transform: none;
+}

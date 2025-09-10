@@ -117,6 +117,6 @@ npm run dev
 - [x] **Metadata completa**: title, meta description, canonical, JSON-LD BlogPosting
 - [x] **Support coverImage**: immagine di copertina con attributi performance
 - [x] **Support pinned badge**: badge per post in evidenza (mostrato solo in listings)
-      [x] **syntax-highlight-element integrato**: syntax highlighting per tutti i linguaggi specificati
+- [x] **syntax-highlight-element integrato**: syntax highlighting per tutti i linguaggi specificati
 
 La checklist M4 dovrebbe essere completamente implementata! 🎉

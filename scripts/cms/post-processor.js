@@ -1,7 +1,9 @@
 // Post Processor: clean single function to transform markdown into post object
 import matter from 'gray-matter';
+import { JSDOM } from 'jsdom';
 import { marked } from 'marked';
 import { createMarkedOptions } from './marked-syntax.js';
+import { sanitizeArticleHtml } from './html-sanitizer.js';
 import { slugify } from './utils.js';
 import { resolveAssetPathFromHref, readImageSizeSync } from './image-utils.js';
 
@@ -27,6 +29,7 @@ export function processMarkdown(filePath, raw) {
   const published = data.published !== false;
   const tagList = normalizeTags(data.tags).map((t) => ({ key: t, label: capitalize(t) }));
   const html = marked(content, createMarkedOptions());
+  const articleContent = buildArticleContent(sanitizeArticleHtml(html));
   // Determine cover dimensions if coverImage points to a local asset
   const coverSize = readCoverSize(data);
   const keywords = extractKeywords(`${title}\n${content}`);
@@ -38,8 +41,9 @@ export function processMarkdown(filePath, raw) {
     published,
     tags: tagList,
     series: data.series || null,
-    excerpt: buildExcerpt(content),
-    content: html,
+    excerpt: buildExcerpt(articleContent.content),
+    content: articleContent.content,
+    toc: articleContent.toc,
     keywords,
     // Cover image support (M4)
     coverImage: data.coverImage || data.cover_image || null,
@@ -49,6 +53,61 @@ export function processMarkdown(filePath, raw) {
     coverTitle: data.coverTitle || data.cover_title || undefined,
     pinned: !!data.pinned,
     layout: data.layout || 'post',
+  };
+}
+
+function buildArticleContent(html) {
+  const dom = new JSDOM(`<body>${html}</body>`);
+  const document = dom.window.document;
+  const counts = new Map();
+  const toc = [];
+
+  document.querySelectorAll('h2, h3, h4, h5, h6').forEach((heading, index) => {
+    const text = heading.textContent?.replace(/\s+/g, ' ').trim();
+
+    if (!text) {
+      return;
+    }
+
+    const baseId = slugify(text) || `section-${index + 1}`;
+    const currentCount = counts.get(baseId) || 0;
+    const id = currentCount === 0 ? baseId : `${baseId}-${currentCount + 1}`;
+
+    counts.set(baseId, currentCount + 1);
+    heading.id = id;
+    heading.setAttribute('tabindex', '0');
+    heading.setAttribute('data-toc-anchor', 'true');
+
+    toc.push({
+      id,
+      level: Number(heading.tagName.slice(1)),
+      text,
+    });
+  });
+
+  document.querySelectorAll('sup a[href^="#fn"], a[href^="#fnref"]').forEach((link, index) => {
+    link.setAttribute('role', 'doc-noteref');
+    if (!link.getAttribute('aria-label')) {
+      link.setAttribute('aria-label', `Footnote ${index + 1}`);
+    }
+  });
+
+  document.querySelectorAll('li[id^="fn"], [role="doc-endnotes"] li').forEach((item, index) => {
+    item.setAttribute('role', 'doc-endnote');
+    if (!item.getAttribute('aria-label')) {
+      item.setAttribute('aria-label', `Footnote ${index + 1}`);
+    }
+  });
+
+  const footnotesSection = document.querySelector('.footnotes');
+  if (footnotesSection) {
+    footnotesSection.setAttribute('role', 'doc-endnotes');
+    footnotesSection.setAttribute('aria-label', 'Footnotes');
+  }
+
+  return {
+    content: document.body.innerHTML,
+    toc,
   };
 }
 
@@ -81,23 +140,25 @@ function normalizeTags(tags) {
     .map((t) => slugify(t))
     .filter(Boolean);
 }
-function buildExcerpt(md) {
-  const first = md.split(/\n\n+/)[0];
-  return (
-    first
-      // biome-ignore lint/complexity/noUselessEscapeInRegex: '[' and ']' need escaping inside character classes
-      .replace(/[>#*`~_()\[\]-]/g, '') // Remove markdown symbols
-      .replace(/\[[^\]]*\]\([^)]*\)/g, '') // Remove complete links [text](url)
-      .replace(/\s+/g, ' ') // Normalize multiple spaces
-      .slice(0, 180)
-      .trim()
-  );
+function buildExcerpt(html) {
+  const dom = new JSDOM(`<body>${html}</body>`);
+  const { document } = dom.window;
+  const blocks = document.querySelectorAll('h1, h2, h3, p, li, blockquote');
+
+  for (const candidate of blocks) {
+    const text = candidate.textContent?.replace(/\s+/g, ' ').trim();
+    if (text) {
+      return text.slice(0, 180).trim();
+    }
+  }
+
+  return document.body.textContent?.replace(/\s+/g, ' ').trim().slice(0, 180) || '';
 }
 function capitalize(s) {
   return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 }
 
-// Basic keyword extraction (en/it stopwords), frequency-based top terms
+// Basic keyword extraction (English stopwords), frequency-based top terms
 function extractKeywords(text) {
   const STOP = new Set([
     // English
@@ -189,89 +250,11 @@ function extractKeywords(text) {
     'who',
     'whom',
     'because',
-    // Italian
-    'il',
-    'lo',
-    'la',
-    'i',
-    'gli',
-    'le',
-    'un',
-    'uno',
-    'una',
-    'di',
-    'a',
-    'da',
-    'in',
-    'con',
-    'su',
-    'per',
-    'tra',
-    'fra',
-    'che',
-    'e',
-    'o',
-    'ma',
-    'se',
-    'all',
-    'alla',
-    'alle',
-    'agli',
-    'della',
-    'delle',
-    'degli',
-    'dei',
-    'del',
-    'nel',
-    'nella',
-    'nelle',
-    'negli',
-    'nei',
-    'sul',
-    'sulla',
-    'sulle',
-    'sugli',
-    'sui',
-    'come',
-    'piu',
-    'meno',
-    'molto',
-    'poco',
-    'troppo',
-    'quasi',
-    'sempre',
-    'mai',
-    'anche',
-    'solo',
-    'stesso',
-    'stessa',
-    'stessi',
-    'stesse',
-    'quello',
-    'quella',
-    'quelli',
-    'quelle',
-    'questo',
-    'questa',
-    'questi',
-    'queste',
-    'cui',
-    'qual',
-    'quale',
-    'quali',
-    'perche',
-    'quando',
-    'dove',
-    'cosa',
-    'chi',
-    'noi',
-    'voi',
-    'loro',
   ]);
   const plain = String(text)
     // remove code fences and markdown links/images
     .replace(/```[\s\S]*?```/g, ' ')
-    .replace(/\!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
     .replace(/\[[^\]]*\]\([^)]*\)/g, ' ')
     // strip punctuation
     .replace(/[^a-zA-Z0-9àèéìòóùÀÈÉÌÒÓÙ\s]/g, ' ')

@@ -40,6 +40,8 @@ pids
 # Coverage directory used by tools like istanbul
 coverage/
 *.lcov
+playwright-report/
+test-results/
 
 # Temporary folders
 tmp/
@@ -73,7 +75,6 @@ dist-ssr
 # Lock files
 yarn.lock
 package-lock.json
-pnpm-lock.yaml
 
 # Local Netlify folder
 .netlify

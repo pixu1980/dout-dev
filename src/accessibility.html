@@ -4,10 +4,59 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Accessibility</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <script>
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      .file-preview-warning {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid #d9a441;
+        background: #fff3cd;
+        color: #5c3b00;
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] .file-preview-warning {
+        display: block;
+      }
+
+      .file-preview-warning code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+    <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <main id="main">
+    <p class="file-preview-warning" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div id="page-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+    <nav aria-label="Utility">
+      <a href="/">Back to home</a>
+    </nav>
+    <main id="main" tabindex="-1">
       <h1>Accessibility</h1>
     </main>
   </body>

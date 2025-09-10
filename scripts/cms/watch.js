@@ -9,9 +9,13 @@ export function startWatch(userConfig = {}, onBuild = () => {}) {
   let timer = null;
   const trigger = () => {
     clearTimeout(timer);
-    timer = setTimeout(() => {
-      const dataset = build(cfg);
-      onBuild(dataset);
+    timer = setTimeout(async () => {
+      try {
+        const dataset = await build(cfg);
+        onBuild(dataset);
+      } catch (error) {
+        console.error('Watch rebuild failed:', error?.message || error);
+      }
     }, 80);
   };
   const w = watch(cfg.contentDir, { recursive: true }, trigger);

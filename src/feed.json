@@ -1,0 +1,276 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "dout.dev — Latest Posts",
+  "home_page_url": "https://dout.dev/",
+  "feed_url": "https://dout.dev/feed.json",
+  "description": "Vanilla-first static blog with WCAG 2.2 AA accessibility",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Emiliano \"pixu1980\" Pisu",
+      "url": "https://dout.dev"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html",
+      "url": "https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html",
+      "title": "How I Built dout.dev",
+      "summary": "The Goal: an editorial blog without runtime ballast",
+      "content_html": "<h2 id=\"the-goal-an-editorial-blog-without-runtime-ballast\" tabindex=\"0\" data-toc-anchor=\"true\">The Goal: an editorial blog without runtime ballast</h2>\n<p>When I started reshaping dout.dev, I was not interested in repainting the theme and calling it done. I wanted to build an editorial system that stayed close to the native web: markdown content, readable HTML templates, CSS with real design tokens, and JavaScript used only where it delivers a clear benefit.</p>\n<p>The guiding principle was simple: every part of the stack should do a precise job without turning the blog into an application that is more complex than the publishing problem actually requires.</p>\n<h2 id=\"the-pipeline-markdown-in-static-html-out\" tabindex=\"0\" data-toc-anchor=\"true\">The pipeline: markdown in, static HTML out</h2>\n<p>The flow starts with the files in data/posts. Each article uses front matter for description, tags, cover image, publication date, and additional metadata. From there, the in-repo CMS reads the files, normalizes the data, and converts markdown into HTML.</p>\n<p>Generating everything at build time lets me ship pages that are easy to host on GitHub Pages, with stable URLs, prerendered content, and no dependency on an application backend.</p>\n<h2 id=\"a-minimal-cms-but-pointed-in-the-right-direction\" tabindex=\"0\" data-toc-anchor=\"true\">A minimal CMS, but pointed in the right direction</h2>\n<p>The CMS does only a few things, but it does them consistently:</p>\n<ul>\n<li>it reads front matter;</li><li>it generates slugs, excerpts, keywords, and indexes for tags, months, and series;</li><li>it enriches article headings with ids and navigation data;</li><li>it prepares data that is ready to feed templates, pages, and feeds.</li></ul>\n<p>That part matters because it moves complexity into the build step instead of pushing it into the browser.</p>\n<h2 id=\"a-template-engine-shaped-around-the-project\" tabindex=\"0\" data-toc-anchor=\"true\">A template engine shaped around the project</h2>\n<p>Instead of adding a server-side rendering framework, I preferred a project-specific template engine with blocks, includes, loops, and conditionals. The syntax stays intentionally close to HTML so the templates remain readable even when the page logic becomes more layered.</p>\n<p>The practical advantage is that components such as cards, headers, pagination, and post layouts can be reused without giving up control over the final markup. That becomes especially useful when you want to do semantic refactors or accessibility audits.</p>\n<h2 id=\"design-system-first-pages-second\" tabindex=\"0\" data-toc-anchor=\"true\">Design system first, pages second</h2>\n<p>The CSS did not grow as a pile of local exceptions. I defined tokens, type scales, spacing, surfaces, focus states, and component relationships first. Only after that did I build the header, cards, article template, and archive views.</p>\n<p>That approach makes the blog easier to evolve: if the density changes, a type family shifts, or panels need different behavior, the update starts from the foundation instead of from a chain of page-level patches.</p>\n<h2 id=\"accessibility-as-a-project-constraint\" tabindex=\"0\" data-toc-anchor=\"true\">Accessibility as a project constraint</h2>\n<p>A large part of the work went into keyboard support, landmarks, semantics, and contrast. Posts now have focusable headings, a sidebar outline synchronized with scroll position, and quick shortcuts to reach the main content and the internal article navigation.</p>\n<p>The goal was not to bolt ARIA labels onto the result after the fact, but to make sure the final markup is already sensible by default.</p>\n<h2 id=\"progressive-enhancement-not-client-dependency\" tabindex=\"0\" data-toc-anchor=\"true\">Progressive enhancement, not client dependency</h2>\n<p>The interactive pieces exist, but they arrive after the document is already useful. Theme switching, reading preferences, client-side search, and the scrollspy all improve the experience without becoming prerequisites for reading the site.</p>\n<p>If JavaScript never starts, the content is still available, structured, and navigable.</p>\n<h2 id=\"the-part-that-matters-most-publishing-without-friction\" tabindex=\"0\" data-toc-anchor=\"true\">The part that matters most: publishing without friction</h2>\n<p>In the end, everything converges on a build command that generates the static site, refreshes assets, and produces output that is ready to deploy. That lets me treat dout.dev like an editorial product: write, review, validate, and publish.</p>\n<p>For me, the point is not using a fashionable stack. The point is having a pipeline that leaves room to focus on the writing and on a frontend quality bar that can actually be measured.</p>\n<h2 id=\"what-comes-next\" tabindex=\"0\" data-toc-anchor=\"true\">What comes next</h2>\n<p>The foundation is finally in place: richer SEO, complete feeds, deeper accessibility passes, and more refinement in the editorial system are the natural next steps. The difference now is that each new milestone can land on a base that is much more solid and predictable.</p>\n",
+      "image": "https://dout.dev/assets/og/posts/2026-04-04-how-i-built-dout-dev.png",
+      "date_published": "2026-04-04T00:00:00.000Z",
+      "tags": [
+        "Architecture",
+        "Static-site",
+        "Design-systems",
+        "Accessibility"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2025-08-15-welcome-to-dout-dev-2.html",
+      "url": "https://dout.dev/posts/2025-08-15-welcome-to-dout-dev-2.html",
+      "title": "Welcome to dout.dev 2.0",
+      "summary": "Welcome to the New dout.dev",
+      "content_html": "<h2 id=\"welcome-to-the-new-dout-dev\" tabindex=\"0\" data-toc-anchor=\"true\">Welcome to the New dout.dev</h2>\n<p>Welcome to the brand new version of dout.dev! This blog has been completely rebuilt from the ground up using modern web technologies while maintaining a <strong>vanilla-first</strong> approach.</p>\n<h2 id=\"what-s-new\" tabindex=\"0\" data-toc-anchor=\"true\">What's New</h2>\n<h3 id=\"zero-runtime-dependencies\" tabindex=\"0\" data-toc-anchor=\"true\">Zero Runtime Dependencies</h3>\n<p>The new dout.dev runs entirely on vanilla JavaScript, CSS, and HTML. No frameworks, no runtime dependencies - just clean, fast, and accessible web standards.</p>\n<h3 id=\"wcag-2-2-aa-accessibility\" tabindex=\"0\" data-toc-anchor=\"true\">WCAG 2.2 AA Accessibility</h3>\n<p>Every aspect of this blog has been designed with accessibility in mind:</p>\n<ul>\n<li>Semantic HTML structure</li><li>Proper ARIA landmarks and labels</li><li>Keyboard navigation support</li><li>Screen reader optimizations</li><li>High contrast color schemes</li></ul>\n<h3 id=\"modern-build-pipeline\" tabindex=\"0\" data-toc-anchor=\"true\">Modern Build Pipeline</h3>\n<p>Behind the scenes, we use:</p>\n<ul>\n<li><strong>Custom CMS</strong>: Processes Markdown files into static HTML</li><li><strong>Template Engine</strong>: Proprietary system with includes, extends, and filters</li><li><strong>Vite</strong>: Modern build tooling for development and production</li><li><strong>Biome</strong>: Fast linting and formatting</li><li><strong>PostCSS</strong>: CSS processing and optimization</li></ul>\n<h3 id=\"performance-first\" tabindex=\"0\" data-toc-anchor=\"true\">Performance First</h3>\n<p>The site is optimized for Core Web Vitals:</p>\n<ul>\n<li>Lazy loading images</li><li>Minimal JavaScript</li><li>Critical CSS inlining</li><li>Progressive enhancement</li></ul>\n<h2 id=\"technical-highlights\" tabindex=\"0\" data-toc-anchor=\"true\">Technical Highlights</h2>\n<p>This blog showcases several interesting technical approaches:</p>\n<ol>\n<li><strong>Custom Template Engine</strong> - Built specifically for this use case</li><li><strong>Static Site Generation</strong> - All pages pre-rendered at build time</li><li><strong>Progressive Enhancement</strong> - Works without JavaScript, better with it</li><li><strong>Modern CSS</strong> - Using custom properties, grid, and modern features</li></ol>\n<h2 id=\"looking-forward\" tabindex=\"0\" data-toc-anchor=\"true\">Looking Forward</h2>\n<p>This rewrite sets the foundation for many exciting features planned for the future:</p>\n<ul>\n<li>Multi-language support (English/Italian)</li><li>Advanced search functionality</li><li>Related posts and series</li><li>Dark/light theme switching</li><li>RSS and JSON feeds</li></ul>\n<p>Stay tuned for more updates and technical deep-dives into how this blog is built!</p>\n<hr>\n<p><em>This post marks the beginning of a new chapter for dout.dev. Welcome aboard!</em></p>\n",
+      "image": "https://dout.dev/assets/og/posts/2025-08-15-welcome-to-dout-dev-2.png",
+      "date_published": "2025-08-15T00:00:00.000Z",
+      "tags": [
+        "Blog",
+        "Welcome",
+        "Vanilla-js"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2024-12-27-m4-template-test.html",
+      "url": "https://dout.dev/posts/2024-12-27-m4-template-test.html",
+      "title": "M4 Template Test - Cover Image e Syntax Highlighting",
+      "summary": "Questo è un post di test per verificare tutte le funzionalità implementate nel M4 - Post Page.",
+      "content_html": "<p>Questo è un post di test per verificare tutte le funzionalità implementate nel <strong>M4 - Post Page</strong>.</p>\n<h2 id=\"cover-image-e-pinned-badge\" tabindex=\"0\" data-toc-anchor=\"true\">Cover Image e Pinned Badge</h2>\n<p>Questo post ha:</p>\n<ul>\n<li>✅ <strong>Cover Image</strong>: Immagine di copertina caricata con <code>fetchpriority=\"high\"</code></li><li>✅ <strong>Pinned Badge</strong>: Badge \"📌 Post in evidenza\" per post in evidenza</li><li>✅ <strong>Metadata avanzata</strong>: Schema.org BlogPosting completo</li></ul>\n<h2 id=\"syntax-highlighting-con-syntax-highlight-element\" tabindex=\"0\" data-toc-anchor=\"true\">Syntax Highlighting con syntax-highlight-element</h2>\n<p>Testiamo il syntax highlighting per vari linguaggi:</p>\n<h3 id=\"javascript\" tabindex=\"0\" data-toc-anchor=\"true\">JavaScript</h3>\n<pre is=\"pix-highlighter\" data-lang=\"javascript\"><code>// Esempio JavaScript\nconst blogPost = {\n  title: 'M4 Template Test',\n  author: 'dout.dev',\n  published: true,\n  tags: ['Test', 'M4', 'syntax-highlight-element'],\n};\n\nfunction renderPost(post) {\n  console.log(`Rendering: ${post.title}`);\n  return `&lt;article&gt;${post.title}&lt;/article&gt;`;\n}\n\naddEventListener('DOMContentLoaded', () =&gt; {\n  // highlighting is handled by the local &lt;syntax-highlight&gt; web component\n});</code></pre><h3 id=\"css\" tabindex=\"0\" data-toc-anchor=\"true\">CSS</h3>\n<pre is=\"pix-highlighter\" data-lang=\"css\"><code>/* Esempio CSS con design tokens */\n.post-cover-image {\n  width: 100%;\n  height: auto;\n  border-radius: var(--border-radius-md);\n  box-shadow: var(--shadow-lg);\n  object-fit: cover;\n}\n\n.post-badge--pinned {\n  background: var(--color-accent-primary);\n  color: var(--color-text-on-accent);\n  padding: var(--space-2) var(--space-3);\n  border-radius: var(--border-radius-full);\n  font-size: var(--text-sm);\n  font-weight: var(--font-weight-medium);\n}</code></pre><h3 id=\"html\" tabindex=\"0\" data-toc-anchor=\"true\">HTML</h3>\n<pre is=\"pix-highlighter\" data-lang=\"html\"><code>&lt;!-- Esempio HTML con Schema.org --&gt;\n&lt;article class=\"post\"&gt;\n  &lt;header class=\"post-header\"&gt;\n    &lt;div class=\"post-badge post-badge--pinned\" data-pinned=\"true\"&gt;📌 Post in evidenza&lt;/div&gt;\n    &lt;h1&gt;{{ title }}&lt;/h1&gt;\n    &lt;div class=\"post-meta\"&gt;\n      &lt;time datetime=\"{{ date }}\"&gt;{{ date | date:'%d %B %Y' }}&lt;/time&gt;\n    &lt;/div&gt;\n  &lt;/header&gt;\n  &lt;div class=\"post-content\"&gt;{{ content | raw }}&lt;/div&gt;\n&lt;/article&gt;</code></pre><h3 id=\"json\" tabindex=\"0\" data-toc-anchor=\"true\">JSON</h3>\n<pre is=\"pix-highlighter\" data-lang=\"json\"><code>{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BlogPosting\",\n  \"headline\": \"M4 Template Test\",\n  \"description\": \"Post di test per M4\",\n  \"datePublished\": \"2024-12-27T10:00:00.000Z\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"dout.dev\"\n  },\n  \"keywords\": \"Test,M4,syntax-highlight-element,Cover Image\"\n}</code></pre><h3 id=\"bash\" tabindex=\"0\" data-toc-anchor=\"true\">Bash</h3>\n<pre is=\"pix-highlighter\" data-lang=\"bash\"><code>#!/bin/bash\n# Script per build e test\necho \"Building CMS...\"\nnpm run cms:build\n\necho \"Starting dev server...\"\nnpm run dev</code></pre><h2 id=\"funzionalit-testate\" tabindex=\"0\" data-toc-anchor=\"true\">Funzionalità Testate</h2>\n<ul>\n<li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-1\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**Template post.html aggiornato** con layout hook\" checked=\"\"><label for=\"md-task-1\"><strong>Template post.html aggiornato</strong> con layout hook</label></li><li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-2\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**Metadata completa**: title, meta description, canonical, JSON-LD BlogPosting\" checked=\"\"><label for=\"md-task-2\"><strong>Metadata completa</strong>: title, meta description, canonical, JSON-LD BlogPosting</label></li><li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-3\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**Support coverImage**: immagine di copertina con attributi performance\" checked=\"\"><label for=\"md-task-3\"><strong>Support coverImage</strong>: immagine di copertina con attributi performance</label></li><li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-4\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**Support pinned badge**: badge per post in evidenza (mostrato solo in listings)\" checked=\"\"><label for=\"md-task-4\"><strong>Support pinned badge</strong>: badge per post in evidenza (mostrato solo in listings)</label></li><li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-5\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**syntax-highlight-element integrato**: syntax highlighting per tutti i linguaggi specificati\" checked=\"\"><label for=\"md-task-5\"><strong>syntax-highlight-element integrato</strong>: syntax highlighting per tutti i linguaggi specificati</label></li></ul>\n<p>La checklist M4 dovrebbe essere completamente implementata! 🎉</p>\n",
+      "image": "https://dout.dev/assets/og/posts/2024-12-27-m4-template-test.png",
+      "date_published": "2024-12-27T10:00:00.000Z",
+      "tags": [
+        "Test",
+        "M4",
+        "Syntax-highlight-element",
+        "Cover-image"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2024-10-28-concerning-css-grid.html",
+      "url": "https://dout.dev/posts/2024-10-28-concerning-css-grid.html",
+      "title": "Introducing CSS Grid - The Future of Web Layout 🎨",
+      "summary": "What is CSS Grid and why is it important?",
+      "content_html": "<h2 id=\"what-is-css-grid-and-why-is-it-important\" tabindex=\"0\" data-toc-anchor=\"true\">What is CSS Grid and why is it important?</h2>\n<p>CSS Grid is a powerful technology for creating web layouts that has changed the way we think about user interface design. Unlike older methods like <code>float</code> or <code>flexbox</code>, CSS Grid offers a true two-dimensional grid for positioning elements, making layouts simpler, more powerful, and adaptable.</p>\n<h2 id=\"how-does-it-work\" tabindex=\"0\" data-toc-anchor=\"true\">How does it work?</h2>\n<p>CSS Grid introduces a system of rows and columns, allowing you to create complex layouts with just a few commands. Here is a basic example of a grid with two columns and two rows:</p>\n<pre is=\"pix-highlighter\" data-lang=\"css\"><code>display: grid;\ngrid-template-columns: repeat(2, 1fr);\ngrid-template-rows: repeat(2, 200px);</code></pre><p>With these few lines of code, we can structure our pages without using hacks or complicated markup.</p>\n<h2 id=\"key-benefits-of-css-grid\" tabindex=\"0\" data-toc-anchor=\"true\">Key Benefits of CSS Grid</h2>\n<ol>\n<li><strong>Two-Dimensional Design</strong>: Allows you to work with rows and columns intuitively.</li><li><strong>Simplicity and Flexibility</strong>: Positioning elements becomes more natural and less restricted.</li><li><strong>Powerful Alignment</strong>: With properties like <code>justify-items</code> and <code>align-items</code>, aligning elements is a breeze.</li></ol>\n<h2 id=\"a-practical-example\" tabindex=\"0\" data-toc-anchor=\"true\">A Practical Example</h2>\n<p>Let's look at a practical example of using CSS Grid to create a basic layout for a web page:</p>\n<pre is=\"pix-highlighter\" data-lang=\"html\"><code>&lt;div class=\"container\"&gt;\n  &lt;header&gt;Header&lt;/header&gt;\n  &lt;nav&gt;Navigation&lt;/nav&gt;\n  &lt;main&gt;Main Content&lt;/main&gt;\n  &lt;aside&gt;Sidebar&lt;/aside&gt;\n  &lt;footer&gt;Footer&lt;/footer&gt;\n&lt;/div&gt;</code></pre><p>And the corresponding CSS:</p>\n<pre is=\"pix-highlighter\" data-lang=\"css\"><code>.container {\n  display: grid;\n  grid-template-areas:\n    'header header'\n    'nav main'\n    'nav aside'\n    'footer footer';\n  grid-template-columns: 1fr 3fr;\n  gap: 20px;\n}\n\nheader {\n  grid-area: header;\n}\n\nnav {\n  grid-area: nav;\n}\n\nmain {\n  grid-area: main;\n}\n\naside {\n  grid-area: aside;\n}\n\nfooter {\n  grid-area: footer;\n}</code></pre><p>In this example, we use <code>grid-template-areas</code> to assign names to sections and define the layout structure in a readable way.</p>\n<h2 id=\"conclusions\" tabindex=\"0\" data-toc-anchor=\"true\">Conclusions</h2>\n<p>CSS Grid is an essential tool for every frontend developer. If you want to create modern, responsive, and easily maintainable layouts, CSS Grid is the way to go. Don't be afraid to experiment and play with grids: once you learn it, you won't look back!</p>\n<p>Do you want to learn more about how to use CSS Grid in your projects? Feel free to ask questions or share your experiments in the comments! 😊</p>\n",
+      "image": "https://dout.dev/assets/og/posts/2024-10-28-concerning-css-grid.png",
+      "date_published": "2024-10-28T10:00:00.000Z",
+      "tags": [
+        "Css",
+        "Web-design",
+        "Frontend",
+        "Grid-layout"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2024-05-19-a11y-by-design.html",
+      "url": "https://dout.dev/posts/2024-05-19-a11y-by-design.html",
+      "title": "Accessibility by Design",
+      "summary": "We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Desi",
+      "content_html": "<p>We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Design comes into play, a fundamental approach that must be incorporated from the early stages of digital product development. But why is it so important? And what are the advantages it offers in terms of inclusivity, responsiveness, usability, and marketing?</p>\n<h2 id=\"inclusivity-a-social-and-moral-goal\" tabindex=\"0\" data-toc-anchor=\"true\">Inclusivity: A Social and Moral Goal</h2>\n<p>Inclusivity is not just a buzzword; it is a fundamental principle of a fair and just society. About 20% of the world's population lives with some form of disability. Ignoring this significant portion of the population means excluding millions of people from accessing digital resources. Accessibility by Design ensures that our products are usable by everyone, regardless of their physical or cognitive abilities. This not only improves the quality of life for many people but also strengthens our social responsibility as a company.</p>\n<h2 id=\"responsiveness-adapting-to-everyone-s-needs\" tabindex=\"0\" data-toc-anchor=\"true\">Responsiveness: Adapting to Everyone's Needs</h2>\n<p>An accessible design makes digital products more responsive. This means that our software, website, or application can easily adapt to the diverse needs of users. Whether it's people with visual, auditory, motor, or cognitive disabilities, an accessibility-focused approach ensures that everyone can effectively interact with our product. This not only enhances the user experience but also ensures that there are no technological barriers to access.</p>\n<h2 id=\"usability-improving-the-experience-for-everyone\" tabindex=\"0\" data-toc-anchor=\"true\">Usability: Improving the Experience for Everyone</h2>\n<p>Often, accessible design brings significant improvements in overall usability. Features such as clear and readable text, adequate color contrasts, intuitive navigation, and audio/video descriptions not only help users with disabilities but also enhance the experience for everyone. A product that is easy to use is a successful product, capable of meeting the needs of a wide range of users.</p>\n<h2 id=\"marketing-a-competitive-advantage\" tabindex=\"0\" data-toc-anchor=\"true\">Marketing: A Competitive Advantage</h2>\n<p>From a marketing perspective, Accessibility by Design offers extraordinary benefits. With 20% of the world's population consisting of people with disabilities, we are talking about a vast segment of potential users, stakeholders, operators, and customers. Ignoring this segment means missing out on a significant market opportunity. On the other hand, creating accessible products can set our company apart from the competition, positioning us as leaders in the industry and enhancing our reputation.</p>\n<h2 id=\"conclusion\" tabindex=\"0\" data-toc-anchor=\"true\">Conclusion</h2>\n<p>Adopting Accessibility by Design is not just good practice but a winning strategy that encompasses inclusivity, responsiveness, usability, and marketing. It is an investment that pays off handsomely, improving our corporate image, expanding our user base, and demonstrating our commitment to a more equitable and inclusive society.</p>\n<p>Let's make accessibility a priority and work together to create a digital future that is truly for everyone.</p>\n<hr>\n<p>Accessibility by Design is not just a trend but a necessity. We are ready to make a difference. Join us on this journey toward a more inclusive digital world.</p>\n",
+      "image": "https://dout.dev/assets/og/posts/2024-05-19-a11y-by-design.png",
+      "date_published": "2024-05-19T00:41:22.000Z",
+      "tags": [
+        "A11y",
+        "Design",
+        "Responsive"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2023-01-01-say-hello-2023.html",
+      "url": "https://dout.dev/posts/2023-01-01-say-hello-2023.html",
+      "title": "Say hello to 2023 🎉",
+      "summary": "addEventListener('DOMContentLoaded', (e) => { console.log(e); }); anotherFunctionCallGoesHere({}, () => { selectOther(); });",
+      "content_html": "<p><picture><source type=\"image/webp\" data-srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.webp 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.webp 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.webp 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.webp 1280w\"><source type=\"image/jpeg\" data-srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.jpg 1280w\"><img data-src=\"../assets/images/2022-02-25-you-can-express-tags-today.jpg\" alt=\"example alt text\" loading=\"lazy\" decoding=\"async\" fetchpriority=\"low\" data-srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.jpg 1280w\" width=\"1600\" height=\"900\" title=\"example Title\"></picture><noscript><img src=\"../assets/images/2022-02-25-you-can-express-tags-today.jpg\" alt=\"example alt text\" srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.jpg 1280w\" width=\"1600\" height=\"900\" title=\"example Title\"></noscript></p>\n<pre is=\"pix-highlighter\" data-lang=\"javascript\"><code>addEventListener('DOMContentLoaded', (e) =&gt; {\n  console.log(e);\n});\n\nanotherFunctionCallGoesHere({}, () =&gt; {\n  selectOther();\n});</code></pre>",
+      "image": "https://dout.dev/assets/og/posts/2023-01-01-say-hello-2023.png",
+      "date_published": "2023-01-01T14:41:22.000Z",
+      "tags": [
+        "Markdown",
+        "Releases"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2022-03-25-concerning.html",
+      "url": "https://dout.dev/posts/2022-03-25-concerning.html",
+      "title": "Concerning…",
+      "summary": "Concerning Core Web Technologies",
+      "content_html": "<h2 id=\"concerning-core-web-technologies\" tabindex=\"0\" data-toc-anchor=\"true\">Concerning Core Web Technologies</h2>\n<p>I truly believe in the following idea:</p>\n<blockquote>\n<p>Let the technologies do the job they were designed for</p>\n</blockquote>\n<p>We'll explore in detail... Building a CSS codebase from scratch can be very hard, but also fun and productive.</p>\n<hr>\n<h2 id=\"concerning-ui-ux\" tabindex=\"0\" data-toc-anchor=\"true\">Concerning UI/UX</h2>\n<p>Analyzing and implementing a Design and its related User Experience can be one of the funniest and challenging things to do.</p>\n<hr>\n<h2 id=\"concerning-a11y\" tabindex=\"0\" data-toc-anchor=\"true\">Concerning a11y</h2>\n<p>Let' start with a basic concept...</p>\n<blockquote>\n<p>We need to raise awareness about a11y</p>\n</blockquote>\n<p>20-25% have some sort of disability or uses a screen reader</p>\n<hr>\n<h2 id=\"concerning-responsiveness\" tabindex=\"0\" data-toc-anchor=\"true\">Concerning Responsiveness</h2>\n<p>Responsiveness is a concept, an idea, to me is...</p>\n<blockquote>\n<p>Reacting to the environment</p>\n</blockquote>\n",
+      "image": "https://dout.dev/assets/og/posts/2022-03-25-concerning.png",
+      "date_published": "2022-03-25T00:00:00.000Z",
+      "tags": [
+        "Generic"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2022-03-24-welcome-to-dout-dev.html",
+      "url": "https://dout.dev/posts/2022-03-24-welcome-to-dout-dev.html",
+      "title": "Welcome to dout.dev",
+      "summary": "Hi, I'm Emiliano \"Pixu\" Pisu.",
+      "content_html": "<p>Hi, I'm Emiliano \"Pixu\" Pisu.</p>\n<p>I'm a \"vintage\" developer who loves to code and to share ideas, thoughts, knowledge.</p>\n<p>I'm starting this blog to talk and discuss about web-based technology, honestly most of times i'll focus in UI/UX, because i love it.</p>\n<p>However, in order to be able to talk about User Interaction, we'll need to discuss about:</p>\n<ul>\n<li>core web technologies</li><li>cross browser compatibility (thanks for your time IE but… no thanks!!! 🤣)</li><li>a11y</li><li>performances</li><li>best practices</li><li>responsiveness</li></ul>\n<p>Let's start a new trip together in the world HTML, CSS and JS.</p>\n",
+      "image": "https://dout.dev/assets/og/posts/2022-03-24-welcome-to-dout-dev.png",
+      "date_published": "2022-03-24T00:00:00.000Z",
+      "tags": [
+        "Generic"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2022-03-22-building-dout-dev-blog-part-2.html",
+      "url": "https://dout.dev/posts/2022-03-22-building-dout-dev-blog-part-2.html",
+      "title": "Building dout.dev blog - Part II",
+      "summary": "Building dout.dev blog - Part II",
+      "content_html": "<p>Building dout.dev blog - Part II</p>\n",
+      "image": "https://dout.dev/assets/og/posts/2022-03-22-building-dout-dev-blog-part-2.png",
+      "date_published": "2022-03-22T00:00:00.000Z",
+      "tags": [
+        "Html"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2022-03-21-building-dout-dev-blog.html",
+      "url": "https://dout.dev/posts/2022-03-21-building-dout-dev-blog.html",
+      "title": "Building dout.dev blog",
+      "summary": "Less is more!",
+      "content_html": "<blockquote>\n<p>Less is more!</p>\n</blockquote>\n<p>I started</p>\n",
+      "image": "https://dout.dev/assets/og/posts/2022-03-21-building-dout-dev-blog.png",
+      "date_published": "2022-03-21T00:00:00.000Z",
+      "tags": [
+        "Html"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2022-03-18-css-properties-hierarchy.html",
+      "url": "https://dout.dev/posts/2022-03-18-css-properties-hierarchy.html",
+      "title": "CSS Properties Hierarchy",
+      "summary": ":root { --border-radius: 5px; } .element { /* css custom properties */ --var--example: 1; ​ /* position */ position: absolute; inset: 0; /* top, right, bottom, left */ z-index: 1; ",
+      "content_html": "<pre is=\"pix-highlighter\" data-lang=\"css\"><code>:root {\n  --border-radius: 5px;\n}\n\n.element {\n  /* css custom properties */\n  --var--example: 1;\n​\n  /* position */\n  position: absolute;\n  inset: 0; /* top, right, bottom, left */\n  z-index: 1;\n​\n  /* display */\n  display: block;\n  display: flex;\n  place-content: center;\n  place-items: center;\n  justify-self: unset;\n  gap: 1rem;\n\n  opacity: 1;\n  visibility: visible;\n​\n  /* box-model */\n  box-sizing: border-box;\n  width: 10rem;\n  aspect-ratio: 16 / 9;\n  padding: 1rem;\n  border: 0.1rem solid black;\n  border-radius: 0.4rem;\n  margin: 1rem;\n  outline: 0.3rem solid black;\n  outline-offset: 0.3rem;\n​\n  /* colors &amp; background */\n  color: white;\n  background-color: black;\n  background-image: url();\n  box-shadow: rgba(50, 50, 50, 1);\n  filter: drop-shadow();\n​\n  /* text */\n  font-family: 'Courier New', Courier, monospace;\n  font-size: 1rem;\n  font-weight: 700;\n  line-height: normal;\n  white-space: nowrap;\n  text-align: center;\n  text-shadow: none;\n​\n  /* transform &amp; animations */\n  transform: translate();\n  transition: opacity 300ms ease-in, width 500ms linear;\n  will-change: opacity, width;\n  animation: test 300ms forwards alternate-reverse;\n​\n  /* helpers */\n  appearance: none;\n  cursor: pointer;\n  pointer-event: none;\n​\n  /* pseudo elements */\n  &amp;::after {\n  }\n​\n  /* variants &amp; pseudo selectors */\n  &amp;.error {\n    color: red;\n  }\n\n  &amp;[aria-hidden=true] {\n    display: none;\n  }\n​\n  /* pseudo selectors */\n  &amp;:hover {\n  }\n​\n  /* media queries */\n  @media screen and (width &gt;= 1024px) {\n    /* repeat css hierarchy here */\n  }\n\n  /* ------------ children */\n  span {\n    /* repeat css hierarchy here */\n  }\n​\n  input {\n    /* repeat css hierarchy here */\n  }\n​\n  &gt; * {\n    /* repeat css hierarchy here */\n  }\n}</code></pre>",
+      "image": "https://dout.dev/assets/og/posts/2022-03-18-css-properties-hierarchy.png",
+      "date_published": "2022-03-18T00:00:00.000Z",
+      "tags": [
+        "Html",
+        "Css"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2022-03-16-test-codepen.html",
+      "url": "https://dout.dev/posts/2022-03-16-test-codepen.html",
+      "title": "Testing CodePen",
+      "summary": "See the Pen <a href='https://codepen.io/blackmirror1980/pen/aPRXzv'>Pure CSS Slider using Scroll-Snap</a> by blackmirror1980 (<a href='https://codepen.io/blackmirror1980'>@blackmir",
+      "content_html": "<iframe height=\"521\" style=\"width: 100%; min-height: 30rem\" scrolling=\"no\" title=\"Pure CSS Slider using Scroll-Snap\" src=\"https://codepen.io/blackmirror1980/embed/aPRXzv?height=521&amp;theme-id=dark&amp;default-tab=result\" frameborder=\"no\" loading=\"lazy\" allowtransparency=\"true\" allowfullscreen=\"true\" class=\"embed-frame embed-frame--codepen\" referrerpolicy=\"no-referrer\" sandbox=\"allow-popups allow-same-origin allow-scripts\">\n  See the Pen <a href='https://codepen.io/blackmirror1980/pen/aPRXzv'>Pure CSS Slider using Scroll-Snap</a> by blackmirror1980\n  (<a href='https://codepen.io/blackmirror1980'>@blackmirror1980</a>) on <a href='https://codepen.io'>CodePen</a>.\n</iframe>\n",
+      "image": "https://dout.dev/assets/og/posts/2022-03-16-test-codepen.png",
+      "date_published": "2022-03-16T00:00:00.000Z",
+      "tags": [
+        "Markdown",
+        "Cover-image"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2022-03-12-you-can-edit-css.html",
+      "url": "https://dout.dev/posts/2022-03-12-you-can-edit-css.html",
+      "title": "You can edit CSS",
+      "summary": "You can edit CSS",
+      "content_html": "<p><a href=\"https://codepen.io/davatron5000/pen/mddmRJe\" rel=\"noopener noreferrer\">You can edit CSS</a></p>\n",
+      "image": "https://dout.dev/assets/og/posts/2022-03-12-you-can-edit-css.png",
+      "date_published": "2022-03-12T00:00:00.000Z",
+      "tags": [
+        "Markdown",
+        "Cover-image"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2022-03-03-marked-markdown-parser.html",
+      "url": "https://dout.dev/posts/2022-03-03-marked-markdown-parser.html",
+      "title": "Marked - Markdown Parser",
+      "summary": "How To Use The Demo",
+      "content_html": "<h2 id=\"how-to-use-the-demo\" tabindex=\"0\" data-toc-anchor=\"true\">How To Use The Demo</h2>\n<ol>\n<li>Type in stuff on the left.</li><li>See the live updates on the right.</li></ol>\n<p>That's it. Pretty simple. There's also a drop-down option in the upper right to switch between various views:</p>\n<ul>\n<li><strong>Preview:</strong> A live display of the generated HTML as it would render in a browser.</li><li><strong>HTML Source:</strong> The generated HTML before your browser makes it pretty.</li><li><strong>Lexer Data:</strong> What <a href=\"https://github.com/markedjs/marked/\" rel=\"noopener noreferrer\">marked</a> uses internally, in case you like gory stuff like this.</li><li><strong>Quick Reference:</strong> A brief run-down of how to format things using markdown.</li></ul>\n<h2 id=\"why-markdown\" tabindex=\"0\" data-toc-anchor=\"true\">Why Markdown?</h2>\n<pre is=\"pix-highlighter\" data-lang=\"html\"><code>&lt;div&gt;&lt;/div&gt;</code></pre><p>It's easy. It's not overly bloated, unlike HTML. Also, as the creator of <a href=\"http://daringfireball.net/projects/markdown/\" rel=\"noopener noreferrer\">markdown</a> says,</p>\n<blockquote>\n<p>The overriding design goal for Markdown's\nformatting syntax is to make it as readable\nas possible. The idea is that a\nMarkdown-formatted document should be\npublishable as-is, as plain text, without\nlooking like it's been marked up with tags\nor formatting instructions.</p>\n</blockquote>\n<pre is=\"pix-highlighter\" data-lang=\"scss\"><code>div {\n}</code></pre><p>Ready to start writing? Either start changing stuff on the left or\n<a href=\"/demo/?text=\">clear everything</a> with a simple click.</p>\n",
+      "image": "https://dout.dev/assets/og/posts/2022-03-03-marked-markdown-parser.png",
+      "date_published": "2022-03-03T15:41:22.000Z",
+      "tags": []
+    },
+    {
+      "id": "https://dout.dev/posts/2022-03-03-custom-grid-system.html",
+      "url": "https://dout.dev/posts/2022-03-03-custom-grid-system.html",
+      "title": "Custom Grid System",
+      "summary": "Blog under construction",
+      "content_html": "<p>Blog under construction</p>\n",
+      "image": "https://dout.dev/assets/og/posts/2022-03-03-custom-grid-system.png",
+      "date_published": "2022-03-03T14:41:22.000Z",
+      "tags": [
+        "Markdown",
+        "Releases"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2022-02-25-you-can-express-tags-today.html",
+      "url": "https://dout.dev/posts/2022-02-25-you-can-express-tags-today.html",
+      "title": "You can use express tags… TODAY!",
+      "summary": "HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described here.",
+      "content_html": "<p>HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described <a href=\"https://www.htmlgoodies.com/guides/expected-new-features-in-html6/\" title=\"Expected new features in HTML6\" rel=\"noopener noreferrer\">here</a>.</p>\n<h2 id=\"let-s-take-a-look\" tabindex=\"0\" data-toc-anchor=\"true\">Let's take a look</h2>\n<p>Since the introduction of XHTML, naming tags anyway you want is possible and passes HTMl validators. Browser engines computes unknown element names as a normal block element.</p>\n<p>Which means you can code HTML like this:</p>\n<pre is=\"pix-highlighter\" data-lang=\"html\"><code>&lt;logo&gt;\n  &lt;img src=\"http:/domain.ext/path/to/image.jpg\" /&gt;\n&lt;/logo&gt;</code></pre><p>Which also means you can code CSS (here SCSS) as this:</p>\n<pre is=\"pix-highlighter\" data-lang=\"scss\"><code>logo {\n  width: 10rem;\n  aspect-ratio: 2 / 1;\n\n  img {\n    width: 100%;\n    object-fit: cover;\n  }\n}</code></pre><iframe height=\"300\" style=\"width: 100%; min-height: 70vh;\" scrolling=\"no\" title=\"blog-2022-02-25-01\" src=\"https://codepen.io/pixu1980/embed/LYOJpBz?default-tab=html%2Cresult&amp;theme-id=dark\" frameborder=\"no\" loading=\"lazy\" allowtransparency=\"true\" allowfullscreen=\"true\" class=\"embed-frame embed-frame--codepen\" referrerpolicy=\"no-referrer\" sandbox=\"allow-popups allow-same-origin allow-scripts\">\n  See the Pen <a href=\"https://codepen.io/pixu1980/pen/LYOJpBz\">\n  blog-2022-02-25-01</a> by pixu1980 (<a href=\"https://codepen.io/pixu1980\">@pixu1980</a>)\n  on <a href=\"https://codepen.io\">CodePen</a>.\n</iframe>\n",
+      "image": "https://dout.dev/assets/og/posts/2022-02-25-you-can-express-tags-today.png",
+      "date_published": "2022-02-25T00:00:00.000Z",
+      "tags": [
+        "Html",
+        "Css"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2022-01-01-say-hello-2022.html",
+      "url": "https://dout.dev/posts/2022-01-01-say-hello-2022.html",
+      "title": "Say hello to 2022 🎉",
+      "content_html": "<p><picture><source type=\"image/webp\" data-srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.webp 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.webp 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.webp 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.webp 1280w\"><source type=\"image/jpeg\" data-srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.jpg 1280w\"><img data-src=\"../assets/images/2022-02-25-you-can-express-tags-today.jpg\" alt=\"example alt text\" loading=\"lazy\" decoding=\"async\" fetchpriority=\"low\" data-srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.jpg 1280w\" width=\"1600\" height=\"900\" title=\"example Title\"></picture><noscript><img src=\"../assets/images/2022-02-25-you-can-express-tags-today.jpg\" alt=\"example alt text\" srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.jpg 1280w\" width=\"1600\" height=\"900\" title=\"example Title\"></noscript></p>\n",
+      "image": "https://dout.dev/assets/og/posts/2022-01-01-say-hello-2022.png",
+      "date_published": "2022-01-01T14:41:22.000Z",
+      "tags": [
+        "Markdown",
+        "Releases"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html",
+      "url": "https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html",
+      "title": "A NEW post with a NEW cover image",
+      "summary": "Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or",
+      "content_html": "<p>Readability, however, is emphasized above all else. A Markdown-formatted\ndocument should be publishable as-is, as plain text, without looking\nlike it's been marked up with tags or formatting instructions.</p>\n<p>While Markdown's syntax has been influenced by several existing text-to-HTML filters -- including <a href=\"http://docutils.sourceforge.net/mirror/setext.html\" rel=\"noopener noreferrer\">Setext</a>, <a href=\"http://www.aaronsw.com/2002/atx/\" rel=\"noopener noreferrer\">atx</a>, <a href=\"http://textism.com/tools/textile/\" rel=\"noopener noreferrer\">Textile</a>, <a href=\"http://docutils.sourceforge.net/rst.html\" rel=\"noopener noreferrer\">reStructuredText</a>,\n<a href=\"http://www.triptico.com/software/grutatxt.html\" rel=\"noopener noreferrer\">Grutatext</a>, and <a href=\"http://ettext.taint.org/doc/\" rel=\"noopener noreferrer\">EtText</a> -- the single biggest source of\ninspiration for Markdown's syntax is the format of plain text email.</p>\n",
+      "image": "https://dout.dev/assets/og/posts/2021-03-08-a-new-post-with-a-new-cover.png",
+      "date_published": "2021-03-08T00:00:00.000Z",
+      "tags": [
+        "Markdown",
+        "Cover-image"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2021-03-07-hating-css-utility-classes.html",
+      "url": "https://dout.dev/posts/2021-03-07-hating-css-utility-classes.html",
+      "title": "Testing CodePen",
+      "summary": "https://codepen.io/emdeoh/pen/NWdmgVq",
+      "content_html": "<p><a href=\"https://codepen.io/emdeoh/pen/NWdmgVq\" rel=\"noopener noreferrer\">https://codepen.io/emdeoh/pen/NWdmgVq</a></p>\n",
+      "image": "https://dout.dev/assets/og/posts/2021-03-07-hating-css-utility-classes.png",
+      "date_published": "2021-03-07T00:00:00.000Z",
+      "tags": [
+        "Markdown",
+        "Cover-image"
+      ]
+    },
+    {
+      "id": "https://dout.dev/posts/2021-03-05-gradient-borders.html",
+      "url": "https://dout.dev/posts/2021-03-05-gradient-borders.html",
+      "title": "Testing CodePen",
+      "summary": "GRADIENT BORDERS",
+      "content_html": "<p>GRADIENT BORDERS</p>\n<p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible. Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions.</p>\n<style>\n  .white-grad {\n    --b: 5px; /* border width*/\n    --r: 15px; /* the radius */\n\n    color: var(--dout--color-primary);\n    padding: calc(var(--b) + 5px);\n    display: inline-block;\n    margin: 75px 0;\n    position: relative;\n    z-index: 0;\n  }\n  .white-grad:before {\n    content: '';\n    position: absolute;\n    z-index: -1;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    padding: var(--b);\n    border: var(--b) solid transparent;\n    border-radius: var(--r);\n    background: linear-gradient(var(--dout--background-color-primary), var(--dout--background-color-primary)) padding-box,\n      var(--c, linear-gradient(to right, #9c20aa, #fb3570)) border-box;\n    \n    /*\n    background: var(--c, linear-gradient(to right, #9c20aa, #fb3570));\n    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);\n    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);\n    -webkit-mask-composite: destination-out;\n    mask-composite: exclude;\n    */\n  }\n</style>\n<div class=\"white-grad\">Some text here</div>\n<div class=\"white-grad\" style=\"--r: 20px; --b: 10px; --c: linear-gradient(140deg, red, yellow, green)\">\n  Some long long long text here\n</div>\n<div class=\"white-grad\" style=\"--r: 30px; --b: 8px; --c: linear-gradient(-40deg, black 50%, blue 0)\">\n  Some long long <br>long text here\n</div>\n<div class=\"white-grad\" style=\"--r: 40px; --b: 20px; --c: conic-gradient(black, orange, purple)\">\n  Some long long <br>long text here<br>\n  more and more more and more\n</div>\n<div class=\"white-grad\" style=\"--r: 50%; --b: 10px; --c: linear-gradient(140deg, red, yellow, green)\"></div>\n<div class=\"white-grad\" style=\"--r: 50%; --b: 8px; --c: linear-gradient(-40deg, black 50%, blue 0)\"></div>\n<div class=\"white-grad\" style=\"--r: 50%; --b: 20px; --c: conic-gradient(black, orange, purple)\"></div>\n<div class=\"white-grad\" style=\"--r: 50% 0 50% 50%\"></div>\n<div class=\"white-grad\" style=\"--b: 10px; --r: 50% 0; --c: linear-gradient(140deg, red, yellow, green)\"></div>\n<div class=\"white-grad\" style=\"--b: 8px; --r: 50% 0 0; --c: linear-gradient(-40deg, black 50%, blue 0)\"></div>\n<div class=\"white-grad\" style=\"--b: 20px; --r: 50% 50% 0 0; --c: conic-gradient(black, orange, purple)\"></div>\n<div class=\"white-grad\" style=\"--b: 0 0 20px 20px; --r: 50% 0 50% 50%\"></div>\n<div class=\"white-grad\" style=\"--b: 10px 0 10px 0; --r: 50% 0; --c: linear-gradient(140deg, red, yellow, green)\"></div>\n<div class=\"white-grad\" style=\"--b: 8px 0px 0px 8px; --r: 50% 0 0; --c: linear-gradient(40deg, black 50%, blue 0)\"></div>\n<div class=\"white-grad\" style=\"--b: 20px 20px 0 20px; --r: 50% 50% 0 0; --c: conic-gradient(pink, orange, red, pink)\"></div>\n",
+      "image": "https://dout.dev/assets/og/posts/2021-03-05-gradient-borders.png",
+      "date_published": "2021-03-05T00:00:00.000Z",
+      "tags": [
+        "Markdown",
+        "Cover-image"
+      ]
+    }
+  ]
+}

@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'node:path';
-import { readdirSync, statSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
+import { readFileSync, readdirSync, statSync } from 'node:fs';
 
 // Function to recursively find all HTML files
 function findHtmlFiles(dir, basePath = '') {
@@ -33,7 +32,34 @@ function findHtmlFiles(dir, basePath = '') {
   return files;
 }
 
-export default defineConfig({
+function bundleTextPlugin() {
+  const prefix = 'bundle-text:';
+  const virtualPrefix = '\0bundle-text:';
+
+  return {
+    name: 'bundle-text',
+    enforce: 'pre',
+    resolveId(source, importer) {
+      if (!source.startsWith(prefix)) return null;
+
+      const target = source.slice(prefix.length);
+      const resolvedPath = importer
+        ? resolve(dirname(importer), target)
+        : resolve(__dirname, target);
+
+      return `${virtualPrefix}${Buffer.from(resolvedPath).toString('base64')}`;
+    },
+    load(id) {
+      if (!id.startsWith(virtualPrefix)) return null;
+
+      const filePath = Buffer.from(id.slice(virtualPrefix.length), 'base64').toString('utf8');
+      return `export default ${JSON.stringify(readFileSync(filePath, 'utf8'))};`;
+    },
+  };
+}
+
+export default defineConfig(({ command }) => ({
+  plugins: [bundleTextPlugin()],
   // Entry point
   root: 'src',
 
@@ -48,6 +74,11 @@ export default defineConfig({
         main: resolve(__dirname, 'src/index.html'),
         404: resolve(__dirname, 'src/404.html'),
         about: resolve(__dirname, 'src/about.html'),
+        archive: resolve(__dirname, 'src/archive.html'),
+        accessibility: resolve(__dirname, 'src/accessibility.html'),
+        demo: resolve(__dirname, 'src/demo/index.html'),
+        privacy: resolve(__dirname, 'src/privacy.html'),
+        offline: resolve(__dirname, 'src/offline.html'),
         playground: resolve(__dirname, 'src/playground.html'),
         search: resolve(__dirname, 'src/search.html'),
         // Dynamically include all CMS-generated HTML files
@@ -77,6 +108,6 @@ export default defineConfig({
     },
   },
 
-  // Public base path for GitHub Pages — use local '/' by default to keep asset paths relative
-  base: process.env.NODE_ENV === 'production' ? '/' : '/',
-});
+  // Use relative asset URLs in production so the dist artifact does not assume a fixed server root.
+  base: command === 'build' ? './' : '/',
+}));

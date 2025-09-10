@@ -10,7 +10,7 @@
         "dateString": "Mon Jan 07 2019",
         "path": "./custom/posts/2019-01-07-a-post-with-a-cover.html",
         "url": "/posts/2019-01-07-a-post-with-a-cover/",
-        "excerpt": "Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it's been marked up with tags or f",
+        "excerpt": "Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or",
         "tags": [
           {
             "key": "markdown",
@@ -133,7 +133,7 @@
         "dateString": "Mon Mar 08 2021",
         "path": "./custom/posts/2021-03-08-a-new-post-with-a-new-cover.html",
         "url": "/posts/2021-03-08-a-new-post-with-a-new-cover/",
-        "excerpt": "Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis, as plain text, without looking like it's been marked up with tags or f",
+        "excerpt": "Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or",
         "tags": [
           {
             "key": "markdown",
@@ -164,7 +164,7 @@
         "dateString": "Sat Mar 12 2022",
         "path": "./custom/posts/2022-03-12-you-can-edit-css.html",
         "url": "/posts/2022-03-12-you-can-edit-css/",
-        "excerpt": "You can edit CSShttps://codepen.io/davatron5000/pen/mddmRJe",
+        "excerpt": "You can edit CSS",
         "tags": [
           {
             "key": "markdown",

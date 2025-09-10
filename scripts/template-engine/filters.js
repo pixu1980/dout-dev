@@ -1,4 +1,4 @@
-// Template Engine - Built-in Filters
+export * from './_filters.js'; // Template Engine - Built-in Filters
 import { marked } from 'marked';
 import { createMarkedOptions } from '../cms/marked-syntax.js';
 
@@ -98,7 +98,6 @@ export function registerBuiltinFilters(renderer) {
   });
 
   // Date formatting filter
-  // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: filter intentionally supports many formats/locales
   renderer.registerFilter('date', (value, format = 'it-IT') => {
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return value;
@@ -275,7 +274,6 @@ export function registerBuiltinFilters(renderer) {
     return value;
   });
 
-  // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: readable step-wise logic for UX strings
   renderer.registerFilter('timeAgo', (value) => {
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return value;
@@ -352,7 +350,6 @@ export function registerBuiltinFilters(renderer) {
   renderer.registerFilter('sortBy', (array, property, direction = 'asc') => {
     if (!Array.isArray(array)) return array;
 
-    // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: comparator handles date and direction branches
     return [...array].sort((a, b) => {
       let valueA = a[property];
       let valueB = b[property];

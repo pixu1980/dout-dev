@@ -13,6 +13,8 @@ import { readdir, stat } from 'node:fs/promises';
 const execAsync = promisify(exec);
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = join(__dirname, '..', '..');
+const handAuthoredRoots = ['components', 'demo', 'layouts', 'templates'];
+const handAuthoredFiles = ['accessibility.html'];
 
 async function findHTMLFiles(dir) {
   const files = [];
@@ -37,11 +39,25 @@ async function findHTMLFiles(dir) {
   return files;
 }
 
+async function getHandAuthoredHtmlFiles() {
+  const files = [];
+
+  for (const entry of handAuthoredRoots) {
+    files.push(...(await findHTMLFiles(join(projectRoot, 'src', entry))));
+  }
+
+  for (const fileName of handAuthoredFiles) {
+    files.push(join(projectRoot, 'src', fileName));
+  }
+
+  return files;
+}
+
 async function formatHTML() {
   console.log('🎨 Formatting HTML files...\n');
 
   try {
-    const htmlFiles = await findHTMLFiles(join(projectRoot, 'src'));
+    const htmlFiles = await getHandAuthoredHtmlFiles();
 
     if (htmlFiles.length === 0) {
       console.log('⚠️  No HTML files found to format');

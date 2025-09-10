@@ -1,7 +1,31 @@
 <extends src="../layouts/base.html" />
 
+<block name="head">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:url" content="{{ canonicalUrl }}" />
+  <meta property="og:image" content="{{ ogImageUrl }}" />
+  <meta property="og:image:alt" content="Preview image for {{ title }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:title" content="{{ title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:image" content="{{ ogImageUrl }}" />
+  <meta name="twitter:image:alt" content="Preview image for {{ title }}" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": {{ title | json | raw }},
+      "url": "{{ canonicalUrl }}",
+      "description": {{ description | json | raw }}
+    }
+  </script>
+</block>
+
 <block name="content">
-  <section aria-labelledby="playground-title">
+  <section class="page-hero" aria-labelledby="playground-title">
     <h1 id="playground-title">Playground</h1>
     <p>Experiments and demos will live here.</p>
   </section>

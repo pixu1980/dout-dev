@@ -8,6 +8,11 @@ data/*.json
 custom/data/*.json
 src/assets/images-manifest.json
 src/data/*.json
+src/feed.json
+
+# Generated reports
+test-results/
+playwright-report/
 
 # Vite cache
 .vite/

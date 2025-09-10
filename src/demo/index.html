@@ -4,17 +4,146 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Demo</title>
+    <meta name="description" content="Legacy demo route kept online for older dout.dev links and development checks." />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <script>
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      .file-preview-warning {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid #d9a441;
+        background: #fff3cd;
+        color: #5c3b00;
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] .file-preview-warning {
+        display: block;
+      }
+
+      .file-preview-warning code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+    <link rel="canonical" href="https://dout.dev/demo/" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
     <link rel="stylesheet" href="/styles/main.css" />
   </head>
-  <body>
-    <main id="main">
-      <h1>Demo</h1>
-      <p>This is a placeholder demo page for M0.</p>
-      <form action="#" method="get">
-        <label for="text">Text</label>
-        <input id="text" name="text" type="text" />
-        <button type="submit">Go</button>
-      </form>
+  <body class="site-shell">
+    <p class="file-preview-warning" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div id="page-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" class="site-header">
+      <div class="container header-bar">
+        <a class="brand" href="/">
+          <span class="brand__mark">dout.dev</span>
+          <span class="brand__tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="mainmenu" class="main-nav" aria-label="Main">
+          <ul class="main-links" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+          <div class="header-actions">
+            <color-scheme-switcher></color-scheme-switcher>
+            <display-preferences-popover></display-preferences-popover>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main" id="main" tabindex="-1" aria-label="Main content">
+      <section class="page-hero" aria-labelledby="demo-title">
+        <p class="eyebrow">Legacy route</p>
+        <h1 id="demo-title">This demo page still uses the full site stylesheet.</h1>
+        <p>
+          The route stays online so older dout.dev posts and bookmarks do not break. If you are checking the current
+          interface, use the main site or the playground instead of treating this page as the primary homepage.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="/">Open the homepage</a>
+          <a class="button button--ghost" href="/playground.html">Open the playground</a>
+        </div>
+      </section>
+
+      <section class="info-grid" aria-label="Demo route notes">
+        <article class="card">
+          <p class="eyebrow eyebrow--muted">What this page is</p>
+          <h2>A compatibility page for old links.</h2>
+          <p>
+            Earlier articles referenced a demo route during content and parser experiments. The editor is no longer
+            hosted here, but the route remains available so those references continue to resolve.
+          </p>
+          <p class="muted">Legacy query strings such as /demo/?text= are accepted but no longer drive a live editor.</p>
+        </article>
+
+        <article class="card">
+          <p class="eyebrow eyebrow--muted">How to preview the site</p>
+          <h2>Use the dev server or production preview.</h2>
+          <p>
+            dout.dev pages rely on root-relative asset URLs and Vite rewrites the production bundle. Opening source HTML
+            files directly can make the page look broken even when the project build is healthy.
+          </p>
+          <div class="tag-list" aria-label="Recommended preview modes">
+            <span class="tag">pnpm -s dev</span>
+            <span class="tag">pnpm -s preview</span>
+            <a class="tag" href="/archive.html">Archive</a>
+          </div>
+        </article>
+      </section>
     </main>
+
+    <footer role="contentinfo" class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-copy">
+          <p class="footer-brand">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/scripts/main.js"></script>
   </body>
 </html>

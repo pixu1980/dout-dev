@@ -3,8 +3,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const manifestCandidates = [
-  path.resolve(__dirname, '../dist/manifest.json'),
   path.resolve(__dirname, '../dist/.vite/manifest.json'),
+  path.resolve(__dirname, '../dist/manifest.json'),
 ];
 
 let manifestPath = null;

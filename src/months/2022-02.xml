@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dout.dev — February 2022</title>
     <link>https://dout.dev/months/2022-02/</link>
     <description>RSS feed for posts from February 2022</description>
-    <lastBuildDate>Tue, 09 Sep 2025 08:29:12 GMT</lastBuildDate>
+    <atom:link href="https://dout.dev/months/2022-02.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 20 Apr 2026 11:44:21 GMT</lastBuildDate>
     <item>
       <title>You can use express tags… TODAY!</title>
       <link>https://dout.dev/posts/2022-02-25-you-can-express-tags-today.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2022-02-25-you-can-express-tags-today.html</guid>
       <pubDate>Fri, 25 Feb 2022 00:00:00 GMT</pubDate>
-      <description>HTML6 is coming, we know it very well, &apos;cause we&apos;re strongly waiting for features like described herehttps://www.htmlgoodies.com/guides/expectednewfeaturesinhtml6/ &apos;Expected new f</description>
+      <description>HTML6 is coming, we know it very well, &apos;cause we&apos;re strongly waiting for features like described here.</description>
     </item>
   </channel>
 </rss>

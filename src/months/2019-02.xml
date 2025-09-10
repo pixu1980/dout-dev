@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dout.dev — February 2019</title>
     <link>https://dout.dev/months/2019-02/</link>
     <description>RSS feed for posts from February 2019</description>
-    <lastBuildDate>Tue, 09 Sep 2025 08:29:12 GMT</lastBuildDate>
+    <atom:link href="https://dout.dev/months/2019-02.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 20 Apr 2026 11:44:21 GMT</lastBuildDate>
     <item>
       <title>Say hello to Gridsome 🎉</title>
       <link>https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html</guid>
       <pubDate>Thu, 07 Feb 2019 00:00:00 GMT</pubDate>
-      <description>A new static site generator baby is born. It&apos;s highly inspired by Gatsby.js React based but built on top of Vue.js. We have been working on it for a year and will have a beta read</description>
+      <description>A new static site generator baby is born. It&apos;s highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea</description>
     </item>
     <item>
       <title>Markdown test file</title>
       <link>https://dout.dev/posts/2019-02-06-markdown-test-file.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2019-02-06-markdown-test-file.html</guid>
       <pubDate>Wed, 06 Feb 2019 00:00:00 GMT</pubDate>
-      <description>Markdown is intended to be as easytoread and easytowrite as is feasible.Readability, however, is emphasized above all else. A Markdownformatted document should be publishable asis</description>
+      <description>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable</description>
     </item>
   </channel>
 </rss>

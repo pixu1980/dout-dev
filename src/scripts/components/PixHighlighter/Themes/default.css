@@ -1,0 +1,33 @@
+@layer components {
+  :root:not([data-pix-highlighter-theme]) pre[is='pix-highlighter'],
+  :root[data-pix-highlighter-theme='default'] pre[is='pix-highlighter'] {
+    --pix-bg: #0b0d10;
+    --pix-fg: #e6e6e6;
+    --pix-kw: #c792ea;
+    --pix-str: #ecc48d;
+    --pix-num: #f78c6c;
+    --pix-com: #697098;
+    --pix-id: #82aaff;
+    --pix-op: #c3e88d;
+    --pix-tag: #5ad4e6;
+    --pix-attr: #f2ae49;
+    --pix-key: #ffcc66;
+    --pix-var: #d5ff80;
+    --pix-mac: #ff9dd9;
+    --pix-pp: #8bd5ff;
+    --pix-prop: #9cdcfe;
+    --pix-type: #7fd5a3;
+    --pix-mdh: #5ad4e6;
+    --pix-mde: #f2ae49;
+    --pix-mds: #ffd166;
+    --pix-mdc: #c3e88d;
+    --pix-mdl: #80cbc4;
+    --pix-mdbq: #a0a7bd;
+    --pix-mdli: #b3e5fc;
+    --pix-mdhr: #6c7a89;
+    --pix-mdimg: #90caf9;
+    --pix-tab-size: 2;
+    --pix-line-height: 1.5;
+    --pix-text-shadow: none;
+  }
+}

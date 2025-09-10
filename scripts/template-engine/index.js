@@ -1,7 +1,7 @@
 // Template Engine - Main Entry Point
 
-import { registerBuiltinFilters } from './filters.js';
-import { TemplateRenderer } from './renderer.js';
+import { registerBuiltinFilters } from './_filters.js';
+import { TemplateRenderer } from './_renderer.js';
 
 export class TemplateEngine {
   constructor(options = {}) {
