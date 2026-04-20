@@ -1,72 +1,113 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { startWatch } from '../watch.js';
 
+async function createWatchFixture() {
+  const rootDir = await mkdtemp(join(tmpdir(), 'dout-watch-'));
+  const contentDir = join(rootDir, 'content');
+
+  await mkdir(contentDir, { recursive: true });
+  await writeFile(
+    join(contentDir, 'test.md'),
+    `---
+title: Watch Test
+date: 2026-04-20
+published: true
+tags:
+  - testing
+---
+
+Content`,
+    'utf8'
+  );
+
+  return {
+    rootDir,
+    config: {
+      contentDir,
+      dataDir: join(rootDir, 'data'),
+      postsOutputDir: join(rootDir, 'posts'),
+      tagsOutputDir: join(rootDir, 'tags'),
+      monthsOutputDir: join(rootDir, 'months'),
+      seriesOutputDir: join(rootDir, 'series'),
+      watchRecursive: false,
+      watchFactory: () => ({
+        close() {},
+      }),
+    },
+  };
+}
+
+async function cleanupFixture(rootDir) {
+  await rm(rootDir, { recursive: true, force: true });
+}
+
 describe('watch', () => {
-  test('should start watching and return watcher object', () => {
-    const watcher = startWatch();
+  test('should start watching and return watcher object', async () => {
+    const fixture = await createWatchFixture();
+    const watcher = startWatch(fixture.config);
 
-    // Should return a watcher object with close method
-    assert.strictEqual(typeof watcher, 'object');
-    assert.strictEqual(typeof watcher.close, 'function');
-
-    // Clean up
-    watcher.close();
+    try {
+      assert.strictEqual(typeof watcher, 'object');
+      assert.strictEqual(typeof watcher.close, 'function');
+    } finally {
+      watcher.close();
+      await cleanupFixture(fixture.rootDir);
+    }
   });
 
   test('should call onBuild callback when triggered', async () => {
-    // Ensure content directory and a test markdown file exist
-    try {
-      await mkdir('data/posts', { recursive: true });
-      await writeFile('data/posts/test.md', '# Test\nContent', 'utf8');
-    } catch {
-      // Continue anyway
-    }
+    const fixture = await createWatchFixture();
 
     return new Promise((resolve, reject) => {
       let callbackCalled = false;
       let settled = false;
 
-      const onBuild = (dataset) => {
+      const onBuild = async (dataset) => {
         if (settled) return;
 
         settled = true;
         callbackCalled = true;
 
-        // Just verify we got a dataset object
-        assert.strictEqual(typeof dataset, 'object', 'dataset should be an object');
-
-        // Clean up and finish test
-        watcher.close();
-        resolve();
+        try {
+          assert.strictEqual(typeof dataset, 'object', 'dataset should be an object');
+          assert.strictEqual(dataset.posts.length, 1, 'dataset should contain the fixture post');
+          watcher.close();
+          await cleanupFixture(fixture.rootDir);
+          resolve();
+        } catch (error) {
+          watcher.close();
+          await cleanupFixture(fixture.rootDir);
+          reject(error);
+        }
       };
 
-      const watcher = startWatch({}, onBuild);
+      const watcher = startWatch(fixture.config, onBuild);
 
-      // The initial trigger should call onBuild within 8 seconds
-      setTimeout(() => {
+      setTimeout(async () => {
         if (!callbackCalled && !settled) {
           settled = true;
           watcher.close();
+          await cleanupFixture(fixture.rootDir);
           reject(new Error('Callback was not called after 8 seconds'));
         }
       }, 8000);
     });
   });
 
-  test('should work with custom configuration', () => {
-    const customConfig = {
-      contentDir: 'data/posts',
-    };
+  test('should work with custom configuration', async () => {
+    const fixture = await createWatchFixture();
+    const watcher = startWatch(fixture.config);
 
-    const watcher = startWatch(customConfig);
-
-    // Should still return a valid watcher
-    assert.strictEqual(typeof watcher, 'object');
-    assert.strictEqual(typeof watcher.close, 'function');
-
-    // Clean up
-    watcher.close();
+    try {
+      assert.strictEqual(typeof watcher, 'object');
+      assert.strictEqual(typeof watcher.close, 'function');
+    } finally {
+      watcher.close();
+      await cleanupFixture(fixture.rootDir);
+    }
   });
 });
