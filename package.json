@@ -8,9 +8,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --import ./scripts/register-bundle-text-hooks.js --test \"**/*test.js\"",
-    "test:coverage": "node --import ./scripts/register-bundle-text-hooks.js --test --experimental-test-coverage --test-coverage-exclude='**/*.test.js' \"**/*test.js\"",
-    "test:watch": "node --import ./scripts/register-bundle-text-hooks.js --test --watch \"**/*test.js\"",
+    "test": "node --import ./scripts/register-bundle-text-hooks.js --test \"**/*.test.js\"",
+    "test:coverage": "node --import ./scripts/register-bundle-text-hooks.js --test --experimental-test-coverage --test-coverage-exclude='**/*.test.js' \"**/*.test.js\"",
+    "test:watch": "node --import ./scripts/register-bundle-text-hooks.js --test --watch \"**/*.test.js\"",
     "test:visual": "playwright test",
     "test:visual:update": "playwright test --update-snapshots",
     "lint": "node scripts/lint.js",
