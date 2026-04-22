@@ -4,8 +4,8 @@
 
 | File                                                        | Tipo | Contenuto                                   |
 | ----------------------------------------------------------- | ---- | ------------------------------------------- |
-| [src/styles/main.css](../src/styles/main.css)               | CSS  | ⭐ TUTTO (variabili, componenti, gradienti) |
-| [src/styles/index.css](../src/styles/index.css)             | CSS  | Minimal bootstrap                           |
+| [src/styles/index.css](../src/styles/index.css)             | CSS  | Entry point che importa tutti i layer       |
+| [src/styles/layers/tokens.css](../src/styles/layers/tokens.css) | CSS  | Variabili, scale, temi, radii               |
 | [src/components/header.html](../src/components/header.html) | HTML | Header + theme/accent picker                |
 | [src/scripts/main.js](../src/scripts/main.js)               | JS   | Theme switcher + accent picker logic        |
 
@@ -15,28 +15,28 @@
 
 ### Definizione Variabili CSS
 
-📍 **[src/styles/main.css:1-110](../src/styles/main.css#L1-L110)**
+📍 **[src/styles/index.css:1-110](../src/styles/index.css#L1-L110)**
 
 - Tutti i `--accent-*`, `--bg`, `--text`, `--surface`, `--shadow`, `--border`
 - Font stack e spacing scale
 
 ### Tema Light
 
-📍 **[src/styles/main.css:1-50](../src/styles/main.css#L1-L50)**
+📍 **[src/styles/index.css:1-50](../src/styles/index.css#L1-L50)**
 
 - Background: `#f5efe6` (beige)
 - Text: `#131117` (nero)
 
 ### Tema Dark
 
-📍 **[src/styles/main.css:70-100](../src/styles/main.css#L70-L100)** (`@media prefers-color-scheme: dark`)
+📍 **[src/styles/index.css:70-100](../src/styles/index.css#L70-L100)** (`@media prefers-color-scheme: dark`)
 
 - Background: `#0f0e13` (nero profondo)
 - Text: `#f7f1eb` (bianco caldo)
 
 ### Accenti Alternativi
 
-📍 **[src/styles/main.css:101-110](../src/styles/main.css#L101-L110)** (`body[data-accent='violet|green']`)
+📍 **[src/styles/index.css:101-110](../src/styles/index.css#L101-L110)** (`body[data-accent='violet|green']`)
 
 - Violet: HSL 322°
 - Green: HSL 145°
@@ -47,8 +47,8 @@
 
 | Gradiente           | Ubicazione                                                      | Uso                                                         |
 | ------------------- | --------------------------------------------------------------- | ----------------------------------------------------------- |
-| **Body Background** | [src/styles/main.css:189-191](../src/styles/main.css#L189-L191) | 2x radiale + 1x lineare verticale nel background principale |
-| **Feature Card**    | [src/styles/main.css:622-626](../src/styles/main.css#L622-L626) | `linear-gradient(160deg, ...)` per `.feature-card`          |
+| **Body Background** | [src/styles/index.css:189-191](../src/styles/index.css#L189-L191) | 2x radiale + 1x lineare verticale nel background principale |
+| **Feature Card**    | [src/styles/index.css:622-626](../src/styles/index.css#L622-L626) | `linear-gradient(160deg, ...)` per `.feature-card`          |
 
 ---
 
@@ -119,7 +119,7 @@ Imposta body[data-accent='...']
 
 ### CSS Layout
 
-[src/styles/main.css:249-290](../src/styles/main.css#L249-L290)
+[src/styles/index.css:249-290](../src/styles/index.css#L249-L290)
 
 ```
 .site-header           → sticky, blur backdrop, border-bottom
@@ -135,7 +135,7 @@ Imposta body[data-accent='...']
 - Mobile (max-width: 860px): Menu nascosto, toggle visibile
   - `.main-nav` → display: none
   - `.main-nav[data-open='true']` → display: flex (quando attivo)
-  - `.brand__tag` → display: none
+  - `.brand--tag` → display: none
 
 ---
 
@@ -144,7 +144,7 @@ Imposta body[data-accent='...']
 Quando modifichi colori/stili:
 
 - [ ] Usa custom properties `var(--*)` sempre
-- [ ] Per colori dinamici, aggiungi a `:root` in [main.css:1-110](../src/styles/main.css#L1-L110)
+- [ ] Per colori dinamici, aggiungi a `:root` in [layers/tokens.css](../src/styles/layers/tokens.css)
 - [ ] Supporta light E dark in `@media (prefers-color-scheme: dark)`
 - [ ] Se accent-sensitive, testa con `body[data-accent='violet']` e `body[data-accent='green']`
 - [ ] Test tema switcher [main.js:28-57](../src/scripts/main.js#L28-L57)
@@ -205,12 +205,12 @@ FONTS
 
 | Componente     | Link                                                  | Tema-aware             |
 | -------------- | ----------------------------------------------------- | ---------------------- |
-| Button Primary | [.button--primary](../src/styles/main.css#L609-L612)  | ✅ accent colore       |
-| Text Link      | [.text-link](../src/styles/main.css#L618-L623)        | ✅ accent-strong       |
-| Tag            | [.tag](../src/styles/main.css#L742-L751)              | ✅ accent-soft mixer   |
-| Feature Card   | [.feature-card](../src/styles/main.css#L622-L626)     | ✅ linear-gradient     |
-| Post Card      | [.post-card](../src/styles/main.css#L728-L742)        | ✅ surface, border     |
+| Button Primary | [.button--primary](../src/styles/index.css#L609-L612)  | ✅ accent colore       |
+| Text Link      | [.text-link](../src/styles/index.css#L618-L623)        | ✅ accent-strong       |
+| Tag            | [.tag](../src/styles/index.css#L742-L751)              | ✅ accent-soft mixer   |
+| Feature Card   | [.feature-card](../src/styles/index.css#L622-L626)     | ✅ linear-gradient     |
+| Post Card      | [.post-card](../src/styles/index.css#L728-L742)        | ✅ surface, border     |
 | Eyebrow        | [.eyebrow](../src/styles/main.js#L579-L591)           | ✅ accent glow         |
-| Code Block     | [.prose pre](../src/styles/main.css#L860-L865)        | ❌ hardcoded (#111014) |
-| Copy Button    | [.copy-button](../src/styles/main.css#L866-L874)      | ❌ hardcoded rgba()    |
-| Blockquote     | [.prose blockquote](../src/styles/main.css#L841-L844) | ✅ accent border       |
+| Code Block     | [.prose pre](../src/styles/index.css#L860-L865)        | ❌ hardcoded (#111014) |
+| Copy Button    | [.copy-button](../src/styles/index.css#L866-L874)      | ❌ hardcoded rgba()    |
+| Blockquote     | [.prose blockquote](../src/styles/index.css#L841-L844) | ✅ accent border       |

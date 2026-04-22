@@ -1,0 +1,71 @@
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  body {
+    font-family: var(--dout--font-sans);
+    font-size: var(--dout--step-0);
+    line-height: var(--dout--line-copy);
+    color: var(--dout--text);
+    background-color: var(--dout--bg);
+    accent-color: var(--dout--accent);
+  }
+
+  a {
+    color: inherit;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+  }
+
+  a:hover {
+    color: var(--dout--accent-strong);
+  }
+
+  p {
+    color: var(--dout--text);
+  }
+
+  small,
+  time,
+  .muted {
+    color: var(--dout--text-muted);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--dout--font-display);
+    font-weight: var(--dout--font-weight-strong);
+    line-height: var(--dout--line-heading);
+    letter-spacing: -0.03em;
+  }
+
+  h1 {
+    font-size: var(--dout--step-4);
+  }
+
+  h2 {
+    font-size: var(--dout--step-3);
+  }
+
+  h3 {
+    font-size: var(--dout--step-2);
+  }
+
+  code,
+  pre {
+    font-family: var(--dout--font-mono);
+  }
+
+  pre {
+    overflow-x: auto;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--dout--border);
+    margin: var(--dout--space-7) 0;
+  }
+}

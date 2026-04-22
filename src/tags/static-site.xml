@@ -6,7 +6,14 @@
     <description>RSS feed for posts tagged with Static-site</description>
     <atom:link href="https://dout.dev/tags/static-site.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Mon, 20 Apr 2026 11:44:21 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 09:40:03 GMT</lastBuildDate>
+    <item>
+      <title>When Markdown Is a CMS, and When It Is Not</title>
+      <link>https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</guid>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The useful distinction</description>
+    </item>
     <item>
       <title>How I Built dout.dev</title>
       <link>https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</link>

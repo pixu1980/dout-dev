@@ -8,10 +8,12 @@
   "files": {
     "ignoreUnknown": false,
     "includes": [
-      "**",
+      "**/*.js",
+      "**/*.cjs",
+      "**/*.mjs",
+      "**/*.css",
       "!**/dist",
       "!**/node_modules",
-      "!**/src",
       "!**/tests/**/*.html",
       "!**/docs/**/*.html",
       "!**/old"
@@ -77,7 +79,7 @@
   },
   "css": {
     "formatter": {
-      "enabled": false,
+      "enabled": true,
       "indentStyle": "space",
       "indentWidth": 2,
       "lineEnding": "lf",

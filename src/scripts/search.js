@@ -116,28 +116,28 @@ function renderResultItem(post) {
   const item = document.createElement('li');
   const tagsMarkup =
     Array.isArray(post.tags) && post.tags.length
-      ? `<footer class="post-card__footer"><ul class="post-card__tags" aria-label="Post topics">${post.tags
+      ? `<footer data-post-card-footer><ul data-post-card-tags aria-label="Post topics">${post.tags
           .map(
             (tag) =>
-              `<li><a class="tag tag--small" href="/tags/${escapeHtml(tag.key || tag.slug || tag.label || tag.name)}.html">${escapeHtml(applyTagDisplayCase(tag.label || tag.name || tag.key))}</a></li>`
+              `<li><a class="tag" data-tag-size="small" href="/tags/${escapeHtml(tag.key || tag.slug || tag.label || tag.name)}.html">${escapeHtml(applyTagDisplayCase(tag.label || tag.name || tag.key))}</a></li>`
           )
           .join('')}</ul></footer>`
       : '';
   const mediaMarkup = post.coverImage
-    ? `<figure class="post-card__media"><a href="/posts/${escapeHtml(post.name)}.html" tabindex="-1"><img src="${escapeHtml(post.coverImage)}" alt="${escapeHtml(post.coverAlt || post.title)}" loading="lazy" decoding="async" /></a></figure>`
+    ? `<figure data-post-card-media><a href="/posts/${escapeHtml(post.name)}.html" tabindex="-1"><img src="${escapeHtml(post.coverImage)}" alt="${escapeHtml(post.coverAlt || post.title)}" loading="lazy" decoding="async" /></a></figure>`
     : '';
-  const cardClass = post.coverImage ? 'post-card post-card--with-media' : 'post-card';
+  const cardVariant = post.coverImage ? 'with-media' : 'default';
 
-  item.className = 'post-feed__item';
+  item.dataset.postFeedItem = '';
   item.innerHTML = `
-    <article class="${cardClass}">
+    <article data-post-card data-post-card-variant="${cardVariant}">
       ${mediaMarkup}
-      <div class="post-card__body">
-        <header class="post-card__header">
-          <p class="post-card__meta"><time datetime="${escapeHtml(post.date)}">${escapeHtml(post.dateString || post.date || '')}</time></p>
-          <h2 class="post-card__title"><a href="/posts/${escapeHtml(post.name)}.html">${escapeHtml(post.title)}</a></h2>
+      <div data-post-card-body>
+        <header data-post-card-header>
+          <p data-post-card-meta><time datetime="${escapeHtml(post.date)}">${escapeHtml(post.dateString || post.date || '')}</time></p>
+          <h2 data-post-card-title><a href="/posts/${escapeHtml(post.name)}.html">${escapeHtml(post.title)}</a></h2>
         </header>
-        <p class="post-card__excerpt">${escapeHtml(post.excerpt || '')}</p>
+        <p data-post-card-excerpt>${escapeHtml(post.excerpt || '')}</p>
       </div>
       ${tagsMarkup}
     </article>
@@ -149,15 +149,15 @@ function renderResultItem(post) {
 function renderTagItem(tag) {
   const item = document.createElement('li');
 
-  item.className = 'post-feed__item';
+  item.dataset.postFeedItem = '';
   item.innerHTML = `
-    <article class="post-card">
-      <div class="post-card__body">
-        <header class="post-card__header">
-          <p class="post-card__meta">Tag</p>
-          <h2 class="post-card__title"><a href="/tags/${escapeHtml(tag.slug)}.html">${escapeHtml(applyTagDisplayCase(tag.label || tag.name))}</a></h2>
+    <article data-post-card data-post-card-variant="default">
+      <div data-post-card-body>
+        <header data-post-card-header>
+          <p data-post-card-meta>Tag</p>
+          <h2 data-post-card-title><a href="/tags/${escapeHtml(tag.slug)}.html">${escapeHtml(applyTagDisplayCase(tag.label || tag.name))}</a></h2>
         </header>
-        <p class="post-card__excerpt">${escapeHtml(String(tag.count || 0))} post(s)</p>
+        <p data-post-card-excerpt>${escapeHtml(String(tag.count || 0))} post(s)</p>
       </div>
     </article>
   `;
@@ -168,18 +168,18 @@ function renderTagItem(tag) {
 function renderSeriesItem(series) {
   const item = document.createElement('li');
 
-  item.className = 'post-feed__item';
+  item.dataset.postFeedItem = '';
   item.innerHTML = `
-    <article class="post-card">
-      <div class="post-card__body">
-        <header class="post-card__header">
-          <p class="post-card__meta">Series</p>
-          <h2 class="post-card__title"><a href="/series/${escapeHtml(series.slug)}.html">${escapeHtml(series.title)}</a></h2>
+    <article data-post-card data-post-card-variant="default">
+      <div data-post-card-body>
+        <header data-post-card-header>
+          <p data-post-card-meta>Series</p>
+          <h2 data-post-card-title><a href="/series/${escapeHtml(series.slug)}.html">${escapeHtml(series.title)}</a></h2>
         </header>
-        <p class="post-card__excerpt">${escapeHtml(`A series of posts about ${series.title}.`)}</p>
+        <p data-post-card-excerpt>${escapeHtml(`A series of posts about ${series.title}.`)}</p>
       </div>
-      <footer class="post-card__footer">
-        <p class="post-card__meta">${escapeHtml(String(series.count || series.posts?.length || 0))} post(s)</p>
+      <footer data-post-card-footer>
+        <p data-post-card-meta>${escapeHtml(String(series.count || series.posts?.length || 0))} post(s)</p>
       </footer>
     </article>
   `;
@@ -190,15 +190,15 @@ function renderSeriesItem(series) {
 function renderMonthItem(month) {
   const item = document.createElement('li');
 
-  item.className = 'post-feed__item';
+  item.dataset.postFeedItem = '';
   item.innerHTML = `
-    <article class="post-card">
-      <div class="post-card__body">
-        <header class="post-card__header">
-          <p class="post-card__meta">Month</p>
-          <h2 class="post-card__title"><a href="/months/${escapeHtml(month.slug || month.key)}.html">${escapeHtml(month.label || month.name)}</a></h2>
+    <article data-post-card data-post-card-variant="default">
+      <div data-post-card-body>
+        <header data-post-card-header>
+          <p data-post-card-meta>Month</p>
+          <h2 data-post-card-title><a href="/months/${escapeHtml(month.slug || month.key)}.html">${escapeHtml(month.label || month.name)}</a></h2>
         </header>
-        <p class="post-card__excerpt">${escapeHtml(String(month.count || 0))} post(s)</p>
+        <p data-post-card-excerpt>${escapeHtml(String(month.count || 0))} post(s)</p>
       </div>
     </article>
   `;
@@ -251,7 +251,7 @@ function renderPagination(container, total, page, onPage) {
 
   const appendEdge = ({ ariaLabel, pageNumber, rel, text }) => {
     const anchor = document.createElement('a');
-    anchor.className = 'pagination__edge';
+    anchor.dataset.paginationEdge = '';
     anchor.href = buildHref(pageNumber);
     anchor.textContent = text;
     anchor.dataset.page = String(pageNumber);
@@ -273,7 +273,7 @@ function renderPagination(container, total, page, onPage) {
   }
 
   const ul = document.createElement('ul');
-  ul.className = 'pagination__list';
+  ul.dataset.paginationList = '';
   ul.setAttribute('role', 'list');
 
   items.forEach((item) => {
@@ -281,7 +281,7 @@ function renderPagination(container, total, page, onPage) {
 
     if (item.gap) {
       const gap = document.createElement('span');
-      gap.className = 'pagination__gap';
+      gap.dataset.paginationGap = '';
       gap.setAttribute('aria-hidden', 'true');
       gap.textContent = '...';
       li.appendChild(gap);
@@ -295,7 +295,7 @@ function renderPagination(container, total, page, onPage) {
     }
 
     const anchor = document.createElement('a');
-    anchor.className = 'pagination__link';
+    anchor.dataset.paginationLink = '';
     anchor.href = buildHref(item.page);
     anchor.textContent = String(item.page);
     anchor.dataset.page = String(item.page);

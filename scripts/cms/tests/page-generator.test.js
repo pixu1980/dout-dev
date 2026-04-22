@@ -1,6 +1,10 @@
-import { test, describe } from 'node:test';
 import assert from 'node:assert';
-import { generatePages } from '../page-generator.js';
+import { describe, test } from 'node:test';
+import {
+  buildPostFeedLoadMoreConfig,
+  generatePages,
+  getHomePageFeedModel,
+} from '../page-generator.js';
 
 describe('page-generator', () => {
   test('generatePages should process empty datasets without errors', () => {
@@ -106,6 +110,33 @@ describe('page-generator', () => {
     // Should not throw errors with empty tags and months
     assert.doesNotThrow(() => {
       generatePages(dataset, config);
+    });
+  });
+
+  test('getHomePageFeedModel keeps featured selection separate from latest date ordering', () => {
+    const posts = [
+      { name: 'older-pinned', published: true, pinned: true, date: '2024-01-01T00:00:00.000Z' },
+      { name: 'latest', published: true, pinned: false, date: '2024-06-01T00:00:00.000Z' },
+      { name: 'middle', published: true, pinned: false, date: '2024-03-01T00:00:00.000Z' },
+      { name: 'draft', published: false, pinned: false, date: '2024-07-01T00:00:00.000Z' },
+    ];
+
+    const result = getHomePageFeedModel(posts);
+
+    assert.strictEqual(result.featuredPost?.name, 'older-pinned');
+    assert.deepStrictEqual(
+      result.latestPosts.map((post) => post.name),
+      ['latest', 'middle', 'older-pinned']
+    );
+    assert.strictEqual(result.loadMore, null);
+  });
+
+  test('buildPostFeedLoadMoreConfig returns config only when a list exceeds the initial batch', () => {
+    assert.strictEqual(buildPostFeedLoadMoreConfig(10, { initialCount: 10 }), null);
+    assert.deepStrictEqual(buildPostFeedLoadMoreConfig(21, { initialCount: 20 }), {
+      initial: 20,
+      step: 10,
+      buttonLabel: 'Load 10 more posts',
     });
   });
 });

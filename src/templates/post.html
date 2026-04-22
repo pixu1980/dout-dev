@@ -54,112 +54,108 @@
 
 <block name="content">
   <article class="post-layout" itemscope itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
-    <div class="post-frame">
-      <div class="post-main">
-        <header class="post-hero" aria-labelledby="post-title">
-          <p class="eyebrow">Article</p>
-          <p class="post-hero__meta">
-            <time datetime="{{ post.date | date:'YYYY-MM-DD' }}" itemprop="datePublished">
-              {{ post.date | date:'long' }}
-            </time>
-            <span class="post-divider">/</span>
-            <a href="/archive.html">Archive</a>
-          </p>
-          <h1 id="post-title" itemprop="headline" tabindex="0">{{ post.title }}</h1>
-          <if condition="description">
-            <p class="post-hero__lede">{{ description }}</p>
-          </if>
-          <if condition="post.tags && post.tags.length">
-            <ul class="tag-list" aria-label="Tags">
-              <for each="t in post.tags">
-                <li><a class="tag" href="{{ t | tagHref }}">{{ t | tagLabel }}</a></li>
-              </for>
-            </ul>
-          </if>
-          <nav class="post-landmarks" aria-label="Article shortcuts">
-            <a class="tag tag--small" href="#article-content">Jump to article</a>
-            <if condition="post.toc && post.toc.length">
-              <a class="tag tag--small" href="#post-outline">Jump to outline</a>
-            </if>
-          </nav>
-          <if condition="post.coverImage">
-            <figure class="post-cover">
-              <img
-                src="{{ post.coverImage | absUrl }}"
-                alt="{{ post.coverAlt }}"
-                fetchpriority="high"
-                decoding="async"
-                width="{{ post.coverWidth && post.coverHeight ? post.coverWidth : '' }}"
-                height="{{ post.coverWidth && post.coverHeight ? post.coverHeight : '' }}"
-              />
-            </figure>
-          </if>
-        </header>
-
-        <section class="post-shell" id="article-content" role="region" aria-labelledby="article-content-title">
-          <h2 id="article-content-title" class="visually-hidden">Article content</h2>
-          <section class="prose" itemprop="articleBody">{{ post.content | raw }}</section>
-        </section>
-      </div>
-
-      <if condition="post.toc && post.toc.length">
-        <aside class="post-sidebar" role="complementary" aria-labelledby="post-outline">
-          <nav class="post-sidebar__panel post-toc" aria-labelledby="post-outline">
-            <p class="eyebrow eyebrow--muted">Outline</p>
-            <h2 id="post-outline">On this page</h2>
-            <ol class="post-toc__list">
-              <for each="item in post.toc">
-                <li class="post-toc__item">
-                  <a class="post-toc__link" data-level="{{ item.level }}" href="#{{ item.id }}">{{ item.text }}</a>
-                </li>
-              </for>
-            </ol>
-          </nav>
-        </aside>
+    <header class="post-hero" aria-labelledby="post-title">
+      <p class="eyebrow">Article</p>
+      <p class="post-meta">
+        <time datetime="{{ post.date | date:'YYYY-MM-DD' }}" itemprop="datePublished">
+          {{ post.date | date:'long' }}
+        </time>
+        <span class="post-divider">/</span>
+        <a href="/archive.html">Archive</a>
+      </p>
+      <h1 id="post-title" itemprop="headline" tabindex="0">{{ post.title }}</h1>
+      <if condition="description">
+        <p class="post-description">{{ description }}</p>
       </if>
-    </div>
-  </article>
+      <if condition="post.tags && post.tags.length">
+        <ul class="tag-list" aria-label="Tags">
+          <for each="t in post.tags">
+            <li><a class="tag" href="{{ t | tagHref }}">{{ t | tagLabel }}</a></li>
+          </for>
+        </ul>
+      </if>
+      <!-- <nav class="post-landmarks" aria-label="Article shortcuts">
+        <a class="tag tag-small" href="#article-content">Jump to article</a>
+        <if condition="post.toc && post.toc.length">
+          <a class="tag tag-small" href="#post-outline">Jump to outline</a>
+        </if>
+      </nav> -->
+      <if condition="post.coverImage">
+        <figure class="post-cover">
+          <img
+            src="{{ post.coverImage | absUrl }}"
+            alt="{{ post.coverAlt }}"
+            fetchpriority="high"
+            decoding="async"
+            width="{{ post.coverWidth && post.coverHeight ? post.coverWidth : '' }}"
+            height="{{ post.coverWidth && post.coverHeight ? post.coverHeight : '' }}"
+          />
+        </figure>
+      </if>
+    </header>
 
-  <if condition="site.giscus && site.giscus.enabled">
-    <section class="comments-shell" aria-labelledby="comments-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Discussion</p>
-          <h2 id="comments-title">Comments live in GitHub Discussions</h2>
-        </div>
-      </div>
-      <p class="comments-note">Each thread is keyed to the source markdown entry for this post.</p>
-      <script
-        src="https://giscus.app/client.js"
-        data-repo="{{ site.giscus.repo }}"
-        data-repo-id="{{ site.giscus.repoId }}"
-        data-category="{{ site.giscus.category }}"
-        data-category-id="{{ site.giscus.categoryId }}"
-        data-mapping="{{ site.giscus.mapping }}"
-        data-term="{{ post.giscusTerm }}"
-        data-strict="{{ site.giscus.strict }}"
-        data-reactions-enabled="{{ site.giscus.reactionsEnabled }}"
-        data-emit-metadata="{{ site.giscus.emitMetadata }}"
-        data-input-position="{{ site.giscus.inputPosition }}"
-        data-theme="{{ site.giscus.theme }}"
-        data-lang="{{ site.giscus.lang }}"
-        data-loading="{{ site.giscus.loading }}"
-        crossorigin="anonymous"
-        async
-      ></script>
+    <section class="post-shell" id="article-content" role="region" aria-labelledby="article-content-title">
+      <h2 id="article-content-title" class="visually-hidden">Article content</h2>
+      <section class="prose" itemprop="articleBody">{{ post.content | raw }}</section>
     </section>
-  </if>
+
+    <if condition="post.toc && post.toc.length">
+      <aside class="post-sidebar" role="complementary" aria-labelledby="post-outline">
+        <nav class="post-toc" aria-labelledby="post-outline">
+          <p class="eyebrow eyebrow--muted">TOC</p>
+          <h2 id="post-outline">On this page</h2>
+          <ol class="post-toc-list">
+            <for each="item in post.toc">
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="{{ item.level }}" href="#{{ item.id }}">{{ item.text }}</a>
+              </li>
+            </for>
+          </ol>
+        </nav>
+      </aside>
+    </if>
+
+    <if condition="site.giscus && site.giscus.enabled">
+      <section class="comments-shell" aria-labelledby="comments-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Discussion</p>
+            <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+          </div>
+        </div>
+        <p class="comments-note">Each thread is keyed to the source markdown entry for this post.</p>
+        <script
+          src="https://giscus.app/client.js"
+          data-repo="{{ site.giscus.repo }}"
+          data-repo-id="{{ site.giscus.repoId }}"
+          data-category="{{ site.giscus.category }}"
+          data-category-id="{{ site.giscus.categoryId }}"
+          data-mapping="{{ site.giscus.mapping }}"
+          data-term="{{ post.giscusTerm }}"
+          data-strict="{{ site.giscus.strict }}"
+          data-reactions-enabled="{{ site.giscus.reactionsEnabled }}"
+          data-emit-metadata="{{ site.giscus.emitMetadata }}"
+          data-input-position="{{ site.giscus.inputPosition }}"
+          data-theme="{{ site.giscus.theme }}"
+          data-lang="{{ site.giscus.lang }}"
+          data-loading="{{ site.giscus.loading }}"
+          crossorigin="anonymous"
+          async
+        ></script>
+      </section>
+    </if>
+  </article>
 
   <nav class="post-nav" aria-label="Post navigation">
     <if condition="post.prev">
-      <a class="post-nav__card" rel="prev" href="{{ post.prev.url }}">
-        <span class="post-nav__label">Previous</span>
+      <a class="post-nav-card" rel="prev" href="{{ post.prev.url }}">
+        <span class="post-nav-label">Previous</span>
         <strong>{{ post.prev.title }}</strong>
       </a>
     </if>
     <if condition="post.next">
-      <a class="post-nav__card" rel="next" href="{{ post.next.url }}">
-        <span class="post-nav__label">Next</span>
+      <a class="post-nav-card" rel="next" href="{{ post.next.url }}">
+        <span class="post-nav-label">Next</span>
         <strong>{{ post.next.title }}</strong>
       </a>
     </if>

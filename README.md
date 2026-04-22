@@ -73,7 +73,7 @@ pnpm -s dev
 ```
 
 Do not open files inside `src/` directly in the browser when validating the UI. The project relies on root-relative
-asset paths such as `/styles/main.css`, and Vite rewrites production assets during build. Use the dev server or the
+asset paths such as `/styles/index.css`, and Vite rewrites production assets during build. Use the dev server or the
 production preview instead.
 
 If Safari shows TLS failures for local assets while you are on `http://127.0.0.1:3000/`, check that the generated HTML
@@ -96,6 +96,14 @@ pnpm -s test
 pnpm -s format:check
 pnpm -s validate:all
 ```
+
+OpenGraph smoke checks are part of the validation flow. For a manual localhost preview, run:
+
+```bash
+pnpm -s og:check http://127.0.0.1:4173/
+```
+
+The internal checker is inspired by Simon Hartcher's localhost OpenGraph workflow and the `og-check` tool from `deevus/neutils`, but implemented here in plain Node.js for local validation, CI, and deploy gates.
 
 If you only need the full gate in one shot:
 
@@ -453,47 +461,86 @@ pnpm build
 # Upload dist/ to your hosting provider
 ```
 
-## Favicons e build (importante)
+## Favicons and Build (Important)
 
-Il processo di build si aspetta che alcuni asset di favicon/manife­st siano presenti alla radice del progetto. I nomi attesi (come riferiti in `favicon.data.json`) sono, ad esempio:
+The build process expects specific favicon/manifest assets at the project root. Expected names (as defined in `favicon.data.json`) include:
 
 - `favicon-96x96.png`
 - `favicon.svg`
 - `favicon.ico`
-- `apple-touch-icon.png` (180x180 consigliato)
+- `apple-touch-icon.png` (recommended size: 180x180)
 - `site.webmanifest` (web manifest)
 
-Dove posizionarli
+Where to place them:
 
-- Copia i file nella root del repository (stesso livello di `package.json`). Lo script `scripts/build-assets.js` cercherà i percorsi esattamente come indicati in `favicon.data.json`.
+- Copy these files to the repository root (same level as `package.json`). `scripts/build-assets.js` resolves paths exactly as listed in `favicon.data.json`.
 
-Cosa fa lo script di build
+What the build script does:
 
-- Se i file sono mancanti, lo script ora **genera dei placeholder** (file PNG/SVG/manifest minimi) dentro `dist/` in modo da permettere preview e debug.
-- Nonostante i placeholder vengano creati, la build è comunque progettata per **fallire** quando mancano i file reali: questo provoca un errore chiaro in CI così da prevenire pubblicazioni incomplete.
+- If files are missing, it generates **placeholder files** (minimal PNG/SVG/manifest) in `dist/` to support local preview and debugging.
+- Even with placeholders generated, the build is still designed to **fail** when real files are missing, so CI reports a clear error and prevents incomplete releases.
 
-Test locale
+Local check:
 
-- Per verificare localmente:
-  - Installa dipendenze: `pnpm install`
-  - Esegui: `pnpm build`
-  - Se mancano i favicon reali, vedrai un errore come `Missing favicon assets` e i placeholder saranno comunque creati in `dist/`.
+- Install dependencies: `pnpm install`
+- Run build: `pnpm build`
+- If real favicon assets are missing, you will see an error like `Missing favicon assets`, and placeholders will still be generated in `dist/`.
 
-Come risolvere il fallimento
+How to fix build failure:
 
-- Aggiungi i file reali nella root con i nomi attesi.
-- In alternativa (temporaneo) puoi creare dei file vuoti con i nomi corretti prima di eseguire la build:
+- Add the real files to the root with expected names.
+- Temporary workaround before build: create empty files with expected names.
 
 ```bash
 touch favicon-96x96.png favicon.svg favicon.ico apple-touch-icon.png site.webmanifest
 ```
 
-- Se preferisci cambiare il comportamento (es. trasformare il fallimento in warning), modifica `scripts/build-assets.js` nella funzione `processFavicons` rimuovendo il `throw` dopo la creazione dei placeholder.
+- If you want different behavior (for example downgrade failure to warning), update `scripts/build-assets.js` in `processFavicons` and remove the `throw` after placeholder generation.
 
-Suggerimenti
+Recommendations:
 
-- For production usa immagini reali (PNG/SVG/ICO) alle risoluzioni consigliate: 48–512px per PNG, SVG per scalabilità e `apple-touch-icon` a 180x180.
-- Aggiorna `favicon.data.json` se cambi i nomi o i percorsi.
+- In production, use real PNG/SVG/ICO files at recommended sizes (PNG 48-512px, scalable SVG, and `apple-touch-icon` at 180x180).
+- Update `favicon.data.json` when filenames or paths change.
+
+## Community, Governance, and Process Docs
+
+Use this map as the entry point for repository policies, contribution flow, moderation, and publishing operations.
+
+Core community and contribution:
+
+- `README_COMMUNITY.md`: Community-first summary and contributor path overview.
+- `CONTRIBUTING.md`: How to contribute articles and source code, including review and voting expectations.
+- `CODE_OF_CONDUCT.md`: Expected behavior, unacceptable behavior, reporting, enforcement, and appeals.
+- `SUPPORT.md`: Where to ask questions, report bugs, and route security/moderation concerns.
+
+Editorial policy and publishing:
+
+- `CONTENT_GUIDELINES.md`: Relevance criteria, article quality standards, attribution rules, and AI disclosure.
+- `ARTICLE_TEMPLATE.md`: Ready-to-use article structure and frontmatter template.
+- `PUBLISHING_STRATEGY.md`: End-to-end publishing and promotion workflow, including Discussion and LinkedIn patterns.
+
+Governance and roles:
+
+- `GOVERNANCE.md`: Decision model, voting rules, veto boundaries, conflict-of-interest handling, and governance updates.
+- `CONTRIBUTION_TIERS.md`: Transparent progression from reader to contributor and maintainer roles.
+- `docs/maintainer-vote-examples.md`: Practical voting scenarios for article and maintainer decisions.
+
+Safety, moderation, and legal:
+
+- `SECURITY.md`: Private vulnerability reporting scope, process, and disclosure guidance.
+- `MODERATION_POLICY.md`: Moderation levels, escalation path, and appeal model.
+- `LICENSE_POLICY.md`: Proposed dual-license strategy for source code and editorial content.
+- `OPEN_SOURCE_CHECKLIST.md`: Operational checklist for community health, GitHub settings, legal baseline, and moderation readiness.
+
+GitHub collaboration templates and ownership:
+
+- `.github/ISSUE_TEMPLATE/article-proposal.yml`: Structured article proposal intake.
+- `.github/ISSUE_TEMPLATE/bug-report.yml`: Bug reports for site/repository issues.
+- `.github/ISSUE_TEMPLATE/feature-request.yml`: Feature and improvement proposals.
+- `.github/ISSUE_TEMPLATE/config.yml`: Issue template defaults and contact links.
+- `.github/PULL_REQUEST_TEMPLATE.md`: PR structure, article/code checklists, impact, and maintainer decision block.
+- `.github/CODEOWNERS_TEMPLATE.md`: Starter ownership mapping to be renamed as `.github/CODEOWNERS`.
+- `.github/dependabot.yml`: Weekly dependency update automation and labeling.
 
 ## Contributing
 

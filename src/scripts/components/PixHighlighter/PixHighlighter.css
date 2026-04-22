@@ -1,116 +1,116 @@
 @layer components {
   ::highlight(pix-kw),
   pre[is='pix-highlighter'] .pix-token--kw {
-    color: var(--pix-kw);
+    color: var(--dout--pix-kw);
   }
 
   ::highlight(pix-str),
   pre[is='pix-highlighter'] .pix-token--str {
-    color: var(--pix-str);
+    color: var(--dout--pix-str);
   }
 
   ::highlight(pix-num),
   pre[is='pix-highlighter'] .pix-token--num {
-    color: var(--pix-num);
+    color: var(--dout--pix-num);
   }
 
   ::highlight(pix-com),
   pre[is='pix-highlighter'] .pix-token--com {
-    color: var(--pix-com);
+    color: var(--dout--pix-com);
   }
 
   ::highlight(pix-id),
   pre[is='pix-highlighter'] .pix-token--id {
-    color: var(--pix-id);
+    color: var(--dout--pix-id);
   }
 
   ::highlight(pix-op),
   pre[is='pix-highlighter'] .pix-token--op {
-    color: var(--pix-op);
+    color: var(--dout--pix-op);
   }
 
   ::highlight(pix-tag),
   pre[is='pix-highlighter'] .pix-token--tag {
-    color: var(--pix-tag);
+    color: var(--dout--pix-tag);
   }
 
   ::highlight(pix-attr),
   pre[is='pix-highlighter'] .pix-token--attr {
-    color: var(--pix-attr);
+    color: var(--dout--pix-attr);
   }
 
   ::highlight(pix-key),
   pre[is='pix-highlighter'] .pix-token--key {
-    color: var(--pix-key);
+    color: var(--dout--pix-key);
   }
 
   ::highlight(pix-var),
   pre[is='pix-highlighter'] .pix-token--var {
-    color: var(--pix-var);
+    color: var(--dout--pix-var);
   }
 
   ::highlight(pix-mac),
   pre[is='pix-highlighter'] .pix-token--mac {
-    color: var(--pix-mac);
+    color: var(--dout--pix-mac);
   }
 
   ::highlight(pix-pp),
   pre[is='pix-highlighter'] .pix-token--pp {
-    color: var(--pix-pp);
+    color: var(--dout--pix-pp);
   }
 
   ::highlight(pix-prop),
   pre[is='pix-highlighter'] .pix-token--prop {
-    color: var(--pix-prop);
+    color: var(--dout--pix-prop);
   }
 
   ::highlight(pix-type),
   pre[is='pix-highlighter'] .pix-token--type {
-    color: var(--pix-type);
+    color: var(--dout--pix-type);
   }
 
   ::highlight(pix-mdh),
   pre[is='pix-highlighter'] .pix-token--mdh {
-    color: var(--pix-mdh);
+    color: var(--dout--pix-mdh);
   }
 
   ::highlight(pix-mde),
   pre[is='pix-highlighter'] .pix-token--mde {
-    color: var(--pix-mde);
+    color: var(--dout--pix-mde);
   }
 
   ::highlight(pix-mds),
   pre[is='pix-highlighter'] .pix-token--mds {
-    color: var(--pix-mds);
+    color: var(--dout--pix-mds);
   }
 
   ::highlight(pix-mdc),
   pre[is='pix-highlighter'] .pix-token--mdc {
-    color: var(--pix-mdc);
+    color: var(--dout--pix-mdc);
   }
 
   ::highlight(pix-mdl),
   pre[is='pix-highlighter'] .pix-token--mdl {
-    color: var(--pix-mdl);
+    color: var(--dout--pix-mdl);
   }
 
   ::highlight(pix-mdbq),
   pre[is='pix-highlighter'] .pix-token--mdbq {
-    color: var(--pix-mdbq);
+    color: var(--dout--pix-mdbq);
   }
 
   ::highlight(pix-mdli),
   pre[is='pix-highlighter'] .pix-token--mdli {
-    color: var(--pix-mdli);
+    color: var(--dout--pix-mdli);
   }
 
   ::highlight(pix-mdhr),
   pre[is='pix-highlighter'] .pix-token--mdhr {
-    color: var(--pix-mdhr);
+    color: var(--dout--pix-mdhr);
   }
 
   ::highlight(pix-mdimg),
   pre[is='pix-highlighter'] .pix-token--mdimg {
-    color: var(--pix-mdimg);
+    color: var(--dout--pix-mdimg);
   }
 }

@@ -1,0 +1,71 @@
+name: Article proposal
+description: Propose an article idea before writing it
+title: "[Article]: "
+labels:
+  - article
+  - proposal
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing an article for dout.dev.
+  - type: input
+    id: title
+    attributes:
+      label: Working title
+      description: This can change while writing.
+      placeholder: "Why container queries change how we design components"
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Explain topic, thesis, and value for readers.
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      placeholder: "Name, handle, or profile"
+    validations:
+      required: true
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Primary area
+      options:
+        - HTML
+        - CSS
+        - JavaScript
+        - Accessibility
+        - Performance
+        - UI/UX
+        - Design Engineering
+        - Open Source
+        - AI
+        - Developer Experience
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: outline
+    attributes:
+      label: Outline
+      description: Add a draft outline.
+      placeholder: |
+        - Context
+        - Problem
+        - Example
+        - Trade-offs
+        - Conclusion
+    validations:
+      required: false
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Links, sources, demos, or inspirations.
+    validations:
+      required: false

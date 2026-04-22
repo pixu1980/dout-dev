@@ -84,9 +84,9 @@ beforeEach(() => {
   document.head.innerHTML = '';
   document.body.innerHTML = '';
   document.adoptedStyleSheets = [];
-  document.documentElement.style.removeProperty('--accent-h');
-  document.documentElement.style.removeProperty('--accent-s');
-  document.documentElement.style.removeProperty('--accent-l');
+  document.documentElement.style.removeProperty('--dout--accent-h');
+  document.documentElement.style.removeProperty('--dout--accent-s');
+  document.documentElement.style.removeProperty('--dout--accent-l');
   window.localStorage.clear();
 });
 
@@ -111,9 +111,9 @@ describe('AccentColorSelector', () => {
     assert.equal(element.querySelectorAll('.accent-button').length, 5);
     assert.equal(activeButton.getAttribute('aria-checked'), 'true');
     assert.equal(activeButton.tabIndex, 0);
-    assert.equal(document.documentElement.style.getPropertyValue('--accent-h'), '145');
-    assert.equal(document.documentElement.style.getPropertyValue('--accent-s'), '80%');
-    assert.equal(document.documentElement.style.getPropertyValue('--accent-l'), '60%');
+    assert.equal(document.documentElement.style.getPropertyValue('--dout--accent-h'), '145');
+    assert.equal(document.documentElement.style.getPropertyValue('--dout--accent-s'), '80%');
+    assert.equal(document.documentElement.style.getPropertyValue('--dout--accent-l'), '60%');
   });
 
   test('clicking a button updates the root accent variables and emits an event', () => {
@@ -128,9 +128,9 @@ describe('AccentColorSelector', () => {
     roseButton.click();
 
     assert.equal(window.localStorage.getItem(STORAGE_KEY), 'rose');
-    assert.equal(document.documentElement.style.getPropertyValue('--accent-h'), '340');
-    assert.equal(document.documentElement.style.getPropertyValue('--accent-s'), '90%');
-    assert.equal(document.documentElement.style.getPropertyValue('--accent-l'), '62%');
+    assert.equal(document.documentElement.style.getPropertyValue('--dout--accent-h'), '340');
+    assert.equal(document.documentElement.style.getPropertyValue('--dout--accent-s'), '90%');
+    assert.equal(document.documentElement.style.getPropertyValue('--dout--accent-l'), '62%');
     assert.deepEqual(emittedDetail, { accentId: 'rose', label: 'Rose' });
     assert.equal(roseButton.getAttribute('aria-checked'), 'true');
     assert.equal(

@@ -1,5 +1,5 @@
-import { test, describe } from 'node:test';
 import assert from 'node:assert';
+import { describe, test } from 'node:test';
 import { scanContent } from '../scan.js';
 
 describe('scan', () => {
@@ -102,6 +102,38 @@ describe('scan', () => {
     if (result.posts.length > 0) {
       const firstPost = result.posts[0];
       assert.ok(firstPost.path.includes('./custom/posts/'));
+    }
+  });
+
+  test('should preserve cover metadata in derived tag, month, and series entries', () => {
+    const result = scanContent();
+    const coveredPost = result.posts.find(
+      (post) => post.published && post.coverImage && post.tags.length > 0
+    );
+
+    assert.ok(coveredPost, 'expected at least one published post with a cover image');
+
+    const tagEntry = result.tags.find((tag) => tag.key === coveredPost.tags[0].key);
+    const tagPost = tagEntry?.posts.find((post) => post.name === coveredPost.name);
+    assert.strictEqual(tagPost?.coverImage, coveredPost.coverImage);
+    assert.strictEqual(tagPost?.coverAlt, coveredPost.coverAlt);
+    assert.strictEqual(tagPost?.coverWidth, coveredPost.coverWidth);
+    assert.strictEqual(tagPost?.coverHeight, coveredPost.coverHeight);
+
+    const monthKey = String(coveredPost.date).slice(0, 7);
+    const monthEntry = result.months.find((month) => month.key === monthKey);
+    const monthPost = monthEntry?.posts.find((post) => post.name === coveredPost.name);
+    assert.strictEqual(monthPost?.coverImage, coveredPost.coverImage);
+    assert.strictEqual(monthPost?.coverAlt, coveredPost.coverAlt);
+
+    const seriesEntry = result.series.find((entry) =>
+      entry.posts.some((post) => post.name === coveredPost.name)
+    );
+
+    if (seriesEntry) {
+      const seriesPost = seriesEntry.posts.find((post) => post.name === coveredPost.name);
+      assert.strictEqual(seriesPost?.coverImage, coveredPost.coverImage);
+      assert.strictEqual(seriesPost?.coverAlt, coveredPost.coverAlt);
     }
   });
 });

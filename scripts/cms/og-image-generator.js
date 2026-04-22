@@ -54,6 +54,15 @@ const STATIC_PAGE_ENTRIES = [
       'The site is written from markdown, rendered through a custom CMS, and shaped around performance, accessibility, and a strong visual point of view.',
   },
   {
+    key: 'page:accessibility',
+    kind: 'page',
+    slug: 'accessibility',
+    eyebrow: 'Accessibility',
+    title: 'Accessibility notes and practical checkpoints for dout.dev.',
+    description:
+      'A lightweight accessibility page that keeps the route stable while pointing back to the main site structure and content.',
+  },
+  {
     key: 'page:search',
     kind: 'page',
     slug: 'search',
@@ -78,6 +87,15 @@ const STATIC_PAGE_ENTRIES = [
     title: 'Experiments, prototypes, and interface sketches.',
     description:
       'A scratch space for visual systems, interaction patterns, and editorial prototypes.',
+  },
+  {
+    key: 'page:demo',
+    kind: 'page',
+    slug: 'demo',
+    eyebrow: 'Legacy route',
+    title: 'A compatibility page for older dout.dev demo links.',
+    description:
+      'The legacy demo route stays online for old links, bookmarks, and development checks without pretending to be the primary homepage.',
   },
   {
     key: 'page:offline',

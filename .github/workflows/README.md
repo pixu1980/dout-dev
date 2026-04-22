@@ -11,6 +11,7 @@ CI is enforced through `.github/workflows/ci.yml`.
 Behavior:
 
 - Every push and pull request against `main` runs tests, spellcheck, lint, build, link/security validation, and visual regression.
+- The build also validates OpenGraph and Twitter metadata by serving the generated site on localhost and checking the rendered tags before upload or deploy.
 - Pull requests upload a `pr-preview-<number>` artifact containing the full `dist/` directory.
 - Visual regression uses Playwright against the built preview server, with reduced-motion preferences applied for deterministic snapshots.
 

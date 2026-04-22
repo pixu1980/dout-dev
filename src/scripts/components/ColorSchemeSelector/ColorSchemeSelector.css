@@ -1,15 +1,21 @@
 color-scheme-switcher {
   display: inline-flex;
+
+  &:focus-within {
+    outline: var(--dout--outline-width) solid var(--dout--accent);
+    outline-offset: 3px;
+  }
 }
 
 color-scheme-switcher .color-scheme-selector {
   display: inline-flex;
   align-items: center;
   gap: 0;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--dout--border);
+  border-radius: var(--dout--radius-md);
   overflow: hidden;
-  background: var(--surface-strong);
+  background: var(--dout--surface-strong);
+  corner-shape: var(--dout--corner-shape);
 }
 
 color-scheme-switcher label {
@@ -18,8 +24,8 @@ color-scheme-switcher label {
   justify-content: center;
   min-height: 2.5rem;
   padding: 0 0.75rem;
-  background: var(--surface-strong);
-  color: var(--text);
+  background: var(--dout--surface-strong);
+  color: var(--dout--text);
   cursor: pointer;
   position: relative;
   transition:
@@ -30,21 +36,21 @@ color-scheme-switcher label {
 }
 
 color-scheme-switcher label:hover {
-  background: var(--surface);
+  background: var(--dout--surface);
 }
 
 color-scheme-switcher label + label {
-  border-left: 1px solid var(--border);
+  border-left: 1px solid var(--dout--border);
 }
 
 color-scheme-switcher label[data-active] {
-  background: var(--accent);
+  background: var(--dout--accent);
   color: #ffffff;
   font-weight: 600;
 }
 
 color-scheme-switcher label[data-active]:hover {
-  background: var(--accent-strong);
+  background: var(--dout--accent-strong);
 }
 
 color-scheme-switcher svg {

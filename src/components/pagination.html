@@ -1,40 +1,40 @@
 <if condition="pagination">
-  <nav class="pagination" aria-label="{{ pagination.navLabel || 'Pagination' }}">
+  <nav data-pagination aria-label="{{ pagination.navLabel || 'Pagination' }}">
     <if condition="pagination.firstHref && pagination.page > 1">
-      <a class="pagination__edge" href="{{ pagination.firstHref }}" aria-label="{{ pagination.firstLabel }}">First</a>
+      <a data-pagination-edge href="{{ pagination.firstHref }}" aria-label="{{ pagination.firstLabel }}">First</a>
     </if>
     <if condition="pagination.prevHref">
-      <a class="pagination__edge" rel="prev" href="{{ pagination.prevHref }}" aria-label="{{ pagination.prevLabel }}">
+      <a data-pagination-edge rel="prev" href="{{ pagination.prevHref }}" aria-label="{{ pagination.prevLabel }}">
         Prev
       </a>
     </if>
-    <ul class="pagination__list" role="list">
+    <ul data-pagination-list role="list">
       <for each="pg in pagination.pages">
         <li>
           <if condition="pg.gap">
-            <span class="pagination__gap" aria-hidden="true">...</span>
+            <span data-pagination-gap aria-hidden="true">...</span>
             <span class="visually-hidden">Skipped pages</span>
           </if>
           <if condition="!pg.gap">
             <if condition="pg.current">
-              <a class="pagination__link" href="{{ pg.href }}" aria-current="page" aria-label="{{ pg.ariaLabel }}">
+              <a data-pagination-link href="{{ pg.href }}" aria-current="page" aria-label="{{ pg.ariaLabel }}">
                 {{ pg.page }}
               </a>
             </if>
             <if condition="!pg.current">
-              <a class="pagination__link" href="{{ pg.href }}" aria-label="{{ pg.ariaLabel }}">{{ pg.page }}</a>
+              <a data-pagination-link href="{{ pg.href }}" aria-label="{{ pg.ariaLabel }}">{{ pg.page }}</a>
             </if>
           </if>
         </li>
       </for>
     </ul>
     <if condition="pagination.nextHref">
-      <a class="pagination__edge" rel="next" href="{{ pagination.nextHref }}" aria-label="{{ pagination.nextLabel }}">
+      <a data-pagination-edge rel="next" href="{{ pagination.nextHref }}" aria-label="{{ pagination.nextLabel }}">
         Next
       </a>
     </if>
     <if condition="pagination.lastHref && pagination.page < pagination.pageCount">
-      <a class="pagination__edge" href="{{ pagination.lastHref }}" aria-label="{{ pagination.lastLabel }}">Last</a>
+      <a data-pagination-edge href="{{ pagination.lastHref }}" aria-label="{{ pagination.lastLabel }}">Last</a>
     </if>
   </nav>
 </if>

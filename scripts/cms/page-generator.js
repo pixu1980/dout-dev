@@ -1,9 +1,9 @@
 // CMS Page Generator - generates HTML pages using proper templates
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { ensureDir } from './utils.js';
-import { getOgImagePath } from './og-image-generator.js';
 import { TemplateRenderer } from '../template-engine/index.js';
+import { getOgImagePath } from './og-image-generator.js';
+import { ensureDir } from './utils.js';
 
 export function generatePages(dataset, config) {
   const renderer = new TemplateRenderer(process.cwd());
@@ -52,6 +52,59 @@ function getOgImageUrl(config, kind, slug) {
 function toTimestamp(value) {
   const timestamp = new Date(value).getTime();
   return Number.isNaN(timestamp) ? 0 : timestamp;
+}
+
+const DEFAULT_POST_FEED_STEP = 10;
+const HOME_INITIAL_POSTS = 20;
+
+function sortPostsByDateDesc(posts) {
+  return (posts || [])
+    .slice()
+    .sort((left, right) => toTimestamp(right.date) - toTimestamp(left.date));
+}
+
+function sortPostsByPinnedThenDateDesc(posts) {
+  return (posts || [])
+    .slice()
+    .sort(
+      (left, right) =>
+        Number(Boolean(right.pinned)) - Number(Boolean(left.pinned)) ||
+        toTimestamp(right.date) - toTimestamp(left.date)
+    );
+}
+
+export function buildPostFeedLoadMoreConfig(
+  totalItems,
+  { initialCount, step = DEFAULT_POST_FEED_STEP } = {}
+) {
+  if (!Number.isInteger(initialCount) || initialCount <= 0) {
+    return null;
+  }
+
+  if (!Number.isInteger(totalItems) || totalItems <= initialCount) {
+    return null;
+  }
+
+  return {
+    initial: initialCount,
+    step,
+    buttonLabel: `Load ${step} more posts`,
+  };
+}
+
+export function getHomePageFeedModel(posts) {
+  const published = (posts || []).filter((post) => post?.published);
+  const latestPosts = sortPostsByDateDesc(published);
+  const featuredPost = sortPostsByPinnedThenDateDesc(published)[0] || null;
+
+  return {
+    featuredPost,
+    latestPosts,
+    loadMore: buildPostFeedLoadMoreConfig(latestPosts.length, {
+      initialCount: HOME_INITIAL_POSTS,
+      step: DEFAULT_POST_FEED_STEP,
+    }),
+  };
 }
 
 function stripHtml(value) {
@@ -199,7 +252,7 @@ function generatePosts(posts, config, renderer) {
       font: 700 0.92em/1.2 "SFMono-Regular", "SF Mono", "Consolas", "Liberation Mono", monospace;
     }
   </style>
-  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body>
   <p class="file-preview-warning" role="alert">
@@ -241,10 +294,18 @@ function generateTags(tags, config, renderer) {
       baseFolderHref,
       outDir: config.tagsOutputDir,
       pageKey: tag.key,
-      render: (ctx) =>
-        renderer.render('src/templates/tag.html', {
+      render: (ctx) => {
+        const loadMore =
+          ctx.page === 1
+            ? buildPostFeedLoadMoreConfig(ctx.items.length, {
+                initialCount: config.PAGE_SIZE || DEFAULT_POST_FEED_STEP,
+                step: DEFAULT_POST_FEED_STEP,
+              })
+            : null;
+
+        return renderer.render('src/templates/tag.html', {
           tag: tagForTpl,
-          posts: ctx.itemsPage,
+          posts: loadMore ? ctx.items : ctx.itemsPage,
           title:
             ctx.page === 1
               ? `${tagForTpl.name} Posts`
@@ -259,10 +320,12 @@ function generateTags(tags, config, renderer) {
           description: `Posts tagged with ${tagForTpl.name}${ctx.page > 1 ? ` — Page ${ctx.page}` : ''}`,
           sortBy: 'date-desc',
           viewMode: 'list',
-          pagination: ctx.pagination,
+          pagination: loadMore ? null : ctx.pagination,
+          loadMore,
           relatedTags: [],
           site,
-        }),
+        });
+      },
     });
 
     // Feed
@@ -315,11 +378,19 @@ function generateMonths(months, config, renderer) {
       baseFolderHref,
       outDir: config.monthsOutputDir,
       pageKey: month.key,
-      render: (ctx) =>
-        renderer.render('src/templates/month.html', {
+      render: (ctx) => {
+        const loadMore =
+          ctx.page === 1
+            ? buildPostFeedLoadMoreConfig(ctx.items.length, {
+                initialCount: config.PAGE_SIZE || DEFAULT_POST_FEED_STEP,
+                step: DEFAULT_POST_FEED_STEP,
+              })
+            : null;
+
+        return renderer.render('src/templates/month.html', {
           month: monthForTpl,
           monthTags,
-          posts: ctx.itemsPage,
+          posts: loadMore ? ctx.items : ctx.itemsPage,
           title: ctx.page === 1 ? `${monthForTpl.name}` : `${monthForTpl.name} — Page ${ctx.page}`,
           current: 'posts',
           canonicalUrl:
@@ -331,9 +402,11 @@ function generateMonths(months, config, renderer) {
           description: `Posts from ${monthForTpl.name}${ctx.page > 1 ? ` — Page ${ctx.page}` : ''}`,
           showStats: true,
           variant: 'month',
-          pagination: ctx.pagination,
+          pagination: loadMore ? null : ctx.pagination,
+          loadMore,
           site,
-        }),
+        });
+      },
     });
 
     // Feed
@@ -368,10 +441,18 @@ function generateSeries(series, config, renderer) {
       baseFolderHref,
       outDir: config.seriesOutputDir,
       pageKey: `${serie.slug}`,
-      render: (ctx) =>
-        renderer.render('src/templates/series.html', {
+      render: (ctx) => {
+        const loadMore =
+          ctx.page === 1
+            ? buildPostFeedLoadMoreConfig(ctx.items.length, {
+                initialCount: config.PAGE_SIZE || DEFAULT_POST_FEED_STEP,
+                step: DEFAULT_POST_FEED_STEP,
+              })
+            : null;
+
+        return renderer.render('src/templates/series.html', {
           series: serie,
-          posts: ctx.itemsPage,
+          posts: loadMore ? ctx.items : ctx.itemsPage,
           title: ctx.page === 1 ? `${serie.title}` : `${serie.title} — Page ${ctx.page}`,
           current: 'posts',
           canonicalUrl:
@@ -382,9 +463,11 @@ function generateSeries(series, config, renderer) {
           description: serie.description,
           relatedSeries: [],
           variant: 'series',
-          pagination: ctx.pagination,
+          pagination: loadMore ? null : ctx.pagination,
+          loadMore,
           site,
-        }),
+        });
+      },
     });
   }
 }
@@ -523,18 +606,9 @@ function generateStaticPages(dataset, config, renderer) {
   const { url } = getSiteMeta(config);
   const site = getSiteContext(config);
 
-  // Home: latest posts with pinned on top
+  // Home: latest posts by publication date, with a separate featured selection
   try {
-    const published = (dataset.posts || []).filter((p) => p?.published).slice();
-    // Pinned first, then by date desc
-    published.sort((a, b) => {
-      const pinA = a.pinned ? 1 : 0;
-      const pinB = b.pinned ? 1 : 0;
-      if (pinA !== pinB) return pinB - pinA;
-      return new Date(b.date) - new Date(a.date);
-    });
-    const featuredPost = published[0] || null;
-    const latest = published.slice(1, Math.max(10, config.PAGE_SIZE || 10) + 1);
+    const { featuredPost, latestPosts, loadMore } = getHomePageFeedModel(dataset.posts || []);
     const topTags = (dataset.tags || [])
       .slice()
       .sort((a, b) => (b.count || 0) - (a.count || 0))
@@ -547,11 +621,12 @@ function generateStaticPages(dataset, config, renderer) {
       ogImageUrl: getOgImageUrl(config, 'page', 'home'),
       feedUrl: joinUrl(url, getGlobalRssFeedPath(config)),
       jsonFeedUrl: joinUrl(url, getGlobalJsonFeedPath(config)),
-      posts: latest,
+      posts: latestPosts,
       featuredPost,
+      loadMore,
       topTags,
       stats: {
-        posts: published.length,
+        posts: latestPosts.length,
         tags: dataset.tags?.length || 0,
         series: dataset.series?.length || 0,
       },
@@ -734,7 +809,14 @@ function generatePaginatedList({
       const pagination =
         pageCount > 1 ? buildPagination(page, pageCount, baseHtmlHref, baseFolderHref) : null;
       const canonicalUrl = page === 1 ? baseHtmlHref : `${baseFolderHref}${page}/`;
-      const html = render({ page, pageCount, itemsPage, pagination, canonicalUrl });
+      const html = render({
+        page,
+        pageCount,
+        items: sorted,
+        itemsPage,
+        pagination,
+        canonicalUrl,
+      });
       ensureDir(outDir);
       if (page === 1) {
         writeFileSync(join(outDir, `${pageKey}.html`), html, 'utf8');
