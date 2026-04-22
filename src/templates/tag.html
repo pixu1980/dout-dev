@@ -58,9 +58,16 @@
       </div>
     </div>
 
-    <ul class="post-feed post-feed--feature-list" data-post-feed>
+    <ul
+      data-post-feed
+      data-post-feed-variant="feature-list"
+      data-load-more-feed="{{ loadMore ? 'true' : '' }}"
+      data-load-more-initial="{{ loadMore ? loadMore.initial : '' }}"
+      data-load-more-step="{{ loadMore ? loadMore.step : '' }}"
+      data-load-more-label="{{ loadMore ? loadMore.buttonLabel : '' }}"
+    >
       <for each="p in posts">
-        <li class="post-feed__item">
+        <li data-post-feed-item>
           <include
             src="../components/post-card.html"
             data='{"post": {{ p | json | raw }}, "headingLevel": "2", "showCover": true, "showExcerpt": true, "showTags": true}'

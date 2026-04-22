@@ -2,7 +2,7 @@ import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { TemplateRenderer } from '../renderer.js';
+import { TemplateRenderer } from '../_renderer.js';
 
 describe('TemplateEngine - Renderer', () => {
   test('DOM renderer - nested loops and include', () => {

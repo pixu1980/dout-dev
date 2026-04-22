@@ -6,7 +6,21 @@
     <description>Vanilla-first static blog with WCAG 2.2 AA accessibility</description>
     <atom:link href="https://dout.dev/feed.rss" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Mon, 20 Apr 2026 11:44:22 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 09:40:03 GMT</lastBuildDate>
+    <item>
+      <title>How to Write Agent Skills That Actually Trigger</title>
+      <link>https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html</guid>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The mistake most people make</description>
+    </item>
+    <item>
+      <title>When Markdown Is a CMS, and When It Is Not</title>
+      <link>https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</guid>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The useful distinction</description>
+    </item>
     <item>
       <title>How I Built dout.dev</title>
       <link>https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</link>
@@ -15,10 +29,10 @@
       <description>The Goal: an editorial blog without runtime ballast</description>
     </item>
     <item>
-      <title>Welcome to dout.dev 2.0</title>
-      <link>https://dout.dev/posts/2025-08-15-welcome-to-dout-dev-2.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2025-08-15-welcome-to-dout-dev-2.html</guid>
-      <pubDate>Fri, 15 Aug 2025 00:00:00 GMT</pubDate>
+      <title>Welcome to dout.dev</title>
+      <link>https://dout.dev/posts/2026-03-31-welcome-to-dout-dev.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-03-31-welcome-to-dout-dev.html</guid>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 GMT</pubDate>
       <description>Welcome to the New dout.dev</description>
     </item>
     <item>
@@ -47,7 +61,7 @@
       <link>https://dout.dev/posts/2023-01-01-say-hello-2023.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2023-01-01-say-hello-2023.html</guid>
       <pubDate>Sun, 01 Jan 2023 14:41:22 GMT</pubDate>
-      <description>addEventListener(&apos;DOMContentLoaded&apos;, (e) =&gt; { console.log(e); }); anotherFunctionCallGoesHere({}, () =&gt; { selectOther(); });</description>
+      <description>Say hello to 2023 🎉</description>
     </item>
     <item>
       <title>Concerning…</title>
@@ -131,20 +145,6 @@
       <guid isPermaLink="true">https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</guid>
       <pubDate>Mon, 08 Mar 2021 00:00:00 GMT</pubDate>
       <description>Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it&apos;s been marked up with tags or</description>
-    </item>
-    <item>
-      <title>Testing CodePen</title>
-      <link>https://dout.dev/posts/2021-03-07-hating-css-utility-classes.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2021-03-07-hating-css-utility-classes.html</guid>
-      <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
-      <description>https://codepen.io/emdeoh/pen/NWdmgVq</description>
-    </item>
-    <item>
-      <title>Testing CodePen</title>
-      <link>https://dout.dev/posts/2021-03-05-gradient-borders.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2021-03-05-gradient-borders.html</guid>
-      <pubDate>Fri, 05 Mar 2021 00:00:00 GMT</pubDate>
-      <description>GRADIENT BORDERS</description>
     </item>
   </channel>
 </rss>

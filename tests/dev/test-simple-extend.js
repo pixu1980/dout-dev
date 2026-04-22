@@ -1,4 +1,4 @@
-import { TemplateRenderer } from '../scripts/template-engine/renderer.js';
+import { TemplateRenderer } from '../scripts/template-engine/_renderer.js';
 
 const renderer = new TemplateRenderer(process.cwd());
 

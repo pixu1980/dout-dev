@@ -12,14 +12,15 @@ display-preferences-popover .preferences-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2.5rem;
-  min-height: 2.5rem;
-  padding: 0 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  background: var(--surface-strong);
-  color: var(--text);
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0 0.8rem;
+  border: 1px solid var(--dout--border);
+  border-radius: var(--dout--radius-pill);
+  background: var(--dout--surface-strong);
+  color: var(--dout--text);
   box-shadow: none;
+  corner-shape: var(--dout--corner-shape);
   transition:
     border-color 160ms ease,
     background-color 160ms ease,
@@ -29,12 +30,12 @@ display-preferences-popover .preferences-toggle {
 }
 
 display-preferences-popover .preferences-toggle:hover {
-  border-color: color-mix(in srgb, var(--accent) 36%, var(--border));
+  border-color: color-mix(in srgb, var(--dout--accent) 36%, var(--dout--border));
 }
 
 display-preferences-popover[data-open='true'] .preferences-toggle {
-  border-color: color-mix(in srgb, var(--accent) 38%, var(--border));
-  background: color-mix(in srgb, var(--accent-soft) 68%, var(--surface-strong) 32%);
+  border-color: color-mix(in srgb, var(--dout--accent) 38%, var(--dout--border));
+  background: color-mix(in srgb, var(--dout--accent-soft) 68%, var(--dout--surface-strong) 32%);
 }
 
 display-preferences-popover .preferences-toggle svg {
@@ -56,12 +57,13 @@ display-preferences-popover .preferences-panel {
   margin: 0;
   padding: 1rem;
   overflow: auto;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: color-mix(in srgb, var(--surface-strong) 88%, transparent);
-  color: var(--text);
-  box-shadow: var(--shadow-strong);
+  border: 1px solid var(--dout--border);
+  border-radius: var(--dout--radius-lg);
+  background: color-mix(in srgb, var(--dout--surface-strong) 88%, transparent);
+  color: var(--dout--text);
+  box-shadow: var(--dout--shadow-strong);
   backdrop-filter: blur(22px);
+  corner-shape: var(--dout--corner-shape);
   opacity: 0;
   transform: translateY(-0.35rem);
   transition:
@@ -96,7 +98,7 @@ display-preferences-popover .preferences-panel__header {
 }
 
 display-preferences-popover .preferences-panel__eyebrow {
-  color: var(--accent-strong);
+  color: var(--dout--accent-strong);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -109,8 +111,9 @@ display-preferences-popover .preferences-panel__header h2 {
 
 display-preferences-popover .preferences-panel__lede,
 display-preferences-popover .preferences-group__title p,
-display-preferences-popover .preferences-checkbox__hint {
-  color: var(--text-muted);
+display-preferences-popover .preferences-checkbox__hint,
+display-preferences-popover .preferences-choice__hint {
+  color: var(--dout--text-muted);
   font-size: 0.92rem;
   line-height: 1.5;
 }
@@ -120,9 +123,10 @@ display-preferences-popover .preferences-group--fieldset {
   display: grid;
   gap: 0.85rem;
   padding: 0.95rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  border: 1px solid var(--dout--border);
+  border-radius: var(--dout--radius-md);
+  background: color-mix(in srgb, var(--dout--surface) 82%, transparent);
+  corner-shape: var(--dout--corner-shape);
 }
 
 display-preferences-popover .preferences-group__title {
@@ -147,6 +151,101 @@ display-preferences-popover .preferences-group--fieldset legend {
 display-preferences-popover .preferences-checklist {
   display: grid;
   gap: 0.65rem;
+}
+
+display-preferences-popover .preferences-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+display-preferences-popover .preferences-choice {
+  position: relative;
+  display: grid;
+  gap: 0.65rem;
+  align-content: start;
+  padding: 0.8rem;
+  border: 1px solid var(--dout--border);
+  border-radius: var(--dout--radius-md);
+  background: color-mix(in srgb, var(--dout--surface-strong) 72%, transparent);
+  color: var(--dout--text);
+  corner-shape: var(--dout--corner-shape);
+  cursor: pointer;
+  transition:
+    border-color 140ms ease,
+    background-color 140ms ease,
+    box-shadow 140ms ease,
+    transform 140ms ease;
+}
+
+display-preferences-popover .preferences-choice:hover {
+  border-color: color-mix(in srgb, var(--dout--accent) 26%, var(--dout--border));
+  transform: translateY(-1px);
+}
+
+display-preferences-popover .preferences-choice[data-selected='true'],
+display-preferences-popover .preferences-choice:has(input:checked) {
+  border-color: color-mix(in srgb, var(--dout--accent) 44%, var(--dout--border));
+  background: color-mix(in srgb, var(--dout--accent-soft) 58%, var(--dout--surface-strong) 42%);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--dout--accent) 22%, transparent);
+}
+
+display-preferences-popover .preferences-choice input[type='radio'] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+display-preferences-popover .preferences-choice__preview {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+display-preferences-popover .preferences-choice__preview span {
+  display: block;
+  min-height: 2.4rem;
+  border: 1px solid var(--dout--border);
+  background: color-mix(in srgb, var(--dout--surface-strong) 74%, var(--dout--accent-soft) 26%);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--dout--surface-strong) 85%, transparent);
+}
+
+display-preferences-popover .preferences-choice__preview span:last-child {
+  min-height: 1.6rem;
+  align-self: end;
+}
+
+display-preferences-popover [data-radius-preview='square'] span {
+  border-radius: 0;
+}
+
+display-preferences-popover [data-radius-preview='rounded'] span {
+  border-radius: 4px;
+}
+
+display-preferences-popover [data-radius-preview='squircle'] span {
+  border-radius: 1rem;
+}
+
+@supports (corner-shape: squircle) {
+  display-preferences-popover [data-radius-preview='squircle'] span {
+    corner-shape: squircle;
+  }
+}
+
+display-preferences-popover .preferences-choice__copy {
+  display: grid;
+  gap: 0.2rem;
+}
+
+display-preferences-popover .preferences-choice__label,
+display-preferences-popover .preferences-checkbox__label {
+  font-weight: 600;
 }
 
 display-preferences-popover .preferences-checkbox {
@@ -223,13 +322,14 @@ display-preferences-popover .sr-only {
 }
 
 :root[data-reduce-transparency='true'] display-preferences-popover .preferences-panel {
-  background: var(--surface-strong);
+  background: var(--dout--surface-strong);
   backdrop-filter: none;
 }
 
 :root[data-reduce-motion='true'] display-preferences-popover .preferences-toggle,
 :root[data-reduce-motion='true'] display-preferences-popover .preferences-toggle svg,
-:root[data-reduce-motion='true'] display-preferences-popover .preferences-panel {
+:root[data-reduce-motion='true'] display-preferences-popover .preferences-panel,
+:root[data-reduce-motion='true'] display-preferences-popover .preferences-choice:hover {
   transform: none !important;
 }
 
@@ -239,6 +339,7 @@ display-preferences-popover .sr-only {
     max-height: min(78vh, 38rem);
   }
 
+  display-preferences-popover .preferences-choice-grid,
   display-preferences-popover .preferences-grid {
     grid-template-columns: 1fr;
   }

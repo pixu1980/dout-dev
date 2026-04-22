@@ -144,7 +144,7 @@ open docs/COLOR_PALETTE_VISUAL.html
 
 | File                                                        | Scopo                      | Riga                                |
 | ----------------------------------------------------------- | -------------------------- | ----------------------------------- |
-| [src/styles/main.css](../src/styles/main.css)               | Variabili CSS + Componenti | 1-110 (tokens), 189-191 (gradienti) |
+| [src/styles/index.css](../src/styles/index.css)               | Variabili CSS + Componenti | 1-110 (tokens), 189-191 (gradienti) |
 | [src/components/header.html](../src/components/header.html) | Header layout              | 1-40                                |
 | [src/scripts/main.js](../src/scripts/main.js)               | Theme/Accent logic         | 28-75                               |
 
@@ -152,7 +152,8 @@ open docs/COLOR_PALETTE_VISUAL.html
 
 ## 📊 Statistiche Progetto
 
-- **CSS File:** 2 (main.css + index.css)
+- **CSS Entry Point:** 1 (index.css)
+- **CSS Layer Files:** 7
 - **Custom Properties CSS:** 30+
 - **Temi:** 2 (light + dark)
 - **Accenti:** 3 (default, violet, green)
@@ -166,19 +167,19 @@ open docs/COLOR_PALETTE_VISUAL.html
 
 ### Aggiungere un nuovo accento
 
-1. Modifica [src/styles/main.css](../src/styles/main.css#L101-L110) → aggiungi `body[data-accent='new'] { --accent-h: XXX; }`
+1. Modifica [src/styles/index.css](../src/styles/index.css#L101-L110) → aggiungi `body[data-accent='new'] { --accent-h: XXX; }`
 2. Modifica [src/components/header.html](../src/components/header.html#L20-L22) → aggiungi nuovo button `.accent-dot`
 3. Modifica [src/scripts/main.js](../src/scripts/main.js#L58-L75) → aggiungi opzione nel picker
 
 ### Modificare colore tema light
 
-1. Apri [src/styles/main.css](../src/styles/main.css#L1-L50)
+1. Apri [src/styles/index.css](../src/styles/index.css#L1-L50)
 2. Modifica il colore desiderato in `:root`
 3. Sincronizza con `@media (prefers-color-scheme: dark)` se necessario
 
 ### Cambiar gradiente body
 
-1. Vai a [src/styles/main.css](../src/styles/main.css#L189-L191)
+1. Vai a [src/styles/index.css](../src/styles/index.css#L189-L191)
 2. Modifica la `background:` nel selettore `body`
 
 ---

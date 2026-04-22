@@ -1,24 +1,32 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>dout.dev</title>
-    <meta name="theme-color" content="#ff6b3d">
-    <meta name="description" content="Field notes on CSS, accessibility, design systems, and the mechanics of publishing a fast static site without the usual framework gloss.">
-    <meta name="author" content="Emiliano &quot;pixu1980&quot; Pisu">
-    <meta name="robots" content="index,follow">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="dout:analytics-endpoint" content="">
-    <meta name="dout:analytics-dashboard" content="/privacy.html">
-    <link rel="canonical" href="https://dout.dev/">
-    <meta property="og:site_name" content="dout.dev">
-    <meta property="og:locale" content="en-US">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss">
-    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json">
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta
+      name="description"
+      content="Field notes on CSS, accessibility, design systems, and the mechanics of publishing a fast static site without the usual framework gloss."
+    />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
     <script>
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
@@ -52,35 +60,41 @@
           monospace;
       }
     </style>
-    
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="dout.dev">
-  <meta property="og:description" content="Field notes on CSS, accessibility, design systems, and the mechanics of publishing a fast static site without the usual framework gloss.">
-  <meta property="og:url" content="https://dout.dev/">
-  <meta property="og:image" content="https://dout.dev/assets/og/pages/home.png">
-  <meta property="og:image:alt" content="Preview image for dout.dev">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:title" content="dout.dev">
-  <meta name="twitter:description" content="Field notes on CSS, accessibility, design systems, and the mechanics of publishing a fast static site without the usual framework gloss.">
-  <meta name="twitter:image" content="https://dout.dev/assets/og/pages/home.png">
-  <meta name="twitter:image:alt" content="Preview image for dout.dev">
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"WebSite",
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="dout.dev" />
+    <meta
+      property="og:description"
+      content="Field notes on CSS, accessibility, design systems, and the mechanics of publishing a fast static site without the usual framework gloss."
+    />
+    <meta property="og:url" content="https://dout.dev/" />
+    <meta property="og:image" content="https://dout.dev/assets/og/pages/home.png" />
+    <meta property="og:image:alt" content="Preview image for dout.dev" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:title" content="dout.dev" />
+    <meta
+      name="twitter:description"
+      content="Field notes on CSS, accessibility, design systems, and the mechanics of publishing a fast static site without the usual framework gloss."
+    />
+    <meta name="twitter:image" content="https://dout.dev/assets/og/pages/home.png" />
+    <meta name="twitter:image:alt" content="Preview image for dout.dev" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
         "name": "dout.dev",
-        "url":"https://dout.dev/",
+        "url": "https://dout.dev/",
         "description": "Field notes on CSS, accessibility, design systems, and the mechanics of publishing a fast static site without the usual framework gloss.",
         "publisher": {
-          "@type":"Person",
+          "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url":"https://dout.dev"
+          "url": "https://dout.dev"
         }
       }
-  </script>
+    </script>
 
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body class="site-shell">
     <p class="file-preview-warning" role="alert">
@@ -90,522 +104,965 @@
     <a class="skip-link" href="#main">Skip to main content</a>
     <div id="page-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
     <header role="banner" class="site-header">
-  <div class="container header-bar">
-    <a class="brand" href="/">
-      <span class="brand__mark">dout.dev</span>
-      <span class="brand__tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
-    </a>
-    <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-      <span aria-hidden="true">☰</span>
-    </button>
-    <nav id="mainmenu" class="main-nav" aria-label="Main">
-      <ul class="main-links" role="list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/archive.html">Archive</a></li>
-        <li><a href="/search.html">Search</a></li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-      <div class="header-actions">
-        <color-scheme-switcher></color-scheme-switcher>
-        <display-preferences-popover></display-preferences-popover>
+      <div class="container header-bar">
+        <a class="brand" href="/">
+          <span class="brand--mark">dout.dev</span>
+          <span class="brand--tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="mainmenu" class="main-nav" aria-label="Main">
+          <ul class="main-links" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+          <div class="header-actions">
+            <color-scheme-switcher></color-scheme-switcher>
+            <display-preferences-popover></display-preferences-popover>
+          </div>
+        </nav>
       </div>
-    </nav>
-  </div>
-</header>
-
+    </header>
 
     <main class="site-main" id="main" tabindex="-1" aria-label="Main content">
-      
-  <section class="hero hero--home" aria-labelledby="home-title">
-    <div class="hero__copy">
-      <p class="eyebrow">Editorial static publishing</p>
-      <h1 id="home-title">A handcrafted frontend journal for dout.dev.</h1>
-      <p class="hero__lede">
-        Field notes on CSS, accessibility, design systems, and the mechanics of publishing a fast static site without
-        the usual framework gloss.
-      </p>
-      <div class="hero__actions">
-        <a class="button button--primary" href="/archive.html">Browse the archive</a>
-        <a class="button button--ghost" href="/feed.rss">Follow via RSS</a>
-      </div>
-      
-        <div class="hero__topics" aria-label="Popular topics">
-          
-            <a class="tag" href="/tags/markdown.html">Markdown</a>
-          
-            <a class="tag" href="/tags/cover-image.html">Cover-image</a>
-          
-            <a class="tag" href="/tags/releases.html">Releases</a>
-          
-            <a class="tag" href="/tags/html.html">Html</a>
-          
-            <a class="tag" href="/tags/css.html">Css</a>
-          
-            <a class="tag" href="/tags/generic.html">Generic</a>
-          
-        </div>
-      
-    </div>
-    <div class="hero__panel">
-      <p class="eyebrow eyebrow--muted">Featured dispatch</p>
-      
-        <article class="feature-card">
-          <p class="feature-card__meta">
-            <time datetime="2024-12-27">27 dicembre 2024</time>
+      <section class="hero hero--home" aria-labelledby="home-title">
+        <div class="hero--copy">
+          <p class="eyebrow">Editorial static publishing</p>
+          <h1 id="home-title">A handcrafted frontend journal for dout.dev.</h1>
+          <p class="hero--lede">
+            Field notes on CSS, accessibility, design systems, and the mechanics of publishing a fast static site
+            without the usual framework gloss.
           </p>
-          <h2><a href="/posts/2024-12-27-m4-template-test.html">M4 Template Test - Cover Image e Syntax Highlighting</a></h2>
-          <p>Questo è un post di test per verificare tutte le funzionalità implementate nel M4 - Post Page.</p>
-          <a class="text-link" href="/posts/2024-12-27-m4-template-test.html">Read the post</a>
-        </article>
-      
-      <dl class="hero-stats">
-        <div>
-          <dt>Posts</dt>
-          <dd>25</dd>
+          <div class="hero__actions">
+            <a class="button button--primary" href="/archive.html">Browse the archive</a>
+            <a class="button button--ghost" href="/feed.rss">Follow via RSS</a>
+          </div>
+
+          <div class="hero__topics" aria-label="Popular topics">
+            <a class="tag" href="/tags/markdown.html">Markdown</a>
+
+            <a class="tag" href="/tags/cover-image.html">Cover-image</a>
+
+            <a class="tag" href="/tags/releases.html">Releases</a>
+
+            <a class="tag" href="/tags/html.html">Html</a>
+
+            <a class="tag" href="/tags/css.html">Css</a>
+
+            <a class="tag" href="/tags/architecture.html">Architecture</a>
+          </div>
         </div>
-        <div>
-          <dt>Topics</dt>
-          <dd>23</dd>
+        <div class="hero__panel">
+          <p class="eyebrow eyebrow--muted">Featured dispatch</p>
+
+          <article class="feature-card">
+            <p class="feature-card--meta">
+              <time datetime="2026-03-31">31 marzo 2026</time>
+            </p>
+            <h2><a href="/posts/2026-03-31-welcome-to-dout-dev.html">Welcome to dout.dev</a></h2>
+            <p>Welcome to the New dout.dev</p>
+            <a class="text-link" href="/posts/2026-03-31-welcome-to-dout-dev.html">Read the post</a>
+          </article>
+
+          <dl class="hero-stats">
+            <div>
+              <dt>Posts</dt>
+              <dd>26</dd>
+            </div>
+            <div>
+              <dt>Topics</dt>
+              <dd>24</dd>
+            </div>
+            <div>
+              <dt>Series</dt>
+              <dd>4</dd>
+            </div>
+          </dl>
         </div>
+      </section>
+
+      <section class="section-heading" aria-labelledby="latest-title">
         <div>
-          <dt>Series</dt>
-          <dd>4</dd>
+          <p class="eyebrow">Latest writing</p>
+          <h2 id="latest-title">Fresh from the markdown source</h2>
         </div>
-      </dl>
-    </div>
-  </section>
+        <div class="section-heading--actions">
+          <a class="text-link" href="/archive.html">See the full archive</a>
+        </div>
+      </section>
 
-  <section class="section-heading" aria-labelledby="latest-title">
-    <div>
-      <p class="eyebrow">Latest writing</p>
-      <h2 id="latest-title">Fresh from the markdown source</h2>
-    </div>
-    <div class="section-heading__actions">
-      <a class="text-link" href="/archive.html">See the full archive</a>
-    </div>
-  </section>
+      <section class="post-feed-shell" aria-labelledby="latest-title">
+        <ul
+          data-post-feed=""
+          data-post-feed-variant="feature-list"
+          data-load-more-feed="true"
+          data-load-more-initial="20"
+          data-load-more-step="10"
+          data-load-more-label="Load 10 more posts"
+        >
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-04-22">22 aprile 2026</time>
+                  </p>
 
-  
-    <section class="post-feed-shell" aria-labelledby="latest-title">
-      <ul class="post-feed post-feed--feature-list" data-post-feed="">
-        
-          <li class="post-feed__item">
-            <article class="post-card post-card--with-media">
-  
-    <figure class="post-card__media">
-      <a href="/posts/2026-04-04-how-i-built-dout-dev.html" tabindex="-1">
-        <img src="/./assets/images/how-dout-dev-is-built-cover.jpg" alt="Blue cover artwork titled How This Blog Is Built, used for the dout.dev making-of article" loading="lazy" decoding="async" width="1600" height="900">
-      </a>
-    </figure>
-  
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-04-22-how-to-write-agent-skills.html"
+                      >How to Write Agent Skills That Actually Trigger</a
+                    >
+                  </h3>
+                </header>
 
-  <div class="post-card__body">
-    <header class="post-card__header">
-      <p class="post-card__meta">
-        <time datetime="2026-04-04">4 aprile 2026</time>
-      </p>
+                <p data-post-card-excerpt="">The mistake most people make</p>
+              </div>
 
-      
-          <h3 class="post-card__title"><a href="/posts/2026-04-04-how-i-built-dout-dev.html">How I Built dout.dev</a></h3>
-        
-    </header>
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/ai-copilot.html">Ai-copilot</a></li>
 
-    
-      <p class="post-card__excerpt">The Goal: an editorial blog without runtime ballast</p>
-    
-  </div>
-
-  
-    <footer class="post-card__footer">
-      <ul class="post-card__tags" aria-label="Post topics">
-        
-          <li><a class="tag tag--small" href="/tags/architecture.html">Architecture</a></li>
-        
-          <li><a class="tag tag--small" href="/tags/static-site.html">Static-site</a></li>
-        
-          <li><a class="tag tag--small" href="/tags/design-systems.html">Design-systems</a></li>
-        
-          <li><a class="tag tag--small" href="/tags/accessibility.html">Accessibility</a></li>
-        
-      </ul>
-    </footer>
-  
-</article>
-
+                  <li><a class="tag" data-tag-size="small" href="/tags/architecture.html">Architecture</a></li>
+                </ul>
+              </footer>
+            </article>
           </li>
-        
-          <li class="post-feed__item">
-            <article class="post-card">
-  
 
-  <div class="post-card__body">
-    <header class="post-card__header">
-      <p class="post-card__meta">
-        <time datetime="2025-08-15">15 agosto 2025</time>
-      </p>
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-04-21">21 aprile 2026</time>
+                  </p>
 
-      
-          <h3 class="post-card__title"><a href="/posts/2025-08-15-welcome-to-dout-dev-2.html">Welcome to dout.dev 2.0</a></h3>
-        
-    </header>
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html"
+                      >When Markdown Is a CMS, and When It Is Not</a
+                    >
+                  </h3>
+                </header>
 
-    
-      <p class="post-card__excerpt">Welcome to the New dout.dev</p>
-    
-  </div>
+                <p data-post-card-excerpt="">The useful distinction</p>
+              </div>
 
-  
-    <footer class="post-card__footer">
-      <ul class="post-card__tags" aria-label="Post topics">
-        
-          <li><a class="tag tag--small" href="/tags/blog.html">Blog</a></li>
-        
-          <li><a class="tag tag--small" href="/tags/welcome.html">Welcome</a></li>
-        
-          <li><a class="tag tag--small" href="/tags/vanilla-js.html">Vanilla-js</a></li>
-        
-      </ul>
-    </footer>
-  
-</article>
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/architecture.html">Architecture</a></li>
 
+                  <li><a class="tag" data-tag-size="small" href="/tags/markdown.html">Markdown</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/static-site.html">Static-site</a></li>
+                </ul>
+              </footer>
+            </article>
           </li>
-        
-          <li class="post-feed__item">
-            <article class="post-card post-card--with-media">
-  
-    <figure class="post-card__media">
-      <a href="/posts/2024-10-28-concerning-css-grid.html" tabindex="-1">
-        <img src="/./assets/images/css-grid-cover.jpg" alt="Introducing CSS Grid - The Future of Web Layout 🎨" loading="lazy" decoding="async" width="1600" height="900">
-      </a>
-    </figure>
-  
 
-  <div class="post-card__body">
-    <header class="post-card__header">
-      <p class="post-card__meta">
-        <time datetime="2024-10-28">28 ottobre 2024</time>
-      </p>
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="with-media">
+              <figure data-post-card-media="">
+                <a href="/posts/2026-04-04-how-i-built-dout-dev.html" tabindex="-1">
+                  <img
+                    src="/./assets/images/how-dout-dev-is-built-cover.jpg"
+                    alt="Blue cover artwork titled How This Blog Is Built, used for the dout.dev making-of article"
+                    loading="lazy"
+                    decoding="async"
+                    width="1600"
+                    height="900"
+                  />
+                </a>
+              </figure>
 
-      
-          <h3 class="post-card__title"><a href="/posts/2024-10-28-concerning-css-grid.html">Introducing CSS Grid - The Future of Web Layout 🎨</a></h3>
-        
-    </header>
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-04-04">4 aprile 2026</time>
+                  </p>
 
-    
-      <p class="post-card__excerpt">What is CSS Grid and why is it important?</p>
-    
-  </div>
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-04-04-how-i-built-dout-dev.html">How I Built dout.dev</a>
+                  </h3>
+                </header>
 
-  
-    <footer class="post-card__footer">
-      <ul class="post-card__tags" aria-label="Post topics">
-        
-          <li><a class="tag tag--small" href="/tags/css.html">CSS</a></li>
-        
-          <li><a class="tag tag--small" href="/tags/web-design.html">Web-design</a></li>
-        
-          <li><a class="tag tag--small" href="/tags/frontend.html">Frontend</a></li>
-        
-          <li><a class="tag tag--small" href="/tags/grid-layout.html">Grid-layout</a></li>
-        
-      </ul>
-    </footer>
-  
-</article>
+                <p data-post-card-excerpt="">The Goal: an editorial blog without runtime ballast</p>
+              </div>
 
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/architecture.html">Architecture</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/static-site.html">Static-site</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/design-systems.html">Design-systems</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/accessibility.html">Accessibility</a></li>
+                </ul>
+              </footer>
+            </article>
           </li>
-        
-          <li class="post-feed__item">
-            <article class="post-card post-card--with-media">
-  
-    <figure class="post-card__media">
-      <a href="/posts/2024-05-19-a11y-by-design.html" tabindex="-1">
-        <img src="/./assets/images/a11y-by-design-cover.jpg" alt="Green accessibility-themed cover used to validate article hero readability and contrast" loading="lazy" decoding="async" width="1600" height="900">
-      </a>
-    </figure>
-  
 
-  <div class="post-card__body">
-    <header class="post-card__header">
-      <p class="post-card__meta">
-        <time datetime="2024-05-19">19 maggio 2024</time>
-      </p>
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-03-31">31 marzo 2026</time>
+                  </p>
 
-      
-          <h3 class="post-card__title"><a href="/posts/2024-05-19-a11y-by-design.html">Accessibility by Design</a></h3>
-        
-    </header>
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-03-31-welcome-to-dout-dev.html">Welcome to dout.dev</a>
+                  </h3>
+                </header>
 
-    
-      <p class="post-card__excerpt">We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Desi</p>
-    
-  </div>
+                <p data-post-card-excerpt="">Welcome to the New dout.dev</p>
+              </div>
 
-  
-    <footer class="post-card__footer">
-      <ul class="post-card__tags" aria-label="Post topics">
-        
-          <li><a class="tag tag--small" href="/tags/a11y.html">A11y</a></li>
-        
-          <li><a class="tag tag--small" href="/tags/design.html">Design</a></li>
-        
-          <li><a class="tag tag--small" href="/tags/responsive.html">Responsive</a></li>
-        
-      </ul>
-    </footer>
-  
-</article>
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/blog.html">Blog</a></li>
 
+                  <li><a class="tag" data-tag-size="small" href="/tags/welcome.html">Welcome</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/vanilla-js.html">Vanilla-js</a></li>
+                </ul>
+              </footer>
+            </article>
           </li>
-        
-          <li class="post-feed__item">
-            <article class="post-card post-card--with-media">
-  
-    <figure class="post-card__media">
-      <a href="/posts/2023-01-01-say-hello-2023.html" tabindex="-1">
-        <img src="/./assets/images/alexandr-podvalny-220262-unsplash.jpg" alt="Say hello to 2023 🎉" loading="lazy" decoding="async" width="1600" height="900">
-      </a>
-    </figure>
-  
 
-  <div class="post-card__body">
-    <header class="post-card__header">
-      <p class="post-card__meta">
-        <time datetime="2023-01-01">1 gennaio 2023</time>
-      </p>
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="with-media">
+              <figure data-post-card-media="">
+                <a href="/posts/2024-12-27-m4-template-test.html" tabindex="-1">
+                  <img
+                    src="/./assets/images/alexandr-podvalny-220262-unsplash.jpg"
+                    alt="M4 Template Test - Cover Image e Syntax Highlighting"
+                    loading="lazy"
+                    decoding="async"
+                    width="1600"
+                    height="900"
+                  />
+                </a>
+              </figure>
 
-      
-          <h3 class="post-card__title"><a href="/posts/2023-01-01-say-hello-2023.html">Say hello to 2023 🎉</a></h3>
-        
-    </header>
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2024-12-27">27 dicembre 2024</time>
+                  </p>
 
-    
-      <p class="post-card__excerpt">addEventListener('DOMContentLoaded', (e) =&gt; { console.log(e); }); anotherFunctionCallGoesHere({}, () =&gt; { selectOther(); });</p>
-    
-  </div>
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2024-12-27-m4-template-test.html"
+                      >M4 Template Test - Cover Image e Syntax Highlighting</a
+                    >
+                  </h3>
+                </header>
 
-  
-    <footer class="post-card__footer">
-      <ul class="post-card__tags" aria-label="Post topics">
-        
-          <li><a class="tag tag--small" href="/tags/markdown.html">Markdown</a></li>
-        
-          <li><a class="tag tag--small" href="/tags/releases.html">Releases</a></li>
-        
-      </ul>
-    </footer>
-  
-</article>
+                <p data-post-card-excerpt="">
+                  Questo è un post di test per verificare tutte le funzionalità implementate nel M4 - Post Page.
+                </p>
+              </div>
 
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/test.html">Test</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/m4.html">M4</a></li>
+
+                  <li>
+                    <a class="tag" data-tag-size="small" href="/tags/syntax-highlight-element.html"
+                      >Syntax-highlight-element</a
+                    >
+                  </li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/cover-image.html">Cover-image</a></li>
+                </ul>
+              </footer>
+            </article>
           </li>
-        
-          <li class="post-feed__item">
-            <article class="post-card">
-  
 
-  <div class="post-card__body">
-    <header class="post-card__header">
-      <p class="post-card__meta">
-        <time datetime="2022-03-25">25 marzo 2022</time>
-      </p>
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="with-media">
+              <figure data-post-card-media="">
+                <a href="/posts/2024-10-28-concerning-css-grid.html" tabindex="-1">
+                  <img
+                    src="/./assets/images/css-grid-cover.jpg"
+                    alt="Introducing CSS Grid - The Future of Web Layout 🎨"
+                    loading="lazy"
+                    decoding="async"
+                    width="1600"
+                    height="900"
+                  />
+                </a>
+              </figure>
 
-      
-          <h3 class="post-card__title"><a href="/posts/2022-03-25-concerning.html">Concerning…</a></h3>
-        
-    </header>
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2024-10-28">28 ottobre 2024</time>
+                  </p>
 
-    
-      <p class="post-card__excerpt">Concerning Core Web Technologies</p>
-    
-  </div>
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2024-10-28-concerning-css-grid.html"
+                      >Introducing CSS Grid - The Future of Web Layout 🎨</a
+                    >
+                  </h3>
+                </header>
 
-  
-    <footer class="post-card__footer">
-      <ul class="post-card__tags" aria-label="Post topics">
-        
-          <li><a class="tag tag--small" href="/tags/generic.html">Generic</a></li>
-        
-      </ul>
-    </footer>
-  
-</article>
+                <p data-post-card-excerpt="">What is CSS Grid and why is it important?</p>
+              </div>
 
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/css.html">CSS</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/web-design.html">Web-design</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/frontend.html">Frontend</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/grid-layout.html">Grid-layout</a></li>
+                </ul>
+              </footer>
+            </article>
           </li>
-        
-          <li class="post-feed__item">
-            <article class="post-card">
-  
 
-  <div class="post-card__body">
-    <header class="post-card__header">
-      <p class="post-card__meta">
-        <time datetime="2022-03-24">24 marzo 2022</time>
-      </p>
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="with-media">
+              <figure data-post-card-media="">
+                <a href="/posts/2024-05-19-a11y-by-design.html" tabindex="-1">
+                  <img
+                    src="/./assets/images/a11y-by-design-cover.jpg"
+                    alt="Green accessibility-themed cover used to validate article hero readability and contrast"
+                    loading="lazy"
+                    decoding="async"
+                    width="1600"
+                    height="900"
+                  />
+                </a>
+              </figure>
 
-      
-          <h3 class="post-card__title"><a href="/posts/2022-03-24-welcome-to-dout-dev.html">Welcome to dout.dev</a></h3>
-        
-    </header>
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2024-05-19">19 maggio 2024</time>
+                  </p>
 
-    
-      <p class="post-card__excerpt">Hi, I'm Emiliano "Pixu" Pisu.</p>
-    
-  </div>
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2024-05-19-a11y-by-design.html">Accessibility by Design</a>
+                  </h3>
+                </header>
 
-  
-    <footer class="post-card__footer">
-      <ul class="post-card__tags" aria-label="Post topics">
-        
-          <li><a class="tag tag--small" href="/tags/generic.html">Generic</a></li>
-        
-      </ul>
-    </footer>
-  
-</article>
+                <p data-post-card-excerpt="">
+                  We live in an era where technology permeates every aspect of our daily lives. However, not everyone
+                  can benefit equally from these advancements. This is where Accessibility by Desi
+                </p>
+              </div>
 
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/a11y.html">A11y</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/design.html">Design</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/responsive.html">Responsive</a></li>
+                </ul>
+              </footer>
+            </article>
           </li>
-        
-          <li class="post-feed__item">
-            <article class="post-card post-card--with-media">
-  
-    <figure class="post-card__media">
-      <a href="/posts/2022-03-22-building-dout-dev-blog-part-2.html" tabindex="-1">
-        <img src="/./assets/images/building-dout-dev-cover.jpg" alt="Editorial system illustration used to test article cover rendering" loading="lazy" decoding="async" width="1600" height="900">
-      </a>
-    </figure>
-  
 
-  <div class="post-card__body">
-    <header class="post-card__header">
-      <p class="post-card__meta">
-        <time datetime="2022-03-22">22 marzo 2022</time>
-      </p>
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="with-media">
+              <figure data-post-card-media="">
+                <a href="/posts/2023-01-01-say-hello-2023.html" tabindex="-1">
+                  <img
+                    src="/./assets/images/2022-02-25-you-can-express-tags-today.jpg"
+                    alt="Say hello to 2023 🎉"
+                    loading="lazy"
+                    decoding="async"
+                    width="1600"
+                    height="900"
+                  />
+                </a>
+              </figure>
 
-      
-          <h3 class="post-card__title"><a href="/posts/2022-03-22-building-dout-dev-blog-part-2.html">Building dout.dev blog - Part II</a></h3>
-        
-    </header>
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2023-01-01">1 gennaio 2023</time>
+                  </p>
 
-    
-      <p class="post-card__excerpt">Building dout.dev blog - Part II</p>
-    
-  </div>
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2023-01-01-say-hello-2023.html">Say hello to 2023 🎉</a>
+                  </h3>
+                </header>
 
-  
-    <footer class="post-card__footer">
-      <ul class="post-card__tags" aria-label="Post topics">
-        
-          <li><a class="tag tag--small" href="/tags/html.html">HTML</a></li>
-        
-      </ul>
-    </footer>
-  
-</article>
+                <p data-post-card-excerpt="">Say hello to 2023 🎉</p>
+              </div>
 
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/markdown.html">Markdown</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/releases.html">Releases</a></li>
+                </ul>
+              </footer>
+            </article>
           </li>
-        
-          <li class="post-feed__item">
-            <article class="post-card post-card--with-media">
-  
-    <figure class="post-card__media">
-      <a href="/posts/2022-03-21-building-dout-dev-blog.html" tabindex="-1">
-        <img src="/./assets/images/building-dout-dev-cover.jpg" alt="Dashboard notes and publishing pipeline artwork for the dout.dev build article" loading="lazy" decoding="async" width="1600" height="900">
-      </a>
-    </figure>
-  
 
-  <div class="post-card__body">
-    <header class="post-card__header">
-      <p class="post-card__meta">
-        <time datetime="2022-03-21">21 marzo 2022</time>
-      </p>
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2022-03-25">25 marzo 2022</time>
+                  </p>
 
-      
-          <h3 class="post-card__title"><a href="/posts/2022-03-21-building-dout-dev-blog.html">Building dout.dev blog</a></h3>
-        
-    </header>
+                  <h3 data-post-card-title=""><a href="/posts/2022-03-25-concerning.html">Concerning…</a></h3>
+                </header>
 
-    
-      <p class="post-card__excerpt">Less is more!</p>
-    
-  </div>
+                <p data-post-card-excerpt="">Concerning Core Web Technologies</p>
+              </div>
 
-  
-    <footer class="post-card__footer">
-      <ul class="post-card__tags" aria-label="Post topics">
-        
-          <li><a class="tag tag--small" href="/tags/html.html">HTML</a></li>
-        
-      </ul>
-    </footer>
-  
-</article>
-
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/generic.html">Generic</a></li>
+                </ul>
+              </footer>
+            </article>
           </li>
-        
-          <li class="post-feed__item">
-            <article class="post-card">
-  
 
-  <div class="post-card__body">
-    <header class="post-card__header">
-      <p class="post-card__meta">
-        <time datetime="2022-03-18">18 marzo 2022</time>
-      </p>
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2022-03-24">24 marzo 2022</time>
+                  </p>
 
-      
-          <h3 class="post-card__title"><a href="/posts/2022-03-18-css-properties-hierarchy.html">CSS Properties Hierarchy</a></h3>
-        
-    </header>
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2022-03-24-welcome-to-dout-dev.html">Welcome to dout.dev</a>
+                  </h3>
+                </header>
 
-    
-      <p class="post-card__excerpt">:root { --border-radius: 5px; } .element { /* css custom properties */ --var--example: 1; ​ /* position */ position: absolute; inset: 0; /* top, right, bottom, left */ z-index: 1; </p>
-    
-  </div>
+                <p data-post-card-excerpt="">Hi, I'm Emiliano "Pixu" Pisu.</p>
+              </div>
 
-  
-    <footer class="post-card__footer">
-      <ul class="post-card__tags" aria-label="Post topics">
-        
-          <li><a class="tag tag--small" href="/tags/html.html">HTML</a></li>
-        
-          <li><a class="tag tag--small" href="/tags/css.html">CSS</a></li>
-        
-      </ul>
-    </footer>
-  
-</article>
-
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/generic.html">Generic</a></li>
+                </ul>
+              </footer>
+            </article>
           </li>
-        
-      </ul>
-    </section>
-  
-  
 
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="with-media">
+              <figure data-post-card-media="">
+                <a href="/posts/2022-03-22-building-dout-dev-blog-part-2.html" tabindex="-1">
+                  <img
+                    src="/./assets/images/building-dout-dev-cover.jpg"
+                    alt="Editorial system illustration used to test article cover rendering"
+                    loading="lazy"
+                    decoding="async"
+                    width="1600"
+                    height="900"
+                  />
+                </a>
+              </figure>
+
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2022-03-22">22 marzo 2022</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2022-03-22-building-dout-dev-blog-part-2.html">Building dout.dev blog - Part II</a>
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">Building dout.dev blog - Part II</p>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/html.html">HTML</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="with-media">
+              <figure data-post-card-media="">
+                <a href="/posts/2022-03-21-building-dout-dev-blog.html" tabindex="-1">
+                  <img
+                    src="/./assets/images/building-dout-dev-cover.jpg"
+                    alt="Dashboard notes and publishing pipeline artwork for the dout.dev build article"
+                    loading="lazy"
+                    decoding="async"
+                    width="1600"
+                    height="900"
+                  />
+                </a>
+              </figure>
+
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2022-03-21">21 marzo 2022</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2022-03-21-building-dout-dev-blog.html">Building dout.dev blog</a>
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">Less is more!</p>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/html.html">HTML</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2022-03-18">18 marzo 2022</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2022-03-18-css-properties-hierarchy.html">CSS Properties Hierarchy</a>
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">
+                  :root { --border-radius: 5px; } .element { /* css custom properties */ --var--example: 1; ​ /*
+                  position */ position: absolute; inset: 0; /* top, right, bottom, left */ z-index: 1;
+                </p>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/html.html">HTML</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/css.html">CSS</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2022-03-16">16 marzo 2022</time>
+                  </p>
+
+                  <h3 data-post-card-title=""><a href="/posts/2022-03-16-test-codepen.html">Testing CodePen</a></h3>
+                </header>
+
+                <p data-post-card-excerpt="">
+                  See the Pen &lt;a href='https://codepen.io/blackmirror1980/pen/aPRXzv'&gt;Pure CSS Slider using
+                  Scroll-Snap&lt;&#x2F;a&gt; by blackmirror1980 (&lt;a
+                  href='https://codepen.io/blackmirror1980'&gt;@blackmir
+                </p>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/markdown.html">Markdown</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/cover-image.html">Cover-image</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2022-03-12">12 marzo 2022</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2022-03-12-you-can-edit-css.html">You can edit CSS</a>
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">You can edit CSS</p>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/markdown.html">Markdown</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/cover-image.html">Cover-image</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2022-03-03">3 marzo 2022</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2022-03-03-marked-markdown-parser.html">Marked - Markdown Parser</a>
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">How To Use The Demo</p>
+              </div>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="with-media">
+              <figure data-post-card-media="">
+                <a href="/posts/2022-03-03-custom-grid-system.html" tabindex="-1">
+                  <img
+                    src="/images/alexandr-podvalny-220262-unsplash.jpg"
+                    alt="Custom Grid System"
+                    loading="lazy"
+                    decoding="async"
+                    width=""
+                    height=""
+                  />
+                </a>
+              </figure>
+
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2022-03-03">3 marzo 2022</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2022-03-03-custom-grid-system.html">Custom Grid System</a>
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">Blog under construction</p>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/markdown.html">Markdown</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/releases.html">Releases</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="with-media">
+              <figure data-post-card-media="">
+                <a href="/posts/2022-02-25-you-can-express-tags-today.html" tabindex="-1">
+                  <img
+                    src="/images/svg-code.jpg"
+                    alt="You can use express tags… TODAY!"
+                    loading="lazy"
+                    decoding="async"
+                    width=""
+                    height=""
+                  />
+                </a>
+              </figure>
+
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2022-02-25">25 febbraio 2022</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2022-02-25-you-can-express-tags-today.html">You can use express tags… TODAY!</a>
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">
+                  HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described here.
+                </p>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/html.html">HTML</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/css.html">CSS</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="with-media">
+              <figure data-post-card-media="">
+                <a href="/posts/2022-01-01-say-hello-2022.html" tabindex="-1">
+                  <img
+                    src="/./assets/images/alexandr-podvalny-220262-unsplash.jpg"
+                    alt="Say hello to 2022 🎉"
+                    loading="lazy"
+                    decoding="async"
+                    width="1600"
+                    height="900"
+                  />
+                </a>
+              </figure>
+
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2022-01-01">1 gennaio 2022</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2022-01-01-say-hello-2022.html">Say hello to 2022 🎉</a>
+                  </h3>
+                </header>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/markdown.html">Markdown</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/releases.html">Releases</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2021-03-08">8 marzo 2021</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2021-03-08-a-new-post-with-a-new-cover.html">A NEW post with a NEW cover image</a>
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">
+                  Readability, however, is emphasized above all else. A Markdown-formatted document should be
+                  publishable as-is, as plain text, without looking like it's been marked up with tags or
+                </p>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/markdown.html">Markdown</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/cover-image.html">Cover-image</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2021-03-07">7 marzo 2021</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2021-03-07-hating-css-utility-classes.html">Testing CodePen</a>
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">https://codepen.io/emdeoh/pen/NWdmgVq</p>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/markdown.html">Markdown</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/cover-image.html">Cover-image</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2021-03-05">5 marzo 2021</time>
+                  </p>
+
+                  <h3 data-post-card-title=""><a href="/posts/2021-03-05-gradient-borders.html">Testing CodePen</a></h3>
+                </header>
+
+                <p data-post-card-excerpt="">GRADIENT BORDERS</p>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/markdown.html">Markdown</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/cover-image.html">Cover-image</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2021-03-01">1 marzo 2021</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2021-03-01-say-hello-to-gridsome-new.html">Say Hello to Gridsome NEW</a>
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">Well.... that's all</p>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/markdown.html">Markdown</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/cover-image.html">Cover-image</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2019-02-07">7 febbraio 2019</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2019-02-07-say-hello-to-gridsome.html">Say hello to Gridsome 🎉</a>
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">
+                  A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on
+                  top of Vue.js. We have been working on it for a year and will have a beta rea
+                </p>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/markdown.html">Markdown</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/releases.html">Releases</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2019-02-06">6 febbraio 2019</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2019-02-06-markdown-test-file.html">Markdown test file</a>
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">
+                  Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is
+                  emphasized above all else. A Markdown-formatted document should be publishable
+                </p>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/markdown.html">Markdown</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/test-files.html">Test-files</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+
+          <li data-post-feed-item="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-body="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2019-01-07">7 gennaio 2019</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2019-01-07-a-post-with-a-cover.html">A post with a cover image</a>
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">
+                  Readability, however, is emphasized above all else. A Markdown-formatted document should be
+                  publishable as-is, as plain text, without looking like it's been marked up with tags or
+                </p>
+              </div>
+
+              <footer data-post-card-footer="">
+                <ul data-post-card-tags="" aria-label="Post topics">
+                  <li><a class="tag" data-tag-size="small" href="/tags/markdown.html">Markdown</a></li>
+
+                  <li><a class="tag" data-tag-size="small" href="/tags/cover-image.html">Cover-image</a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+        </ul>
+      </section>
     </main>
 
     <footer role="contentinfo" class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-copy">
-      <p class="footer-brand">dout.dev</p>
-      <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
-      <p>© 2026 dout.dev</p>
-    </div>
-    <nav class="footer-nav" aria-label="Footer">
-      <a href="/">Home</a>
-      <a href="/archive.html">Archive</a>
-      <a href="/search.html">Search</a>
-      <a href="/about.html">About</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/feed.rss">RSS</a>
-      <a href="/feed.json">JSON Feed</a>
-    </nav>
-  </div>
-</footer>
+      <div class="container footer-grid">
+        <div class="footer-copy">
+          <p class="footer-brand">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
 
     <script type="module" src="/scripts/main.js"></script>
-  
-
-</body></html>
+  </body>
+</html>

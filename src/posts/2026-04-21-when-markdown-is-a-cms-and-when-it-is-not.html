@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>When Markdown Is a CMS, and When It Is Not</title>
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="The useful distinction" />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
+    <script>
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      .file-preview-warning {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid #d9a441;
+        background: #fff3cd;
+        color: #5c3b00;
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] .file-preview-warning {
+        display: block;
+      }
+
+      .file-preview-warning code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="When Markdown Is a CMS, and When It Is Not" />
+    <meta property="og:description" content="The useful distinction" />
+    <meta
+      property="og:url"
+      content="https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html"
+    />
+    <meta
+      property="og:image"
+      content="https://dout.dev/assets/og/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.png"
+    />
+    <meta property="og:image:alt" content="Preview image for When Markdown Is a CMS, and When It Is Not" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-04-21T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2026-04-21T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="twitter:title" content="When Markdown Is a CMS, and When It Is Not" />
+    <meta name="twitter:description" content="The useful distinction" />
+    <meta
+      name="twitter:image"
+      content="https://dout.dev/assets/og/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.png"
+    />
+    <meta name="twitter:image:alt" content="Preview image for When Markdown Is a CMS, and When It Is Not" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "When Markdown Is a CMS, and When It Is Not",
+        "description": "The useful distinction",
+        "datePublished": "2026-04-21T00:00:00.000Z",
+        "dateModified": "2026-04-21T00:00:00.000Z",
+        "author": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html"
+        },
+        "image": ["https://dout.dev/assets/og/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.png"],
+        "keywords": "markdown, content, cms, dout, dev, plain, files, git, still, site, format, fit"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "When Markdown Is a CMS, and When It Is Not",
+            "item": "https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html"
+          }
+        ]
+      }
+    </script>
+
+    <link rel="stylesheet" href="/styles/index.css" />
+  </head>
+  <body class="site-shell">
+    <p class="file-preview-warning" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div id="page-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" class="site-header">
+      <div class="container header-bar">
+        <a class="brand" href="/">
+          <span class="brand--mark">dout.dev</span>
+          <span class="brand--tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="mainmenu" class="main-nav" aria-label="Main">
+          <ul class="main-links" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+          <div class="header-actions">
+            <color-scheme-switcher></color-scheme-switcher>
+            <display-preferences-popover></display-preferences-popover>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main" id="main" tabindex="-1" aria-label="Main content">
+      <article class="post-layout" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
+        <header class="post-hero" aria-labelledby="post-title">
+          <p class="eyebrow">Article</p>
+          <p class="post-meta">
+            <time datetime="2026-04-21" itemprop="datePublished"> 21 aprile 2026 </time>
+            <span class="post-divider">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 id="post-title" itemprop="headline" tabindex="0">When Markdown Is a CMS, and When It Is Not</h1>
+
+          <p class="post-description">The useful distinction</p>
+
+          <ul class="tag-list" aria-label="Tags">
+            <li><a class="tag" href="/tags/architecture.html">Architecture</a></li>
+
+            <li><a class="tag" href="/tags/markdown.html">Markdown</a></li>
+
+            <li><a class="tag" href="/tags/static-site.html">Static-site</a></li>
+          </ul>
+
+          <!-- <nav class="post-landmarks" aria-label="Article shortcuts">
+        <a class="tag tag-small" href="#article-content">Jump to article</a>
+        <if condition="post.toc && post.toc.length">
+          <a class="tag tag-small" href="#post-outline">Jump to outline</a>
+        </if>
+      </nav> -->
+        </header>
+
+        <section class="post-shell" id="article-content" role="region" aria-labelledby="article-content-title">
+          <h2 id="article-content-title" class="visually-hidden">Article content</h2>
+          <section class="prose" itemprop="articleBody">
+            <h2 id="the-useful-distinction" tabindex="0" data-toc-anchor="true">The useful distinction</h2>
+            <p>
+              A recent OpenReplay piece,
+              <a
+                href="https://blog.openreplay.com/markdown-cms-pros-cons/?from=dout.dev"
+                target="_blank"
+                referrerpolicy="strict-origin-when-cross-origin"
+                rel="noopener"
+                >The Good And Bad Of Using Markdown As A CMS</a
+              >, makes a distinction that matters more than it first sounds. "Markdown as a CMS" can mean at least three
+              different systems:
+            </p>
+            <ul>
+              <li>plain <code>.md</code> files in a repository;</li>
+              <li>MDX tied to a framework runtime and component model;</li>
+              <li>a Git-backed editorial tool that stores content as Markdown.</li>
+            </ul>
+            <p>Those are related, but they are not the same thing. The trade-offs move with each one.</p>
+            <p>
+              On dout.dev, the setup is plain Markdown plus front matter, a custom CMS pipeline, and an HTML-native
+              template engine. No MDX. No admin UI. No database. That choice is excellent for some problems and the
+              wrong answer for others.
+            </p>
+            <h2 id="where-markdown-is-still-the-right-answer" tabindex="0" data-toc-anchor="true">
+              Where Markdown is still the right answer
+            </h2>
+            <p>For developer-owned content, Markdown remains hard to beat.</p>
+            <p>
+              The obvious reason is version control. A post is a text file in Git. Diffs are readable. Rollback is
+              trivial. Branches and pull requests already are the review workflow. If the site generator changes in five
+              years, the content survives because the content format is not proprietary.
+            </p>
+            <p>
+              The less obvious reason is maintenance. Raw HTML content ages badly. Inline styles accumulate. Broken
+              nesting sneaks in. One-off classes appear for formatting hacks. Markdown constrains the authoring surface
+              on purpose, and that constraint is usually a feature.
+            </p>
+            <p>
+              For a blog, documentation site, changelog, or engineering handbook, this is a strong fit. The people
+              writing are usually the same people maintaining the build, and the content itself is mostly narrative
+              rather than highly relational data.
+            </p>
+            <h2 id="where-plain-markdown-stops-being-a-cms" tabindex="0" data-toc-anchor="true">
+              Where plain Markdown stops being a CMS
+            </h2>
+            <p>The OpenReplay article is right about the breaking points.</p>
+            <p>
+              Plain files do not give you content relationships for free. "Posts by author", "localized variants",
+              "schedule this for next Tuesday", "send it through approval", "let marketing edit it without Git" - none
+              of that is inherent in Markdown. At that point Markdown is a storage format, not the whole publishing
+              system.
+            </p>
+            <p>
+              This is also where a lot of Markdown debates get sloppy. People say "Markdown cannot do X" when what they
+              really mean is "a directory full of <code>.md</code> files without surrounding tooling cannot do X." That
+              is true. It is also incomplete, because a project can add a lot of structure around Markdown before it
+              reaches for a headless CMS.
+            </p>
+            <h2 id="what-dout-dev-adds-on-top-of-markdown" tabindex="0" data-toc-anchor="true">
+              What dout.dev adds on top of Markdown
+            </h2>
+            <p>dout.dev is not "just Markdown files in a repo."</p>
+            <p>
+              The CMS layer reads front matter, normalizes content, derives slugs, builds tags, month archives, and
+              series datasets, and generates pages from those derived records. The renderer also builds feeds, search
+              data, and OG images. The image pipeline turns a normal Markdown image into a responsive
+              <code>&lt;picture&gt;</code> with WebP sources, known dimensions, lazy loading, and a
+              <code>&lt;noscript&gt;</code> fallback. Pull requests also get a built preview artifact, which is enough
+              for review even though the site stays fully static.
+            </p>
+            <p>
+              That changes the shape of the problem. For this project, Markdown is the authoring format, but the CMS is
+              the surrounding pipeline:
+            </p>
+            <ul>
+              <li>content normalization;</li>
+              <li>derived relationships such as tags, months, series, and post navigation;</li>
+              <li>image processing and metadata extraction;</li>
+              <li>deterministic HTML output through the template engine;</li>
+              <li>validation and CI before publish.</li>
+            </ul>
+            <p>
+              This is enough to bypass several of the usual complaints about Markdown-based publishing on a personal
+              site. Structured taxonomies exist. Media handling exists. Preview exists. Parser behavior is consistent
+              because there is one Markdown pipeline.
+            </p>
+            <h2 id="what-dout-dev-still-does-not-pretend-to-solve" tabindex="0" data-toc-anchor="true">
+              What dout.dev still does not pretend to solve
+            </h2>
+            <p>The system is better than plain files alone, but it is still intentionally narrow.</p>
+            <p>
+              It is not a good fit for non-technical editors. There is no admin UI. The workflow is still Git-first.
+            </p>
+            <p>
+              It is not a good fit for approval-heavy editorial teams. There are drafts through
+              <code>published: false</code>, local watch mode, and CI preview artifacts, but there is no role model, no
+              approval chain, and no true scheduled publishing workflow today.
+            </p>
+            <p>
+              It is not a good fit for localization-heavy content. The site is English-only, and that is a product
+              decision as much as a technical one.
+            </p>
+            <p>
+              It is not a good fit for dynamic or highly relational domains. Comments can be outsourced to Giscus,
+              search can be client-side, and analytics can be added carefully. But if the core content is products,
+              inventory, user-generated data, or frequently mutating records, a database-backed CMS or API is the
+              correct tool.
+            </p>
+            <p>
+              This is the part worth being honest about: dout.dev bypasses some Markdown problems by adding custom
+              infrastructure, but it does not magically turn Markdown into a universal CMS.
+            </p>
+            <h2 id="the-practical-rule" tabindex="0" data-toc-anchor="true">The practical rule</h2>
+            <p>The rule I would use is simple.</p>
+            <p>
+              Use Markdown when the content is text-first, developer-owned, and benefits from living next to the code.
+              Use a headless CMS when the content is structured, multi-author, localized, workflow-heavy, or owned by
+              people who should never have to think about Git.
+            </p>
+            <p>
+              For dout.dev, Markdown is still the right source format because the project is a single-author editorial
+              system with strong opinions about portability, accessibility, and static output. For a marketing team,
+              product catalog, or newsroom, I would not stretch this model beyond its natural limits.
+            </p>
+            <p>Markdown is a great source format. It is sometimes a CMS. It is never all of the CMS by itself.</p>
+            <h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
+            <ul>
+              <li>
+                <a
+                  href="https://blog.openreplay.com/markdown-cms-pros-cons/?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >OpenReplay Team, "The Good And Bad Of Using Markdown As A CMS"</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://tina.io/?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Tina CMS</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://decapcms.org/?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Decap CMS</a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <aside class="post-sidebar" role="complementary" aria-labelledby="post-outline">
+          <nav class="post-toc" aria-labelledby="post-outline">
+            <p class="eyebrow eyebrow--muted">TOC</p>
+            <h2 id="post-outline">On this page</h2>
+            <ol class="post-toc-list">
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#the-useful-distinction">The useful distinction</a>
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#where-markdown-is-still-the-right-answer"
+                  >Where Markdown is still the right answer</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#where-plain-markdown-stops-being-a-cms"
+                  >Where plain Markdown stops being a CMS</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#what-dout-dev-adds-on-top-of-markdown"
+                  >What dout.dev adds on top of Markdown</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#what-dout-dev-still-does-not-pretend-to-solve"
+                  >What dout.dev still does not pretend to solve</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#the-practical-rule">The practical rule</a>
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#references">References</a>
+              </li>
+            </ol>
+          </nav>
+        </aside>
+
+        <section class="comments-shell" aria-labelledby="comments-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Discussion</p>
+              <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+            </div>
+          </div>
+          <p class="comments-note">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
+      </article>
+
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav-card" rel="prev" href="/posts/2026-04-04-how-i-built-dout-dev.html">
+          <span class="post-nav-label">Previous</span>
+          <strong>How I Built dout.dev</strong>
+        </a>
+
+        <a class="post-nav-card" rel="next" href="/posts/2026-04-22-how-to-write-agent-skills.html">
+          <span class="post-nav-label">Next</span>
+          <strong>How to Write Agent Skills That Actually Trigger</strong>
+        </a>
+      </nav>
+    </main>
+
+    <footer role="contentinfo" class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-copy">
+          <p class="footer-brand">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
+</html>

@@ -178,7 +178,7 @@ radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 24%, transp
 radial-gradient(circle at 90% 12%, rgba(255, 255, 255, 0.34) 0, transparent 24%),
 linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 86%, #ffffff 14%) 100%)
       `,
-      location: 'src/styles/main.css:189-191',
+      location: 'src/styles/index.css:189-191',
       selector: 'body',
       description:
         '2 radial gradients + 1 linear vertical gradient. Creates depth with accent glow at top-left.',
@@ -192,7 +192,7 @@ linear-gradient(
   var(--surface-strong) 100%
 )
       `,
-      location: 'src/styles/main.css:622-626',
+      location: 'src/styles/index.css:622-626',
       selector: '.feature-card',
       description: 'Diagonal 160° gradient from soft accent to surface strong.',
     },
@@ -207,7 +207,7 @@ linear-gradient(
         color: '#0f0b0a (hardcoded)',
         shadow: 'var(--accent) 34% opacity shadow',
       },
-      location: 'src/styles/main.css:609-612',
+      location: 'src/styles/index.css:609-612',
     },
     textLink: {
       name: 'Text Link',
@@ -216,7 +216,7 @@ linear-gradient(
         color: 'var(--accent-strong)',
         after: '"->"',
       },
-      location: 'src/styles/main.css:618-623',
+      location: 'src/styles/index.css:618-623',
     },
     tag: {
       name: 'Tag',
@@ -226,7 +226,7 @@ linear-gradient(
         border: 'color-mix(in srgb, var(--accent) 28%, transparent)',
         color: 'var(--text)',
       },
-      location: 'src/styles/main.css:742-751',
+      location: 'src/styles/index.css:742-751',
     },
     card: {
       name: 'Card (Post, Feature, Archive)',
@@ -236,7 +236,7 @@ linear-gradient(
         border: 'var(--border)',
         boxShadow: 'var(--shadow)',
       },
-      location: 'src/styles/main.css:280-290',
+      location: 'src/styles/index.css:280-290',
     },
     blockquote: {
       name: 'Blockquote',
@@ -245,7 +245,7 @@ linear-gradient(
         borderLeft: '3px solid var(--accent)',
         color: 'var(--text-muted)',
       },
-      location: 'src/styles/main.css:841-844',
+      location: 'src/styles/index.css:841-844',
     },
   },
 
@@ -253,19 +253,19 @@ linear-gradient(
     codeBlockBg: {
       value: '#111014',
       usage: 'Pre code block background (always dark)',
-      location: 'src/styles/main.css:860-865',
+      location: 'src/styles/index.css:860-865',
       reason: 'Intentionally always dark for readability',
     },
     codeBlockText: {
       value: '#f5f2ee',
       usage: 'Pre code block text (always light)',
-      location: 'src/styles/main.css:860-865',
+      location: 'src/styles/index.css:860-865',
       reason: 'Intentionally always light for readability',
     },
     buttonText: {
       value: '#0f0b0a',
       usage: 'Primary button text (always dark)',
-      location: 'src/styles/main.css:609-612',
+      location: 'src/styles/index.css:609-612',
       reason: 'Ensures contrast on colored background',
     },
   },

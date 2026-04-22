@@ -44,11 +44,29 @@ const COMPONENT_STYLE_TEXT = [
 ].join('\n');
 
 const COPY_RESET_DELAY = 2000;
+const THEME_MENU_OFFSET = 8;
+const THEME_MENU_VIEWPORT_MARGIN = 12;
 const THEME_STORAGE_KEY = 'pix-highlighter-theme';
 const ENHANCED_MARKER = Symbol('pixHighlighterEnhanced');
 const COMPONENT_STYLE_ATTRIBUTE = 'data-pix-highlighter-styles';
 let componentStyleSheet = null;
 let componentStyleElement = null;
+
+function supportsAnchorPositioning() {
+  if (typeof globalThis.CSS?.supports !== 'function') {
+    return false;
+  }
+
+  try {
+    return (
+      globalThis.CSS.supports('anchor-name: --dout--pix-anchor') &&
+      globalThis.CSS.supports('position-anchor: --dout--pix-anchor') &&
+      globalThis.CSS.supports('top: anchor(bottom)')
+    );
+  } catch {
+    return false;
+  }
+}
 
 function removeFallbackStyleElement() {
   componentStyleElement?.remove();
@@ -356,6 +374,7 @@ class PixHighlighter extends HTMLPreElement {
     if (!this._stateReady || !this._isActive) return;
 
     this._isActive = false;
+    this._teardownThemePicker();
     this._copyButton?.removeEventListener('click', this._onCopyClick);
     this._themeOptionButtons?.forEach((button) => {
       button.removeEventListener('click', this._onThemeOptionClick);
@@ -398,13 +417,21 @@ class PixHighlighter extends HTMLPreElement {
     this._mo = null;
     this._copyButton = null;
     this._themePicker = null;
+    this._themeTrigger = null;
     this._themeTriggerLabel = null;
+    this._themeList = null;
     this._themeOptionButtons = [];
     this._copyResetTimer = 0;
+    this._themeMenuListenerTimer = 0;
     this._isSyncingCode = false;
     this._supportsHighlight = PixHighlighter.supportsHighlights();
+    this._supportsAnchorPositioning = supportsAnchorPositioning();
     this._onCopyClick = this._handleCopyClick.bind(this);
     this._onThemeOptionClick = this._handleThemeOptionClick.bind(this);
+    this._onThemePickerToggle = this._handleThemePickerToggle.bind(this);
+    this._onThemeMenuViewportChange = this._positionThemeList.bind(this);
+    this._onThemeMenuClick = this._handleDocumentClick.bind(this);
+    this._onThemeMenuKeyDown = this._handleDocumentKeyDown.bind(this);
   }
 
   _getCodeElement() {
@@ -416,11 +443,14 @@ class PixHighlighter extends HTMLPreElement {
 
     if (existingToolbar) {
       this._themePicker = existingToolbar.querySelector('[data-pix-highlighter-theme-picker]');
+      this._themeTrigger = existingToolbar.querySelector('[data-pix-highlighter-theme-trigger]');
       this._themeTriggerLabel = existingToolbar.querySelector('[data-pix-highlighter-theme-value]');
+      this._themeList = existingToolbar.querySelector('[data-pix-highlighter-theme-list]');
       this._copyButton = existingToolbar.querySelector('button[data-pix-highlighter-copy]');
       this._themeOptionButtons = Array.from(
         existingToolbar.querySelectorAll('button[data-pix-highlighter-theme-option]')
       );
+      this._teardownThemePicker();
       this._copyButton?.removeEventListener('click', this._onCopyClick);
       this._themeOptionButtons.forEach((button) => {
         button.removeEventListener('click', this._onThemeOptionClick);
@@ -429,6 +459,7 @@ class PixHighlighter extends HTMLPreElement {
       this._themeOptionButtons.forEach((button) => {
         button.addEventListener('click', this._onThemeOptionClick);
       });
+      this._bindThemePicker();
       return;
     }
 
@@ -459,8 +490,12 @@ class PixHighlighter extends HTMLPreElement {
 
     const themeList = document.createElement('ul');
     themeList.dataset.pixHighlighterThemeList = '';
+    themeList.id = `pix-highlighter-theme-list-${this._id}`;
     themeList.setAttribute('role', 'listbox');
     themeList.setAttribute('aria-label', 'Syntax highlight themes');
+    themeTrigger.setAttribute('aria-haspopup', 'listbox');
+    themeTrigger.setAttribute('aria-controls', themeList.id);
+    themeTrigger.setAttribute('aria-expanded', 'false');
 
     const optionButtons = [];
 
@@ -487,13 +522,214 @@ class PixHighlighter extends HTMLPreElement {
     this.prepend(toolbar);
 
     this._themePicker = themePicker;
+    this._themeTrigger = themeTrigger;
     this._themeTriggerLabel = triggerLabel;
+    this._themeList = themeList;
     this._themeOptionButtons = optionButtons;
     this._copyButton = copyButton;
     this._copyButton.addEventListener('click', this._onCopyClick);
     this._themeOptionButtons.forEach((button) => {
       button.addEventListener('click', this._onThemeOptionClick);
     });
+    this._bindThemePicker();
+  }
+
+  _bindThemePicker() {
+    if (!this._themePicker) {
+      return;
+    }
+
+    this._configureThemeAnchor();
+
+    this._themePicker.removeEventListener('toggle', this._onThemePickerToggle);
+    this._themePicker.addEventListener('toggle', this._onThemePickerToggle);
+
+    if (this._themeTrigger && this._themeList) {
+      if (!this._themeList.id) {
+        this._themeList.id = `pix-highlighter-theme-list-${this._id}`;
+      }
+
+      this._themeTrigger.setAttribute('aria-haspopup', 'listbox');
+      this._themeTrigger.setAttribute('aria-controls', this._themeList.id);
+      this._themeTrigger.setAttribute('aria-expanded', String(Boolean(this._themePicker.open)));
+    }
+  }
+
+  _getThemeAnchorName() {
+    return `--dout--pix-highlighter-theme-trigger-${this._id}`;
+  }
+
+  _configureThemeAnchor() {
+    if (!this._themeTrigger || !this._themeList) {
+      return;
+    }
+
+    const anchorName = this._getThemeAnchorName();
+
+    this._themeTrigger.style.setProperty('anchor-name', anchorName);
+    this._themeList.style.setProperty('position-anchor', anchorName);
+    this._themeList.style.setProperty('--dout--pix-anchor-offset', `${THEME_MENU_OFFSET}px`);
+  }
+
+  _teardownThemePicker() {
+    this._themePicker?.removeEventListener('toggle', this._onThemePickerToggle);
+    window.clearTimeout(this._themeMenuListenerTimer);
+    this._themeMenuListenerTimer = 0;
+    this._removeFloatingThemePickerListeners();
+    this._resetThemeListPosition();
+
+    if (this._themeTrigger) {
+      this._themeTrigger.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  _addFloatingThemePickerListeners() {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return;
+    }
+
+    if (!this._supportsAnchorPositioning) {
+      window.addEventListener('resize', this._onThemeMenuViewportChange);
+      document.addEventListener('scroll', this._onThemeMenuViewportChange, true);
+    }
+
+    document.addEventListener('click', this._onThemeMenuClick, true);
+    document.addEventListener('keydown', this._onThemeMenuKeyDown, true);
+  }
+
+  _removeFloatingThemePickerListeners() {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return;
+    }
+
+    window.removeEventListener('resize', this._onThemeMenuViewportChange);
+    document.removeEventListener('scroll', this._onThemeMenuViewportChange, true);
+    document.removeEventListener('click', this._onThemeMenuClick, true);
+    document.removeEventListener('keydown', this._onThemeMenuKeyDown, true);
+  }
+
+  _resetThemeListPosition() {
+    if (!this._themeList) {
+      return;
+    }
+
+    this._themeList.style.removeProperty('top');
+    this._themeList.style.removeProperty('left');
+    this._themeList.style.removeProperty('min-width');
+    this._themeList.style.removeProperty('max-height');
+    this._themeList.style.removeProperty('visibility');
+  }
+
+  _handleThemePickerToggle() {
+    const isOpen = Boolean(this._themePicker?.open);
+
+    if (this._themeTrigger) {
+      this._themeTrigger.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    if (!isOpen) {
+      window.clearTimeout(this._themeMenuListenerTimer);
+      this._themeMenuListenerTimer = 0;
+      this._removeFloatingThemePickerListeners();
+      this._resetThemeListPosition();
+      return;
+    }
+
+    window.clearTimeout(this._themeMenuListenerTimer);
+    this._positionThemeList();
+    this._themeMenuListenerTimer = window.setTimeout(() => {
+      this._themeMenuListenerTimer = 0;
+      if (this._themePicker?.open) {
+        this._addFloatingThemePickerListeners();
+      }
+    }, 0);
+  }
+
+  _handleDocumentClick(event) {
+    if (!this._themePicker?.open) {
+      return;
+    }
+
+    const target = event.target;
+
+    if (target instanceof Node && this._themePicker.contains(target)) {
+      return;
+    }
+
+    this._themePicker.open = false;
+  }
+
+  _handleDocumentKeyDown(event) {
+    if (event.key !== 'Escape' || !this._themePicker?.open) {
+      return;
+    }
+
+    this._themePicker.open = false;
+    this._themeTrigger?.focus();
+  }
+
+  _positionThemeList() {
+    if (
+      typeof window === 'undefined' ||
+      !this._themePicker?.open ||
+      !this._themeTrigger ||
+      !this._themeList
+    ) {
+      return;
+    }
+
+    if (this._supportsAnchorPositioning) {
+      this._resetThemeListPosition();
+      return;
+    }
+
+    const triggerRect = this._themeTrigger.getBoundingClientRect();
+    const minWidth = Math.max(triggerRect.width, 224);
+
+    this._themeList.style.visibility = 'hidden';
+    this._themeList.style.left = '0px';
+    this._themeList.style.top = '0px';
+    this._themeList.style.minWidth = `${Math.round(minWidth)}px`;
+    this._themeList.style.maxHeight = `${Math.max(
+      120,
+      window.innerHeight - THEME_MENU_VIEWPORT_MARGIN * 2
+    )}px`;
+
+    const listRect = this._themeList.getBoundingClientRect();
+    const listWidth = Math.min(
+      Math.max(minWidth, listRect.width || minWidth),
+      window.innerWidth - THEME_MENU_VIEWPORT_MARGIN * 2
+    );
+    const listHeight = listRect.height || 0;
+    const availableBelow =
+      window.innerHeight - triggerRect.bottom - THEME_MENU_VIEWPORT_MARGIN - THEME_MENU_OFFSET;
+    const availableAbove = triggerRect.top - THEME_MENU_VIEWPORT_MARGIN - THEME_MENU_OFFSET;
+    const openUpward =
+      availableBelow < Math.min(listHeight, 240) && availableAbove > availableBelow;
+    const maxHeight = Math.max(120, openUpward ? availableAbove : availableBelow);
+    const renderedHeight = Math.min(listHeight || maxHeight, maxHeight);
+
+    let left = triggerRect.left;
+    if (left + listWidth > window.innerWidth - THEME_MENU_VIEWPORT_MARGIN) {
+      left = window.innerWidth - THEME_MENU_VIEWPORT_MARGIN - listWidth;
+    }
+    left = Math.max(THEME_MENU_VIEWPORT_MARGIN, left);
+
+    const top = openUpward
+      ? Math.max(THEME_MENU_VIEWPORT_MARGIN, triggerRect.top - THEME_MENU_OFFSET - renderedHeight)
+      : Math.max(
+          THEME_MENU_VIEWPORT_MARGIN,
+          Math.min(
+            triggerRect.bottom + THEME_MENU_OFFSET,
+            window.innerHeight - THEME_MENU_VIEWPORT_MARGIN - renderedHeight
+          )
+        );
+
+    this._themeList.style.left = `${Math.round(left)}px`;
+    this._themeList.style.top = `${Math.round(top)}px`;
+    this._themeList.style.minWidth = `${Math.round(listWidth)}px`;
+    this._themeList.style.maxHeight = `${Math.round(maxHeight)}px`;
+    this._themeList.style.visibility = '';
   }
 
   _observe() {

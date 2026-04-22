@@ -15,6 +15,7 @@ Object.defineProperty(globalThis, 'navigator', {
 });
 global.HTMLElement = dom.window.HTMLElement;
 global.HTMLPreElement = dom.window.HTMLPreElement;
+global.Node = dom.window.Node;
 global.MutationObserver = dom.window.MutationObserver;
 global.CustomEvent = dom.window.CustomEvent;
 global.customElements = dom.window.customElements;
@@ -293,6 +294,61 @@ describe('PixHighlighter', () => {
     assert.ok(instance.querySelector('button[data-pix-highlighter-copy] svg'));
   });
 
+  test('uses a fixed-position fallback when anchor positioning is unavailable', () => {
+    const instance = createPseudoInstance({ code: 'const themed = true;', lang: 'js' });
+    const themePicker = instance.querySelector('details[data-pix-highlighter-theme-picker]');
+    const themeTrigger = instance.querySelector('summary[data-pix-highlighter-theme-trigger]');
+    const themeList = instance.querySelector('[data-pix-highlighter-theme-list]');
+
+    Object.defineProperty(window, 'innerWidth', {
+      configurable: true,
+      value: 1024,
+    });
+    Object.defineProperty(window, 'innerHeight', {
+      configurable: true,
+      value: 768,
+    });
+
+    themeTrigger.getBoundingClientRect = () => ({
+      left: 48,
+      top: 60,
+      right: 180,
+      bottom: 96,
+      width: 132,
+      height: 36,
+    });
+    themeList.getBoundingClientRect = () => ({
+      left: 0,
+      top: 0,
+      right: 240,
+      bottom: 220,
+      width: 240,
+      height: 220,
+    });
+
+    themePicker.open = true;
+    themePicker.dispatchEvent(new dom.window.Event('toggle'));
+
+    assert.equal(themeTrigger.getAttribute('aria-expanded'), 'true');
+    assert.match(
+      themeTrigger.style.getPropertyValue('anchor-name'),
+      /^--dout--pix-highlighter-theme-trigger-/
+    );
+    assert.equal(
+      themeList.style.getPropertyValue('position-anchor'),
+      themeTrigger.style.getPropertyValue('anchor-name')
+    );
+    assert.equal(themeList.style.left, '48px');
+    assert.equal(themeList.style.top, '104px');
+    assert.equal(themeList.style.minWidth, '240px');
+
+    themePicker.open = false;
+    themePicker.dispatchEvent(new dom.window.Event('toggle'));
+
+    assert.equal(themeTrigger.getAttribute('aria-expanded'), 'false');
+    assert.equal(themeList.style.top, '');
+  });
+
   test('falls back to a managed style element when adopted stylesheets are unavailable', () => {
     const adoptedStyleSheetsDescriptor = Object.getOwnPropertyDescriptor(
       document,
@@ -394,6 +450,8 @@ describe('PixHighlighter', () => {
     assert.ok(mainCss.includes('::highlight(pix-kw)'));
     assert.ok(!mainCss.includes('@import'));
     assert.ok(themeDefaultsCss.includes('[data-pix-highlighter-toolbar]'));
+    assert.ok(themeDefaultsCss.includes('position-anchor'));
+    assert.ok(themeDefaultsCss.includes('anchor(bottom)'));
     assert.ok(prismCss.includes("[data-pix-highlighter-theme='prism']"));
     assert.ok(prettyLightsCss.includes("[data-pix-highlighter-theme='prettylights']"));
     assert.ok(darculaCss.includes("[data-pix-highlighter-theme='darcula']"));

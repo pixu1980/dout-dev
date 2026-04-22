@@ -6,7 +6,21 @@
     <description>RSS feed for posts tagged with Architecture</description>
     <atom:link href="https://dout.dev/tags/architecture.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Mon, 20 Apr 2026 11:44:21 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 09:40:03 GMT</lastBuildDate>
+    <item>
+      <title>How to Write Agent Skills That Actually Trigger</title>
+      <link>https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html</guid>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The mistake most people make</description>
+    </item>
+    <item>
+      <title>When Markdown Is a CMS, and When It Is Not</title>
+      <link>https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</guid>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The useful distinction</description>
+    </item>
     <item>
       <title>How I Built dout.dev</title>
       <link>https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</link>

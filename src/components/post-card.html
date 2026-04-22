@@ -1,6 +1,6 @@
-<article class="post-card{{ showCover && post.coverImage ? ' post-card--with-media' : '' }}">
+<article data-post-card data-post-card-variant="{{ showCover && post.coverImage ? 'with-media' : 'default' }}">
   <if condition="showCover && post.coverImage">
-    <figure class="post-card__media">
+    <figure data-post-card-media>
       <a href="/posts/{{ post.name }}.html" tabindex="-1">
         <img
           src="{{ post.coverImage | absUrl }}"
@@ -14,35 +14,35 @@
     </figure>
   </if>
 
-  <div class="post-card__body">
-    <header class="post-card__header">
-      <p class="post-card__meta">
+  <div data-post-card-body>
+    <header data-post-card-header>
+      <p data-post-card-meta>
         <time datetime="{{ post.date | date:'YYYY-MM-DD' }}">{{ post.date | date:'long' }}</time>
       </p>
 
       <switch expr="headingLevel">
         <case value="3">
-          <h3 class="post-card__title"><a href="/posts/{{ post.name }}.html">{{ post.title }}</a></h3>
+          <h3 data-post-card-title><a href="/posts/{{ post.name }}.html">{{ post.title }}</a></h3>
         </case>
         <case value="4">
-          <h4 class="post-card__title"><a href="/posts/{{ post.name }}.html">{{ post.title }}</a></h4>
+          <h4 data-post-card-title><a href="/posts/{{ post.name }}.html">{{ post.title }}</a></h4>
         </case>
         <default>
-          <h2 class="post-card__title"><a href="/posts/{{ post.name }}.html">{{ post.title }}</a></h2>
+          <h2 data-post-card-title><a href="/posts/{{ post.name }}.html">{{ post.title }}</a></h2>
         </default>
       </switch>
     </header>
 
     <if condition="showExcerpt && post.excerpt">
-      <p class="post-card__excerpt">{{ post.excerpt }}</p>
+      <p data-post-card-excerpt>{{ post.excerpt }}</p>
     </if>
   </div>
 
   <if condition="showTags && post.tags && post.tags.length">
-    <footer class="post-card__footer">
-      <ul class="post-card__tags" aria-label="Post topics">
+    <footer data-post-card-footer>
+      <ul data-post-card-tags aria-label="Post topics">
         <for each="t in post.tags">
-          <li><a class="tag tag--small" href="{{ t | tagHref }}">{{ t | tagLabel }}</a></li>
+          <li><a class="tag" data-tag-size="small" href="{{ t | tagHref }}">{{ t | tagLabel }}</a></li>
         </for>
       </ul>
     </footer>

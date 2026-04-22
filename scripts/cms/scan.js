@@ -3,7 +3,7 @@
 import { join, relative } from 'node:path';
 import { resolveConfig } from './config.js';
 import { processMarkdown } from './post-processor.js';
-import { scanDirRecursive, readFile, writeJson, ensureDir } from './utils.js';
+import { ensureDir, readFile, scanDirRecursive, writeJson } from './utils.js';
 
 export function scanContent(userConfig = {}) {
   const config = resolveConfig(userConfig);
@@ -104,6 +104,11 @@ function minPost(p) {
     path: p.path,
     url: `/posts/${p.name}/`,
     excerpt: p.excerpt,
+    coverImage: p.coverImage,
+    coverWidth: p.coverWidth,
+    coverHeight: p.coverHeight,
+    coverAlt: p.coverAlt,
+    coverTitle: p.coverTitle,
     tags: p.tags,
     pinned: p.pinned,
   };

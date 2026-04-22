@@ -16,7 +16,7 @@
   <rect x="102" y="112" width="140" height="40" rx="999" fill="#FFFFFF" fill-opacity="0.08" />
   <text x="126" y="138" fill="#F5F7FA" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="0.12em">DOUT.DEV</text>
   <text x="118" y="246" fill="#F8FBFF" font-family="Georgia, Times New Roman, serif" font-size="74" font-weight="700" letter-spacing="-0.04em"><tspan x="118" dy="0">Say hello to 2023 🎉</tspan></text>
-  <text x="124" y="442" fill="#B6C2D4" font-family="Helvetica, Arial, sans-serif" font-size="29" font-weight="400"><tspan x="124" dy="0">addEventListener(&#39;DOMContentLoaded&#39;, (e) =&gt; {</tspan><tspan x="124" dy="38">console.log(e); });</tspan><tspan x="124" dy="38">anotherFunctionCallGoesHere({}...</tspan></text>
+  <text x="124" y="442" fill="#B6C2D4" font-family="Helvetica, Arial, sans-serif" font-size="29" font-weight="400"><tspan x="124" dy="0">Say hello to 2023 🎉</tspan></text>
   <text x="120" y="530" fill="#E5ECF5" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700">dout.dev</text>
   <text x="1048" y="530" text-anchor="end" fill="#B6C2D4" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="400">https://dout.dev</text>
 </svg>

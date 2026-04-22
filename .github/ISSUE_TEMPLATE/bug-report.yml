@@ -1,0 +1,46 @@
+name: Bug report
+description: Report a site or repository bug
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not use this template for vulnerabilities or sensitive data. For security issues, read SECURITY.md.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What is happening?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: false
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: false
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: false
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "Browser, OS, device, URL"
+    validations:
+      required: false

@@ -2,7 +2,7 @@ const path = require('node:path');
 const fs = require('node:fs');
 
 // Get the template engine
-const { TemplateRenderer } = require('../scripts/template-engine/renderer.js');
+const { TemplateRenderer } = require('../scripts/template-engine/_renderer.js');
 
 // Simple test data
 const testData = {

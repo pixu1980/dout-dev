@@ -13,8 +13,6 @@ import { readdir, stat } from 'node:fs/promises';
 const execAsync = promisify(exec);
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = join(__dirname, '..', '..');
-const handAuthoredRoots = ['components', 'demo', 'layouts', 'templates'];
-const handAuthoredFiles = ['accessibility.html'];
 
 async function findHTMLFiles(dir) {
   const files = [];
@@ -39,25 +37,15 @@ async function findHTMLFiles(dir) {
   return files;
 }
 
-async function getHandAuthoredHtmlFiles() {
-  const files = [];
-
-  for (const entry of handAuthoredRoots) {
-    files.push(...(await findHTMLFiles(join(projectRoot, 'src', entry))));
-  }
-
-  for (const fileName of handAuthoredFiles) {
-    files.push(join(projectRoot, 'src', fileName));
-  }
-
-  return files;
+async function getHtmlFiles() {
+  return findHTMLFiles(join(projectRoot, 'src'));
 }
 
 async function formatHTML() {
   console.log('🎨 Formatting HTML files...\n');
 
   try {
-    const htmlFiles = await getHandAuthoredHtmlFiles();
+    const htmlFiles = await getHtmlFiles();
 
     if (htmlFiles.length === 0) {
       console.log('⚠️  No HTML files found to format');
@@ -66,9 +54,8 @@ async function formatHTML() {
 
     console.log(`📄 Found ${htmlFiles.length} HTML files`);
 
-    // Format with Prettier
     const { stdout, stderr } = await execAsync(
-      `npx prettier --write ${htmlFiles.map((f) => `"${f}"`).join(' ')}`,
+      `pnpm exec prettier --write ${htmlFiles.map((f) => `"${f}"`).join(' ')}`,
       { cwd: projectRoot }
     );
 

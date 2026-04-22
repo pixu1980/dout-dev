@@ -4,15 +4,12 @@
 
 ### In `src/styles/`
 
-- **[main.css](../src/styles/main.css)** — File principale di stili (1200+ righe)
-  - Contiene tutte le custom properties CSS (variabili)
-  - Definisce i layer CSS (@layer tokens, reset, base, layout, components, utilities, overrides)
-  - Implementa il sistema di tema light/dark
-  - Definisce tutte le componenti visive
-- **[index.css](../src/styles/index.css)** — File di bootstrap minimalista (M0 placeholder)
-  - Reset di base (margin, padding)
-  - Stili minimali per immagini post covers
-  - Font stack di fallback
+- **[index.css](../src/styles/index.css)** — Entry point degli stili
+  - Importa tutti i layer CSS nell'ordine corretto
+  - Costituisce il singolo punto di ingresso per Vite e i template HTML
+- **[layers/](../src/styles/layers/)** — Struttura modulare degli stili
+  - `tokens.css` definisce custom properties, tema, type scale, spacing scale e radii
+  - `reset.css`, `base.css`, `layout.css`, `components.css`, `utilities.css`, `overrides.css` separano i layer visivi
 
 ### In `scripts/`
 
@@ -22,14 +19,15 @@
 
 ## 2. Variabili CSS Definite in `:root`
 
-### **main.css - Tokens Layer (righe 1-110)**
+### **layers/tokens.css - Tokens Layer**
 
 #### **Colori Accent (variabili HSL)**
 
 ```css
---accent-h: 16 /* Orange default */ --accent-s: 95% --accent-l: 58%
-  --accent: hsl(var(--accent-h) var(--accent-s) var(--accent-l)) --accent-soft: hsl(var(--accent-h) 100% 92%)
-  --accent-strong: hsl(var(--accent-h) 96% 46%);
+--dout--accent-h: 16 /* Orange default */ --dout--accent-s: 95% --dout--accent-l: 58%
+  --dout--accent: hsl(var(--dout--accent-h) var(--dout--accent-s) var(--dout--accent-l))
+  --dout--accent-soft: hsl(var(--dout--accent-h) 100% 92%)
+  --dout--accent-strong: hsl(var(--dout--accent-h) 96% 48%);
 ```
 
 #### **Tema Light (Default)**
@@ -204,8 +202,8 @@ File: [src/components/header.html](../src/components/header.html)
   <div class="container header-bar">
     <!-- Logo / Brand -->
     <a class="brand" href="/">
-      <span class="brand__mark">dout.dev</span>
-      <span class="brand__tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
+      <span class="brand--mark">dout.dev</span>
+      <span class="brand--tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
     </a>
 
     <!-- Menu Toggle (mobile) -->
@@ -236,7 +234,7 @@ File: [src/components/header.html](../src/components/header.html)
 
 ### **CSS Header**
 
-File: [src/styles/main.css](../src/styles/main.css#L249-L290)
+File: [src/styles/index.css](../src/styles/index.css#L249-L290)
 
 ```css
 .site-header {
@@ -323,8 +321,8 @@ File: [src/scripts/main.js](../src/scripts/main.js#L58-L75)
 ```
 src/
 ├── styles/                          ← Stili CSS
-│   ├── main.css                     ← 1200+ righe, tutte le custom properties e componenti
-│   └── index.css                    ← Minimal bootstrap M0
+│   ├── index.css                    ← Entry point degli stili
+│   └── layers/                      ← Split per @layer (tokens, reset, base, layout, components, utilities, overrides)
 ├── components/                      ← Componenti HTML
 │   ├── header.html                  ← Header con theme/accent picker
 │   ├── footer.html                  ← Footer

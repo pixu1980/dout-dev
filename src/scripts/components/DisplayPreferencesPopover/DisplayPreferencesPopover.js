@@ -10,10 +10,21 @@ const STORAGE_KEY = 'display-preferences';
 const ELEMENT_NAME = 'display-preferences-popover';
 const FONT_SCALE_OPTIONS = ['75%', '80%', '90%', '100%', '110%', '120%', '125%'];
 const RADIUS_PRESET_OPTIONS = [
-  { id: 'compact', label: 'Compact', scale: 0.75 },
-  { id: 'balanced', label: 'Balanced', scale: 1 },
-  { id: 'soft', label: 'Soft', scale: 1.25 },
-  { id: 'rounded', label: 'Rounded', scale: 1.5 },
+  {
+    description: 'Zero radius, sharp edges across cards and controls.',
+    id: 'square',
+    label: 'Square',
+  },
+  {
+    description: 'A restrained 4px radius for the full interface.',
+    id: 'rounded',
+    label: 'Rounded',
+  },
+  {
+    description: 'A softer superellipse silhouette for a more sculpted UI.',
+    id: 'squircle',
+    label: 'Squircle',
+  },
 ];
 const ACCESSIBILITY_OPTIONS = [
   {
@@ -133,7 +144,7 @@ const DEFAULT_PREFERENCES = Object.freeze({
   fontScale: '100%',
   headingFont: 'editorial-serif',
   increaseContrast: false,
-  radiusPreset: 'balanced',
+  radiusPreset: 'rounded',
   reduceAnimations: false,
   reduceMotion: false,
   reduceTransparency: false,
@@ -257,13 +268,18 @@ function applyPreferencesToDocument(preferences) {
   }
 
   root.style.setProperty(
-    '--font-display',
+    '--dout--font-display',
     findFontOption('headingFont', normalized.headingFont).stack
   );
-  root.style.setProperty('--font-sans', findFontOption('bodyFont', normalized.bodyFont).stack);
-  root.style.setProperty('--font-mono', findFontOption('codeFont', normalized.codeFont).stack);
+  root.style.setProperty(
+    '--dout--font-sans',
+    findFontOption('bodyFont', normalized.bodyFont).stack
+  );
+  root.style.setProperty(
+    '--dout--font-mono',
+    findFontOption('codeFont', normalized.codeFont).stack
+  );
   root.setAttribute('data-radius-preset', normalized.radiusPreset);
-  root.style.setProperty('--radius-scale', String(findRadiusPreset(normalized.radiusPreset).scale));
 
   return normalized;
 }
@@ -284,10 +300,24 @@ function renderScaleOptions(selectedValue) {
   }).join('');
 }
 
-function renderRadiusPresetOptions(selectedValue) {
+function renderRadiusPresetControls(panelId, selectedValue) {
   return RADIUS_PRESET_OPTIONS.map((option) => {
-    const selected = option.id === selectedValue ? ' selected' : '';
-    return `<option value="${option.id}"${selected}>${option.label}</option>`;
+    const checked = option.id === selectedValue ? ' checked' : '';
+    const inputId = `${panelId}-radius-${option.id}`;
+
+    return `
+      <label class="preferences-choice" for="${inputId}">
+        <input id="${inputId}" type="radio" name="radiusPreset" value="${option.id}"${checked} />
+        <span class="preferences-choice__preview" data-radius-preview="${option.id}" aria-hidden="true">
+          <span></span>
+          <span></span>
+        </span>
+        <span class="preferences-choice__copy">
+          <span class="preferences-choice__label">${option.label}</span>
+          <span class="preferences-choice__hint">${option.description}</span>
+        </span>
+      </label>
+    `;
   }).join('');
 }
 
@@ -421,15 +451,12 @@ class DisplayPreferencesPopover extends HTMLElement {
 
           <section class="preferences-group" aria-labelledby="${this._panelId}-shape">
             <div class="preferences-group__title">
-              <h3 id="${this._panelId}-shape">Shape</h3>
-              <p>Adjust the global corner radius scale while keeping pills and avatars intact.</p>
+              <h3 id="${this._panelId}-shape">Corners</h3>
+              <p>Switch between sharp, restrained, and sculpted corners with a stronger visual delta.</p>
             </div>
 
-            <div class="preferences-field">
-              <label for="${this._panelId}-radius-preset">Corner style</label>
-              <select id="${this._panelId}-radius-preset" name="radiusPreset">
-                ${renderRadiusPresetOptions(this.preferences.radiusPreset)}
-              </select>
+            <div class="preferences-choice-grid" role="radiogroup" aria-labelledby="${this._panelId}-shape">
+              ${renderRadiusPresetControls(this._panelId, this.preferences.radiusPreset)}
             </div>
           </section>
 
@@ -554,6 +581,14 @@ class DisplayPreferencesPopover extends HTMLElement {
     this._controls?.forEach((control) => {
       if (control instanceof HTMLInputElement && control.type === 'checkbox') {
         control.checked = this.preferences[control.name] === true;
+        return;
+      }
+
+      if (control instanceof HTMLInputElement && control.type === 'radio') {
+        control.checked = control.value === this.preferences[control.name];
+        control
+          .closest('.preferences-choice')
+          ?.setAttribute('data-selected', String(control.checked));
         return;
       }
 

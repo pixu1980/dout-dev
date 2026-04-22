@@ -5,7 +5,9 @@
 
 import { initLazyImages } from './lazy-images.js';
 import { initArticleNavigation } from './article-navigation.js';
+import { initExternalLinks } from './external-links.js';
 import { initPostFeedLayout } from './post-feed-layout.js';
+import { initPostFeedLoadMore } from './post-feed-load-more.js';
 import { initAnalyticsDashboard, trackPageView } from './analytics.js';
 import './components/ColorSchemeSelector/ColorSchemeSelector.js';
 import './components/AccentColorSelector/AccentColorSelector.js';
@@ -38,6 +40,25 @@ let enhancedNavigationInitialized = false;
 let giscusThemeObserver = null;
 let giscusThemeObserverTimeout = 0;
 let searchWarmupHandle = 0;
+
+function withInstantScrollBehavior(callback) {
+  const root = document.documentElement;
+  const previousInlineBehavior = root.style.scrollBehavior;
+
+  root.style.scrollBehavior = 'auto';
+
+  try {
+    callback();
+  } finally {
+    window.requestAnimationFrame(() => {
+      if (previousInlineBehavior) {
+        root.style.scrollBehavior = previousInlineBehavior;
+      } else {
+        root.style.removeProperty('scroll-behavior');
+      }
+    });
+  }
+}
 
 function scheduleIdle(callback, timeout = 1500) {
   if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
@@ -414,7 +435,9 @@ function focusAfterNavigation(destination) {
         target.setAttribute('tabindex', '-1');
       }
       target.focus({ preventScroll: true });
-      target.scrollIntoView();
+      withInstantScrollBehavior(() => {
+        target.scrollIntoView({ block: 'start', inline: 'nearest' });
+      });
       return;
     }
   }
@@ -423,11 +446,15 @@ function focusAfterNavigation(destination) {
   if (main instanceof HTMLElement) {
     main.focus({ preventScroll: true });
   }
-  window.scrollTo(0, 0);
+  withInstantScrollBehavior(() => {
+    window.scrollTo({ top: 0, left: 0 });
+  });
 }
 
 async function hydratePage() {
+  initExternalLinks();
   initPostFeedLayout();
+  initPostFeedLoadMore();
   initNavigation();
   initSearchField();
   initArticleNavigation();
@@ -530,6 +557,9 @@ function initEnhancedNavigation() {
 async function bootSite() {
   if (!hasBooted) {
     hasBooted = true;
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
     initLegacyThemeBridge();
     initAccentBridge();
     initNavigation();

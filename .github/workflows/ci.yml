@@ -89,6 +89,9 @@ jobs:
       - name: Build site
         run: pnpm build
 
+      - name: Validate OpenGraph and Twitter metadata on localhost preview
+        run: pnpm validate:opengraph:dist
+
       - name: Validate built links
         run: pnpm validate:links:dist
 

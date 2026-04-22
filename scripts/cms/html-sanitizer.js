@@ -13,6 +13,10 @@ const URL_ATTRIBUTES = new Set([
 
 const REMOVED_ELEMENTS = new Set(['base', 'embed', 'meta', 'object', 'script']);
 const ALLOWED_IFRAME_HOSTS = new Set(['codepen.io']);
+const INTERNAL_HOSTS = new Set(['dout.dev', 'www.dout.dev']);
+const OUTBOUND_SOURCE_PARAM = 'from';
+const OUTBOUND_SOURCE_VALUE = 'dout.dev';
+const OUTBOUND_REFERRER_POLICY = 'strict-origin-when-cross-origin';
 
 function isSafeUrl(value, attributeName, tagName) {
   const normalized = String(value || '').trim();
@@ -101,6 +105,23 @@ function sanitizeIframe(element) {
   }
 }
 
+function isInternalSiteUrl(url) {
+  return INTERNAL_HOSTS.has(url.hostname);
+}
+
+function decorateExternalAnchor(element, url) {
+  url.searchParams.set(OUTBOUND_SOURCE_PARAM, OUTBOUND_SOURCE_VALUE);
+
+  const rel = new Set((element.getAttribute('rel') || '').split(/\s+/).filter(Boolean));
+  rel.delete('noreferrer');
+  rel.add('noopener');
+
+  element.setAttribute('href', url.toString());
+  element.setAttribute('target', '_blank');
+  element.setAttribute('referrerpolicy', OUTBOUND_REFERRER_POLICY);
+  element.setAttribute('rel', [...rel].join(' '));
+}
+
 function sanitizeAttributes(element) {
   for (const attribute of [...element.attributes]) {
     const name = attribute.name.toLowerCase();
@@ -142,12 +163,11 @@ function sanitizeAttributes(element) {
 
     try {
       const url = new URL(href, 'https://dout.dev');
-      if (url.origin !== 'https://dout.dev') {
-        const rel = new Set((element.getAttribute('rel') || '').split(/\s+/).filter(Boolean));
-        rel.add('noopener');
-        rel.add('noreferrer');
-        element.setAttribute('rel', [...rel].join(' '));
+      if (!/^https?:$/i.test(url.protocol) || isInternalSiteUrl(url)) {
+        return;
       }
+
+      decorateExternalAnchor(element, url);
     } catch {}
   }
 }

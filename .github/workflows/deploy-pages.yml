@@ -16,12 +16,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      GISCUS_REPO: ${{ vars.GISCUS_REPO }}
-      GISCUS_REPO_ID: ${{ vars.GISCUS_REPO_ID }}
-      GISCUS_CATEGORY: ${{ vars.GISCUS_CATEGORY }}
-      GISCUS_CATEGORY_ID: ${{ vars.GISCUS_CATEGORY_ID }}
-      GISCUS_LANG: ${{ vars.GISCUS_LANG }}
-      GISCUS_THEME: ${{ vars.GISCUS_THEME }}
+      GISCUS_REPO: ${{ secrets.GISCUS_REPO }}
+      GISCUS_REPO_ID: ${{ secrets.GISCUS_REPO_ID }}
+      GISCUS_CATEGORY: ${{ secrets.GISCUS_CATEGORY }}
+      GISCUS_CATEGORY_ID: ${{ secrets.GISCUS_CATEGORY_ID }}
+      GISCUS_MAPPING: ${{ secrets.GISCUS_MAPPING }}
+      GISCUS_STRICT: ${{ secrets.GISCUS_STRICT }}
+      GISCUS_REACTIONS_ENABLED: ${{ secrets.GISCUS_REACTIONS_ENABLED }}
+      GISCUS_EMIT_METADATA: ${{ secrets.GISCUS_EMIT_METADATA }}
+      GISCUS_INPUT_POSITION: ${{ secrets.GISCUS_INPUT_POSITION }}
+      GISCUS_LANG: ${{ secrets.GISCUS_LANG }}
+      GISCUS_THEME: ${{ secrets.GISCUS_THEME }}
+      GISCUS_LOADING: ${{ secrets.GISCUS_LOADING }}
 
     steps:
       - name: Checkout repository
@@ -46,6 +52,9 @@ jobs:
 
       - name: Build site
         run: pnpm build
+
+      - name: Validate OpenGraph and Twitter metadata on localhost preview
+        run: pnpm validate:opengraph:dist
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

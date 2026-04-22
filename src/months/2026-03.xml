@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dout.dev — March 2026</title>
+    <link>https://dout.dev/months/2026-03/</link>
+    <description>RSS feed for posts from March 2026</description>
+    <atom:link href="https://dout.dev/months/2026-03.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 27 Apr 2026 09:40:03 GMT</lastBuildDate>
+    <item>
+      <title>Welcome to dout.dev</title>
+      <link>https://dout.dev/posts/2026-03-31-welcome-to-dout-dev.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-03-31-welcome-to-dout-dev.html</guid>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Welcome to the New dout.dev</description>
+    </item>
+  </channel>
+</rss>
