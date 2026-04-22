@@ -20,12 +20,10 @@ async function checkFormatting() {
   let hasErrors = false;
 
   try {
-    // Check JavaScript/TypeScript with Biome
-    console.log('📋 Checking Biome formatting (JS only)...');
+    console.log('📋 Checking Biome formatting (JS/CSS)...');
     try {
-      // Run formatter in dry mode at repo root (config controls includes)
       const { stdout: biomeStdout } = await execAsync(
-        'npx biome format --reporter=summary --diagnostic-level=error .',
+        'pnpm exec biome format --reporter=summary --diagnostic-level=error .',
         { cwd: projectRoot }
       );
 
@@ -37,11 +35,24 @@ async function checkFormatting() {
       hasErrors = true;
     }
 
-    // Check other files with Prettier
-    console.log('\n🎯 Checking Prettier formatting (HTML/CSS/MD/JSON/YAML)...');
+    console.log('\n📄 Checking HTML formatting...');
+    try {
+      const { stdout: htmlStdout } = await execAsync('node scripts/linting/format-check-html.js', {
+        cwd: projectRoot,
+      });
+
+      if (htmlStdout) console.log(htmlStdout);
+      console.log('✅ HTML formatting is correct');
+    } catch (htmlError) {
+      console.error('❌ HTML formatting issues found:');
+      console.error(htmlError.stdout || htmlError.message);
+      hasErrors = true;
+    }
+
+    console.log('\n🎯 Checking Prettier formatting (MD/JSON/YAML)...');
     try {
       const { stdout: prettierStdout } = await execAsync(
-        'npx prettier --check "**/*.{css,md,json,yml,yaml}" --ignore-path .prettierignore',
+        'pnpm exec prettier --check "**/*.{md,json,yml,yaml}" --ignore-path .prettierignore',
         { cwd: projectRoot }
       );
 

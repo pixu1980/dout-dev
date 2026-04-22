@@ -8,7 +8,7 @@
 import assert, { equal } from 'node:assert';
 import { describe, test } from 'node:test';
 
-import { evaluateCondition, evaluateExpression, parseExpression } from '../expression-parser.js';
+import { evaluateCondition, evaluateExpression, parseExpression } from '../_expression-parser.js';
 
 describe('TemplateEngine - Expression Parser', () => {
   // === Basic Parsing Tests ===

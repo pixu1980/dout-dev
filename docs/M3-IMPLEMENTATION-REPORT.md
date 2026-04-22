@@ -4,7 +4,7 @@ This report summarizes what was implemented for M3 (Layouts & fundamental compon
 
 ## Summary
 
-- Introduced a layered CSS architecture in `src/styles/main.css`:
+- Introduced a layered CSS architecture in `src/styles/index.css`:
   - `@layer tokens, reset, base, layout, components, utilities, overrides`
 - Defined design tokens (colors, spacing, typography) with dark theme via `prefers-color-scheme`.
 - Adopted element-first, semantic HTML approach. Removed `!important` usages.

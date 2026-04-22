@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-20T11:44:19.557Z",
+  "generatedAt": "2026-04-27T19:31:11.456Z",
   "version": 1,
   "entries": {
     "page:home": {
@@ -23,6 +23,13 @@
       "pngPath": "/assets/og/pages/about.png",
       "svgPath": "/assets/og/pages/about.svg"
     },
+    "page:accessibility": {
+      "kind": "page",
+      "slug": "accessibility",
+      "hash": "4cf970ea96f5b6b389e6b1b4809db22e7e5c3f0f",
+      "pngPath": "/assets/og/pages/accessibility.png",
+      "svgPath": "/assets/og/pages/accessibility.svg"
+    },
     "page:search": {
       "kind": "page",
       "slug": "search",
@@ -43,6 +50,13 @@
       "hash": "5ecb2d9ba7257e268d44dc692d794c3df3303b17",
       "pngPath": "/assets/og/pages/playground.png",
       "svgPath": "/assets/og/pages/playground.svg"
+    },
+    "page:demo": {
+      "kind": "page",
+      "slug": "demo",
+      "hash": "585c9335feae38c01c5fefe16daf9d070c8f68ac",
+      "pngPath": "/assets/og/pages/demo.png",
+      "svgPath": "/assets/og/pages/demo.svg"
     },
     "page:offline": {
       "kind": "page",
@@ -187,7 +201,7 @@
     "post:2023-01-01-say-hello-2023": {
       "kind": "post",
       "slug": "2023-01-01-say-hello-2023",
-      "hash": "a639388421074f56fe465f7deb62bbb760040b90",
+      "hash": "2eb0f082f3bfa7819a2064b3149a3e36ce77808d",
       "pngPath": "/assets/og/posts/2023-01-01-say-hello-2023.png",
       "svgPath": "/assets/og/posts/2023-01-01-say-hello-2023.svg"
     },
@@ -212,12 +226,12 @@
       "pngPath": "/assets/og/posts/2024-12-27-m4-template-test.png",
       "svgPath": "/assets/og/posts/2024-12-27-m4-template-test.svg"
     },
-    "post:2025-08-15-welcome-to-dout-dev-2": {
+    "post:2026-03-31-welcome-to-dout-dev": {
       "kind": "post",
-      "slug": "2025-08-15-welcome-to-dout-dev-2",
-      "hash": "3771628c61f22e6124744ff00ea003d669afe426",
-      "pngPath": "/assets/og/posts/2025-08-15-welcome-to-dout-dev-2.png",
-      "svgPath": "/assets/og/posts/2025-08-15-welcome-to-dout-dev-2.svg"
+      "slug": "2026-03-31-welcome-to-dout-dev",
+      "hash": "14df87b3aedacb94515340a93b24130eff3d2643",
+      "pngPath": "/assets/og/posts/2026-03-31-welcome-to-dout-dev.png",
+      "svgPath": "/assets/og/posts/2026-03-31-welcome-to-dout-dev.svg"
     },
     "post:2026-04-04-how-i-built-dout-dev": {
       "kind": "post",
@@ -226,12 +240,19 @@
       "pngPath": "/assets/og/posts/2026-04-04-how-i-built-dout-dev.png",
       "svgPath": "/assets/og/posts/2026-04-04-how-i-built-dout-dev.svg"
     },
-    "post:test": {
+    "post:2026-04-21-when-markdown-is-a-cms-and-when-it-is-not": {
       "kind": "post",
-      "slug": "test",
-      "hash": "3c205f91daeef0ae0cf12cf22810b7b63b26c309",
-      "pngPath": "/assets/og/posts/test.png",
-      "svgPath": "/assets/og/posts/test.svg"
+      "slug": "2026-04-21-when-markdown-is-a-cms-and-when-it-is-not",
+      "hash": "c23438797055ff5c36f96d04b14fe7fcc834e085",
+      "pngPath": "/assets/og/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.png",
+      "svgPath": "/assets/og/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.svg"
+    },
+    "post:2026-04-22-how-to-write-agent-skills": {
+      "kind": "post",
+      "slug": "2026-04-22-how-to-write-agent-skills",
+      "hash": "da1449e8071484f4ef031aa70bc94c524bd91da3",
+      "pngPath": "/assets/og/posts/2026-04-22-how-to-write-agent-skills.png",
+      "svgPath": "/assets/og/posts/2026-04-22-how-to-write-agent-skills.svg"
     },
     "tag:markdown": {
       "kind": "tag",
@@ -394,6 +415,13 @@
       "pngPath": "/assets/og/tags/accessibility.png",
       "svgPath": "/assets/og/tags/accessibility.svg"
     },
+    "tag:ai-copilot": {
+      "kind": "tag",
+      "slug": "ai-copilot",
+      "hash": "b0471e6fd05234dd662355313183fe2e28b4eac3",
+      "pngPath": "/assets/og/tags/ai-copilot.png",
+      "svgPath": "/assets/og/tags/ai-copilot.svg"
+    },
     "month:2019-01": {
       "kind": "month",
       "slug": "2019-01",
@@ -464,12 +492,12 @@
       "pngPath": "/assets/og/months/2024-12.png",
       "svgPath": "/assets/og/months/2024-12.svg"
     },
-    "month:2025-08": {
+    "month:2026-03": {
       "kind": "month",
-      "slug": "2025-08",
-      "hash": "0424fb29a7dac7abf10ca66df850b172362be9a5",
-      "pngPath": "/assets/og/months/2025-08.png",
-      "svgPath": "/assets/og/months/2025-08.svg"
+      "slug": "2026-03",
+      "hash": "4c4cd91ef1c5e13a588da1674a982f2a34dac81f",
+      "pngPath": "/assets/og/months/2026-03.png",
+      "svgPath": "/assets/og/months/2026-03.svg"
     },
     "month:2026-04": {
       "kind": "month",

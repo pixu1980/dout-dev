@@ -6,7 +6,7 @@
     <description>RSS feed for posts tagged with Design</description>
     <atom:link href="https://dout.dev/tags/design.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Mon, 20 Apr 2026 11:44:21 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 19:31:13 GMT</lastBuildDate>
     <item>
       <title>Accessibility by Design</title>
       <link>https://dout.dev/posts/2024-05-19-a11y-by-design.html</link>

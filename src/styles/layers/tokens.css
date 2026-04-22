@@ -1,0 +1,159 @@
+@layer tokens {
+  :root {
+    color-scheme: light dark;
+
+    --dout--accent-h: 16;
+    --dout--accent-s: 95%;
+    --dout--accent-l: 58%;
+    --dout--accent: hsl(var(--dout--accent-h) var(--dout--accent-s) var(--dout--accent-l));
+    --dout--accent-soft: hsl(var(--dout--accent-h) 100% 92%);
+    --dout--accent-strong: hsl(var(--dout--accent-h) 96% 48%);
+
+    --dout--bg: #faf8f5;
+    --dout--bg-elevated: #ffffff;
+    --dout--surface: rgba(255, 255, 255, 0.85);
+    --dout--surface-strong: #ffffff;
+    --dout--surface-muted: #f5f0ea;
+    --dout--text: #2d2620;
+    --dout--text-muted: #665c56;
+    --dout--border: rgba(45, 38, 32, 0.08);
+    --dout--shadow: 0 18px 48px rgba(32, 20, 9, 0.08);
+    --dout--shadow-strong: 0 28px 80px rgba(32, 20, 9, 0.12);
+
+    --dout--font-display: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    --dout--font-sans: 'Avenir Next', 'Segoe UI Variable Text', 'Helvetica Neue', sans-serif;
+    --dout--font-mono: 'IBM Plex Mono', 'SFMono-Regular', 'Cascadia Code', Consolas, monospace;
+
+    --dout--font-weight-regular: 400;
+    --dout--font-weight-strong: 700;
+    --dout--line-heading: 1.04;
+    --dout--line-copy: 1.72;
+
+    --dout--typography-base: clamp(1rem, 0.94rem + 0.24vw, 1.12rem);
+    --dout--typography-ratio: 1.25;
+    --dout--step--1: calc(var(--dout--typography-base) / pow(var(--dout--typography-ratio), 1));
+    --dout--step-0: var(--dout--typography-base);
+    --dout--step-1: calc(var(--dout--typography-base) * pow(var(--dout--typography-ratio), 1));
+    --dout--step-2: calc(var(--dout--typography-base) * pow(var(--dout--typography-ratio), 2));
+    --dout--step-3: calc(var(--dout--typography-base) * pow(var(--dout--typography-ratio), 3));
+    --dout--step-4: calc(var(--dout--typography-base) * pow(var(--dout--typography-ratio), 4));
+
+    --dout--spacing-base: 1rem;
+    --dout--spacing-ratio: 1.4;
+    --dout--space-1: calc(var(--dout--spacing-base) / pow(var(--dout--spacing-ratio), 3));
+    --dout--space-2: calc(var(--dout--spacing-base) / pow(var(--dout--spacing-ratio), 2));
+    --dout--space-3: calc(var(--dout--spacing-base) / pow(var(--dout--spacing-ratio), 1));
+    --dout--space-4: var(--dout--spacing-base);
+    --dout--space-5: calc(var(--dout--spacing-base) * pow(var(--dout--spacing-ratio), 1));
+    --dout--space-6: calc(var(--dout--spacing-base) * pow(var(--dout--spacing-ratio), 2));
+    --dout--space-7: calc(var(--dout--spacing-base) * pow(var(--dout--spacing-ratio), 3));
+    --dout--space-8: calc(var(--dout--spacing-base) * pow(var(--dout--spacing-ratio), 4));
+    --dout--space-9: calc(var(--dout--spacing-base) * pow(var(--dout--spacing-ratio), 5));
+
+    --dout--outline-width: 2px;
+    --dout--icon-size-sm: 0.75rem;
+    --dout--icon-size-md: 1rem;
+    --dout--icon-size-lg: 1.25rem;
+    --dout--control-height-sm: 2.5rem;
+    --dout--control-height-md: 3rem;
+    --dout--panel-padding: clamp(1.25rem, 1rem + 0.9vw, 2rem);
+    --dout--card-padding: clamp(1rem, 0.9rem + 0.45vw, 1.35rem);
+    --dout--post-feed-grid-min: 17rem;
+    --dout--post-feed-gap-list: var(--dout--space-5);
+    --dout--post-feed-gap-grid: var(--dout--space-4);
+    --dout--post-sidebar-width: minmax(16rem, 20rem);
+    --dout--article-flow-gap: var(--dout--space-6);
+    --dout--article-scroll-offset: calc(var(--dout--space-7) + 5rem);
+    --dout--container: min(76rem, calc(100% - 2rem));
+    --dout--reading-width: min(46rem, 100%);
+
+    --dout--radius-size: 4px;
+    --dout--radius-sm: var(--dout--radius-size);
+    --dout--radius-md: var(--dout--radius-size);
+    --dout--radius-lg: var(--dout--radius-size);
+    --dout--radius-pill: var(--dout--radius-size);
+    --dout--corner-shape: initial;
+  }
+
+  :root:is([data-color-scheme='light'], [data-theme='light']) {
+    --dout--bg: #faf8f5;
+    --dout--bg-elevated: #ffffff;
+    --dout--surface: rgba(255, 255, 255, 0.85);
+    --dout--surface-strong: #ffffff;
+    --dout--surface-muted: #f5f0ea;
+    --dout--text: #2d2620;
+    --dout--text-muted: #665c56;
+    --dout--border: rgba(45, 38, 32, 0.08);
+    --dout--shadow: 0 18px 48px rgba(32, 20, 9, 0.08);
+    --dout--shadow-strong: 0 28px 80px rgba(32, 20, 9, 0.12);
+    --dout--accent-soft: hsl(var(--dout--accent-h) 100% 92%);
+  }
+
+  :root:is([data-color-scheme='dark'], [data-theme='dark']) {
+    --dout--bg: #18161a;
+    --dout--bg-elevated: #222028;
+    --dout--surface: rgba(40, 38, 44, 0.8);
+    --dout--surface-strong: rgba(45, 42, 50, 0.95);
+    --dout--surface-muted: #27252b;
+    --dout--text: #f3ede8;
+    --dout--text-muted: #c5b9b5;
+    --dout--border: rgba(243, 237, 232, 0.08);
+    --dout--shadow: 0 18px 48px rgba(0, 0, 0, 0.4);
+    --dout--shadow-strong: 0 28px 80px rgba(0, 0, 0, 0.5);
+    --dout--accent-soft: hsl(var(--dout--accent-h) 80% 25%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-color-scheme='light']):not([data-theme='light']) {
+      --dout--bg: #18161a;
+      --dout--bg-elevated: #222028;
+      --dout--surface: rgba(40, 38, 44, 0.8);
+      --dout--surface-strong: rgba(45, 42, 50, 0.95);
+      --dout--surface-muted: #27252b;
+      --dout--text: #f3ede8;
+      --dout--text-muted: #c5b9b5;
+      --dout--border: rgba(243, 237, 232, 0.08);
+      --dout--shadow: 0 18px 48px rgba(0, 0, 0, 0.4);
+      --dout--shadow-strong: 0 28px 80px rgba(0, 0, 0, 0.5);
+      --dout--accent-soft: hsl(var(--dout--accent-h) 80% 25%);
+    }
+  }
+
+  :root[data-radius-preset='square'] {
+    --dout--radius-size: 0px;
+    --dout--radius-sm: 0px;
+    --dout--radius-md: 0px;
+    --dout--radius-lg: 0px;
+    --dout--radius-pill: 0px;
+  }
+
+  :root[data-radius-preset='rounded'] {
+    --dout--radius-size: 4px;
+    --dout--radius-sm: 4px;
+    --dout--radius-md: 4px;
+    --dout--radius-lg: 4px;
+    --dout--radius-pill: 4px;
+  }
+
+  :root[data-radius-preset='squircle'] {
+    --dout--radius-size: 1rem;
+    --dout--radius-sm: 1rem;
+    --dout--radius-md: 1rem;
+    --dout--radius-lg: 1rem;
+    --dout--radius-pill: 1rem;
+  }
+
+  @supports (corner-shape: squircle) {
+    :root[data-radius-preset='squircle'] {
+      --dout--corner-shape: squircle;
+    }
+  }
+
+  body[data-accent='violet'] {
+    --dout--accent-h: 340;
+  }
+
+  body[data-accent='green'] {
+    --dout--accent-h: 145;
+  }
+}

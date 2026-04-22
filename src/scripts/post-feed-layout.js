@@ -35,7 +35,7 @@ function scheduleFrame(callback) {
 }
 
 function resetFeedLayout(feed) {
-  feed.querySelectorAll('.post-feed__item').forEach((item) => {
+  feed.querySelectorAll('[data-post-feed-item], .post-feed__item').forEach((item) => {
     item.style.removeProperty('grid-row-end');
   });
 }

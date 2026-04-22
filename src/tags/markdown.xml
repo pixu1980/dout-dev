@@ -6,13 +6,20 @@
     <description>RSS feed for posts tagged with Markdown</description>
     <atom:link href="https://dout.dev/tags/markdown.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Mon, 20 Apr 2026 11:44:20 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 19:31:12 GMT</lastBuildDate>
+    <item>
+      <title>When Markdown Is a CMS, and When It Is Not</title>
+      <link>https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</guid>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The useful distinction</description>
+    </item>
     <item>
       <title>Say hello to 2023 🎉</title>
       <link>https://dout.dev/posts/2023-01-01-say-hello-2023.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2023-01-01-say-hello-2023.html</guid>
       <pubDate>Sun, 01 Jan 2023 14:41:22 GMT</pubDate>
-      <description>addEventListener(&apos;DOMContentLoaded&apos;, (e) =&gt; { console.log(e); }); anotherFunctionCallGoesHere({}, () =&gt; { selectOther(); });</description>
+      <description>Say hello to 2023 🎉</description>
     </item>
     <item>
       <title>Testing CodePen</title>

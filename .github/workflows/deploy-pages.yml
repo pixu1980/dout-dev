@@ -1,7 +1,9 @@
 name: Deploy Pages
 
 on:
-  workflow_dispatch:
+  push:
+    tags:
+      - 'v*.*.*'
 
 permissions:
   contents: read
@@ -13,30 +15,53 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  guard:
+    runs-on: ubuntu-latest
+    outputs:
+      should_deploy: ${{ steps.tag.outputs.should_deploy }}
+    steps:
+      - name: Validate semantic release tag
+        id: tag
+        run: |
+          if [[ "${GITHUB_REF_NAME}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "should_deploy=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Tag ${GITHUB_REF_NAME} does not match vX.Y.Z, skipping deployment."
+            echo "should_deploy=false" >> "$GITHUB_OUTPUT"
+          fi
+
   build:
+    needs: guard
+    if: needs.guard.outputs.should_deploy == 'true'
     runs-on: ubuntu-latest
     env:
-      GISCUS_REPO: ${{ vars.GISCUS_REPO }}
-      GISCUS_REPO_ID: ${{ vars.GISCUS_REPO_ID }}
-      GISCUS_CATEGORY: ${{ vars.GISCUS_CATEGORY }}
-      GISCUS_CATEGORY_ID: ${{ vars.GISCUS_CATEGORY_ID }}
-      GISCUS_LANG: ${{ vars.GISCUS_LANG }}
-      GISCUS_THEME: ${{ vars.GISCUS_THEME }}
+      GISCUS_REPO: ${{ secrets.GISCUS_REPO }}
+      GISCUS_REPO_ID: ${{ secrets.GISCUS_REPO_ID }}
+      GISCUS_CATEGORY: ${{ secrets.GISCUS_CATEGORY }}
+      GISCUS_CATEGORY_ID: ${{ secrets.GISCUS_CATEGORY_ID }}
+      GISCUS_MAPPING: ${{ secrets.GISCUS_MAPPING }}
+      GISCUS_STRICT: ${{ secrets.GISCUS_STRICT }}
+      GISCUS_REACTIONS_ENABLED: ${{ secrets.GISCUS_REACTIONS_ENABLED }}
+      GISCUS_EMIT_METADATA: ${{ secrets.GISCUS_EMIT_METADATA }}
+      GISCUS_INPUT_POSITION: ${{ secrets.GISCUS_INPUT_POSITION }}
+      GISCUS_LANG: ${{ secrets.GISCUS_LANG }}
+      GISCUS_THEME: ${{ secrets.GISCUS_THEME }}
+      GISCUS_LOADING: ${{ secrets.GISCUS_LOADING }}
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Configure Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
-          version: 10.33.0
+          version: 10.33.2
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: pnpm
@@ -47,13 +72,17 @@ jobs:
       - name: Build site
         run: pnpm build
 
+      - name: Validate OpenGraph and Twitter metadata on localhost preview
+        run: pnpm validate:opengraph:dist
+
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
   deploy:
-    needs: build
+    if: needs.guard.outputs.should_deploy == 'true'
+    needs: [guard, build]
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -62,4 +91,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

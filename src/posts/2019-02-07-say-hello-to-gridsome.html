@@ -1,24 +1,32 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Say hello to Gridsome 🎉</title>
-    <meta name="theme-color" content="#ff6b3d">
-    <meta name="description" content="A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea">
-    <meta name="author" content="Emiliano &quot;pixu1980&quot; Pisu">
-    <meta name="robots" content="index,follow">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="dout:analytics-endpoint" content="">
-    <meta name="dout:analytics-dashboard" content="/privacy.html">
-    <link rel="canonical" href="https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html">
-    <meta property="og:site_name" content="dout.dev">
-    <meta property="og:locale" content="en-US">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss">
-    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json">
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta
+      name="description"
+      content="A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea"
+    />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
     <script>
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
@@ -52,58 +60,72 @@
           monospace;
       }
     </style>
-    
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Say hello to Gridsome 🎉">
-  <meta property="og:description" content="A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea">
-  <meta property="og:url" content="https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html">
-  <meta property="og:image" content="https://dout.dev/assets/og/posts/2019-02-07-say-hello-to-gridsome.png">
-  <meta property="og:image:alt" content="Preview image for Say hello to Gridsome 🎉">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="article:published_time" content="2019-02-07T00:00:00.000Z">
-  <meta property="article:modified_time" content="2019-02-07T00:00:00.000Z">
-  <meta property="article:author" content="Emiliano &quot;pixu1980&quot; Pisu">
-  <meta name="twitter:title" content="Say hello to Gridsome 🎉">
-  <meta name="twitter:description" content="A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea">
-  <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2019-02-07-say-hello-to-gridsome.png">
-  <meta name="twitter:image:alt" content="Preview image for Say hello to Gridsome 🎉">
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BlogPosting",
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Say hello to Gridsome 🎉" />
+    <meta
+      property="og:description"
+      content="A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea"
+    />
+    <meta property="og:url" content="https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html" />
+    <meta property="og:image" content="https://dout.dev/assets/og/posts/2019-02-07-say-hello-to-gridsome.png" />
+    <meta property="og:image:alt" content="Preview image for Say hello to Gridsome 🎉" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2019-02-07T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2019-02-07T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="twitter:title" content="Say hello to Gridsome 🎉" />
+    <meta
+      name="twitter:description"
+      content="A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea"
+    />
+    <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2019-02-07-say-hello-to-gridsome.png" />
+    <meta name="twitter:image:alt" content="Preview image for Say hello to Gridsome 🎉" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
         "headline": "Say hello to Gridsome 🎉",
         "description": "A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea",
         "datePublished": "2019-02-07T00:00:00.000Z",
         "dateModified": "2019-02-07T00:00:00.000Z",
         "author": {
-          "@type":"Person",
+          "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url":"https://dout.dev"
+          "url": "https://dout.dev"
         },
         "publisher": {
-          "@type":"Person",
+          "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url":"https://dout.dev"
+          "url": "https://dout.dev"
         },
-        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html"},
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html"
+        },
         "image": ["https://dout.dev/assets/og/posts/2019-02-07-say-hello-to-gridsome.png"],
         "keywords": "gridsome, vue, build, websites, graphql, way, started, get, make, new, site, gatsby"
       }
-  </script>
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BreadcrumbList",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://dout.dev"},
-          {"@type":"ListItem","position":2,"name":"Archive","item":"https://dout.dev/archive.html"},
-          {"@type":"ListItem","position":3,"name": "Say hello to Gridsome 🎉","item":"https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html"}
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Say hello to Gridsome 🎉",
+            "item": "https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html"
+          }
         ]
       }
-  </script>
+    </script>
 
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body class="site-shell">
     <p class="file-preview-warning" role="alert">
@@ -113,168 +135,250 @@
     <a class="skip-link" href="#main">Skip to main content</a>
     <div id="page-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
     <header role="banner" class="site-header">
-  <div class="container header-bar">
-    <a class="brand" href="/">
-      <span class="brand__mark">dout.dev</span>
-      <span class="brand__tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
-    </a>
-    <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-      <span aria-hidden="true">☰</span>
-    </button>
-    <nav id="mainmenu" class="main-nav" aria-label="Main">
-      <ul class="main-links" role="list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/archive.html">Archive</a></li>
-        <li><a href="/search.html">Search</a></li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-      <div class="header-actions">
-        <color-scheme-switcher></color-scheme-switcher>
-        <display-preferences-popover></display-preferences-popover>
+      <div class="container header-bar">
+        <a class="brand" href="/">
+          <span class="brand--mark">dout.dev</span>
+          <span class="brand--tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="mainmenu" class="main-nav" aria-label="Main">
+          <ul class="main-links" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+          <div class="header-actions">
+            <color-scheme-switcher></color-scheme-switcher>
+            <display-preferences-popover></display-preferences-popover>
+          </div>
+        </nav>
       </div>
-    </nav>
-  </div>
-</header>
-
+    </header>
 
     <main class="site-main" id="main" tabindex="-1" aria-label="Main content">
-      
-  <article class="post-layout" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
-    <div class="post-frame">
-      <div class="post-main">
+      <article class="post-layout" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
         <header class="post-hero" aria-labelledby="post-title">
           <p class="eyebrow">Article</p>
-          <p class="post-hero__meta">
-            <time datetime="2019-02-07" itemprop="datePublished">
-              7 febbraio 2019
-            </time>
+          <p class="post-meta">
+            <time datetime="2019-02-07" itemprop="datePublished"> 7 febbraio 2019 </time>
             <span class="post-divider">/</span>
             <a href="/archive.html">Archive</a>
           </p>
           <h1 id="post-title" itemprop="headline" tabindex="0">Say hello to Gridsome 🎉</h1>
-          
-            <p class="post-hero__lede">A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea</p>
-          
-          
-            <ul class="tag-list" aria-label="Tags">
-              
-                <li><a class="tag" href="/tags/markdown.html">Markdown</a></li>
-              
-                <li><a class="tag" href="/tags/releases.html">Releases</a></li>
-              
-            </ul>
-          
-          <nav class="post-landmarks" aria-label="Article shortcuts">
-            <a class="tag tag--small" href="#article-content">Jump to article</a>
-            
-              <a class="tag tag--small" href="#post-outline">Jump to outline</a>
-            
-          </nav>
-          
+
+          <p class="post-description">
+            A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top
+            of Vue.js. We have been working on it for a year and will have a beta rea
+          </p>
+
+          <ul class="tag-list" aria-label="Tags">
+            <li><a class="tag" href="/tags/markdown.html">Markdown</a></li>
+
+            <li><a class="tag" href="/tags/releases.html">Releases</a></li>
+          </ul>
         </header>
 
         <section class="post-shell" id="article-content" role="region" aria-labelledby="article-content-title">
           <h2 id="article-content-title" class="visually-hidden">Article content</h2>
-          <section class="prose" itemprop="articleBody"><p>A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta ready soon. You can expect this baby to grow up fast!</p>
-<p>We think <strong>Gridsome</strong> is a missing piece to the Vue.js ecosystem. What Gatsby.js does for React.js is a game changer in how we build websites. React.js is excellent, but we think Vue.js is more approachable for most web designers and devs getting started with JAMstack. Gridsome is the Vue.js alternative to Gatsby.</p>
-<p>With <strong>Gridsome</strong> you get a <strong>universal GraphQL layer</strong> for all your connected data sources. It's like a single source of truth for your website data ready to be used in any page or components. Connect to any CMS or APIs like Google Spreadsheet, Airtable, Instagram Feed, local markdown files, etc.</p>
-<p>Here is an example on how to query posts from the GraphQL layer in a page:</p>
-<pre is="pix-highlighter" data-lang="html"><code>&lt;template&gt;
+          <section class="prose" itemprop="articleBody">
+            <p>
+              A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top
+              of Vue.js. We have been working on it for a year and will have a beta ready soon. You can expect this baby
+              to grow up fast!
+            </p>
+            <p>
+              We think <strong>Gridsome</strong> is a missing piece to the Vue.js ecosystem. What Gatsby.js does for
+              React.js is a game changer in how we build websites. React.js is excellent, but we think Vue.js is more
+              approachable for most web designers and devs getting started with JAMstack. Gridsome is the Vue.js
+              alternative to Gatsby.
+            </p>
+            <p>
+              With <strong>Gridsome</strong> you get a <strong>universal GraphQL layer</strong> for all your connected
+              data sources. It's like a single source of truth for your website data ready to be used in any page or
+              components. Connect to any CMS or APIs like Google Spreadsheet, Airtable, Instagram Feed, local markdown
+              files, etc.
+            </p>
+            <p>Here is an example on how to query posts from the GraphQL layer in a page:</p>
+            <pre is="pix-highlighter" data-lang="html"><code>&lt;template&gt;
   &lt;Layout&gt;
     &lt;h2&gt;Latest blog posts&lt;&#x2F;h2&gt;
     &lt;ul&gt;&lt;&#x2F;ul&gt;
   &lt;&#x2F;Layout&gt;
 &lt;&#x2F;template&gt;
 
-&lt;page-query&gt; query Blog { allWordPressPost (limit: 5) { edges { node { _id title } } } } &lt;&#x2F;page-query&gt;</code></pre><p>You don't need to know GraphQL or Vue to get started with Gridsome - It's a great way to get introduced to both.</p>
-<p>The GraphQL layer and all the data can be explored in a local GraphQL playground. The playground is usually located at <code>https://localhost:8080/___explore</code> when a Gridsome development project is running.</p>
-<h2 id="perfect-scores-on-google-lighthouse-automagically" tabindex="0" data-toc-anchor="true">Perfect scores on Google Lighthouse - automagically 💚</h2>
-<p>One of the main goals of Gridsome is to make a framework that let you build websites that are optimized "out-of-the-box." It follows the <a href="https://developers.google.com/web/fundamentals/performance/prpl-pattern/" rel="noopener noreferrer">PRPL-pattern by Google.</a> You don't need to be a performance expert to make fast websites with Gridsome. Your site gets almost perfect scores on Google lighthouse out-of-the-box. These are some of the performance steps that Gridsome takes care of:</p>
-<ul>
-<li>Image compressing &amp; lazy-loading ⚡️</li><li>CSS &amp; JS minification ⚡️</li><li>Code-splitting ⚡️</li><li>HTML compressing ⚡️</li><li>Critical CSS (Plugin) ⚡️</li><li>Full PWA &amp; Offline-support (plugin) ⚡️</li></ul>
-<h2 id="a-better-way-to-build-websites" tabindex="0" data-toc-anchor="true">A better way to build websites</h2>
-<p>Gridsome is built for the JAMstack workflow - a new way to build websites that gives you better performance, higher security, cheaper hosting, and a better developer experience. Generate pre-rendered (static) pages at build time for SEO-purpose and add powerful dynamic functionality with APIs and Vue.js.</p>
-<p>We believe the SSGs / JAMstack trend is just getting started. When you have first started to make websites this way there is no way back. You feel almost "dirty" when going back to a traditional WordPress / CMS setup.</p>
-<p>Try running the new Chrome Lighthouse (Audit tab in Developer tools) on a WordPress site - It is impossible to get good scores even with the best caching plugins and hosting. With Gridsome you don't even need caching plugins. Website optimization is taken care of at build time.</p>
-<p>This is what we think is very exciting and is why we are building Gridsome. It is the <strong>perfect SPA &amp; PWA front-end solution</strong> for any headless CMS or content APIs.</p>
-<h2 id="whats-next" tabindex="0" data-toc-anchor="true">Whats next</h2>
-<p>In the next couple of months we're going to continue to improve the docs, create tutorials, add more source &amp; transformer plugins and fix bugs.</p>
-<h2 id="contribute-to-gridsome" tabindex="0" data-toc-anchor="true">Contribute to Gridsome</h2>
-<p>We're currently just two brothers working on this, so any contribution is very welcome. We're passionate about building a faster web and make website building fun again.</p>
-<p>You can also support us by giving <a href="https://github.com/gridsome/gridsome/stargazers" rel="noopener noreferrer">a GitHub star ★</a> and spread the word :)</p>
-</section>
+&lt;page-query&gt; query Blog { allWordPressPost (limit: 5) { edges { node { _id title } } } } &lt;&#x2F;page-query&gt;</code></pre>
+            <p>
+              You don't need to know GraphQL or Vue to get started with Gridsome - It's a great way to get introduced to
+              both.
+            </p>
+            <p>
+              The GraphQL layer and all the data can be explored in a local GraphQL playground. The playground is
+              usually located at <code>https://localhost:8080/___explore</code> when a Gridsome development project is
+              running.
+            </p>
+            <h2 id="perfect-scores-on-google-lighthouse-automagically" tabindex="0" data-toc-anchor="true">
+              Perfect scores on Google Lighthouse - automagically 💚
+            </h2>
+            <p>
+              One of the main goals of Gridsome is to make a framework that let you build websites that are optimized
+              "out-of-the-box." It follows the
+              <a
+                href="https://developers.google.com/web/fundamentals/performance/prpl-pattern/?from=dout.dev"
+                target="_blank"
+                referrerpolicy="strict-origin-when-cross-origin"
+                rel="noopener"
+                >PRPL-pattern by Google.</a
+              >
+              You don't need to be a performance expert to make fast websites with Gridsome. Your site gets almost
+              perfect scores on Google lighthouse out-of-the-box. These are some of the performance steps that Gridsome
+              takes care of:
+            </p>
+            <ul>
+              <li>Image compressing &amp; lazy-loading ⚡️</li>
+              <li>CSS &amp; JS minification ⚡️</li>
+              <li>Code-splitting ⚡️</li>
+              <li>HTML compressing ⚡️</li>
+              <li>Critical CSS (Plugin) ⚡️</li>
+              <li>Full PWA &amp; Offline-support (plugin) ⚡️</li>
+            </ul>
+            <h2 id="a-better-way-to-build-websites" tabindex="0" data-toc-anchor="true">
+              A better way to build websites
+            </h2>
+            <p>
+              Gridsome is built for the JAMstack workflow - a new way to build websites that gives you better
+              performance, higher security, cheaper hosting, and a better developer experience. Generate pre-rendered
+              (static) pages at build time for SEO-purpose and add powerful dynamic functionality with APIs and Vue.js.
+            </p>
+            <p>
+              We believe the SSGs / JAMstack trend is just getting started. When you have first started to make websites
+              this way there is no way back. You feel almost "dirty" when going back to a traditional WordPress / CMS
+              setup.
+            </p>
+            <p>
+              Try running the new Chrome Lighthouse (Audit tab in Developer tools) on a WordPress site - It is
+              impossible to get good scores even with the best caching plugins and hosting. With Gridsome you don't even
+              need caching plugins. Website optimization is taken care of at build time.
+            </p>
+            <p>
+              This is what we think is very exciting and is why we are building Gridsome. It is the
+              <strong>perfect SPA &amp; PWA front-end solution</strong> for any headless CMS or content APIs.
+            </p>
+            <h2 id="whats-next" tabindex="0" data-toc-anchor="true">Whats next</h2>
+            <p>
+              In the next couple of months we're going to continue to improve the docs, create tutorials, add more
+              source &amp; transformer plugins and fix bugs.
+            </p>
+            <h2 id="contribute-to-gridsome" tabindex="0" data-toc-anchor="true">Contribute to Gridsome</h2>
+            <p>
+              We're currently just two brothers working on this, so any contribution is very welcome. We're passionate
+              about building a faster web and make website building fun again.
+            </p>
+            <p>
+              You can also support us by giving
+              <a
+                href="https://github.com/gridsome/gridsome/stargazers?from=dout.dev"
+                target="_blank"
+                referrerpolicy="strict-origin-when-cross-origin"
+                rel="noopener"
+                >a GitHub star ★</a
+              >
+              and spread the word :)
+            </p>
+          </section>
         </section>
-      </div>
 
-      
         <aside class="post-sidebar" role="complementary" aria-labelledby="post-outline">
-          <nav class="post-sidebar__panel post-toc" aria-labelledby="post-outline">
-            <p class="eyebrow eyebrow--muted">Outline</p>
+          <nav class="post-toc" aria-labelledby="post-outline">
+            <p class="eyebrow eyebrow--muted">TOC</p>
             <h2 id="post-outline">On this page</h2>
-            <ol class="post-toc__list">
-              
-                <li class="post-toc__item">
-                  <a class="post-toc__link" data-level="2" href="#perfect-scores-on-google-lighthouse-automagically">Perfect scores on Google Lighthouse - automagically 💚</a>
-                </li>
-              
-                <li class="post-toc__item">
-                  <a class="post-toc__link" data-level="2" href="#a-better-way-to-build-websites">A better way to build websites</a>
-                </li>
-              
-                <li class="post-toc__item">
-                  <a class="post-toc__link" data-level="2" href="#whats-next">Whats next</a>
-                </li>
-              
-                <li class="post-toc__item">
-                  <a class="post-toc__link" data-level="2" href="#contribute-to-gridsome">Contribute to Gridsome</a>
-                </li>
-              
+            <ol class="post-toc-list">
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#perfect-scores-on-google-lighthouse-automagically"
+                  >Perfect scores on Google Lighthouse - automagically 💚</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#a-better-way-to-build-websites"
+                  >A better way to build websites</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#whats-next">Whats next</a>
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#contribute-to-gridsome">Contribute to Gridsome</a>
+              </li>
             </ol>
           </nav>
         </aside>
-      
-    </div>
-  </article>
 
-  
+        <section class="comments-shell" aria-labelledby="comments-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Discussion</p>
+              <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+            </div>
+          </div>
+          <p class="comments-note">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2019-02-07-say-hello-to-gridsome.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
+      </article>
 
-  <nav class="post-nav" aria-label="Post navigation">
-    
-      <a class="post-nav__card" rel="prev" href="/posts/2019-02-06-markdown-test-file.html">
-        <span class="post-nav__label">Previous</span>
-        <strong>Markdown test file</strong>
-      </a>
-    
-    
-      <a class="post-nav__card" rel="next" href="/posts/2021-03-01-say-hello-to-gridsome-new.html">
-        <span class="post-nav__label">Next</span>
-        <strong>Say Hello to Gridsome NEW</strong>
-      </a>
-    
-  </nav>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav-card" rel="prev" href="/posts/2019-02-06-markdown-test-file.html">
+          <span class="post-nav-label">Previous</span>
+          <strong>Markdown test file</strong>
+        </a>
 
+        <a class="post-nav-card" rel="next" href="/posts/2021-03-01-say-hello-to-gridsome-new.html">
+          <span class="post-nav-label">Next</span>
+          <strong>Say Hello to Gridsome NEW</strong>
+        </a>
+      </nav>
     </main>
 
     <footer role="contentinfo" class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-copy">
-      <p class="footer-brand">dout.dev</p>
-      <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
-      <p>© 2026 dout.dev</p>
-    </div>
-    <nav class="footer-nav" aria-label="Footer">
-      <a href="/">Home</a>
-      <a href="/archive.html">Archive</a>
-      <a href="/search.html">Search</a>
-      <a href="/about.html">About</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/feed.rss">RSS</a>
-      <a href="/feed.json">JSON Feed</a>
-    </nav>
-  </div>
-</footer>
+      <div class="container footer-grid">
+        <div class="footer-copy">
+          <p class="footer-brand">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
 
     <script type="module" src="/scripts/main.js"></script>
-  
-
-</body></html>
+  </body>
+</html>

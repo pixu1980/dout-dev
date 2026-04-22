@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Write Agent Skills That Actually Trigger</title>
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="The mistake most people make" />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
+    <script>
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      .file-preview-warning {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid #d9a441;
+        background: #fff3cd;
+        color: #5c3b00;
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] .file-preview-warning {
+        display: block;
+      }
+
+      .file-preview-warning code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How to Write Agent Skills That Actually Trigger" />
+    <meta property="og:description" content="The mistake most people make" />
+    <meta property="og:url" content="https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html" />
+    <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-04-22-how-to-write-agent-skills.png" />
+    <meta property="og:image:alt" content="Preview image for How to Write Agent Skills That Actually Trigger" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-04-22T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2026-04-22T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="twitter:title" content="How to Write Agent Skills That Actually Trigger" />
+    <meta name="twitter:description" content="The mistake most people make" />
+    <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-04-22-how-to-write-agent-skills.png" />
+    <meta name="twitter:image:alt" content="Preview image for How to Write Agent Skills That Actually Trigger" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to Write Agent Skills That Actually Trigger",
+        "description": "The mistake most people make",
+        "datePublished": "2026-04-22T00:00:00.000Z",
+        "dateModified": "2026-04-22T00:00:00.000Z",
+        "author": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html"
+        },
+        "image": ["https://dout.dev/assets/og/posts/2026-04-22-how-to-write-agent-skills.png"],
+        "keywords": "skill, skills, pdf, agent, anthropic, one, trigger, description, routing, claude, prompt, better"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How to Write Agent Skills That Actually Trigger",
+            "item": "https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html"
+          }
+        ]
+      }
+    </script>
+
+    <link rel="stylesheet" href="/styles/index.css" />
+  </head>
+  <body class="site-shell">
+    <p class="file-preview-warning" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div id="page-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" class="site-header">
+      <div class="container header-bar">
+        <a class="brand" href="/">
+          <span class="brand--mark">dout.dev</span>
+          <span class="brand--tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="mainmenu" class="main-nav" aria-label="Main">
+          <ul class="main-links" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+          <div class="header-actions">
+            <color-scheme-switcher></color-scheme-switcher>
+            <display-preferences-popover></display-preferences-popover>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main" id="main" tabindex="-1" aria-label="Main content">
+      <article class="post-layout" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
+        <header class="post-hero" aria-labelledby="post-title">
+          <p class="eyebrow">Article</p>
+          <p class="post-meta">
+            <time datetime="2026-04-22" itemprop="datePublished"> 22 aprile 2026 </time>
+            <span class="post-divider">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 id="post-title" itemprop="headline" tabindex="0">How to Write Agent Skills That Actually Trigger</h1>
+
+          <p class="post-description">The mistake most people make</p>
+
+          <ul class="tag-list" aria-label="Tags">
+            <li><a class="tag" href="/tags/ai-copilot.html">Ai-copilot</a></li>
+
+            <li><a class="tag" href="/tags/architecture.html">Architecture</a></li>
+          </ul>
+        </header>
+
+        <section class="post-shell" id="article-content" role="region" aria-labelledby="article-content-title">
+          <h2 id="article-content-title" class="visually-hidden">Article content</h2>
+          <section class="prose" itemprop="articleBody">
+            <h2 id="the-mistake-most-people-make" tabindex="0" data-toc-anchor="true">The mistake most people make</h2>
+            <p>
+              Most bad skills are not bad because the instructions are weak. They are bad because the skill never loads
+              at the right time, or loads for the wrong task.
+            </p>
+            <p>
+              That is the main point I took from Anthropic's PDF,
+              <a
+                href="https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf?from=dout.dev"
+                target="_blank"
+                referrerpolicy="strict-origin-when-cross-origin"
+                rel="noopener"
+                >The Complete Guide to Building Skills for Claude</a
+              >, and it is also the point the Medium summary by Ruqaiya Beguwala gets most right. The description field
+              is not marketing copy. It is routing logic written in prose.
+            </p>
+            <p>
+              Anthropic's framing is Claude-specific, but the lesson generalizes cleanly to agent skills of any kind. A
+              skill is not "a prompt you saved somewhere." A skill is packaged operational knowledge with an activation
+              rule.
+            </p>
+            <h2 id="a-skill-is-a-router-a-playbook-and-a-reference-pack" tabindex="0" data-toc-anchor="true">
+              A skill is a router, a playbook, and a reference pack
+            </h2>
+            <p>
+              Anthropic defines a skill as a folder with an exact <code>SKILL.md</code> file plus optional
+              <code>scripts/</code>, <code>references/</code>, and <code>assets/</code>. The useful idea is the
+              three-level loading model:
+            </p>
+            <ul>
+              <li>YAML frontmatter is always present and helps the model decide whether the skill applies.</li>
+              <li>The <code>SKILL.md</code> body is the working playbook.</li>
+              <li>Linked files are only loaded when needed.</li>
+            </ul>
+            <p>That is a better mental model than "write one giant instruction file."</p>
+            <p>For agent design, I would translate it like this:</p>
+            <ul>
+              <li>the frontmatter or metadata is the routing layer;</li>
+              <li>the main instructions are the execution layer;</li>
+              <li>references and scripts are the depth layer.</li>
+            </ul>
+            <p>
+              If you collapse all three into one document, the skill gets harder to trigger, harder to maintain, and
+              more expensive to load.
+            </p>
+            <h2 id="start-with-one-hard-task-not-broad-coverage" tabindex="0" data-toc-anchor="true">
+              Start with one hard task, not broad coverage
+            </h2>
+            <p>
+              One of the better parts of the PDF is that Anthropic pushes two seemingly different ideas at once, and
+              both are correct.
+            </p>
+            <p>
+              First, define 2-3 concrete use cases before you start. Second, iterate on one challenging task until the
+              agent can do it reliably, then extract the pattern into a skill.
+            </p>
+            <p>That is the right order.</p>
+            <p>
+              Do not start with "project management assistant" or "software engineering copilot." Those are product
+              categories, not skills. Start with something that has a visible outcome:
+            </p>
+            <ul>
+              <li>create sprint tasks from current Linear state;</li>
+              <li>review a database migration plan for rollout risk;</li>
+              <li>turn a design handoff into implementation tasks across Figma, Drive, and Slack;</li>
+              <li>generate a weekly research brief in a fixed format.</li>
+            </ul>
+            <p>
+              If the outcome is narrow, you can tell when the skill works. If the scope is broad, everything looks
+              vaguely plausible and you ship prompt soup.
+            </p>
+            <h2 id="write-the-trigger-sentence-first" tabindex="0" data-toc-anchor="true">
+              Write the trigger sentence first
+            </h2>
+            <p>The most important field in the whole skill is still the description.</p>
+            <p>
+              Anthropic's PDF is very explicit here: the description must say what the skill does and when to use it. It
+              should include concrete trigger phrases users might actually say, stay under 1024 characters, and avoid
+              XML angle brackets because the frontmatter lands in the system prompt.
+            </p>
+            <p>The document also adds practical constraints that the summary article only mentions lightly:</p>
+            <ul>
+              <li><code>SKILL.md</code> must be named exactly that, case-sensitive;</li>
+              <li>the folder should be kebab-case;</li>
+              <li><code>README.md</code> does not belong inside the skill folder;</li>
+              <li>names using <code>claude</code> or <code>anthropic</code> are reserved;</li>
+              <li>
+                optional fields like <code>compatibility</code>, <code>metadata</code>, and even
+                <code>allowed-tools</code> exist in the reference appendix.
+              </li>
+            </ul>
+            <p>That level of specificity matters because skills fail for boring reasons more often than clever ones.</p>
+            <p>A good description looks more like an API contract than a slogan:</p>
+            <pre is="pix-highlighter" data-lang="yaml"><code>---
+name: db-migration-review
+description: Reviews database migration plans, flags backward-compatibility and rollout risks, and proposes safe sequencing. Use when the user mentions schema changes, backfills, migrations, rollbacks, or zero-downtime deploys.
+metadata:
+  version: 1.0.0
+---</code></pre>
+            <p>
+              This is specific about the outcome, the scope, and the trigger language. That is what gives the model a
+              chance to route correctly.
+            </p>
+            <h2 id="instructions-should-be-executable-not-inspirational" tabindex="0" data-toc-anchor="true">
+              Instructions should be executable, not inspirational
+            </h2>
+            <p>Anthropic is also right about the body of the skill: vague verbs are useless.</p>
+            <p>
+              "Validate the data before proceeding" is not an instruction. "Run
+              <code>python scripts/validate.py --input {filename}</code> and stop on missing required fields or invalid
+              dates" is an instruction.
+            </p>
+            <p>
+              The more critical the step, the less you should rely on ambiguous language. The PDF says this plainly in
+              the troubleshooting section: for important checks, prefer a bundled validation script because code is
+              deterministic and language interpretation is not.
+            </p>
+            <p>That is one of the most transferable ideas in the whole guide.</p>
+            <p>A good skill body usually needs four things:</p>
+            <ol>
+              <li>the ordered steps;</li>
+              <li>success conditions for each step;</li>
+              <li>examples of common requests;</li>
+              <li>troubleshooting for common failures.</li>
+            </ol>
+            <p>A minimal structure is enough:</p>
+            <pre is="pix-highlighter" data-lang="markdown"><code># Database Migration Review
+
+## Step 1: Read the migration plan
+Inspect the schema change, expected rollout path, and rollback strategy.
+
+## Step 2: Run deterministic checks
+Execute scripts/check_migration.py --plan {filename}
+
+## Step 3: Produce the review
+Return risks, missing safeguards, recommended sequence, and rollback notes.
+
+## Troubleshooting
+Error: Migration plan missing rollback path
+Solution: Stop and ask the user for rollback semantics before continuing</code></pre>
+            <p>This is dull on purpose. Dull is good. Skills are operating manuals, not thought leadership.</p>
+            <p>
+              One subtle PDF note is worth keeping: "take your time" style performance notes work better in the user
+              prompt than in the skill file. That matches my experience with agent systems generally. Routing and
+              workflow belong in the skill. Session-specific emphasis belongs in the prompt.
+            </p>
+            <h2 id="pick-a-pattern-on-purpose" tabindex="0" data-toc-anchor="true">Pick a pattern on purpose</h2>
+            <p>
+              The Anthropic PDF is strongest when it stops talking in abstractions and starts naming workflow patterns.
+              It identifies five that show up repeatedly:
+            </p>
+            <ul>
+              <li>sequential workflow orchestration;</li>
+              <li>multi-MCP coordination;</li>
+              <li>iterative refinement;</li>
+              <li>context-aware tool selection;</li>
+              <li>domain-specific intelligence.</li>
+            </ul>
+            <p>That list is more useful than it sounds because each pattern implies a different structure.</p>
+            <p>
+              A sequential onboarding skill wants strict step ordering and rollback rules. A multi-system handoff skill
+              wants phase boundaries and shared state. An iterative report skill wants explicit quality thresholds and a
+              stop condition. A context-aware storage skill needs a decision tree. A compliance skill needs governance
+              before action.
+            </p>
+            <p>If you mix these patterns without choosing one, the skill becomes mushy. It has tools, but no shape.</p>
+            <h2 id="test-activation-behavior-and-value-separately" tabindex="0" data-toc-anchor="true">
+              Test activation, behavior, and value separately
+            </h2>
+            <p>
+              The testing section in the PDF is better than most AI workflow docs because it separates three different
+              questions.
+            </p>
+            <p>
+              First: does the skill trigger when it should? Anthropic suggests 10-20 obvious and paraphrased prompts,
+              plus unrelated prompts that must not trigger. The rough target is 90% on relevant queries and 0% on
+              clearly unrelated ones.
+            </p>
+            <p>
+              Second: does the skill actually do the job? Run the same request 3-5 times. Compare structure, tool calls,
+              and failure handling. If results wander too much, the instructions are under-specified.
+            </p>
+            <p>
+              Third: is the skill better than not having the skill? Compare tool calls, token use, back-and-forth, and
+              failed API calls. If the skill does not reduce friction or improve consistency, it is decorative.
+            </p>
+            <p>
+              The PDF also gives one debugging trick that is almost embarrassingly useful: ask the model, "When would
+              you use the [skill name] skill?" The answer reflects the description back at you. If the answer is vague,
+              the routing is vague.
+            </p>
+            <p>
+              This is also where the PDF goes beyond the Medium summary in practical detail. It recommends keeping
+              <code>SKILL.md</code> under 5,000 words, moving deep material into <code>references/</code>, and being
+              careful once you have 20-50 skills enabled at once. That is not a theoretical concern. Too many skills
+              turn progressive disclosure back into context sludge.
+            </p>
+            <h2 id="distribution-matters-more-than-people-think" tabindex="0" data-toc-anchor="true">
+              Distribution matters more than people think
+            </h2>
+            <p>
+              The summary article focuses on the zip-and-upload flow, which is fine for Claude.ai. The PDF goes further
+              and treats distribution as product work.
+            </p>
+            <p>
+              The recommended path is: host the skill on GitHub, keep a human-oriented <code>README</code> at the repo
+              level, document why the skill plus your MCP integration are better together, and provide a quick-start
+              guide with examples and screenshots.
+            </p>
+            <p>
+              That is the right instinct even outside the Claude ecosystem. If people cannot tell what outcome the skill
+              produces, they will not install it. If the setup guide only talks about folders and YAML, you are
+              describing mechanics instead of value.
+            </p>
+            <p>
+              The PDF also makes the API surface explicit. Skills can be managed through <code>/v1/skills</code>,
+              attached through <code>container.skills</code>, and used through the Agent SDK, with the note that the
+              Code Execution Tool beta is required. Even if you never touch Claude's API, the general lesson holds:
+              skills are not just authoring artifacts, they are deployment artifacts.
+            </p>
+            <h2 id="what-i-would-keep-if-i-were-writing-skills-for-any-agent-stack" tabindex="0" data-toc-anchor="true">
+              What I would keep if I were writing skills for any agent stack
+            </h2>
+            <p>
+              The Anthropic guide is nominally about Claude skills, but most of its best advice is really about agent
+              design in general.
+            </p>
+            <p>I would keep five rules:</p>
+            <ol>
+              <li>Write the routing sentence before the rest of the skill.</li>
+              <li>Build around one observable workflow, not a role description.</li>
+              <li>Keep the main file short and move depth into references or scripts.</li>
+              <li>Put deterministic validation in code whenever failure is expensive.</li>
+              <li>Test activation separately from execution and separately from business value.</li>
+            </ol>
+            <p>The simplest way to say it is this:</p>
+            <blockquote>
+              <p>
+                A good agent skill is not a prompt dump. It is a narrow workflow with strong routing, explicit steps,
+                and enough structure to fail predictably.
+              </p>
+            </blockquote>
+            <p>
+              That is the real takeaway from the PDF. The fancy part is not the packaging. The hard part is deciding
+              what the agent should do, when it should do it, and what evidence counts as success.
+            </p>
+            <h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
+            <ul>
+              <li>
+                <a
+                  href="https://generativeai.pub/i-read-anthropics-internal-guide-on-building-claude-skills-here-s-everything-you-need-to-know-b2b8606befb1?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Ruqaiya Beguwala, "I Read Anthropic's Internal Guide on Building Claude Skills. Here's Everything You
+                  Need to Know."</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Anthropic, "The Complete Guide to Building Skills for Claude" (PDF)</a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <aside class="post-sidebar" role="complementary" aria-labelledby="post-outline">
+          <nav class="post-toc" aria-labelledby="post-outline">
+            <p class="eyebrow eyebrow--muted">TOC</p>
+            <h2 id="post-outline">On this page</h2>
+            <ol class="post-toc-list">
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#the-mistake-most-people-make"
+                  >The mistake most people make</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#a-skill-is-a-router-a-playbook-and-a-reference-pack"
+                  >A skill is a router, a playbook, and a reference pack</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#start-with-one-hard-task-not-broad-coverage"
+                  >Start with one hard task, not broad coverage</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#write-the-trigger-sentence-first"
+                  >Write the trigger sentence first</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#instructions-should-be-executable-not-inspirational"
+                  >Instructions should be executable, not inspirational</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#pick-a-pattern-on-purpose">Pick a pattern on purpose</a>
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#test-activation-behavior-and-value-separately"
+                  >Test activation, behavior, and value separately</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#distribution-matters-more-than-people-think"
+                  >Distribution matters more than people think</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a
+                  class="post-toc-link"
+                  data-level="2"
+                  href="#what-i-would-keep-if-i-were-writing-skills-for-any-agent-stack"
+                  >What I would keep if I were writing skills for any agent stack</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#references">References</a>
+              </li>
+            </ol>
+          </nav>
+        </aside>
+
+        <section class="comments-shell" aria-labelledby="comments-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Discussion</p>
+              <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+            </div>
+          </div>
+          <p class="comments-note">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2026-04-22-how-to-write-agent-skills.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
+      </article>
+
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav-card" rel="prev" href="/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html">
+          <span class="post-nav-label">Previous</span>
+          <strong>When Markdown Is a CMS, and When It Is Not</strong>
+        </a>
+      </nav>
+    </main>
+
+    <footer role="contentinfo" class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-copy">
+          <p class="footer-brand">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
+</html>

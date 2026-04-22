@@ -1,24 +1,29 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Playground</title>
-    <meta name="theme-color" content="#ff6b3d">
-    <meta name="description" content="Experiments, prototypes, and interface sketches from dout.dev.">
-    <meta name="author" content="Emiliano &quot;pixu1980&quot; Pisu">
-    <meta name="robots" content="index,follow">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="dout:analytics-endpoint" content="">
-    <meta name="dout:analytics-dashboard" content="/privacy.html">
-    <link rel="canonical" href="https://dout.dev/playground.html">
-    <meta property="og:site_name" content="dout.dev">
-    <meta property="og:locale" content="en-US">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss">
-    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json">
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="Experiments, prototypes, and interface sketches from dout.dev." />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/playground.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
     <script>
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
@@ -52,30 +57,30 @@
           monospace;
       }
     </style>
-    
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Playground">
-  <meta property="og:description" content="Experiments, prototypes, and interface sketches from dout.dev.">
-  <meta property="og:url" content="https://dout.dev/playground.html">
-  <meta property="og:image" content="https://dout.dev/assets/og/pages/playground.png">
-  <meta property="og:image:alt" content="Preview image for Playground">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:title" content="Playground">
-  <meta name="twitter:description" content="Experiments, prototypes, and interface sketches from dout.dev.">
-  <meta name="twitter:image" content="https://dout.dev/assets/og/pages/playground.png">
-  <meta name="twitter:image:alt" content="Preview image for Playground">
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Playground",
-      "url": "https://dout.dev/playground.html",
-      "description": "Experiments, prototypes, and interface sketches from dout.dev."
-    }
-  </script>
 
-    <link rel="stylesheet" href="/styles/main.css">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Playground" />
+    <meta property="og:description" content="Experiments, prototypes, and interface sketches from dout.dev." />
+    <meta property="og:url" content="https://dout.dev/playground.html" />
+    <meta property="og:image" content="https://dout.dev/assets/og/pages/playground.png" />
+    <meta property="og:image:alt" content="Preview image for Playground" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:title" content="Playground" />
+    <meta name="twitter:description" content="Experiments, prototypes, and interface sketches from dout.dev." />
+    <meta name="twitter:image" content="https://dout.dev/assets/og/pages/playground.png" />
+    <meta name="twitter:image:alt" content="Preview image for Playground" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Playground",
+        "url": "https://dout.dev/playground.html",
+        "description": "Experiments, prototypes, and interface sketches from dout.dev."
+      }
+    </script>
+
+    <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body class="site-shell">
     <p class="file-preview-warning" role="alert">
@@ -85,59 +90,55 @@
     <a class="skip-link" href="#main">Skip to main content</a>
     <div id="page-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
     <header role="banner" class="site-header">
-  <div class="container header-bar">
-    <a class="brand" href="/">
-      <span class="brand__mark">dout.dev</span>
-      <span class="brand__tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
-    </a>
-    <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-      <span aria-hidden="true">☰</span>
-    </button>
-    <nav id="mainmenu" class="main-nav" aria-label="Main">
-      <ul class="main-links" role="list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/archive.html">Archive</a></li>
-        <li><a href="/search.html">Search</a></li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-      <div class="header-actions">
-        <color-scheme-switcher></color-scheme-switcher>
-        <display-preferences-popover></display-preferences-popover>
+      <div class="container header-bar">
+        <a class="brand" href="/">
+          <span class="brand--mark">dout.dev</span>
+          <span class="brand--tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="mainmenu" class="main-nav" aria-label="Main">
+          <ul class="main-links" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+          <div class="header-actions">
+            <color-scheme-switcher></color-scheme-switcher>
+            <display-preferences-popover></display-preferences-popover>
+          </div>
+        </nav>
       </div>
-    </nav>
-  </div>
-</header>
-
+    </header>
 
     <main class="site-main" id="main" tabindex="-1" aria-label="Main content">
-      
-  <section class="page-hero" aria-labelledby="playground-title">
-    <h1 id="playground-title">Playground</h1>
-    <p>Experiments and demos will live here.</p>
-  </section>
-
+      <section class="page-hero" aria-labelledby="playground-title">
+        <h1 id="playground-title">Playground</h1>
+        <p>Experiments and demos will live here.</p>
+      </section>
     </main>
 
     <footer role="contentinfo" class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-copy">
-      <p class="footer-brand">dout.dev</p>
-      <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
-      <p>© 2026 dout.dev</p>
-    </div>
-    <nav class="footer-nav" aria-label="Footer">
-      <a href="/">Home</a>
-      <a href="/archive.html">Archive</a>
-      <a href="/search.html">Search</a>
-      <a href="/about.html">About</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/feed.rss">RSS</a>
-      <a href="/feed.json">JSON Feed</a>
-    </nav>
-  </div>
-</footer>
+      <div class="container footer-grid">
+        <div class="footer-copy">
+          <p class="footer-brand">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
 
     <script type="module" src="/scripts/main.js"></script>
-  
-
-</body></html>
+  </body>
+</html>

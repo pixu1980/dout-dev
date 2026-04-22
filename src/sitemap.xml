@@ -109,7 +109,7 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/posts/2025-08-15-welcome-to-dout-dev-2.html</loc>
+    <loc>https://dout.dev/posts/2026-03-31-welcome-to-dout-dev.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -117,7 +117,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/posts/test.html</loc>
+    <loc>https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -213,6 +217,10 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://dout.dev/tags/ai-copilot.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://dout.dev/months/2019-01.html</loc>
     <changefreq>weekly</changefreq>
   </url>
@@ -253,7 +261,7 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/months/2025-08.html</loc>
+    <loc>https://dout.dev/months/2026-03.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>

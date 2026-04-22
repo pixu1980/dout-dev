@@ -88,7 +88,7 @@ class AccentColorSelector extends HTMLElement {
         role="radio"
         tabindex="-1"
         title="${option.label}"
-        style="--accent-preview-h: ${option.h}; --accent-preview-s: ${option.s}%; --accent-preview-l: ${option.l}%"
+        style="--dout--accent-preview-h: ${option.h}; --dout--accent-preview-s: ${option.s}%; --dout--accent-preview-l: ${option.l}%"
       ></button>
     `
     ).join('');
@@ -149,9 +149,9 @@ class AccentColorSelector extends HTMLElement {
     getStorage()?.setItem(STORAGE_KEY, accent.id);
 
     // Update CSS custom properties for the new accent
-    root.style.setProperty('--accent-h', accent.h);
-    root.style.setProperty('--accent-s', `${accent.s}%`);
-    root.style.setProperty('--accent-l', `${accent.l}%`);
+    root.style.setProperty('--dout--accent-h', accent.h);
+    root.style.setProperty('--dout--accent-s', `${accent.s}%`);
+    root.style.setProperty('--dout--accent-l', `${accent.l}%`);
 
     this.updateButtonState();
 

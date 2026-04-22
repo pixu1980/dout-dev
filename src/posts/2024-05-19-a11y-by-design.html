@@ -1,24 +1,32 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Accessibility by Design</title>
-    <meta name="theme-color" content="#ff6b3d">
-    <meta name="description" content="We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Desi">
-    <meta name="author" content="Emiliano &quot;pixu1980&quot; Pisu">
-    <meta name="robots" content="index,follow">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="dout:analytics-endpoint" content="">
-    <meta name="dout:analytics-dashboard" content="/privacy.html">
-    <link rel="canonical" href="https://dout.dev/posts/2024-05-19-a11y-by-design.html">
-    <meta property="og:site_name" content="dout.dev">
-    <meta property="og:locale" content="en-US">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss">
-    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json">
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta
+      name="description"
+      content="We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Desi"
+    />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2024-05-19-a11y-by-design.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
     <script>
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
@@ -52,58 +60,69 @@
           monospace;
       }
     </style>
-    
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Accessibility by Design">
-  <meta property="og:description" content="We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Desi">
-  <meta property="og:url" content="https://dout.dev/posts/2024-05-19-a11y-by-design.html">
-  <meta property="og:image" content="https://dout.dev/assets/og/posts/2024-05-19-a11y-by-design.png">
-  <meta property="og:image:alt" content="Preview image for Accessibility by Design">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="article:published_time" content="2024-05-19T00:41:22.000Z">
-  <meta property="article:modified_time" content="2024-05-19T00:41:22.000Z">
-  <meta property="article:author" content="Emiliano &quot;pixu1980&quot; Pisu">
-  <meta name="twitter:title" content="Accessibility by Design">
-  <meta name="twitter:description" content="We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Desi">
-  <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2024-05-19-a11y-by-design.png">
-  <meta name="twitter:image:alt" content="Preview image for Accessibility by Design">
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BlogPosting",
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Accessibility by Design" />
+    <meta
+      property="og:description"
+      content="We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Desi"
+    />
+    <meta property="og:url" content="https://dout.dev/posts/2024-05-19-a11y-by-design.html" />
+    <meta property="og:image" content="https://dout.dev/assets/og/posts/2024-05-19-a11y-by-design.png" />
+    <meta property="og:image:alt" content="Preview image for Accessibility by Design" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2024-05-19T00:41:22.000Z" />
+    <meta property="article:modified_time" content="2024-05-19T00:41:22.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="twitter:title" content="Accessibility by Design" />
+    <meta
+      name="twitter:description"
+      content="We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Desi"
+    />
+    <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2024-05-19-a11y-by-design.png" />
+    <meta name="twitter:image:alt" content="Preview image for Accessibility by Design" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
         "headline": "Accessibility by Design",
         "description": "We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Desi",
         "datePublished": "2024-05-19T00:41:22.000Z",
         "dateModified": "2024-05-19T00:41:22.000Z",
         "author": {
-          "@type":"Person",
+          "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url":"https://dout.dev"
+          "url": "https://dout.dev"
         },
         "publisher": {
-          "@type":"Person",
+          "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url":"https://dout.dev"
+          "url": "https://dout.dev"
         },
-        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2024-05-19-a11y-by-design.html"},
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dout.dev/posts/2024-05-19-a11y-by-design.html" },
         "image": ["https://dout.dev/assets/og/posts/2024-05-19-a11y-by-design.png"],
         "keywords": "accessibility, design, everyone, digital, product, inclusivity, usability, marketing, people, users, responsiveness, world"
       }
-  </script>
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BreadcrumbList",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://dout.dev"},
-          {"@type":"ListItem","position":2,"name":"Archive","item":"https://dout.dev/archive.html"},
-          {"@type":"ListItem","position":3,"name": "Accessibility by Design","item":"https://dout.dev/posts/2024-05-19-a11y-by-design.html"}
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Accessibility by Design",
+            "item": "https://dout.dev/posts/2024-05-19-a11y-by-design.html"
+          }
         ]
       }
-  </script>
+    </script>
 
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body class="site-shell">
     <p class="file-preview-warning" role="alert">
@@ -113,165 +132,231 @@
     <a class="skip-link" href="#main">Skip to main content</a>
     <div id="page-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
     <header role="banner" class="site-header">
-  <div class="container header-bar">
-    <a class="brand" href="/">
-      <span class="brand__mark">dout.dev</span>
-      <span class="brand__tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
-    </a>
-    <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-      <span aria-hidden="true">☰</span>
-    </button>
-    <nav id="mainmenu" class="main-nav" aria-label="Main">
-      <ul class="main-links" role="list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/archive.html">Archive</a></li>
-        <li><a href="/search.html">Search</a></li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-      <div class="header-actions">
-        <color-scheme-switcher></color-scheme-switcher>
-        <display-preferences-popover></display-preferences-popover>
+      <div class="container header-bar">
+        <a class="brand" href="/">
+          <span class="brand--mark">dout.dev</span>
+          <span class="brand--tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="mainmenu" class="main-nav" aria-label="Main">
+          <ul class="main-links" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+          <div class="header-actions">
+            <color-scheme-switcher></color-scheme-switcher>
+            <display-preferences-popover></display-preferences-popover>
+          </div>
+        </nav>
       </div>
-    </nav>
-  </div>
-</header>
-
+    </header>
 
     <main class="site-main" id="main" tabindex="-1" aria-label="Main content">
-      
-  <article class="post-layout" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
-    <div class="post-frame">
-      <div class="post-main">
+      <article class="post-layout" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
         <header class="post-hero" aria-labelledby="post-title">
           <p class="eyebrow">Article</p>
-          <p class="post-hero__meta">
-            <time datetime="2024-05-19" itemprop="datePublished">
-              19 maggio 2024
-            </time>
+          <p class="post-meta">
+            <time datetime="2024-05-19" itemprop="datePublished"> 19 maggio 2024 </time>
             <span class="post-divider">/</span>
             <a href="/archive.html">Archive</a>
           </p>
           <h1 id="post-title" itemprop="headline" tabindex="0">Accessibility by Design</h1>
-          
-            <p class="post-hero__lede">We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Desi</p>
-          
-          
-            <ul class="tag-list" aria-label="Tags">
-              
-                <li><a class="tag" href="/tags/a11y.html">A11y</a></li>
-              
-                <li><a class="tag" href="/tags/design.html">Design</a></li>
-              
-                <li><a class="tag" href="/tags/responsive.html">Responsive</a></li>
-              
-            </ul>
-          
-          <nav class="post-landmarks" aria-label="Article shortcuts">
-            <a class="tag tag--small" href="#article-content">Jump to article</a>
-            
-              <a class="tag tag--small" href="#post-outline">Jump to outline</a>
-            
-          </nav>
-          
-            <figure class="post-cover">
-              <img src="/./assets/images/a11y-by-design-cover.jpg" alt="Green accessibility-themed cover used to validate article hero readability and contrast" fetchpriority="high" decoding="async" width="1600" height="900">
-            </figure>
-          
+
+          <p class="post-description">
+            We live in an era where technology permeates every aspect of our daily lives. However, not everyone can
+            benefit equally from these advancements. This is where Accessibility by Desi
+          </p>
+
+          <ul class="tag-list" aria-label="Tags">
+            <li><a class="tag" href="/tags/a11y.html">A11y</a></li>
+
+            <li><a class="tag" href="/tags/design.html">Design</a></li>
+
+            <li><a class="tag" href="/tags/responsive.html">Responsive</a></li>
+          </ul>
+
+          <figure class="post-cover">
+            <img
+              src="/./assets/images/a11y-by-design-cover.jpg"
+              alt="Green accessibility-themed cover used to validate article hero readability and contrast"
+              fetchpriority="high"
+              decoding="async"
+              width="1600"
+              height="900"
+            />
+          </figure>
         </header>
 
         <section class="post-shell" id="article-content" role="region" aria-labelledby="article-content-title">
           <h2 id="article-content-title" class="visually-hidden">Article content</h2>
-          <section class="prose" itemprop="articleBody"><p>We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Design comes into play, a fundamental approach that must be incorporated from the early stages of digital product development. But why is it so important? And what are the advantages it offers in terms of inclusivity, responsiveness, usability, and marketing?</p>
-<h2 id="inclusivity-a-social-and-moral-goal" tabindex="0" data-toc-anchor="true">Inclusivity: A Social and Moral Goal</h2>
-<p>Inclusivity is not just a buzzword; it is a fundamental principle of a fair and just society. About 20% of the world's population lives with some form of disability. Ignoring this significant portion of the population means excluding millions of people from accessing digital resources. Accessibility by Design ensures that our products are usable by everyone, regardless of their physical or cognitive abilities. This not only improves the quality of life for many people but also strengthens our social responsibility as a company.</p>
-<h2 id="responsiveness-adapting-to-everyone-s-needs" tabindex="0" data-toc-anchor="true">Responsiveness: Adapting to Everyone's Needs</h2>
-<p>An accessible design makes digital products more responsive. This means that our software, website, or application can easily adapt to the diverse needs of users. Whether it's people with visual, auditory, motor, or cognitive disabilities, an accessibility-focused approach ensures that everyone can effectively interact with our product. This not only enhances the user experience but also ensures that there are no technological barriers to access.</p>
-<h2 id="usability-improving-the-experience-for-everyone" tabindex="0" data-toc-anchor="true">Usability: Improving the Experience for Everyone</h2>
-<p>Often, accessible design brings significant improvements in overall usability. Features such as clear and readable text, adequate color contrasts, intuitive navigation, and audio/video descriptions not only help users with disabilities but also enhance the experience for everyone. A product that is easy to use is a successful product, capable of meeting the needs of a wide range of users.</p>
-<h2 id="marketing-a-competitive-advantage" tabindex="0" data-toc-anchor="true">Marketing: A Competitive Advantage</h2>
-<p>From a marketing perspective, Accessibility by Design offers extraordinary benefits. With 20% of the world's population consisting of people with disabilities, we are talking about a vast segment of potential users, stakeholders, operators, and customers. Ignoring this segment means missing out on a significant market opportunity. On the other hand, creating accessible products can set our company apart from the competition, positioning us as leaders in the industry and enhancing our reputation.</p>
-<h2 id="conclusion" tabindex="0" data-toc-anchor="true">Conclusion</h2>
-<p>Adopting Accessibility by Design is not just good practice but a winning strategy that encompasses inclusivity, responsiveness, usability, and marketing. It is an investment that pays off handsomely, improving our corporate image, expanding our user base, and demonstrating our commitment to a more equitable and inclusive society.</p>
-<p>Let's make accessibility a priority and work together to create a digital future that is truly for everyone.</p>
-<hr>
-<p>Accessibility by Design is not just a trend but a necessity. We are ready to make a difference. Join us on this journey toward a more inclusive digital world.</p>
-</section>
+          <section class="prose" itemprop="articleBody">
+            <p>
+              We live in an era where technology permeates every aspect of our daily lives. However, not everyone can
+              benefit equally from these advancements. This is where Accessibility by Design comes into play, a
+              fundamental approach that must be incorporated from the early stages of digital product development. But
+              why is it so important? And what are the advantages it offers in terms of inclusivity, responsiveness,
+              usability, and marketing?
+            </p>
+            <h2 id="inclusivity-a-social-and-moral-goal" tabindex="0" data-toc-anchor="true">
+              Inclusivity: A Social and Moral Goal
+            </h2>
+            <p>
+              Inclusivity is not just a buzzword; it is a fundamental principle of a fair and just society. About 20% of
+              the world's population lives with some form of disability. Ignoring this significant portion of the
+              population means excluding millions of people from accessing digital resources. Accessibility by Design
+              ensures that our products are usable by everyone, regardless of their physical or cognitive abilities.
+              This not only improves the quality of life for many people but also strengthens our social responsibility
+              as a company.
+            </p>
+            <h2 id="responsiveness-adapting-to-everyone-s-needs" tabindex="0" data-toc-anchor="true">
+              Responsiveness: Adapting to Everyone's Needs
+            </h2>
+            <p>
+              An accessible design makes digital products more responsive. This means that our software, website, or
+              application can easily adapt to the diverse needs of users. Whether it's people with visual, auditory,
+              motor, or cognitive disabilities, an accessibility-focused approach ensures that everyone can effectively
+              interact with our product. This not only enhances the user experience but also ensures that there are no
+              technological barriers to access.
+            </p>
+            <h2 id="usability-improving-the-experience-for-everyone" tabindex="0" data-toc-anchor="true">
+              Usability: Improving the Experience for Everyone
+            </h2>
+            <p>
+              Often, accessible design brings significant improvements in overall usability. Features such as clear and
+              readable text, adequate color contrasts, intuitive navigation, and audio/video descriptions not only help
+              users with disabilities but also enhance the experience for everyone. A product that is easy to use is a
+              successful product, capable of meeting the needs of a wide range of users.
+            </p>
+            <h2 id="marketing-a-competitive-advantage" tabindex="0" data-toc-anchor="true">
+              Marketing: A Competitive Advantage
+            </h2>
+            <p>
+              From a marketing perspective, Accessibility by Design offers extraordinary benefits. With 20% of the
+              world's population consisting of people with disabilities, we are talking about a vast segment of
+              potential users, stakeholders, operators, and customers. Ignoring this segment means missing out on a
+              significant market opportunity. On the other hand, creating accessible products can set our company apart
+              from the competition, positioning us as leaders in the industry and enhancing our reputation.
+            </p>
+            <h2 id="conclusion" tabindex="0" data-toc-anchor="true">Conclusion</h2>
+            <p>
+              Adopting Accessibility by Design is not just good practice but a winning strategy that encompasses
+              inclusivity, responsiveness, usability, and marketing. It is an investment that pays off handsomely,
+              improving our corporate image, expanding our user base, and demonstrating our commitment to a more
+              equitable and inclusive society.
+            </p>
+            <p>
+              Let's make accessibility a priority and work together to create a digital future that is truly for
+              everyone.
+            </p>
+            <hr />
+            <p>
+              Accessibility by Design is not just a trend but a necessity. We are ready to make a difference. Join us on
+              this journey toward a more inclusive digital world.
+            </p>
+          </section>
         </section>
-      </div>
 
-      
         <aside class="post-sidebar" role="complementary" aria-labelledby="post-outline">
-          <nav class="post-sidebar__panel post-toc" aria-labelledby="post-outline">
-            <p class="eyebrow eyebrow--muted">Outline</p>
+          <nav class="post-toc" aria-labelledby="post-outline">
+            <p class="eyebrow eyebrow--muted">TOC</p>
             <h2 id="post-outline">On this page</h2>
-            <ol class="post-toc__list">
-              
-                <li class="post-toc__item">
-                  <a class="post-toc__link" data-level="2" href="#inclusivity-a-social-and-moral-goal">Inclusivity: A Social and Moral Goal</a>
-                </li>
-              
-                <li class="post-toc__item">
-                  <a class="post-toc__link" data-level="2" href="#responsiveness-adapting-to-everyone-s-needs">Responsiveness: Adapting to Everyone's Needs</a>
-                </li>
-              
-                <li class="post-toc__item">
-                  <a class="post-toc__link" data-level="2" href="#usability-improving-the-experience-for-everyone">Usability: Improving the Experience for Everyone</a>
-                </li>
-              
-                <li class="post-toc__item">
-                  <a class="post-toc__link" data-level="2" href="#marketing-a-competitive-advantage">Marketing: A Competitive Advantage</a>
-                </li>
-              
-                <li class="post-toc__item">
-                  <a class="post-toc__link" data-level="2" href="#conclusion">Conclusion</a>
-                </li>
-              
+            <ol class="post-toc-list">
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#inclusivity-a-social-and-moral-goal"
+                  >Inclusivity: A Social and Moral Goal</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#responsiveness-adapting-to-everyone-s-needs"
+                  >Responsiveness: Adapting to Everyone's Needs</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#usability-improving-the-experience-for-everyone"
+                  >Usability: Improving the Experience for Everyone</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#marketing-a-competitive-advantage"
+                  >Marketing: A Competitive Advantage</a
+                >
+              </li>
+
+              <li class="post-toc-item">
+                <a class="post-toc-link" data-level="2" href="#conclusion">Conclusion</a>
+              </li>
             </ol>
           </nav>
         </aside>
-      
-    </div>
-  </article>
 
-  
+        <section class="comments-shell" aria-labelledby="comments-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Discussion</p>
+              <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+            </div>
+          </div>
+          <p class="comments-note">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2024-05-19-a11y-by-design.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
+      </article>
 
-  <nav class="post-nav" aria-label="Post navigation">
-    
-      <a class="post-nav__card" rel="prev" href="/posts/2023-01-01-say-hello-2023.html">
-        <span class="post-nav__label">Previous</span>
-        <strong>Say hello to 2023 🎉</strong>
-      </a>
-    
-    
-      <a class="post-nav__card" rel="next" href="/posts/2024-10-28-concerning-css-grid.html">
-        <span class="post-nav__label">Next</span>
-        <strong>Introducing CSS Grid - The Future of Web Layout 🎨</strong>
-      </a>
-    
-  </nav>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav-card" rel="prev" href="/posts/2023-01-01-say-hello-2023.html">
+          <span class="post-nav-label">Previous</span>
+          <strong>Say hello to 2023 🎉</strong>
+        </a>
 
+        <a class="post-nav-card" rel="next" href="/posts/2024-10-28-concerning-css-grid.html">
+          <span class="post-nav-label">Next</span>
+          <strong>Introducing CSS Grid - The Future of Web Layout 🎨</strong>
+        </a>
+      </nav>
     </main>
 
     <footer role="contentinfo" class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-copy">
-      <p class="footer-brand">dout.dev</p>
-      <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
-      <p>© 2026 dout.dev</p>
-    </div>
-    <nav class="footer-nav" aria-label="Footer">
-      <a href="/">Home</a>
-      <a href="/archive.html">Archive</a>
-      <a href="/search.html">Search</a>
-      <a href="/about.html">About</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/feed.rss">RSS</a>
-      <a href="/feed.json">JSON Feed</a>
-    </nav>
-  </div>
-</footer>
+      <div class="container footer-grid">
+        <div class="footer-copy">
+          <p class="footer-brand">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
 
     <script type="module" src="/scripts/main.js"></script>
-  
-
-</body></html>
+  </body>
+</html>

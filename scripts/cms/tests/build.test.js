@@ -8,7 +8,13 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
-import { join } from 'node:path';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { join, relative } from 'node:path';
+import {
+  findEligibleScheduledDrafts,
+  maybePublishScheduledDrafts,
+  updatePublishedFrontMatter,
+} from '../build.js';
 
 describe('CMS - Build', () => {
   test('should run build script and exit with code 0 on success', async () => {
@@ -198,6 +204,143 @@ describe('CMS - Build', () => {
     } finally {
       console.error = originalConsoleError;
       process.exit = originalProcessExit;
+    }
+  });
+
+  test('findEligibleScheduledDrafts returns only due drafts with explicit published false', () => {
+    const now = new Date('2026-04-22T12:00:00.000Z');
+    const posts = [
+      {
+        name: 'future-draft',
+        title: 'Future Draft',
+        date: '2026-04-23T00:00:00.000Z',
+        published: false,
+        source: 'data/posts/future-draft.md',
+      },
+      {
+        name: 'published-post',
+        title: 'Published Post',
+        date: '2026-04-20T00:00:00.000Z',
+        published: true,
+        source: 'data/posts/published-post.md',
+      },
+      {
+        name: 'due-draft-late',
+        title: 'Due Draft Late',
+        date: '2026-04-21T00:00:00.000Z',
+        published: false,
+        source: 'data/posts/due-draft-late.md',
+      },
+      {
+        name: 'due-draft-early',
+        title: 'Due Draft Early',
+        date: '2026-04-19T00:00:00.000Z',
+        published: false,
+        source: 'data/posts/due-draft-early.md',
+      },
+    ];
+
+    const eligible = findEligibleScheduledDrafts(posts, now);
+
+    assert.deepEqual(
+      eligible.map((post) => post.name),
+      ['due-draft-early', 'due-draft-late']
+    );
+  });
+
+  test('updatePublishedFrontMatter flips published from false to true', () => {
+    const raw = `---
+title: "Draft"
+published: false
+tags: [test]
+---
+
+Body`;
+
+    const updated = updatePublishedFrontMatter(raw);
+
+    assert.equal(updated.changed, true);
+    assert.match(updated.content, /published: true/);
+    assert.doesNotMatch(updated.content, /published: false/);
+  });
+
+  test('maybePublishScheduledDrafts updates approved drafts one at a time', async () => {
+    const tempDir = await mkdtemp(join(process.cwd(), 'tmp-build-prompts-'));
+    const firstFile = join(tempDir, '2026-04-20-first-draft.md');
+    const secondFile = join(tempDir, '2026-04-21-second-draft.md');
+
+    try {
+      await writeFile(
+        firstFile,
+        `---
+title: "First Draft"
+date: "2026-04-20"
+published: false
+---
+
+First draft body.`,
+        'utf8'
+      );
+
+      await writeFile(
+        secondFile,
+        `---
+title: "Second Draft"
+date: "2026-04-21"
+published: false
+---
+
+Second draft body.`,
+        'utf8'
+      );
+
+      const prompts = [];
+      const logs = [];
+      const result = await maybePublishScheduledDrafts(
+        [
+          {
+            name: '2026-04-20-first-draft',
+            title: 'First Draft',
+            date: '2026-04-20T00:00:00.000Z',
+            published: false,
+            source: relative(process.cwd(), firstFile),
+          },
+          {
+            name: '2026-04-21-second-draft',
+            title: 'Second Draft',
+            date: '2026-04-21T00:00:00.000Z',
+            published: false,
+            source: relative(process.cwd(), secondFile),
+          },
+        ],
+        {
+          now: new Date('2026-04-22T12:00:00.000Z'),
+          confirm: async (post) => {
+            prompts.push(post.name);
+            return post.name === '2026-04-20-first-draft';
+          },
+          logger: {
+            log(message) {
+              logs.push(message);
+            },
+            warn(message) {
+              logs.push(message);
+            },
+          },
+        }
+      );
+
+      const firstContent = await readFile(firstFile, 'utf8');
+      const secondContent = await readFile(secondFile, 'utf8');
+
+      assert.deepEqual(prompts, ['2026-04-20-first-draft', '2026-04-21-second-draft']);
+      assert.equal(result.changed.length, 1);
+      assert.equal(result.skipped.length, 1);
+      assert.match(firstContent, /published: true/);
+      assert.match(secondContent, /published: false/);
+      assert.ok(logs.some((message) => message.includes('Published and queued for build')));
+    } finally {
+      await rm(tempDir, { recursive: true, force: true });
     }
   });
 });

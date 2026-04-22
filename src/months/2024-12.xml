@@ -6,7 +6,7 @@
     <description>RSS feed for posts from December 2024</description>
     <atom:link href="https://dout.dev/months/2024-12.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Mon, 20 Apr 2026 11:44:22 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 19:31:14 GMT</lastBuildDate>
     <item>
       <title>M4 Template Test - Cover Image e Syntax Highlighting</title>
       <link>https://dout.dev/posts/2024-12-27-m4-template-test.html</link>

@@ -28,3 +28,15 @@ test('sanitizeArticleHtml removes untrusted iframes', () => {
 
   assert.equal(html.trim(), '');
 });
+
+test('sanitizeArticleHtml decorates outbound links for a new tab with source tracking', () => {
+  const html = sanitizeArticleHtml(
+    '<p><a href="https://example.com/docs?topic=css#intro" rel="author noreferrer">Read docs</a></p>'
+  );
+
+  assert.match(html, /href="https:\/\/example\.com\/docs\?topic=css&amp;from=dout\.dev#intro"/);
+  assert.match(html, /target="_blank"/);
+  assert.match(html, /referrerpolicy="strict-origin-when-cross-origin"/);
+  assert.match(html, /rel="author noopener"|rel="noopener author"/);
+  assert.doesNotMatch(html, /noreferrer/);
+});

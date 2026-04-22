@@ -109,10 +109,11 @@ beforeEach(() => {
   document.documentElement.removeAttribute('data-reduce-animations');
   document.documentElement.removeAttribute('data-reduce-transparency');
   document.documentElement.removeAttribute('data-increase-contrast');
+  document.documentElement.removeAttribute('data-radius-preset');
   document.documentElement.style.removeProperty('font-size');
-  document.documentElement.style.removeProperty('--font-display');
-  document.documentElement.style.removeProperty('--font-sans');
-  document.documentElement.style.removeProperty('--font-mono');
+  document.documentElement.style.removeProperty('--dout--font-display');
+  document.documentElement.style.removeProperty('--dout--font-sans');
+  document.documentElement.style.removeProperty('--dout--font-mono');
   window.localStorage.clear();
 });
 
@@ -131,9 +132,13 @@ describe('DisplayPreferencesPopover', () => {
     assert.equal(element.querySelector('.preferences-toggle') !== null, true);
     assert.equal(element.querySelector('accent-color-selector') !== null, true);
     assert.equal(element.querySelectorAll('input[type="checkbox"]').length, 4);
-    assert.equal(element.querySelectorAll('select').length, 5);
+    assert.equal(element.querySelectorAll('input[type="radio"][name="radiusPreset"]').length, 3);
+    assert.equal(element.querySelectorAll('select').length, 4);
     assert.equal(element.querySelector('select[name="fontScale"]').value, '100%');
-    assert.equal(element.querySelector('select[name="radiusPreset"]').value, 'balanced');
+    assert.equal(
+      element.querySelector('input[name="radiusPreset"][value="rounded"]').checked,
+      true
+    );
   });
 
   test('applies saved preferences when the component connects', () => {
@@ -160,10 +165,15 @@ describe('DisplayPreferencesPopover', () => {
     assert.equal(document.documentElement.getAttribute('data-increase-contrast'), 'true');
     assert.equal(document.documentElement.getAttribute('data-radius-preset'), 'rounded');
     assert.equal(document.documentElement.style.fontSize, '125%');
-    assert.equal(document.documentElement.style.getPropertyValue('--radius-scale'), '1.5');
-    assert.match(document.documentElement.style.getPropertyValue('--font-display'), /system-ui/i);
-    assert.match(document.documentElement.style.getPropertyValue('--font-sans'), /Georgia/i);
-    assert.match(document.documentElement.style.getPropertyValue('--font-mono'), /ui-monospace/i);
+    assert.match(
+      document.documentElement.style.getPropertyValue('--dout--font-display'),
+      /system-ui/i
+    );
+    assert.match(document.documentElement.style.getPropertyValue('--dout--font-sans'), /Georgia/i);
+    assert.match(
+      document.documentElement.style.getPropertyValue('--dout--font-mono'),
+      /ui-monospace/i
+    );
     assert.equal(element.querySelector('select[name="headingFont"]').value, 'system-sans');
     assert.equal(element.querySelector('select[name="bodyFont"]').value, 'book-serif');
     assert.equal(element.querySelector('select[name="codeFont"]').value, 'system-mono');
@@ -173,7 +183,7 @@ describe('DisplayPreferencesPopover', () => {
     const element = mountPopover();
     const reduceMotion = element.querySelector('input[name="reduceMotion"]');
     const fontScale = element.querySelector('select[name="fontScale"]');
-    const radiusPreset = element.querySelector('select[name="radiusPreset"]');
+    const radiusPreset = element.querySelector('input[name="radiusPreset"][value="squircle"]');
     const headingFont = element.querySelector('select[name="headingFont"]');
     const bodyFont = element.querySelector('select[name="bodyFont"]');
     const codeFont = element.querySelector('select[name="codeFont"]');
@@ -184,7 +194,6 @@ describe('DisplayPreferencesPopover', () => {
     fontScale.value = '80%';
     fontScale.dispatchEvent(new window.Event('change', { bubbles: true }));
 
-    radiusPreset.value = 'soft';
     radiusPreset.dispatchEvent(new window.Event('change', { bubbles: true }));
 
     headingFont.value = 'rounded-sans';
@@ -199,17 +208,22 @@ describe('DisplayPreferencesPopover', () => {
     const saved = JSON.parse(window.localStorage.getItem(STORAGE_KEY));
 
     assert.equal(document.documentElement.getAttribute('data-reduce-motion'), 'true');
-    assert.equal(document.documentElement.getAttribute('data-radius-preset'), 'soft');
+    assert.equal(document.documentElement.getAttribute('data-radius-preset'), 'squircle');
     assert.equal(document.documentElement.style.fontSize, '80%');
-    assert.equal(document.documentElement.style.getPropertyValue('--radius-scale'), '1.25');
     assert.equal(saved.fontScale, '80%');
-    assert.equal(saved.radiusPreset, 'soft');
+    assert.equal(saved.radiusPreset, 'squircle');
     assert.equal(saved.headingFont, 'rounded-sans');
     assert.equal(saved.bodyFont, 'readable-serif');
     assert.equal(saved.codeFont, 'classic-mono');
-    assert.match(document.documentElement.style.getPropertyValue('--font-display'), /Optima/i);
-    assert.match(document.documentElement.style.getPropertyValue('--font-sans'), /Charter/i);
-    assert.match(document.documentElement.style.getPropertyValue('--font-mono'), /Courier New/i);
+    assert.match(
+      document.documentElement.style.getPropertyValue('--dout--font-display'),
+      /Optima/i
+    );
+    assert.match(document.documentElement.style.getPropertyValue('--dout--font-sans'), /Charter/i);
+    assert.match(
+      document.documentElement.style.getPropertyValue('--dout--font-mono'),
+      /Courier New/i
+    );
   });
 
   test('uses a click-driven fallback when the native popover API is unavailable', () => {

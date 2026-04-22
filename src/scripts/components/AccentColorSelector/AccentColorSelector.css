@@ -7,15 +7,16 @@ accent-color-selector .accent-selector {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  background: var(--surface-strong);
+  border: 1px solid var(--dout--border);
+  border-radius: var(--dout--radius-md);
+  background: var(--dout--surface-strong);
+  corner-shape: var(--dout--corner-shape);
 }
 
 accent-color-selector .accent-selector-label {
   padding: 0 0.5rem;
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: var(--dout--text-muted);
   white-space: nowrap;
 }
 
@@ -24,9 +25,13 @@ accent-color-selector .accent-button {
   height: 2.5rem;
   min-width: 2.5rem;
   padding: 0;
-  border: 2px solid var(--border);
+  border: 2px solid var(--dout--border);
   border-radius: 50%;
-  background: hsl(var(--accent-preview-h), var(--accent-preview-s), var(--accent-preview-l));
+  background: hsl(
+    var(--dout--accent-preview-h),
+    var(--dout--accent-preview-s),
+    var(--dout--accent-preview-l)
+  );
   cursor: pointer;
   transition: all 120ms ease;
   position: relative;
@@ -34,18 +39,18 @@ accent-color-selector .accent-button {
 
 accent-color-selector .accent-button:hover {
   transform: scale(1.08);
-  border-color: var(--text-muted);
+  border-color: var(--dout--text-muted);
 }
 
 accent-color-selector .accent-button[aria-checked='true'] {
-  border-color: var(--text);
+  border-color: var(--dout--text);
   border-width: 3px;
-  box-shadow: 0 0 0 2px var(--surface-strong);
+  box-shadow: 0 0 0 2px var(--dout--surface-strong);
   transform: scale(1.1);
 }
 
 accent-color-selector .accent-button:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--dout--accent);
   outline-offset: 2px;
 }
 

@@ -6,7 +6,7 @@
     <description>RSS feed for posts from February 2019</description>
     <atom:link href="https://dout.dev/months/2019-02.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Mon, 20 Apr 2026 11:44:21 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 19:31:13 GMT</lastBuildDate>
     <item>
       <title>Say hello to Gridsome 🎉</title>
       <link>https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html</link>

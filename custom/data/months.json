@@ -13,6 +13,8 @@
         "path": "./custom/posts/2019-01-07-a-post-with-a-cover.html",
         "url": "/posts/2019-01-07-a-post-with-a-cover/",
         "excerpt": "Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or",
+        "coverImage": null,
+        "coverAlt": "A post with a cover image",
         "tags": [
           {
             "key": "markdown",
@@ -50,6 +52,8 @@
         "path": "./custom/posts/2019-02-06-markdown-test-file.html",
         "url": "/posts/2019-02-06-markdown-test-file/",
         "excerpt": "Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable",
+        "coverImage": null,
+        "coverAlt": "Markdown test file",
         "tags": [
           {
             "key": "markdown",
@@ -72,6 +76,8 @@
         "path": "./custom/posts/2019-02-07-say-hello-to-gridsome.html",
         "url": "/posts/2019-02-07-say-hello-to-gridsome/",
         "excerpt": "A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea",
+        "coverImage": null,
+        "coverAlt": "Say hello to Gridsome 🎉",
         "tags": [
           {
             "key": "markdown",
@@ -109,6 +115,8 @@
         "path": "./custom/posts/2021-03-01-say-hello-to-gridsome-new.html",
         "url": "/posts/2021-03-01-say-hello-to-gridsome-new/",
         "excerpt": "Well.... that's all",
+        "coverImage": null,
+        "coverAlt": "Say Hello to Gridsome NEW",
         "tags": [
           {
             "key": "markdown",
@@ -131,6 +139,8 @@
         "path": "./custom/posts/2021-03-05-gradient-borders.html",
         "url": "/posts/2021-03-05-gradient-borders/",
         "excerpt": "GRADIENT BORDERS",
+        "coverImage": null,
+        "coverAlt": "Testing CodePen",
         "tags": [
           {
             "key": "markdown",
@@ -153,6 +163,8 @@
         "path": "./custom/posts/2021-03-07-hating-css-utility-classes.html",
         "url": "/posts/2021-03-07-hating-css-utility-classes/",
         "excerpt": "https://codepen.io/emdeoh/pen/NWdmgVq",
+        "coverImage": null,
+        "coverAlt": "Testing CodePen",
         "tags": [
           {
             "key": "markdown",
@@ -175,6 +187,8 @@
         "path": "./custom/posts/2021-03-08-a-new-post-with-a-new-cover.html",
         "url": "/posts/2021-03-08-a-new-post-with-a-new-cover/",
         "excerpt": "Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or",
+        "coverImage": null,
+        "coverAlt": "A NEW post with a NEW cover image",
         "tags": [
           {
             "key": "markdown",
@@ -212,6 +226,10 @@
         "path": "./custom/posts/2022-01-01-say-hello-2022.html",
         "url": "/posts/2022-01-01-say-hello-2022/",
         "excerpt": "",
+        "coverImage": "../assets/images/alexandr-podvalny-220262-unsplash.jpg",
+        "coverWidth": 1600,
+        "coverHeight": 900,
+        "coverAlt": "Say hello to 2022 🎉",
         "tags": [
           {
             "key": "markdown",
@@ -249,6 +267,8 @@
         "path": "./custom/posts/2022-02-25-you-can-express-tags-today.html",
         "url": "/posts/2022-02-25-you-can-express-tags-today/",
         "excerpt": "HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described here.",
+        "coverImage": "./images/svg-code.jpg",
+        "coverAlt": "You can use express tags… TODAY!",
         "tags": [
           {
             "key": "html",
@@ -286,6 +306,8 @@
         "path": "./custom/posts/2022-03-03-custom-grid-system.html",
         "url": "/posts/2022-03-03-custom-grid-system/",
         "excerpt": "Blog under construction",
+        "coverImage": "./images/alexandr-podvalny-220262-unsplash.jpg",
+        "coverAlt": "Custom Grid System",
         "tags": [
           {
             "key": "markdown",
@@ -308,6 +330,8 @@
         "path": "./custom/posts/2022-03-03-marked-markdown-parser.html",
         "url": "/posts/2022-03-03-marked-markdown-parser/",
         "excerpt": "How To Use The Demo",
+        "coverImage": null,
+        "coverAlt": "Marked - Markdown Parser",
         "tags": [],
         "pinned": false
       },
@@ -319,6 +343,8 @@
         "path": "./custom/posts/2022-03-12-you-can-edit-css.html",
         "url": "/posts/2022-03-12-you-can-edit-css/",
         "excerpt": "You can edit CSS",
+        "coverImage": null,
+        "coverAlt": "You can edit CSS",
         "tags": [
           {
             "key": "markdown",
@@ -341,6 +367,8 @@
         "path": "./custom/posts/2022-03-16-test-codepen.html",
         "url": "/posts/2022-03-16-test-codepen/",
         "excerpt": "See the Pen <a href='https://codepen.io/blackmirror1980/pen/aPRXzv'>Pure CSS Slider using Scroll-Snap</a> by blackmirror1980 (<a href='https://codepen.io/blackmirror1980'>@blackmir",
+        "coverImage": null,
+        "coverAlt": "Testing CodePen",
         "tags": [
           {
             "key": "markdown",
@@ -363,6 +391,8 @@
         "path": "./custom/posts/2022-03-18-css-properties-hierarchy.html",
         "url": "/posts/2022-03-18-css-properties-hierarchy/",
         "excerpt": ":root { --border-radius: 5px; } .element { /* css custom properties */ --var--example: 1; ​ /* position */ position: absolute; inset: 0; /* top, right, bottom, left */ z-index: 1; ",
+        "coverImage": null,
+        "coverAlt": "CSS Properties Hierarchy",
         "tags": [
           {
             "key": "html",
@@ -385,6 +415,10 @@
         "path": "./custom/posts/2022-03-21-building-dout-dev-blog.html",
         "url": "/posts/2022-03-21-building-dout-dev-blog/",
         "excerpt": "Less is more!",
+        "coverImage": "../assets/images/building-dout-dev-cover.jpg",
+        "coverWidth": 1600,
+        "coverHeight": 900,
+        "coverAlt": "Dashboard notes and publishing pipeline artwork for the dout.dev build article",
         "tags": [
           {
             "key": "html",
@@ -402,6 +436,10 @@
         "path": "./custom/posts/2022-03-22-building-dout-dev-blog-part-2.html",
         "url": "/posts/2022-03-22-building-dout-dev-blog-part-2/",
         "excerpt": "Building dout.dev blog - Part II",
+        "coverImage": "../assets/images/building-dout-dev-cover.jpg",
+        "coverWidth": 1600,
+        "coverHeight": 900,
+        "coverAlt": "Editorial system illustration used to test article cover rendering",
         "tags": [
           {
             "key": "html",
@@ -419,6 +457,8 @@
         "path": "./custom/posts/2022-03-24-welcome-to-dout-dev.html",
         "url": "/posts/2022-03-24-welcome-to-dout-dev/",
         "excerpt": "Hi, I'm Emiliano \"Pixu\" Pisu.",
+        "coverImage": null,
+        "coverAlt": "Welcome to dout.dev",
         "tags": [
           {
             "key": "generic",
@@ -436,6 +476,8 @@
         "path": "./custom/posts/2022-03-25-concerning.html",
         "url": "/posts/2022-03-25-concerning/",
         "excerpt": "Concerning Core Web Technologies",
+        "coverImage": null,
+        "coverAlt": "Concerning…",
         "tags": [
           {
             "key": "generic",
@@ -467,7 +509,11 @@
         "dateString": "Sun Jan 01 2023",
         "path": "./custom/posts/2023-01-01-say-hello-2023.html",
         "url": "/posts/2023-01-01-say-hello-2023/",
-        "excerpt": "addEventListener('DOMContentLoaded', (e) => { console.log(e); }); anotherFunctionCallGoesHere({}, () => { selectOther(); });",
+        "excerpt": "Say hello to 2023 🎉",
+        "coverImage": "../assets/images/2022-02-25-you-can-express-tags-today.jpg",
+        "coverWidth": 1600,
+        "coverHeight": 900,
+        "coverAlt": "Say hello to 2023 🎉",
         "tags": [
           {
             "key": "markdown",
@@ -505,6 +551,10 @@
         "path": "./custom/posts/2024-05-19-a11y-by-design.html",
         "url": "/posts/2024-05-19-a11y-by-design/",
         "excerpt": "We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Desi",
+        "coverImage": "../assets/images/a11y-by-design-cover.jpg",
+        "coverWidth": 1600,
+        "coverHeight": 900,
+        "coverAlt": "Green accessibility-themed cover used to validate article hero readability and contrast",
         "tags": [
           {
             "key": "a11y",
@@ -547,6 +597,10 @@
         "path": "./custom/posts/2024-10-28-concerning-css-grid.html",
         "url": "/posts/2024-10-28-concerning-css-grid/",
         "excerpt": "What is CSS Grid and why is it important?",
+        "coverImage": "../assets/images/css-grid-cover.jpg",
+        "coverWidth": 1600,
+        "coverHeight": 900,
+        "coverAlt": "Introducing CSS Grid - The Future of Web Layout 🎨",
         "tags": [
           {
             "key": "css",
@@ -594,6 +648,10 @@
         "path": "./custom/posts/2024-12-27-m4-template-test.html",
         "url": "/posts/2024-12-27-m4-template-test/",
         "excerpt": "Questo è un post di test per verificare tutte le funzionalità implementate nel M4 - Post Page.",
+        "coverImage": "../assets/images/alexandr-podvalny-220262-unsplash.jpg",
+        "coverWidth": 1600,
+        "coverHeight": 900,
+        "coverAlt": "M4 Template Test - Cover Image e Syntax Highlighting",
         "tags": [
           {
             "key": "test",
@@ -628,19 +686,21 @@
     "to": "2024-12-27T10:00:00.000Z"
   },
   {
-    "key": "2025-08",
-    "label": "August 2025",
-    "year": 2025,
-    "month": 8,
+    "key": "2026-03",
+    "label": "March 2026",
+    "year": 2026,
+    "month": 3,
     "posts": [
       {
-        "name": "2025-08-15-welcome-to-dout-dev-2",
-        "title": "Welcome to dout.dev 2.0",
-        "date": "2025-08-15T00:00:00.000Z",
-        "dateString": "Fri Aug 15 2025",
-        "path": "./custom/posts/2025-08-15-welcome-to-dout-dev-2.html",
-        "url": "/posts/2025-08-15-welcome-to-dout-dev-2/",
+        "name": "2026-03-31-welcome-to-dout-dev",
+        "title": "Welcome to dout.dev",
+        "date": "2026-03-31T00:00:00.000Z",
+        "dateString": "Tue Mar 31 2026",
+        "path": "./custom/posts/2026-03-31-welcome-to-dout-dev.html",
+        "url": "/posts/2026-03-31-welcome-to-dout-dev/",
         "excerpt": "Welcome to the New dout.dev",
+        "coverImage": null,
+        "coverAlt": "Welcome to dout.dev",
         "tags": [
           {
             "key": "blog",
@@ -658,16 +718,16 @@
             "url": "./tags/vanilla-js.html"
           }
         ],
-        "pinned": false
+        "pinned": true
       }
     ],
-    "name": "August 2025",
-    "number": 8,
-    "slug": "2025-08",
-    "url": "./months/2025-08.html",
+    "name": "March 2026",
+    "number": 3,
+    "slug": "2026-03",
+    "url": "./months/2026-03.html",
     "count": 1,
-    "from": "2025-08-15T00:00:00.000Z",
-    "to": "2025-08-15T00:00:00.000Z"
+    "from": "2026-03-31T00:00:00.000Z",
+    "to": "2026-03-31T00:00:00.000Z"
   },
   {
     "key": "2026-04",
@@ -683,6 +743,10 @@
         "path": "./custom/posts/2026-04-04-how-i-built-dout-dev.html",
         "url": "/posts/2026-04-04-how-i-built-dout-dev/",
         "excerpt": "The Goal: an editorial blog without runtime ballast",
+        "coverImage": "../assets/images/how-dout-dev-is-built-cover.jpg",
+        "coverWidth": 1600,
+        "coverHeight": 900,
+        "coverAlt": "Blue cover artwork titled How This Blog Is Built, used for the dout.dev making-of article",
         "tags": [
           {
             "key": "architecture",
@@ -706,14 +770,67 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-04-21-when-markdown-is-a-cms-and-when-it-is-not",
+        "title": "When Markdown Is a CMS, and When It Is Not",
+        "date": "2026-04-21T00:00:00.000Z",
+        "dateString": "Tue Apr 21 2026",
+        "path": "./custom/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html",
+        "url": "/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not/",
+        "excerpt": "The useful distinction",
+        "coverImage": null,
+        "coverAlt": "When Markdown Is a CMS, and When It Is Not",
+        "tags": [
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "markdown",
+            "label": "Markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "static-site",
+            "label": "Static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-04-22-how-to-write-agent-skills",
+        "title": "How to Write Agent Skills That Actually Trigger",
+        "date": "2026-04-22T00:00:00.000Z",
+        "dateString": "Wed Apr 22 2026",
+        "path": "./custom/posts/2026-04-22-how-to-write-agent-skills.html",
+        "url": "/posts/2026-04-22-how-to-write-agent-skills/",
+        "excerpt": "The mistake most people make",
+        "coverImage": null,
+        "coverAlt": "How to Write Agent Skills That Actually Trigger",
+        "tags": [
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "April 2026",
     "number": 4,
     "slug": "2026-04",
     "url": "./months/2026-04.html",
-    "count": 1,
+    "count": 3,
     "from": "2026-04-04T00:00:00.000Z",
-    "to": "2026-04-04T00:00:00.000Z"
+    "to": "2026-04-22T00:00:00.000Z"
   }
 ]
