@@ -1,6 +1,6 @@
 {
   "name": "dout.dev",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0",
   "description": "The DoUtDev Blog - Static site generator with custom CMS and template engine",
   "repository": "git@github.com:pixu1980/dout-dev.git",
   "author": "Emiliano \"Pixu\" Pisu",
