@@ -6,7 +6,7 @@
     <description>RSS feed for posts from January 2023</description>
     <atom:link href="https://dout.dev/months/2023-01.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Mon, 27 Apr 2026 19:31:14 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 19:33:17 GMT</lastBuildDate>
     <item>
       <title>Say hello to 2023 🎉</title>
       <link>https://dout.dev/posts/2023-01-01-say-hello-2023.html</link>

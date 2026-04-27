@@ -79,7 +79,9 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    :root[data-increase-contrast='true']:not([data-color-scheme='light']):not([data-theme='light']) {
+    :root[data-increase-contrast='true']:not([data-color-scheme='light']):not(
+        [data-theme='light']
+      ) {
       --dout--bg: #100f12;
       --dout--bg-elevated: #17151a;
       --dout--surface: #17151a;

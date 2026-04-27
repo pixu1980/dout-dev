@@ -133,7 +133,10 @@
 
   :root[data-post-feed-layout='grid'] .post-feed,
   :root[data-post-feed-layout='grid'] [data-post-feed] {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--dout--post-feed-grid-min)), 1fr));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, var(--dout--post-feed-grid-min)), 1fr)
+      );
     gap: var(--dout--post-feed-gap-grid);
   }
 
@@ -146,7 +149,9 @@
     gap: var(--dout--post-feed-gap-list);
   }
 
-  :root[data-post-feed-layout='grid'] [data-post-feed-variant='feature-list'] [data-post-feed-item] {
+  :root[data-post-feed-layout='grid']
+    [data-post-feed-variant='feature-list']
+    [data-post-feed-item] {
     height: auto;
   }
 

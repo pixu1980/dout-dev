@@ -6,7 +6,7 @@
     <description>RSS feed for posts from March 2026</description>
     <atom:link href="https://dout.dev/months/2026-03.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Mon, 27 Apr 2026 19:31:14 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 19:33:18 GMT</lastBuildDate>
     <item>
       <title>Welcome to dout.dev</title>
       <link>https://dout.dev/posts/2026-03-31-welcome-to-dout-dev.html</link>

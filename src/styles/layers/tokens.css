@@ -20,7 +20,8 @@
     --dout--shadow: 0 18px 48px rgba(32, 20, 9, 0.08);
     --dout--shadow-strong: 0 28px 80px rgba(32, 20, 9, 0.12);
 
-    --dout--font-display: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    --dout--font-display:
+      'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
     --dout--font-sans: 'Avenir Next', 'Segoe UI Variable Text', 'Helvetica Neue', sans-serif;
     --dout--font-mono: 'IBM Plex Mono', 'SFMono-Regular', 'Cascadia Code', Consolas, monospace;
 
