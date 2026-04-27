@@ -6,7 +6,7 @@ import { createServer } from 'node:http';
 import { dirname, extname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { resolveConfig } from '../cms/config.js';
+import { resolveConfig } from '../cms/_config.js';
 import { inspectUrl, renderIssues } from '../og-check/index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));

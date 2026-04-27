@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // CMS Clean - removes generated output (test-friendly version)
 import { join } from 'node:path';
-import { resolveConfig } from './config.js';
-import { removePath } from './utils.js';
+import { resolveConfig } from './_config.js';
+import { removePath } from './_utils.js';
 
 export function clean(userConfig = {}) {
   const cfg = resolveConfig(userConfig);

@@ -6,7 +6,7 @@
     <description>RSS feed for posts tagged with Grid-layout</description>
     <atom:link href="https://dout.dev/tags/grid-layout.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Mon, 27 Apr 2026 19:33:17 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Oct 2024 10:00:00 GMT</lastBuildDate>
     <item>
       <title>Introducing CSS Grid - The Future of Web Layout 🎨</title>
       <link>https://dout.dev/posts/2024-10-28-concerning-css-grid.html</link>

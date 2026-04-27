@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // CMS Watch - rebuilds on changes
 import { watch } from 'node:fs';
-import { build } from './build.js';
-import { resolveConfig } from './config.js';
+import { build } from './_build.js';
+import { resolveConfig } from './_config.js';
 
 export function startWatch(userConfig = {}, onBuild = () => {}) {
   const cfg = resolveConfig(userConfig);

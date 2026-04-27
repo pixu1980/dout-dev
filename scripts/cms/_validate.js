@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // CMS Validate - validates content for common issues
-import { scanContent } from './scan.js';
-import { resolveConfig } from './config.js';
+import { scanContent } from './_scan.js';
+import { resolveConfig } from './_config.js';
 
 export function validate(userConfig = {}) {
   const config = resolveConfig(userConfig);

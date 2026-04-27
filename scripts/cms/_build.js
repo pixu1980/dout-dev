@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 // CMS Build - orchestrates scan and page generation
-import { scanContent } from './scan.js';
-import { buildOgImages } from './og-image-generator.js';
-import { generatePages, buildJsonFeed, buildRssFeed, buildSitemap } from './page-generator.js';
+import { scanContent } from './_scan.js';
+import { buildOgImages } from './_og-image-generator.js';
+import { generatePages, buildJsonFeed, buildRssFeed, buildSitemap } from './_page-generator.js';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { createInterface } from 'node:readline/promises';
-import { resolveConfig } from './config.js';
+import { resolveConfig } from './_config.js';
 
 const YES_ANSWERS = new Set(['y', 'yes']);
 
@@ -69,6 +69,15 @@ function canPromptForDrafts({ interactive = true, confirm } = {}) {
   }
 
   return interactive && Boolean(process.stdin?.isTTY) && Boolean(process.stdout?.isTTY);
+}
+
+function resolveDraftPromptInteractivity(runtimeOptions = {}) {
+  if (typeof runtimeOptions.interactive === 'boolean') {
+    return runtimeOptions.interactive;
+  }
+
+  const envValue = String(process.env.CMS_DISABLE_SCHEDULED_DRAFT_PROMPTS || '').toLowerCase();
+  return !['1', 'true', 'yes'].includes(envValue);
 }
 
 function shouldPublishDraft(answer) {
@@ -169,7 +178,10 @@ export async function maybePublishScheduledDrafts(posts, options = {}) {
 export async function build(userConfig = {}, runtimeOptions = {}) {
   const config = resolveConfig(userConfig);
   const initialDataset = scanContent(config);
-  const draftResolution = await maybePublishScheduledDrafts(initialDataset.posts, runtimeOptions);
+  const draftResolution = await maybePublishScheduledDrafts(initialDataset.posts, {
+    ...runtimeOptions,
+    interactive: resolveDraftPromptInteractivity(runtimeOptions),
+  });
   const dataset = draftResolution.changed.length > 0 ? scanContent(config) : initialDataset;
 
   if (draftResolution.changed.length > 0) {

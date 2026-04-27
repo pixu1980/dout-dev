@@ -1,6 +1,6 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert';
-import { validate, main } from '../validate.js';
+import { validate, main } from '../_validate.js';
 
 describe('validate', () => {
   test('should validate content and return result structure', () => {
@@ -156,7 +156,7 @@ describe('validate', () => {
     };
 
     // Import a fresh instance and mock validate to throw an error
-    const { main: testMain } = await import('../validate.js');
+    const { main: testMain } = await import('../_validate.js');
 
     // Override the validate function by calling main with bad config that will cause an error
     try {

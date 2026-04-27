@@ -2,6 +2,8 @@
 
 > dout.dev - Vanilla-first static blog with WCAG 2.2 AA accessibility and zero runtime dependencies
 
+https://impeccable.style/
+
 ## Overview
 
 dout.dev is a modern static blog built with vanilla JavaScript, CSS, and HTML, focusing on performance, accessibility, and maintainability. The project follows a custom SSG approach with zero runtime dependencies.

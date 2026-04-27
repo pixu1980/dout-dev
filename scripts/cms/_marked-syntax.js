@@ -5,7 +5,7 @@ import {
   readImageSizeSync,
   isLikelyImage,
   srcDir,
-} from './image-utils.js';
+} from './_image-utils.js';
 import { existsSync, readFileSync } from 'node:fs';
 import { join, extname } from 'node:path';
 

@@ -1,7 +1,7 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert';
 import { readFileSync } from 'node:fs';
-import { processMarkdown } from '../post-processor.js';
+import { processMarkdown } from '../_post-processor.js';
 
 describe('post-processor', () => {
   test('processMarkdown should process basic post with front-matter', () => {

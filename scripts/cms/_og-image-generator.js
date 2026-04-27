@@ -4,8 +4,8 @@ import { existsSync } from 'node:fs';
 import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import sharp from 'sharp';
-import { resolveConfig } from './config.js';
-import { scanContent } from './scan.js';
+import { resolveConfig } from './_config.js';
+import { scanContent } from './_scan.js';
 
 const OG_OUTPUT_DIR = join(process.cwd(), 'src', 'assets', 'og');
 const RENDER_VERSION = 1;
@@ -366,7 +366,6 @@ export async function buildOgImages({ dataset, config, outputDir = OG_OUTPUT_DIR
   const previousManifest = await readPreviousManifest(join(outputDir, 'manifest.json'));
   const entries = getOgEntries(sourceDataset, resolvedConfig);
   const manifest = {
-    generatedAt: new Date().toISOString(),
     version: RENDER_VERSION,
     entries: {},
   };

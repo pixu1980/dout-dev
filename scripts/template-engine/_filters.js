@@ -1,6 +1,6 @@
 // Template Engine - Built-in Filters
 import { marked } from 'marked';
-import { createMarkedOptions } from '../cms/marked-syntax.js';
+import { createMarkedOptions } from '../cms/_marked-syntax.js';
 
 // Small internal helpers (kept outside filters to keep per-filter complexity low)
 function utilSlug(value) {
@@ -56,6 +56,7 @@ export function registerBuiltinFilters(renderer) {
   // Text transformation filters
   renderer.registerFilter('upper', (value) => String(value).toUpperCase());
   renderer.registerFilter('lower', (value) => String(value).toLowerCase());
+
   renderer.registerFilter('capitalize', (value) => {
     const str = String(value);
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();

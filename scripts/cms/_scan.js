@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // CMS Scan - reads markdown and generates dataset + JSON
 import { join, relative } from 'node:path';
-import { resolveConfig } from './config.js';
-import { processMarkdown } from './post-processor.js';
-import { ensureDir, readFile, scanDirRecursive, writeJson } from './utils.js';
+import { resolveConfig } from './_config.js';
+import { processMarkdown } from './_post-processor.js';
+import { ensureDir, readFile, scanDirRecursive, writeJson } from './_utils.js';
 
 export function scanContent(userConfig = {}) {
   const config = resolveConfig(userConfig);

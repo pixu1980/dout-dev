@@ -1,6 +1,6 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert';
-import { defaultConfig, resolveConfig } from '../config.js';
+import { defaultConfig, resolveConfig } from '../_config.js';
 
 describe('config', () => {
   test('should provide default configuration', () => {

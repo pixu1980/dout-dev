@@ -2,10 +2,10 @@
 import matter from 'gray-matter';
 import { JSDOM } from 'jsdom';
 import { marked } from 'marked';
-import { createMarkedOptions } from './marked-syntax.js';
-import { sanitizeArticleHtml } from './html-sanitizer.js';
-import { slugify } from './utils.js';
-import { resolveAssetPathFromHref, readImageSizeSync } from './image-utils.js';
+import { createMarkedOptions } from './_marked-syntax.js';
+import { sanitizeArticleHtml } from './_html-sanitizer.js';
+import { slugify } from './_utils.js';
+import { resolveAssetPathFromHref, readImageSizeSync } from './_image-utils.js';
 
 /**
  * Converts a markdown file (with front-matter) into a normalized post object

@@ -6,7 +6,7 @@
     <description>RSS feed for posts tagged with Cover-image</description>
     <atom:link href="https://dout.dev/tags/cover-image.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Mon, 27 Apr 2026 19:33:16 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Dec 2024 10:00:00 GMT</lastBuildDate>
     <item>
       <title>M4 Template Test - Cover Image e Syntax Highlighting</title>
       <link>https://dout.dev/posts/2024-12-27-m4-template-test.html</link>

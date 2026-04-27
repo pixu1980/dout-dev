@@ -1,17 +1,17 @@
 // CMS - Main functions export
-export { processMarkdown } from './post-processor.js';
-export { scanContent } from './scan.js';
-export { generatePages } from './page-generator.js';
-export { build } from './build.js';
-export { clean } from './clean.js';
-export { validate } from './validate.js';
-export { startWatch } from './watch.js';
-export { resolveConfig, defaultConfig } from './config.js';
-export * from './utils.js';
+export { processMarkdown } from './_post-processor.js';
+export { scanContent } from './_scan.js';
+export { generatePages } from './_page-generator.js';
+export { build } from './_build.js';
+export { clean } from './_clean.js';
+export { validate } from './_validate.js';
+export { startWatch } from './_watch.js';
+export { resolveConfig, defaultConfig } from './_config.js';
+export * from './_utils.js';
 
-import { resolveConfig } from './config.js';
-import { scanContent } from './scan.js';
-import { generatePages } from './page-generator.js';
+import { resolveConfig } from './_config.js';
+import { scanContent } from './_scan.js';
+import { generatePages } from './_page-generator.js';
 
 /**
  * Main CMS Class

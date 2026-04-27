@@ -4,7 +4,7 @@ import {
   buildPostFeedLoadMoreConfig,
   generatePages,
   getHomePageFeedModel,
-} from '../page-generator.js';
+} from '../_page-generator.js';
 
 describe('page-generator', () => {
   test('generatePages should process empty datasets without errors', () => {

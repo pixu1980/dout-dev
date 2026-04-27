@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { writeFileSync, rmSync, mkdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { clean } from '../../cms/clean.js';
+import { clean } from '../_clean.js';
 
 const TMP = 'test-tmp-cms-clean';
 

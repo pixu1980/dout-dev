@@ -2,8 +2,8 @@
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { TemplateRenderer } from '../template-engine/index.js';
-import { getOgImagePath } from './og-image-generator.js';
-import { ensureDir } from './utils.js';
+import { getOgImagePath } from './_og-image-generator.js';
+import { ensureDir } from './_utils.js';
 
 export function generatePages(dataset, config) {
   const renderer = new TemplateRenderer(process.cwd());
@@ -483,26 +483,36 @@ export function escapeXml(text) {
     .replace(/'/g, '&apos;');
 }
 
+function getRssBuildDate(items) {
+  const latestTimestamp = (items || []).reduce(
+    (currentLatest, item) => Math.max(currentLatest, toTimestamp(item?.date)),
+    0
+  );
+
+  return latestTimestamp > 0 ? new Date(latestTimestamp).toUTCString() : null;
+}
+
 export function buildRssFeed({ title, link, description, items, siteUrl, feedUrl, language }) {
   const safeTitle = escapeXml(title);
   const safeDesc = escapeXml(description);
-  const now = new Date().toUTCString();
-  const channelItems = (items || [])
+  const feedItems = (items || [])
     .filter((p) => p && p.published !== false)
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 20)
+    .sort((a, b) => toTimestamp(b.date) - toTimestamp(a.date))
+    .slice(0, 20);
+  const lastBuildDate = getRssBuildDate(feedItems);
+  const channelItems = feedItems
     .map((p) => {
       const itemTitle = escapeXml(p.title || p.name);
       const itemLink = `${siteUrl}/posts/${p.name}.html`;
       const guid = `${siteUrl}/posts/${p.name}.html`;
-      const pubDate = p.date ? new Date(p.date).toUTCString() : now;
+      const pubDate = toTimestamp(p.date) > 0 ? new Date(p.date).toUTCString() : null;
       const desc = escapeXml(p.excerpt || '');
       return (
         `    <item>\n` +
         `      <title>${itemTitle}</title>\n` +
         `      <link>${itemLink}</link>\n` +
         `      <guid isPermaLink="true">${guid}</guid>\n` +
-        `      <pubDate>${pubDate}</pubDate>\n` +
+        (pubDate ? `      <pubDate>${pubDate}</pubDate>\n` : '') +
         (desc ? `      <description>${desc}</description>\n` : '') +
         `    </item>`
       );
@@ -520,7 +530,7 @@ export function buildRssFeed({ title, link, description, items, siteUrl, feedUrl
       ? `    <atom:link href="${escapeXml(feedUrl)}" rel="self" type="application/rss+xml" />\n`
       : '') +
     (language ? `    <language>${escapeXml(language)}</language>\n` : '') +
-    `    <lastBuildDate>${now}</lastBuildDate>\n` +
+    (lastBuildDate ? `    <lastBuildDate>${lastBuildDate}</lastBuildDate>\n` : '') +
     (channelItems ? `${channelItems}\n` : '') +
     `  </channel>\n` +
     `</rss>\n`;

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
-import { processMarkdown } from '../post-processor.js';
+import { processMarkdown } from '../_post-processor.js';
 
 describe('post-processor toc', () => {
   test('processMarkdown should generate a toc and focusable article headings', () => {

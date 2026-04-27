@@ -3,7 +3,7 @@ import assert from 'node:assert';
 import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { startWatch } from '../watch.js';
+import { startWatch } from '../_watch.js';
 
 async function createWatchFixture() {
   const rootDir = await mkdtemp(join(tmpdir(), 'dout-watch-'));

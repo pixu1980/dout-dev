@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { sanitizeArticleHtml } from '../html-sanitizer.js';
+import { sanitizeArticleHtml } from '../_html-sanitizer.js';
 
 test('sanitizeArticleHtml removes scripts and event handlers', () => {
   const html = sanitizeArticleHtml(

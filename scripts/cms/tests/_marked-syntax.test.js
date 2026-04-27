@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
 import { marked } from 'marked';
-import { createMarkedOptions } from '../marked-syntax.js';
+import { createMarkedOptions } from '../_marked-syntax.js';
 
 describe('CMS - Marked Syntax', () => {
   it('should create marked options with custom renderer', () => {

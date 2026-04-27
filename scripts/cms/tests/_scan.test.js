@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import { describe, test } from 'node:test';
-import { scanContent } from '../scan.js';
+import { scanContent } from '../_scan.js';
 
 describe('scan', () => {
   test('should scan content and return dataset structure', () => {

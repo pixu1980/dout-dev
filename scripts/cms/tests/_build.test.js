@@ -14,12 +14,12 @@ import {
   findEligibleScheduledDrafts,
   maybePublishScheduledDrafts,
   updatePublishedFrontMatter,
-} from '../build.js';
+} from '../_build.js';
 
 describe('CMS - Build', () => {
   test('should run build script and exit with code 0 on success', async () => {
     return new Promise((resolve, reject) => {
-      const buildPath = join(process.cwd(), 'scripts', 'cms', 'build.js');
+      const buildPath = join(process.cwd(), 'scripts', 'cms', '_build.js');
       const child = spawn('node', [buildPath], {
         stdio: 'pipe',
         cwd: process.cwd(),
@@ -177,7 +177,7 @@ describe('CMS - Build', () => {
 
     try {
       // Import the main function directly from build.js
-      const { main } = await import('../build.js');
+      const { main } = await import('../_build.js');
 
       // Mock CMS to throw an error during build
       const { CMS } = await import('../index.js');

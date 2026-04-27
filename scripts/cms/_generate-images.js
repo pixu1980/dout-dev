@@ -10,9 +10,9 @@ import { mkdir, readdir, stat, writeFile, readFile } from 'node:fs/promises';
 import { basename, dirname, extname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
-import { resolveConfig } from './config.js';
-import { buildOgImages } from './og-image-generator.js';
-import { scanContent } from './scan.js';
+import { resolveConfig } from './_config.js';
+import { buildOgImages } from './_og-image-generator.js';
+import { scanContent } from './_scan.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = join(__dirname, '..', '..');

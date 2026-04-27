@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { buildJsonFeed, buildRssFeed } from '../page-generator.js';
+import { buildJsonFeed, buildRssFeed } from '../_page-generator.js';
 
 test('buildRssFeed emits a self-referencing RSS document', () => {
   const xml = buildRssFeed({
@@ -22,6 +22,7 @@ test('buildRssFeed emits a self-referencing RSS document', () => {
   );
   assert.match(xml, /<language>en<\/language>/);
   assert.match(xml, /<title>Hello World<\/title>/);
+  assert.match(xml, /<lastBuildDate>Sat, 04 Apr 2026 00:00:00 GMT<\/lastBuildDate>/);
 });
 
 test('buildJsonFeed emits JSON Feed 1.1 with image and tags', () => {
