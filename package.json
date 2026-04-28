@@ -47,7 +47,7 @@
     "verify:dist": "node scripts/verify-dist.cjs",
     "check:favicons": "node scripts/check-favicons.js",
     "clear:cache": "rm -rf .parcel-cache dist .vite node_modules/.vite",
-    "clear:deps": "rm -rf node_modules pnpm-lock.yaml",
+    "clear:deps": "rm -rf node_modules",
     "clear": "pnpm clear:cache && pnpm clear:deps",
     "reset": "pnpm clear && pnpm install",
     "dev:cms": "pnpm cms:clean && pnpm cms:build && pnpm cms:watch",
