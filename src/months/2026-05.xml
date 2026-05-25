@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dout.dev — May 2026</title>
+    <link>https://dout.dev/months/2026-05/</link>
+    <description>RSS feed for posts from May 2026</description>
+    <atom:link href="https://dout.dev/months/2026-05.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 23 May 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Vibe Coding With Rigor</title>
+      <link>https://dout.dev/posts/2026-05-23-vibe-coding-with-rigor.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-23-vibe-coding-with-rigor.html</guid>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
+      <description>The term I am reclaiming</description>
+    </item>
+    <item>
+      <title>CI/CD Around GitHub Pages</title>
+      <link>https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html</guid>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <description>The gap GitHub Pages leaves open</description>
+    </item>
+    <item>
+      <title>Quality Gate: Linting, Formatting, and Verify</title>
+      <link>https://dout.dev/posts/2026-05-21-quality-gate-lint-format-verify.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-21-quality-gate-lint-format-verify.html</guid>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <description>Why the gate exists</description>
+    </item>
+    <item>
+      <title>SEO Metadata Without Rituals</title>
+      <link>https://dout.dev/posts/2026-05-20-seo-metadata-without-rituals.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-20-seo-metadata-without-rituals.html</guid>
+      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
+      <description>The short version</description>
+    </item>
+    <item>
+      <title>OG Images at Build Time</title>
+      <link>https://dout.dev/posts/2026-05-19-og-images-at-build-time.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-19-og-images-at-build-time.html</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
+      <description>The problem and the usual solutions</description>
+    </item>
+    <item>
+      <title>Feeds and Sitemaps at Build Time</title>
+      <link>https://dout.dev/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html</guid>
+      <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
+      <description>The distribution minimum</description>
+    </item>
+    <item>
+      <title>Build Assets Pipeline</title>
+      <link>https://dout.dev/posts/2026-05-17-build-assets-pipeline.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-17-build-assets-pipeline.html</guid>
+      <pubDate>Sun, 17 May 2026 00:00:00 GMT</pubDate>
+      <description>The goal</description>
+    </item>
+    <item>
+      <title>Design Tokens Before Pages</title>
+      <link>https://dout.dev/posts/2026-05-16-design-tokens-before-pages.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-16-design-tokens-before-pages.html</guid>
+      <pubDate>Sat, 16 May 2026 00:00:00 GMT</pubDate>
+      <description>The mistake I kept making</description>
+    </item>
+    <item>
+      <title>Progressive Enhancement as Contract</title>
+      <link>https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html</guid>
+      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
+      <description>The contract</description>
+    </item>
+    <item>
+      <title>Archives, Tags, Months, and Series</title>
+      <link>https://dout.dev/posts/2026-05-14-archives-tags-months-series.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-14-archives-tags-months-series.html</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>Three ways to slice the same posts</description>
+    </item>
+    <item>
+      <title>Template Engine and Template Structure</title>
+      <link>https://dout.dev/posts/2026-05-13-template-engine-and-template-structure.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-13-template-engine-and-template-structure.html</guid>
+      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+      <description>Three constraints that shaped the grammar</description>
+    </item>
+    <item>
+      <title>Custom SSG Pipeline: Markdown to Static HTML</title>
+      <link>https://dout.dev/posts/2026-05-12-custom-ssg-pipeline.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-12-custom-ssg-pipeline.html</guid>
+      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+      <description>The pipeline, in one picture</description>
+    </item>
+    <item>
+      <title>Why I Skipped Astro, Eleventy and Next for My Blog</title>
+      <link>https://dout.dev/posts/2026-05-05-why-no-astro-eleventy-next.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-05-why-no-astro-eleventy-next.html</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+      <description>The default answer and why I ignored it</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dout.dev — Build-assets</title>
+    <link>https://dout.dev/tags/build-assets/</link>
+    <description>RSS feed for posts tagged with Build-assets</description>
+    <atom:link href="https://dout.dev/tags/build-assets.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sun, 17 May 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Build Assets Pipeline</title>
+      <link>https://dout.dev/posts/2026-05-17-build-assets-pipeline.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-17-build-assets-pipeline.html</guid>
+      <pubDate>Sun, 17 May 2026 00:00:00 GMT</pubDate>
+      <description>The goal</description>
+    </item>
+  </channel>
+</rss>

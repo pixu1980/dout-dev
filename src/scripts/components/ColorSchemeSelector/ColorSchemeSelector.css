@@ -1,36 +1,39 @@
 color-scheme-switcher {
   display: inline-flex;
+  border-radius: var(--dout--control-segment-radius);
+  corner-shape: var(--dout--corner-shape);
 
   &:focus-within {
     outline: var(--dout--outline-width) solid var(--dout--accent);
-    outline-offset: 3px;
+    outline-offset: var(--dout--focus-offset);
   }
 }
 
-color-scheme-switcher .color-scheme-selector {
+color-scheme-switcher [data-color-scheme-selector] {
   display: inline-flex;
   align-items: center;
   gap: 0;
-  border: 1px solid var(--dout--border);
-  border-radius: var(--dout--radius-md);
+  border: var(--dout--border-width) solid var(--dout--border);
+  border-radius: var(--dout--control-segment-radius);
   overflow: hidden;
   background: var(--dout--surface-strong);
   corner-shape: var(--dout--corner-shape);
 }
 
 color-scheme-switcher label {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.5rem;
+  min-height: var(--dout--control-height-sm);
   padding: 0 0.75rem;
+  border-radius: 0;
   background: var(--dout--surface-strong);
   color: var(--dout--text);
   cursor: pointer;
-  position: relative;
   transition:
-    background-color 120ms ease,
-    color 120ms ease;
+    background-color var(--dout--motion-fast) var(--dout--motion-ease),
+    color var(--dout--motion-fast) var(--dout--motion-ease);
   -webkit-user-select: none;
   user-select: none;
 }
@@ -40,12 +43,22 @@ color-scheme-switcher label:hover {
 }
 
 color-scheme-switcher label + label {
-  border-left: 1px solid var(--dout--border);
+  border-left: var(--dout--border-width) solid var(--dout--border);
+}
+
+color-scheme-switcher label:first-of-type {
+  border-start-start-radius: var(--dout--control-segment-inner-radius);
+  border-end-start-radius: var(--dout--control-segment-inner-radius);
+}
+
+color-scheme-switcher label:last-of-type {
+  border-start-end-radius: var(--dout--control-segment-inner-radius);
+  border-end-end-radius: var(--dout--control-segment-inner-radius);
 }
 
 color-scheme-switcher label[data-active] {
   background: var(--dout--accent);
-  color: #ffffff;
+  color: var(--dout--on-accent);
   font-weight: 600;
 }
 
@@ -54,8 +67,8 @@ color-scheme-switcher label[data-active]:hover {
 }
 
 color-scheme-switcher svg {
-  width: 20px;
-  height: 20px;
+  width: var(--dout--icon-size-lg);
+  height: var(--dout--icon-size-lg);
   display: block;
   pointer-events: none;
   fill: currentColor;
@@ -63,21 +76,21 @@ color-scheme-switcher svg {
 
 color-scheme-switcher input[type='radio'] {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: var(--dout--visually-hidden-size);
+  height: var(--dout--visually-hidden-size);
   padding: 0;
-  margin: -1px;
+  margin: var(--dout--visually-hidden-offset);
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
 
-color-scheme-switcher .sr-only {
+color-scheme-switcher [data-visually-hidden] {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: var(--dout--visually-hidden-size);
+  height: var(--dout--visually-hidden-size);
   padding: 0;
-  margin: -1px;
+  margin: var(--dout--visually-hidden-offset);
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;

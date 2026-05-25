@@ -34,7 +34,6 @@ function buildFeedMarkup(count, { initial = 10, step = 10 } = {}) {
   return `
     <section>
       <ul
-        class="post-feed"
         data-post-feed
         data-load-more-feed="true"
         data-load-more-initial="${initial}"
@@ -67,7 +66,7 @@ describe('post-feed-load-more', () => {
 
     initPostFeedLoadMore();
 
-    const button = document.querySelector('button.button--ghost');
+    const button = document.querySelector('button[data-button][data-button-variant="ghost"]');
     const status = document.querySelector('[data-post-feed-status]');
 
     assert.equal(getVisibleItems().length, 10);

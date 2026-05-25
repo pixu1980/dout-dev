@@ -41,6 +41,7 @@ export function processMarkdown(filePath, raw) {
     published,
     tags: tagList,
     series: data.series || null,
+    description: data.description ? String(data.description).trim() : null,
     excerpt: buildExcerpt(articleContent.content),
     content: articleContent.content,
     toc: articleContent.toc,

@@ -1,9 +1,10 @@
 ---
 title: 'Why I Skipped Astro, Eleventy and Next for My Blog'
 date: '2026-05-05'
-published: false
-tags: ['architecture', 'vanilla-js', 'frontend', 'static-site']
-description: 'A pragmatic comparison of mainstream static-site options against a handwritten SSG, and the specific reasons a personal blog can afford to go its own way.'
+published: true
+tags: ['making-of', 'architecture', 'static-site']
+series: 'How I made it'
+description: 'A pragmatic comparison of mainstream static-site options against a handwritten SSG, and why dout.dev could afford to go its own way.'
 canonical_url: false
 ---
 
@@ -53,8 +54,8 @@ This post is not "frameworks are bad." They are often the right choice. I would 
 
 None of those applied here. dout.dev is a personal editorial project with a single author who has opinions and time.
 
-## The practical conclusion
+## The actual conclusion
 
-Pick the tool that matches the ten-year horizon of the thing you are building, not the ninety-minute horizon of the first post. For most people that points at Astro. For me, on this project, it pointed at a handful of scripts and a design system I own end-to-end.
+Pick the tool that matches the ten-year horizon of the thing you are building, not the ninety-minute horizon of the first post. For most people that points at Astro. For this project — single author, strong opinions, no migration budget — it pointed at a handful of scripts and a design system I own end-to-end.
 
-The next posts walk through the actual pipeline.
+If you are starting a blog today and you want to ship something this weekend, use Astro. If you want to understand every line that runs, build the pipeline yourself. Both are defensible. The mistake is building the pipeline when you wanted to ship, or picking a framework when you wanted to understand.

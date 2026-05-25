@@ -164,7 +164,7 @@ function getThemeLabel(theme) {
 
 function setIconButtonContent(button, iconMarkup, label) {
   if (!button) return;
-  button.innerHTML = `${iconMarkup}<span class="pix-highlighter__sr-only">${label}</span>`;
+  button.innerHTML = `${iconMarkup}<span data-pix-highlighter-sr-only>${label}</span>`;
   button.setAttribute('aria-label', label);
   button.title = label;
 }
@@ -807,7 +807,7 @@ class PixHighlighter extends HTMLPreElement {
       }
 
       const tokenElement = document.createElement('span');
-      tokenElement.className = `pix-token pix-token--${token.type}`;
+      tokenElement.dataset.pixToken = token.type;
       tokenElement.textContent = text.slice(token.start, token.end);
       fragment.append(tokenElement);
       cursor = token.end;

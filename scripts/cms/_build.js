@@ -2,7 +2,13 @@
 // CMS Build - orchestrates scan and page generation
 import { scanContent } from './_scan.js';
 import { buildOgImages } from './_og-image-generator.js';
-import { generatePages, buildJsonFeed, buildRssFeed, buildSitemap } from './_page-generator.js';
+import {
+  generatePages,
+  buildJsonFeed,
+  buildRssFeed,
+  buildSitemap,
+  withDatasetPostMediaFallbacks,
+} from './_page-generator.js';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -99,6 +105,17 @@ async function askToPublishDraft(post, { confirm, prompt }) {
   return shouldPublishDraft(await prompt(post));
 }
 
+export function buildSearchIndexes(dataset = {}) {
+  const searchDataset = withDatasetPostMediaFallbacks(dataset);
+
+  return {
+    posts: (searchDataset.posts || []).filter((post) => post?.published),
+    tags: searchDataset.tags || [],
+    months: searchDataset.months || [],
+    series: searchDataset.series || [],
+  };
+}
+
 /**
  * Prompts the user to publish scheduled drafts and updates front matter on disk.
  * @param {Array<object>} posts
@@ -193,11 +210,20 @@ export async function build(userConfig = {}, runtimeOptions = {}) {
   // Emit searchable JSON indexes under src/data for client-side features (e.g., M10 Search)
   try {
     const outDir = join('src', 'data');
+    const searchIndexes = buildSearchIndexes(dataset);
     mkdirSync(outDir, { recursive: true });
-    writeFileSync(join(outDir, 'posts.json'), JSON.stringify(dataset.posts, null, 2), 'utf8');
-    writeFileSync(join(outDir, 'tags.json'), JSON.stringify(dataset.tags, null, 2), 'utf8');
-    writeFileSync(join(outDir, 'months.json'), JSON.stringify(dataset.months, null, 2), 'utf8');
-    writeFileSync(join(outDir, 'series.json'), JSON.stringify(dataset.series, null, 2), 'utf8');
+    writeFileSync(join(outDir, 'posts.json'), JSON.stringify(searchIndexes.posts, null, 2), 'utf8');
+    writeFileSync(join(outDir, 'tags.json'), JSON.stringify(searchIndexes.tags, null, 2), 'utf8');
+    writeFileSync(
+      join(outDir, 'months.json'),
+      JSON.stringify(searchIndexes.months, null, 2),
+      'utf8'
+    );
+    writeFileSync(
+      join(outDir, 'series.json'),
+      JSON.stringify(searchIndexes.series, null, 2),
+      'utf8'
+    );
   } catch (e) {
     console.warn('Warning: failed to write search indexes to src/data', e?.message || e);
   }

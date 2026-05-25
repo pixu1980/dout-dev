@@ -1,0 +1,448 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Design Tokens Before Pages</title>
+    <meta name="theme-color" content="#ff6b3d">
+    <meta name="description" content="The mistake I kept making">
+    <meta name="author" content="Emiliano &quot;pixu1980&quot; Pisu">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="dout:analytics-endpoint" content="">
+    <meta name="dout:analytics-dashboard" content="/privacy.html">
+    <link rel="canonical" href="https://dout.dev/posts/2026-05-16-design-tokens-before-pages.html">
+    <meta property="og:site_name" content="dout.dev">
+    <meta property="og:locale" content="en-US">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss">
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json">
+    <script>
+      document.documentElement.dataset.userPreferences = 'loading';
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      :root {
+        --dout--file-preview-border: #d9a441;
+        --dout--file-preview-bg: #fff3cd;
+        --dout--file-preview-text: #5c3b00;
+      }
+
+      [data-file-preview-warning] {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--dout--file-preview-border);
+        background: var(--dout--file-preview-bg);
+        color: var(--dout--file-preview-text);
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] [data-file-preview-warning] {
+        display: block;
+      }
+
+      [data-file-preview-warning] code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+    
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Design Tokens Before Pages">
+  <meta property="og:description" content="The mistake I kept making">
+  <meta property="og:url" content="https://dout.dev/posts/2026-05-16-design-tokens-before-pages.html">
+  <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-05-16-design-tokens-before-pages.png">
+  <meta property="og:image:alt" content="Preview image for Design Tokens Before Pages">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:published_time" content="2026-05-16T00:00:00.000Z">
+  <meta property="article:modified_time" content="2026-05-16T00:00:00.000Z">
+  <meta property="article:author" content="Emiliano &quot;pixu1980&quot; Pisu">
+  <meta name="twitter:title" content="Design Tokens Before Pages">
+  <meta name="twitter:description" content="The mistake I kept making">
+  <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-05-16-design-tokens-before-pages.png">
+  <meta name="twitter:image:alt" content="Preview image for Design Tokens Before Pages">
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "headline": "Design Tokens Before Pages",
+        "description": "The mistake I kept making",
+        "datePublished": "2026-05-16T00:00:00.000Z",
+        "dateModified": "2026-05-16T00:00:00.000Z",
+        "author": {
+          "@type":"Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url":"https://dout.dev"
+        },
+        "publisher": {
+          "@type":"Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url":"https://dout.dev"
+        },
+        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2026-05-16-design-tokens-before-pages.html"},
+        "image": ["https://dout.dev/assets/og/posts/2026-05-16-design-tokens-before-pages.png"],
+        "keywords": "tokens, color, design, one, components, token, component, css, every, site, decisions, never"
+      }
+  </script>
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://dout.dev"},
+          {"@type":"ListItem","position":2,"name":"Archive","item":"https://dout.dev/archive.html"},
+          {"@type":"ListItem","position":3,"name": "Design Tokens Before Pages","item":"https://dout.dev/posts/2026-05-16-design-tokens-before-pages.html"}
+        ]
+      }
+  </script>
+
+    <link rel="stylesheet" href="/styles/index.css">
+    <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
+  </head>
+  <body data-site-shell="">
+    <p data-file-preview-warning="" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <div data-preferences-skeleton="" aria-hidden="true" inert=""></div>
+    <a data-skip-link="" href="#main">Skip to main content</a>
+    <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" data-site-header="">
+  <div data-container="" data-header-bar="">
+    <a data-brand="" href="/">
+      <span data-brand-mark="">dout.dev</span>
+      <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+    </a>
+    <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+      <span aria-hidden="true">☰</span>
+    </button>
+    <nav id="mainmenu" data-main-nav="" aria-label="Main">
+      <ul data-main-links="" role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/archive.html">Archive</a></li>
+        <li><a href="/search.html">Search</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      <div data-header-actions="">
+        <color-scheme-switcher></color-scheme-switcher>
+        <display-preferences-popover></display-preferences-popover>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      
+  <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
+    <header data-post-hero="" aria-labelledby="post-title">
+      <p data-eyebrow="">Article</p>
+      <p data-post-meta="">
+        <time datetime="2026-05-16" itemprop="datePublished">
+          16 maggio 2026
+        </time>
+        <span data-post-divider="">/</span>
+        <a href="/archive.html">Archive</a>
+      </p>
+      <h1 id="post-title" itemprop="headline" tabindex="0">Design Tokens Before Pages</h1>
+      
+        <p data-post-description="">The mistake I kept making</p>
+      
+      
+        <ul data-tag-list="" aria-label="Tags">
+          
+            <li><a data-tag="" href="/tags/making-of.html">Making-of</a></li>
+          
+            <li><a data-tag="" href="/tags/design-systems.html">Design-systems</a></li>
+          
+            <li><a data-tag="" href="/tags/css.html">CSS</a></li>
+          
+        </ul>
+      
+      
+        <figure data-post-cover="">
+          <img src="/assets/og/posts/2026-05-16-design-tokens-before-pages-card.png" alt="Design Tokens Before Pages" fetchpriority="high" decoding="async" width="1200" height="900">
+        </figure>
+      
+    </header>
+
+    <section data-post-shell="" id="article-content" role="region" aria-labelledby="article-content-title">
+      <h2 id="article-content-title" data-visually-hidden="">Article content</h2>
+
+      <section data-prose="" itemprop="articleBody"><h2 id="the-mistake-i-kept-making" tabindex="0" data-toc-anchor="true">The mistake I kept making</h2>
+<p>Every time I started a personal site and went "page first, design system later," I ended up with a pile of local exceptions. A <code>margin-top: 24px</code> here, a <code>color: #f5a623</code> there, a breakpoint at <code>768px</code> on one component and <code>720px</code> on another. By the third page the design was already incoherent, and the only way to fix it was to go back and retrofit tokens onto a living codebase. That is the worst moment to do it.</p>
+<p>For dout.dev I flipped the order. Tokens first, components second, pages third. This post is what that looks like in practice.</p>
+<h2 id="what-i-mean-by-tokens" tabindex="0" data-toc-anchor="true">What I mean by "tokens"</h2>
+<p>Design tokens are not a library. They are a flat set of named decisions, expressed as CSS custom properties, about spacing, type, color, elevation, motion, and layout. The rest of the CSS reads those decisions and never hardcodes.</p>
+<p>The rule I hold to is simple: <strong>if a value appears in two components, it becomes a token</strong>. If it only appears once, I wait.</p>
+<pre is="pix-highlighter" data-lang="css"><code>:root {
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+
+  /* Type scale */
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+
+  /* Line-height families */
+  --font-lineheight-1: 1.1;
+  --font-lineheight-3: 1.5;
+
+  /* Surfaces and text */
+  --surface-1: #0b0b0f;
+  --surface-2: #161621;
+  --text-primary: #e7e7ef;
+  --text-muted: #a0a0b4;
+
+  /* Focus */
+  --focus-ring: 2px solid #ff6b3d;
+}</code></pre><p>That is a single source of truth. It does not know about pages. It does not know about components. It knows about decisions.</p>
+<h2 id="two-layers-not-one" tabindex="0" data-toc-anchor="true">Two layers, not one</h2>
+<p>Raw tokens alone are not enough for a theme-able site. I use two layers:</p>
+<p><strong>Primitive tokens</strong> — the raw decisions above. They never change at runtime.</p>
+<p><strong>Semantic tokens</strong> — aliases that map intent to primitives. These are the ones components actually read, and these are the ones that flip between themes.</p>
+<pre is="pix-highlighter" data-lang="css"><code>:root {
+  --color-bg: var(--surface-1);
+  --color-bg-raised: var(--surface-2);
+  --color-fg: var(--text-primary);
+  --color-fg-muted: var(--text-muted);
+  --color-accent: #ff6b3d;
+}
+
+[data-theme='light'] {
+  --color-bg: #fafafa;
+  --color-bg-raised: #ffffff;
+  --color-fg: #1a1a1a;
+  --color-fg-muted: #555566;
+}</code></pre><p>Components then write <code>color: var(--color-fg)</code>, never <code>color: #e7e7ef</code>. Theme switching becomes a matter of changing a handful of semantic tokens at the root, not rewriting every rule.</p>
+<h2 id="component-rules-i-enforce" tabindex="0" data-toc-anchor="true">Component rules I enforce</h2>
+<p>Three rules keep the CSS from rotting.</p>
+<p><strong>No magic numbers in components.</strong> If a value is not a token, it is almost always a mistake. The exceptions are genuinely one-off values tied to a specific piece of geometry, and those get a comment.</p>
+<p><strong>No color literals outside the token file.</strong> Not even in media queries, not even in <code>box-shadow</code>. If a color is referenced, it is via a variable.</p>
+<p><strong>No breakpoint literals outside a shared map.</strong> Breakpoints are tokens too, expressed as container query breakpoints or named media queries, never inline.</p>
+<pre is="pix-highlighter" data-lang="css"><code>/* Good */
+.post-card {
+  padding: var(--space-5);
+  background: var(--color-bg-raised);
+  color: var(--color-fg);
+  border-radius: var(--radius-2);
+}
+
+/* Bad */
+.post-card {
+  padding: 24px;
+  background: #161621;
+  color: #e7e7ef;
+  border-radius: 8px;
+}</code></pre><p>The "bad" version works. It will also be unfixable in a year.</p>
+<h2 id="the-payoff-during-theming" tabindex="0" data-toc-anchor="true">The payoff during theming</h2>
+<p>When I added the light theme and the accent selector, the change was a few dozen lines. Every component picked it up for free, because no component hardcoded a value. The dark mode toggle, the <code>prefers-color-scheme</code> hookup, and the accent switcher are all variations on the same idea: swap the semantic tokens at the root, let the cascade do the rest.</p>
+<p>Without the two-layer setup, theming a site usually means touching every component. With it, theming is one file.</p>
+<h2 id="where-i-drew-the-line" tabindex="0" data-toc-anchor="true">Where I drew the line</h2>
+<p>I did not build an elaborate token pipeline. No Style Dictionary, no JSON sources compiled into multiple formats, no cross-platform tokens. This is a single-target CSS project. A flat <code>.css</code> file that declares custom properties is enough, and any tooling beyond that would be overhead without a matching benefit.</p>
+<p>If the project grew multiplatform — iOS, Android, email, a design tool plugin — I would pull in Style Dictionary. Until then, one file and discipline.</p>
+<h2 id="the-takeaway" tabindex="0" data-toc-anchor="true">The takeaway</h2>
+<p>If you are starting a personal site or a small design system, write the token layer before the first page. It costs an afternoon. It buys you theming, consistency, and the ability to make design changes in one place instead of twenty.</p>
+<h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*?from=dout.dev" target="_blank" referrerpolicy="strict-origin-when-cross-origin" rel="noopener">CSS Custom Properties — MDN</a></li><li><a href="https://www.w3.org/community/design-tokens/?from=dout.dev" target="_blank" referrerpolicy="strict-origin-when-cross-origin" rel="noopener">W3C Design Tokens Community Group</a></li><li><a href="https://amzn.github.io/style-dictionary/?from=dout.dev" target="_blank" referrerpolicy="strict-origin-when-cross-origin" rel="noopener">Style Dictionary</a></li><li><a href="https://open-props.style/?from=dout.dev" target="_blank" referrerpolicy="strict-origin-when-cross-origin" rel="noopener">Open Props</a> — a useful reference for a flat token set</li></ul>
+</section>
+    </section>
+
+    
+      <aside data-post-sidebar="" role="complementary" aria-labelledby="post-outline">
+        <nav data-post-toc="" aria-labelledby="post-outline">
+          <p data-eyebrow="" data-muted="">TOC</p>
+          <h2 id="post-outline">On this page</h2>
+          <ol data-post-toc-list="">
+            
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-mistake-i-kept-making">The mistake I kept making</a>
+              </li>
+            
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#what-i-mean-by-tokens">What I mean by "tokens"</a>
+              </li>
+            
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#two-layers-not-one">Two layers, not one</a>
+              </li>
+            
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#component-rules-i-enforce">Component rules I enforce</a>
+              </li>
+            
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-payoff-during-theming">The payoff during theming</a>
+              </li>
+            
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#where-i-drew-the-line">Where I drew the line</a>
+              </li>
+            
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-takeaway">The takeaway</a>
+              </li>
+            
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#references">References</a>
+              </li>
+            
+          </ol>
+        </nav>
+      </aside>
+    
+
+    
+      <section data-comments-shell="" aria-labelledby="comments-title">
+        <div data-section-heading="">
+          <div>
+            <p data-eyebrow="">Discussion</p>
+            <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+          </div>
+        </div>
+        <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
+        <script src="https://giscus.app/client.js" data-repo="pixu1980/dout-dev" data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU=" data-category="General" data-category-id="DIC_kwDOFJulQc4CjlkE" data-mapping="url" data-term="data/posts/2026-05-16-design-tokens-before-pages.md" data-strict="0" data-reactions-enabled="1" data-emit-metadata="1" data-input-position="top" data-theme="dark" data-lang="en" data-loading="lazy" crossorigin="anonymous" async=""></script>
+      </section>
+    
+
+    
+      <nav data-series-navigation="" aria-label="Series navigation">
+        
+          <section data-series-navigation-group="" aria-labelledby="series-navigation-how-i-made-it">
+            <p data-eyebrow="" data-muted="">Series</p>
+            <h2 id="series-navigation-how-i-made-it">In this series: How I made it</h2>
+            <ol data-series-navigation-links="">
+              
+                <li>
+                  <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="false">How I Built dout.dev</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-04-21-cms-and-markdown-processing.html" aria-current="false">CMS and Markdown Processing</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false">Rebuilding dout.dev in Weeks With an AI Copilot</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-05-05-why-no-astro-eleventy-next.html" aria-current="false">Why I Skipped Astro, Eleventy and Next for My Blog</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-05-12-custom-ssg-pipeline.html" aria-current="false">Custom SSG Pipeline: Markdown to Static HTML</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-05-13-template-engine-and-template-structure.html" aria-current="false">Template Engine and Template Structure</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-05-14-archives-tags-months-series.html" aria-current="false">Archives, Tags, Months, and Series</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-05-15-progressive-enhancement-as-contract.html" aria-current="false">Progressive Enhancement as Contract</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-05-16-design-tokens-before-pages.html" aria-current="page">Design Tokens Before Pages (you are here)</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-05-17-build-assets-pipeline.html" aria-current="false">Build Assets Pipeline</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html" aria-current="false">Feeds and Sitemaps at Build Time</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-05-19-og-images-at-build-time.html" aria-current="false">OG Images at Build Time</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-05-20-seo-metadata-without-rituals.html" aria-current="false">SEO Metadata Without Rituals</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-05-21-quality-gate-lint-format-verify.html" aria-current="false">Quality Gate: Linting, Formatting, and Verify</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-05-22-ci-cd-around-github-pages.html" aria-current="false">CI/CD Around GitHub Pages</a>
+                </li>
+              
+                <li>
+                  <a href="/posts/2026-05-23-vibe-coding-with-rigor.html" aria-current="false">Vibe Coding With Rigor</a>
+                </li>
+              
+            </ol>
+          </section>
+        
+      </nav>
+    
+  </article>
+
+  <nav data-post-nav="" aria-label="Post navigation">
+    
+      <a data-post-nav-card="" rel="prev" href="/posts/2026-05-15-progressive-enhancement-as-contract.html">
+        <span data-post-nav-label="">Previous</span>
+        <strong>Progressive Enhancement as Contract</strong>
+      </a>
+    
+    
+      <a data-post-nav-card="" rel="next" href="/posts/2026-05-17-build-assets-pipeline.html">
+        <span data-post-nav-label="">Next</span>
+        <strong>Build Assets Pipeline</strong>
+      </a>
+    
+  </nav>
+
+    </main>
+
+    <footer role="contentinfo" data-site-footer="">
+  <div data-container="" data-footer-grid="">
+    <div data-footer-copy="">
+      <p data-footer-brand="">dout.dev</p>
+      <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+      <p>© 2026 dout.dev</p>
+    </div>
+    <nav data-footer-nav="" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/archive.html">Archive</a>
+      <a href="/search.html">Search</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/feed.rss">RSS</a>
+      <a href="/feed.json">JSON Feed</a>
+    </nav>
+  </div>
+</footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  
+
+</body></html>

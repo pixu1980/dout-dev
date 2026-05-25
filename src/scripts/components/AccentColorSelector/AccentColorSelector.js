@@ -81,7 +81,7 @@ class AccentColorSelector extends HTMLElement {
       (option) => `
       <button
         type="button"
-        class="accent-button"
+        data-accent-button
         data-accent="${option.id}"
         aria-label="Accent color: ${option.label}"
         aria-checked="false"
@@ -94,14 +94,14 @@ class AccentColorSelector extends HTMLElement {
     ).join('');
 
     template.innerHTML = `
-      <div class="accent-selector" role="radiogroup" aria-label="Accent color selection">
-        <span class="accent-selector-label">Color:</span>
+      <div data-accent-selector role="radiogroup" aria-label="Accent color selection">
+        <span data-accent-selector-label>Color:</span>
         ${buttonsHTML}
       </div>
     `;
 
     this.appendChild(template.content.cloneNode(true));
-    this._buttons = Array.from(this.querySelectorAll('.accent-button'));
+    this._buttons = Array.from(this.querySelectorAll('[data-accent-button]'));
     this.applyAccent(this.currentAccent);
   }
 

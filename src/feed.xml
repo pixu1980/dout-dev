@@ -6,18 +6,123 @@
     <description>Vanilla-first static blog with WCAG 2.2 AA accessibility</description>
     <atom:link href="https://dout.dev/feed.rss" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Wed, 22 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>How to Write Agent Skills That Actually Trigger</title>
-      <link>https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html</guid>
-      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
-      <description>The mistake most people make</description>
+      <title>WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links</title>
+      <link>https://dout.dev/posts/2026-06-09-wcag-22-aa-without-aria-spam.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-09-wcag-22-aa-without-aria-spam.html</guid>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The unpopular opinion</description>
     </item>
     <item>
-      <title>When Markdown Is a CMS, and When It Is Not</title>
-      <link>https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</guid>
+      <title>Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production</title>
+      <link>https://dout.dev/posts/2026-06-02-modern-css-is-enough.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-02-modern-css-is-enough.html</guid>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The short version</description>
+    </item>
+    <item>
+      <title>Vibe Coding With Rigor</title>
+      <link>https://dout.dev/posts/2026-05-23-vibe-coding-with-rigor.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-23-vibe-coding-with-rigor.html</guid>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
+      <description>The term I am reclaiming</description>
+    </item>
+    <item>
+      <title>CI/CD Around GitHub Pages</title>
+      <link>https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html</guid>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <description>The gap GitHub Pages leaves open</description>
+    </item>
+    <item>
+      <title>Quality Gate: Linting, Formatting, and Verify</title>
+      <link>https://dout.dev/posts/2026-05-21-quality-gate-lint-format-verify.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-21-quality-gate-lint-format-verify.html</guid>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <description>Why the gate exists</description>
+    </item>
+    <item>
+      <title>SEO Metadata Without Rituals</title>
+      <link>https://dout.dev/posts/2026-05-20-seo-metadata-without-rituals.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-20-seo-metadata-without-rituals.html</guid>
+      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
+      <description>The short version</description>
+    </item>
+    <item>
+      <title>OG Images at Build Time</title>
+      <link>https://dout.dev/posts/2026-05-19-og-images-at-build-time.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-19-og-images-at-build-time.html</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
+      <description>The problem and the usual solutions</description>
+    </item>
+    <item>
+      <title>Feeds and Sitemaps at Build Time</title>
+      <link>https://dout.dev/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html</guid>
+      <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
+      <description>The distribution minimum</description>
+    </item>
+    <item>
+      <title>Build Assets Pipeline</title>
+      <link>https://dout.dev/posts/2026-05-17-build-assets-pipeline.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-17-build-assets-pipeline.html</guid>
+      <pubDate>Sun, 17 May 2026 00:00:00 GMT</pubDate>
+      <description>The goal</description>
+    </item>
+    <item>
+      <title>Design Tokens Before Pages</title>
+      <link>https://dout.dev/posts/2026-05-16-design-tokens-before-pages.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-16-design-tokens-before-pages.html</guid>
+      <pubDate>Sat, 16 May 2026 00:00:00 GMT</pubDate>
+      <description>The mistake I kept making</description>
+    </item>
+    <item>
+      <title>Progressive Enhancement as Contract</title>
+      <link>https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html</guid>
+      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
+      <description>The contract</description>
+    </item>
+    <item>
+      <title>Archives, Tags, Months, and Series</title>
+      <link>https://dout.dev/posts/2026-05-14-archives-tags-months-series.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-14-archives-tags-months-series.html</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>Three ways to slice the same posts</description>
+    </item>
+    <item>
+      <title>Template Engine and Template Structure</title>
+      <link>https://dout.dev/posts/2026-05-13-template-engine-and-template-structure.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-13-template-engine-and-template-structure.html</guid>
+      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+      <description>Three constraints that shaped the grammar</description>
+    </item>
+    <item>
+      <title>Custom SSG Pipeline: Markdown to Static HTML</title>
+      <link>https://dout.dev/posts/2026-05-12-custom-ssg-pipeline.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-12-custom-ssg-pipeline.html</guid>
+      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+      <description>The pipeline, in one picture</description>
+    </item>
+    <item>
+      <title>Why I Skipped Astro, Eleventy and Next for My Blog</title>
+      <link>https://dout.dev/posts/2026-05-05-why-no-astro-eleventy-next.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-05-why-no-astro-eleventy-next.html</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+      <description>The default answer and why I ignored it</description>
+    </item>
+    <item>
+      <title>Rebuilding dout.dev in Weeks With an AI Copilot</title>
+      <link>https://dout.dev/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The honest framing</description>
+    </item>
+    <item>
+      <title>CMS and Markdown Processing</title>
+      <link>https://dout.dev/posts/2026-04-21-cms-and-markdown-processing.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-cms-and-markdown-processing.html</guid>
       <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
       <description>The useful distinction</description>
     </item>
@@ -26,125 +131,7 @@
       <link>https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</guid>
       <pubDate>Sat, 04 Apr 2026 00:00:00 GMT</pubDate>
-      <description>The Goal: an editorial blog without runtime ballast</description>
-    </item>
-    <item>
-      <title>Welcome to dout.dev</title>
-      <link>https://dout.dev/posts/2026-03-31-welcome-to-dout-dev.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-03-31-welcome-to-dout-dev.html</guid>
-      <pubDate>Tue, 31 Mar 2026 00:00:00 GMT</pubDate>
-      <description>Welcome to the New dout.dev</description>
-    </item>
-    <item>
-      <title>M4 Template Test - Cover Image e Syntax Highlighting</title>
-      <link>https://dout.dev/posts/2024-12-27-m4-template-test.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2024-12-27-m4-template-test.html</guid>
-      <pubDate>Fri, 27 Dec 2024 10:00:00 GMT</pubDate>
-      <description>Questo è un post di test per verificare tutte le funzionalità implementate nel M4 - Post Page.</description>
-    </item>
-    <item>
-      <title>Introducing CSS Grid - The Future of Web Layout 🎨</title>
-      <link>https://dout.dev/posts/2024-10-28-concerning-css-grid.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2024-10-28-concerning-css-grid.html</guid>
-      <pubDate>Mon, 28 Oct 2024 10:00:00 GMT</pubDate>
-      <description>What is CSS Grid and why is it important?</description>
-    </item>
-    <item>
-      <title>Accessibility by Design</title>
-      <link>https://dout.dev/posts/2024-05-19-a11y-by-design.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2024-05-19-a11y-by-design.html</guid>
-      <pubDate>Sun, 19 May 2024 00:41:22 GMT</pubDate>
-      <description>We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Desi</description>
-    </item>
-    <item>
-      <title>Say hello to 2023 🎉</title>
-      <link>https://dout.dev/posts/2023-01-01-say-hello-2023.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2023-01-01-say-hello-2023.html</guid>
-      <pubDate>Sun, 01 Jan 2023 14:41:22 GMT</pubDate>
-      <description>Say hello to 2023 🎉</description>
-    </item>
-    <item>
-      <title>Concerning…</title>
-      <link>https://dout.dev/posts/2022-03-25-concerning.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-03-25-concerning.html</guid>
-      <pubDate>Fri, 25 Mar 2022 00:00:00 GMT</pubDate>
-      <description>Concerning Core Web Technologies</description>
-    </item>
-    <item>
-      <title>Welcome to dout.dev</title>
-      <link>https://dout.dev/posts/2022-03-24-welcome-to-dout-dev.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-03-24-welcome-to-dout-dev.html</guid>
-      <pubDate>Thu, 24 Mar 2022 00:00:00 GMT</pubDate>
-      <description>Hi, I&apos;m Emiliano &quot;Pixu&quot; Pisu.</description>
-    </item>
-    <item>
-      <title>Building dout.dev blog - Part II</title>
-      <link>https://dout.dev/posts/2022-03-22-building-dout-dev-blog-part-2.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-03-22-building-dout-dev-blog-part-2.html</guid>
-      <pubDate>Tue, 22 Mar 2022 00:00:00 GMT</pubDate>
-      <description>Building dout.dev blog - Part II</description>
-    </item>
-    <item>
-      <title>Building dout.dev blog</title>
-      <link>https://dout.dev/posts/2022-03-21-building-dout-dev-blog.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-03-21-building-dout-dev-blog.html</guid>
-      <pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate>
-      <description>Less is more!</description>
-    </item>
-    <item>
-      <title>CSS Properties Hierarchy</title>
-      <link>https://dout.dev/posts/2022-03-18-css-properties-hierarchy.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-03-18-css-properties-hierarchy.html</guid>
-      <pubDate>Fri, 18 Mar 2022 00:00:00 GMT</pubDate>
-      <description>:root { --border-radius: 5px; } .element { /* css custom properties */ --var--example: 1; ​ /* position */ position: absolute; inset: 0; /* top, right, bottom, left */ z-index: 1; </description>
-    </item>
-    <item>
-      <title>Testing CodePen</title>
-      <link>https://dout.dev/posts/2022-03-16-test-codepen.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-03-16-test-codepen.html</guid>
-      <pubDate>Wed, 16 Mar 2022 00:00:00 GMT</pubDate>
-      <description>See the Pen &lt;a href=&apos;https://codepen.io/blackmirror1980/pen/aPRXzv&apos;&gt;Pure CSS Slider using Scroll-Snap&lt;/a&gt; by blackmirror1980 (&lt;a href=&apos;https://codepen.io/blackmirror1980&apos;&gt;@blackmir</description>
-    </item>
-    <item>
-      <title>You can edit CSS</title>
-      <link>https://dout.dev/posts/2022-03-12-you-can-edit-css.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-03-12-you-can-edit-css.html</guid>
-      <pubDate>Sat, 12 Mar 2022 00:00:00 GMT</pubDate>
-      <description>You can edit CSS</description>
-    </item>
-    <item>
-      <title>Marked - Markdown Parser</title>
-      <link>https://dout.dev/posts/2022-03-03-marked-markdown-parser.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-03-03-marked-markdown-parser.html</guid>
-      <pubDate>Thu, 03 Mar 2022 15:41:22 GMT</pubDate>
-      <description>How To Use The Demo</description>
-    </item>
-    <item>
-      <title>Custom Grid System</title>
-      <link>https://dout.dev/posts/2022-03-03-custom-grid-system.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-03-03-custom-grid-system.html</guid>
-      <pubDate>Thu, 03 Mar 2022 14:41:22 GMT</pubDate>
-      <description>Blog under construction</description>
-    </item>
-    <item>
-      <title>You can use express tags… TODAY!</title>
-      <link>https://dout.dev/posts/2022-02-25-you-can-express-tags-today.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-02-25-you-can-express-tags-today.html</guid>
-      <pubDate>Fri, 25 Feb 2022 00:00:00 GMT</pubDate>
-      <description>HTML6 is coming, we know it very well, &apos;cause we&apos;re strongly waiting for features like described here.</description>
-    </item>
-    <item>
-      <title>Say hello to 2022 🎉</title>
-      <link>https://dout.dev/posts/2022-01-01-say-hello-2022.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-01-01-say-hello-2022.html</guid>
-      <pubDate>Sat, 01 Jan 2022 14:41:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>A NEW post with a NEW cover image</title>
-      <link>https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</guid>
-      <pubDate>Mon, 08 Mar 2021 00:00:00 GMT</pubDate>
-      <description>Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it&apos;s been marked up with tags or</description>
+      <description>What the stack is, exactly</description>
     </item>
   </channel>
 </rss>

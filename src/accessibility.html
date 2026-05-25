@@ -46,13 +46,19 @@
       }
     </script>
     <style>
-      .file-preview-warning {
+      :root {
+        --dout--file-preview-border: #d9a441;
+        --dout--file-preview-bg: #fff3cd;
+        --dout--file-preview-text: #5c3b00;
+      }
+
+      [data-file-preview-warning] {
         display: none;
         margin: 0;
         padding: 0.85rem 1rem;
-        border-bottom: 1px solid #d9a441;
-        background: #fff3cd;
-        color: #5c3b00;
+        border-bottom: 1px solid var(--dout--file-preview-border);
+        background: var(--dout--file-preview-bg);
+        color: var(--dout--file-preview-text);
         font:
           600 0.95rem/1.4 'Avenir Next',
           'Segoe UI Variable Text',
@@ -60,11 +66,11 @@
           sans-serif;
       }
 
-      html[data-preview-mode='file'] .file-preview-warning {
+      html[data-preview-mode='file'] [data-file-preview-warning] {
         display: block;
       }
 
-      .file-preview-warning code {
+      [data-file-preview-warning] code {
         font:
           700 0.92em/1.2 'SFMono-Regular',
           'SF Mono',
@@ -75,17 +81,17 @@
     </style>
     <link rel="stylesheet" href="/styles/index.css" />
   </head>
-  <body>
-    <p class="file-preview-warning" role="alert">
+  <body data-site-shell>
+    <p data-file-preview-warning role="alert">
       This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
       Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
     </p>
-    <a class="skip-link" href="#main">Skip to main content</a>
-    <div id="page-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+    <a data-skip-link href="#main">Skip to main content</a>
+    <div id="page-announcer" data-visually-hidden aria-live="polite" aria-atomic="true"></div>
     <nav aria-label="Utility">
       <a href="/">Back to home</a>
     </nav>
-    <main id="main" tabindex="-1">
+    <main data-site-main id="main" tabindex="-1">
       <h1>Accessibility</h1>
     </main>
   </body>

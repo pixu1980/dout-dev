@@ -110,6 +110,7 @@ I keep a simple markdown log per audit. Date, scope, findings, status.
 # A11y audit — 2026-11-10
 
 ## Scope
+
 Home, archive, a random post, search, about.
 
 ## Findings

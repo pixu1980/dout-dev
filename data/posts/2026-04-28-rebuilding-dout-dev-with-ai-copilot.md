@@ -1,9 +1,10 @@
 ---
 title: 'Rebuilding dout.dev in Weeks With an AI Copilot'
 date: '2026-04-28'
-published: false
-tags: ['architecture', 'static-site', 'vanilla-js', 'ai-copilot', 'making-of']
-description: 'What an AI copilot actually did during the rewrite of dout.dev, what I kept on my own keyboard, and a candid tally of what would have taken months without it.'
+published: true
+tags: ['making-of', 'ai-copilot', 'workflow']
+series: 'How I made it'
+description: 'What an AI copilot actually did during the rewrite of dout.dev, what stayed on my own keyboard, and what would have taken months without it.'
 canonical_url: false
 ---
 
@@ -53,8 +54,8 @@ Realistic estimate, without the copilot, for the nineteen milestones in the shap
 
 The more honest measure is that I finished. The previous rewrites stalled around milestone M5 or M6, because the gap between "I can see the finish line" and "I have the energy to walk there" was too wide.
 
-## What this unlocks
+## What actually changed
 
-Now that the foundation is in place, writing posts is not a tax. The pipeline turns markdown into a pre-rendered, accessible, fast page with feeds, sitemap, OG image, and comments. That is the point. The engineering was the warm-up. The blog is the thing.
+Writing posts is no longer a project. The pipeline turns markdown into a pre-rendered, accessible, fast page with feeds, sitemap, OG image, and comments — in the time it takes to run one build command. That is what nineteen milestones of engineering bought.
 
-The next posts in this series walk through each layer of that pipeline, what I reused, what I rebuilt, and why.
+The rest of this series walks through each layer: what it does, why it is shaped that way, and where the tradeoffs landed.

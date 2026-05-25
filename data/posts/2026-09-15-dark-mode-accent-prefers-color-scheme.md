@@ -68,7 +68,9 @@ The browser must know the theme before it paints the first frame. That means the
       if (stored_accent) {
         document.body.dataset.accent = stored_accent;
       }
-    } catch (_) { /* localStorage unavailable */ }
+    } catch (_) {
+      /* localStorage unavailable */
+    }
   })();
 </script>
 ```
@@ -135,8 +137,12 @@ Actually, nothing for us to do. The CSS already responds to the system change; t
 Accent is orthogonal to light/dark. A user can pick a dark theme with a green accent or a light theme with a violet accent. The primary accent is a separate attribute on `body`.
 
 ```css
-body[data-accent='violet'] { --color-accent: #8b5cf6; }
-body[data-accent='green']  { --color-accent: #22c55e; }
+body[data-accent='violet'] {
+  --color-accent: #8b5cf6;
+}
+body[data-accent='green'] {
+  --color-accent: #22c55e;
+}
 ```
 
 The picker is a radio group or a row of swatches. Selection writes to `body[data-accent]` and persists to `localStorage`.
@@ -152,10 +158,7 @@ function syncGiscusTheme(theme) {
   const frame = document.querySelector('iframe.giscus-frame');
   if (!frame) return;
   const giscusTheme = theme === 'dark' ? 'dark' : 'light';
-  frame.contentWindow?.postMessage(
-    { giscus: { setConfig: { theme: giscusTheme } } },
-    'https://giscus.app'
-  );
+  frame.contentWindow?.postMessage({ giscus: { setConfig: { theme: giscusTheme } } }, 'https://giscus.app');
 }
 ```
 
@@ -168,10 +171,16 @@ The toggle is a real `<button>`, which means it is keyboard-focusable by default
 For users with `prefers-reduced-motion: reduce`, the accent color transition is disabled. That is a two-line CSS rule:
 
 ```css
-body { transition: background-color 0.2s, color 0.2s; }
+body {
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  body { transition: none; }
+  body {
+    transition: none;
+  }
 }
 ```
 

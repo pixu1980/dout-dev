@@ -1,42 +1,44 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Privacy</title>
-    <meta name="theme-color" content="#ff6b3d" />
-    <meta name="description" content="Privacy notes, local page-hit analytics, and opt-out controls for dout.dev." />
-    <meta name="author" content='Emiliano "pixu1980" Pisu' />
-    <meta name="robots" content="index,follow" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
-    />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta name="dout:analytics-endpoint" content="" />
-    <meta name="dout:analytics-dashboard" content="/privacy.html" />
-    <link rel="canonical" href="https://dout.dev/privacy.html" />
-    <meta property="og:site_name" content="dout.dev" />
-    <meta property="og:locale" content="en-US" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
-    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
+    <meta name="theme-color" content="#ff6b3d">
+    <meta name="description" content="Privacy notes, local page-hit analytics, and opt-out controls for dout.dev.">
+    <meta name="author" content="Emiliano &quot;pixu1980&quot; Pisu">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="dout:analytics-endpoint" content="">
+    <meta name="dout:analytics-dashboard" content="/privacy.html">
+    <link rel="canonical" href="https://dout.dev/privacy.html">
+    <meta property="og:site_name" content="dout.dev">
+    <meta property="og:locale" content="en-US">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss">
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json">
     <script>
+      document.documentElement.dataset.userPreferences = 'loading';
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
       }
     </script>
     <style>
-      .file-preview-warning {
+      :root {
+        --dout--file-preview-border: #d9a441;
+        --dout--file-preview-bg: #fff3cd;
+        --dout--file-preview-text: #5c3b00;
+      }
+
+      [data-file-preview-warning] {
         display: none;
         margin: 0;
         padding: 0.85rem 1rem;
-        border-bottom: 1px solid #d9a441;
-        background: #fff3cd;
-        color: #5c3b00;
+        border-bottom: 1px solid var(--dout--file-preview-border);
+        background: var(--dout--file-preview-bg);
+        color: var(--dout--file-preview-text);
         font:
           600 0.95rem/1.4 'Avenir Next',
           'Segoe UI Variable Text',
@@ -44,11 +46,11 @@
           sans-serif;
       }
 
-      html[data-preview-mode='file'] .file-preview-warning {
+      html[data-preview-mode='file'] [data-file-preview-warning] {
         display: block;
       }
 
-      .file-preview-warning code {
+      [data-file-preview-warning] code {
         font:
           700 0.92em/1.2 'SFMono-Regular',
           'SF Mono',
@@ -57,142 +59,142 @@
           monospace;
       }
     </style>
+    
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Privacy">
+  <meta property="og:description" content="Privacy notes, local page-hit analytics, and opt-out controls for dout.dev.">
+  <meta property="og:url" content="https://dout.dev/privacy.html">
+  <meta property="og:image" content="https://dout.dev/assets/og/pages/privacy.png">
+  <meta property="og:image:alt" content="Preview image for Privacy">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:title" content="Privacy">
+  <meta name="twitter:description" content="Privacy notes, local page-hit analytics, and opt-out controls for dout.dev.">
+  <meta name="twitter:image" content="https://dout.dev/assets/og/pages/privacy.png">
+  <meta name="twitter:image:alt" content="Preview image for Privacy">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Privacy",
+      "url": "https://dout.dev/privacy.html",
+      "description": "Privacy notes, local page-hit analytics, and opt-out controls for dout.dev."
+    }
+  </script>
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Privacy" />
-    <meta
-      property="og:description"
-      content="Privacy notes, local page-hit analytics, and opt-out controls for dout.dev."
-    />
-    <meta property="og:url" content="https://dout.dev/privacy.html" />
-    <meta property="og:image" content="https://dout.dev/assets/og/pages/privacy.png" />
-    <meta property="og:image:alt" content="Preview image for Privacy" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta name="twitter:title" content="Privacy" />
-    <meta
-      name="twitter:description"
-      content="Privacy notes, local page-hit analytics, and opt-out controls for dout.dev."
-    />
-    <meta name="twitter:image" content="https://dout.dev/assets/og/pages/privacy.png" />
-    <meta name="twitter:image:alt" content="Preview image for Privacy" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Privacy",
-        "url": "https://dout.dev/privacy.html",
-        "description": "Privacy notes, local page-hit analytics, and opt-out controls for dout.dev."
-      }
-    </script>
-
-    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/index.css">
+    <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
   </head>
-  <body class="site-shell">
-    <p class="file-preview-warning" role="alert">
+  <body data-site-shell="">
+    <p data-file-preview-warning="" role="alert">
       This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
       Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
     </p>
-    <a class="skip-link" href="#main">Skip to main content</a>
-    <div id="page-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
-    <header role="banner" class="site-header">
-      <div class="container header-bar">
-        <a class="brand" href="/">
-          <span class="brand--mark">dout.dev</span>
-          <span class="brand--tag">Frontend notes, design systems, and the sharp edges of shipping.</span>
-        </a>
-        <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-          <span aria-hidden="true">☰</span>
-        </button>
-        <nav id="mainmenu" class="main-nav" aria-label="Main">
-          <ul class="main-links" role="list">
-            <li><a href="/">Home</a></li>
-            <li><a href="/archive.html">Archive</a></li>
-            <li><a href="/search.html">Search</a></li>
-            <li><a href="/about.html">About</a></li>
-          </ul>
-          <div class="header-actions">
-            <color-scheme-switcher></color-scheme-switcher>
-            <display-preferences-popover></display-preferences-popover>
-          </div>
-        </nav>
+    <div data-preferences-skeleton="" aria-hidden="true" inert=""></div>
+    <a data-skip-link="" href="#main">Skip to main content</a>
+    <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" data-site-header="">
+  <div data-container="" data-header-bar="">
+    <a data-brand="" href="/">
+      <span data-brand-mark="">dout.dev</span>
+      <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+    </a>
+    <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+      <span aria-hidden="true">☰</span>
+    </button>
+    <nav id="mainmenu" data-main-nav="" aria-label="Main">
+      <ul data-main-links="" role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/archive.html">Archive</a></li>
+        <li><a href="/search.html">Search</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      <div data-header-actions="">
+        <color-scheme-switcher></color-scheme-switcher>
+        <display-preferences-popover></display-preferences-popover>
       </div>
-    </header>
+    </nav>
+  </div>
+</header>
 
-    <main class="site-main" id="main" tabindex="-1" aria-label="Main content">
-      <section class="page-hero" aria-labelledby="privacy-title">
-        <p class="eyebrow">Privacy</p>
-        <h1 id="privacy-title">Page hits stay lightweight, transparent, and easy to disable.</h1>
-        <p>
-          dout.dev stores page-hit counts in your own browser by default. No cookies, no cross-site identifiers, and no
-          profiling. If a server endpoint is configured later, the client still respects Do Not Track and your local
-          opt-out.
-        </p>
-      </section>
 
-      <section class="privacy-grid" aria-label="Privacy controls and dashboard">
-        <article class="card privacy-card">
-          <p class="eyebrow eyebrow--muted">What is recorded</p>
-          <h2>Only page paths and visit counts.</h2>
-          <ul role="list" class="privacy-list">
-            <li>Local storage keeps a simple per-page counter in this browser.</li>
-            <li>Do Not Track and Global Privacy Control disable tracking automatically when supported.</li>
-            <li>You can opt out or clear the stored counts at any time from this page.</li>
-          </ul>
-        </article>
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      
+  <section data-page-hero="" aria-labelledby="privacy-title">
+    <p data-eyebrow="">Privacy</p>
+    <h1 id="privacy-title">Page hits stay lightweight, transparent, and easy to disable.</h1>
+    <p>
+      dout.dev stores page-hit counts in your own browser by default. No cookies, no cross-site identifiers, and no
+      profiling. If a server endpoint is configured later, the client still respects Do Not Track and your local
+      opt-out.
+    </p>
+  </section>
 
-        <article class="card privacy-card">
-          <p class="eyebrow eyebrow--muted">Your controls</p>
-          <h2>Tracking status</h2>
-          <p id="analytics-status" data-analytics-status="">Loading analytics status…</p>
-          <div class="privacy-actions">
-            <button type="button" class="button button--primary" data-analytics-toggle="">
-              Disable page-hit tracking
-            </button>
-            <button type="button" class="button button--ghost" data-analytics-clear="">
-              Clear local page-hit data
-            </button>
-          </div>
-          <p class="muted">Downloads below export only the counts stored in this browser.</p>
-          <div class="privacy-downloads">
-            <a class="text-link" href="#" data-analytics-download="json">Download JSON</a>
-            <a class="text-link" href="#" data-analytics-download="csv">Download CSV</a>
-          </div>
-        </article>
-      </section>
+  <section data-privacy-grid="" aria-label="Privacy controls and dashboard">
+    <article data-card="" data-privacy-card="">
+      <p data-eyebrow="" data-muted="">What is recorded</p>
+      <h2>Only page paths and visit counts.</h2>
+      <ul role="list" data-privacy-list="">
+        <li>Local storage keeps a simple per-page counter in this browser.</li>
+        <li>Do Not Track and Global Privacy Control disable tracking automatically when supported.</li>
+        <li>You can opt out or clear the stored counts at any time from this page.</li>
+      </ul>
+    </article>
 
-      <section class="card privacy-card" aria-labelledby="analytics-dashboard-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow eyebrow--muted">Dashboard</p>
-            <h2 id="analytics-dashboard-title">Local page-hit summary</h2>
-          </div>
-        </div>
-        <div data-analytics-dashboard="">
-          <p class="muted">No local analytics data recorded yet.</p>
-        </div>
-      </section>
+    <article data-card="" data-privacy-card="">
+      <p data-eyebrow="" data-muted="">Your controls</p>
+      <h2>Tracking status</h2>
+      <p id="analytics-status" data-analytics-status="">Loading analytics status…</p>
+      <div data-privacy-actions="">
+        <button type="button" data-button="" data-button-variant="primary" data-analytics-toggle="">
+          Disable page-hit tracking
+        </button>
+        <button type="button" data-button="" data-button-variant="ghost" data-analytics-clear="">
+          Clear local page-hit data
+        </button>
+      </div>
+      <p data-muted="">Downloads below export only the counts stored in this browser.</p>
+      <div data-privacy-downloads="">
+        <a data-text-link="" href="#" data-analytics-download="json">Download JSON</a>
+        <a data-text-link="" href="#" data-analytics-download="csv">Download CSV</a>
+      </div>
+    </article>
+  </section>
+
+  <section data-card="" data-privacy-card="" aria-labelledby="analytics-dashboard-title">
+    <div data-section-heading="">
+      <div>
+        <p data-eyebrow="" data-muted="">Dashboard</p>
+        <h2 id="analytics-dashboard-title">Local page-hit summary</h2>
+      </div>
+    </div>
+    <div data-analytics-dashboard="">
+      <p data-muted="">No local analytics data recorded yet.</p>
+    </div>
+  </section>
+
     </main>
 
-    <footer role="contentinfo" class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-copy">
-          <p class="footer-brand">dout.dev</p>
-          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
-          <p>© 2026 dout.dev</p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer">
-          <a href="/">Home</a>
-          <a href="/archive.html">Archive</a>
-          <a href="/search.html">Search</a>
-          <a href="/about.html">About</a>
-          <a href="/privacy.html">Privacy</a>
-          <a href="/feed.rss">RSS</a>
-          <a href="/feed.json">JSON Feed</a>
-        </nav>
-      </div>
-    </footer>
+    <footer role="contentinfo" data-site-footer="">
+  <div data-container="" data-footer-grid="">
+    <div data-footer-copy="">
+      <p data-footer-brand="">dout.dev</p>
+      <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+      <p>© 2026 dout.dev</p>
+    </div>
+    <nav data-footer-nav="" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/archive.html">Archive</a>
+      <a href="/search.html">Search</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/feed.rss">RSS</a>
+      <a href="/feed.json">JSON Feed</a>
+    </nav>
+  </div>
+</footer>
 
     <script type="module" src="/scripts/main.js"></script>
-  </body>
-</html>
+  
+
+</body></html>

@@ -218,7 +218,7 @@ function updateDownloadLink(link, type, snapshot) {
 
 function renderDashboard(container, snapshot) {
   if (!snapshot.length) {
-    container.innerHTML = '<p class="muted">No local analytics data recorded yet.</p>';
+    container.innerHTML = '<p data-muted>No local analytics data recorded yet.</p>';
     return;
   }
 
@@ -235,8 +235,8 @@ function renderDashboard(container, snapshot) {
     .join('');
 
   container.innerHTML = `
-    <table class="analytics-table">
-      <caption class="visually-hidden">Local page-hit counts stored in this browser</caption>
+    <table data-analytics-table>
+      <caption data-visually-hidden>Local page-hit counts stored in this browser</caption>
       <thead>
         <tr>
           <th scope="col">Page</th>
@@ -275,11 +275,12 @@ function updateToggleLabel(button) {
 }
 
 export function initAnalyticsDashboard() {
-  const dashboard = document.querySelector('[data-analytics-dashboard]');
-  const status = document.querySelector('[data-analytics-status]');
-  const toggle = document.querySelector('[data-analytics-toggle]');
-  const clear = document.querySelector('[data-analytics-clear]');
-  const downloadLinks = Array.from(document.querySelectorAll('[data-analytics-download]'));
+  const main = document.body?.querySelector(':scope > [data-site-main]') || document;
+  const dashboard = main.querySelector('[data-analytics-dashboard]');
+  const status = main.querySelector('[data-analytics-status]');
+  const toggle = main.querySelector('[data-analytics-toggle]');
+  const clear = main.querySelector('[data-analytics-clear]');
+  const downloadLinks = Array.from(main.querySelectorAll('[data-analytics-download]'));
 
   if (!dashboard || !status || !toggle || !clear) {
     return;

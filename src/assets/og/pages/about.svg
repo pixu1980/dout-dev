@@ -1,22 +1,37 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="98" y1="72" x2="1102" y2="558" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#08111E" />
-      <stop offset="1" stop-color="#112743" />
+    <filter id="paperTexture" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" seed="17" result="noise" />
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.52 0 0 0 0 0.48 0 0 0 0 0.42 0 0 0 0.08 0" />
+      <feBlend in="SourceGraphic" mode="multiply" />
+    </filter>
+    <linearGradient id="paper" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6EFE2" />
+      <stop offset="0.56" stop-color="#ECE2D1" />
+      <stop offset="1" stop-color="#15110F" />
     </linearGradient>
-    <linearGradient id="glow" x1="178" y1="118" x2="1046" y2="512" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ff6b3d" stop-opacity="0.34" />
-      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0" />
+    <linearGradient id="accentSweep" x1="72" y1="520" x2="1128" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff6b3d" />
+      <stop offset="0.48" stop-color="#ffd0bf" />
+      <stop offset="1" stop-color="#111111" />
     </linearGradient>
+    <pattern id="dotGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect x="3" y="3" width="2" height="2" fill="#16120F" fill-opacity="0.16" />
+    </pattern>
   </defs>
-  <rect width="1200" height="630" fill="#060B14" />
-  <circle cx="1008" cy="104" r="214" fill="url(#glow)" />
-  <rect x="72" y="72" width="1056" height="486" rx="34" fill="url(#bg)" stroke="#FFFFFF" stroke-opacity="0.18" />
-  <rect x="72" y="72" width="10" height="486" rx="10" fill="#ff6b3d" />
-  <rect x="102" y="112" width="140" height="40" rx="999" fill="#FFFFFF" fill-opacity="0.08" />
-  <text x="126" y="138" fill="#F5F7FA" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="0.12em">ABOUT</text>
-  <text x="118" y="246" fill="#F8FBFF" font-family="Georgia, Times New Roman, serif" font-size="74" font-weight="700" letter-spacing="-0.04em"><tspan x="118" dy="0">dout.dev is an editorial</tspan><tspan x="118" dy="86">lab for frontend craft.</tspan></text>
-  <text x="124" y="442" fill="#B6C2D4" font-family="Helvetica, Arial, sans-serif" font-size="29" font-weight="400"><tspan x="124" dy="0">The site is written from markdown, rendered</tspan><tspan x="124" dy="38">through a custom CMS, and shaped around</tspan><tspan x="124" dy="38">performance...</tspan></text>
-  <text x="120" y="530" fill="#E5ECF5" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700">dout.dev</text>
-  <text x="1048" y="530" text-anchor="end" fill="#B6C2D4" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="400">https://dout.dev</text>
+  <rect width="1200" height="630" fill="url(#paper)" filter="url(#paperTexture)" />
+  <rect width="1200" height="630" fill="url(#dotGrid)" />
+  <path d="M0 630 L1200 454 L1200 630 Z" fill="url(#accentSweep)" opacity="0.34" />
+  <path d="M0 101 L1200 0 L1200 96 L0 214 Z" fill="#ff6b3d" opacity="0.16" />
+  <rect x="64" y="64" width="1072" height="502" rx="28" fill="#111111" stroke="#FFFFFF" stroke-opacity="0.18" />
+  <rect x="92" y="92" width="1016" height="446" rx="18" fill="#1A1714" stroke="#ff6b3d" stroke-opacity="0.45" />
+  <rect x="92" y="92" width="18" height="446" rx="9" fill="#ff6b3d" />
+  <rect x="128" y="118" width="260" height="42" rx="21" ry="21" fill="#ff6b3d" fill-opacity="0.16" />
+  <text x="150" y="145" fill="#F7F0E8" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif" font-size="19" font-weight="800" letter-spacing="0.08em">ABOUT</text>
+  <text x="998" y="548" text-anchor="middle" fill="#FFFFFF" fill-opacity="0.05" font-family="Georgia, Times New Roman, serif" font-size="150" font-weight="700" letter-spacing="0">DOUT</text>
+  <text x="138" y="252" fill="#FFF8F0" font-family="Georgia, Times New Roman, serif" font-size="70" font-weight="700" letter-spacing="0"><tspan x="138" dy="0">dout.dev is an editorial</tspan><tspan x="138" dy="82">lab for frontend craft.</tspan></text>
+  <text x="142" y="446" fill="#D7CFC4" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif" font-size="28" font-weight="500" letter-spacing="0"><tspan x="142" dy="0">The site is written from markdown, rendered</tspan><tspan x="142" dy="38">through a custom CMS, and shaped around</tspan><tspan x="142" dy="38">performance...</tspan></text>
+  <rect x="128" y="496" width="210" height="2" fill="#ff6b3d" />
+  <text x="128" y="520" fill="#F7F0E8" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" font-weight="800" letter-spacing="0.04em">DOUT.DEV / EDITORIAL</text>
+  <text x="1052" y="520" text-anchor="end" fill="#BDB3A7" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="0">https://dout.dev</text>
 </svg>

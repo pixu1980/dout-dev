@@ -157,7 +157,7 @@ describe('ColorSchemeSelector', () => {
     assert.equal(document.adoptedStyleSheets.length, 1);
     assert.ok(
       document.adoptedStyleSheets[0].cssText.includes(
-        'color-scheme-switcher .color-scheme-selector'
+        'color-scheme-switcher [data-color-scheme-selector]'
       )
     );
     assert.ok(
@@ -165,7 +165,7 @@ describe('ColorSchemeSelector', () => {
     );
     assert.ok(componentSource.includes('static {'));
     assert.ok(!componentSource.includes('ColorSchemeSelectorAlias'));
-    assert.ok(componentCss.includes('color-scheme-switcher .color-scheme-selector'));
+    assert.ok(componentCss.includes('color-scheme-switcher [data-color-scheme-selector]'));
     assert.ok(!componentCss.includes(':host'));
   });
 });

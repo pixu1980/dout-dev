@@ -103,9 +103,7 @@ Results are paginated 10 at a time on the client. The pagination component match
 The results summary uses `aria-live="polite"` so that screen readers hear the new result count when the query changes, without stealing focus.
 
 ```html
-<p class="results-summary" aria-live="polite" role="status">
-  7 results for "template". Page 1 of 1.
-</p>
+<p class="results-summary" aria-live="polite" role="status">7 results for "template". Page 1 of 1.</p>
 ```
 
 That single attribute is the whole accessibility story for live-updating results.

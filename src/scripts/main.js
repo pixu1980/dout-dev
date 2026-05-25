@@ -80,7 +80,7 @@ function cancelIdle(handle) {
 }
 
 function syncGiscusTheme(theme) {
-  const frame = document.querySelector('iframe.giscus-frame');
+  const frame = document.querySelector('iframe[class~="giscus-frame"]');
   if (!frame?.contentWindow) return;
 
   const giscusTheme = theme === 'dark' ? 'dark' : 'light';
@@ -102,7 +102,7 @@ function disconnectGiscusThemeBridge() {
 function initGiscusThemeBridge() {
   disconnectGiscusThemeBridge();
 
-  if (!document.querySelector('.comments-shell')) {
+  if (!document.querySelector('[data-comments-shell]')) {
     return;
   }
 
@@ -177,9 +177,21 @@ function normalizePathname(pathname) {
   return withoutHtml || '/';
 }
 
+function getSiteHeader() {
+  return document.body?.querySelector(':scope > [data-site-header]') || null;
+}
+
+function getMainNavigation() {
+  return getSiteHeader()?.querySelector('[data-main-nav]') || null;
+}
+
+function getMenuToggle() {
+  return getSiteHeader()?.querySelector('[data-menu-toggle]') || null;
+}
+
 function closeNavigationMenu() {
-  const nav = document.querySelector('.main-nav');
-  const toggle = document.querySelector('.menu-toggle');
+  const nav = getMainNavigation();
+  const toggle = getMenuToggle();
   if (!nav || !toggle) return;
 
   nav.dataset.open = 'false';
@@ -187,7 +199,7 @@ function closeNavigationMenu() {
 }
 
 function syncActiveNavigationLink() {
-  const nav = document.querySelector('.main-nav');
+  const nav = getMainNavigation();
   if (!nav) return;
 
   const currentPath = normalizePathname(window.location.pathname);
@@ -205,8 +217,8 @@ function syncActiveNavigationLink() {
 }
 
 function initNavigation() {
-  const nav = document.querySelector('.main-nav');
-  const toggle = document.querySelector('.menu-toggle');
+  const nav = getMainNavigation();
+  const toggle = getMenuToggle();
   if (!nav || !toggle) return;
 
   if (!navigationEventsInitialized) {
@@ -280,7 +292,7 @@ function initSkipLinks() {
   if (skipLinksInitialized) return;
   skipLinksInitialized = true;
 
-  const skipLinks = document.querySelectorAll('.skip-link');
+  const skipLinks = document.querySelectorAll('[data-skip-link]');
   skipLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
       event.preventDefault();
@@ -492,7 +504,17 @@ async function performEnhancedNavigation(destination, signal) {
     replaceManagedHeadElements(nextDocument);
     document.documentElement.lang =
       nextDocument.documentElement.lang || document.documentElement.lang;
-    document.body.className = nextDocument.body.className;
+    document.body.removeAttribute('class');
+    for (const attribute of Array.from(document.body.attributes)) {
+      if (attribute.name.startsWith('data-')) {
+        document.body.removeAttribute(attribute.name);
+      }
+    }
+    for (const attribute of Array.from(nextDocument.body.attributes)) {
+      if (attribute.name.startsWith('data-')) {
+        document.body.setAttribute(attribute.name, attribute.value);
+      }
+    }
     currentMain.replaceWith(nextMain.cloneNode(true));
     activateScripts(document.getElementById('main'));
     closeNavigationMenu();

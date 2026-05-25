@@ -77,8 +77,7 @@ The mechanics:
 ```
 
 ```html
-<link rel="preload" as="font" type="font/woff2"
-      href="/assets/fonts/Inter-Regular.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Inter-Regular.woff2" crossorigin />
 ```
 
 `font-display: swap` tells the browser to use the fallback font until the custom one loads. It prevents the "invisible text flash" that `font-display: block` can cause.

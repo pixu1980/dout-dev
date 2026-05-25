@@ -21,183 +21,79 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/posts/2019-01-07-a-post-with-a-cover.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2019-02-06-markdown-test-file.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2021-03-01-say-hello-to-gridsome-new.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2021-03-05-gradient-borders.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2021-03-07-hating-css-utility-classes.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2022-01-01-say-hello-2022.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2022-02-25-you-can-express-tags-today.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2022-03-03-custom-grid-system.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2022-03-03-marked-markdown-parser.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2022-03-12-you-can-edit-css.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2022-03-16-test-codepen.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2022-03-18-css-properties-hierarchy.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2022-03-21-building-dout-dev-blog.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2022-03-22-building-dout-dev-blog-part-2.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2022-03-24-welcome-to-dout-dev.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2022-03-25-concerning.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2023-01-01-say-hello-2023.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2024-05-19-a11y-by-design.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2024-10-28-concerning-css-grid.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2024-12-27-m4-template-test.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/posts/2026-03-31-welcome-to-dout-dev.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
     <loc>https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</loc>
+    <loc>https://dout.dev/posts/2026-04-21-cms-and-markdown-processing.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html</loc>
+    <loc>https://dout.dev/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/markdown.html</loc>
+    <loc>https://dout.dev/posts/2026-05-05-why-no-astro-eleventy-next.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/cover-image.html</loc>
+    <loc>https://dout.dev/posts/2026-05-12-custom-ssg-pipeline.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/test-files.html</loc>
+    <loc>https://dout.dev/posts/2026-05-13-template-engine-and-template-structure.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/releases.html</loc>
+    <loc>https://dout.dev/posts/2026-05-14-archives-tags-months-series.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/html.html</loc>
+    <loc>https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/css.html</loc>
+    <loc>https://dout.dev/posts/2026-05-16-design-tokens-before-pages.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/generic.html</loc>
+    <loc>https://dout.dev/posts/2026-05-17-build-assets-pipeline.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/a11y.html</loc>
+    <loc>https://dout.dev/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/design.html</loc>
+    <loc>https://dout.dev/posts/2026-05-19-og-images-at-build-time.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/responsive.html</loc>
+    <loc>https://dout.dev/posts/2026-05-20-seo-metadata-without-rituals.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/web-design.html</loc>
+    <loc>https://dout.dev/posts/2026-05-21-quality-gate-lint-format-verify.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/frontend.html</loc>
+    <loc>https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/grid-layout.html</loc>
+    <loc>https://dout.dev/posts/2026-05-23-vibe-coding-with-rigor.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/test.html</loc>
+    <loc>https://dout.dev/posts/2026-06-02-modern-css-is-enough.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/m4.html</loc>
+    <loc>https://dout.dev/posts/2026-06-09-wcag-22-aa-without-aria-spam.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/syntax-highlight-element.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/tags/blog.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/tags/welcome.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/tags/vanilla-js.html</loc>
+    <loc>https://dout.dev/tags/making-of.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -209,11 +105,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/design-systems.html</loc>
+    <loc>https://dout.dev/tags/cms.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/tags/accessibility.html</loc>
+    <loc>https://dout.dev/tags/markdown.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -221,47 +117,91 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/months/2019-01.html</loc>
+    <loc>https://dout.dev/tags/workflow.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/months/2019-02.html</loc>
+    <loc>https://dout.dev/tags/template-engine.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/months/2021-03.html</loc>
+    <loc>https://dout.dev/tags/html.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/months/2022-01.html</loc>
+    <loc>https://dout.dev/tags/archives.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/months/2022-02.html</loc>
+    <loc>https://dout.dev/tags/seo.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/months/2022-03.html</loc>
+    <loc>https://dout.dev/tags/accessibility.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/months/2023-01.html</loc>
+    <loc>https://dout.dev/tags/progressive-enhancement.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/months/2024-05.html</loc>
+    <loc>https://dout.dev/tags/vanilla-js.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/months/2024-10.html</loc>
+    <loc>https://dout.dev/tags/design-systems.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/months/2024-12.html</loc>
+    <loc>https://dout.dev/tags/css.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/months/2026-03.html</loc>
+    <loc>https://dout.dev/tags/build-assets.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/tags/performance.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/tags/images.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/tags/feeds.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/tags/opengraph.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/tags/tooling.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/tags/linting.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/tags/ci.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/tags/deployment.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/tags/github-pages.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/tags/frontend.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/tags/a11y.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -269,19 +209,15 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/series/concerning.html</loc>
+    <loc>https://dout.dev/months/2026-05.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/series/testing-posts.html</loc>
+    <loc>https://dout.dev/months/2026-06.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dout.dev/series/images.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://dout.dev/series/testing-codepen.html</loc>
+    <loc>https://dout.dev/series/how-i-made-it.html</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

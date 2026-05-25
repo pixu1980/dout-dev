@@ -1,537 +1,461 @@
 {
-  "version": 1,
+  "version": 3,
   "entries": {
     "page:home": {
       "kind": "page",
       "slug": "home",
-      "hash": "4493c32d0e08f742fac5b272b53300a7db0dcbb3",
+      "hash": "e64786608b4cf37a3776a1b3e107b869f0d2f129",
       "pngPath": "/assets/og/pages/home.png",
       "svgPath": "/assets/og/pages/home.svg"
     },
     "page:archive": {
       "kind": "page",
       "slug": "archive",
-      "hash": "dd9bf460309146aef23a1d7520de5a5ba60ac718",
+      "hash": "910b1b7cb895bb221856748cd0f97d54c297cbd6",
       "pngPath": "/assets/og/pages/archive.png",
       "svgPath": "/assets/og/pages/archive.svg"
     },
     "page:about": {
       "kind": "page",
       "slug": "about",
-      "hash": "bed16f824f651d8ab2b22d32c9f9a4303322c6fa",
+      "hash": "32e055f7adbf9040b1481fd68aca937875092ca0",
       "pngPath": "/assets/og/pages/about.png",
       "svgPath": "/assets/og/pages/about.svg"
     },
     "page:accessibility": {
       "kind": "page",
       "slug": "accessibility",
-      "hash": "4cf970ea96f5b6b389e6b1b4809db22e7e5c3f0f",
+      "hash": "3fda50c71e72a3982eddcc1121ca3bfa70e75960",
       "pngPath": "/assets/og/pages/accessibility.png",
       "svgPath": "/assets/og/pages/accessibility.svg"
     },
     "page:search": {
       "kind": "page",
       "slug": "search",
-      "hash": "a12dbc9259bc1ef97284d02ba59d601bd158fac5",
+      "hash": "0a87f40780c42e85d27be5330f5b42c6347f7811",
       "pngPath": "/assets/og/pages/search.png",
       "svgPath": "/assets/og/pages/search.svg"
     },
     "page:privacy": {
       "kind": "page",
       "slug": "privacy",
-      "hash": "d0b5ba3a524be550a555de3b96d6c8d460c3c24b",
+      "hash": "64dfae199c2cdcfa9bea48f303a1fdc85d46b7c4",
       "pngPath": "/assets/og/pages/privacy.png",
       "svgPath": "/assets/og/pages/privacy.svg"
     },
     "page:playground": {
       "kind": "page",
       "slug": "playground",
-      "hash": "5ecb2d9ba7257e268d44dc692d794c3df3303b17",
+      "hash": "52ae3879d4b0210f0517ba8fb10bf5f37dd999c5",
       "pngPath": "/assets/og/pages/playground.png",
       "svgPath": "/assets/og/pages/playground.svg"
     },
     "page:demo": {
       "kind": "page",
       "slug": "demo",
-      "hash": "585c9335feae38c01c5fefe16daf9d070c8f68ac",
+      "hash": "227b9be414e487106a031739c5bf989210bd776b",
       "pngPath": "/assets/og/pages/demo.png",
       "svgPath": "/assets/og/pages/demo.svg"
     },
     "page:offline": {
       "kind": "page",
       "slug": "offline",
-      "hash": "49276637773830b704c1051fea108a6baa654c7e",
+      "hash": "8764d4160d0bc74faaed4776b3c3e76dd6481f1a",
       "pngPath": "/assets/og/pages/offline.png",
       "svgPath": "/assets/og/pages/offline.svg"
     },
     "page:404": {
       "kind": "page",
       "slug": "404",
-      "hash": "0aa99d819a0d00116c03d5ea0ccfde36409cd39b",
+      "hash": "bdca9e698bfe3c65624d8475144ddafa9153aa25",
       "pngPath": "/assets/og/pages/404.png",
       "svgPath": "/assets/og/pages/404.svg"
-    },
-    "post:2019-01-07-a-post-with-a-cover": {
-      "kind": "post",
-      "slug": "2019-01-07-a-post-with-a-cover",
-      "hash": "a293eca088e81bb4aae832c497ab4e82f45a32cb",
-      "pngPath": "/assets/og/posts/2019-01-07-a-post-with-a-cover.png",
-      "svgPath": "/assets/og/posts/2019-01-07-a-post-with-a-cover.svg"
-    },
-    "post:2019-02-06-markdown-test-file": {
-      "kind": "post",
-      "slug": "2019-02-06-markdown-test-file",
-      "hash": "a932bb806d260ae9553735f51047d6e42c6906d7",
-      "pngPath": "/assets/og/posts/2019-02-06-markdown-test-file.png",
-      "svgPath": "/assets/og/posts/2019-02-06-markdown-test-file.svg"
-    },
-    "post:2019-02-07-say-hello-to-gridsome": {
-      "kind": "post",
-      "slug": "2019-02-07-say-hello-to-gridsome",
-      "hash": "43c494f579c2f00cbd62be3aa73f5f77d5201035",
-      "pngPath": "/assets/og/posts/2019-02-07-say-hello-to-gridsome.png",
-      "svgPath": "/assets/og/posts/2019-02-07-say-hello-to-gridsome.svg"
-    },
-    "post:2021-03-01-say-hello-to-gridsome-new": {
-      "kind": "post",
-      "slug": "2021-03-01-say-hello-to-gridsome-new",
-      "hash": "37c4ff27878772c2730f1bfa09be6baa98ee7f6c",
-      "pngPath": "/assets/og/posts/2021-03-01-say-hello-to-gridsome-new.png",
-      "svgPath": "/assets/og/posts/2021-03-01-say-hello-to-gridsome-new.svg"
-    },
-    "post:2021-03-05-gradient-borders": {
-      "kind": "post",
-      "slug": "2021-03-05-gradient-borders",
-      "hash": "d4de71ee841f6b052083fe6ee5261865c991c471",
-      "pngPath": "/assets/og/posts/2021-03-05-gradient-borders.png",
-      "svgPath": "/assets/og/posts/2021-03-05-gradient-borders.svg"
-    },
-    "post:2021-03-07-hating-css-utility-classes": {
-      "kind": "post",
-      "slug": "2021-03-07-hating-css-utility-classes",
-      "hash": "b38a10c85dfdd6012900003b439298f9313ba0da",
-      "pngPath": "/assets/og/posts/2021-03-07-hating-css-utility-classes.png",
-      "svgPath": "/assets/og/posts/2021-03-07-hating-css-utility-classes.svg"
-    },
-    "post:2021-03-08-a-new-post-with-a-new-cover": {
-      "kind": "post",
-      "slug": "2021-03-08-a-new-post-with-a-new-cover",
-      "hash": "0cee4c1b246d392a1ee1606e57706fbef8431f5b",
-      "pngPath": "/assets/og/posts/2021-03-08-a-new-post-with-a-new-cover.png",
-      "svgPath": "/assets/og/posts/2021-03-08-a-new-post-with-a-new-cover.svg"
-    },
-    "post:2022-01-01-say-hello-2022": {
-      "kind": "post",
-      "slug": "2022-01-01-say-hello-2022",
-      "hash": "38f2054ba2261742610d65d8f27d3a24e060285c",
-      "pngPath": "/assets/og/posts/2022-01-01-say-hello-2022.png",
-      "svgPath": "/assets/og/posts/2022-01-01-say-hello-2022.svg"
-    },
-    "post:2022-02-25-you-can-express-tags-today": {
-      "kind": "post",
-      "slug": "2022-02-25-you-can-express-tags-today",
-      "hash": "05310ddc527193c8ab90e30fa4df295292ca854c",
-      "pngPath": "/assets/og/posts/2022-02-25-you-can-express-tags-today.png",
-      "svgPath": "/assets/og/posts/2022-02-25-you-can-express-tags-today.svg"
-    },
-    "post:2022-03-03-custom-grid-system": {
-      "kind": "post",
-      "slug": "2022-03-03-custom-grid-system",
-      "hash": "41a2fdd9da22da313ad98b5b831768414f482b1b",
-      "pngPath": "/assets/og/posts/2022-03-03-custom-grid-system.png",
-      "svgPath": "/assets/og/posts/2022-03-03-custom-grid-system.svg"
-    },
-    "post:2022-03-03-marked-markdown-parser": {
-      "kind": "post",
-      "slug": "2022-03-03-marked-markdown-parser",
-      "hash": "4399503abb63f3eacb90c6f82e282b17dc5abeed",
-      "pngPath": "/assets/og/posts/2022-03-03-marked-markdown-parser.png",
-      "svgPath": "/assets/og/posts/2022-03-03-marked-markdown-parser.svg"
-    },
-    "post:2022-03-12-you-can-edit-css": {
-      "kind": "post",
-      "slug": "2022-03-12-you-can-edit-css",
-      "hash": "4b159d443c1d697fb374a8503a4271bdae8d0631",
-      "pngPath": "/assets/og/posts/2022-03-12-you-can-edit-css.png",
-      "svgPath": "/assets/og/posts/2022-03-12-you-can-edit-css.svg"
-    },
-    "post:2022-03-16-test-codepen": {
-      "kind": "post",
-      "slug": "2022-03-16-test-codepen",
-      "hash": "7c721570873c5f67cb8a01f4a7941c86756774ab",
-      "pngPath": "/assets/og/posts/2022-03-16-test-codepen.png",
-      "svgPath": "/assets/og/posts/2022-03-16-test-codepen.svg"
-    },
-    "post:2022-03-18-css-properties-hierarchy": {
-      "kind": "post",
-      "slug": "2022-03-18-css-properties-hierarchy",
-      "hash": "99eabe0694a6b51b3bf6413ed386d8f316b63585",
-      "pngPath": "/assets/og/posts/2022-03-18-css-properties-hierarchy.png",
-      "svgPath": "/assets/og/posts/2022-03-18-css-properties-hierarchy.svg"
-    },
-    "post:2022-03-21-building-dout-dev-blog": {
-      "kind": "post",
-      "slug": "2022-03-21-building-dout-dev-blog",
-      "hash": "7942af50aa8297292da6f8f357640b7e9e93ef90",
-      "pngPath": "/assets/og/posts/2022-03-21-building-dout-dev-blog.png",
-      "svgPath": "/assets/og/posts/2022-03-21-building-dout-dev-blog.svg"
-    },
-    "post:2022-03-22-building-dout-dev-blog-part-2": {
-      "kind": "post",
-      "slug": "2022-03-22-building-dout-dev-blog-part-2",
-      "hash": "f58ae940d412239f27c3572fe2aa6b345d0429e3",
-      "pngPath": "/assets/og/posts/2022-03-22-building-dout-dev-blog-part-2.png",
-      "svgPath": "/assets/og/posts/2022-03-22-building-dout-dev-blog-part-2.svg"
-    },
-    "post:2022-03-24-welcome-to-dout-dev": {
-      "kind": "post",
-      "slug": "2022-03-24-welcome-to-dout-dev",
-      "hash": "2a7b70ba25f6c16a34c07f3f8989c326e5fe39e8",
-      "pngPath": "/assets/og/posts/2022-03-24-welcome-to-dout-dev.png",
-      "svgPath": "/assets/og/posts/2022-03-24-welcome-to-dout-dev.svg"
-    },
-    "post:2022-03-25-concerning": {
-      "kind": "post",
-      "slug": "2022-03-25-concerning",
-      "hash": "2a9b4f99078d88ccebf378b4277368ce7bb70e3e",
-      "pngPath": "/assets/og/posts/2022-03-25-concerning.png",
-      "svgPath": "/assets/og/posts/2022-03-25-concerning.svg"
-    },
-    "post:2023-01-01-say-hello-2023": {
-      "kind": "post",
-      "slug": "2023-01-01-say-hello-2023",
-      "hash": "2eb0f082f3bfa7819a2064b3149a3e36ce77808d",
-      "pngPath": "/assets/og/posts/2023-01-01-say-hello-2023.png",
-      "svgPath": "/assets/og/posts/2023-01-01-say-hello-2023.svg"
-    },
-    "post:2024-05-19-a11y-by-design": {
-      "kind": "post",
-      "slug": "2024-05-19-a11y-by-design",
-      "hash": "df749b551f97d523fe1e16d03e153bd728d459fe",
-      "pngPath": "/assets/og/posts/2024-05-19-a11y-by-design.png",
-      "svgPath": "/assets/og/posts/2024-05-19-a11y-by-design.svg"
-    },
-    "post:2024-10-28-concerning-css-grid": {
-      "kind": "post",
-      "slug": "2024-10-28-concerning-css-grid",
-      "hash": "902c095457cf402df1d7d631b34ade4335372143",
-      "pngPath": "/assets/og/posts/2024-10-28-concerning-css-grid.png",
-      "svgPath": "/assets/og/posts/2024-10-28-concerning-css-grid.svg"
-    },
-    "post:2024-12-27-m4-template-test": {
-      "kind": "post",
-      "slug": "2024-12-27-m4-template-test",
-      "hash": "ac0830565a59414bbd95824528a070942a9a8b9e",
-      "pngPath": "/assets/og/posts/2024-12-27-m4-template-test.png",
-      "svgPath": "/assets/og/posts/2024-12-27-m4-template-test.svg"
-    },
-    "post:2026-03-31-welcome-to-dout-dev": {
-      "kind": "post",
-      "slug": "2026-03-31-welcome-to-dout-dev",
-      "hash": "14df87b3aedacb94515340a93b24130eff3d2643",
-      "pngPath": "/assets/og/posts/2026-03-31-welcome-to-dout-dev.png",
-      "svgPath": "/assets/og/posts/2026-03-31-welcome-to-dout-dev.svg"
     },
     "post:2026-04-04-how-i-built-dout-dev": {
       "kind": "post",
       "slug": "2026-04-04-how-i-built-dout-dev",
-      "hash": "a764b08638246646b98709f349cf9f4ddd4473d0",
+      "hash": "6134f7c4c880dd52d0b69e0ae840ad09bb997179",
       "pngPath": "/assets/og/posts/2026-04-04-how-i-built-dout-dev.png",
-      "svgPath": "/assets/og/posts/2026-04-04-how-i-built-dout-dev.svg"
+      "svgPath": "/assets/og/posts/2026-04-04-how-i-built-dout-dev.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-04-04-how-i-built-dout-dev-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-04-04-how-i-built-dout-dev-card.svg"
     },
-    "post:2026-04-21-when-markdown-is-a-cms-and-when-it-is-not": {
+    "post:2026-04-21-cms-and-markdown-processing": {
       "kind": "post",
-      "slug": "2026-04-21-when-markdown-is-a-cms-and-when-it-is-not",
-      "hash": "c23438797055ff5c36f96d04b14fe7fcc834e085",
-      "pngPath": "/assets/og/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.png",
-      "svgPath": "/assets/og/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.svg"
+      "slug": "2026-04-21-cms-and-markdown-processing",
+      "hash": "a3aeade5285b961e88663f0dce8c0389cfedd542",
+      "pngPath": "/assets/og/posts/2026-04-21-cms-and-markdown-processing.png",
+      "svgPath": "/assets/og/posts/2026-04-21-cms-and-markdown-processing.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-04-21-cms-and-markdown-processing-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-04-21-cms-and-markdown-processing-card.svg"
     },
-    "post:2026-04-22-how-to-write-agent-skills": {
+    "post:2026-04-28-rebuilding-dout-dev-with-ai-copilot": {
       "kind": "post",
-      "slug": "2026-04-22-how-to-write-agent-skills",
-      "hash": "da1449e8071484f4ef031aa70bc94c524bd91da3",
-      "pngPath": "/assets/og/posts/2026-04-22-how-to-write-agent-skills.png",
-      "svgPath": "/assets/og/posts/2026-04-22-how-to-write-agent-skills.svg"
+      "slug": "2026-04-28-rebuilding-dout-dev-with-ai-copilot",
+      "hash": "93f1ed90ebccbcd90d58431d69935e100555c901",
+      "pngPath": "/assets/og/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.png",
+      "svgPath": "/assets/og/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot-card.svg"
     },
-    "tag:markdown": {
-      "kind": "tag",
-      "slug": "markdown",
-      "hash": "c987632ac0db534fbe29eb1908ad67607599cb85",
-      "pngPath": "/assets/og/tags/markdown.png",
-      "svgPath": "/assets/og/tags/markdown.svg"
+    "post:2026-05-05-why-no-astro-eleventy-next": {
+      "kind": "post",
+      "slug": "2026-05-05-why-no-astro-eleventy-next",
+      "hash": "01d93a62b8d8976042f78cf08d402ac7a79cb1e8",
+      "pngPath": "/assets/og/posts/2026-05-05-why-no-astro-eleventy-next.png",
+      "svgPath": "/assets/og/posts/2026-05-05-why-no-astro-eleventy-next.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-05-why-no-astro-eleventy-next-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-05-why-no-astro-eleventy-next-card.svg"
     },
-    "tag:cover-image": {
-      "kind": "tag",
-      "slug": "cover-image",
-      "hash": "2c2669d13340e873931b1292389210084284863f",
-      "pngPath": "/assets/og/tags/cover-image.png",
-      "svgPath": "/assets/og/tags/cover-image.svg"
+    "post:2026-05-12-custom-ssg-pipeline": {
+      "kind": "post",
+      "slug": "2026-05-12-custom-ssg-pipeline",
+      "hash": "22183758dc7c28469ebe4651a80373c1418a6706",
+      "pngPath": "/assets/og/posts/2026-05-12-custom-ssg-pipeline.png",
+      "svgPath": "/assets/og/posts/2026-05-12-custom-ssg-pipeline.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-12-custom-ssg-pipeline-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-12-custom-ssg-pipeline-card.svg"
     },
-    "tag:test-files": {
-      "kind": "tag",
-      "slug": "test-files",
-      "hash": "7c62c793cf48f210a7a88479fb6a73ab048c089c",
-      "pngPath": "/assets/og/tags/test-files.png",
-      "svgPath": "/assets/og/tags/test-files.svg"
+    "post:2026-05-13-template-engine-and-template-structure": {
+      "kind": "post",
+      "slug": "2026-05-13-template-engine-and-template-structure",
+      "hash": "01e1e8344d52d23781b2d1f009cc6a21ba9581df",
+      "pngPath": "/assets/og/posts/2026-05-13-template-engine-and-template-structure.png",
+      "svgPath": "/assets/og/posts/2026-05-13-template-engine-and-template-structure.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-13-template-engine-and-template-structure-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-13-template-engine-and-template-structure-card.svg"
     },
-    "tag:releases": {
-      "kind": "tag",
-      "slug": "releases",
-      "hash": "8930de04dd87dc5bba96522e94ee297e75d845a4",
-      "pngPath": "/assets/og/tags/releases.png",
-      "svgPath": "/assets/og/tags/releases.svg"
+    "post:2026-05-14-archives-tags-months-series": {
+      "kind": "post",
+      "slug": "2026-05-14-archives-tags-months-series",
+      "hash": "ce8b7a78d98c0634d0ee2b0e2b90a9dacd4275ef",
+      "pngPath": "/assets/og/posts/2026-05-14-archives-tags-months-series.png",
+      "svgPath": "/assets/og/posts/2026-05-14-archives-tags-months-series.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-14-archives-tags-months-series-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-14-archives-tags-months-series-card.svg"
     },
-    "tag:html": {
-      "kind": "tag",
-      "slug": "html",
-      "hash": "3ebd6d27a543362d25b9408b98537a467897b6d6",
-      "pngPath": "/assets/og/tags/html.png",
-      "svgPath": "/assets/og/tags/html.svg"
+    "post:2026-05-15-progressive-enhancement-as-contract": {
+      "kind": "post",
+      "slug": "2026-05-15-progressive-enhancement-as-contract",
+      "hash": "c2ef1eaf3838a044cd0ea6aea8366e0eb2cab3c9",
+      "pngPath": "/assets/og/posts/2026-05-15-progressive-enhancement-as-contract.png",
+      "svgPath": "/assets/og/posts/2026-05-15-progressive-enhancement-as-contract.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-15-progressive-enhancement-as-contract-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-15-progressive-enhancement-as-contract-card.svg"
     },
-    "tag:css": {
-      "kind": "tag",
-      "slug": "css",
-      "hash": "ca36da396a72cff29999929f0cfe908d78602f36",
-      "pngPath": "/assets/og/tags/css.png",
-      "svgPath": "/assets/og/tags/css.svg"
+    "post:2026-05-16-design-tokens-before-pages": {
+      "kind": "post",
+      "slug": "2026-05-16-design-tokens-before-pages",
+      "hash": "93f4918dde8e9e75aeab428cd1aa5286684e16c2",
+      "pngPath": "/assets/og/posts/2026-05-16-design-tokens-before-pages.png",
+      "svgPath": "/assets/og/posts/2026-05-16-design-tokens-before-pages.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-16-design-tokens-before-pages-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-16-design-tokens-before-pages-card.svg"
     },
-    "tag:generic": {
-      "kind": "tag",
-      "slug": "generic",
-      "hash": "51174cd38d870965ad6eb7559d56672c8bb363e7",
-      "pngPath": "/assets/og/tags/generic.png",
-      "svgPath": "/assets/og/tags/generic.svg"
+    "post:2026-05-17-build-assets-pipeline": {
+      "kind": "post",
+      "slug": "2026-05-17-build-assets-pipeline",
+      "hash": "5e3be631f0665d15575e0d25fb0a1f2304ab67d8",
+      "pngPath": "/assets/og/posts/2026-05-17-build-assets-pipeline.png",
+      "svgPath": "/assets/og/posts/2026-05-17-build-assets-pipeline.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-17-build-assets-pipeline-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-17-build-assets-pipeline-card.svg"
     },
-    "tag:a11y": {
-      "kind": "tag",
-      "slug": "a11y",
-      "hash": "95a05c3fab982ac4dafc7d2e770a674109f2d145",
-      "pngPath": "/assets/og/tags/a11y.png",
-      "svgPath": "/assets/og/tags/a11y.svg"
+    "post:2026-05-18-feeds-and-sitemaps-at-build-time": {
+      "kind": "post",
+      "slug": "2026-05-18-feeds-and-sitemaps-at-build-time",
+      "hash": "35e06ea5003458e0d0fc88ea04939520819ebe73",
+      "pngPath": "/assets/og/posts/2026-05-18-feeds-and-sitemaps-at-build-time.png",
+      "svgPath": "/assets/og/posts/2026-05-18-feeds-and-sitemaps-at-build-time.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-18-feeds-and-sitemaps-at-build-time-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-18-feeds-and-sitemaps-at-build-time-card.svg"
     },
-    "tag:design": {
-      "kind": "tag",
-      "slug": "design",
-      "hash": "55804a3ae5b6132488095f13034ed01cd9b673e0",
-      "pngPath": "/assets/og/tags/design.png",
-      "svgPath": "/assets/og/tags/design.svg"
+    "post:2026-05-19-og-images-at-build-time": {
+      "kind": "post",
+      "slug": "2026-05-19-og-images-at-build-time",
+      "hash": "8f092d79213040f30885ef30dae6148d1f89bdb0",
+      "pngPath": "/assets/og/posts/2026-05-19-og-images-at-build-time.png",
+      "svgPath": "/assets/og/posts/2026-05-19-og-images-at-build-time.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-19-og-images-at-build-time-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-19-og-images-at-build-time-card.svg"
     },
-    "tag:responsive": {
-      "kind": "tag",
-      "slug": "responsive",
-      "hash": "9966ef4a370f4468d1db4a45ae7c2352aaa5f9a0",
-      "pngPath": "/assets/og/tags/responsive.png",
-      "svgPath": "/assets/og/tags/responsive.svg"
+    "post:2026-05-20-seo-metadata-without-rituals": {
+      "kind": "post",
+      "slug": "2026-05-20-seo-metadata-without-rituals",
+      "hash": "57110088a7b28cee8388fe09b5f65ce98ca08774",
+      "pngPath": "/assets/og/posts/2026-05-20-seo-metadata-without-rituals.png",
+      "svgPath": "/assets/og/posts/2026-05-20-seo-metadata-without-rituals.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-20-seo-metadata-without-rituals-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-20-seo-metadata-without-rituals-card.svg"
     },
-    "tag:web-design": {
-      "kind": "tag",
-      "slug": "web-design",
-      "hash": "d53bc16f0bffe30f9bde26209d47b041a5977ecb",
-      "pngPath": "/assets/og/tags/web-design.png",
-      "svgPath": "/assets/og/tags/web-design.svg"
+    "post:2026-05-21-quality-gate-lint-format-verify": {
+      "kind": "post",
+      "slug": "2026-05-21-quality-gate-lint-format-verify",
+      "hash": "c0a40a119e59214256dbc15745bbd0eff0da3292",
+      "pngPath": "/assets/og/posts/2026-05-21-quality-gate-lint-format-verify.png",
+      "svgPath": "/assets/og/posts/2026-05-21-quality-gate-lint-format-verify.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-21-quality-gate-lint-format-verify-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-21-quality-gate-lint-format-verify-card.svg"
     },
-    "tag:frontend": {
-      "kind": "tag",
-      "slug": "frontend",
-      "hash": "3356cde32fbcf044d7aa84cab3da3fe9de9e1835",
-      "pngPath": "/assets/og/tags/frontend.png",
-      "svgPath": "/assets/og/tags/frontend.svg"
+    "post:2026-05-22-ci-cd-around-github-pages": {
+      "kind": "post",
+      "slug": "2026-05-22-ci-cd-around-github-pages",
+      "hash": "d58a87b7a96a61bbec3cc6f62cad4a1405bab8c2",
+      "pngPath": "/assets/og/posts/2026-05-22-ci-cd-around-github-pages.png",
+      "svgPath": "/assets/og/posts/2026-05-22-ci-cd-around-github-pages.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-22-ci-cd-around-github-pages-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-22-ci-cd-around-github-pages-card.svg"
     },
-    "tag:grid-layout": {
-      "kind": "tag",
-      "slug": "grid-layout",
-      "hash": "0f637c90927ec0094b4ca7679142f2df9b310089",
-      "pngPath": "/assets/og/tags/grid-layout.png",
-      "svgPath": "/assets/og/tags/grid-layout.svg"
+    "post:2026-05-23-vibe-coding-with-rigor": {
+      "kind": "post",
+      "slug": "2026-05-23-vibe-coding-with-rigor",
+      "hash": "b95a0aa0f5ea8cb4a1e49842eb68818a25dadb56",
+      "pngPath": "/assets/og/posts/2026-05-23-vibe-coding-with-rigor.png",
+      "svgPath": "/assets/og/posts/2026-05-23-vibe-coding-with-rigor.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-23-vibe-coding-with-rigor-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-23-vibe-coding-with-rigor-card.svg"
     },
-    "tag:test": {
-      "kind": "tag",
-      "slug": "test",
-      "hash": "d70d7bf4097bce3182fb81a0e6a3e36a6cbe6735",
-      "pngPath": "/assets/og/tags/test.png",
-      "svgPath": "/assets/og/tags/test.svg"
+    "post:2026-06-02-modern-css-is-enough": {
+      "kind": "post",
+      "slug": "2026-06-02-modern-css-is-enough",
+      "hash": "783f689bd8fe2eda333411422c1358c6ce533a13",
+      "pngPath": "/assets/og/posts/2026-06-02-modern-css-is-enough.png",
+      "svgPath": "/assets/og/posts/2026-06-02-modern-css-is-enough.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-02-modern-css-is-enough-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-02-modern-css-is-enough-card.svg"
     },
-    "tag:m4": {
-      "kind": "tag",
-      "slug": "m4",
-      "hash": "572d5ac7941b08b5a818c83678fdf6362ebb2ede",
-      "pngPath": "/assets/og/tags/m4.png",
-      "svgPath": "/assets/og/tags/m4.svg"
+    "post:2026-06-09-wcag-22-aa-without-aria-spam": {
+      "kind": "post",
+      "slug": "2026-06-09-wcag-22-aa-without-aria-spam",
+      "hash": "6e77d50576cd3b259c27a522d4943c5440e861d4",
+      "pngPath": "/assets/og/posts/2026-06-09-wcag-22-aa-without-aria-spam.png",
+      "svgPath": "/assets/og/posts/2026-06-09-wcag-22-aa-without-aria-spam.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-09-wcag-22-aa-without-aria-spam-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-09-wcag-22-aa-without-aria-spam-card.svg"
     },
-    "tag:syntax-highlight-element": {
+    "tag:making-of": {
       "kind": "tag",
-      "slug": "syntax-highlight-element",
-      "hash": "5c1b5a96049563f4bb7e641e3f01ffc61252eb2e",
-      "pngPath": "/assets/og/tags/syntax-highlight-element.png",
-      "svgPath": "/assets/og/tags/syntax-highlight-element.svg"
-    },
-    "tag:blog": {
-      "kind": "tag",
-      "slug": "blog",
-      "hash": "928491966f72eb5973afd8dc4a61edeff75a31ab",
-      "pngPath": "/assets/og/tags/blog.png",
-      "svgPath": "/assets/og/tags/blog.svg"
-    },
-    "tag:welcome": {
-      "kind": "tag",
-      "slug": "welcome",
-      "hash": "7165e9978a8a871830c040783cff6ae54b2c067a",
-      "pngPath": "/assets/og/tags/welcome.png",
-      "svgPath": "/assets/og/tags/welcome.svg"
-    },
-    "tag:vanilla-js": {
-      "kind": "tag",
-      "slug": "vanilla-js",
-      "hash": "38f1cd977072e4fde5631ce032089f757c8f270c",
-      "pngPath": "/assets/og/tags/vanilla-js.png",
-      "svgPath": "/assets/og/tags/vanilla-js.svg"
+      "slug": "making-of",
+      "hash": "1c66bc8ede491133775ba11d2da064ecb0a63415",
+      "pngPath": "/assets/og/tags/making-of.png",
+      "svgPath": "/assets/og/tags/making-of.svg"
     },
     "tag:architecture": {
       "kind": "tag",
       "slug": "architecture",
-      "hash": "ecc53289e284d5bbee51dbd577b61afa75c0915e",
+      "hash": "13aa7d03dfbbac4a09b720c338c4a41fa1b8677a",
       "pngPath": "/assets/og/tags/architecture.png",
       "svgPath": "/assets/og/tags/architecture.svg"
     },
     "tag:static-site": {
       "kind": "tag",
       "slug": "static-site",
-      "hash": "b8b1bf79557dc611c0395af19dfebf1355f2c4b9",
+      "hash": "bc6090b2d80b5b083927c18bf8f4b9e6dbb387e8",
       "pngPath": "/assets/og/tags/static-site.png",
       "svgPath": "/assets/og/tags/static-site.svg"
     },
-    "tag:design-systems": {
+    "tag:cms": {
       "kind": "tag",
-      "slug": "design-systems",
-      "hash": "24d66cebb025a2031029e5900527338b17af46b3",
-      "pngPath": "/assets/og/tags/design-systems.png",
-      "svgPath": "/assets/og/tags/design-systems.svg"
+      "slug": "cms",
+      "hash": "84cfef91fbb83dc91463a6a138b3424f4974f57d",
+      "pngPath": "/assets/og/tags/cms.png",
+      "svgPath": "/assets/og/tags/cms.svg"
     },
-    "tag:accessibility": {
+    "tag:markdown": {
       "kind": "tag",
-      "slug": "accessibility",
-      "hash": "7fa291d5c3ed82c95a249644161b67fa899d4576",
-      "pngPath": "/assets/og/tags/accessibility.png",
-      "svgPath": "/assets/og/tags/accessibility.svg"
+      "slug": "markdown",
+      "hash": "19dc5e6fced64ab69629ca984936f588539197f1",
+      "pngPath": "/assets/og/tags/markdown.png",
+      "svgPath": "/assets/og/tags/markdown.svg"
     },
     "tag:ai-copilot": {
       "kind": "tag",
       "slug": "ai-copilot",
-      "hash": "b0471e6fd05234dd662355313183fe2e28b4eac3",
+      "hash": "682d8eb469430cb9d1f9fefd9a6649e5ff2996db",
       "pngPath": "/assets/og/tags/ai-copilot.png",
       "svgPath": "/assets/og/tags/ai-copilot.svg"
     },
-    "month:2019-01": {
-      "kind": "month",
-      "slug": "2019-01",
-      "hash": "6be2adf73f95bcff0d2144e72c6e1e01ec6ff067",
-      "pngPath": "/assets/og/months/2019-01.png",
-      "svgPath": "/assets/og/months/2019-01.svg"
+    "tag:workflow": {
+      "kind": "tag",
+      "slug": "workflow",
+      "hash": "4303537a7f679417841508ff9dc3e428441394e7",
+      "pngPath": "/assets/og/tags/workflow.png",
+      "svgPath": "/assets/og/tags/workflow.svg"
     },
-    "month:2019-02": {
-      "kind": "month",
-      "slug": "2019-02",
-      "hash": "c6312046484c07fba4604b6e9231983b10f37f10",
-      "pngPath": "/assets/og/months/2019-02.png",
-      "svgPath": "/assets/og/months/2019-02.svg"
+    "tag:template-engine": {
+      "kind": "tag",
+      "slug": "template-engine",
+      "hash": "ee00b804f803348e6f5735c0cd83552b9aecd4df",
+      "pngPath": "/assets/og/tags/template-engine.png",
+      "svgPath": "/assets/og/tags/template-engine.svg"
     },
-    "month:2021-03": {
-      "kind": "month",
-      "slug": "2021-03",
-      "hash": "417c71d075172ab192e8168ce9a83b4c91545c3b",
-      "pngPath": "/assets/og/months/2021-03.png",
-      "svgPath": "/assets/og/months/2021-03.svg"
+    "tag:html": {
+      "kind": "tag",
+      "slug": "html",
+      "hash": "f949f11edc49f4abbb52b668140139575c342fb7",
+      "pngPath": "/assets/og/tags/html.png",
+      "svgPath": "/assets/og/tags/html.svg"
     },
-    "month:2022-01": {
-      "kind": "month",
-      "slug": "2022-01",
-      "hash": "8d5d1d1f9e0ba24f5a087f7206ffaa9d0285599c",
-      "pngPath": "/assets/og/months/2022-01.png",
-      "svgPath": "/assets/og/months/2022-01.svg"
+    "tag:archives": {
+      "kind": "tag",
+      "slug": "archives",
+      "hash": "654d3025394d7392d4b26137cb75a81c2448b150",
+      "pngPath": "/assets/og/tags/archives.png",
+      "svgPath": "/assets/og/tags/archives.svg"
     },
-    "month:2022-02": {
-      "kind": "month",
-      "slug": "2022-02",
-      "hash": "66801f5e586b529406ecaa1e19b389817c491de4",
-      "pngPath": "/assets/og/months/2022-02.png",
-      "svgPath": "/assets/og/months/2022-02.svg"
+    "tag:seo": {
+      "kind": "tag",
+      "slug": "seo",
+      "hash": "316ac2edc6377607993435df354c9c54ed601d06",
+      "pngPath": "/assets/og/tags/seo.png",
+      "svgPath": "/assets/og/tags/seo.svg"
     },
-    "month:2022-03": {
-      "kind": "month",
-      "slug": "2022-03",
-      "hash": "4d59a10a6b760ff9d104efc033543c24b42692bb",
-      "pngPath": "/assets/og/months/2022-03.png",
-      "svgPath": "/assets/og/months/2022-03.svg"
+    "tag:accessibility": {
+      "kind": "tag",
+      "slug": "accessibility",
+      "hash": "7447b55284a7c08a5094eb180ee4fc2c1208e833",
+      "pngPath": "/assets/og/tags/accessibility.png",
+      "svgPath": "/assets/og/tags/accessibility.svg"
     },
-    "month:2023-01": {
-      "kind": "month",
-      "slug": "2023-01",
-      "hash": "dbbf5d73c9d5bee489ff23c33f0a91f885914ab6",
-      "pngPath": "/assets/og/months/2023-01.png",
-      "svgPath": "/assets/og/months/2023-01.svg"
+    "tag:progressive-enhancement": {
+      "kind": "tag",
+      "slug": "progressive-enhancement",
+      "hash": "cad5554447d1c709c0eda9ae125afc20464deb3c",
+      "pngPath": "/assets/og/tags/progressive-enhancement.png",
+      "svgPath": "/assets/og/tags/progressive-enhancement.svg"
     },
-    "month:2024-05": {
-      "kind": "month",
-      "slug": "2024-05",
-      "hash": "139ae650ac4f0c3f6afafbd7b9cb9236cb1860bd",
-      "pngPath": "/assets/og/months/2024-05.png",
-      "svgPath": "/assets/og/months/2024-05.svg"
+    "tag:vanilla-js": {
+      "kind": "tag",
+      "slug": "vanilla-js",
+      "hash": "666ee6dc2fb793a0dc529921d574e492f6744d0a",
+      "pngPath": "/assets/og/tags/vanilla-js.png",
+      "svgPath": "/assets/og/tags/vanilla-js.svg"
     },
-    "month:2024-10": {
-      "kind": "month",
-      "slug": "2024-10",
-      "hash": "f36f62062bcf0a52f28b1e4a4c00e4193769097b",
-      "pngPath": "/assets/og/months/2024-10.png",
-      "svgPath": "/assets/og/months/2024-10.svg"
+    "tag:design-systems": {
+      "kind": "tag",
+      "slug": "design-systems",
+      "hash": "5fa3d29f10f9bde84542296ad7b8d6c7ccbbf552",
+      "pngPath": "/assets/og/tags/design-systems.png",
+      "svgPath": "/assets/og/tags/design-systems.svg"
     },
-    "month:2024-12": {
-      "kind": "month",
-      "slug": "2024-12",
-      "hash": "fb11985b40538924a1f8c721979712b132e8e290",
-      "pngPath": "/assets/og/months/2024-12.png",
-      "svgPath": "/assets/og/months/2024-12.svg"
+    "tag:css": {
+      "kind": "tag",
+      "slug": "css",
+      "hash": "985b12e4730f5541f19cbe2c43422cf4b4275ab6",
+      "pngPath": "/assets/og/tags/css.png",
+      "svgPath": "/assets/og/tags/css.svg"
     },
-    "month:2026-03": {
-      "kind": "month",
-      "slug": "2026-03",
-      "hash": "4c4cd91ef1c5e13a588da1674a982f2a34dac81f",
-      "pngPath": "/assets/og/months/2026-03.png",
-      "svgPath": "/assets/og/months/2026-03.svg"
+    "tag:build-assets": {
+      "kind": "tag",
+      "slug": "build-assets",
+      "hash": "7f02af43b42b48609fe4442ef2caedd2bc6f2e19",
+      "pngPath": "/assets/og/tags/build-assets.png",
+      "svgPath": "/assets/og/tags/build-assets.svg"
+    },
+    "tag:performance": {
+      "kind": "tag",
+      "slug": "performance",
+      "hash": "2d919d68bc05bd8b890b27424bb5f4fb6f3af49a",
+      "pngPath": "/assets/og/tags/performance.png",
+      "svgPath": "/assets/og/tags/performance.svg"
+    },
+    "tag:images": {
+      "kind": "tag",
+      "slug": "images",
+      "hash": "38d0589a38627165614089ff7010eced0aaabe04",
+      "pngPath": "/assets/og/tags/images.png",
+      "svgPath": "/assets/og/tags/images.svg"
+    },
+    "tag:feeds": {
+      "kind": "tag",
+      "slug": "feeds",
+      "hash": "0cb5e7432fabaa1db8be4fb47933d0e86b0d5b91",
+      "pngPath": "/assets/og/tags/feeds.png",
+      "svgPath": "/assets/og/tags/feeds.svg"
+    },
+    "tag:opengraph": {
+      "kind": "tag",
+      "slug": "opengraph",
+      "hash": "94b3a5e2d63e765a4f0c3bb32497b51a2347e626",
+      "pngPath": "/assets/og/tags/opengraph.png",
+      "svgPath": "/assets/og/tags/opengraph.svg"
+    },
+    "tag:tooling": {
+      "kind": "tag",
+      "slug": "tooling",
+      "hash": "3650258670f041bac62e8a0ce4875760f23fdec2",
+      "pngPath": "/assets/og/tags/tooling.png",
+      "svgPath": "/assets/og/tags/tooling.svg"
+    },
+    "tag:linting": {
+      "kind": "tag",
+      "slug": "linting",
+      "hash": "f2dd61a96cb01fe737154dd45957090d91bdcbbc",
+      "pngPath": "/assets/og/tags/linting.png",
+      "svgPath": "/assets/og/tags/linting.svg"
+    },
+    "tag:ci": {
+      "kind": "tag",
+      "slug": "ci",
+      "hash": "b0d95f082a0489416dbb5bf389d824e2bdb27020",
+      "pngPath": "/assets/og/tags/ci.png",
+      "svgPath": "/assets/og/tags/ci.svg"
+    },
+    "tag:deployment": {
+      "kind": "tag",
+      "slug": "deployment",
+      "hash": "c3eb447f368a46039eb0c3bfea9cc658bdcf0241",
+      "pngPath": "/assets/og/tags/deployment.png",
+      "svgPath": "/assets/og/tags/deployment.svg"
+    },
+    "tag:github-pages": {
+      "kind": "tag",
+      "slug": "github-pages",
+      "hash": "67296850fa41ea3a9f6fd5a60cf9a03089d85834",
+      "pngPath": "/assets/og/tags/github-pages.png",
+      "svgPath": "/assets/og/tags/github-pages.svg"
+    },
+    "tag:frontend": {
+      "kind": "tag",
+      "slug": "frontend",
+      "hash": "9c1b6db224b6504b4790449307052084d645d578",
+      "pngPath": "/assets/og/tags/frontend.png",
+      "svgPath": "/assets/og/tags/frontend.svg"
+    },
+    "tag:a11y": {
+      "kind": "tag",
+      "slug": "a11y",
+      "hash": "116350e90ce9f3ded1550525c5e56a62da0b3b14",
+      "pngPath": "/assets/og/tags/a11y.png",
+      "svgPath": "/assets/og/tags/a11y.svg"
     },
     "month:2026-04": {
       "kind": "month",
       "slug": "2026-04",
-      "hash": "14c73eec9cf864866b1b86ef729617edfd17fd48",
+      "hash": "663b452aef8c8672378d32d9991db670c92aff6e",
       "pngPath": "/assets/og/months/2026-04.png",
       "svgPath": "/assets/og/months/2026-04.svg"
     },
-    "series:concerning": {
-      "kind": "series",
-      "slug": "concerning",
-      "hash": "25d59c7d2811cb7eaf8400e21a7de29d31a71dee",
-      "pngPath": "/assets/og/series/concerning.png",
-      "svgPath": "/assets/og/series/concerning.svg"
+    "month:2026-05": {
+      "kind": "month",
+      "slug": "2026-05",
+      "hash": "c5bc2081fce646539418812e7431ebf6fa44828a",
+      "pngPath": "/assets/og/months/2026-05.png",
+      "svgPath": "/assets/og/months/2026-05.svg"
     },
-    "series:testing-posts": {
-      "kind": "series",
-      "slug": "testing-posts",
-      "hash": "8a77cf804fb4c594d50c0e888b0051a9d16226d6",
-      "pngPath": "/assets/og/series/testing-posts.png",
-      "svgPath": "/assets/og/series/testing-posts.svg"
+    "month:2026-06": {
+      "kind": "month",
+      "slug": "2026-06",
+      "hash": "e89244f4ad650c14cdf43c7912943fd9a101f555",
+      "pngPath": "/assets/og/months/2026-06.png",
+      "svgPath": "/assets/og/months/2026-06.svg"
     },
-    "series:images": {
+    "series:how-i-made-it": {
       "kind": "series",
-      "slug": "images",
-      "hash": "c62175a2909e12895f0a67bcf628db9ed05f6552",
-      "pngPath": "/assets/og/series/images.png",
-      "svgPath": "/assets/og/series/images.svg"
-    },
-    "series:testing-codepen": {
-      "kind": "series",
-      "slug": "testing-codepen",
-      "hash": "eaa28ff44a02a6d43cf16645c0865bdf13233a3e",
-      "pngPath": "/assets/og/series/testing-codepen.png",
-      "svgPath": "/assets/og/series/testing-codepen.svg"
+      "slug": "how-i-made-it",
+      "hash": "15068c5db404e39e10e32f2ea7a6a94a65abbda9",
+      "pngPath": "/assets/og/series/how-i-made-it.png",
+      "svgPath": "/assets/og/series/how-i-made-it.svg"
     }
   }
 }

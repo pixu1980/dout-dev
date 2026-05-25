@@ -12,12 +12,23 @@ function setCurrentLink(links, activeId) {
   });
 }
 
+function getHeadingActivationOffset(heading) {
+  const fallback = window.innerHeight * 0.28;
+
+  if (!(heading instanceof HTMLElement)) {
+    return fallback;
+  }
+
+  const scrollMarginTop = Number.parseFloat(window.getComputedStyle(heading).scrollMarginTop);
+  return Number.isFinite(scrollMarginTop) ? scrollMarginTop : fallback;
+}
+
 function findActiveHeading(headings) {
-  const threshold = window.innerHeight * 0.28;
+  const threshold = getHeadingActivationOffset(headings[0]);
   let candidate = headings[0];
 
   for (const heading of headings) {
-    if (heading.getBoundingClientRect().top <= threshold) {
+    if (heading.getBoundingClientRect().top <= threshold + 1) {
       candidate = heading;
       continue;
     }
@@ -35,8 +46,9 @@ function initArticleNavigation() {
     return;
   }
 
-  const toc = document.querySelector('.post-toc');
-  const prose = document.querySelector('.prose');
+  const main = document.body?.querySelector(':scope > [data-site-main]') || document;
+  const toc = main.querySelector('[data-post-toc]');
+  const prose = main.querySelector('[data-prose]');
 
   if (!toc || !prose) {
     return;
@@ -65,10 +77,12 @@ function initArticleNavigation() {
   };
 
   let observer = null;
-  let removeScrollListener = null;
+  const handleViewportChange = () => {
+    syncCurrentHeading();
+  };
 
   if ('IntersectionObserver' in window) {
-    observer = new IntersectionObserver(syncCurrentHeading, {
+    observer = new IntersectionObserver(handleViewportChange, {
       rootMargin: '0% 0% -68% 0%',
       threshold: [0, 1],
     });
@@ -76,12 +90,10 @@ function initArticleNavigation() {
     headings.forEach((heading) => {
       observer.observe(heading);
     });
-  } else {
-    window.addEventListener('scroll', syncCurrentHeading, { passive: true });
-    removeScrollListener = () => {
-      window.removeEventListener('scroll', syncCurrentHeading);
-    };
   }
+
+  window.addEventListener('scroll', handleViewportChange, { passive: true });
+  window.addEventListener('resize', handleViewportChange);
 
   const handleTocClick = (event) => {
     const link = event.target.closest('a[href^="#"]');
@@ -103,7 +115,8 @@ function initArticleNavigation() {
 
   cleanupArticleNavigation = () => {
     observer?.disconnect();
-    removeScrollListener?.();
+    window.removeEventListener('scroll', handleViewportChange);
+    window.removeEventListener('resize', handleViewportChange);
     toc.removeEventListener('click', handleTocClick);
     window.removeEventListener('hashchange', syncCurrentHeading);
     cleanupArticleNavigation = null;

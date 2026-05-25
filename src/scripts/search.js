@@ -119,12 +119,14 @@ function renderResultItem(post) {
       ? `<footer data-post-card-footer><ul data-post-card-tags aria-label="Post topics">${post.tags
           .map(
             (tag) =>
-              `<li><a class="tag" data-tag-size="small" href="/tags/${escapeHtml(tag.key || tag.slug || tag.label || tag.name)}.html">${escapeHtml(applyTagDisplayCase(tag.label || tag.name || tag.key))}</a></li>`
+              `<li><a data-tag data-tag-size="small" href="/tags/${escapeHtml(tag.key || tag.slug || tag.label || tag.name)}.html">${escapeHtml(applyTagDisplayCase(tag.label || tag.name || tag.key))}</a></li>`
           )
           .join('')}</ul></footer>`
       : '';
+  const widthAttr = post.coverWidth ? ` width="${escapeHtml(post.coverWidth)}"` : '';
+  const heightAttr = post.coverHeight ? ` height="${escapeHtml(post.coverHeight)}"` : '';
   const mediaMarkup = post.coverImage
-    ? `<figure data-post-card-media><a href="/posts/${escapeHtml(post.name)}.html" tabindex="-1"><img src="${escapeHtml(post.coverImage)}" alt="${escapeHtml(post.coverAlt || post.title)}" loading="lazy" decoding="async" /></a></figure>`
+    ? `<figure data-post-card-media><a href="/posts/${escapeHtml(post.name)}.html" tabindex="-1"><img src="${escapeHtml(post.coverImage)}" alt="${escapeHtml(post.coverAlt || post.title)}" loading="lazy" decoding="async"${widthAttr}${heightAttr} /></a></figure>`
     : '';
   const cardVariant = post.coverImage ? 'with-media' : 'default';
 
@@ -132,14 +134,16 @@ function renderResultItem(post) {
   item.innerHTML = `
     <article data-post-card data-post-card-variant="${cardVariant}">
       ${mediaMarkup}
-      <div data-post-card-body>
-        <header data-post-card-header>
-          <p data-post-card-meta><time datetime="${escapeHtml(post.date)}">${escapeHtml(post.dateString || post.date || '')}</time></p>
-          <h2 data-post-card-title><a href="/posts/${escapeHtml(post.name)}.html">${escapeHtml(post.title)}</a></h2>
-        </header>
-        <p data-post-card-excerpt>${escapeHtml(post.excerpt || '')}</p>
+      <div data-post-card-content>
+        <div data-post-card-body>
+          <header data-post-card-header>
+            <p data-post-card-meta><time datetime="${escapeHtml(post.date)}">${escapeHtml(post.dateString || post.date || '')}</time></p>
+            <h2 data-post-card-title><a href="/posts/${escapeHtml(post.name)}.html">${escapeHtml(post.title)}</a></h2>
+          </header>
+          <p data-post-card-excerpt>${escapeHtml(post.excerpt || '')}</p>
+        </div>
+        ${tagsMarkup}
       </div>
-      ${tagsMarkup}
     </article>
   `;
 
@@ -152,12 +156,14 @@ function renderTagItem(tag) {
   item.dataset.postFeedItem = '';
   item.innerHTML = `
     <article data-post-card data-post-card-variant="default">
-      <div data-post-card-body>
-        <header data-post-card-header>
-          <p data-post-card-meta>Tag</p>
-          <h2 data-post-card-title><a href="/tags/${escapeHtml(tag.slug)}.html">${escapeHtml(applyTagDisplayCase(tag.label || tag.name))}</a></h2>
-        </header>
-        <p data-post-card-excerpt>${escapeHtml(String(tag.count || 0))} post(s)</p>
+      <div data-post-card-content>
+        <div data-post-card-body>
+          <header data-post-card-header>
+            <p data-post-card-meta>Tag</p>
+            <h2 data-post-card-title><a href="/tags/${escapeHtml(tag.slug)}.html">${escapeHtml(applyTagDisplayCase(tag.label || tag.name))}</a></h2>
+          </header>
+          <p data-post-card-excerpt>${escapeHtml(String(tag.count || 0))} post(s)</p>
+        </div>
       </div>
     </article>
   `;
@@ -171,16 +177,18 @@ function renderSeriesItem(series) {
   item.dataset.postFeedItem = '';
   item.innerHTML = `
     <article data-post-card data-post-card-variant="default">
-      <div data-post-card-body>
-        <header data-post-card-header>
-          <p data-post-card-meta>Series</p>
-          <h2 data-post-card-title><a href="/series/${escapeHtml(series.slug)}.html">${escapeHtml(series.title)}</a></h2>
-        </header>
-        <p data-post-card-excerpt>${escapeHtml(`A series of posts about ${series.title}.`)}</p>
+      <div data-post-card-content>
+        <div data-post-card-body>
+          <header data-post-card-header>
+            <p data-post-card-meta>Series</p>
+            <h2 data-post-card-title><a href="/series/${escapeHtml(series.slug)}.html">${escapeHtml(series.title)}</a></h2>
+          </header>
+          <p data-post-card-excerpt>${escapeHtml(`A series of posts about ${series.title}.`)}</p>
+        </div>
+        <footer data-post-card-footer>
+          <p data-post-card-meta>${escapeHtml(String(series.count || series.posts?.length || 0))} post(s)</p>
+        </footer>
       </div>
-      <footer data-post-card-footer>
-        <p data-post-card-meta>${escapeHtml(String(series.count || series.posts?.length || 0))} post(s)</p>
-      </footer>
     </article>
   `;
 
@@ -193,12 +201,14 @@ function renderMonthItem(month) {
   item.dataset.postFeedItem = '';
   item.innerHTML = `
     <article data-post-card data-post-card-variant="default">
-      <div data-post-card-body>
-        <header data-post-card-header>
-          <p data-post-card-meta>Month</p>
-          <h2 data-post-card-title><a href="/months/${escapeHtml(month.slug || month.key)}.html">${escapeHtml(month.label || month.name)}</a></h2>
-        </header>
-        <p data-post-card-excerpt>${escapeHtml(String(month.count || 0))} post(s)</p>
+      <div data-post-card-content>
+        <div data-post-card-body>
+          <header data-post-card-header>
+            <p data-post-card-meta>Month</p>
+            <h2 data-post-card-title><a href="/months/${escapeHtml(month.slug || month.key)}.html">${escapeHtml(month.label || month.name)}</a></h2>
+          </header>
+          <p data-post-card-excerpt>${escapeHtml(String(month.count || 0))} post(s)</p>
+        </div>
       </div>
     </article>
   `;
@@ -287,7 +297,7 @@ function renderPagination(container, total, page, onPage) {
       li.appendChild(gap);
 
       const hidden = document.createElement('span');
-      hidden.className = 'visually-hidden';
+      hidden.dataset.visuallyHidden = '';
       hidden.textContent = 'Skipped pages';
       li.appendChild(hidden);
       ul.appendChild(li);

@@ -18,12 +18,7 @@ This post is the mental model I use to pick between them.
 For most images on a blog, native lazy loading is correct and sufficient.
 
 ```html
-<img src="keyboard.jpg"
-     alt="A keyboard on a wooden desk"
-     width="1920"
-     height="1280"
-     loading="lazy"
-     decoding="async" />
+<img src="keyboard.jpg" alt="A keyboard on a wooden desk" width="1920" height="1280" loading="lazy" decoding="async" />
 ```
 
 What this gets you, for free:
@@ -44,11 +39,7 @@ Three situations where you should not use `loading="lazy"`, or where you have to
 The image that is going to be your Largest Contentful Paint should load eagerly. Setting `loading="lazy"` on an LCP image delays the one number that most affects your page quality metric.
 
 ```html
-<img src="hero.jpg"
-     alt="Hero image"
-     width="1200" height="800"
-     loading="eager"
-     fetchpriority="high" />
+<img src="hero.jpg" alt="Hero image" width="1200" height="800" loading="eager" fetchpriority="high" />
 ```
 
 `fetchpriority="high"` tells the browser this resource should be prioritized over others. Use it sparingly — if everything is "high", nothing is. One LCP candidate per page.
@@ -61,23 +52,28 @@ For large below-the-fold `<picture>` blocks, the fix is to store the `srcset` in
 
 ```html
 <picture>
-  <source type="image/webp"
-          data-srcset="/img/hero-320.webp 320w, /img/hero-640.webp 640w"
-          sizes="(max-width: 640px) 100vw, 640px" />
+  <source
+    type="image/webp"
+    data-srcset="/img/hero-320.webp 320w, /img/hero-640.webp 640w"
+    sizes="(max-width: 640px) 100vw, 640px"
+  />
   <img src="/img/hero.jpg" alt="…" width="1920" height="1280" loading="lazy" />
 </picture>
 ```
 
 ```js
-const io = new IntersectionObserver((entries) => {
-  for (const entry of entries) {
-    if (!entry.isIntersecting) continue;
-    const source = entry.target;
-    source.srcset = source.dataset.srcset;
-    source.removeAttribute('data-srcset');
-    io.unobserve(source);
-  }
-}, { rootMargin: '200px' });
+const io = new IntersectionObserver(
+  (entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      const source = entry.target;
+      source.srcset = source.dataset.srcset;
+      source.removeAttribute('data-srcset');
+      io.unobserve(source);
+    }
+  },
+  { rootMargin: '200px' }
+);
 
 document.querySelectorAll('source[data-srcset]').forEach((s) => io.observe(s));
 ```
@@ -89,9 +85,7 @@ This is the only reliable way I have found to avoid eager downloads of large Web
 Giscus, CodePen embeds, video embeds: these are expensive third-party resources that you do not want to load on every page view. `loading="lazy"` on the iframe helps, but you often want stricter control — load only when the user scrolls close, or only when a "Show comments" button is pressed.
 
 ```html
-<div class="comments-shell"
-     data-giscus-src="https://giscus.app/client.js"
-     data-giscus-attrs='{ "data-repo": "…" }'>
+<div class="comments-shell" data-giscus-src="https://giscus.app/client.js" data-giscus-attrs='{ "data-repo": "…" }'>
   <button type="button" class="load-comments">Load comments</button>
 </div>
 ```

@@ -19,6 +19,7 @@
     --dout--border: rgba(45, 38, 32, 0.08);
     --dout--shadow: 0 18px 48px rgba(32, 20, 9, 0.08);
     --dout--shadow-strong: 0 28px 80px rgba(32, 20, 9, 0.12);
+    --dout--on-accent: #0f0b0a;
 
     --dout--font-display:
       'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
@@ -52,13 +53,51 @@
     --dout--space-9: calc(var(--dout--spacing-base) * pow(var(--dout--spacing-ratio), 5));
 
     --dout--outline-width: 2px;
+    --dout--border-width: 1px;
+    --dout--focus-offset: 3px;
+    --dout--z-header: 10;
+    --dout--z-skeleton: 1000;
+    --dout--blur-panel: 14px;
+    --dout--blur-header: 18px;
+    --dout--motion-fast: 160ms;
+    --dout--motion-base: 180ms;
+    --dout--motion-slow: 220ms;
+    --dout--motion-shimmer: 1200ms;
+    --dout--motion-disabled: 0.001ms;
+    --dout--motion-delay-none: 0ms;
+    --dout--motion-ease: ease;
+    --dout--motion-ease-emphasis: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --dout--lift-y: -2px;
+    --dout--arrow-nudge: 0.16rem;
     --dout--icon-size-sm: 0.75rem;
     --dout--icon-size-md: 1rem;
     --dout--icon-size-lg: 1.25rem;
+    --dout--visually-hidden-size: 1px;
+    --dout--visually-hidden-offset: -1px;
+    --dout--button-padding-block: 0.8rem;
+    --dout--button-padding-inline: 1.2rem;
+    --dout--inline-padding-block: 0.55rem;
+    --dout--inline-padding-inline: 0.9rem;
+    --dout--tag-padding-block: 0.42rem;
+    --dout--tag-padding-inline: 0.8rem;
+    --dout--tag-padding-block-sm: 0.36rem;
+    --dout--tag-padding-inline-sm: 0.68rem;
     --dout--control-height-sm: 2.5rem;
     --dout--control-height-md: 3rem;
+    --dout--control-icon-size: 2.75rem;
+    --dout--control-segment-radius: var(--dout--radius-md);
+    --dout--control-segment-inner-radius: max(
+      0px,
+      calc(var(--dout--control-segment-radius) - var(--dout--border-width))
+    );
     --dout--panel-padding: clamp(1.25rem, 1rem + 0.9vw, 2rem);
+    --dout--popover-width: 30rem;
+    --dout--popover-offset: var(--dout--space-3);
+    --dout--popover-block-start: calc(var(--dout--space-7) + var(--dout--space-5));
     --dout--card-padding: clamp(1rem, 0.9rem + 0.45vw, 1.35rem);
+    --dout--interactive-list-gap: var(--dout--space-2);
+    --dout--interactive-list-padding-block: var(--dout--space-2);
+    --dout--interactive-list-padding-inline: var(--dout--space-3);
     --dout--post-feed-grid-min: 17rem;
     --dout--post-feed-gap-list: var(--dout--space-5);
     --dout--post-feed-gap-grid: var(--dout--space-4);
@@ -67,6 +106,8 @@
     --dout--article-scroll-offset: calc(var(--dout--space-7) + 5rem);
     --dout--container: min(76rem, calc(100% - 2rem));
     --dout--reading-width: min(46rem, 100%);
+    --dout--media-ratio-card: 4 / 3;
+    --dout--media-ratio-og: 1200 / 630;
 
     --dout--radius-size: 4px;
     --dout--radius-sm: var(--dout--radius-size);

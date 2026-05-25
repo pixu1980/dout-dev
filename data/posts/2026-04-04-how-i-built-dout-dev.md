@@ -1,67 +1,67 @@
 ---
-title: How I Built dout.dev
-date: 2026-04-04
+title: 'How I Built dout.dev'
+date: '2026-04-04'
 published: true
-tags: ['Architecture', 'Static Site', 'Design Systems', 'Accessibility']
-description: A technical walkthrough of how dout.dev moves from markdown to an accessible, publishable static blog.
-cover_image: ../assets/images/how-dout-dev-is-built-cover.jpg
-cover_alt: Blue cover artwork titled How This Blog Is Built, used for the dout.dev making-of article
+tags: ['making-of', 'architecture', 'static-site']
+series: 'How I made it'
+description: 'A technical walkthrough of how dout.dev moves from markdown to an accessible, publishable static blog.'
+pinned: true
 canonical_url: false
 ---
 
-## The Goal: an editorial blog without runtime ballast
+## What the stack is, exactly
 
-When I started reshaping dout.dev, I was not interested in repainting the theme and calling it done. I wanted to build an editorial system that stayed close to the native web: markdown content, readable HTML templates, CSS with real design tokens, and JavaScript used only where it delivers a clear benefit.
+dout.dev is: markdown files in `data/posts/`, each with YAML front matter; a Node build script that scans, normalizes, and renders HTML; a small custom template engine; plain CSS with a two-layer token system; JavaScript that arrives after the document is already useful. No runtime, no framework, no server. A build command produces a `dist/` folder; GitHub Pages serves it.
 
-The guiding principle was simple: every part of the stack should do a precise job without turning the blog into an application that is more complex than the publishing problem actually requires.
+Every decision in the stack points at the same thing: the site should be trivial to host, portable across the next ten years of tooling changes, and fast to build so the pipeline never gets in the way of writing.
 
-## The pipeline: markdown in, static HTML out
+## The pipeline, in one picture
 
-The flow starts with the files in data/posts. Each article uses front matter for description, tags, cover image, publication date, and additional metadata. From there, the in-repo CMS reads the files, normalizes the data, and converts markdown into HTML.
+The build is four stages, in this order:
 
-Generating everything at build time lets me ship pages that are easy to host on GitHub Pages, with stable URLs, prerendered content, and no dependency on an application backend.
+1. **Scan.** Read every markdown file, parse front matter, validate required fields.
+2. **Normalize.** Compute slugs, excerpts, keywords, reading time, and the tag/month/series indexes.
+3. **Render.** Convert markdown to HTML, fill templates, write files under `src/`.
+4. **Emit.** Generate feeds, sitemap, search indexes, and OG images.
 
-## A minimal CMS, but pointed in the right direction
+The pipeline runs in one direction. No circular dependencies, no hidden passes. Adding a post means adding one file; the build figures out everything else.
 
-The CMS does only a few things, but it does them consistently:
+## The CMS layer
 
-- it reads front matter;
-- it generates slugs, excerpts, keywords, and indexes for tags, months, and series;
-- it enriches article headings with ids and navigation data;
-- it prepares data that is ready to feed templates, pages, and feeds.
+The CMS reads front matter, derives slugs, builds the tag, month, and series datasets, computes next/previous pointers for each post, and produces typed normalized records the page generator can render without thinking. The markdown renderer also rewrites local image references into responsive `<picture>` elements with WebP sources, known dimensions, and lazy loading — the variants come from a prior Sharp pass that writes a manifest.
 
-That part matters because it moves complexity into the build step instead of pushing it into the browser.
+This is the layer where complexity lives so it does not have to live in the browser.
 
-## A template engine shaped around the project
+## The template engine
 
-Instead of adding a server-side rendering framework, I preferred a project-specific template engine with blocks, includes, loops, and conditionals. The syntax stays intentionally close to HTML so the templates remain readable even when the page logic becomes more layered.
+I wrote a template engine instead of adopting one. The reason: I wanted templates that look like HTML documents, not a programming language wearing HTML clothes. The grammar has four primitives — `extends`, `block`, `include`, and inline expressions with an optional filter pipeline. Control flow uses custom elements (`<if>`, `<for>`) that stay consistent with the angle-bracket context.
 
-The practical advantage is that components such as cards, headers, pagination, and post layouts can be reused without giving up control over the final markup. That becomes especially useful when you want to do semantic refactors or accessibility audits.
+No `eval`. Expressions are parsed into a small AST and walked by an interpreter that only reads from the context object. Rendering is deterministic and side-effect-free.
 
-## Design system first, pages second
+## CSS: tokens before anything else
 
-The CSS did not grow as a pile of local exceptions. I defined tokens, type scales, spacing, surfaces, focus states, and component relationships first. Only after that did I build the header, cards, article template, and archive views.
+The CSS starts with a flat set of primitive tokens — spacing scale, type scale, line heights, surfaces, focus ring — and a second layer of semantic aliases that components actually read. Components write `color: var(--color-fg)`, never a hex literal. Theme switching flips the semantic layer at the root; every component picks it up for free.
 
-That approach makes the blog easier to evolve: if the density changes, a type family shifts, or panels need different behavior, the update starts from the foundation instead of from a chain of page-level patches.
+The dark theme, light theme, and accent color switching are under fifty lines of custom property definitions. No Sass, no CSS-in-JS.
 
-## Accessibility as a project constraint
+## Accessibility as a first-class build output
 
-A large part of the work went into keyboard support, landmarks, semantics, and contrast. Posts now have focusable headings, a sidebar outline synchronized with scroll position, and quick shortcuts to reach the main content and the internal article navigation.
+Accessibility was a milestone constraint, not a final audit. Posts have focusable headings with stable `id`s, a sidebar outline synchronized with scroll, skip-links, `aria-current` on pagination, and a Playwright/axe-core check on every generated page that blocks the deploy if it fails.
 
-The goal was not to bolt ARIA labels onto the result after the fact, but to make sure the final markup is already sensible by default.
+The markup is semantic before ARIA shows up. When ARIA does appear — `aria-live` on search results, `aria-expanded` on disclosure buttons — it is because native HTML genuinely does not cover the case.
 
-## Progressive enhancement, not client dependency
+## Progressive enhancement as a testable contract
 
-The interactive pieces exist, but they arrive after the document is already useful. Theme switching, reading preferences, client-side search, and the scrollspy all improve the experience without becoming prerequisites for reading the site.
+Every page renders and navigates without JavaScript. The build verifies this with a Playwright check that runs key pages with JS disabled and asserts the core content is present.
 
-If JavaScript never starts, the content is still available, structured, and navigable.
+Interactive features follow one rule: any UI element that requires JavaScript starts `hidden` in the markup and is revealed by the enhancement script. The theme toggle, the copy button on code blocks, the scrollspy — none of them exist in the DOM until the script that powers them runs.
 
-## The part that matters most: publishing without friction
+## What a complete build produces
 
-In the end, everything converges on a build command that generates the static site, refreshes assets, and produces output that is ready to deploy. That lets me treat dout.dev like an editorial product: write, review, validate, and publish.
+- Posts, tag archives, month archives, and series archives — each with their own pagination and per-archive RSS feed
+- RSS 2.0, JSON Feed 1.1, sitemap.xml
+- OG images (1200×630 PNGs) for every post and archive, generated from an SVG template rasterized with Sharp
+- Responsive image variants and the manifest the renderer uses to emit `<picture>` elements
+- A search index consumed client-side
 
-For me, the point is not using a fashionable stack. The point is having a pipeline that leaves room to focus on the writing and on a frontend quality bar that can actually be measured.
-
-## What comes next
-
-The foundation is finally in place: richer SEO, complete feeds, deeper accessibility passes, and more refinement in the editorial system are the natural next steps. The difference now is that each new milestone can land on a base that is much more solid and predictable.
+One build command. One `dist/` folder. No runtime dependency.

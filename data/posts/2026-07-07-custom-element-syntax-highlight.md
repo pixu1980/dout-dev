@@ -51,9 +51,7 @@ class PixHighlighter extends HTMLPreElement {
     if (!lexer) return;
 
     const tokens = lexer(code.textContent);
-    code.innerHTML = tokens
-      .map((t) => `<span class="tok-${t.type}">${escapeHtml(t.value)}</span>`)
-      .join('');
+    code.innerHTML = tokens.map((t) => `<span class="tok-${t.type}">${escapeHtml(t.value)}</span>`).join('');
 
     this.dataset.highlighted = 'true';
     this.appendCopyButton(code.textContent);
@@ -114,10 +112,20 @@ pre[is='pix-highlighter'] {
   font: var(--font-mono);
 }
 
-.tok-comment { color: var(--color-code-comment); font-style: italic; }
-.tok-string  { color: var(--color-code-string); }
-.tok-keyword { color: var(--color-code-keyword); font-weight: 600; }
-.tok-number  { color: var(--color-code-number); }
+.tok-comment {
+  color: var(--color-code-comment);
+  font-style: italic;
+}
+.tok-string {
+  color: var(--color-code-string);
+}
+.tok-keyword {
+  color: var(--color-code-keyword);
+  font-weight: 600;
+}
+.tok-number {
+  color: var(--color-code-number);
+}
 ```
 
 No separate "light theme" and "dark theme" stylesheets. One set of rules, driven by semantic tokens, which flip based on `data-theme`.

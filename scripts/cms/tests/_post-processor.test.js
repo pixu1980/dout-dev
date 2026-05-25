@@ -32,6 +32,23 @@ Another paragraph here.`;
     assert.strictEqual(result.tags[0].label, 'Javascript');
   });
 
+  test('processMarkdown should preserve front-matter description', () => {
+    const filePath = '/test/described-post.md';
+    const raw = `---
+title: "Described Post"
+description: "Front matter summary for social cards."
+---
+
+## First section
+
+Post body.`;
+
+    const result = processMarkdown(filePath, raw);
+
+    assert.strictEqual(result.description, 'Front matter summary for social cards.');
+    assert.ok(result.excerpt.includes('First section'));
+  });
+
   test('processMarkdown should infer title from filename when front-matter is missing', () => {
     const filePath = '/test/2023-11-15-hello-world-post.md';
     const raw = `# Content
@@ -157,20 +174,20 @@ Minimal content.`;
   });
 
   test('processMarkdown should work with real file from data folder', () => {
-    const filePath = 'data/posts/2022-03-24-welcome-to-dout-dev.md';
+    const filePath = 'data/posts/2026-04-04-how-i-built-dout-dev.md';
     const raw = readFileSync(filePath, 'utf8');
 
     const result = processMarkdown(filePath, raw);
 
-    assert.strictEqual(result.name, '2022-03-24-welcome-to-dout-dev');
-    assert.strictEqual(result.title, 'Welcome to dout.dev');
+    assert.strictEqual(result.name, '2026-04-04-how-i-built-dout-dev');
+    assert.strictEqual(result.title, 'How I Built dout.dev');
     assert.strictEqual(result.published, true);
-    assert.ok(result.date.includes('2022-03-24'));
-    assert.strictEqual(result.tags.length, 1);
-    assert.strictEqual(result.tags[0].key, 'generic');
-    assert.strictEqual(result.tags[0].label, 'Generic');
+    assert.ok(result.date.includes('2026-04-04'));
+    assert.strictEqual(result.tags.length, 3);
+    assert.strictEqual(result.tags[0].key, 'making-of');
+    assert.strictEqual(result.tags[0].label, 'Making-of');
     assert.ok(result.content.includes('<p>'));
-    assert.ok(result.excerpt.includes('Emiliano'));
+    assert.ok(result.excerpt.includes('What the stack is, exactly'));
     assert.strictEqual(result.layout, 'post');
   });
 

@@ -23,18 +23,19 @@
     </script>
   </block>
   <block name="content">
-    <section class="page-hero" aria-labelledby="search-title">
-      <p class="eyebrow">Search</p>
+    <section data-page-hero aria-labelledby="search-title">
+      <p data-eyebrow>Search</p>
       <h1 id="search-title">Search across posts, tags, series, and monthly archives.</h1>
       <p>Fast, static, and entirely client-side.</p>
     </section>
 
-    <section class="search-shell" aria-label="Search interface">
+    <section data-search-shell aria-label="Search interface">
       <form
         id="search-form"
         role="search"
         aria-label="Site search"
-        class="card search-form"
+        data-card
+        data-search-form
         action="/search.html"
         method="get"
       >
@@ -47,7 +48,7 @@
           value="{{ query | default:'' }}"
         />
         <button type="submit">Search</button>
-        <fieldset class="cluster" aria-labelledby="type-filters-label">
+        <fieldset data-cluster aria-labelledby="type-filters-label">
           <legend id="type-filters-label">Filter by type</legend>
           <input id="type-post" type="checkbox" name="type" value="post" checked />
           <label for="type-post">Posts</label>
@@ -60,9 +61,10 @@
         </fieldset>
       </form>
 
-      <div class="search-toolbar">
+      <div data-search-toolbar>
         <div
-          class="cluster search-summary"
+          data-cluster
+          data-search-summary
           aria-live="polite"
           aria-atomic="true"
           id="results-summary"

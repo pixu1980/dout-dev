@@ -18,6 +18,7 @@ Three audiences: developers considering serious AI-assisted work, skeptics who t
 Instead of abstract principles, here is the literal breakdown of tasks over the last six months on dout.dev.
 
 **Tasks the copilot did the first draft of, and I edited heavily.**
+
 - Template engine lexer (80% kept after editing)
 - CMS normalization functions (60% kept; rewrote large chunks)
 - Pagination component template (90% kept; small tweaks)
@@ -26,12 +27,14 @@ Instead of abstract principles, here is the literal breakdown of tasks over the 
 - Dozens of tests
 
 **Tasks the copilot did mostly on its own, with spot-checks from me.**
+
 - Repetitive refactors across dozens of files
 - Renaming tokens in the design system
 - Boilerplate docstrings (which I later deleted — more on that below)
 - Search-and-explain across the repo
 
 **Tasks I did without copilot help.**
+
 - The architecture of the template engine grammar
 - The CSP policy
 - The URL structure for archives
@@ -40,6 +43,7 @@ Instead of abstract principles, here is the literal breakdown of tasks over the 
 - Every major trade-off call
 
 **Tasks the copilot attempted and I rejected.**
+
 - A lot of defensive error handling I did not want
 - "Helper" abstractions with one caller
 - Comments that restated the function name

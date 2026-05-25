@@ -7,7 +7,7 @@ import { JSDOM } from 'jsdom';
 
 const PROJECT_ROOT = fileURLToPath(new URL('../', import.meta.url));
 const SRC_ROOT = join(PROJECT_ROOT, 'src');
-const FIXTURE_PAGE = join(SRC_ROOT, 'posts', '2024-12-27-m4-template-test.html');
+const FIXTURE_PAGE = join(SRC_ROOT, 'posts', '2026-05-19-og-images-at-build-time.html');
 const EXCLUDED_SEGMENTS = new Set(['components', 'layouts', 'templates']);
 
 const dom = new JSDOM('<!doctype html><html><head></head><body></body></html>', {
@@ -169,18 +169,18 @@ describe('PixHighlighter blog integration', () => {
 
   test('renders fallback token markup on real blog content without CSS.highlights', async () => {
     const html = await readFile(FIXTURE_PAGE, 'utf8');
-    resetDomWithHtml(html, 'posts/2024-12-27-m4-template-test.html');
+    resetDomWithHtml(html, 'posts/2026-05-19-og-images-at-build-time.html');
     disableHighlightSupport();
     resetPixHighlighterState(PixHighlighter);
 
     enhancePixHighlighters(document);
 
     const javascriptPre = document.querySelector(
-      "pre[is='pix-highlighter'][data-lang='javascript'], pre[is='pix-highlighter'][lang='javascript']"
+      "pre[is='pix-highlighter'][data-lang='javascript'], pre[is='pix-highlighter'][lang='javascript'], pre[is='pix-highlighter'][data-lang='js'], pre[is='pix-highlighter'][lang='js']"
     );
     const javascriptBlock = javascriptPre.querySelector('code');
-    assert.ok(javascriptBlock.querySelector('.pix-token--kw'));
-    assert.ok(javascriptBlock.querySelector('.pix-token--str'));
+    assert.ok(javascriptBlock.querySelector('[data-pix-token="kw"]'));
+    assert.ok(javascriptBlock.querySelector('[data-pix-token="str"]'));
     assert.ok(javascriptPre.querySelector('button[data-pix-highlighter-copy] svg'));
     assert.equal(
       javascriptPre.querySelectorAll('button[data-pix-highlighter-theme-option]').length,
@@ -190,7 +190,7 @@ describe('PixHighlighter blog integration', () => {
 
   test('collects shared highlights on real blog content when the API is available', async () => {
     const html = await readFile(FIXTURE_PAGE, 'utf8');
-    resetDomWithHtml(html, 'posts/2024-12-27-m4-template-test.html');
+    resetDomWithHtml(html, 'posts/2026-05-19-og-images-at-build-time.html');
     enableHighlightSupport();
     resetPixHighlighterState(PixHighlighter);
 

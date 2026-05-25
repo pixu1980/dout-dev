@@ -8,94 +8,11 @@
     <language>en</language>
     <lastBuildDate>Tue, 21 Apr 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>When Markdown Is a CMS, and When It Is Not</title>
-      <link>https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</guid>
+      <title>CMS and Markdown Processing</title>
+      <link>https://dout.dev/posts/2026-04-21-cms-and-markdown-processing.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-cms-and-markdown-processing.html</guid>
       <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
       <description>The useful distinction</description>
-    </item>
-    <item>
-      <title>Say hello to 2023 🎉</title>
-      <link>https://dout.dev/posts/2023-01-01-say-hello-2023.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2023-01-01-say-hello-2023.html</guid>
-      <pubDate>Sun, 01 Jan 2023 14:41:22 GMT</pubDate>
-      <description>Say hello to 2023 🎉</description>
-    </item>
-    <item>
-      <title>Testing CodePen</title>
-      <link>https://dout.dev/posts/2022-03-16-test-codepen.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-03-16-test-codepen.html</guid>
-      <pubDate>Wed, 16 Mar 2022 00:00:00 GMT</pubDate>
-      <description>See the Pen &lt;a href=&apos;https://codepen.io/blackmirror1980/pen/aPRXzv&apos;&gt;Pure CSS Slider using Scroll-Snap&lt;/a&gt; by blackmirror1980 (&lt;a href=&apos;https://codepen.io/blackmirror1980&apos;&gt;@blackmir</description>
-    </item>
-    <item>
-      <title>You can edit CSS</title>
-      <link>https://dout.dev/posts/2022-03-12-you-can-edit-css.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-03-12-you-can-edit-css.html</guid>
-      <pubDate>Sat, 12 Mar 2022 00:00:00 GMT</pubDate>
-      <description>You can edit CSS</description>
-    </item>
-    <item>
-      <title>Custom Grid System</title>
-      <link>https://dout.dev/posts/2022-03-03-custom-grid-system.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-03-03-custom-grid-system.html</guid>
-      <pubDate>Thu, 03 Mar 2022 14:41:22 GMT</pubDate>
-      <description>Blog under construction</description>
-    </item>
-    <item>
-      <title>Say hello to 2022 🎉</title>
-      <link>https://dout.dev/posts/2022-01-01-say-hello-2022.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2022-01-01-say-hello-2022.html</guid>
-      <pubDate>Sat, 01 Jan 2022 14:41:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>A NEW post with a NEW cover image</title>
-      <link>https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2021-03-08-a-new-post-with-a-new-cover.html</guid>
-      <pubDate>Mon, 08 Mar 2021 00:00:00 GMT</pubDate>
-      <description>Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it&apos;s been marked up with tags or</description>
-    </item>
-    <item>
-      <title>Testing CodePen</title>
-      <link>https://dout.dev/posts/2021-03-07-hating-css-utility-classes.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2021-03-07-hating-css-utility-classes.html</guid>
-      <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
-      <description>https://codepen.io/emdeoh/pen/NWdmgVq</description>
-    </item>
-    <item>
-      <title>Testing CodePen</title>
-      <link>https://dout.dev/posts/2021-03-05-gradient-borders.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2021-03-05-gradient-borders.html</guid>
-      <pubDate>Fri, 05 Mar 2021 00:00:00 GMT</pubDate>
-      <description>GRADIENT BORDERS</description>
-    </item>
-    <item>
-      <title>Say Hello to Gridsome NEW</title>
-      <link>https://dout.dev/posts/2021-03-01-say-hello-to-gridsome-new.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2021-03-01-say-hello-to-gridsome-new.html</guid>
-      <pubDate>Mon, 01 Mar 2021 00:00:00 GMT</pubDate>
-      <description>Well.... that&apos;s all</description>
-    </item>
-    <item>
-      <title>Say hello to Gridsome 🎉</title>
-      <link>https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2019-02-07-say-hello-to-gridsome.html</guid>
-      <pubDate>Thu, 07 Feb 2019 00:00:00 GMT</pubDate>
-      <description>A new static site generator baby is born. It&apos;s highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea</description>
-    </item>
-    <item>
-      <title>Markdown test file</title>
-      <link>https://dout.dev/posts/2019-02-06-markdown-test-file.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2019-02-06-markdown-test-file.html</guid>
-      <pubDate>Wed, 06 Feb 2019 00:00:00 GMT</pubDate>
-      <description>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable</description>
-    </item>
-    <item>
-      <title>A post with a cover image</title>
-      <link>https://dout.dev/posts/2019-01-07-a-post-with-a-cover.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2019-01-07-a-post-with-a-cover.html</guid>
-      <pubDate>Mon, 07 Jan 2019 00:00:00 GMT</pubDate>
-      <description>Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it&apos;s been marked up with tags or</description>
     </item>
   </channel>
 </rss>

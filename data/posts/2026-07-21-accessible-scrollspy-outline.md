@@ -65,17 +65,20 @@ const outline = document.querySelector('.post-outline');
 
 let currentId = null;
 
-const io = new IntersectionObserver((entries) => {
-  for (const entry of entries) {
-    if (entry.isIntersecting) {
-      currentId = entry.target.id;
+const io = new IntersectionObserver(
+  (entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        currentId = entry.target.id;
+      }
     }
+    if (currentId) updateOutline(currentId);
+  },
+  {
+    rootMargin: '-20% 0px -70% 0px',
+    threshold: 0,
   }
-  if (currentId) updateOutline(currentId);
-}, {
-  rootMargin: '-20% 0px -70% 0px',
-  threshold: 0,
-});
+);
 
 for (const h of headings) io.observe(h);
 ```

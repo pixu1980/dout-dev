@@ -129,9 +129,11 @@ describe('DisplayPreferencesPopover', () => {
 
     assert.equal(customElements.get('display-preferences-popover'), DisplayPreferencesPopover);
     assert.deepEqual(FONT_SCALE_OPTIONS, ['75%', '80%', '90%', '100%', '110%', '120%', '125%']);
-    assert.equal(element.querySelector('.preferences-toggle') !== null, true);
+    assert.equal(element.querySelector('[data-preferences-toggle]') !== null, true);
     assert.equal(element.querySelector('accent-color-selector') !== null, true);
-    assert.equal(element.querySelectorAll('input[type="checkbox"]').length, 4);
+    assert.equal(element.querySelectorAll('input[type="checkbox"]').length, 3);
+    assert.equal(element.querySelector('input[name="reduceMotion"]') !== null, true);
+    assert.equal(element.querySelector('input[name="reduceAnimations"]'), null);
     assert.equal(element.querySelectorAll('input[type="radio"][name="radiusPreset"]').length, 3);
     assert.equal(element.querySelectorAll('select').length, 4);
     assert.equal(element.querySelector('select[name="fontScale"]').value, '100%');
@@ -139,6 +141,20 @@ describe('DisplayPreferencesPopover', () => {
       element.querySelector('input[name="radiusPreset"][value="rounded"]').checked,
       true
     );
+  });
+
+  test('renders preference groups in the requested visual order', () => {
+    const element = mountPopover();
+    const groups = Array.from(
+      element.querySelectorAll('[data-preferences-panel] > [data-preferences-group]')
+    );
+    const labels = groups.map((group) =>
+      group.matches('fieldset')
+        ? group.querySelector('legend')?.textContent.trim()
+        : group.querySelector('h3')?.textContent.trim()
+    );
+
+    assert.deepEqual(labels, ['Colors', 'Accessibility', 'Typography', 'Corners']);
   });
 
   test('applies saved preferences when the component connects', () => {
@@ -152,7 +168,7 @@ describe('DisplayPreferencesPopover', () => {
         increaseContrast: true,
         radiusPreset: 'rounded',
         reduceAnimations: true,
-        reduceMotion: true,
+        reduceMotion: false,
         reduceTransparency: true,
       })
     );
@@ -160,7 +176,7 @@ describe('DisplayPreferencesPopover', () => {
     const element = mountPopover();
 
     assert.equal(document.documentElement.getAttribute('data-reduce-motion'), 'true');
-    assert.equal(document.documentElement.getAttribute('data-reduce-animations'), 'true');
+    assert.equal(document.documentElement.getAttribute('data-reduce-animations'), null);
     assert.equal(document.documentElement.getAttribute('data-reduce-transparency'), 'true');
     assert.equal(document.documentElement.getAttribute('data-increase-contrast'), 'true');
     assert.equal(document.documentElement.getAttribute('data-radius-preset'), 'rounded');
@@ -215,6 +231,7 @@ describe('DisplayPreferencesPopover', () => {
     assert.equal(saved.headingFont, 'rounded-sans');
     assert.equal(saved.bodyFont, 'readable-serif');
     assert.equal(saved.codeFont, 'classic-mono');
+    assert.equal('reduceAnimations' in saved, false);
     assert.match(
       document.documentElement.style.getPropertyValue('--dout--font-display'),
       /Optima/i
@@ -228,18 +245,24 @@ describe('DisplayPreferencesPopover', () => {
 
   test('uses a click-driven fallback when the native popover API is unavailable', () => {
     const element = mountPopover();
-    const toggle = element.querySelector('.preferences-toggle');
+    const toggle = element.querySelector('[data-preferences-toggle]');
 
     toggle.click();
 
     assert.equal(element.dataset.open, 'true');
-    assert.equal(element.querySelector('.preferences-panel').getAttribute('data-open'), 'true');
+    assert.equal(
+      element.querySelector('[data-preferences-panel]').getAttribute('data-open'),
+      'true'
+    );
     assert.equal(toggle.getAttribute('aria-expanded'), 'true');
 
     document.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'Escape' }));
 
     assert.equal(element.dataset.open, 'false');
-    assert.equal(element.querySelector('.preferences-panel').getAttribute('data-open'), 'false');
+    assert.equal(
+      element.querySelector('[data-preferences-panel]').getAttribute('data-open'),
+      'false'
+    );
     assert.equal(toggle.getAttribute('aria-expanded'), 'false');
   });
 
@@ -258,17 +281,24 @@ describe('DisplayPreferencesPopover', () => {
     assert.equal(document.adoptedStyleSheets.length, 2);
     assert.ok(
       document.adoptedStyleSheets[0].cssText.includes(
-        'display-preferences-popover .preferences-toggle'
+        'display-preferences-popover [data-preferences-toggle]'
       ) ||
         document.adoptedStyleSheets[1].cssText.includes(
-          'display-preferences-popover .preferences-toggle'
+          'display-preferences-popover [data-preferences-toggle]'
         )
     );
     assert.ok(
       componentSource.includes("import cssText from 'bundle-text:./DisplayPreferencesPopover.css';")
     );
     assert.ok(componentSource.includes('static {'));
-    assert.ok(componentCss.includes('display-preferences-popover .preferences-panel'));
+    assert.ok(componentCss.includes('display-preferences-popover [data-preferences-panel]'));
+    assert.ok(componentCss.includes('display-preferences-popover [data-preferences-choice]'));
+    assert.ok(componentCss.includes('display-preferences-popover [data-preferences-grid]'));
+    assert.ok(componentCss.includes('height: var(--dout--control-icon-size);'));
+    assert.ok(componentCss.includes('flex: 0 0 4.25rem;'));
+    assert.ok(componentCss.includes('width: 1.6rem;'));
+    assert.doesNotMatch(componentCss, /\.preferences-/);
+    assert.doesNotMatch(componentCss, /display:\s*grid/);
     assert.ok(!componentCss.includes(':host'));
   });
 

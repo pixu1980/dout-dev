@@ -37,18 +37,10 @@ At install time, the SW precaches exactly the files needed to render the offline
 const PRECACHE = 'dout-precache-v1';
 const RUNTIME = 'dout-runtime-v1';
 
-const PRECACHE_URLS = [
-  '/',
-  '/offline.html',
-  '/styles/index.css',
-  '/scripts/main.js',
-  '/assets/favicon.svg',
-];
+const PRECACHE_URLS = ['/', '/offline.html', '/styles/index.css', '/scripts/main.js', '/assets/favicon.svg'];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(PRECACHE).then((cache) => cache.addAll(PRECACHE_URLS))
-  );
+  event.waitUntil(caches.open(PRECACHE).then((cache) => cache.addAll(PRECACHE_URLS)));
 });
 ```
 
@@ -62,9 +54,7 @@ On activation, old caches get deleted. Without this, users accumulate dead cache
 self.addEventListener('activate', (event) => {
   const valid = new Set([PRECACHE, RUNTIME]);
   event.waitUntil(
-    caches.keys().then((names) =>
-      Promise.all(names.filter((n) => !valid.has(n)).map((n) => caches.delete(n)))
-    )
+    caches.keys().then((names) => Promise.all(names.filter((n) => !valid.has(n)).map((n) => caches.delete(n))))
   );
   self.clients.claim();
 });

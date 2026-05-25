@@ -30,39 +30,28 @@
 </block>
 
 <block name="content">
-  <section class="hero hero--home" aria-labelledby="home-title">
-    <div class="hero--copy">
-      <p class="eyebrow">Editorial static publishing</p>
+  <section data-hero data-hero-variant="home" aria-labelledby="home-title">
+    <div data-hero-copy>
+      <p data-eyebrow>Editorial notes and stats</p>
       <h1 id="home-title">A handcrafted frontend journal for dout.dev.</h1>
-      <p class="hero--lede">
+      <p data-hero-lede>
         Field notes on CSS, accessibility, design systems, and the mechanics of publishing a fast static site without
         the usual framework gloss.
       </p>
-      <div class="hero__actions">
-        <a class="button button--primary" href="/archive.html">Browse the archive</a>
-        <a class="button button--ghost" href="{{ site.rssFeedPath | default:'/feed.rss' }}">Follow via RSS</a>
+      <div data-hero-actions>
+        <a data-button data-button-variant="primary" href="/archive.html">Browse the archive</a>
+        <a data-button data-button-variant="ghost" href="{{ site.rssFeedPath | default:'/feed.rss' }}"
+          >Follow via RSS</a
+        >
       </div>
       <if condition="topTags && topTags.length">
-        <div class="hero__topics" aria-label="Popular topics">
+        <div data-hero-topics aria-label="Popular topics">
           <for each="tag in topTags">
-            <a class="tag" href="/tags/{{ tag.slug }}.html">{{ tag.name }}</a>
+            <a data-tag href="/tags/{{ tag.slug }}.html">{{ tag.name }}</a>
           </for>
         </div>
       </if>
-    </div>
-    <div class="hero__panel">
-      <p class="eyebrow eyebrow--muted">Featured dispatch</p>
-      <if condition="featuredPost">
-        <article class="feature-card">
-          <p class="feature-card--meta">
-            <time datetime="{{ featuredPost.date | date:'YYYY-MM-DD' }}">{{ featuredPost.date | date:'long' }}</time>
-          </p>
-          <h2><a href="/posts/{{ featuredPost.name }}.html">{{ featuredPost.title }}</a></h2>
-          <p>{{ featuredPost.excerpt }}</p>
-          <a class="text-link" href="/posts/{{ featuredPost.name }}.html">Read the post</a>
-        </article>
-      </if>
-      <dl class="hero-stats">
+      <dl data-hero-stats>
         <div>
           <dt>Posts</dt>
           <dd>{{ stats.posts }}</dd>
@@ -77,20 +66,37 @@
         </div>
       </dl>
     </div>
+    <div data-hero-panel>
+      <p data-eyebrow data-muted>Featured</p>
+      <if condition="featuredPosts && featuredPosts.length">
+        <div data-featured-posts>
+          <for each="featured in featuredPosts">
+            <article data-feature-card>
+              <p data-feature-card-meta>
+                <time datetime="{{ featured.date | date:'YYYY-MM-DD' }}">{{ featured.date | date:'long' }}</time>
+              </p>
+              <h2><a href="/posts/{{ featured.name }}.html">{{ featured.title }}</a></h2>
+              <p>{{ featured.excerpt }}</p>
+              <a data-text-link href="/posts/{{ featured.name }}.html">Read the post</a>
+            </article>
+          </for>
+        </div>
+      </if>
+    </div>
   </section>
 
-  <section class="section-heading" aria-labelledby="latest-title">
+  <section data-section-heading aria-labelledby="latest-title">
     <div>
-      <p class="eyebrow">Latest writing</p>
-      <h2 id="latest-title">Fresh from the markdown source</h2>
+      <p data-eyebrow>Latest writing</p>
+      <h2 id="latest-title">Fresh from the sources</h2>
     </div>
-    <div class="section-heading--actions">
-      <a class="text-link" href="/archive.html">See the full archive</a>
+    <div data-section-heading-actions>
+      <a data-text-link href="/archive.html">See the full archive</a>
     </div>
   </section>
 
   <if condition="posts && posts.length">
-    <section class="post-feed-shell" aria-labelledby="latest-title">
+    <section data-post-feed-shell aria-labelledby="latest-title">
       <ul
         data-post-feed
         data-post-feed-variant="feature-list"

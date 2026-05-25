@@ -1,735 +1,5 @@
 [
   {
-    "key": "2019-01",
-    "label": "January 2019",
-    "year": 2019,
-    "month": 1,
-    "posts": [
-      {
-        "name": "2019-01-07-a-post-with-a-cover",
-        "title": "A post with a cover image",
-        "date": "2019-01-07T00:00:00.000Z",
-        "dateString": "Mon Jan 07 2019",
-        "path": "./src/posts/2019-01-07-a-post-with-a-cover.html",
-        "url": "/posts/2019-01-07-a-post-with-a-cover/",
-        "excerpt": "Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or",
-        "coverImage": null,
-        "coverAlt": "A post with a cover image",
-        "tags": [
-          {
-            "key": "markdown",
-            "label": "Markdown",
-            "url": "./tags/markdown.html"
-          },
-          {
-            "key": "cover-image",
-            "label": "Cover-image",
-            "url": "./tags/cover-image.html"
-          }
-        ],
-        "pinned": false
-      }
-    ],
-    "name": "January 2019",
-    "number": 1,
-    "slug": "2019-01",
-    "url": "./months/2019-01.html",
-    "count": 1,
-    "from": "2019-01-07T00:00:00.000Z",
-    "to": "2019-01-07T00:00:00.000Z"
-  },
-  {
-    "key": "2019-02",
-    "label": "February 2019",
-    "year": 2019,
-    "month": 2,
-    "posts": [
-      {
-        "name": "2019-02-06-markdown-test-file",
-        "title": "Markdown test file",
-        "date": "2019-02-06T00:00:00.000Z",
-        "dateString": "Wed Feb 06 2019",
-        "path": "./src/posts/2019-02-06-markdown-test-file.html",
-        "url": "/posts/2019-02-06-markdown-test-file/",
-        "excerpt": "Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable",
-        "coverImage": null,
-        "coverAlt": "Markdown test file",
-        "tags": [
-          {
-            "key": "markdown",
-            "label": "Markdown",
-            "url": "./tags/markdown.html"
-          },
-          {
-            "key": "test-files",
-            "label": "Test-files",
-            "url": "./tags/test-files.html"
-          }
-        ],
-        "pinned": false
-      },
-      {
-        "name": "2019-02-07-say-hello-to-gridsome",
-        "title": "Say hello to Gridsome 🎉",
-        "date": "2019-02-07T00:00:00.000Z",
-        "dateString": "Thu Feb 07 2019",
-        "path": "./src/posts/2019-02-07-say-hello-to-gridsome.html",
-        "url": "/posts/2019-02-07-say-hello-to-gridsome/",
-        "excerpt": "A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea",
-        "coverImage": null,
-        "coverAlt": "Say hello to Gridsome 🎉",
-        "tags": [
-          {
-            "key": "markdown",
-            "label": "Markdown",
-            "url": "./tags/markdown.html"
-          },
-          {
-            "key": "releases",
-            "label": "Releases",
-            "url": "./tags/releases.html"
-          }
-        ],
-        "pinned": false
-      }
-    ],
-    "name": "February 2019",
-    "number": 2,
-    "slug": "2019-02",
-    "url": "./months/2019-02.html",
-    "count": 2,
-    "from": "2019-02-06T00:00:00.000Z",
-    "to": "2019-02-07T00:00:00.000Z"
-  },
-  {
-    "key": "2021-03",
-    "label": "March 2021",
-    "year": 2021,
-    "month": 3,
-    "posts": [
-      {
-        "name": "2021-03-01-say-hello-to-gridsome-new",
-        "title": "Say Hello to Gridsome NEW",
-        "date": "2021-03-01T00:00:00.000Z",
-        "dateString": "Mon Mar 01 2021",
-        "path": "./src/posts/2021-03-01-say-hello-to-gridsome-new.html",
-        "url": "/posts/2021-03-01-say-hello-to-gridsome-new/",
-        "excerpt": "Well.... that's all",
-        "coverImage": null,
-        "coverAlt": "Say Hello to Gridsome NEW",
-        "tags": [
-          {
-            "key": "markdown",
-            "label": "Markdown",
-            "url": "./tags/markdown.html"
-          },
-          {
-            "key": "cover-image",
-            "label": "Cover-image",
-            "url": "./tags/cover-image.html"
-          }
-        ],
-        "pinned": false
-      },
-      {
-        "name": "2021-03-05-gradient-borders",
-        "title": "Testing CodePen",
-        "date": "2021-03-05T00:00:00.000Z",
-        "dateString": "Fri Mar 05 2021",
-        "path": "./src/posts/2021-03-05-gradient-borders.html",
-        "url": "/posts/2021-03-05-gradient-borders/",
-        "excerpt": "GRADIENT BORDERS",
-        "coverImage": null,
-        "coverAlt": "Testing CodePen",
-        "tags": [
-          {
-            "key": "markdown",
-            "label": "Markdown",
-            "url": "./tags/markdown.html"
-          },
-          {
-            "key": "cover-image",
-            "label": "Cover-image",
-            "url": "./tags/cover-image.html"
-          }
-        ],
-        "pinned": false
-      },
-      {
-        "name": "2021-03-07-hating-css-utility-classes",
-        "title": "Testing CodePen",
-        "date": "2021-03-07T00:00:00.000Z",
-        "dateString": "Sun Mar 07 2021",
-        "path": "./src/posts/2021-03-07-hating-css-utility-classes.html",
-        "url": "/posts/2021-03-07-hating-css-utility-classes/",
-        "excerpt": "https://codepen.io/emdeoh/pen/NWdmgVq",
-        "coverImage": null,
-        "coverAlt": "Testing CodePen",
-        "tags": [
-          {
-            "key": "markdown",
-            "label": "Markdown",
-            "url": "./tags/markdown.html"
-          },
-          {
-            "key": "cover-image",
-            "label": "Cover-image",
-            "url": "./tags/cover-image.html"
-          }
-        ],
-        "pinned": false
-      },
-      {
-        "name": "2021-03-08-a-new-post-with-a-new-cover",
-        "title": "A NEW post with a NEW cover image",
-        "date": "2021-03-08T00:00:00.000Z",
-        "dateString": "Mon Mar 08 2021",
-        "path": "./src/posts/2021-03-08-a-new-post-with-a-new-cover.html",
-        "url": "/posts/2021-03-08-a-new-post-with-a-new-cover/",
-        "excerpt": "Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or",
-        "coverImage": null,
-        "coverAlt": "A NEW post with a NEW cover image",
-        "tags": [
-          {
-            "key": "markdown",
-            "label": "Markdown",
-            "url": "./tags/markdown.html"
-          },
-          {
-            "key": "cover-image",
-            "label": "Cover-image",
-            "url": "./tags/cover-image.html"
-          }
-        ],
-        "pinned": false
-      }
-    ],
-    "name": "March 2021",
-    "number": 3,
-    "slug": "2021-03",
-    "url": "./months/2021-03.html",
-    "count": 4,
-    "from": "2021-03-01T00:00:00.000Z",
-    "to": "2021-03-08T00:00:00.000Z"
-  },
-  {
-    "key": "2022-01",
-    "label": "January 2022",
-    "year": 2022,
-    "month": 1,
-    "posts": [
-      {
-        "name": "2022-01-01-say-hello-2022",
-        "title": "Say hello to 2022 🎉",
-        "date": "2022-01-01T14:41:22.000Z",
-        "dateString": "Sat Jan 01 2022",
-        "path": "./src/posts/2022-01-01-say-hello-2022.html",
-        "url": "/posts/2022-01-01-say-hello-2022/",
-        "excerpt": "",
-        "coverImage": "../assets/images/alexandr-podvalny-220262-unsplash.jpg",
-        "coverWidth": 1600,
-        "coverHeight": 900,
-        "coverAlt": "Say hello to 2022 🎉",
-        "tags": [
-          {
-            "key": "markdown",
-            "label": "Markdown",
-            "url": "./tags/markdown.html"
-          },
-          {
-            "key": "releases",
-            "label": "Releases",
-            "url": "./tags/releases.html"
-          }
-        ],
-        "pinned": false
-      }
-    ],
-    "name": "January 2022",
-    "number": 1,
-    "slug": "2022-01",
-    "url": "./months/2022-01.html",
-    "count": 1,
-    "from": "2022-01-01T14:41:22.000Z",
-    "to": "2022-01-01T14:41:22.000Z"
-  },
-  {
-    "key": "2022-02",
-    "label": "February 2022",
-    "year": 2022,
-    "month": 2,
-    "posts": [
-      {
-        "name": "2022-02-25-you-can-express-tags-today",
-        "title": "You can use express tags… TODAY!",
-        "date": "2022-02-25T00:00:00.000Z",
-        "dateString": "Fri Feb 25 2022",
-        "path": "./src/posts/2022-02-25-you-can-express-tags-today.html",
-        "url": "/posts/2022-02-25-you-can-express-tags-today/",
-        "excerpt": "HTML6 is coming, we know it very well, 'cause we're strongly waiting for features like described here.",
-        "coverImage": "./images/svg-code.jpg",
-        "coverAlt": "You can use express tags… TODAY!",
-        "tags": [
-          {
-            "key": "html",
-            "label": "Html",
-            "url": "./tags/html.html"
-          },
-          {
-            "key": "css",
-            "label": "Css",
-            "url": "./tags/css.html"
-          }
-        ],
-        "pinned": false
-      }
-    ],
-    "name": "February 2022",
-    "number": 2,
-    "slug": "2022-02",
-    "url": "./months/2022-02.html",
-    "count": 1,
-    "from": "2022-02-25T00:00:00.000Z",
-    "to": "2022-02-25T00:00:00.000Z"
-  },
-  {
-    "key": "2022-03",
-    "label": "March 2022",
-    "year": 2022,
-    "month": 3,
-    "posts": [
-      {
-        "name": "2022-03-03-custom-grid-system",
-        "title": "Custom Grid System",
-        "date": "2022-03-03T14:41:22.000Z",
-        "dateString": "Thu Mar 03 2022",
-        "path": "./src/posts/2022-03-03-custom-grid-system.html",
-        "url": "/posts/2022-03-03-custom-grid-system/",
-        "excerpt": "Blog under construction",
-        "coverImage": "./images/alexandr-podvalny-220262-unsplash.jpg",
-        "coverAlt": "Custom Grid System",
-        "tags": [
-          {
-            "key": "markdown",
-            "label": "Markdown",
-            "url": "./tags/markdown.html"
-          },
-          {
-            "key": "releases",
-            "label": "Releases",
-            "url": "./tags/releases.html"
-          }
-        ],
-        "pinned": false
-      },
-      {
-        "name": "2022-03-03-marked-markdown-parser",
-        "title": "Marked - Markdown Parser",
-        "date": "2022-03-03T15:41:22.000Z",
-        "dateString": "Thu Mar 03 2022",
-        "path": "./src/posts/2022-03-03-marked-markdown-parser.html",
-        "url": "/posts/2022-03-03-marked-markdown-parser/",
-        "excerpt": "How To Use The Demo",
-        "coverImage": null,
-        "coverAlt": "Marked - Markdown Parser",
-        "tags": [],
-        "pinned": false
-      },
-      {
-        "name": "2022-03-12-you-can-edit-css",
-        "title": "You can edit CSS",
-        "date": "2022-03-12T00:00:00.000Z",
-        "dateString": "Sat Mar 12 2022",
-        "path": "./src/posts/2022-03-12-you-can-edit-css.html",
-        "url": "/posts/2022-03-12-you-can-edit-css/",
-        "excerpt": "You can edit CSS",
-        "coverImage": null,
-        "coverAlt": "You can edit CSS",
-        "tags": [
-          {
-            "key": "markdown",
-            "label": "Markdown",
-            "url": "./tags/markdown.html"
-          },
-          {
-            "key": "cover-image",
-            "label": "Cover-image",
-            "url": "./tags/cover-image.html"
-          }
-        ],
-        "pinned": false
-      },
-      {
-        "name": "2022-03-16-test-codepen",
-        "title": "Testing CodePen",
-        "date": "2022-03-16T00:00:00.000Z",
-        "dateString": "Wed Mar 16 2022",
-        "path": "./src/posts/2022-03-16-test-codepen.html",
-        "url": "/posts/2022-03-16-test-codepen/",
-        "excerpt": "See the Pen <a href='https://codepen.io/blackmirror1980/pen/aPRXzv'>Pure CSS Slider using Scroll-Snap</a> by blackmirror1980 (<a href='https://codepen.io/blackmirror1980'>@blackmir",
-        "coverImage": null,
-        "coverAlt": "Testing CodePen",
-        "tags": [
-          {
-            "key": "markdown",
-            "label": "Markdown",
-            "url": "./tags/markdown.html"
-          },
-          {
-            "key": "cover-image",
-            "label": "Cover-image",
-            "url": "./tags/cover-image.html"
-          }
-        ],
-        "pinned": false
-      },
-      {
-        "name": "2022-03-18-css-properties-hierarchy",
-        "title": "CSS Properties Hierarchy",
-        "date": "2022-03-18T00:00:00.000Z",
-        "dateString": "Fri Mar 18 2022",
-        "path": "./src/posts/2022-03-18-css-properties-hierarchy.html",
-        "url": "/posts/2022-03-18-css-properties-hierarchy/",
-        "excerpt": ":root { --border-radius: 5px; } .element { /* css custom properties */ --var--example: 1; ​ /* position */ position: absolute; inset: 0; /* top, right, bottom, left */ z-index: 1; ",
-        "coverImage": null,
-        "coverAlt": "CSS Properties Hierarchy",
-        "tags": [
-          {
-            "key": "html",
-            "label": "Html",
-            "url": "./tags/html.html"
-          },
-          {
-            "key": "css",
-            "label": "Css",
-            "url": "./tags/css.html"
-          }
-        ],
-        "pinned": false
-      },
-      {
-        "name": "2022-03-21-building-dout-dev-blog",
-        "title": "Building dout.dev blog",
-        "date": "2022-03-21T00:00:00.000Z",
-        "dateString": "Mon Mar 21 2022",
-        "path": "./src/posts/2022-03-21-building-dout-dev-blog.html",
-        "url": "/posts/2022-03-21-building-dout-dev-blog/",
-        "excerpt": "Less is more!",
-        "coverImage": "../assets/images/building-dout-dev-cover.jpg",
-        "coverWidth": 1600,
-        "coverHeight": 900,
-        "coverAlt": "Dashboard notes and publishing pipeline artwork for the dout.dev build article",
-        "tags": [
-          {
-            "key": "html",
-            "label": "Html",
-            "url": "./tags/html.html"
-          }
-        ],
-        "pinned": false
-      },
-      {
-        "name": "2022-03-22-building-dout-dev-blog-part-2",
-        "title": "Building dout.dev blog - Part II",
-        "date": "2022-03-22T00:00:00.000Z",
-        "dateString": "Tue Mar 22 2022",
-        "path": "./src/posts/2022-03-22-building-dout-dev-blog-part-2.html",
-        "url": "/posts/2022-03-22-building-dout-dev-blog-part-2/",
-        "excerpt": "Building dout.dev blog - Part II",
-        "coverImage": "../assets/images/building-dout-dev-cover.jpg",
-        "coverWidth": 1600,
-        "coverHeight": 900,
-        "coverAlt": "Editorial system illustration used to test article cover rendering",
-        "tags": [
-          {
-            "key": "html",
-            "label": "Html",
-            "url": "./tags/html.html"
-          }
-        ],
-        "pinned": false
-      },
-      {
-        "name": "2022-03-24-welcome-to-dout-dev",
-        "title": "Welcome to dout.dev",
-        "date": "2022-03-24T00:00:00.000Z",
-        "dateString": "Thu Mar 24 2022",
-        "path": "./src/posts/2022-03-24-welcome-to-dout-dev.html",
-        "url": "/posts/2022-03-24-welcome-to-dout-dev/",
-        "excerpt": "Hi, I'm Emiliano \"Pixu\" Pisu.",
-        "coverImage": null,
-        "coverAlt": "Welcome to dout.dev",
-        "tags": [
-          {
-            "key": "generic",
-            "label": "Generic",
-            "url": "./tags/generic.html"
-          }
-        ],
-        "pinned": false
-      },
-      {
-        "name": "2022-03-25-concerning",
-        "title": "Concerning…",
-        "date": "2022-03-25T00:00:00.000Z",
-        "dateString": "Fri Mar 25 2022",
-        "path": "./src/posts/2022-03-25-concerning.html",
-        "url": "/posts/2022-03-25-concerning/",
-        "excerpt": "Concerning Core Web Technologies",
-        "coverImage": null,
-        "coverAlt": "Concerning…",
-        "tags": [
-          {
-            "key": "generic",
-            "label": "Generic",
-            "url": "./tags/generic.html"
-          }
-        ],
-        "pinned": false
-      }
-    ],
-    "name": "March 2022",
-    "number": 3,
-    "slug": "2022-03",
-    "url": "./months/2022-03.html",
-    "count": 9,
-    "from": "2022-03-03T14:41:22.000Z",
-    "to": "2022-03-25T00:00:00.000Z"
-  },
-  {
-    "key": "2023-01",
-    "label": "January 2023",
-    "year": 2023,
-    "month": 1,
-    "posts": [
-      {
-        "name": "2023-01-01-say-hello-2023",
-        "title": "Say hello to 2023 🎉",
-        "date": "2023-01-01T14:41:22.000Z",
-        "dateString": "Sun Jan 01 2023",
-        "path": "./src/posts/2023-01-01-say-hello-2023.html",
-        "url": "/posts/2023-01-01-say-hello-2023/",
-        "excerpt": "Say hello to 2023 🎉",
-        "coverImage": "../assets/images/2022-02-25-you-can-express-tags-today.jpg",
-        "coverWidth": 1600,
-        "coverHeight": 900,
-        "coverAlt": "Say hello to 2023 🎉",
-        "tags": [
-          {
-            "key": "markdown",
-            "label": "Markdown",
-            "url": "./tags/markdown.html"
-          },
-          {
-            "key": "releases",
-            "label": "Releases",
-            "url": "./tags/releases.html"
-          }
-        ],
-        "pinned": false
-      }
-    ],
-    "name": "January 2023",
-    "number": 1,
-    "slug": "2023-01",
-    "url": "./months/2023-01.html",
-    "count": 1,
-    "from": "2023-01-01T14:41:22.000Z",
-    "to": "2023-01-01T14:41:22.000Z"
-  },
-  {
-    "key": "2024-05",
-    "label": "May 2024",
-    "year": 2024,
-    "month": 5,
-    "posts": [
-      {
-        "name": "2024-05-19-a11y-by-design",
-        "title": "Accessibility by Design",
-        "date": "2024-05-19T00:41:22.000Z",
-        "dateString": "Sun May 19 2024",
-        "path": "./src/posts/2024-05-19-a11y-by-design.html",
-        "url": "/posts/2024-05-19-a11y-by-design/",
-        "excerpt": "We live in an era where technology permeates every aspect of our daily lives. However, not everyone can benefit equally from these advancements. This is where Accessibility by Desi",
-        "coverImage": "../assets/images/a11y-by-design-cover.jpg",
-        "coverWidth": 1600,
-        "coverHeight": 900,
-        "coverAlt": "Green accessibility-themed cover used to validate article hero readability and contrast",
-        "tags": [
-          {
-            "key": "a11y",
-            "label": "A11y",
-            "url": "./tags/a11y.html"
-          },
-          {
-            "key": "design",
-            "label": "Design",
-            "url": "./tags/design.html"
-          },
-          {
-            "key": "responsive",
-            "label": "Responsive",
-            "url": "./tags/responsive.html"
-          }
-        ],
-        "pinned": false
-      }
-    ],
-    "name": "May 2024",
-    "number": 5,
-    "slug": "2024-05",
-    "url": "./months/2024-05.html",
-    "count": 1,
-    "from": "2024-05-19T00:41:22.000Z",
-    "to": "2024-05-19T00:41:22.000Z"
-  },
-  {
-    "key": "2024-10",
-    "label": "October 2024",
-    "year": 2024,
-    "month": 10,
-    "posts": [
-      {
-        "name": "2024-10-28-concerning-css-grid",
-        "title": "Introducing CSS Grid - The Future of Web Layout 🎨",
-        "date": "2024-10-28T10:00:00.000Z",
-        "dateString": "Mon Oct 28 2024",
-        "path": "./src/posts/2024-10-28-concerning-css-grid.html",
-        "url": "/posts/2024-10-28-concerning-css-grid/",
-        "excerpt": "What is CSS Grid and why is it important?",
-        "coverImage": "../assets/images/css-grid-cover.jpg",
-        "coverWidth": 1600,
-        "coverHeight": 900,
-        "coverAlt": "Introducing CSS Grid - The Future of Web Layout 🎨",
-        "tags": [
-          {
-            "key": "css",
-            "label": "Css",
-            "url": "./tags/css.html"
-          },
-          {
-            "key": "web-design",
-            "label": "Web-design",
-            "url": "./tags/web-design.html"
-          },
-          {
-            "key": "frontend",
-            "label": "Frontend",
-            "url": "./tags/frontend.html"
-          },
-          {
-            "key": "grid-layout",
-            "label": "Grid-layout",
-            "url": "./tags/grid-layout.html"
-          }
-        ],
-        "pinned": false
-      }
-    ],
-    "name": "October 2024",
-    "number": 10,
-    "slug": "2024-10",
-    "url": "./months/2024-10.html",
-    "count": 1,
-    "from": "2024-10-28T10:00:00.000Z",
-    "to": "2024-10-28T10:00:00.000Z"
-  },
-  {
-    "key": "2024-12",
-    "label": "December 2024",
-    "year": 2024,
-    "month": 12,
-    "posts": [
-      {
-        "name": "2024-12-27-m4-template-test",
-        "title": "M4 Template Test - Cover Image e Syntax Highlighting",
-        "date": "2024-12-27T10:00:00.000Z",
-        "dateString": "Fri Dec 27 2024",
-        "path": "./src/posts/2024-12-27-m4-template-test.html",
-        "url": "/posts/2024-12-27-m4-template-test/",
-        "excerpt": "Questo è un post di test per verificare tutte le funzionalità implementate nel M4 - Post Page.",
-        "coverImage": "../assets/images/alexandr-podvalny-220262-unsplash.jpg",
-        "coverWidth": 1600,
-        "coverHeight": 900,
-        "coverAlt": "M4 Template Test - Cover Image e Syntax Highlighting",
-        "tags": [
-          {
-            "key": "test",
-            "label": "Test",
-            "url": "./tags/test.html"
-          },
-          {
-            "key": "m4",
-            "label": "M4",
-            "url": "./tags/m4.html"
-          },
-          {
-            "key": "syntax-highlight-element",
-            "label": "Syntax-highlight-element",
-            "url": "./tags/syntax-highlight-element.html"
-          },
-          {
-            "key": "cover-image",
-            "label": "Cover-image",
-            "url": "./tags/cover-image.html"
-          }
-        ],
-        "pinned": true
-      }
-    ],
-    "name": "December 2024",
-    "number": 12,
-    "slug": "2024-12",
-    "url": "./months/2024-12.html",
-    "count": 1,
-    "from": "2024-12-27T10:00:00.000Z",
-    "to": "2024-12-27T10:00:00.000Z"
-  },
-  {
-    "key": "2026-03",
-    "label": "March 2026",
-    "year": 2026,
-    "month": 3,
-    "posts": [
-      {
-        "name": "2026-03-31-welcome-to-dout-dev",
-        "title": "Welcome to dout.dev",
-        "date": "2026-03-31T00:00:00.000Z",
-        "dateString": "Tue Mar 31 2026",
-        "path": "./src/posts/2026-03-31-welcome-to-dout-dev.html",
-        "url": "/posts/2026-03-31-welcome-to-dout-dev/",
-        "excerpt": "Welcome to the New dout.dev",
-        "coverImage": null,
-        "coverAlt": "Welcome to dout.dev",
-        "tags": [
-          {
-            "key": "blog",
-            "label": "Blog",
-            "url": "./tags/blog.html"
-          },
-          {
-            "key": "welcome",
-            "label": "Welcome",
-            "url": "./tags/welcome.html"
-          },
-          {
-            "key": "vanilla-js",
-            "label": "Vanilla-js",
-            "url": "./tags/vanilla-js.html"
-          }
-        ],
-        "pinned": true
-      }
-    ],
-    "name": "March 2026",
-    "number": 3,
-    "slug": "2026-03",
-    "url": "./months/2026-03.html",
-    "count": 1,
-    "from": "2026-03-31T00:00:00.000Z",
-    "to": "2026-03-31T00:00:00.000Z"
-  },
-  {
     "key": "2026-04",
     "label": "April 2026",
     "year": 2026,
@@ -742,12 +12,15 @@
         "dateString": "Sat Apr 04 2026",
         "path": "./src/posts/2026-04-04-how-i-built-dout-dev.html",
         "url": "/posts/2026-04-04-how-i-built-dout-dev/",
-        "excerpt": "The Goal: an editorial blog without runtime ballast",
-        "coverImage": "../assets/images/how-dout-dev-is-built-cover.jpg",
-        "coverWidth": 1600,
-        "coverHeight": 900,
-        "coverAlt": "Blue cover artwork titled How This Blog Is Built, used for the dout.dev making-of article",
+        "excerpt": "What the stack is, exactly",
+        "coverImage": null,
+        "coverAlt": "How I Built dout.dev",
         "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
           {
             "key": "architecture",
             "label": "Architecture",
@@ -757,35 +30,30 @@
             "key": "static-site",
             "label": "Static-site",
             "url": "./tags/static-site.html"
-          },
-          {
-            "key": "design-systems",
-            "label": "Design-systems",
-            "url": "./tags/design-systems.html"
-          },
-          {
-            "key": "accessibility",
-            "label": "Accessibility",
-            "url": "./tags/accessibility.html"
           }
         ],
-        "pinned": false
+        "pinned": true
       },
       {
-        "name": "2026-04-21-when-markdown-is-a-cms-and-when-it-is-not",
-        "title": "When Markdown Is a CMS, and When It Is Not",
+        "name": "2026-04-21-cms-and-markdown-processing",
+        "title": "CMS and Markdown Processing",
         "date": "2026-04-21T00:00:00.000Z",
         "dateString": "Tue Apr 21 2026",
-        "path": "./src/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html",
-        "url": "/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not/",
+        "path": "./src/posts/2026-04-21-cms-and-markdown-processing.html",
+        "url": "/posts/2026-04-21-cms-and-markdown-processing/",
         "excerpt": "The useful distinction",
         "coverImage": null,
-        "coverAlt": "When Markdown Is a CMS, and When It Is Not",
+        "coverAlt": "CMS and Markdown Processing",
         "tags": [
           {
-            "key": "architecture",
-            "label": "Architecture",
-            "url": "./tags/architecture.html"
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "cms",
+            "label": "Cms",
+            "url": "./tags/cms.html"
           },
           {
             "key": "markdown",
@@ -801,25 +69,30 @@
         "pinned": false
       },
       {
-        "name": "2026-04-22-how-to-write-agent-skills",
-        "title": "How to Write Agent Skills That Actually Trigger",
-        "date": "2026-04-22T00:00:00.000Z",
-        "dateString": "Wed Apr 22 2026",
-        "path": "./src/posts/2026-04-22-how-to-write-agent-skills.html",
-        "url": "/posts/2026-04-22-how-to-write-agent-skills/",
-        "excerpt": "The mistake most people make",
+        "name": "2026-04-28-rebuilding-dout-dev-with-ai-copilot",
+        "title": "Rebuilding dout.dev in Weeks With an AI Copilot",
+        "date": "2026-04-28T00:00:00.000Z",
+        "dateString": "Tue Apr 28 2026",
+        "path": "./src/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html",
+        "url": "/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot/",
+        "excerpt": "The honest framing",
         "coverImage": null,
-        "coverAlt": "How to Write Agent Skills That Actually Trigger",
+        "coverAlt": "Rebuilding dout.dev in Weeks With an AI Copilot",
         "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
           {
             "key": "ai-copilot",
             "label": "Ai-copilot",
             "url": "./tags/ai-copilot.html"
           },
           {
-            "key": "architecture",
-            "label": "Architecture",
-            "url": "./tags/architecture.html"
+            "key": "workflow",
+            "label": "Workflow",
+            "url": "./tags/workflow.html"
           }
         ],
         "pinned": false
@@ -831,6 +104,526 @@
     "url": "./months/2026-04.html",
     "count": 3,
     "from": "2026-04-04T00:00:00.000Z",
-    "to": "2026-04-22T00:00:00.000Z"
+    "to": "2026-04-28T00:00:00.000Z"
+  },
+  {
+    "key": "2026-05",
+    "label": "May 2026",
+    "year": 2026,
+    "month": 5,
+    "posts": [
+      {
+        "name": "2026-05-05-why-no-astro-eleventy-next",
+        "title": "Why I Skipped Astro, Eleventy and Next for My Blog",
+        "date": "2026-05-05T00:00:00.000Z",
+        "dateString": "Tue May 05 2026",
+        "path": "./src/posts/2026-05-05-why-no-astro-eleventy-next.html",
+        "url": "/posts/2026-05-05-why-no-astro-eleventy-next/",
+        "excerpt": "The default answer and why I ignored it",
+        "coverImage": null,
+        "coverAlt": "Why I Skipped Astro, Eleventy and Next for My Blog",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "Static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-05-12-custom-ssg-pipeline",
+        "title": "Custom SSG Pipeline: Markdown to Static HTML",
+        "date": "2026-05-12T00:00:00.000Z",
+        "dateString": "Tue May 12 2026",
+        "path": "./src/posts/2026-05-12-custom-ssg-pipeline.html",
+        "url": "/posts/2026-05-12-custom-ssg-pipeline/",
+        "excerpt": "The pipeline, in one picture",
+        "coverImage": null,
+        "coverAlt": "Custom SSG Pipeline: Markdown to Static HTML",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "Static-site",
+            "url": "./tags/static-site.html"
+          },
+          {
+            "key": "cms",
+            "label": "Cms",
+            "url": "./tags/cms.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-05-13-template-engine-and-template-structure",
+        "title": "Template Engine and Template Structure",
+        "date": "2026-05-13T00:00:00.000Z",
+        "dateString": "Wed May 13 2026",
+        "path": "./src/posts/2026-05-13-template-engine-and-template-structure.html",
+        "url": "/posts/2026-05-13-template-engine-and-template-structure/",
+        "excerpt": "Three constraints that shaped the grammar",
+        "coverImage": null,
+        "coverAlt": "Template Engine and Template Structure",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "template-engine",
+            "label": "Template-engine",
+            "url": "./tags/template-engine.html"
+          },
+          {
+            "key": "html",
+            "label": "Html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-05-14-archives-tags-months-series",
+        "title": "Archives, Tags, Months, and Series",
+        "date": "2026-05-14T00:00:00.000Z",
+        "dateString": "Thu May 14 2026",
+        "path": "./src/posts/2026-05-14-archives-tags-months-series.html",
+        "url": "/posts/2026-05-14-archives-tags-months-series/",
+        "excerpt": "Three ways to slice the same posts",
+        "coverImage": null,
+        "coverAlt": "Archives, Tags, Months, and Series",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "archives",
+            "label": "Archives",
+            "url": "./tags/archives.html"
+          },
+          {
+            "key": "seo",
+            "label": "Seo",
+            "url": "./tags/seo.html"
+          },
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-05-15-progressive-enhancement-as-contract",
+        "title": "Progressive Enhancement as Contract",
+        "date": "2026-05-15T00:00:00.000Z",
+        "dateString": "Fri May 15 2026",
+        "path": "./src/posts/2026-05-15-progressive-enhancement-as-contract.html",
+        "url": "/posts/2026-05-15-progressive-enhancement-as-contract/",
+        "excerpt": "The contract",
+        "coverImage": null,
+        "coverAlt": "Progressive Enhancement as Contract",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "progressive-enhancement",
+            "label": "Progressive-enhancement",
+            "url": "./tags/progressive-enhancement.html"
+          },
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-05-16-design-tokens-before-pages",
+        "title": "Design Tokens Before Pages",
+        "date": "2026-05-16T00:00:00.000Z",
+        "dateString": "Sat May 16 2026",
+        "path": "./src/posts/2026-05-16-design-tokens-before-pages.html",
+        "url": "/posts/2026-05-16-design-tokens-before-pages/",
+        "excerpt": "The mistake I kept making",
+        "coverImage": null,
+        "coverAlt": "Design Tokens Before Pages",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "design-systems",
+            "label": "Design-systems",
+            "url": "./tags/design-systems.html"
+          },
+          {
+            "key": "css",
+            "label": "Css",
+            "url": "./tags/css.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-05-17-build-assets-pipeline",
+        "title": "Build Assets Pipeline",
+        "date": "2026-05-17T00:00:00.000Z",
+        "dateString": "Sun May 17 2026",
+        "path": "./src/posts/2026-05-17-build-assets-pipeline.html",
+        "url": "/posts/2026-05-17-build-assets-pipeline/",
+        "excerpt": "The goal",
+        "coverImage": null,
+        "coverAlt": "Build Assets Pipeline",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "build-assets",
+            "label": "Build-assets",
+            "url": "./tags/build-assets.html"
+          },
+          {
+            "key": "performance",
+            "label": "Performance",
+            "url": "./tags/performance.html"
+          },
+          {
+            "key": "images",
+            "label": "Images",
+            "url": "./tags/images.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-05-18-feeds-and-sitemaps-at-build-time",
+        "title": "Feeds and Sitemaps at Build Time",
+        "date": "2026-05-18T00:00:00.000Z",
+        "dateString": "Mon May 18 2026",
+        "path": "./src/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html",
+        "url": "/posts/2026-05-18-feeds-and-sitemaps-at-build-time/",
+        "excerpt": "The distribution minimum",
+        "coverImage": null,
+        "coverAlt": "Feeds and Sitemaps at Build Time",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "feeds",
+            "label": "Feeds",
+            "url": "./tags/feeds.html"
+          },
+          {
+            "key": "seo",
+            "label": "Seo",
+            "url": "./tags/seo.html"
+          },
+          {
+            "key": "static-site",
+            "label": "Static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-05-19-og-images-at-build-time",
+        "title": "OG Images at Build Time",
+        "date": "2026-05-19T00:00:00.000Z",
+        "dateString": "Tue May 19 2026",
+        "path": "./src/posts/2026-05-19-og-images-at-build-time.html",
+        "url": "/posts/2026-05-19-og-images-at-build-time/",
+        "excerpt": "The problem and the usual solutions",
+        "coverImage": null,
+        "coverAlt": "OG Images at Build Time",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "opengraph",
+            "label": "Opengraph",
+            "url": "./tags/opengraph.html"
+          },
+          {
+            "key": "seo",
+            "label": "Seo",
+            "url": "./tags/seo.html"
+          },
+          {
+            "key": "static-site",
+            "label": "Static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-05-20-seo-metadata-without-rituals",
+        "title": "SEO Metadata Without Rituals",
+        "date": "2026-05-20T00:00:00.000Z",
+        "dateString": "Wed May 20 2026",
+        "path": "./src/posts/2026-05-20-seo-metadata-without-rituals.html",
+        "url": "/posts/2026-05-20-seo-metadata-without-rituals/",
+        "excerpt": "The short version",
+        "coverImage": null,
+        "coverAlt": "SEO Metadata Without Rituals",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "seo",
+            "label": "Seo",
+            "url": "./tags/seo.html"
+          },
+          {
+            "key": "opengraph",
+            "label": "Opengraph",
+            "url": "./tags/opengraph.html"
+          },
+          {
+            "key": "html",
+            "label": "Html",
+            "url": "./tags/html.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-05-21-quality-gate-lint-format-verify",
+        "title": "Quality Gate: Linting, Formatting, and Verify",
+        "date": "2026-05-21T00:00:00.000Z",
+        "dateString": "Thu May 21 2026",
+        "path": "./src/posts/2026-05-21-quality-gate-lint-format-verify.html",
+        "url": "/posts/2026-05-21-quality-gate-lint-format-verify/",
+        "excerpt": "Why the gate exists",
+        "coverImage": null,
+        "coverAlt": "Quality Gate: Linting, Formatting, and Verify",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "tooling",
+            "label": "Tooling",
+            "url": "./tags/tooling.html"
+          },
+          {
+            "key": "linting",
+            "label": "Linting",
+            "url": "./tags/linting.html"
+          },
+          {
+            "key": "ci",
+            "label": "Ci",
+            "url": "./tags/ci.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-05-22-ci-cd-around-github-pages",
+        "title": "CI/CD Around GitHub Pages",
+        "date": "2026-05-22T00:00:00.000Z",
+        "dateString": "Fri May 22 2026",
+        "path": "./src/posts/2026-05-22-ci-cd-around-github-pages.html",
+        "url": "/posts/2026-05-22-ci-cd-around-github-pages/",
+        "excerpt": "The gap GitHub Pages leaves open",
+        "coverImage": null,
+        "coverAlt": "CI/CD Around GitHub Pages",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "ci",
+            "label": "Ci",
+            "url": "./tags/ci.html"
+          },
+          {
+            "key": "deployment",
+            "label": "Deployment",
+            "url": "./tags/deployment.html"
+          },
+          {
+            "key": "github-pages",
+            "label": "Github-pages",
+            "url": "./tags/github-pages.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-05-23-vibe-coding-with-rigor",
+        "title": "Vibe Coding With Rigor",
+        "date": "2026-05-23T00:00:00.000Z",
+        "dateString": "Sat May 23 2026",
+        "path": "./src/posts/2026-05-23-vibe-coding-with-rigor.html",
+        "url": "/posts/2026-05-23-vibe-coding-with-rigor/",
+        "excerpt": "The term I am reclaiming",
+        "coverImage": null,
+        "coverAlt": "Vibe Coding With Rigor",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "workflow",
+            "label": "Workflow",
+            "url": "./tags/workflow.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "May 2026",
+    "number": 5,
+    "slug": "2026-05",
+    "url": "./months/2026-05.html",
+    "count": 13,
+    "from": "2026-05-05T00:00:00.000Z",
+    "to": "2026-05-23T00:00:00.000Z"
+  },
+  {
+    "key": "2026-06",
+    "label": "June 2026",
+    "year": 2026,
+    "month": 6,
+    "posts": [
+      {
+        "name": "2026-06-02-modern-css-is-enough",
+        "title": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
+        "date": "2026-06-02T00:00:00.000Z",
+        "dateString": "Tue Jun 02 2026",
+        "path": "./src/posts/2026-06-02-modern-css-is-enough.html",
+        "url": "/posts/2026-06-02-modern-css-is-enough/",
+        "excerpt": "The short version",
+        "coverImage": null,
+        "coverAlt": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
+        "tags": [
+          {
+            "key": "css",
+            "label": "Css",
+            "url": "./tags/css.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-06-09-wcag-22-aa-without-aria-spam",
+        "title": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
+        "date": "2026-06-09T00:00:00.000Z",
+        "dateString": "Tue Jun 09 2026",
+        "path": "./src/posts/2026-06-09-wcag-22-aa-without-aria-spam.html",
+        "url": "/posts/2026-06-09-wcag-22-aa-without-aria-spam/",
+        "excerpt": "The unpopular opinion",
+        "coverImage": null,
+        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "html",
+            "label": "Html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "June 2026",
+    "number": 6,
+    "slug": "2026-06",
+    "url": "./months/2026-06.html",
+    "count": 2,
+    "from": "2026-06-02T00:00:00.000Z",
+    "to": "2026-06-09T00:00:00.000Z"
   }
 ]

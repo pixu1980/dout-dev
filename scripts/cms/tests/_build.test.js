@@ -11,12 +11,36 @@ import { spawn } from 'node:child_process';
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import {
+  buildSearchIndexes,
   findEligibleScheduledDrafts,
   maybePublishScheduledDrafts,
   updatePublishedFrontMatter,
 } from '../_build.js';
 
 describe('CMS - Build', () => {
+  test('buildSearchIndexes exposes only published posts to client search', () => {
+    const indexes = buildSearchIndexes({
+      posts: [
+        { name: 'published-post', published: true },
+        { name: 'draft-post', published: false },
+      ],
+      tags: [{ key: 'cms' }],
+      months: [{ key: '2026-05' }],
+      series: [{ slug: 'how-i-made-it' }],
+    });
+
+    assert.deepEqual(
+      indexes.posts.map((post) => post.name),
+      ['published-post']
+    );
+    assert.equal(indexes.posts[0].coverImage, '/assets/og/posts/published-post-card.png');
+    assert.equal(indexes.posts[0].coverWidth, 1200);
+    assert.equal(indexes.posts[0].coverHeight, 900);
+    assert.deepEqual(indexes.tags, [{ key: 'cms' }]);
+    assert.deepEqual(indexes.months, [{ key: '2026-05' }]);
+    assert.deepEqual(indexes.series, [{ slug: 'how-i-made-it' }]);
+  });
+
   test('should run build script and exit with code 0 on success', async () => {
     return new Promise((resolve, reject) => {
       const buildPath = join(process.cwd(), 'scripts', 'cms', '_build.js');

@@ -6,18 +6,18 @@
     <description>RSS feed for posts from April 2026</description>
     <atom:link href="https://dout.dev/months/2026-04.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Wed, 22 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>How to Write Agent Skills That Actually Trigger</title>
-      <link>https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html</guid>
-      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
-      <description>The mistake most people make</description>
+      <title>Rebuilding dout.dev in Weeks With an AI Copilot</title>
+      <link>https://dout.dev/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The honest framing</description>
     </item>
     <item>
-      <title>When Markdown Is a CMS, and When It Is Not</title>
-      <link>https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</guid>
+      <title>CMS and Markdown Processing</title>
+      <link>https://dout.dev/posts/2026-04-21-cms-and-markdown-processing.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-cms-and-markdown-processing.html</guid>
       <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
       <description>The useful distinction</description>
     </item>
@@ -26,7 +26,7 @@
       <link>https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</guid>
       <pubDate>Sat, 04 Apr 2026 00:00:00 GMT</pubDate>
-      <description>The Goal: an editorial blog without runtime ballast</description>
+      <description>What the stack is, exactly</description>
     </item>
   </channel>
 </rss>

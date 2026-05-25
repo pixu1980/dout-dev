@@ -24,12 +24,15 @@ For a blog, the LCP element is almost always the post cover image or the first h
 **The cover image is eager and high-priority.**
 
 ```html
-<img src="/assets/images/cover.jpg"
-     alt="…"
-     width="1200" height="630"
-     loading="eager"
-     fetchpriority="high"
-     decoding="async" />
+<img
+  src="/assets/images/cover.jpg"
+  alt="…"
+  width="1200"
+  height="630"
+  loading="eager"
+  fetchpriority="high"
+  decoding="async"
+/>
 ```
 
 Default `loading="lazy"` on the LCP image delays the one number that most affects the score. `fetchpriority="high"` moves the image up in the network queue. Both are opt-in changes from the default behavior, and both are measurable.
@@ -37,8 +40,7 @@ Default `loading="lazy"` on the LCP image delays the one number that most affect
 **The font that renders the LCP text is preloaded.**
 
 ```html
-<link rel="preload" as="font" type="font/woff2"
-      href="/assets/fonts/Inter-Bold.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Inter-Bold.woff2" crossorigin />
 ```
 
 Without preload, the font is discovered when the CSS parses the `@font-face` rule, which is at least one round trip later. Preloading the weight used in the LCP heading saves a round trip and prevents the "invisible text" flash while the font arrives.

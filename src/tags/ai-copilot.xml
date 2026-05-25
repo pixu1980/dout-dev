@@ -6,13 +6,20 @@
     <description>RSS feed for posts tagged with Ai-copilot</description>
     <atom:link href="https://dout.dev/tags/ai-copilot.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Wed, 22 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>How to Write Agent Skills That Actually Trigger</title>
-      <link>https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-04-22-how-to-write-agent-skills.html</guid>
-      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
-      <description>The mistake most people make</description>
+      <title>Vibe Coding With Rigor</title>
+      <link>https://dout.dev/posts/2026-05-23-vibe-coding-with-rigor.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-23-vibe-coding-with-rigor.html</guid>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
+      <description>The term I am reclaiming</description>
+    </item>
+    <item>
+      <title>Rebuilding dout.dev in Weeks With an AI Copilot</title>
+      <link>https://dout.dev/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The honest framing</description>
     </item>
   </channel>
 </rss>

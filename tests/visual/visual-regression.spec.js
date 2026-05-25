@@ -15,7 +15,7 @@ const ROUTES = [
   { name: 'home', path: '/' },
   { name: 'archive', path: '/archive.html' },
   { name: 'privacy', path: '/privacy.html' },
-  { name: 'post', path: '/posts/2022-03-24-welcome-to-dout-dev.html' },
+  { name: 'post', path: '/posts/2026-05-23-vibe-coding-with-rigor.html' },
 ];
 
 test.beforeEach(async ({ context, page }) => {

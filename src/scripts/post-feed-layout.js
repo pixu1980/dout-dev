@@ -35,7 +35,7 @@ function scheduleFrame(callback) {
 }
 
 function resetFeedLayout(feed) {
-  feed.querySelectorAll('[data-post-feed-item], .post-feed__item').forEach((item) => {
+  feed.querySelectorAll('[data-post-feed-item]').forEach((item) => {
     item.style.removeProperty('grid-row-end');
   });
 }
@@ -54,7 +54,8 @@ function refreshPostFeedLayouts() {
   }
 
   scheduleFrame(() => {
-    document.querySelectorAll(POST_FEED_SELECTOR).forEach((feed) => {
+    const main = document.body?.querySelector(':scope > [data-site-main]') || document;
+    main.querySelectorAll(POST_FEED_SELECTOR).forEach((feed) => {
       refreshSingleFeed(feed);
     });
   });

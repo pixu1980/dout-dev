@@ -108,7 +108,7 @@ describe('AccentColorSelector', () => {
     const element = mountSelector();
     const activeButton = element.querySelector('[data-accent="mint"]');
 
-    assert.equal(element.querySelectorAll('.accent-button').length, 5);
+    assert.equal(element.querySelectorAll('[data-accent-button]').length, 5);
     assert.equal(activeButton.getAttribute('aria-checked'), 'true');
     assert.equal(activeButton.tabIndex, 0);
     assert.equal(document.documentElement.style.getPropertyValue('--dout--accent-h'), '145');
@@ -167,13 +167,15 @@ describe('AccentColorSelector', () => {
 
     assert.equal(document.adoptedStyleSheets.length, 1);
     assert.ok(
-      document.adoptedStyleSheets[0].cssText.includes('accent-color-selector .accent-selector')
+      document.adoptedStyleSheets[0].cssText.includes(
+        'accent-color-selector [data-accent-selector]'
+      )
     );
     assert.ok(
       componentSource.includes("import cssText from 'bundle-text:./AccentColorSelector.css';")
     );
     assert.ok(componentSource.includes('static {'));
-    assert.ok(componentCss.includes('accent-color-selector .accent-selector'));
+    assert.ok(componentCss.includes('accent-color-selector [data-accent-selector]'));
     assert.ok(!componentCss.includes(':host'));
   });
 });

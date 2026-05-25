@@ -95,7 +95,9 @@ function sanitizeIframe(element) {
     return;
   }
 
-  element.classList.add('embed-frame', 'embed-frame--codepen');
+  element.removeAttribute('class');
+  element.dataset.embedFrame = '';
+  element.dataset.embedProvider = 'codepen';
   element.setAttribute('loading', element.getAttribute('loading') || 'lazy');
   element.setAttribute('referrerpolicy', 'no-referrer');
   element.setAttribute('sandbox', 'allow-popups allow-same-origin allow-scripts');

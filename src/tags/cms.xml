@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dout.dev — Cms</title>
+    <link>https://dout.dev/tags/cms/</link>
+    <description>RSS feed for posts tagged with Cms</description>
+    <atom:link href="https://dout.dev/tags/cms.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 12 May 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Custom SSG Pipeline: Markdown to Static HTML</title>
+      <link>https://dout.dev/posts/2026-05-12-custom-ssg-pipeline.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-12-custom-ssg-pipeline.html</guid>
+      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+      <description>The pipeline, in one picture</description>
+    </item>
+    <item>
+      <title>CMS and Markdown Processing</title>
+      <link>https://dout.dev/posts/2026-04-21-cms-and-markdown-processing.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-cms-and-markdown-processing.html</guid>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The useful distinction</description>
+    </item>
+  </channel>
+</rss>

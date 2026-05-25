@@ -1,9 +1,11 @@
 import assert from 'node:assert';
 import { describe, test } from 'node:test';
 import {
+  buildPostSeriesNavigation,
   buildPostFeedLoadMoreConfig,
   generatePages,
   getHomePageFeedModel,
+  withPostMediaFallback,
 } from '../_page-generator.js';
 
 describe('page-generator', () => {
@@ -131,6 +133,60 @@ describe('page-generator', () => {
     assert.strictEqual(result.loadMore, null);
   });
 
+  test('getHomePageFeedModel exposes three featured posts when enough published posts exist', () => {
+    const posts = [
+      { name: 'older-pinned', published: true, pinned: true, date: '2024-01-01T00:00:00.000Z' },
+      { name: 'latest', published: true, pinned: false, date: '2024-06-01T00:00:00.000Z' },
+      { name: 'middle', published: true, pinned: false, date: '2024-03-01T00:00:00.000Z' },
+      { name: 'older', published: true, pinned: false, date: '2024-02-01T00:00:00.000Z' },
+      { name: 'draft', published: false, pinned: true, date: '2024-07-01T00:00:00.000Z' },
+    ];
+
+    const result = getHomePageFeedModel(posts);
+
+    assert.deepStrictEqual(
+      result.featuredPosts.map((post) => post.name),
+      ['older-pinned', 'latest', 'middle']
+    );
+    assert.strictEqual(result.featuredPost?.name, 'older-pinned');
+  });
+
+  test('buildPostSeriesNavigation creates linked series items and marks the current post', () => {
+    const series = [
+      {
+        slug: 'how-i-made-it',
+        title: 'How I made it',
+        posts: [
+          { name: 'intro', title: 'Intro' },
+          { name: 'current', title: 'Current' },
+          { name: 'next', title: 'Next' },
+        ],
+      },
+    ];
+
+    const navigation = buildPostSeriesNavigation(series, {
+      name: 'current',
+      series: 'How I made it',
+    });
+
+    assert.deepStrictEqual(navigation, [
+      {
+        slug: 'how-i-made-it',
+        title: 'How I made it',
+        posts: [
+          { current: false, label: 'Intro', title: 'Intro', url: '/posts/intro.html' },
+          {
+            current: true,
+            label: 'Current (you are here)',
+            title: 'Current',
+            url: '/posts/current.html',
+          },
+          { current: false, label: 'Next', title: 'Next', url: '/posts/next.html' },
+        ],
+      },
+    ]);
+  });
+
   test('buildPostFeedLoadMoreConfig returns config only when a list exceeds the initial batch', () => {
     assert.strictEqual(buildPostFeedLoadMoreConfig(10, { initialCount: 10 }), null);
     assert.deepStrictEqual(buildPostFeedLoadMoreConfig(21, { initialCount: 20 }), {
@@ -138,5 +194,30 @@ describe('page-generator', () => {
       step: 10,
       buttonLabel: 'Load 10 more posts',
     });
+  });
+
+  test('withPostMediaFallback uses generated OG card image when a post has no cover', () => {
+    const result = withPostMediaFallback({ name: 'example-post', title: 'Example Post' });
+
+    assert.strictEqual(result.coverImage, '/assets/og/posts/example-post-card.png');
+    assert.strictEqual(result.coverWidth, 1200);
+    assert.strictEqual(result.coverHeight, 900);
+    assert.strictEqual(result.coverAlt, 'Preview image for Example Post');
+  });
+
+  test('withPostMediaFallback preserves authored cover images', () => {
+    const result = withPostMediaFallback({
+      name: 'example-post',
+      title: 'Example Post',
+      coverImage: '/assets/images/example.jpg',
+      coverWidth: 1600,
+      coverHeight: 1200,
+      coverAlt: 'Author cover',
+    });
+
+    assert.strictEqual(result.coverImage, '/assets/images/example.jpg');
+    assert.strictEqual(result.coverWidth, 1600);
+    assert.strictEqual(result.coverHeight, 1200);
+    assert.strictEqual(result.coverAlt, 'Author cover');
   });
 });

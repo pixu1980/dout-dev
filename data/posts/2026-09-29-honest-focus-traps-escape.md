@@ -173,9 +173,7 @@ class Overlay {
   }
 
   getFocusables() {
-    return this.root.querySelectorAll(
-      'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'
-    );
+    return this.root.querySelectorAll('a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])');
   }
 }
 ```

@@ -110,7 +110,7 @@ describe('PostFeedLayoutSelector', () => {
 
     assert.equal(customElements.get('post-feed-layout-selector'), PostFeedLayoutSelector);
     assert.deepEqual(LAYOUTS, ['list', 'grid']);
-    assert.equal(element.querySelectorAll('.post-feed-layout__button').length, 2);
+    assert.equal(element.querySelectorAll('[data-post-feed-layout-button]').length, 2);
     assert.equal(document.documentElement.dataset.postFeedLayout, DEFAULT_LAYOUT);
   });
 
@@ -154,12 +154,12 @@ describe('PostFeedLayoutSelector', () => {
     assert.equal(document.adoptedStyleSheets.length, 1);
     assert.ok(
       document.adoptedStyleSheets[0].cssText.includes(
-        'post-feed-layout-selector .post-feed-layout__button'
+        'post-feed-layout-selector [data-post-feed-layout-button]'
       )
     );
     assert.ok(
       componentSource.includes("import cssText from 'bundle-text:./PostFeedLayoutSelector.css';")
     );
-    assert.ok(componentCss.includes('post-feed-layout-selector .post-feed-layout__group'));
+    assert.ok(componentCss.includes('post-feed-layout-selector [data-post-feed-layout-group]'));
   });
 });

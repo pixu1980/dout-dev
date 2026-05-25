@@ -21,9 +21,7 @@ function formatRemainingLabel(baseLabel, remaining, step) {
 }
 
 function getFeedItems(feed) {
-  return Array.from(feed.children).filter((item) =>
-    item.matches('[data-post-feed-item], .post-feed__item')
-  );
+  return Array.from(feed.children).filter((item) => item.matches('[data-post-feed-item]'));
 }
 
 function updateFeed(state) {
@@ -51,7 +49,8 @@ function createControls(feed, baseLabel) {
 
   const button = document.createElement('button');
   button.type = 'button';
-  button.className = 'button button--ghost';
+  button.dataset.button = '';
+  button.dataset.buttonVariant = 'ghost';
   button.textContent = baseLabel;
 
   controls.append(status, button);
@@ -99,7 +98,12 @@ function initPostFeedLoadMore(root = document) {
     return;
   }
 
-  const scope = root && typeof root.querySelectorAll === 'function' ? root : document;
+  const scope =
+    root === document
+      ? document.body?.querySelector(':scope > [data-site-main]') || document
+      : root && typeof root.querySelectorAll === 'function'
+        ? root
+        : document;
   scope.querySelectorAll(FEED_SELECTOR).forEach((feed) => {
     initLoadMoreFeed(feed);
   });

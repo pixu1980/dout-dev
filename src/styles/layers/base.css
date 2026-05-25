@@ -29,7 +29,7 @@
 
   small,
   time,
-  .muted {
+  [data-muted] {
     color: var(--dout--text-muted);
   }
 
@@ -65,7 +65,7 @@
 
   hr {
     border: 0;
-    border-top: 1px solid var(--dout--border);
+    border-top: var(--dout--border-width) solid var(--dout--border);
     margin: var(--dout--space-7) 0;
   }
 }

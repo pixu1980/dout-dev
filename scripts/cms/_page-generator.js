@@ -2,17 +2,18 @@
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { TemplateRenderer } from '../template-engine/index.js';
-import { getOgImagePath } from './_og-image-generator.js';
+import { getOgFallbackImagePath, getOgImagePath } from './_og-image-generator.js';
 import { ensureDir } from './_utils.js';
 
 export function generatePages(dataset, config) {
+  const presentationDataset = withDatasetPostMediaFallbacks(dataset);
   const renderer = new TemplateRenderer(process.cwd());
   // M7: generate static pages (home, about, 404, playground, offline)
-  generateStaticPages(dataset, config, renderer);
-  generatePosts(dataset.posts, config, renderer);
-  generateTags(dataset.tags, config, renderer);
-  generateMonths(dataset.months, config, renderer);
-  generateSeries(dataset.series, config, renderer);
+  generateStaticPages(presentationDataset, config, renderer);
+  generatePosts(presentationDataset.posts, config, renderer, presentationDataset.series);
+  generateTags(presentationDataset.tags, config, renderer);
+  generateMonths(presentationDataset.months, config, renderer);
+  generateSeries(presentationDataset.series, config, renderer);
 }
 
 function getSiteMeta(config) {
@@ -56,6 +57,56 @@ function toTimestamp(value) {
 
 const DEFAULT_POST_FEED_STEP = 10;
 const HOME_INITIAL_POSTS = 20;
+const HOME_FEATURED_POSTS = 3;
+const OG_FALLBACK_COVER_WIDTH = 1200;
+const OG_FALLBACK_COVER_HEIGHT = 900;
+
+export function withPostMediaFallback(post) {
+  if (!post || typeof post !== 'object') return post;
+
+  const title = post.title || post.name || 'Article';
+  const hasAuthoredCover = Boolean(post.coverImage);
+
+  if (!post.name) {
+    return {
+      ...post,
+      coverAlt: post.coverAlt || title,
+    };
+  }
+
+  return {
+    ...post,
+    coverImage: post.coverImage || getOgFallbackImagePath('post', post.name),
+    coverWidth: hasAuthoredCover ? post.coverWidth : OG_FALLBACK_COVER_WIDTH,
+    coverHeight: hasAuthoredCover ? post.coverHeight : OG_FALLBACK_COVER_HEIGHT,
+    coverAlt: post.coverAlt || (hasAuthoredCover ? title : `Preview image for ${title}`),
+  };
+}
+
+function withPostCollectionMediaFallbacks(posts) {
+  return (posts || []).map((post) => withPostMediaFallback(post));
+}
+
+function withEntryPostMediaFallbacks(entries) {
+  return (entries || []).map((entry) => {
+    if (!Array.isArray(entry?.posts)) return entry;
+
+    return {
+      ...entry,
+      posts: withPostCollectionMediaFallbacks(entry.posts),
+    };
+  });
+}
+
+export function withDatasetPostMediaFallbacks(dataset = {}) {
+  return {
+    ...dataset,
+    posts: withPostCollectionMediaFallbacks(dataset.posts),
+    tags: withEntryPostMediaFallbacks(dataset.tags),
+    months: withEntryPostMediaFallbacks(dataset.months),
+    series: withEntryPostMediaFallbacks(dataset.series),
+  };
+}
 
 function sortPostsByDateDesc(posts) {
   return (posts || [])
@@ -71,6 +122,13 @@ function sortPostsByPinnedThenDateDesc(posts) {
         Number(Boolean(right.pinned)) - Number(Boolean(left.pinned)) ||
         toTimestamp(right.date) - toTimestamp(left.date)
     );
+}
+
+function seriesSlug(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 }
 
 export function buildPostFeedLoadMoreConfig(
@@ -95,16 +153,49 @@ export function buildPostFeedLoadMoreConfig(
 export function getHomePageFeedModel(posts) {
   const published = (posts || []).filter((post) => post?.published);
   const latestPosts = sortPostsByDateDesc(published);
-  const featuredPost = sortPostsByPinnedThenDateDesc(published)[0] || null;
+  const featuredPosts = sortPostsByPinnedThenDateDesc(published).slice(0, HOME_FEATURED_POSTS);
+  const featuredPost = featuredPosts[0] || null;
 
   return {
     featuredPost,
+    featuredPosts,
     latestPosts,
     loadMore: buildPostFeedLoadMoreConfig(latestPosts.length, {
       initialCount: HOME_INITIAL_POSTS,
       step: DEFAULT_POST_FEED_STEP,
     }),
   };
+}
+
+export function buildPostSeriesNavigation(seriesEntries, currentPost) {
+  const postSeries = Array.isArray(currentPost?.series)
+    ? currentPost.series
+    : [currentPost?.series].filter(Boolean);
+  const postSeriesSlugs = new Set(postSeries.map(seriesSlug));
+
+  return (seriesEntries || [])
+    .filter(
+      (entry) => postSeriesSlugs.has(entry?.slug) || postSeriesSlugs.has(seriesSlug(entry?.title))
+    )
+    .map((entry) => ({
+      slug: entry.slug,
+      title: entry.title,
+      posts: (entry.posts || [])
+        .slice()
+        .sort((left, right) => toTimestamp(left.date) - toTimestamp(right.date))
+        .map((post) => {
+          const title = post.title || post.name;
+          const current = post.name === currentPost?.name;
+
+          return {
+            current,
+            label: current ? `${title} (you are here)` : title,
+            title,
+            url: `/posts/${post.name}.html`,
+          };
+        }),
+    }))
+    .filter((entry) => entry.posts.length > 0);
 }
 
 function stripHtml(value) {
@@ -164,7 +255,7 @@ export function getTopTags(posts, limit = 6) {
     .slice(0, limit);
 }
 
-function generatePosts(posts, config, renderer) {
+function generatePosts(posts, config, renderer, seriesEntries = []) {
   if (!posts || !Array.isArray(posts)) return;
 
   const { url } = getSiteMeta(config);
@@ -201,6 +292,7 @@ function generatePosts(posts, config, renderer) {
       .filter((p) => p.tags && post.tags && p.tags.some((tag) => post.tags.includes(tag))) // Same tags
       .slice(0, 3); // Take first 3
     const topPosts = getTopPosts(publishedPosts, post.name);
+    const seriesNavigation = buildPostSeriesNavigation(seriesEntries, post);
 
     // Use the proper post.html template
     try {
@@ -213,6 +305,7 @@ function generatePosts(posts, config, renderer) {
         description: post.excerpt || post.description,
         relatedPosts: relatedPosts, // Always provide as array
         relatedSeries: [],
+        seriesNavigation,
         topPosts,
         topTags,
         site,
@@ -618,7 +711,9 @@ function generateStaticPages(dataset, config, renderer) {
 
   // Home: latest posts by publication date, with a separate featured selection
   try {
-    const { featuredPost, latestPosts, loadMore } = getHomePageFeedModel(dataset.posts || []);
+    const { featuredPost, featuredPosts, latestPosts, loadMore } = getHomePageFeedModel(
+      dataset.posts || []
+    );
     const topTags = (dataset.tags || [])
       .slice()
       .sort((a, b) => (b.count || 0) - (a.count || 0))
@@ -633,6 +728,7 @@ function generateStaticPages(dataset, config, renderer) {
       jsonFeedUrl: joinUrl(url, getGlobalJsonFeedPath(config)),
       posts: latestPosts,
       featuredPost,
+      featuredPosts,
       loadMore,
       topTags,
       stats: {

@@ -50,17 +50,17 @@
 
   :focus-visible {
     outline: var(--dout--outline-width) solid var(--dout--accent);
-    outline-offset: 3px;
+    outline-offset: var(--dout--focus-offset);
   }
 
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
     *::after {
-      animation-duration: 0.001ms !important;
+      animation-duration: var(--dout--motion-disabled) !important;
       animation-iteration-count: 1 !important;
       scroll-behavior: auto !important;
-      transition-duration: 0.001ms !important;
+      transition-duration: var(--dout--motion-disabled) !important;
     }
   }
 }

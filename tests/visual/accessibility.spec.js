@@ -6,7 +6,10 @@ import { test } from '@playwright/test';
 
 const DIST_DIR = join(process.cwd(), 'dist');
 const WCAG_AA_TAGS = ['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'];
-const THIRD_PARTY_FRAME_SELECTORS = ['.embed-frame--codepen', 'iframe.giscus-frame'];
+const THIRD_PARTY_FRAME_SELECTORS = [
+  'iframe[data-embed-provider="codepen"]',
+  'iframe[class~="giscus-frame"]',
+];
 
 function collectHtmlRoutes(dir, routes = []) {
   for (const entry of readdirSync(dir)) {
@@ -88,11 +91,11 @@ test('interactive header states pass axe-core WCAG AA checks', async ({ page }) 
   await page.goto('/', { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(150);
 
-  await page.locator('.menu-toggle').click();
+  await page.locator('body > [data-site-header] [data-menu-toggle]').click();
   let analysis = await analyzePage(page);
   failures.push(...formatViolations('/ [mobile-nav-open]', analysis.violations));
 
-  await page.locator('.preferences-toggle').click();
+  await page.locator('body > [data-site-header] [data-preferences-toggle]').click();
   await page.waitForTimeout(150);
   analysis = await analyzePage(page);
   failures.push(...formatViolations('/ [preferences-open]', analysis.violations));

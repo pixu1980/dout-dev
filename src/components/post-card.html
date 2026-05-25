@@ -14,37 +14,39 @@
     </figure>
   </if>
 
-  <div data-post-card-body>
-    <header data-post-card-header>
-      <p data-post-card-meta>
-        <time datetime="{{ post.date | date:'YYYY-MM-DD' }}">{{ post.date | date:'long' }}</time>
-      </p>
+  <div data-post-card-content>
+    <div data-post-card-body>
+      <header data-post-card-header>
+        <p data-post-card-meta>
+          <time datetime="{{ post.date | date:'YYYY-MM-DD' }}">{{ post.date | date:'long' }}</time>
+        </p>
 
-      <switch expr="headingLevel">
-        <case value="3">
-          <h3 data-post-card-title><a href="/posts/{{ post.name }}.html">{{ post.title }}</a></h3>
-        </case>
-        <case value="4">
-          <h4 data-post-card-title><a href="/posts/{{ post.name }}.html">{{ post.title }}</a></h4>
-        </case>
-        <default>
-          <h2 data-post-card-title><a href="/posts/{{ post.name }}.html">{{ post.title }}</a></h2>
-        </default>
-      </switch>
-    </header>
+        <switch expr="headingLevel">
+          <case value="3">
+            <h3 data-post-card-title><a href="/posts/{{ post.name }}.html">{{ post.title }}</a></h3>
+          </case>
+          <case value="4">
+            <h4 data-post-card-title><a href="/posts/{{ post.name }}.html">{{ post.title }}</a></h4>
+          </case>
+          <default>
+            <h2 data-post-card-title><a href="/posts/{{ post.name }}.html">{{ post.title }}</a></h2>
+          </default>
+        </switch>
+      </header>
 
-    <if condition="showExcerpt && post.excerpt">
-      <p data-post-card-excerpt>{{ post.excerpt }}</p>
+      <if condition="showExcerpt && post.excerpt">
+        <p data-post-card-excerpt>{{ post.excerpt }}</p>
+      </if>
+    </div>
+
+    <if condition="showTags && post.tags && post.tags.length">
+      <footer data-post-card-footer>
+        <ul data-post-card-tags aria-label="Post topics">
+          <for each="t in post.tags">
+            <li><a data-tag data-tag-size="small" href="{{ t | tagHref }}">{{ t | tagLabel }}</a></li>
+          </for>
+        </ul>
+      </footer>
     </if>
   </div>
-
-  <if condition="showTags && post.tags && post.tags.length">
-    <footer data-post-card-footer>
-      <ul data-post-card-tags aria-label="Post topics">
-        <for each="t in post.tags">
-          <li><a class="tag" data-tag-size="small" href="{{ t | tagHref }}">{{ t | tagLabel }}</a></li>
-        </for>
-      </ul>
-    </footer>
-  </if>
 </article>

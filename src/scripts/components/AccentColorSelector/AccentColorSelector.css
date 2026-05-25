@@ -2,28 +2,28 @@ accent-color-selector {
   display: inline-flex;
 }
 
-accent-color-selector .accent-selector {
+accent-color-selector [data-accent-selector] {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem;
-  border: 1px solid var(--dout--border);
+  border: var(--dout--border-width) solid var(--dout--border);
   border-radius: var(--dout--radius-md);
   background: var(--dout--surface-strong);
   corner-shape: var(--dout--corner-shape);
 }
 
-accent-color-selector .accent-selector-label {
+accent-color-selector [data-accent-selector-label] {
   padding: 0 0.5rem;
   font-size: 0.875rem;
   color: var(--dout--text-muted);
   white-space: nowrap;
 }
 
-accent-color-selector .accent-button {
-  width: 2.5rem;
-  height: 2.5rem;
-  min-width: 2.5rem;
+accent-color-selector [data-accent-button] {
+  width: var(--dout--control-height-sm);
+  height: var(--dout--control-height-sm);
+  min-width: var(--dout--control-height-sm);
   padding: 0;
   border: 2px solid var(--dout--border);
   border-radius: 50%;
@@ -33,28 +33,31 @@ accent-color-selector .accent-button {
     var(--dout--accent-preview-l)
   );
   cursor: pointer;
-  transition: all 120ms ease;
+  transition:
+    transform var(--dout--motion-fast) var(--dout--motion-ease),
+    border-color var(--dout--motion-fast) var(--dout--motion-ease),
+    box-shadow var(--dout--motion-fast) var(--dout--motion-ease);
   position: relative;
 }
 
-accent-color-selector .accent-button:hover {
+accent-color-selector [data-accent-button]:hover {
   transform: scale(1.08);
   border-color: var(--dout--text-muted);
 }
 
-accent-color-selector .accent-button[aria-checked='true'] {
+accent-color-selector [data-accent-button][aria-checked='true'] {
   border-color: var(--dout--text);
   border-width: 3px;
   box-shadow: 0 0 0 2px var(--dout--surface-strong);
   transform: scale(1.1);
 }
 
-accent-color-selector .accent-button:focus-visible {
-  outline: 2px solid var(--dout--accent);
-  outline-offset: 2px;
+accent-color-selector [data-accent-button]:focus-visible {
+  outline: var(--dout--outline-width) solid var(--dout--accent);
+  outline-offset: var(--dout--focus-offset);
 }
 
-:root[data-reduce-motion='true'] accent-color-selector .accent-button:hover,
-:root[data-reduce-motion='true'] accent-color-selector .accent-button[aria-checked='true'] {
+:root[data-reduce-motion='true'] accent-color-selector [data-accent-button]:hover,
+:root[data-reduce-motion='true'] accent-color-selector [data-accent-button][aria-checked='true'] {
   transform: none;
 }

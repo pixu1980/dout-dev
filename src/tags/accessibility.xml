@@ -6,13 +6,27 @@
     <description>RSS feed for posts tagged with Accessibility</description>
     <atom:link href="https://dout.dev/tags/accessibility.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>How I Built dout.dev</title>
-      <link>https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</guid>
-      <pubDate>Sat, 04 Apr 2026 00:00:00 GMT</pubDate>
-      <description>The Goal: an editorial blog without runtime ballast</description>
+      <title>WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links</title>
+      <link>https://dout.dev/posts/2026-06-09-wcag-22-aa-without-aria-spam.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-09-wcag-22-aa-without-aria-spam.html</guid>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The unpopular opinion</description>
+    </item>
+    <item>
+      <title>Progressive Enhancement as Contract</title>
+      <link>https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html</guid>
+      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
+      <description>The contract</description>
+    </item>
+    <item>
+      <title>Archives, Tags, Months, and Series</title>
+      <link>https://dout.dev/posts/2026-05-14-archives-tags-months-series.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-14-archives-tags-months-series.html</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>Three ways to slice the same posts</description>
     </item>
   </channel>
 </rss>

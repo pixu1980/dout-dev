@@ -29,15 +29,10 @@ const RADIUS_PRESET_OPTIONS = [
 const ACCESSIBILITY_OPTIONS = [
   {
     attribute: 'data-reduce-motion',
-    description: 'Tone down movement-heavy interactions.',
-    label: 'Reduce motion',
+    description:
+      'Minimize motion-heavy interactions, animations, transitions, and smooth scrolling.',
+    label: 'Reduce Motion',
     name: 'reduceMotion',
-  },
-  {
-    attribute: 'data-reduce-animations',
-    description: 'Minimize fades, transitions, and animated reveals.',
-    label: 'Reduce animations',
-    name: 'reduceAnimations',
   },
   {
     attribute: 'data-reduce-transparency',
@@ -145,10 +140,13 @@ const DEFAULT_PREFERENCES = Object.freeze({
   headingFont: 'editorial-serif',
   increaseContrast: false,
   radiusPreset: 'rounded',
-  reduceAnimations: false,
   reduceMotion: false,
   reduceTransparency: false,
 });
+
+const LEGACY_ACCESSIBILITY_ATTRIBUTES = ['data-reduce-animations'];
+const FALLBACK_PANEL_WIDTH = 360;
+const PANEL_OFFSET = 12;
 
 let componentStyleSheet = null;
 let popoverCount = 0;
@@ -207,8 +205,7 @@ function normalizePreferences(preferences = {}) {
     headingFont: findFontOption('headingFont', candidate.headingFont).id,
     increaseContrast: candidate.increaseContrast === true,
     radiusPreset: findRadiusPreset(candidate.radiusPreset).id,
-    reduceAnimations: candidate.reduceAnimations === true,
-    reduceMotion: candidate.reduceMotion === true,
+    reduceMotion: candidate.reduceMotion === true || candidate.reduceAnimations === true,
     reduceTransparency: candidate.reduceTransparency === true,
   };
 }
@@ -260,6 +257,9 @@ function applyPreferencesToDocument(preferences) {
   ACCESSIBILITY_OPTIONS.forEach((option) => {
     toggleDocumentPreference(root, option.attribute, normalized[option.name]);
   });
+  LEGACY_ACCESSIBILITY_ATTRIBUTES.forEach((attributeName) => {
+    root.removeAttribute(attributeName);
+  });
 
   if (normalized.fontScale === DEFAULT_PREFERENCES.fontScale) {
     root.style.removeProperty('font-size');
@@ -306,15 +306,15 @@ function renderRadiusPresetControls(panelId, selectedValue) {
     const inputId = `${panelId}-radius-${option.id}`;
 
     return `
-      <label class="preferences-choice" for="${inputId}">
+      <label data-preferences-choice for="${inputId}">
         <input id="${inputId}" type="radio" name="radiusPreset" value="${option.id}"${checked} />
-        <span class="preferences-choice__preview" data-radius-preview="${option.id}" aria-hidden="true">
+        <span data-preferences-choice-preview data-radius-preview="${option.id}" aria-hidden="true">
           <span></span>
           <span></span>
         </span>
-        <span class="preferences-choice__copy">
-          <span class="preferences-choice__label">${option.label}</span>
-          <span class="preferences-choice__hint">${option.description}</span>
+        <span data-preferences-choice-copy>
+          <span data-preferences-choice-label>${option.label}</span>
+          <span data-preferences-choice-hint>${option.description}</span>
         </span>
       </label>
     `;
@@ -327,11 +327,11 @@ function renderAccessibilityOptions(panelId, preferences) {
     const inputId = `${panelId}-${option.name}`;
 
     return `
-      <div class="preferences-checkbox">
+      <div data-preferences-checkbox>
         <input id="${inputId}" type="checkbox" name="${option.name}"${checked} />
-        <label class="preferences-checkbox__copy" for="${inputId}">
-          <span class="preferences-checkbox__label">${option.label}</span>
-          <span class="preferences-checkbox__hint">${option.description}</span>
+        <label data-preferences-checkbox-copy for="${inputId}">
+          <span data-preferences-checkbox-label>${option.label}</span>
+          <span data-preferences-checkbox-hint>${option.description}</span>
         </label>
       </div>
     `;
@@ -400,10 +400,10 @@ class DisplayPreferencesPopover extends HTMLElement {
     const template = document.createElement('template');
     this.textContent = '';
     template.innerHTML = `
-      <div class="preferences-shell">
+      <div data-preferences-shell>
         <button
           type="button"
-          class="preferences-toggle"
+          data-preferences-toggle
           popovertarget="${this._panelId}"
           popovertargetaction="toggle"
           aria-controls="${this._panelId}"
@@ -414,93 +414,96 @@ class DisplayPreferencesPopover extends HTMLElement {
         >
           <svg aria-hidden="true" viewBox="0 0 24 24">
             <path
-              d="M6 9.5 12 15.5 18 9.5"
+              d="M4 7h10M18 7h2M6 17h14M4 17h2M10 12h10M4 12h2"
               fill="none"
               stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
             />
+            <circle cx="16" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="2" />
+            <circle cx="8" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="2" />
+            <circle cx="8" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="2" />
           </svg>
-          <span class="sr-only">Display preferences</span>
+          <span data-visually-hidden>Display preferences</span>
         </button>
 
         <section
           id="${this._panelId}"
-          class="preferences-panel"
+          data-preferences-panel
           popover="auto"
           role="dialog"
           tabindex="-1"
           aria-labelledby="${this._titleId}"
         >
-          <header class="preferences-panel__header">
-            <p class="preferences-panel__eyebrow">Interface settings</p>
+          <header data-preferences-panel-header>
+            <p data-preferences-panel-eyebrow>Interface settings</p>
             <h2 id="${this._titleId}">Display preferences</h2>
-            <p class="preferences-panel__lede">
+            <p data-preferences-panel-lede>
               Adjust accent color, accessibility, and typography without leaving the page.
             </p>
           </header>
 
-          <section class="preferences-group" aria-labelledby="${this._panelId}-accent">
-            <div class="preferences-group__title">
-              <h3 id="${this._panelId}-accent">Accent color</h3>
+          <section data-preferences-group aria-labelledby="${this._panelId}-accent">
+            <div data-preferences-group-title>
+              <h3 id="${this._panelId}-accent">Colors</h3>
               <p>Pick the accent palette used by buttons, links, and highlights.</p>
             </div>
             <accent-color-selector></accent-color-selector>
           </section>
 
-          <section class="preferences-group" aria-labelledby="${this._panelId}-shape">
-            <div class="preferences-group__title">
-              <h3 id="${this._panelId}-shape">Corners</h3>
-              <p>Switch between sharp, restrained, and sculpted corners with a stronger visual delta.</p>
-            </div>
-
-            <div class="preferences-choice-grid" role="radiogroup" aria-labelledby="${this._panelId}-shape">
-              ${renderRadiusPresetControls(this._panelId, this.preferences.radiusPreset)}
-            </div>
-          </section>
-
-          <fieldset class="preferences-group preferences-group--fieldset">
+          <fieldset data-preferences-group data-preferences-group-variant="fieldset">
             <legend>Accessibility</legend>
-            <div class="preferences-checklist">
+            <div data-preferences-checklist>
               ${renderAccessibilityOptions(this._panelId, this.preferences)}
             </div>
           </fieldset>
 
-          <section class="preferences-group" aria-labelledby="${this._panelId}-type">
-            <div class="preferences-group__title">
+          <section data-preferences-group aria-labelledby="${this._panelId}-type">
+            <div data-preferences-group-title>
               <h3 id="${this._panelId}-type">Typography</h3>
               <p>Tune the scale and font stacks for headings, body copy, and code blocks.</p>
             </div>
 
-            <div class="preferences-grid">
-              <div class="preferences-field">
+            <div data-preferences-grid>
+              <div data-preferences-field>
                 <label for="${this._panelId}-font-scale">Font size</label>
                 <select id="${this._panelId}-font-scale" name="fontScale">
                   ${renderScaleOptions(this.preferences.fontScale)}
                 </select>
               </div>
 
-              <div class="preferences-field">
+              <div data-preferences-field>
                 <label for="${this._panelId}-heading-font">Heading font</label>
                 <select id="${this._panelId}-heading-font" name="headingFont">
                   ${renderSelectOptions(HEADING_FONT_OPTIONS, this.preferences.headingFont)}
                 </select>
               </div>
 
-              <div class="preferences-field">
+              <div data-preferences-field>
                 <label for="${this._panelId}-body-font">Body font</label>
                 <select id="${this._panelId}-body-font" name="bodyFont">
                   ${renderSelectOptions(BODY_FONT_OPTIONS, this.preferences.bodyFont)}
                 </select>
               </div>
 
-              <div class="preferences-field">
+              <div data-preferences-field>
                 <label for="${this._panelId}-code-font">Code font</label>
                 <select id="${this._panelId}-code-font" name="codeFont">
                   ${renderSelectOptions(CODE_FONT_OPTIONS, this.preferences.codeFont)}
                 </select>
               </div>
+            </div>
+          </section>
+
+          <section data-preferences-group aria-labelledby="${this._panelId}-shape">
+            <div data-preferences-group-title>
+              <h3 id="${this._panelId}-shape">Corners</h3>
+              <p>Switch between sharp, restrained, and sculpted corners with a stronger visual delta.</p>
+            </div>
+
+            <div data-preferences-choice-grid role="radiogroup" aria-labelledby="${this._panelId}-shape">
+              ${renderRadiusPresetControls(this._panelId, this.preferences.radiusPreset)}
             </div>
           </section>
         </section>
@@ -509,8 +512,8 @@ class DisplayPreferencesPopover extends HTMLElement {
 
     this.appendChild(template.content.cloneNode(true));
 
-    this._toggleButton = this.querySelector('.preferences-toggle');
-    this._panel = this.querySelector('.preferences-panel');
+    this._toggleButton = this.querySelector('[data-preferences-toggle]');
+    this._panel = this.querySelector('[data-preferences-panel]');
     this._controls = Array.from(this.querySelectorAll('input[name], select[name]'));
     this._supportsPopover =
       typeof this._panel?.showPopover === 'function' &&
@@ -558,10 +561,10 @@ class DisplayPreferencesPopover extends HTMLElement {
       return;
     }
 
-    const spacing = 12;
+    const spacing = PANEL_OFFSET;
     const buttonRect = this._toggleButton.getBoundingClientRect();
     const panelRect = this._panel.getBoundingClientRect();
-    const panelWidth = panelRect.width || 360;
+    const panelWidth = panelRect.width || FALLBACK_PANEL_WIDTH;
     const panelHeight = panelRect.height || 0;
     const left = Math.max(
       spacing,
@@ -575,6 +578,7 @@ class DisplayPreferencesPopover extends HTMLElement {
 
     this._panel.style.left = `${Math.round(left)}px`;
     this._panel.style.top = `${Math.round(top)}px`;
+    this._panel.style.right = 'auto';
   }
 
   syncFormControls() {
@@ -587,7 +591,7 @@ class DisplayPreferencesPopover extends HTMLElement {
       if (control instanceof HTMLInputElement && control.type === 'radio') {
         control.checked = control.value === this.preferences[control.name];
         control
-          .closest('.preferences-choice')
+          .closest('[data-preferences-choice]')
           ?.setAttribute('data-selected', String(control.checked));
         return;
       }
@@ -677,16 +681,16 @@ class DisplayPreferencesPopover extends HTMLElement {
 
 export {
   ACCESSIBILITY_OPTIONS,
+  applyPreferencesToDocument,
+  BODY_FONT_OPTIONS,
   CODE_FONT_OPTIONS,
   DEFAULT_PREFERENCES,
   DisplayPreferencesPopover,
-  BODY_FONT_OPTIONS,
   FONT_SCALE_OPTIONS,
   HEADING_FONT_OPTIONS,
   RADIUS_PRESET_OPTIONS,
-  STORAGE_KEY,
-  applyPreferencesToDocument,
   readPreferences,
+  STORAGE_KEY,
 };
 
 export default DisplayPreferencesPopover;

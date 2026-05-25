@@ -55,7 +55,7 @@ function renderButtons(currentLayout) {
     return `
       <button
         type="button"
-        class="post-feed-layout__button"
+        data-post-feed-layout-button
         data-layout="${option.id}"
         aria-pressed="${pressed}"
         aria-label="${option.label} layout"
@@ -90,7 +90,7 @@ class PostFeedLayoutSelector extends HTMLElement {
     this.constructor.ensureComponentStyles();
     initPostFeedLayout();
     this.render();
-    this._buttons = Array.from(this.querySelectorAll('.post-feed-layout__button'));
+    this._buttons = Array.from(this.querySelectorAll('[data-post-feed-layout-button]'));
     this._buttons.forEach((button) => {
       button.addEventListener('click', this._onClick);
     });
@@ -112,9 +112,9 @@ class PostFeedLayoutSelector extends HTMLElement {
 
     this.textContent = '';
     template.innerHTML = `
-      <div class="post-feed-layout" role="toolbar" aria-label="Post card layout">
-        <span class="post-feed-layout__label">View</span>
-        <div class="post-feed-layout__group" role="group" aria-label="Post feed layout options">
+      <div data-post-feed-layout role="toolbar" aria-label="Post card layout">
+        <span data-post-feed-layout-label>View</span>
+        <div data-post-feed-layout-group role="group" aria-label="Post feed layout options">
           ${renderButtons(currentLayout)}
         </div>
       </div>
@@ -124,7 +124,7 @@ class PostFeedLayoutSelector extends HTMLElement {
   }
 
   syncButtons(layout) {
-    this.querySelectorAll('.post-feed-layout__button').forEach((button) => {
+    this.querySelectorAll('[data-post-feed-layout-button]').forEach((button) => {
       button.setAttribute('aria-pressed', String(button.dataset.layout === layout));
     });
   }

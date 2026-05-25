@@ -6,13 +6,20 @@
     <description>RSS feed for posts tagged with Frontend</description>
     <atom:link href="https://dout.dev/tags/frontend.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Mon, 28 Oct 2024 10:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>Introducing CSS Grid - The Future of Web Layout 🎨</title>
-      <link>https://dout.dev/posts/2024-10-28-concerning-css-grid.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2024-10-28-concerning-css-grid.html</guid>
-      <pubDate>Mon, 28 Oct 2024 10:00:00 GMT</pubDate>
-      <description>What is CSS Grid and why is it important?</description>
+      <title>WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links</title>
+      <link>https://dout.dev/posts/2026-06-09-wcag-22-aa-without-aria-spam.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-09-wcag-22-aa-without-aria-spam.html</guid>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The unpopular opinion</description>
+    </item>
+    <item>
+      <title>Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production</title>
+      <link>https://dout.dev/posts/2026-06-02-modern-css-is-enough.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-02-modern-css-is-enough.html</guid>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The short version</description>
     </item>
   </channel>
 </rss>

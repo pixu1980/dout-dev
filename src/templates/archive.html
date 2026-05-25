@@ -25,16 +25,16 @@
 </block>
 
 <block name="content">
-  <section class="page-hero" aria-labelledby="archive-title">
-    <p class="eyebrow">Archive</p>
+  <section data-page-hero aria-labelledby="archive-title">
+    <p data-eyebrow>Archive</p>
     <h1 id="archive-title">The complete dout.dev archive.</h1>
     <p>Browse everything by time, by topic, or by longer-running series.</p>
   </section>
 
-  <section class="archive-grid" aria-label="Archive navigation">
-    <article class="card archive-panel">
+  <section data-archive-grid aria-label="Archive navigation">
+    <article data-card data-archive-panel>
       <h2>By month</h2>
-      <ul class="archive-links" role="list">
+      <ul data-archive-links role="list">
         <for each="month in months">
           <li>
             <a href="/months/{{ month.slug }}.html">{{ month.name }}</a>
@@ -44,9 +44,9 @@
       </ul>
     </article>
 
-    <article class="card archive-panel">
+    <article data-card data-archive-panel>
       <h2>By topic</h2>
-      <ul class="archive-links" role="list">
+      <ul data-archive-links role="list">
         <for each="tag in tags">
           <li>
             <a href="/tags/{{ tag.slug }}.html">{{ tag.name }}</a>
@@ -56,9 +56,9 @@
       </ul>
     </article>
 
-    <article class="card archive-panel">
+    <article data-card data-archive-panel>
       <h2>By series</h2>
-      <ul class="archive-links" role="list">
+      <ul data-archive-links role="list">
         <for each="entry in series">
           <li>
             <a href="/series/{{ entry.slug }}.html">{{ entry.title }}</a>

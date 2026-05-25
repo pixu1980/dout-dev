@@ -1,116 +1,116 @@
 @layer components {
   ::highlight(pix-kw),
-  pre[is='pix-highlighter'] .pix-token--kw {
+  pre[is='pix-highlighter'] [data-pix-token='kw'] {
     color: var(--dout--pix-kw);
   }
 
   ::highlight(pix-str),
-  pre[is='pix-highlighter'] .pix-token--str {
+  pre[is='pix-highlighter'] [data-pix-token='str'] {
     color: var(--dout--pix-str);
   }
 
   ::highlight(pix-num),
-  pre[is='pix-highlighter'] .pix-token--num {
+  pre[is='pix-highlighter'] [data-pix-token='num'] {
     color: var(--dout--pix-num);
   }
 
   ::highlight(pix-com),
-  pre[is='pix-highlighter'] .pix-token--com {
+  pre[is='pix-highlighter'] [data-pix-token='com'] {
     color: var(--dout--pix-com);
   }
 
   ::highlight(pix-id),
-  pre[is='pix-highlighter'] .pix-token--id {
+  pre[is='pix-highlighter'] [data-pix-token='id'] {
     color: var(--dout--pix-id);
   }
 
   ::highlight(pix-op),
-  pre[is='pix-highlighter'] .pix-token--op {
+  pre[is='pix-highlighter'] [data-pix-token='op'] {
     color: var(--dout--pix-op);
   }
 
   ::highlight(pix-tag),
-  pre[is='pix-highlighter'] .pix-token--tag {
+  pre[is='pix-highlighter'] [data-pix-token='tag'] {
     color: var(--dout--pix-tag);
   }
 
   ::highlight(pix-attr),
-  pre[is='pix-highlighter'] .pix-token--attr {
+  pre[is='pix-highlighter'] [data-pix-token='attr'] {
     color: var(--dout--pix-attr);
   }
 
   ::highlight(pix-key),
-  pre[is='pix-highlighter'] .pix-token--key {
+  pre[is='pix-highlighter'] [data-pix-token='key'] {
     color: var(--dout--pix-key);
   }
 
   ::highlight(pix-var),
-  pre[is='pix-highlighter'] .pix-token--var {
+  pre[is='pix-highlighter'] [data-pix-token='var'] {
     color: var(--dout--pix-var);
   }
 
   ::highlight(pix-mac),
-  pre[is='pix-highlighter'] .pix-token--mac {
+  pre[is='pix-highlighter'] [data-pix-token='mac'] {
     color: var(--dout--pix-mac);
   }
 
   ::highlight(pix-pp),
-  pre[is='pix-highlighter'] .pix-token--pp {
+  pre[is='pix-highlighter'] [data-pix-token='pp'] {
     color: var(--dout--pix-pp);
   }
 
   ::highlight(pix-prop),
-  pre[is='pix-highlighter'] .pix-token--prop {
+  pre[is='pix-highlighter'] [data-pix-token='prop'] {
     color: var(--dout--pix-prop);
   }
 
   ::highlight(pix-type),
-  pre[is='pix-highlighter'] .pix-token--type {
+  pre[is='pix-highlighter'] [data-pix-token='type'] {
     color: var(--dout--pix-type);
   }
 
   ::highlight(pix-mdh),
-  pre[is='pix-highlighter'] .pix-token--mdh {
+  pre[is='pix-highlighter'] [data-pix-token='mdh'] {
     color: var(--dout--pix-mdh);
   }
 
   ::highlight(pix-mde),
-  pre[is='pix-highlighter'] .pix-token--mde {
+  pre[is='pix-highlighter'] [data-pix-token='mde'] {
     color: var(--dout--pix-mde);
   }
 
   ::highlight(pix-mds),
-  pre[is='pix-highlighter'] .pix-token--mds {
+  pre[is='pix-highlighter'] [data-pix-token='mds'] {
     color: var(--dout--pix-mds);
   }
 
   ::highlight(pix-mdc),
-  pre[is='pix-highlighter'] .pix-token--mdc {
+  pre[is='pix-highlighter'] [data-pix-token='mdc'] {
     color: var(--dout--pix-mdc);
   }
 
   ::highlight(pix-mdl),
-  pre[is='pix-highlighter'] .pix-token--mdl {
+  pre[is='pix-highlighter'] [data-pix-token='mdl'] {
     color: var(--dout--pix-mdl);
   }
 
   ::highlight(pix-mdbq),
-  pre[is='pix-highlighter'] .pix-token--mdbq {
+  pre[is='pix-highlighter'] [data-pix-token='mdbq'] {
     color: var(--dout--pix-mdbq);
   }
 
   ::highlight(pix-mdli),
-  pre[is='pix-highlighter'] .pix-token--mdli {
+  pre[is='pix-highlighter'] [data-pix-token='mdli'] {
     color: var(--dout--pix-mdli);
   }
 
   ::highlight(pix-mdhr),
-  pre[is='pix-highlighter'] .pix-token--mdhr {
+  pre[is='pix-highlighter'] [data-pix-token='mdhr'] {
     color: var(--dout--pix-mdhr);
   }
 
   ::highlight(pix-mdimg),
-  pre[is='pix-highlighter'] .pix-token--mdimg {
+  pre[is='pix-highlighter'] [data-pix-token='mdimg'] {
     color: var(--dout--pix-mdimg);
   }
 }

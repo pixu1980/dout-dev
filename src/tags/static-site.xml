@@ -6,11 +6,39 @@
     <description>RSS feed for posts tagged with Static-site</description>
     <atom:link href="https://dout.dev/tags/static-site.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Tue, 21 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>When Markdown Is a CMS, and When It Is Not</title>
-      <link>https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-when-markdown-is-a-cms-and-when-it-is-not.html</guid>
+      <title>OG Images at Build Time</title>
+      <link>https://dout.dev/posts/2026-05-19-og-images-at-build-time.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-19-og-images-at-build-time.html</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
+      <description>The problem and the usual solutions</description>
+    </item>
+    <item>
+      <title>Feeds and Sitemaps at Build Time</title>
+      <link>https://dout.dev/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html</guid>
+      <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
+      <description>The distribution minimum</description>
+    </item>
+    <item>
+      <title>Custom SSG Pipeline: Markdown to Static HTML</title>
+      <link>https://dout.dev/posts/2026-05-12-custom-ssg-pipeline.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-12-custom-ssg-pipeline.html</guid>
+      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+      <description>The pipeline, in one picture</description>
+    </item>
+    <item>
+      <title>Why I Skipped Astro, Eleventy and Next for My Blog</title>
+      <link>https://dout.dev/posts/2026-05-05-why-no-astro-eleventy-next.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-05-why-no-astro-eleventy-next.html</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+      <description>The default answer and why I ignored it</description>
+    </item>
+    <item>
+      <title>CMS and Markdown Processing</title>
+      <link>https://dout.dev/posts/2026-04-21-cms-and-markdown-processing.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-cms-and-markdown-processing.html</guid>
       <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
       <description>The useful distinction</description>
     </item>
@@ -19,7 +47,7 @@
       <link>https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</guid>
       <pubDate>Sat, 04 Apr 2026 00:00:00 GMT</pubDate>
-      <description>The Goal: an editorial blog without runtime ballast</description>
+      <description>What the stack is, exactly</description>
     </item>
   </channel>
 </rss>

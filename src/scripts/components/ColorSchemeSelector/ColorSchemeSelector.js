@@ -74,23 +74,23 @@ class ColorSchemeSelector extends HTMLElement {
     const template = document.createElement('template');
     this.textContent = '';
     template.innerHTML = `
-      <section class="color-scheme-selector" aria-label="Color scheme selection" role="radiogroup">
+      <section data-color-scheme-selector aria-label="Color scheme selection" role="radiogroup">
         <label data-scheme="light" aria-label="Light mode">
           <input type="radio" name="color-scheme" value="light" />
           <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="currentColor"/><path stroke="currentColor" stroke-width="2" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-          <span class="sr-only">Light</span>
+          <span data-visually-hidden>Light</span>
         </label>
 
         <label data-scheme="dark" aria-label="Dark mode">
           <input type="radio" name="color-scheme" value="dark" />
           <svg aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79"/></svg>
-          <span class="sr-only">Dark</span>
+          <span data-visually-hidden>Dark</span>
         </label>
 
         <label data-scheme="system" aria-label="System preference">
           <input type="radio" name="color-scheme" value="system" />
           <svg aria-hidden="true" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" fill="none" stroke="currentColor" stroke-width="2" rx="2" ry="2"/><path stroke="currentColor" stroke-width="2" d="M8 21h8m-4-4v4"/></svg>
-          <span class="sr-only">System</span>
+          <span data-visually-hidden>System</span>
         </label>
       </section>
     `;

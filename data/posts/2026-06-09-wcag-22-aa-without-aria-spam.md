@@ -1,7 +1,7 @@
 ---
 title: 'WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links'
 date: '2026-06-09'
-published: false
+published: true
 tags: ['accessibility', 'a11y', 'html', 'frontend']
 description: 'The accessibility rules I actually apply on every page of dout.dev. Semantic HTML first, ARIA only when it earns its keep.'
 canonical_url: false
@@ -54,13 +54,19 @@ On dout.dev, the post layout enforces it. The post title is always `h1`. Section
 
 ```markdown
 <!-- Good -->
+
 # Post title
+
 ## Section
+
 ### Subsection
+
 ## Another section
 
 <!-- Bad, the build rejects this -->
+
 # Post title
+
 #### Oops
 ```
 

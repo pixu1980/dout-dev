@@ -1,7 +1,7 @@
 ---
 title: 'Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production'
 date: '2026-06-02'
-published: false
+published: true
 tags: ['css', 'vanilla-js', 'frontend']
 description: 'Modern CSS has quietly absorbed most of the reasons people reached for CSS-in-JS or utility frameworks. Here is what shipped on dout.dev and how.'
 canonical_url: false
@@ -125,7 +125,9 @@ On a small project, layering is overkill. On any project with an external reset,
 }
 
 @layer components {
-  .post-card { /* ... */ }
+  .post-card {
+    /* ... */
+  }
 }
 ```
 

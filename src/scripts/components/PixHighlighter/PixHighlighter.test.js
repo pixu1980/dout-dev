@@ -282,7 +282,7 @@ describe('PixHighlighter', () => {
 
     const instance = createPseudoInstance({ code: 'const plain = true;', lang: 'js' });
 
-    assert.ok(instance.querySelector('.pix-token--kw'));
+    assert.ok(instance.querySelector('[data-pix-token="kw"]'));
     assert.equal(document.adoptedStyleSheets.length, 1);
   });
 

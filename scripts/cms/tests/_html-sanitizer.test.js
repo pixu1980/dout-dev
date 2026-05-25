@@ -19,7 +19,9 @@ test('sanitizeArticleHtml preserves trusted CodePen embeds and adds sandboxing',
   );
 
   assert.match(html, /sandbox="allow-popups allow-same-origin allow-scripts"/);
-  assert.match(html, /class="embed-frame embed-frame--codepen"/);
+  assert.match(html, /data-embed-frame=""/);
+  assert.match(html, /data-embed-provider="codepen"/);
+  assert.doesNotMatch(html, /class=/);
   assert.match(html, /referrerpolicy="no-referrer"/);
 });
 

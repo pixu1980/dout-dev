@@ -2,13 +2,13 @@ post-feed-layout-selector {
   display: inline-flex;
 }
 
-post-feed-layout-selector .post-feed-layout {
+post-feed-layout-selector [data-post-feed-layout] {
   display: inline-flex;
   align-items: center;
   gap: var(--dout--space-2, 0.5rem);
 }
 
-post-feed-layout-selector .post-feed-layout__label {
+post-feed-layout-selector [data-post-feed-layout-label] {
   color: var(--dout--text-muted);
   font-size: var(--dout--step--1, 0.95rem);
   font-weight: 700;
@@ -16,17 +16,17 @@ post-feed-layout-selector .post-feed-layout__label {
   text-transform: uppercase;
 }
 
-post-feed-layout-selector .post-feed-layout__group {
+post-feed-layout-selector [data-post-feed-layout-group] {
   display: inline-flex;
   align-items: center;
   padding: 0.2rem;
-  border: 1px solid var(--dout--border);
+  border: var(--dout--border-width) solid var(--dout--border);
   border-radius: var(--dout--radius-pill);
   background: color-mix(in srgb, var(--dout--surface-strong) 82%, transparent);
   corner-shape: var(--dout--corner-shape);
 }
 
-post-feed-layout-selector .post-feed-layout__button {
+post-feed-layout-selector [data-post-feed-layout-button] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -40,12 +40,12 @@ post-feed-layout-selector .post-feed-layout__button {
   corner-shape: var(--dout--corner-shape);
   cursor: pointer;
   transition:
-    background-color 140ms ease,
-    color 140ms ease,
-    transform 140ms ease;
+    background-color var(--dout--motion-fast) var(--dout--motion-ease),
+    color var(--dout--motion-fast) var(--dout--motion-ease),
+    transform var(--dout--motion-fast) var(--dout--motion-ease);
 }
 
-post-feed-layout-selector .post-feed-layout__button svg {
+post-feed-layout-selector [data-post-feed-layout-button] svg {
   width: var(--dout--icon-size-md, 1rem);
   height: var(--dout--icon-size-md, 1rem);
   fill: none;
@@ -53,22 +53,22 @@ post-feed-layout-selector .post-feed-layout__button svg {
   stroke-width: 1.8;
 }
 
-post-feed-layout-selector .post-feed-layout__button[aria-pressed='true'] {
+post-feed-layout-selector [data-post-feed-layout-button][aria-pressed='true'] {
   background: color-mix(in srgb, var(--dout--accent-soft) 64%, var(--dout--surface-strong) 36%);
   color: var(--dout--text);
 }
 
-post-feed-layout-selector .post-feed-layout__button:hover {
+post-feed-layout-selector [data-post-feed-layout-button]:hover {
   color: var(--dout--text);
 }
 
 @media (max-width: 720px) {
-  post-feed-layout-selector .post-feed-layout {
+  post-feed-layout-selector [data-post-feed-layout] {
     width: 100%;
     justify-content: space-between;
   }
 
-  post-feed-layout-selector .post-feed-layout__button {
+  post-feed-layout-selector [data-post-feed-layout-button] {
     flex: 1 1 auto;
   }
 }
