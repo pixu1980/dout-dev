@@ -3115,421 +3115,6 @@
     "path": "./src/posts/2026-11-17-one-year-of-dout-dev-rebuilt.html"
   },
   {
-    "name": "2026-11-24-a-post-with-a-cover-image",
-    "title": "A post with a cover image",
-    "date": "2026-11-24T00:00:00.000Z",
-    "dateString": "Tue Nov 24 2026",
-    "published": false,
-    "tags": [
-      {
-        "key": "markdown",
-        "label": "Markdown",
-        "url": "./tags/markdown.html"
-      },
-      {
-        "key": "cover-image",
-        "label": "Cover-image",
-        "url": "./tags/cover-image.html"
-      }
-    ],
-    "series": null,
-    "description": "One line only description",
-    "excerpt": "Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or",
-    "content": "<p>Readability, however, is emphasized above all else. A Markdown-formatted\ndocument should be publishable as-is, as plain text, without looking\nlike it's been marked up with tags or formatting instructions.</p>\n<p>While Markdown's syntax has been influenced by several existing text-to-HTML filters -- including <a href=\"http://docutils.sourceforge.net/mirror/setext.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Setext</a>, <a href=\"http://www.aaronsw.com/2002/atx/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">atx</a>, <a href=\"http://textism.com/tools/textile/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Textile</a>, <a href=\"http://docutils.sourceforge.net/rst.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">reStructuredText</a>,\n<a href=\"http://www.triptico.com/software/grutatxt.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Grutatext</a>, and <a href=\"http://ettext.taint.org/doc/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">EtText</a> -- the single biggest source of\ninspiration for Markdown's syntax is the format of plain text email.</p>\n",
-    "toc": [],
-    "keywords": [
-      "markdown",
-      "text",
-      "plain",
-      "syntax",
-      "post",
-      "cover",
-      "image",
-      "readability",
-      "however",
-      "emphasized",
-      "above",
-      "all"
-    ],
-    "coverImage": null,
-    "coverAlt": "A post with a cover image",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2026-11-24-a-post-with-a-cover-image.md",
-    "path": "./src/posts/2026-11-24-a-post-with-a-cover-image.html"
-  },
-  {
-    "name": "2026-12-01-markdown-test-file",
-    "title": "Markdown test file",
-    "date": "2026-12-01T00:00:00.000Z",
-    "dateString": "Tue Dec 01 2026",
-    "published": false,
-    "tags": [
-      {
-        "key": "markdown",
-        "label": "Markdown",
-        "url": "./tags/markdown.html"
-      },
-      {
-        "key": "test-files",
-        "label": "Test-files",
-        "url": "./tags/test-files.html"
-      }
-    ],
-    "series": null,
-    "description": "One line only description",
-    "excerpt": "Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable",
-    "content": "<p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted\ndocument should be publishable as-is, as plain text, without looking\nlike it's been marked up with tags or formatting instructions.</p>\n<p>While Markdown's syntax has been influenced by several existing text-to-HTML\nfilters -- including <a href=\"http://docutils.sourceforge.net/mirror/setext.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Setext</a>, <a href=\"http://www.aaronsw.com/2002/atx/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">atx</a>, <a href=\"http://textism.com/tools/textile/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Textile</a>, <a href=\"http://docutils.sourceforge.net/rst.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">reStructuredText</a>,\n<a href=\"http://www.triptico.com/software/grutatxt.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Grutatext</a>, and <a href=\"http://ettext.taint.org/doc/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">EtText</a> -- the single biggest source of\ninspiration for Markdown's syntax is the format of plain text email.</p>\n<h2 id=\"block-elements\" tabindex=\"0\" data-toc-anchor=\"true\">Block Elements</h2>\n<h3 id=\"paragraphs-and-line-breaks\" tabindex=\"0\" data-toc-anchor=\"true\">Paragraphs and Line Breaks</h3>\n<p>A paragraph is simply one or more consecutive lines of text, separated\nby one or more blank lines. (A blank line is any line that looks like a\nblank line -- a line containing nothing but spaces or tabs is considered\nblank.) Normal paragraphs should not be indented with spaces or tabs.</p>\n<p>The implication of the \"one or more consecutive lines of text\" rule is\nthat Markdown supports \"hard-wrapped\" text paragraphs. This differs\nsignificantly from most other text-to-HTML formatters (including Movable\nType's \"Convert Line Breaks\" option) which translate every line break\ncharacter in a paragraph into a <code>&lt;br /&gt;</code> tag.</p>\n<p>When you <em>do</em> want to insert a <code>&lt;br /&gt;</code> break tag using Markdown, you\nend a line with two or more spaces, then type return.</p>\n<h3 id=\"headers\" tabindex=\"0\" data-toc-anchor=\"true\">Headers</h3>\n<p>Markdown supports two styles of headers, [Setext] [1] and [atx] [2].</p>\n<p>Optionally, you may \"close\" atx-style headers. This is purely\ncosmetic -- you can use this if you think it looks better. The\nclosing hashes don't even need to match the number of hashes\nused to open the header. (The number of opening hashes\ndetermines the header level.)</p>\n<h3 id=\"images\" tabindex=\"0\" data-toc-anchor=\"true\">Images</h3>\n<p>Images are added with <code>![Image Alt](./images/image.jpg)</code></p>\n<p><img data-src=\"../assets/favicon/android-chrome-512x512.png\" alt=\"Image\" loading=\"lazy\" decoding=\"async\" fetchpriority=\"low\"><noscript><img src=\"../assets/favicon/android-chrome-512x512.png\" alt=\"Image\"></noscript></p>\n<h3 id=\"blockquotes\" tabindex=\"0\" data-toc-anchor=\"true\">Blockquotes</h3>\n<p>Markdown uses email-style <code>&gt;</code> characters for blockquoting. If you're\nfamiliar with quoting passages of text in an email message, then you\nknow how to create a blockquote in Markdown. It looks best if you hard\nwrap the text and put a <code>&gt;</code> before every line:</p>\n<blockquote>\n<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,\nconsectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.\nVestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>\n<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse\nid sem consectetuer libero luctus adipiscing.</p>\n</blockquote>\n<p>Markdown allows you to be lazy and only put the <code>&gt;</code> before the first\nline of a hard-wrapped paragraph:</p>\n<blockquote>\n<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,\nconsectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.\nVestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>\n</blockquote>\n<blockquote>\n<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse\nid sem consectetuer libero luctus adipiscing.</p>\n</blockquote>\n<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by\nadding additional levels of <code>&gt;</code>:</p>\n<blockquote>\n<p>This is the first level of quoting.</p>\n<blockquote>\n<p>This is nested blockquote.</p>\n</blockquote>\n<p>Back to the first level.</p>\n</blockquote>\n<p>Blockquotes can contain other Markdown elements, including headers, lists,\nand code blocks:</p>\n<blockquote>\n<h2 id=\"this-is-a-h2-header\" tabindex=\"0\" data-toc-anchor=\"true\">This is a h2 header.</h2>\n<ol>\n<li>This is the first list item.</li><li>This is the second list item.</li></ol>\n<p>Here's some example code:</p>\n<pre is=\"pix-highlighter\"><code>return shell_exec(\"echo $input | $markdown_script\");</code></pre></blockquote>\n<p>Any decent text editor should make email-style quoting easy. For\nexample, with BBEdit, you can make a selection and choose Increase\nQuote Level from the Text menu.</p>\n<h3 id=\"lists\" tabindex=\"0\" data-toc-anchor=\"true\">Lists</h3>\n<p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>\n<p>Unordered lists use asterisks, pluses, and hyphens -- interchangably\n-- as list markers:</p>\n<ul>\n<li>Red</li><li>Green</li><li>Blue</li></ul>\n<p>is equivalent to:</p>\n<ul>\n<li>Red</li><li>Green</li><li>Blue</li></ul>\n<p>and:</p>\n<ul>\n<li>Red</li><li>Green</li><li>Blue</li></ul>\n<p>Ordered lists use numbers followed by periods:</p>\n<ol>\n<li>Bird</li><li>McHale</li><li>Parish</li></ol>\n<p>It's important to note that the actual numbers you use to mark the\nlist have no effect on the HTML output Markdown produces. The HTML\nMarkdown produces from the above list is:</p>\n<p>If you instead wrote the list in Markdown like this:</p>\n<ol>\n<li>Bird</li><li>McHale</li><li>Parish</li></ol>\n<p>or even:</p>\n<ol start=\"3\">\n<li>Bird</li><li>McHale</li><li>Parish</li></ol>\n<p>you'd get the exact same HTML output. The point is, if you want to,\nyou can use ordinal numbers in your ordered Markdown lists, so that\nthe numbers in your source match the numbers in your published HTML.\nBut if you want to be lazy, you don't have to.</p>\n<p>To make lists look nice, you can wrap items with hanging indents:</p>\n<ul>\n<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\nAliquam hendrerit mi posuere lectus. Vestibulum enim wisi,\nviverra nec, fringilla in, laoreet vitae, risus.</li><li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.\nSuspendisse id sem consectetuer libero luctus adipiscing.</li></ul>\n<p>But if you want to be lazy, you don't have to:</p>\n<ul>\n<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\nAliquam hendrerit mi posuere lectus. Vestibulum enim wisi,\nviverra nec, fringilla in, laoreet vitae, risus.</li><li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.\nSuspendisse id sem consectetuer libero luctus adipiscing.</li></ul>\n<p>List items may consist of multiple paragraphs. Each subsequent\nparagraph in a list item must be indented by either 4 spaces\nor one tab:</p>\n<ol>\n<li><p>This is a list item with two paragraphs. Lorem ipsum dolor\nsit amet, consectetuer adipiscing elit. Aliquam hendrerit\nmi posuere lectus.</p>\n<p>Vestibulum enim wisi, viverra nec, fringilla in, laoreet\nvitae, risus. Donec sit amet nisl. Aliquam semper ipsum\nsit amet velit.</p></li><li><p>Suspendisse id sem consectetuer libero luctus adipiscing.</p></li></ol>\n<p>It looks nice if you indent every line of the subsequent\nparagraphs, but here again, Markdown will allow you to be\nlazy:</p>\n<ul>\n<li><p>This is a list item with two paragraphs.</p>\n<pre is=\"pix-highlighter\"><code>This is the second paragraph in the list item. You're</code></pre><p>only required to indent the first line. Lorem ipsum dolor\nsit amet, consectetuer adipiscing elit.</p></li><li><p>Another item in the same list.</p></li></ul>\n<p>To put a blockquote within a list item, the blockquote's <code>&gt;</code>\ndelimiters need to be indented:</p>\n<ul>\n<li><p>A list item with a blockquote:</p>\n<blockquote>\n<p>This is a blockquote\ninside a list item.</p>\n</blockquote></li></ul>\n<p>To put a code block within a list item, the code block needs\nto be indented <em>twice</em> -- 8 spaces or two tabs:</p>\n<ul>\n<li>A list item with a code block:</li></ul>\n<pre is=\"pix-highlighter\" data-lang=\"html\"><code>&lt;code goes here&gt;&lt;/code&gt;</code></pre><h3 id=\"code-blocks\" tabindex=\"0\" data-toc-anchor=\"true\">Code Blocks</h3>\n<p>Pre-formatted code blocks are used for writing about programming or\nmarkup source code. Rather than forming normal paragraphs, the lines\nof a code block are interpreted literally. Markdown wraps a code block\nin both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>\n<p>To produce a code block in Markdown, simply indent every line of the\nblock by at least 4 spaces or 1 tab.</p>\n<p>This is a normal paragraph:</p>\n<pre is=\"pix-highlighter\"><code>    This is a code block.</code></pre><p>Here is an example of AppleScript:</p>\n<pre is=\"pix-highlighter\" data-lang=\"applescript\"><code>  tell application \"Foo\"\n    beep\n  end tell</code></pre><p>A code block continues until it reaches a line that is not indented\n(or the end of the article).</p>\n<p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>)\nare automatically converted into HTML entities. This makes it very\neasy to include example HTML source code using Markdown -- just paste\nit and indent it, and Markdown will handle the hassle of encoding the\nampersands and angle brackets. For example, this:</p>\n<pre is=\"pix-highlighter\" data-lang=\"html\"><code>&lt;div class=\"footer\"&gt;&amp;copy; 2004 Foo Corporation&lt;/div&gt;</code></pre><p>Regular Markdown syntax is not processed within code blocks. E.g.,\nasterisks are just literal asterisks within a code block. This means\nit's also easy to use Markdown to write about Markdown's own syntax.</p>\n<pre is=\"pix-highlighter\"><code>tell application \"Foo\"\n  beep\nend tell</code></pre><h2 id=\"span-elements\" tabindex=\"0\" data-toc-anchor=\"true\">Span Elements</h2>\n<h3 id=\"links\" tabindex=\"0\" data-toc-anchor=\"true\">Links</h3>\n<p>Markdown supports two style of links: <em>inline</em> and <em>reference</em>.</p>\n<p>In both styles, the link text is delimited by [square brackets].</p>\n<p>To create an inline link, use a set of regular parentheses immediately\nafter the link text's closing square bracket. Inside the parentheses,\nput the URL where you want the link to point, along with an <em>optional</em>\ntitle for the link, surrounded in quotes. For example:</p>\n<p>This is <a href=\"http://example.com/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">an example</a> inline link.</p>\n<p><a href=\"http://example.net/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">This link</a> has no title attribute.</p>\n<h3 id=\"emphasis\" tabindex=\"0\" data-toc-anchor=\"true\">Emphasis</h3>\n<p>Markdown treats asterisks (<code>*</code>) and underscores (<code>_</code>) as indicators of\nemphasis. Text wrapped with one <code>*</code> or <code>_</code> will be wrapped with an\nHTML <code>&lt;em&gt;</code> tag; double <code>*</code>'s or <code>_</code>'s will be wrapped with an HTML\n<code>&lt;strong&gt;</code> tag. E.g., this input:</p>\n<p><em>single asterisks</em></p>\n<p><em>single underscores</em></p>\n<p><strong>double asterisks</strong></p>\n<p><strong>double underscores</strong></p>\n<h3 id=\"code\" tabindex=\"0\" data-toc-anchor=\"true\">Code</h3>\n<p>To indicate a span of code, wrap it with backtick quotes (<code>`</code>).\nUnlike a pre-formatted code block, a code span indicates code within a\nnormal paragraph. For example:</p>\n<p>Use the <code>printf()</code> function.</p>\n",
-    "toc": [
-      {
-        "id": "block-elements",
-        "level": 2,
-        "text": "Block Elements"
-      },
-      {
-        "id": "paragraphs-and-line-breaks",
-        "level": 3,
-        "text": "Paragraphs and Line Breaks"
-      },
-      {
-        "id": "headers",
-        "level": 3,
-        "text": "Headers"
-      },
-      {
-        "id": "images",
-        "level": 3,
-        "text": "Images"
-      },
-      {
-        "id": "blockquotes",
-        "level": 3,
-        "text": "Blockquotes"
-      },
-      {
-        "id": "this-is-a-h2-header",
-        "level": 2,
-        "text": "This is a h2 header."
-      },
-      {
-        "id": "lists",
-        "level": 3,
-        "text": "Lists"
-      },
-      {
-        "id": "code-blocks",
-        "level": 3,
-        "text": "Code Blocks"
-      },
-      {
-        "id": "span-elements",
-        "level": 2,
-        "text": "Span Elements"
-      },
-      {
-        "id": "links",
-        "level": 3,
-        "text": "Links"
-      },
-      {
-        "id": "emphasis",
-        "level": 3,
-        "text": "Emphasis"
-      },
-      {
-        "id": "code",
-        "level": 3,
-        "text": "Code"
-      }
-    ],
-    "keywords": [
-      "markdown",
-      "code",
-      "list",
-      "sit",
-      "amet",
-      "text",
-      "line",
-      "block",
-      "item",
-      "ipsum",
-      "consectetuer",
-      "adipiscing"
-    ],
-    "coverImage": null,
-    "coverAlt": "Markdown test file",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2026-12-01-markdown-test-file.md",
-    "path": "./src/posts/2026-12-01-markdown-test-file.html"
-  },
-  {
-    "name": "2026-12-08-say-hello-to-gridsome",
-    "title": "Say hello to Gridsome 🎉",
-    "date": "2026-12-08T00:00:00.000Z",
-    "dateString": "Tue Dec 08 2026",
-    "published": false,
-    "tags": [
-      {
-        "key": "markdown",
-        "label": "Markdown",
-        "url": "./tags/markdown.html"
-      },
-      {
-        "key": "releases",
-        "label": "Releases",
-        "url": "./tags/releases.html"
-      }
-    ],
-    "series": null,
-    "description": "One line only description",
-    "excerpt": "A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea",
-    "content": "<p>A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta ready soon. You can expect this baby to grow up fast!</p>\n<p>We think <strong>Gridsome</strong> is a missing piece to the Vue.js ecosystem. What Gatsby.js does for React.js is a game changer in how we build websites. React.js is excellent, but we think Vue.js is more approachable for most web designers and devs getting started with JAMstack. Gridsome is the Vue.js alternative to Gatsby.</p>\n<p>With <strong>Gridsome</strong> you get a <strong>universal GraphQL layer</strong> for all your connected data sources. It's like a single source of truth for your website data ready to be used in any page or components. Connect to any CMS or APIs like Google Spreadsheet, Airtable, Instagram Feed, local markdown files, etc.</p>\n<p>Here is an example on how to query posts from the GraphQL layer in a page:</p>\n<pre is=\"pix-highlighter\" data-lang=\"html\"><code>&lt;template&gt;\n  &lt;Layout&gt;\n    &lt;h2&gt;Latest blog posts&lt;/h2&gt;\n    &lt;ul&gt;&lt;/ul&gt;\n  &lt;/Layout&gt;\n&lt;/template&gt;\n\n&lt;page-query&gt; query Blog { allWordPressPost (limit: 5) { edges { node { _id title } } } } &lt;/page-query&gt;</code></pre><p>You don't need to know GraphQL or Vue to get started with Gridsome - It's a great way to get introduced to both.</p>\n<p>The GraphQL layer and all the data can be explored in a local GraphQL playground. The playground is usually located at <code>https://localhost:8080/___explore</code> when a Gridsome development project is running.</p>\n<h2 id=\"perfect-scores-on-google-lighthouse-automagically\" tabindex=\"0\" data-toc-anchor=\"true\">Perfect scores on Google Lighthouse - automagically 💚</h2>\n<p>One of the main goals of Gridsome is to make a framework that let you build websites that are optimized \"out-of-the-box.\" It follows the <a href=\"https://developers.google.com/web/fundamentals/performance/prpl-pattern/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">PRPL-pattern by Google.</a> You don't need to be a performance expert to make fast websites with Gridsome. Your site gets almost perfect scores on Google lighthouse out-of-the-box. These are some of the performance steps that Gridsome takes care of:</p>\n<ul>\n<li>Image compressing &amp; lazy-loading ⚡️</li><li>CSS &amp; JS minification ⚡️</li><li>Code-splitting ⚡️</li><li>HTML compressing ⚡️</li><li>Critical CSS (Plugin) ⚡️</li><li>Full PWA &amp; Offline-support (plugin) ⚡️</li></ul>\n<h2 id=\"a-better-way-to-build-websites\" tabindex=\"0\" data-toc-anchor=\"true\">A better way to build websites</h2>\n<p>Gridsome is built for the JAMstack workflow - a new way to build websites that gives you better performance, higher security, cheaper hosting, and a better developer experience. Generate pre-rendered (static) pages at build time for SEO-purpose and add powerful dynamic functionality with APIs and Vue.js.</p>\n<p>We believe the SSGs / JAMstack trend is just getting started. When you have first started to make websites this way there is no way back. You feel almost \"dirty\" when going back to a traditional WordPress / CMS setup.</p>\n<p>Try running the new Chrome Lighthouse (Audit tab in Developer tools) on a WordPress site - It is impossible to get good scores even with the best caching plugins and hosting. With Gridsome you don't even need caching plugins. Website optimization is taken care of at build time.</p>\n<p>This is what we think is very exciting and is why we are building Gridsome. It is the <strong>perfect SPA &amp; PWA front-end solution</strong> for any headless CMS or content APIs.</p>\n<h2 id=\"whats-next\" tabindex=\"0\" data-toc-anchor=\"true\">Whats next</h2>\n<p>In the next couple of months we're going to continue to improve the docs, create tutorials, add more source &amp; transformer plugins and fix bugs.</p>\n<h2 id=\"contribute-to-gridsome\" tabindex=\"0\" data-toc-anchor=\"true\">Contribute to Gridsome</h2>\n<p>We're currently just two brothers working on this, so any contribution is very welcome. We're passionate about building a faster web and make website building fun again.</p>\n<p>You can also support us by giving <a href=\"https://github.com/gridsome/gridsome/stargazers?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">a GitHub star ★</a> and spread the word :)</p>\n",
-    "toc": [
-      {
-        "id": "perfect-scores-on-google-lighthouse-automagically",
-        "level": 2,
-        "text": "Perfect scores on Google Lighthouse - automagically 💚"
-      },
-      {
-        "id": "a-better-way-to-build-websites",
-        "level": 2,
-        "text": "A better way to build websites"
-      },
-      {
-        "id": "whats-next",
-        "level": 2,
-        "text": "Whats next"
-      },
-      {
-        "id": "contribute-to-gridsome",
-        "level": 2,
-        "text": "Contribute to Gridsome"
-      }
-    ],
-    "keywords": [
-      "gridsome",
-      "vue",
-      "build",
-      "websites",
-      "graphql",
-      "way",
-      "started",
-      "get",
-      "make",
-      "new",
-      "site",
-      "gatsby"
-    ],
-    "coverImage": null,
-    "coverAlt": "Say hello to Gridsome 🎉",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2026-12-08-say-hello-to-gridsome.md",
-    "path": "./src/posts/2026-12-08-say-hello-to-gridsome.html"
-  },
-  {
-    "name": "2026-12-15-say-hello-to-gridsome-new",
-    "title": "Say Hello to Gridsome NEW",
-    "date": "2026-12-15T00:00:00.000Z",
-    "dateString": "Tue Dec 15 2026",
-    "published": false,
-    "tags": [
-      {
-        "key": "markdown",
-        "label": "Markdown",
-        "url": "./tags/markdown.html"
-      },
-      {
-        "key": "cover-image",
-        "label": "Cover-image",
-        "url": "./tags/cover-image.html"
-      }
-    ],
-    "series": null,
-    "description": "One line only description",
-    "excerpt": "Well.... that's all",
-    "content": "<p>Well.... that's all</p>\n",
-    "toc": [],
-    "keywords": [
-      "say",
-      "hello",
-      "gridsome",
-      "new",
-      "well",
-      "all"
-    ],
-    "coverImage": null,
-    "coverAlt": "Say Hello to Gridsome NEW",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2026-12-15-say-hello-to-gridsome-new.md",
-    "path": "./src/posts/2026-12-15-say-hello-to-gridsome-new.html"
-  },
-  {
-    "name": "2026-12-22-testing-codepen",
-    "title": "Testing CodePen",
-    "date": "2026-12-22T00:00:00.000Z",
-    "dateString": "Tue Dec 22 2026",
-    "published": false,
-    "tags": [
-      {
-        "key": "markdown",
-        "label": "Markdown",
-        "url": "./tags/markdown.html"
-      },
-      {
-        "key": "cover-image",
-        "label": "Cover-image",
-        "url": "./tags/cover-image.html"
-      }
-    ],
-    "series": null,
-    "description": "One line only description",
-    "excerpt": "GRADIENT BORDERS",
-    "content": "<p>GRADIENT BORDERS</p>\n<p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible. Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions.</p>\n<style>\n  .white-grad {\n    --b: 5px; /* border width*/\n    --r: 15px; /* the radius */\n\n    color: var(--dout--color-primary);\n    padding: calc(var(--b) + 5px);\n    display: inline-block;\n    margin: 75px 0;\n    position: relative;\n    z-index: 0;\n  }\n  .white-grad:before {\n    content: '';\n    position: absolute;\n    z-index: -1;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    padding: var(--b);\n    border: var(--b) solid transparent;\n    border-radius: var(--r);\n    background: linear-gradient(var(--dout--background-color-primary), var(--dout--background-color-primary)) padding-box,\n      var(--c, linear-gradient(to right, #9c20aa, #fb3570)) border-box;\n    \n    /*\n    background: var(--c, linear-gradient(to right, #9c20aa, #fb3570));\n    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);\n    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);\n    -webkit-mask-composite: destination-out;\n    mask-composite: exclude;\n    */\n  }\n</style>\n<div class=\"white-grad\">Some text here</div>\n<div class=\"white-grad\" style=\"--r: 20px; --b: 10px; --c: linear-gradient(140deg, red, yellow, green)\">\n  Some long long long text here\n</div>\n<div class=\"white-grad\" style=\"--r: 30px; --b: 8px; --c: linear-gradient(-40deg, black 50%, blue 0)\">\n  Some long long <br>long text here\n</div>\n<div class=\"white-grad\" style=\"--r: 40px; --b: 20px; --c: conic-gradient(black, orange, purple)\">\n  Some long long <br>long text here<br>\n  more and more more and more\n</div>\n<div class=\"white-grad\" style=\"--r: 50%; --b: 10px; --c: linear-gradient(140deg, red, yellow, green)\"></div>\n<div class=\"white-grad\" style=\"--r: 50%; --b: 8px; --c: linear-gradient(-40deg, black 50%, blue 0)\"></div>\n<div class=\"white-grad\" style=\"--r: 50%; --b: 20px; --c: conic-gradient(black, orange, purple)\"></div>\n<div class=\"white-grad\" style=\"--r: 50% 0 50% 50%\"></div>\n<div class=\"white-grad\" style=\"--b: 10px; --r: 50% 0; --c: linear-gradient(140deg, red, yellow, green)\"></div>\n<div class=\"white-grad\" style=\"--b: 8px; --r: 50% 0 0; --c: linear-gradient(-40deg, black 50%, blue 0)\"></div>\n<div class=\"white-grad\" style=\"--b: 20px; --r: 50% 50% 0 0; --c: conic-gradient(black, orange, purple)\"></div>\n<div class=\"white-grad\" style=\"--b: 0 0 20px 20px; --r: 50% 0 50% 50%\"></div>\n<div class=\"white-grad\" style=\"--b: 10px 0 10px 0; --r: 50% 0; --c: linear-gradient(140deg, red, yellow, green)\"></div>\n<div class=\"white-grad\" style=\"--b: 8px 0px 0px 8px; --r: 50% 0 0; --c: linear-gradient(40deg, black 50%, blue 0)\"></div>\n<div class=\"white-grad\" style=\"--b: 20px 20px 0 20px; --r: 50% 50% 0 0; --c: conic-gradient(pink, orange, red, pink)\"></div>\n",
-    "toc": [],
-    "keywords": [
-      "div",
-      "gradient",
-      "white",
-      "grad",
-      "style",
-      "linear",
-      "class",
-      "var",
-      "20px",
-      "long",
-      "black",
-      "text"
-    ],
-    "coverImage": null,
-    "coverAlt": "Testing CodePen",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2026-12-22-testing-codepen.md",
-    "path": "./src/posts/2026-12-22-testing-codepen.html"
-  },
-  {
-    "name": "2026-12-29-testing-codepen",
-    "title": "Testing CodePen",
-    "date": "2026-12-29T00:00:00.000Z",
-    "dateString": "Tue Dec 29 2026",
-    "published": false,
-    "tags": [
-      {
-        "key": "markdown",
-        "label": "Markdown",
-        "url": "./tags/markdown.html"
-      },
-      {
-        "key": "cover-image",
-        "label": "Cover-image",
-        "url": "./tags/cover-image.html"
-      }
-    ],
-    "series": null,
-    "description": "One line only description",
-    "excerpt": "https://codepen.io/emdeoh/pen/NWdmgVq",
-    "content": "<p><a href=\"https://codepen.io/emdeoh/pen/NWdmgVq?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">https://codepen.io/emdeoh/pen/NWdmgVq</a></p>\n",
-    "toc": [],
-    "keywords": [
-      "codepen",
-      "testing",
-      "https",
-      "emdeoh",
-      "pen",
-      "nwdmgvq"
-    ],
-    "coverImage": null,
-    "coverAlt": "Testing CodePen",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2026-12-29-testing-codepen.md",
-    "path": "./src/posts/2026-12-29-testing-codepen.html"
-  },
-  {
-    "name": "2027-01-05-a-new-post-with-a-new-cover-image",
-    "title": "A NEW post with a NEW cover image",
-    "date": "2027-01-05T00:00:00.000Z",
-    "dateString": "Tue Jan 05 2027",
-    "published": false,
-    "tags": [
-      {
-        "key": "markdown",
-        "label": "Markdown",
-        "url": "./tags/markdown.html"
-      },
-      {
-        "key": "cover-image",
-        "label": "Cover-image",
-        "url": "./tags/cover-image.html"
-      }
-    ],
-    "series": null,
-    "description": "One line only description",
-    "excerpt": "Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or",
-    "content": "<p>Readability, however, is emphasized above all else. A Markdown-formatted\ndocument should be publishable as-is, as plain text, without looking\nlike it's been marked up with tags or formatting instructions.</p>\n<p>While Markdown's syntax has been influenced by several existing text-to-HTML filters -- including <a href=\"http://docutils.sourceforge.net/mirror/setext.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Setext</a>, <a href=\"http://www.aaronsw.com/2002/atx/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">atx</a>, <a href=\"http://textism.com/tools/textile/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Textile</a>, <a href=\"http://docutils.sourceforge.net/rst.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">reStructuredText</a>,\n<a href=\"http://www.triptico.com/software/grutatxt.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Grutatext</a>, and <a href=\"http://ettext.taint.org/doc/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">EtText</a> -- the single biggest source of\ninspiration for Markdown's syntax is the format of plain text email.</p>\n",
-    "toc": [],
-    "keywords": [
-      "markdown",
-      "text",
-      "new",
-      "plain",
-      "syntax",
-      "post",
-      "cover",
-      "image",
-      "readability",
-      "however",
-      "emphasized",
-      "above"
-    ],
-    "coverImage": null,
-    "coverAlt": "A NEW post with a NEW cover image",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2027-01-05-a-new-post-with-a-new-cover-image.md",
-    "path": "./src/posts/2027-01-05-a-new-post-with-a-new-cover-image.html"
-  },
-  {
-    "name": "2027-01-12-say-hello-to-2022",
-    "title": "Say hello to 2022 🎉",
-    "date": "2027-01-12T00:00:00.000Z",
-    "dateString": "Tue Jan 12 2027",
-    "published": false,
-    "tags": [
-      {
-        "key": "markdown",
-        "label": "Markdown",
-        "url": "./tags/markdown.html"
-      },
-      {
-        "key": "releases",
-        "label": "Releases",
-        "url": "./tags/releases.html"
-      }
-    ],
-    "series": null,
-    "description": "Blog under construction",
-    "excerpt": "",
-    "content": "<p><picture><source type=\"image/webp\" data-srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.webp 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.webp 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.webp 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.webp 1280w\"><source type=\"image/jpeg\" data-srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.jpg 1280w\"><img data-src=\"../assets/images/2022-02-25-you-can-express-tags-today.jpg\" alt=\"example alt text\" loading=\"lazy\" decoding=\"async\" fetchpriority=\"low\" data-srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.jpg 1280w\" width=\"1600\" height=\"900\" title=\"example Title\"></picture><noscript><img src=\"../assets/images/2022-02-25-you-can-express-tags-today.jpg\" alt=\"example alt text\" srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.jpg 1280w\" width=\"1600\" height=\"900\" title=\"example Title\"></noscript></p>\n",
-    "toc": [],
-    "keywords": [
-      "say",
-      "hello",
-      "2022"
-    ],
-    "coverImage": "../assets/images/alexandr-podvalny-220262-unsplash.jpg",
-    "coverWidth": 1600,
-    "coverHeight": 900,
-    "coverAlt": "Say hello to 2022 🎉",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2027-01-12-say-hello-to-2022.md",
-    "path": "./src/posts/2027-01-12-say-hello-to-2022.html"
-  },
-  {
     "name": "2027-01-19-you-can-use-express-tags-today",
     "title": "You can use express tags… TODAY!",
     "date": "2027-01-19T00:00:00.000Z",
@@ -3617,50 +3202,6 @@
     "path": "./src/posts/2027-01-26-custom-grid-system.html"
   },
   {
-    "name": "2027-02-02-marked-markdown-parser",
-    "title": "Marked - Markdown Parser",
-    "date": "2027-02-02T00:00:00.000Z",
-    "dateString": "Tue Feb 02 2027",
-    "published": false,
-    "tags": [],
-    "series": null,
-    "description": "[Marked] lets you convert [Markdown] into HTML. Markdown is a simple text format whose goal is to be very easy to read and write, even when not converted to HTML. This demo page will let you type anything you like and see how it gets converted. Live. No more waiting around.",
-    "excerpt": "How To Use The Demo",
-    "content": "<h2 id=\"how-to-use-the-demo\" tabindex=\"0\" data-toc-anchor=\"true\">How To Use The Demo</h2>\n<ol>\n<li>Type in stuff on the left.</li><li>See the live updates on the right.</li></ol>\n<p>That's it. Pretty simple. There's also a drop-down option in the upper right to switch between various views:</p>\n<ul>\n<li><strong>Preview:</strong> A live display of the generated HTML as it would render in a browser.</li><li><strong>HTML Source:</strong> The generated HTML before your browser makes it pretty.</li><li><strong>Lexer Data:</strong> What <a href=\"https://github.com/markedjs/marked/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">marked</a> uses internally, in case you like gory stuff like this.</li><li><strong>Quick Reference:</strong> A brief run-down of how to format things using markdown.</li></ul>\n<h2 id=\"why-markdown\" tabindex=\"0\" data-toc-anchor=\"true\">Why Markdown?</h2>\n<pre is=\"pix-highlighter\" data-lang=\"html\"><code>&lt;div&gt;&lt;/div&gt;</code></pre><p>It's easy. It's not overly bloated, unlike HTML. Also, as the creator of <a href=\"http://daringfireball.net/projects/markdown/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">markdown</a> says,</p>\n<blockquote>\n<p>The overriding design goal for Markdown's\nformatting syntax is to make it as readable\nas possible. The idea is that a\nMarkdown-formatted document should be\npublishable as-is, as plain text, without\nlooking like it's been marked up with tags\nor formatting instructions.</p>\n</blockquote>\n<pre is=\"pix-highlighter\" data-lang=\"scss\"><code>div {\n}</code></pre><p>Ready to start writing? Either start changing stuff on the left or\n<a href=\"/demo/?text=\">clear everything</a> with a simple click.</p>\n",
-    "toc": [
-      {
-        "id": "how-to-use-the-demo",
-        "level": 2,
-        "text": "How To Use The Demo"
-      },
-      {
-        "id": "why-markdown",
-        "level": 2,
-        "text": "Why Markdown?"
-      }
-    ],
-    "keywords": [
-      "markdown",
-      "marked",
-      "html",
-      "stuff",
-      "like",
-      "left",
-      "live",
-      "right",
-      "pretty",
-      "simple",
-      "down",
-      "generated"
-    ],
-    "coverImage": null,
-    "coverAlt": "Marked - Markdown Parser",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2027-02-02-marked-markdown-parser.md",
-    "path": "./src/posts/2027-02-02-marked-markdown-parser.html"
-  },
-  {
     "name": "2027-02-09-you-can-edit-css",
     "title": "You can edit CSS",
     "date": "2027-02-09T00:00:00.000Z",
@@ -3693,50 +3234,6 @@
     "layout": "post",
     "source": "data/posts/2027-02-09-you-can-edit-css.md",
     "path": "./src/posts/2027-02-09-you-can-edit-css.html"
-  },
-  {
-    "name": "2027-02-16-testing-codepen",
-    "title": "Testing CodePen",
-    "date": "2027-02-16T00:00:00.000Z",
-    "dateString": "Tue Feb 16 2027",
-    "published": false,
-    "tags": [
-      {
-        "key": "markdown",
-        "label": "Markdown",
-        "url": "./tags/markdown.html"
-      },
-      {
-        "key": "cover-image",
-        "label": "Cover-image",
-        "url": "./tags/cover-image.html"
-      }
-    ],
-    "series": null,
-    "description": "One line only description",
-    "excerpt": "See the Pen <a href='https://codepen.io/blackmirror1980/pen/aPRXzv'>Pure CSS Slider using Scroll-Snap</a> by blackmirror1980 (<a href='https://codepen.io/blackmirror1980'>@blackmir",
-    "content": "<iframe height=\"521\" style=\"width: 100%; min-height: 30rem\" scrolling=\"no\" title=\"Pure CSS Slider using Scroll-Snap\" src=\"https://codepen.io/blackmirror1980/embed/aPRXzv?height=521&amp;theme-id=dark&amp;default-tab=result\" frameborder=\"no\" loading=\"lazy\" allowtransparency=\"true\" allowfullscreen=\"true\" data-embed-frame=\"\" data-embed-provider=\"codepen\" referrerpolicy=\"no-referrer\" sandbox=\"allow-popups allow-same-origin allow-scripts\">\n  See the Pen <a href='https://codepen.io/blackmirror1980/pen/aPRXzv'>Pure CSS Slider using Scroll-Snap</a> by blackmirror1980\n  (<a href='https://codepen.io/blackmirror1980'>@blackmirror1980</a>) on <a href='https://codepen.io'>CodePen</a>.\n</iframe>\n",
-    "toc": [],
-    "keywords": [
-      "codepen",
-      "blackmirror1980",
-      "https",
-      "height",
-      "href",
-      "iframe",
-      "521",
-      "pure",
-      "css",
-      "slider",
-      "using",
-      "scroll"
-    ],
-    "coverImage": null,
-    "coverAlt": "Testing CodePen",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2027-02-16-testing-codepen.md",
-    "path": "./src/posts/2027-02-16-testing-codepen.html"
   },
   {
     "name": "2027-02-23-css-properties-hierarchy",
@@ -3772,226 +3269,6 @@
     "layout": "post",
     "source": "data/posts/2027-02-23-css-properties-hierarchy.md",
     "path": "./src/posts/2027-02-23-css-properties-hierarchy.html"
-  },
-  {
-    "name": "2027-03-02-building-dout-dev-blog",
-    "title": "Building dout.dev blog",
-    "date": "2027-03-02T00:00:00.000Z",
-    "dateString": "Tue Mar 02 2027",
-    "published": false,
-    "tags": [
-      {
-        "key": "html",
-        "label": "Html",
-        "url": "./tags/html.html"
-      }
-    ],
-    "series": null,
-    "description": "Building dout.dev blog",
-    "excerpt": "Less is more!",
-    "content": "<blockquote>\n<p>Less is more!</p>\n</blockquote>\n<p>I started</p>\n",
-    "toc": [],
-    "keywords": [
-      "building",
-      "dout",
-      "dev",
-      "blog",
-      "less",
-      "started"
-    ],
-    "coverImage": "../assets/images/building-dout-dev-cover.jpg",
-    "coverWidth": 1600,
-    "coverHeight": 900,
-    "coverAlt": "Dashboard notes and publishing pipeline artwork for the dout.dev build article",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2027-03-02-building-dout-dev-blog.md",
-    "path": "./src/posts/2027-03-02-building-dout-dev-blog.html"
-  },
-  {
-    "name": "2027-03-09-building-dout-dev-blog-part-ii",
-    "title": "Building dout.dev blog - Part II",
-    "date": "2027-03-09T00:00:00.000Z",
-    "dateString": "Tue Mar 09 2027",
-    "published": false,
-    "tags": [
-      {
-        "key": "html",
-        "label": "Html",
-        "url": "./tags/html.html"
-      }
-    ],
-    "series": null,
-    "description": "Building dout.dev blog - Part II",
-    "excerpt": "Building dout.dev blog - Part II",
-    "content": "<p>Building dout.dev blog - Part II</p>\n",
-    "toc": [],
-    "keywords": [
-      "building",
-      "dout",
-      "dev",
-      "blog",
-      "part"
-    ],
-    "coverImage": "../assets/images/building-dout-dev-cover.jpg",
-    "coverWidth": 1600,
-    "coverHeight": 900,
-    "coverAlt": "Editorial system illustration used to test article cover rendering",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2027-03-09-building-dout-dev-blog-part-ii.md",
-    "path": "./src/posts/2027-03-09-building-dout-dev-blog-part-ii.html"
-  },
-  {
-    "name": "2027-03-16-welcome-to-dout-dev",
-    "title": "Welcome to dout.dev",
-    "date": "2027-03-16T00:00:00.000Z",
-    "dateString": "Tue Mar 16 2027",
-    "published": false,
-    "tags": [
-      {
-        "key": "generic",
-        "label": "Generic",
-        "url": "./tags/generic.html"
-      }
-    ],
-    "series": null,
-    "description": "Welcome to dout.dev",
-    "excerpt": "Hi, I'm Emiliano \"Pixu\" Pisu.",
-    "content": "<p>Hi, I'm Emiliano \"Pixu\" Pisu.</p>\n<p>I'm a \"vintage\" developer who loves to code and to share ideas, thoughts, knowledge.</p>\n<p>I'm starting this blog to talk and discuss about web-based technology, honestly most of times i'll focus in UI/UX, because i love it.</p>\n<p>However, in order to be able to talk about User Interaction, we'll need to discuss about:</p>\n<ul>\n<li>core web technologies</li><li>cross browser compatibility (thanks for your time IE but… no thanks!!! 🤣)</li><li>a11y</li><li>performances</li><li>best practices</li><li>responsiveness</li></ul>\n<p>Let's start a new trip together in the world HTML, CSS and JS.</p>\n",
-    "toc": [],
-    "keywords": [
-      "talk",
-      "discuss",
-      "web",
-      "thanks",
-      "welcome",
-      "dout",
-      "dev",
-      "emiliano",
-      "pixu",
-      "pisu",
-      "vintage",
-      "developer"
-    ],
-    "coverImage": null,
-    "coverAlt": "Welcome to dout.dev",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2027-03-16-welcome-to-dout-dev.md",
-    "path": "./src/posts/2027-03-16-welcome-to-dout-dev.html"
-  },
-  {
-    "name": "2027-03-23-concerning",
-    "title": "Concerning…",
-    "date": "2027-03-23T00:00:00.000Z",
-    "dateString": "Tue Mar 23 2027",
-    "published": false,
-    "tags": [
-      {
-        "key": "generic",
-        "label": "Generic",
-        "url": "./tags/generic.html"
-      }
-    ],
-    "series": null,
-    "description": "Concerning...",
-    "excerpt": "Concerning Core Web Technologies",
-    "content": "<h2 id=\"concerning-core-web-technologies\" tabindex=\"0\" data-toc-anchor=\"true\">Concerning Core Web Technologies</h2>\n<p>I truly believe in the following idea:</p>\n<blockquote>\n<p>Let the technologies do the job they were designed for</p>\n</blockquote>\n<p>We'll explore in detail... Building a CSS codebase from scratch can be very hard, but also fun and productive.</p>\n<hr>\n<h2 id=\"concerning-ui-ux\" tabindex=\"0\" data-toc-anchor=\"true\">Concerning UI/UX</h2>\n<p>Analyzing and implementing a Design and its related User Experience can be one of the funniest and challenging things to do.</p>\n<hr>\n<h2 id=\"concerning-a11y\" tabindex=\"0\" data-toc-anchor=\"true\">Concerning a11y</h2>\n<p>Let' start with a basic concept...</p>\n<blockquote>\n<p>We need to raise awareness about a11y</p>\n</blockquote>\n<p>20-25% have some sort of disability or uses a screen reader</p>\n<hr>\n<h2 id=\"concerning-responsiveness\" tabindex=\"0\" data-toc-anchor=\"true\">Concerning Responsiveness</h2>\n<p>Responsiveness is a concept, an idea, to me is...</p>\n<blockquote>\n<p>Reacting to the environment</p>\n</blockquote>\n",
-    "toc": [
-      {
-        "id": "concerning-core-web-technologies",
-        "level": 2,
-        "text": "Concerning Core Web Technologies"
-      },
-      {
-        "id": "concerning-ui-ux",
-        "level": 2,
-        "text": "Concerning UI/UX"
-      },
-      {
-        "id": "concerning-a11y",
-        "level": 2,
-        "text": "Concerning a11y"
-      },
-      {
-        "id": "concerning-responsiveness",
-        "level": 2,
-        "text": "Concerning Responsiveness"
-      }
-    ],
-    "keywords": [
-      "concerning",
-      "technologies",
-      "idea",
-      "let",
-      "a11y",
-      "concept",
-      "responsiveness",
-      "core",
-      "web",
-      "truly",
-      "believe",
-      "following"
-    ],
-    "coverImage": null,
-    "coverAlt": "Concerning…",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2027-03-23-concerning.md",
-    "path": "./src/posts/2027-03-23-concerning.html"
-  },
-  {
-    "name": "2027-03-30-say-hello-to-2023",
-    "title": "Say hello to 2023 🎉",
-    "date": "2027-03-30T00:00:00.000Z",
-    "dateString": "Tue Mar 30 2027",
-    "published": false,
-    "tags": [
-      {
-        "key": "markdown",
-        "label": "Markdown",
-        "url": "./tags/markdown.html"
-      },
-      {
-        "key": "releases",
-        "label": "Releases",
-        "url": "./tags/releases.html"
-      }
-    ],
-    "series": null,
-    "description": "Blog under construction",
-    "excerpt": "Say hello to 2023 🎉",
-    "content": "<h2 id=\"say-hello-to-2023\" tabindex=\"0\" data-toc-anchor=\"true\">Say hello to 2023 🎉</h2>\n<p>Welcome to the new year! This is the first post of 2023, and we're excited to share our plans for the year ahead. Stay tuned for more updates and content coming your way!</p>\n<pre is=\"pix-highlighter\" data-lang=\"javascript\"><code>addEventListener('DOMContentLoaded', (e) =&gt; {\n  console.log(e);\n});\n\nanotherFunctionCallGoesHere({}, () =&gt; {\n  selectOther();\n});</code></pre>",
-    "toc": [
-      {
-        "id": "say-hello-to-2023",
-        "level": 2,
-        "text": "Say hello to 2023 🎉"
-      }
-    ],
-    "keywords": [
-      "2023",
-      "say",
-      "hello",
-      "year",
-      "welcome",
-      "new",
-      "first",
-      "post",
-      "excited",
-      "share",
-      "plans",
-      "ahead"
-    ],
-    "coverImage": "../assets/images/2022-02-25-you-can-express-tags-today.jpg",
-    "coverWidth": 1600,
-    "coverHeight": 900,
-    "coverAlt": "Say hello to 2023 🎉",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2027-03-30-say-hello-to-2023.md",
-    "path": "./src/posts/2027-03-30-say-hello-to-2023.html"
   },
   {
     "name": "2027-04-06-accessibility-by-design",
@@ -4153,193 +3430,6 @@
     "path": "./src/posts/2027-04-13-introducing-css-grid-the-future-of-web-layout.html"
   },
   {
-    "name": "2027-04-20-m4-template-test-cover-image-e-syntax-highlighting",
-    "title": "M4 Template Test - Cover Image e Syntax Highlighting",
-    "date": "2027-04-20T00:00:00.000Z",
-    "dateString": "Tue Apr 20 2027",
-    "published": false,
-    "tags": [
-      {
-        "key": "test",
-        "label": "Test",
-        "url": "./tags/test.html"
-      },
-      {
-        "key": "m4",
-        "label": "M4",
-        "url": "./tags/m4.html"
-      },
-      {
-        "key": "syntax-highlight-element",
-        "label": "Syntax-highlight-element",
-        "url": "./tags/syntax-highlight-element.html"
-      },
-      {
-        "key": "cover-image",
-        "label": "Cover-image",
-        "url": "./tags/cover-image.html"
-      }
-    ],
-    "series": null,
-    "description": "Post di test per verificare le funzionalità M4 - cover image, pinned badge e syntax highlighting con syntax-highlight-element",
-    "excerpt": "Questo è un post di test per verificare tutte le funzionalità implementate nel M4 - Post Page.",
-    "content": "<p>Questo è un post di test per verificare tutte le funzionalità implementate nel <strong>M4 - Post Page</strong>.</p>\n<h2 id=\"cover-image-e-pinned-badge\" tabindex=\"0\" data-toc-anchor=\"true\">Cover Image e Pinned Badge</h2>\n<p>Questo post ha:</p>\n<ul>\n<li>✅ <strong>Cover Image</strong>: Immagine di copertina caricata con <code>fetchpriority=\"high\"</code></li><li>✅ <strong>Pinned Badge</strong>: Badge \"📌 Post in evidenza\" per post in evidenza</li><li>✅ <strong>Metadata avanzata</strong>: Schema.org BlogPosting completo</li></ul>\n<h2 id=\"syntax-highlighting-con-syntax-highlight-element\" tabindex=\"0\" data-toc-anchor=\"true\">Syntax Highlighting con syntax-highlight-element</h2>\n<p>Testiamo il syntax highlighting per vari linguaggi:</p>\n<h3 id=\"javascript\" tabindex=\"0\" data-toc-anchor=\"true\">JavaScript</h3>\n<pre is=\"pix-highlighter\" data-lang=\"javascript\"><code>// Esempio JavaScript\nconst blogPost = {\n  title: 'M4 Template Test',\n  author: 'dout.dev',\n  published: true,\n  tags: ['Test', 'M4', 'syntax-highlight-element'],\n};\n\nfunction renderPost(post) {\n  console.log(`Rendering: ${post.title}`);\n  return `&lt;article&gt;${post.title}&lt;/article&gt;`;\n}\n\naddEventListener('DOMContentLoaded', () =&gt; {\n  // highlighting is handled by the local &lt;syntax-highlight&gt; web component\n});</code></pre><h3 id=\"css\" tabindex=\"0\" data-toc-anchor=\"true\">CSS</h3>\n<pre is=\"pix-highlighter\" data-lang=\"css\"><code>/* Esempio CSS con design tokens */\n.post-cover-image {\n  width: 100%;\n  height: auto;\n  border-radius: var(--border-radius-md);\n  box-shadow: var(--shadow-lg);\n  object-fit: cover;\n}\n\n.post-badge--pinned {\n  background: var(--color-accent-primary);\n  color: var(--color-text-on-accent);\n  padding: var(--space-2) var(--space-3);\n  border-radius: var(--border-radius-full);\n  font-size: var(--text-sm);\n  font-weight: var(--font-weight-medium);\n}</code></pre><h3 id=\"html\" tabindex=\"0\" data-toc-anchor=\"true\">HTML</h3>\n<pre is=\"pix-highlighter\" data-lang=\"html\"><code>&lt;!-- Esempio HTML con Schema.org --&gt;\n&lt;article class=\"post\"&gt;\n  &lt;header class=\"post-header\"&gt;\n    &lt;div class=\"post-badge post-badge--pinned\" data-pinned=\"true\"&gt;📌 Post in evidenza&lt;/div&gt;\n    &lt;h1&gt;{{ title }}&lt;/h1&gt;\n    &lt;div class=\"post-meta\"&gt;\n      &lt;time datetime=\"{{ date }}\"&gt;{{ date | date:'%d %B %Y' }}&lt;/time&gt;\n    &lt;/div&gt;\n  &lt;/header&gt;\n  &lt;div class=\"post-content\"&gt;{{ content | raw }}&lt;/div&gt;\n&lt;/article&gt;</code></pre><h3 id=\"json\" tabindex=\"0\" data-toc-anchor=\"true\">JSON</h3>\n<pre is=\"pix-highlighter\" data-lang=\"json\"><code>{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BlogPosting\",\n  \"headline\": \"M4 Template Test\",\n  \"description\": \"Post di test per M4\",\n  \"datePublished\": \"2024-12-27T10:00:00.000Z\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"dout.dev\"\n  },\n  \"keywords\": \"Test,M4,syntax-highlight-element,Cover Image\"\n}</code></pre><h3 id=\"bash\" tabindex=\"0\" data-toc-anchor=\"true\">Bash</h3>\n<pre is=\"pix-highlighter\" data-lang=\"bash\"><code>#!/bin/bash\n# Script per build e test\necho \"Building CMS...\"\nnpm run cms:build\n\necho \"Starting dev server...\"\nnpm run dev</code></pre><h2 id=\"funzionalit-testate\" tabindex=\"0\" data-toc-anchor=\"true\">Funzionalità Testate</h2>\n<ul>\n<li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-1\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**Template post.html aggiornato** con layout hook\" checked=\"\"><label for=\"md-task-1\"><strong>Template post.html aggiornato</strong> con layout hook</label></li><li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-2\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**Metadata completa**: title, meta description, canonical, JSON-LD BlogPosting\" checked=\"\"><label for=\"md-task-2\"><strong>Metadata completa</strong>: title, meta description, canonical, JSON-LD BlogPosting</label></li><li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-3\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**Support coverImage**: immagine di copertina con attributi performance\" checked=\"\"><label for=\"md-task-3\"><strong>Support coverImage</strong>: immagine di copertina con attributi performance</label></li><li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-4\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**Support pinned badge**: badge per post in evidenza (mostrato solo in listings)\" checked=\"\"><label for=\"md-task-4\"><strong>Support pinned badge</strong>: badge per post in evidenza (mostrato solo in listings)</label></li><li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-5\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**syntax-highlight-element integrato**: syntax highlighting per tutti i linguaggi specificati\" checked=\"\"><label for=\"md-task-5\"><strong>syntax-highlight-element integrato</strong>: syntax highlighting per tutti i linguaggi specificati</label></li></ul>\n<p>La checklist M4 dovrebbe essere completamente implementata! 🎉</p>\n",
-    "toc": [
-      {
-        "id": "cover-image-e-pinned-badge",
-        "level": 2,
-        "text": "Cover Image e Pinned Badge"
-      },
-      {
-        "id": "syntax-highlighting-con-syntax-highlight-element",
-        "level": 2,
-        "text": "Syntax Highlighting con syntax-highlight-element"
-      },
-      {
-        "id": "javascript",
-        "level": 3,
-        "text": "JavaScript"
-      },
-      {
-        "id": "css",
-        "level": 3,
-        "text": "CSS"
-      },
-      {
-        "id": "html",
-        "level": 3,
-        "text": "HTML"
-      },
-      {
-        "id": "json",
-        "level": 3,
-        "text": "JSON"
-      },
-      {
-        "id": "bash",
-        "level": 3,
-        "text": "Bash"
-      },
-      {
-        "id": "funzionalit-testate",
-        "level": 2,
-        "text": "Funzionalità Testate"
-      }
-    ],
-    "keywords": [
-      "post",
-      "syntax",
-      "per",
-      "badge",
-      "highlighting",
-      "con",
-      "cover",
-      "image",
-      "pinned",
-      "evidenza",
-      "template",
-      "test"
-    ],
-    "coverImage": "../assets/images/alexandr-podvalny-220262-unsplash.jpg",
-    "coverWidth": 1600,
-    "coverHeight": 900,
-    "coverAlt": "M4 Template Test - Cover Image e Syntax Highlighting",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2027-04-20-m4-template-test-cover-image-e-syntax-highlighting.md",
-    "path": "./src/posts/2027-04-20-m4-template-test-cover-image-e-syntax-highlighting.html"
-  },
-  {
-    "name": "2027-04-27-welcome-to-dout-dev",
-    "title": "Welcome to dout.dev",
-    "date": "2027-04-27T00:00:00.000Z",
-    "dateString": "Tue Apr 27 2027",
-    "published": false,
-    "tags": [
-      {
-        "key": "blog",
-        "label": "Blog",
-        "url": "./tags/blog.html"
-      },
-      {
-        "key": "welcome",
-        "label": "Welcome",
-        "url": "./tags/welcome.html"
-      },
-      {
-        "key": "vanilla-js",
-        "label": "Vanilla-js",
-        "url": "./tags/vanilla-js.html"
-      }
-    ],
-    "series": null,
-    "description": "Introducing the new dout.dev blog built with vanilla JavaScript and modern web standards",
-    "excerpt": "Welcome to the New dout.dev",
-    "content": "<h2 id=\"welcome-to-the-new-dout-dev\" tabindex=\"0\" data-toc-anchor=\"true\">Welcome to the New dout.dev</h2>\n<p>Welcome to the brand new version of dout.dev! This blog has been completely rebuilt from the ground up using modern web technologies while maintaining a <strong>vanilla-first</strong> approach.</p>\n<h2 id=\"what-s-new\" tabindex=\"0\" data-toc-anchor=\"true\">What's New</h2>\n<h3 id=\"zero-runtime-dependencies\" tabindex=\"0\" data-toc-anchor=\"true\">Zero Runtime Dependencies</h3>\n<p>The new dout.dev runs entirely on vanilla JavaScript, CSS, and HTML. No frameworks, no runtime dependencies - just clean, fast, and accessible web standards.</p>\n<h3 id=\"wcag-2-2-aa-accessibility\" tabindex=\"0\" data-toc-anchor=\"true\">WCAG 2.2 AA Accessibility</h3>\n<p>Every aspect of this blog has been designed with accessibility in mind:</p>\n<ul>\n<li>Semantic HTML structure</li><li>Proper ARIA landmarks and labels</li><li>Keyboard navigation support</li><li>Screen reader optimizations</li><li>High contrast color schemes</li></ul>\n<h3 id=\"modern-build-pipeline\" tabindex=\"0\" data-toc-anchor=\"true\">Modern Build Pipeline</h3>\n<p>Behind the scenes, we use:</p>\n<ul>\n<li><strong>Custom CMS</strong>: Processes Markdown files into static HTML</li><li><strong>Template Engine</strong>: Proprietary system with includes, extends, and filters</li><li><strong>Vite</strong>: Modern build tooling for development and production</li><li><strong>Biome</strong>: Fast linting and formatting</li><li><strong>PostCSS</strong>: CSS processing and optimization</li></ul>\n<h3 id=\"performance-first\" tabindex=\"0\" data-toc-anchor=\"true\">Performance First</h3>\n<p>The site is optimized for Core Web Vitals:</p>\n<ul>\n<li>Lazy loading images</li><li>Minimal JavaScript</li><li>Critical CSS inlining</li><li>Progressive enhancement</li></ul>\n<h2 id=\"technical-highlights\" tabindex=\"0\" data-toc-anchor=\"true\">Technical Highlights</h2>\n<p>This blog showcases several interesting technical approaches:</p>\n<ol>\n<li><strong>Custom Template Engine</strong> - Built specifically for this use case</li><li><strong>Static Site Generation</strong> - All pages pre-rendered at build time</li><li><strong>Progressive Enhancement</strong> - Works without JavaScript, better with it</li><li><strong>Modern CSS</strong> - Using custom properties, grid, and modern features</li></ol>\n<h2 id=\"looking-forward\" tabindex=\"0\" data-toc-anchor=\"true\">Looking Forward</h2>\n<p>This rewrite sets the foundation for many exciting features planned for the future:</p>\n<ul>\n<li>Multi-language support (English/Italian)</li><li>Advanced search functionality</li><li>Related posts and series</li><li>Dark/light theme switching</li><li>RSS and JSON feeds</li></ul>\n<p>Stay tuned for more updates and technical deep-dives into how this blog is built!</p>\n<hr>\n<p><em>This post marks the beginning of a new chapter for dout.dev. Welcome aboard!</em></p>\n",
-    "toc": [
-      {
-        "id": "welcome-to-the-new-dout-dev",
-        "level": 2,
-        "text": "Welcome to the New dout.dev"
-      },
-      {
-        "id": "what-s-new",
-        "level": 2,
-        "text": "What's New"
-      },
-      {
-        "id": "zero-runtime-dependencies",
-        "level": 3,
-        "text": "Zero Runtime Dependencies"
-      },
-      {
-        "id": "wcag-2-2-aa-accessibility",
-        "level": 3,
-        "text": "WCAG 2.2 AA Accessibility"
-      },
-      {
-        "id": "modern-build-pipeline",
-        "level": 3,
-        "text": "Modern Build Pipeline"
-      },
-      {
-        "id": "performance-first",
-        "level": 3,
-        "text": "Performance First"
-      },
-      {
-        "id": "technical-highlights",
-        "level": 2,
-        "text": "Technical Highlights"
-      },
-      {
-        "id": "looking-forward",
-        "level": 2,
-        "text": "Looking Forward"
-      }
-    ],
-    "keywords": [
-      "dout",
-      "dev",
-      "new",
-      "modern",
-      "welcome",
-      "blog",
-      "css",
-      "web",
-      "javascript",
-      "html",
-      "build",
-      "custom"
-    ],
-    "coverImage": null,
-    "coverAlt": "Welcome to dout.dev",
-    "pinned": false,
-    "layout": "post",
-    "source": "data/posts/2027-04-27-welcome-to-dout-dev.md",
-    "path": "./src/posts/2027-04-27-welcome-to-dout-dev.html"
-  },
-  {
     "name": "2027-05-04-how-to-write-agent-skills-that-actually-trigger",
     "title": "How to Write Agent Skills That Actually Trigger",
     "date": "2027-05-04T00:00:00.000Z",
@@ -4433,5 +3523,915 @@
     "layout": "post",
     "source": "data/posts/2027-05-04-how-to-write-agent-skills-that-actually-trigger.md",
     "path": "./src/posts/2027-05-04-how-to-write-agent-skills-that-actually-trigger.html"
+  },
+  {
+    "name": "2026-11-24-a-post-with-a-cover-image",
+    "title": "A post with a cover image",
+    "date": "2026-11-24T00:00:00.000Z",
+    "dateString": "Tue Nov 24 2026",
+    "published": false,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
+      },
+      {
+        "key": "cover-image",
+        "label": "Cover-image",
+        "url": "./tags/cover-image.html"
+      }
+    ],
+    "series": null,
+    "description": "One line only description",
+    "excerpt": "Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or",
+    "content": "<p>Readability, however, is emphasized above all else. A Markdown-formatted\ndocument should be publishable as-is, as plain text, without looking\nlike it's been marked up with tags or formatting instructions.</p>\n<p>While Markdown's syntax has been influenced by several existing text-to-HTML filters -- including <a href=\"http://docutils.sourceforge.net/mirror/setext.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Setext</a>, <a href=\"http://www.aaronsw.com/2002/atx/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">atx</a>, <a href=\"http://textism.com/tools/textile/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Textile</a>, <a href=\"http://docutils.sourceforge.net/rst.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">reStructuredText</a>,\n<a href=\"http://www.triptico.com/software/grutatxt.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Grutatext</a>, and <a href=\"http://ettext.taint.org/doc/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">EtText</a> -- the single biggest source of\ninspiration for Markdown's syntax is the format of plain text email.</p>\n",
+    "toc": [],
+    "keywords": [
+      "markdown",
+      "text",
+      "plain",
+      "syntax",
+      "post",
+      "cover",
+      "image",
+      "readability",
+      "however",
+      "emphasized",
+      "above",
+      "all"
+    ],
+    "coverImage": null,
+    "coverAlt": "A post with a cover image",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2026-11-24-a-post-with-a-cover-image.md",
+    "path": "./src/posts/2026-11-24-a-post-with-a-cover-image.html"
+  },
+  {
+    "name": "2026-12-01-markdown-test-file",
+    "title": "Markdown test file",
+    "date": "2026-12-01T00:00:00.000Z",
+    "dateString": "Tue Dec 01 2026",
+    "published": false,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
+      },
+      {
+        "key": "test-files",
+        "label": "Test-files",
+        "url": "./tags/test-files.html"
+      }
+    ],
+    "series": null,
+    "description": "One line only description",
+    "excerpt": "Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable",
+    "content": "<p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted\ndocument should be publishable as-is, as plain text, without looking\nlike it's been marked up with tags or formatting instructions.</p>\n<p>While Markdown's syntax has been influenced by several existing text-to-HTML\nfilters -- including <a href=\"http://docutils.sourceforge.net/mirror/setext.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Setext</a>, <a href=\"http://www.aaronsw.com/2002/atx/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">atx</a>, <a href=\"http://textism.com/tools/textile/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Textile</a>, <a href=\"http://docutils.sourceforge.net/rst.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">reStructuredText</a>,\n<a href=\"http://www.triptico.com/software/grutatxt.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Grutatext</a>, and <a href=\"http://ettext.taint.org/doc/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">EtText</a> -- the single biggest source of\ninspiration for Markdown's syntax is the format of plain text email.</p>\n<h2 id=\"block-elements\" tabindex=\"0\" data-toc-anchor=\"true\">Block Elements</h2>\n<h3 id=\"paragraphs-and-line-breaks\" tabindex=\"0\" data-toc-anchor=\"true\">Paragraphs and Line Breaks</h3>\n<p>A paragraph is simply one or more consecutive lines of text, separated\nby one or more blank lines. (A blank line is any line that looks like a\nblank line -- a line containing nothing but spaces or tabs is considered\nblank.) Normal paragraphs should not be indented with spaces or tabs.</p>\n<p>The implication of the \"one or more consecutive lines of text\" rule is\nthat Markdown supports \"hard-wrapped\" text paragraphs. This differs\nsignificantly from most other text-to-HTML formatters (including Movable\nType's \"Convert Line Breaks\" option) which translate every line break\ncharacter in a paragraph into a <code>&lt;br /&gt;</code> tag.</p>\n<p>When you <em>do</em> want to insert a <code>&lt;br /&gt;</code> break tag using Markdown, you\nend a line with two or more spaces, then type return.</p>\n<h3 id=\"headers\" tabindex=\"0\" data-toc-anchor=\"true\">Headers</h3>\n<p>Markdown supports two styles of headers, [Setext] [1] and [atx] [2].</p>\n<p>Optionally, you may \"close\" atx-style headers. This is purely\ncosmetic -- you can use this if you think it looks better. The\nclosing hashes don't even need to match the number of hashes\nused to open the header. (The number of opening hashes\ndetermines the header level.)</p>\n<h3 id=\"images\" tabindex=\"0\" data-toc-anchor=\"true\">Images</h3>\n<p>Images are added with <code>![Image Alt](./images/image.jpg)</code></p>\n<p><img data-src=\"../assets/favicon/android-chrome-512x512.png\" alt=\"Image\" loading=\"lazy\" decoding=\"async\" fetchpriority=\"low\"><noscript><img src=\"../assets/favicon/android-chrome-512x512.png\" alt=\"Image\"></noscript></p>\n<h3 id=\"blockquotes\" tabindex=\"0\" data-toc-anchor=\"true\">Blockquotes</h3>\n<p>Markdown uses email-style <code>&gt;</code> characters for blockquoting. If you're\nfamiliar with quoting passages of text in an email message, then you\nknow how to create a blockquote in Markdown. It looks best if you hard\nwrap the text and put a <code>&gt;</code> before every line:</p>\n<blockquote>\n<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,\nconsectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.\nVestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>\n<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse\nid sem consectetuer libero luctus adipiscing.</p>\n</blockquote>\n<p>Markdown allows you to be lazy and only put the <code>&gt;</code> before the first\nline of a hard-wrapped paragraph:</p>\n<blockquote>\n<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,\nconsectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.\nVestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>\n</blockquote>\n<blockquote>\n<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse\nid sem consectetuer libero luctus adipiscing.</p>\n</blockquote>\n<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by\nadding additional levels of <code>&gt;</code>:</p>\n<blockquote>\n<p>This is the first level of quoting.</p>\n<blockquote>\n<p>This is nested blockquote.</p>\n</blockquote>\n<p>Back to the first level.</p>\n</blockquote>\n<p>Blockquotes can contain other Markdown elements, including headers, lists,\nand code blocks:</p>\n<blockquote>\n<h2 id=\"this-is-a-h2-header\" tabindex=\"0\" data-toc-anchor=\"true\">This is a h2 header.</h2>\n<ol>\n<li>This is the first list item.</li><li>This is the second list item.</li></ol>\n<p>Here's some example code:</p>\n<pre is=\"pix-highlighter\"><code>return shell_exec(\"echo $input | $markdown_script\");</code></pre></blockquote>\n<p>Any decent text editor should make email-style quoting easy. For\nexample, with BBEdit, you can make a selection and choose Increase\nQuote Level from the Text menu.</p>\n<h3 id=\"lists\" tabindex=\"0\" data-toc-anchor=\"true\">Lists</h3>\n<p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>\n<p>Unordered lists use asterisks, pluses, and hyphens -- interchangably\n-- as list markers:</p>\n<ul>\n<li>Red</li><li>Green</li><li>Blue</li></ul>\n<p>is equivalent to:</p>\n<ul>\n<li>Red</li><li>Green</li><li>Blue</li></ul>\n<p>and:</p>\n<ul>\n<li>Red</li><li>Green</li><li>Blue</li></ul>\n<p>Ordered lists use numbers followed by periods:</p>\n<ol>\n<li>Bird</li><li>McHale</li><li>Parish</li></ol>\n<p>It's important to note that the actual numbers you use to mark the\nlist have no effect on the HTML output Markdown produces. The HTML\nMarkdown produces from the above list is:</p>\n<p>If you instead wrote the list in Markdown like this:</p>\n<ol>\n<li>Bird</li><li>McHale</li><li>Parish</li></ol>\n<p>or even:</p>\n<ol start=\"3\">\n<li>Bird</li><li>McHale</li><li>Parish</li></ol>\n<p>you'd get the exact same HTML output. The point is, if you want to,\nyou can use ordinal numbers in your ordered Markdown lists, so that\nthe numbers in your source match the numbers in your published HTML.\nBut if you want to be lazy, you don't have to.</p>\n<p>To make lists look nice, you can wrap items with hanging indents:</p>\n<ul>\n<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\nAliquam hendrerit mi posuere lectus. Vestibulum enim wisi,\nviverra nec, fringilla in, laoreet vitae, risus.</li><li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.\nSuspendisse id sem consectetuer libero luctus adipiscing.</li></ul>\n<p>But if you want to be lazy, you don't have to:</p>\n<ul>\n<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\nAliquam hendrerit mi posuere lectus. Vestibulum enim wisi,\nviverra nec, fringilla in, laoreet vitae, risus.</li><li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.\nSuspendisse id sem consectetuer libero luctus adipiscing.</li></ul>\n<p>List items may consist of multiple paragraphs. Each subsequent\nparagraph in a list item must be indented by either 4 spaces\nor one tab:</p>\n<ol>\n<li><p>This is a list item with two paragraphs. Lorem ipsum dolor\nsit amet, consectetuer adipiscing elit. Aliquam hendrerit\nmi posuere lectus.</p>\n<p>Vestibulum enim wisi, viverra nec, fringilla in, laoreet\nvitae, risus. Donec sit amet nisl. Aliquam semper ipsum\nsit amet velit.</p></li><li><p>Suspendisse id sem consectetuer libero luctus adipiscing.</p></li></ol>\n<p>It looks nice if you indent every line of the subsequent\nparagraphs, but here again, Markdown will allow you to be\nlazy:</p>\n<ul>\n<li><p>This is a list item with two paragraphs.</p>\n<pre is=\"pix-highlighter\"><code>This is the second paragraph in the list item. You're</code></pre><p>only required to indent the first line. Lorem ipsum dolor\nsit amet, consectetuer adipiscing elit.</p></li><li><p>Another item in the same list.</p></li></ul>\n<p>To put a blockquote within a list item, the blockquote's <code>&gt;</code>\ndelimiters need to be indented:</p>\n<ul>\n<li><p>A list item with a blockquote:</p>\n<blockquote>\n<p>This is a blockquote\ninside a list item.</p>\n</blockquote></li></ul>\n<p>To put a code block within a list item, the code block needs\nto be indented <em>twice</em> -- 8 spaces or two tabs:</p>\n<ul>\n<li>A list item with a code block:</li></ul>\n<pre is=\"pix-highlighter\" data-lang=\"html\"><code>&lt;code goes here&gt;&lt;/code&gt;</code></pre><h3 id=\"code-blocks\" tabindex=\"0\" data-toc-anchor=\"true\">Code Blocks</h3>\n<p>Pre-formatted code blocks are used for writing about programming or\nmarkup source code. Rather than forming normal paragraphs, the lines\nof a code block are interpreted literally. Markdown wraps a code block\nin both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>\n<p>To produce a code block in Markdown, simply indent every line of the\nblock by at least 4 spaces or 1 tab.</p>\n<p>This is a normal paragraph:</p>\n<pre is=\"pix-highlighter\"><code>    This is a code block.</code></pre><p>Here is an example of AppleScript:</p>\n<pre is=\"pix-highlighter\" data-lang=\"applescript\"><code>  tell application \"Foo\"\n    beep\n  end tell</code></pre><p>A code block continues until it reaches a line that is not indented\n(or the end of the article).</p>\n<p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>)\nare automatically converted into HTML entities. This makes it very\neasy to include example HTML source code using Markdown -- just paste\nit and indent it, and Markdown will handle the hassle of encoding the\nampersands and angle brackets. For example, this:</p>\n<pre is=\"pix-highlighter\" data-lang=\"html\"><code>&lt;div class=\"footer\"&gt;&amp;copy; 2004 Foo Corporation&lt;/div&gt;</code></pre><p>Regular Markdown syntax is not processed within code blocks. E.g.,\nasterisks are just literal asterisks within a code block. This means\nit's also easy to use Markdown to write about Markdown's own syntax.</p>\n<pre is=\"pix-highlighter\"><code>tell application \"Foo\"\n  beep\nend tell</code></pre><h2 id=\"span-elements\" tabindex=\"0\" data-toc-anchor=\"true\">Span Elements</h2>\n<h3 id=\"links\" tabindex=\"0\" data-toc-anchor=\"true\">Links</h3>\n<p>Markdown supports two style of links: <em>inline</em> and <em>reference</em>.</p>\n<p>In both styles, the link text is delimited by [square brackets].</p>\n<p>To create an inline link, use a set of regular parentheses immediately\nafter the link text's closing square bracket. Inside the parentheses,\nput the URL where you want the link to point, along with an <em>optional</em>\ntitle for the link, surrounded in quotes. For example:</p>\n<p>This is <a href=\"http://example.com/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">an example</a> inline link.</p>\n<p><a href=\"http://example.net/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">This link</a> has no title attribute.</p>\n<h3 id=\"emphasis\" tabindex=\"0\" data-toc-anchor=\"true\">Emphasis</h3>\n<p>Markdown treats asterisks (<code>*</code>) and underscores (<code>_</code>) as indicators of\nemphasis. Text wrapped with one <code>*</code> or <code>_</code> will be wrapped with an\nHTML <code>&lt;em&gt;</code> tag; double <code>*</code>'s or <code>_</code>'s will be wrapped with an HTML\n<code>&lt;strong&gt;</code> tag. E.g., this input:</p>\n<p><em>single asterisks</em></p>\n<p><em>single underscores</em></p>\n<p><strong>double asterisks</strong></p>\n<p><strong>double underscores</strong></p>\n<h3 id=\"code\" tabindex=\"0\" data-toc-anchor=\"true\">Code</h3>\n<p>To indicate a span of code, wrap it with backtick quotes (<code>`</code>).\nUnlike a pre-formatted code block, a code span indicates code within a\nnormal paragraph. For example:</p>\n<p>Use the <code>printf()</code> function.</p>\n",
+    "toc": [
+      {
+        "id": "block-elements",
+        "level": 2,
+        "text": "Block Elements"
+      },
+      {
+        "id": "paragraphs-and-line-breaks",
+        "level": 3,
+        "text": "Paragraphs and Line Breaks"
+      },
+      {
+        "id": "headers",
+        "level": 3,
+        "text": "Headers"
+      },
+      {
+        "id": "images",
+        "level": 3,
+        "text": "Images"
+      },
+      {
+        "id": "blockquotes",
+        "level": 3,
+        "text": "Blockquotes"
+      },
+      {
+        "id": "this-is-a-h2-header",
+        "level": 2,
+        "text": "This is a h2 header."
+      },
+      {
+        "id": "lists",
+        "level": 3,
+        "text": "Lists"
+      },
+      {
+        "id": "code-blocks",
+        "level": 3,
+        "text": "Code Blocks"
+      },
+      {
+        "id": "span-elements",
+        "level": 2,
+        "text": "Span Elements"
+      },
+      {
+        "id": "links",
+        "level": 3,
+        "text": "Links"
+      },
+      {
+        "id": "emphasis",
+        "level": 3,
+        "text": "Emphasis"
+      },
+      {
+        "id": "code",
+        "level": 3,
+        "text": "Code"
+      }
+    ],
+    "keywords": [
+      "markdown",
+      "code",
+      "list",
+      "sit",
+      "amet",
+      "text",
+      "line",
+      "block",
+      "item",
+      "ipsum",
+      "consectetuer",
+      "adipiscing"
+    ],
+    "coverImage": null,
+    "coverAlt": "Markdown test file",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2026-12-01-markdown-test-file.md",
+    "path": "./src/posts/2026-12-01-markdown-test-file.html"
+  },
+  {
+    "name": "2026-12-08-say-hello-to-gridsome",
+    "title": "Say hello to Gridsome 🎉",
+    "date": "2026-12-08T00:00:00.000Z",
+    "dateString": "Tue Dec 08 2026",
+    "published": false,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
+      },
+      {
+        "key": "releases",
+        "label": "Releases",
+        "url": "./tags/releases.html"
+      }
+    ],
+    "series": null,
+    "description": "One line only description",
+    "excerpt": "A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta rea",
+    "content": "<p>A new static site generator baby is born. It's highly inspired by Gatsby.js (React based) but built on top of Vue.js. We have been working on it for a year and will have a beta ready soon. You can expect this baby to grow up fast!</p>\n<p>We think <strong>Gridsome</strong> is a missing piece to the Vue.js ecosystem. What Gatsby.js does for React.js is a game changer in how we build websites. React.js is excellent, but we think Vue.js is more approachable for most web designers and devs getting started with JAMstack. Gridsome is the Vue.js alternative to Gatsby.</p>\n<p>With <strong>Gridsome</strong> you get a <strong>universal GraphQL layer</strong> for all your connected data sources. It's like a single source of truth for your website data ready to be used in any page or components. Connect to any CMS or APIs like Google Spreadsheet, Airtable, Instagram Feed, local markdown files, etc.</p>\n<p>Here is an example on how to query posts from the GraphQL layer in a page:</p>\n<pre is=\"pix-highlighter\" data-lang=\"html\"><code>&lt;template&gt;\n  &lt;Layout&gt;\n    &lt;h2&gt;Latest blog posts&lt;/h2&gt;\n    &lt;ul&gt;&lt;/ul&gt;\n  &lt;/Layout&gt;\n&lt;/template&gt;\n\n&lt;page-query&gt; query Blog { allWordPressPost (limit: 5) { edges { node { _id title } } } } &lt;/page-query&gt;</code></pre><p>You don't need to know GraphQL or Vue to get started with Gridsome - It's a great way to get introduced to both.</p>\n<p>The GraphQL layer and all the data can be explored in a local GraphQL playground. The playground is usually located at <code>https://localhost:8080/___explore</code> when a Gridsome development project is running.</p>\n<h2 id=\"perfect-scores-on-google-lighthouse-automagically\" tabindex=\"0\" data-toc-anchor=\"true\">Perfect scores on Google Lighthouse - automagically 💚</h2>\n<p>One of the main goals of Gridsome is to make a framework that let you build websites that are optimized \"out-of-the-box.\" It follows the <a href=\"https://developers.google.com/web/fundamentals/performance/prpl-pattern/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">PRPL-pattern by Google.</a> You don't need to be a performance expert to make fast websites with Gridsome. Your site gets almost perfect scores on Google lighthouse out-of-the-box. These are some of the performance steps that Gridsome takes care of:</p>\n<ul>\n<li>Image compressing &amp; lazy-loading ⚡️</li><li>CSS &amp; JS minification ⚡️</li><li>Code-splitting ⚡️</li><li>HTML compressing ⚡️</li><li>Critical CSS (Plugin) ⚡️</li><li>Full PWA &amp; Offline-support (plugin) ⚡️</li></ul>\n<h2 id=\"a-better-way-to-build-websites\" tabindex=\"0\" data-toc-anchor=\"true\">A better way to build websites</h2>\n<p>Gridsome is built for the JAMstack workflow - a new way to build websites that gives you better performance, higher security, cheaper hosting, and a better developer experience. Generate pre-rendered (static) pages at build time for SEO-purpose and add powerful dynamic functionality with APIs and Vue.js.</p>\n<p>We believe the SSGs / JAMstack trend is just getting started. When you have first started to make websites this way there is no way back. You feel almost \"dirty\" when going back to a traditional WordPress / CMS setup.</p>\n<p>Try running the new Chrome Lighthouse (Audit tab in Developer tools) on a WordPress site - It is impossible to get good scores even with the best caching plugins and hosting. With Gridsome you don't even need caching plugins. Website optimization is taken care of at build time.</p>\n<p>This is what we think is very exciting and is why we are building Gridsome. It is the <strong>perfect SPA &amp; PWA front-end solution</strong> for any headless CMS or content APIs.</p>\n<h2 id=\"whats-next\" tabindex=\"0\" data-toc-anchor=\"true\">Whats next</h2>\n<p>In the next couple of months we're going to continue to improve the docs, create tutorials, add more source &amp; transformer plugins and fix bugs.</p>\n<h2 id=\"contribute-to-gridsome\" tabindex=\"0\" data-toc-anchor=\"true\">Contribute to Gridsome</h2>\n<p>We're currently just two brothers working on this, so any contribution is very welcome. We're passionate about building a faster web and make website building fun again.</p>\n<p>You can also support us by giving <a href=\"https://github.com/gridsome/gridsome/stargazers?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">a GitHub star ★</a> and spread the word :)</p>\n",
+    "toc": [
+      {
+        "id": "perfect-scores-on-google-lighthouse-automagically",
+        "level": 2,
+        "text": "Perfect scores on Google Lighthouse - automagically 💚"
+      },
+      {
+        "id": "a-better-way-to-build-websites",
+        "level": 2,
+        "text": "A better way to build websites"
+      },
+      {
+        "id": "whats-next",
+        "level": 2,
+        "text": "Whats next"
+      },
+      {
+        "id": "contribute-to-gridsome",
+        "level": 2,
+        "text": "Contribute to Gridsome"
+      }
+    ],
+    "keywords": [
+      "gridsome",
+      "vue",
+      "build",
+      "websites",
+      "graphql",
+      "way",
+      "started",
+      "get",
+      "make",
+      "new",
+      "site",
+      "gatsby"
+    ],
+    "coverImage": null,
+    "coverAlt": "Say hello to Gridsome 🎉",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2026-12-08-say-hello-to-gridsome.md",
+    "path": "./src/posts/2026-12-08-say-hello-to-gridsome.html"
+  },
+  {
+    "name": "2026-12-15-say-hello-to-gridsome-new",
+    "title": "Say Hello to Gridsome NEW",
+    "date": "2026-12-15T00:00:00.000Z",
+    "dateString": "Tue Dec 15 2026",
+    "published": false,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
+      },
+      {
+        "key": "cover-image",
+        "label": "Cover-image",
+        "url": "./tags/cover-image.html"
+      }
+    ],
+    "series": null,
+    "description": "One line only description",
+    "excerpt": "Well.... that's all",
+    "content": "<p>Well.... that's all</p>\n",
+    "toc": [],
+    "keywords": [
+      "say",
+      "hello",
+      "gridsome",
+      "new",
+      "well",
+      "all"
+    ],
+    "coverImage": null,
+    "coverAlt": "Say Hello to Gridsome NEW",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2026-12-15-say-hello-to-gridsome-new.md",
+    "path": "./src/posts/2026-12-15-say-hello-to-gridsome-new.html"
+  },
+  {
+    "name": "2026-12-22-testing-codepen",
+    "title": "Testing CodePen",
+    "date": "2026-12-22T00:00:00.000Z",
+    "dateString": "Tue Dec 22 2026",
+    "published": false,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
+      },
+      {
+        "key": "cover-image",
+        "label": "Cover-image",
+        "url": "./tags/cover-image.html"
+      }
+    ],
+    "series": null,
+    "description": "One line only description",
+    "excerpt": "GRADIENT BORDERS",
+    "content": "<p>GRADIENT BORDERS</p>\n<p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible. Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions.</p>\n<style>\n  .white-grad {\n    --b: 5px; /* border width*/\n    --r: 15px; /* the radius */\n\n    color: var(--dout--color-primary);\n    padding: calc(var(--b) + 5px);\n    display: inline-block;\n    margin: 75px 0;\n    position: relative;\n    z-index: 0;\n  }\n  .white-grad:before {\n    content: '';\n    position: absolute;\n    z-index: -1;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    padding: var(--b);\n    border: var(--b) solid transparent;\n    border-radius: var(--r);\n    background: linear-gradient(var(--dout--background-color-primary), var(--dout--background-color-primary)) padding-box,\n      var(--c, linear-gradient(to right, #9c20aa, #fb3570)) border-box;\n    \n    /*\n    background: var(--c, linear-gradient(to right, #9c20aa, #fb3570));\n    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);\n    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);\n    -webkit-mask-composite: destination-out;\n    mask-composite: exclude;\n    */\n  }\n</style>\n<div class=\"white-grad\">Some text here</div>\n<div class=\"white-grad\" style=\"--r: 20px; --b: 10px; --c: linear-gradient(140deg, red, yellow, green)\">\n  Some long long long text here\n</div>\n<div class=\"white-grad\" style=\"--r: 30px; --b: 8px; --c: linear-gradient(-40deg, black 50%, blue 0)\">\n  Some long long <br>long text here\n</div>\n<div class=\"white-grad\" style=\"--r: 40px; --b: 20px; --c: conic-gradient(black, orange, purple)\">\n  Some long long <br>long text here<br>\n  more and more more and more\n</div>\n<div class=\"white-grad\" style=\"--r: 50%; --b: 10px; --c: linear-gradient(140deg, red, yellow, green)\"></div>\n<div class=\"white-grad\" style=\"--r: 50%; --b: 8px; --c: linear-gradient(-40deg, black 50%, blue 0)\"></div>\n<div class=\"white-grad\" style=\"--r: 50%; --b: 20px; --c: conic-gradient(black, orange, purple)\"></div>\n<div class=\"white-grad\" style=\"--r: 50% 0 50% 50%\"></div>\n<div class=\"white-grad\" style=\"--b: 10px; --r: 50% 0; --c: linear-gradient(140deg, red, yellow, green)\"></div>\n<div class=\"white-grad\" style=\"--b: 8px; --r: 50% 0 0; --c: linear-gradient(-40deg, black 50%, blue 0)\"></div>\n<div class=\"white-grad\" style=\"--b: 20px; --r: 50% 50% 0 0; --c: conic-gradient(black, orange, purple)\"></div>\n<div class=\"white-grad\" style=\"--b: 0 0 20px 20px; --r: 50% 0 50% 50%\"></div>\n<div class=\"white-grad\" style=\"--b: 10px 0 10px 0; --r: 50% 0; --c: linear-gradient(140deg, red, yellow, green)\"></div>\n<div class=\"white-grad\" style=\"--b: 8px 0px 0px 8px; --r: 50% 0 0; --c: linear-gradient(40deg, black 50%, blue 0)\"></div>\n<div class=\"white-grad\" style=\"--b: 20px 20px 0 20px; --r: 50% 50% 0 0; --c: conic-gradient(pink, orange, red, pink)\"></div>\n",
+    "toc": [],
+    "keywords": [
+      "div",
+      "gradient",
+      "white",
+      "grad",
+      "style",
+      "linear",
+      "class",
+      "var",
+      "20px",
+      "long",
+      "black",
+      "text"
+    ],
+    "coverImage": null,
+    "coverAlt": "Testing CodePen",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2026-12-22-testing-codepen.md",
+    "path": "./src/posts/2026-12-22-testing-codepen.html"
+  },
+  {
+    "name": "2026-12-29-testing-codepen",
+    "title": "Testing CodePen",
+    "date": "2026-12-29T00:00:00.000Z",
+    "dateString": "Tue Dec 29 2026",
+    "published": false,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
+      },
+      {
+        "key": "cover-image",
+        "label": "Cover-image",
+        "url": "./tags/cover-image.html"
+      }
+    ],
+    "series": null,
+    "description": "One line only description",
+    "excerpt": "https://codepen.io/emdeoh/pen/NWdmgVq",
+    "content": "<p><a href=\"https://codepen.io/emdeoh/pen/NWdmgVq?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">https://codepen.io/emdeoh/pen/NWdmgVq</a></p>\n",
+    "toc": [],
+    "keywords": [
+      "codepen",
+      "testing",
+      "https",
+      "emdeoh",
+      "pen",
+      "nwdmgvq"
+    ],
+    "coverImage": null,
+    "coverAlt": "Testing CodePen",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2026-12-29-testing-codepen.md",
+    "path": "./src/posts/2026-12-29-testing-codepen.html"
+  },
+  {
+    "name": "2027-01-05-a-new-post-with-a-new-cover-image",
+    "title": "A NEW post with a NEW cover image",
+    "date": "2027-01-05T00:00:00.000Z",
+    "dateString": "Tue Jan 05 2027",
+    "published": false,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
+      },
+      {
+        "key": "cover-image",
+        "label": "Cover-image",
+        "url": "./tags/cover-image.html"
+      }
+    ],
+    "series": null,
+    "description": "One line only description",
+    "excerpt": "Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or",
+    "content": "<p>Readability, however, is emphasized above all else. A Markdown-formatted\ndocument should be publishable as-is, as plain text, without looking\nlike it's been marked up with tags or formatting instructions.</p>\n<p>While Markdown's syntax has been influenced by several existing text-to-HTML filters -- including <a href=\"http://docutils.sourceforge.net/mirror/setext.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Setext</a>, <a href=\"http://www.aaronsw.com/2002/atx/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">atx</a>, <a href=\"http://textism.com/tools/textile/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Textile</a>, <a href=\"http://docutils.sourceforge.net/rst.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">reStructuredText</a>,\n<a href=\"http://www.triptico.com/software/grutatxt.html?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Grutatext</a>, and <a href=\"http://ettext.taint.org/doc/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">EtText</a> -- the single biggest source of\ninspiration for Markdown's syntax is the format of plain text email.</p>\n",
+    "toc": [],
+    "keywords": [
+      "markdown",
+      "text",
+      "new",
+      "plain",
+      "syntax",
+      "post",
+      "cover",
+      "image",
+      "readability",
+      "however",
+      "emphasized",
+      "above"
+    ],
+    "coverImage": null,
+    "coverAlt": "A NEW post with a NEW cover image",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2027-01-05-a-new-post-with-a-new-cover-image.md",
+    "path": "./src/posts/2027-01-05-a-new-post-with-a-new-cover-image.html"
+  },
+  {
+    "name": "2027-01-12-say-hello-to-2022",
+    "title": "Say hello to 2022 🎉",
+    "date": "2027-01-12T00:00:00.000Z",
+    "dateString": "Tue Jan 12 2027",
+    "published": false,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
+      },
+      {
+        "key": "releases",
+        "label": "Releases",
+        "url": "./tags/releases.html"
+      }
+    ],
+    "series": null,
+    "description": "Blog under construction",
+    "excerpt": "",
+    "content": "<p><picture><source type=\"image/webp\" data-srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.webp 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.webp 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.webp 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.webp 1280w\"><source type=\"image/jpeg\" data-srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.jpg 1280w\"><img data-src=\"../assets/images/2022-02-25-you-can-express-tags-today.jpg\" alt=\"example alt text\" loading=\"lazy\" decoding=\"async\" fetchpriority=\"low\" data-srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.jpg 1280w\" width=\"1600\" height=\"900\" title=\"example Title\"></picture><noscript><img src=\"../assets/images/2022-02-25-you-can-express-tags-today.jpg\" alt=\"example alt text\" srcset=\"../assets/images/2022-02-25-you-can-express-tags-today-320.jpg 320w, ../assets/images/2022-02-25-you-can-express-tags-today-640.jpg 640w, ../assets/images/2022-02-25-you-can-express-tags-today-960.jpg 960w, ../assets/images/2022-02-25-you-can-express-tags-today-1280.jpg 1280w\" width=\"1600\" height=\"900\" title=\"example Title\"></noscript></p>\n",
+    "toc": [],
+    "keywords": [
+      "say",
+      "hello",
+      "2022"
+    ],
+    "coverImage": "../assets/images/alexandr-podvalny-220262-unsplash.jpg",
+    "coverWidth": 1600,
+    "coverHeight": 900,
+    "coverAlt": "Say hello to 2022 🎉",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2027-01-12-say-hello-to-2022.md",
+    "path": "./src/posts/2027-01-12-say-hello-to-2022.html"
+  },
+  {
+    "name": "2027-02-02-marked-markdown-parser",
+    "title": "Marked - Markdown Parser",
+    "date": "2027-02-02T00:00:00.000Z",
+    "dateString": "Tue Feb 02 2027",
+    "published": false,
+    "tags": [],
+    "series": null,
+    "description": "[Marked] lets you convert [Markdown] into HTML. Markdown is a simple text format whose goal is to be very easy to read and write, even when not converted to HTML. This demo page will let you type anything you like and see how it gets converted. Live. No more waiting around.",
+    "excerpt": "How To Use The Demo",
+    "content": "<h2 id=\"how-to-use-the-demo\" tabindex=\"0\" data-toc-anchor=\"true\">How To Use The Demo</h2>\n<ol>\n<li>Type in stuff on the left.</li><li>See the live updates on the right.</li></ol>\n<p>That's it. Pretty simple. There's also a drop-down option in the upper right to switch between various views:</p>\n<ul>\n<li><strong>Preview:</strong> A live display of the generated HTML as it would render in a browser.</li><li><strong>HTML Source:</strong> The generated HTML before your browser makes it pretty.</li><li><strong>Lexer Data:</strong> What <a href=\"https://github.com/markedjs/marked/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">marked</a> uses internally, in case you like gory stuff like this.</li><li><strong>Quick Reference:</strong> A brief run-down of how to format things using markdown.</li></ul>\n<h2 id=\"why-markdown\" tabindex=\"0\" data-toc-anchor=\"true\">Why Markdown?</h2>\n<pre is=\"pix-highlighter\" data-lang=\"html\"><code>&lt;div&gt;&lt;/div&gt;</code></pre><p>It's easy. It's not overly bloated, unlike HTML. Also, as the creator of <a href=\"http://daringfireball.net/projects/markdown/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">markdown</a> says,</p>\n<blockquote>\n<p>The overriding design goal for Markdown's\nformatting syntax is to make it as readable\nas possible. The idea is that a\nMarkdown-formatted document should be\npublishable as-is, as plain text, without\nlooking like it's been marked up with tags\nor formatting instructions.</p>\n</blockquote>\n<pre is=\"pix-highlighter\" data-lang=\"scss\"><code>div {\n}</code></pre><p>Ready to start writing? Either start changing stuff on the left or\n<a href=\"/demo/?text=\">clear everything</a> with a simple click.</p>\n",
+    "toc": [
+      {
+        "id": "how-to-use-the-demo",
+        "level": 2,
+        "text": "How To Use The Demo"
+      },
+      {
+        "id": "why-markdown",
+        "level": 2,
+        "text": "Why Markdown?"
+      }
+    ],
+    "keywords": [
+      "markdown",
+      "marked",
+      "html",
+      "stuff",
+      "like",
+      "left",
+      "live",
+      "right",
+      "pretty",
+      "simple",
+      "down",
+      "generated"
+    ],
+    "coverImage": null,
+    "coverAlt": "Marked - Markdown Parser",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2027-02-02-marked-markdown-parser.md",
+    "path": "./src/posts/2027-02-02-marked-markdown-parser.html"
+  },
+  {
+    "name": "2027-02-16-testing-codepen",
+    "title": "Testing CodePen",
+    "date": "2027-02-16T00:00:00.000Z",
+    "dateString": "Tue Feb 16 2027",
+    "published": false,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
+      },
+      {
+        "key": "cover-image",
+        "label": "Cover-image",
+        "url": "./tags/cover-image.html"
+      }
+    ],
+    "series": null,
+    "description": "One line only description",
+    "excerpt": "See the Pen <a href='https://codepen.io/blackmirror1980/pen/aPRXzv'>Pure CSS Slider using Scroll-Snap</a> by blackmirror1980 (<a href='https://codepen.io/blackmirror1980'>@blackmir",
+    "content": "<iframe height=\"521\" style=\"width: 100%; min-height: 30rem\" scrolling=\"no\" title=\"Pure CSS Slider using Scroll-Snap\" src=\"https://codepen.io/blackmirror1980/embed/aPRXzv?height=521&amp;theme-id=dark&amp;default-tab=result\" frameborder=\"no\" loading=\"lazy\" allowtransparency=\"true\" allowfullscreen=\"true\" data-embed-frame=\"\" data-embed-provider=\"codepen\" referrerpolicy=\"no-referrer\" sandbox=\"allow-popups allow-same-origin allow-scripts\">\n  See the Pen <a href='https://codepen.io/blackmirror1980/pen/aPRXzv'>Pure CSS Slider using Scroll-Snap</a> by blackmirror1980\n  (<a href='https://codepen.io/blackmirror1980'>@blackmirror1980</a>) on <a href='https://codepen.io'>CodePen</a>.\n</iframe>\n",
+    "toc": [],
+    "keywords": [
+      "codepen",
+      "blackmirror1980",
+      "https",
+      "height",
+      "href",
+      "iframe",
+      "521",
+      "pure",
+      "css",
+      "slider",
+      "using",
+      "scroll"
+    ],
+    "coverImage": null,
+    "coverAlt": "Testing CodePen",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2027-02-16-testing-codepen.md",
+    "path": "./src/posts/2027-02-16-testing-codepen.html"
+  },
+  {
+    "name": "2027-03-02-building-dout-dev-blog",
+    "title": "Building dout.dev blog",
+    "date": "2027-03-02T00:00:00.000Z",
+    "dateString": "Tue Mar 02 2027",
+    "published": false,
+    "tags": [
+      {
+        "key": "html",
+        "label": "Html",
+        "url": "./tags/html.html"
+      }
+    ],
+    "series": null,
+    "description": "Building dout.dev blog",
+    "excerpt": "Less is more!",
+    "content": "<blockquote>\n<p>Less is more!</p>\n</blockquote>\n<p>I started</p>\n",
+    "toc": [],
+    "keywords": [
+      "building",
+      "dout",
+      "dev",
+      "blog",
+      "less",
+      "started"
+    ],
+    "coverImage": "../assets/images/building-dout-dev-cover.jpg",
+    "coverWidth": 1600,
+    "coverHeight": 900,
+    "coverAlt": "Dashboard notes and publishing pipeline artwork for the dout.dev build article",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2027-03-02-building-dout-dev-blog.md",
+    "path": "./src/posts/2027-03-02-building-dout-dev-blog.html"
+  },
+  {
+    "name": "2027-03-09-building-dout-dev-blog-part-ii",
+    "title": "Building dout.dev blog - Part II",
+    "date": "2027-03-09T00:00:00.000Z",
+    "dateString": "Tue Mar 09 2027",
+    "published": false,
+    "tags": [
+      {
+        "key": "html",
+        "label": "Html",
+        "url": "./tags/html.html"
+      }
+    ],
+    "series": null,
+    "description": "Building dout.dev blog - Part II",
+    "excerpt": "Building dout.dev blog - Part II",
+    "content": "<p>Building dout.dev blog - Part II</p>\n",
+    "toc": [],
+    "keywords": [
+      "building",
+      "dout",
+      "dev",
+      "blog",
+      "part"
+    ],
+    "coverImage": "../assets/images/building-dout-dev-cover.jpg",
+    "coverWidth": 1600,
+    "coverHeight": 900,
+    "coverAlt": "Editorial system illustration used to test article cover rendering",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2027-03-09-building-dout-dev-blog-part-ii.md",
+    "path": "./src/posts/2027-03-09-building-dout-dev-blog-part-ii.html"
+  },
+  {
+    "name": "2027-03-16-welcome-to-dout-dev",
+    "title": "Welcome to dout.dev",
+    "date": "2027-03-16T00:00:00.000Z",
+    "dateString": "Tue Mar 16 2027",
+    "published": false,
+    "tags": [
+      {
+        "key": "generic",
+        "label": "Generic",
+        "url": "./tags/generic.html"
+      }
+    ],
+    "series": null,
+    "description": "Welcome to dout.dev",
+    "excerpt": "Hi, I'm Emiliano \"Pixu\" Pisu.",
+    "content": "<p>Hi, I'm Emiliano \"Pixu\" Pisu.</p>\n<p>I'm a \"vintage\" developer who loves to code and to share ideas, thoughts, knowledge.</p>\n<p>I'm starting this blog to talk and discuss about web-based technology, honestly most of times i'll focus in UI/UX, because i love it.</p>\n<p>However, in order to be able to talk about User Interaction, we'll need to discuss about:</p>\n<ul>\n<li>core web technologies</li><li>cross browser compatibility (thanks for your time IE but… no thanks!!! 🤣)</li><li>a11y</li><li>performances</li><li>best practices</li><li>responsiveness</li></ul>\n<p>Let's start a new trip together in the world HTML, CSS and JS.</p>\n",
+    "toc": [],
+    "keywords": [
+      "talk",
+      "discuss",
+      "web",
+      "thanks",
+      "welcome",
+      "dout",
+      "dev",
+      "emiliano",
+      "pixu",
+      "pisu",
+      "vintage",
+      "developer"
+    ],
+    "coverImage": null,
+    "coverAlt": "Welcome to dout.dev",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2027-03-16-welcome-to-dout-dev.md",
+    "path": "./src/posts/2027-03-16-welcome-to-dout-dev.html"
+  },
+  {
+    "name": "2027-03-23-concerning",
+    "title": "Concerning…",
+    "date": "2027-03-23T00:00:00.000Z",
+    "dateString": "Tue Mar 23 2027",
+    "published": false,
+    "tags": [
+      {
+        "key": "generic",
+        "label": "Generic",
+        "url": "./tags/generic.html"
+      }
+    ],
+    "series": null,
+    "description": "Concerning...",
+    "excerpt": "Concerning Core Web Technologies",
+    "content": "<h2 id=\"concerning-core-web-technologies\" tabindex=\"0\" data-toc-anchor=\"true\">Concerning Core Web Technologies</h2>\n<p>I truly believe in the following idea:</p>\n<blockquote>\n<p>Let the technologies do the job they were designed for</p>\n</blockquote>\n<p>We'll explore in detail... Building a CSS codebase from scratch can be very hard, but also fun and productive.</p>\n<hr>\n<h2 id=\"concerning-ui-ux\" tabindex=\"0\" data-toc-anchor=\"true\">Concerning UI/UX</h2>\n<p>Analyzing and implementing a Design and its related User Experience can be one of the funniest and challenging things to do.</p>\n<hr>\n<h2 id=\"concerning-a11y\" tabindex=\"0\" data-toc-anchor=\"true\">Concerning a11y</h2>\n<p>Let' start with a basic concept...</p>\n<blockquote>\n<p>We need to raise awareness about a11y</p>\n</blockquote>\n<p>20-25% have some sort of disability or uses a screen reader</p>\n<hr>\n<h2 id=\"concerning-responsiveness\" tabindex=\"0\" data-toc-anchor=\"true\">Concerning Responsiveness</h2>\n<p>Responsiveness is a concept, an idea, to me is...</p>\n<blockquote>\n<p>Reacting to the environment</p>\n</blockquote>\n",
+    "toc": [
+      {
+        "id": "concerning-core-web-technologies",
+        "level": 2,
+        "text": "Concerning Core Web Technologies"
+      },
+      {
+        "id": "concerning-ui-ux",
+        "level": 2,
+        "text": "Concerning UI/UX"
+      },
+      {
+        "id": "concerning-a11y",
+        "level": 2,
+        "text": "Concerning a11y"
+      },
+      {
+        "id": "concerning-responsiveness",
+        "level": 2,
+        "text": "Concerning Responsiveness"
+      }
+    ],
+    "keywords": [
+      "concerning",
+      "technologies",
+      "idea",
+      "let",
+      "a11y",
+      "concept",
+      "responsiveness",
+      "core",
+      "web",
+      "truly",
+      "believe",
+      "following"
+    ],
+    "coverImage": null,
+    "coverAlt": "Concerning…",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2027-03-23-concerning.md",
+    "path": "./src/posts/2027-03-23-concerning.html"
+  },
+  {
+    "name": "2027-03-30-say-hello-to-2023",
+    "title": "Say hello to 2023 🎉",
+    "date": "2027-03-30T00:00:00.000Z",
+    "dateString": "Tue Mar 30 2027",
+    "published": false,
+    "tags": [
+      {
+        "key": "markdown",
+        "label": "Markdown",
+        "url": "./tags/markdown.html"
+      },
+      {
+        "key": "releases",
+        "label": "Releases",
+        "url": "./tags/releases.html"
+      }
+    ],
+    "series": null,
+    "description": "Blog under construction",
+    "excerpt": "Say hello to 2023 🎉",
+    "content": "<h2 id=\"say-hello-to-2023\" tabindex=\"0\" data-toc-anchor=\"true\">Say hello to 2023 🎉</h2>\n<p>Welcome to the new year! This is the first post of 2023, and we're excited to share our plans for the year ahead. Stay tuned for more updates and content coming your way!</p>\n<pre is=\"pix-highlighter\" data-lang=\"javascript\"><code>addEventListener('DOMContentLoaded', (e) =&gt; {\n  console.log(e);\n});\n\nanotherFunctionCallGoesHere({}, () =&gt; {\n  selectOther();\n});</code></pre>",
+    "toc": [
+      {
+        "id": "say-hello-to-2023",
+        "level": 2,
+        "text": "Say hello to 2023 🎉"
+      }
+    ],
+    "keywords": [
+      "2023",
+      "say",
+      "hello",
+      "year",
+      "welcome",
+      "new",
+      "first",
+      "post",
+      "excited",
+      "share",
+      "plans",
+      "ahead"
+    ],
+    "coverImage": "../assets/images/2022-02-25-you-can-express-tags-today.jpg",
+    "coverWidth": 1600,
+    "coverHeight": 900,
+    "coverAlt": "Say hello to 2023 🎉",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2027-03-30-say-hello-to-2023.md",
+    "path": "./src/posts/2027-03-30-say-hello-to-2023.html"
+  },
+  {
+    "name": "2027-04-20-m4-template-test-cover-image-e-syntax-highlighting",
+    "title": "M4 Template Test - Cover Image e Syntax Highlighting",
+    "date": "2027-04-20T00:00:00.000Z",
+    "dateString": "Tue Apr 20 2027",
+    "published": false,
+    "tags": [
+      {
+        "key": "test",
+        "label": "Test",
+        "url": "./tags/test.html"
+      },
+      {
+        "key": "m4",
+        "label": "M4",
+        "url": "./tags/m4.html"
+      },
+      {
+        "key": "syntax-highlight-element",
+        "label": "Syntax-highlight-element",
+        "url": "./tags/syntax-highlight-element.html"
+      },
+      {
+        "key": "cover-image",
+        "label": "Cover-image",
+        "url": "./tags/cover-image.html"
+      }
+    ],
+    "series": null,
+    "description": "Post di test per verificare le funzionalità M4 - cover image, pinned badge e syntax highlighting con syntax-highlight-element",
+    "excerpt": "Questo è un post di test per verificare tutte le funzionalità implementate nel M4 - Post Page.",
+    "content": "<p>Questo è un post di test per verificare tutte le funzionalità implementate nel <strong>M4 - Post Page</strong>.</p>\n<h2 id=\"cover-image-e-pinned-badge\" tabindex=\"0\" data-toc-anchor=\"true\">Cover Image e Pinned Badge</h2>\n<p>Questo post ha:</p>\n<ul>\n<li>✅ <strong>Cover Image</strong>: Immagine di copertina caricata con <code>fetchpriority=\"high\"</code></li><li>✅ <strong>Pinned Badge</strong>: Badge \"📌 Post in evidenza\" per post in evidenza</li><li>✅ <strong>Metadata avanzata</strong>: Schema.org BlogPosting completo</li></ul>\n<h2 id=\"syntax-highlighting-con-syntax-highlight-element\" tabindex=\"0\" data-toc-anchor=\"true\">Syntax Highlighting con syntax-highlight-element</h2>\n<p>Testiamo il syntax highlighting per vari linguaggi:</p>\n<h3 id=\"javascript\" tabindex=\"0\" data-toc-anchor=\"true\">JavaScript</h3>\n<pre is=\"pix-highlighter\" data-lang=\"javascript\"><code>// Esempio JavaScript\nconst blogPost = {\n  title: 'M4 Template Test',\n  author: 'dout.dev',\n  published: true,\n  tags: ['Test', 'M4', 'syntax-highlight-element'],\n};\n\nfunction renderPost(post) {\n  console.log(`Rendering: ${post.title}`);\n  return `&lt;article&gt;${post.title}&lt;/article&gt;`;\n}\n\naddEventListener('DOMContentLoaded', () =&gt; {\n  // highlighting is handled by the local &lt;syntax-highlight&gt; web component\n});</code></pre><h3 id=\"css\" tabindex=\"0\" data-toc-anchor=\"true\">CSS</h3>\n<pre is=\"pix-highlighter\" data-lang=\"css\"><code>/* Esempio CSS con design tokens */\n.post-cover-image {\n  width: 100%;\n  height: auto;\n  border-radius: var(--border-radius-md);\n  box-shadow: var(--shadow-lg);\n  object-fit: cover;\n}\n\n.post-badge--pinned {\n  background: var(--color-accent-primary);\n  color: var(--color-text-on-accent);\n  padding: var(--space-2) var(--space-3);\n  border-radius: var(--border-radius-full);\n  font-size: var(--text-sm);\n  font-weight: var(--font-weight-medium);\n}</code></pre><h3 id=\"html\" tabindex=\"0\" data-toc-anchor=\"true\">HTML</h3>\n<pre is=\"pix-highlighter\" data-lang=\"html\"><code>&lt;!-- Esempio HTML con Schema.org --&gt;\n&lt;article class=\"post\"&gt;\n  &lt;header class=\"post-header\"&gt;\n    &lt;div class=\"post-badge post-badge--pinned\" data-pinned=\"true\"&gt;📌 Post in evidenza&lt;/div&gt;\n    &lt;h1&gt;{{ title }}&lt;/h1&gt;\n    &lt;div class=\"post-meta\"&gt;\n      &lt;time datetime=\"{{ date }}\"&gt;{{ date | date:'%d %B %Y' }}&lt;/time&gt;\n    &lt;/div&gt;\n  &lt;/header&gt;\n  &lt;div class=\"post-content\"&gt;{{ content | raw }}&lt;/div&gt;\n&lt;/article&gt;</code></pre><h3 id=\"json\" tabindex=\"0\" data-toc-anchor=\"true\">JSON</h3>\n<pre is=\"pix-highlighter\" data-lang=\"json\"><code>{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BlogPosting\",\n  \"headline\": \"M4 Template Test\",\n  \"description\": \"Post di test per M4\",\n  \"datePublished\": \"2024-12-27T10:00:00.000Z\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"dout.dev\"\n  },\n  \"keywords\": \"Test,M4,syntax-highlight-element,Cover Image\"\n}</code></pre><h3 id=\"bash\" tabindex=\"0\" data-toc-anchor=\"true\">Bash</h3>\n<pre is=\"pix-highlighter\" data-lang=\"bash\"><code>#!/bin/bash\n# Script per build e test\necho \"Building CMS...\"\nnpm run cms:build\n\necho \"Starting dev server...\"\nnpm run dev</code></pre><h2 id=\"funzionalit-testate\" tabindex=\"0\" data-toc-anchor=\"true\">Funzionalità Testate</h2>\n<ul>\n<li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-1\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**Template post.html aggiornato** con layout hook\" checked=\"\"><label for=\"md-task-1\"><strong>Template post.html aggiornato</strong> con layout hook</label></li><li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-2\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**Metadata completa**: title, meta description, canonical, JSON-LD BlogPosting\" checked=\"\"><label for=\"md-task-2\"><strong>Metadata completa</strong>: title, meta description, canonical, JSON-LD BlogPosting</label></li><li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-3\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**Support coverImage**: immagine di copertina con attributi performance\" checked=\"\"><label for=\"md-task-3\"><strong>Support coverImage</strong>: immagine di copertina con attributi performance</label></li><li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-4\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**Support pinned badge**: badge per post in evidenza (mostrato solo in listings)\" checked=\"\"><label for=\"md-task-4\"><strong>Support pinned badge</strong>: badge per post in evidenza (mostrato solo in listings)</label></li><li class=\"task-list-item\"><input type=\"checkbox\" id=\"md-task-5\" class=\"task-list-item-checkbox\" disabled=\"\" aria-label=\"**syntax-highlight-element integrato**: syntax highlighting per tutti i linguaggi specificati\" checked=\"\"><label for=\"md-task-5\"><strong>syntax-highlight-element integrato</strong>: syntax highlighting per tutti i linguaggi specificati</label></li></ul>\n<p>La checklist M4 dovrebbe essere completamente implementata! 🎉</p>\n",
+    "toc": [
+      {
+        "id": "cover-image-e-pinned-badge",
+        "level": 2,
+        "text": "Cover Image e Pinned Badge"
+      },
+      {
+        "id": "syntax-highlighting-con-syntax-highlight-element",
+        "level": 2,
+        "text": "Syntax Highlighting con syntax-highlight-element"
+      },
+      {
+        "id": "javascript",
+        "level": 3,
+        "text": "JavaScript"
+      },
+      {
+        "id": "css",
+        "level": 3,
+        "text": "CSS"
+      },
+      {
+        "id": "html",
+        "level": 3,
+        "text": "HTML"
+      },
+      {
+        "id": "json",
+        "level": 3,
+        "text": "JSON"
+      },
+      {
+        "id": "bash",
+        "level": 3,
+        "text": "Bash"
+      },
+      {
+        "id": "funzionalit-testate",
+        "level": 2,
+        "text": "Funzionalità Testate"
+      }
+    ],
+    "keywords": [
+      "post",
+      "syntax",
+      "per",
+      "badge",
+      "highlighting",
+      "con",
+      "cover",
+      "image",
+      "pinned",
+      "evidenza",
+      "template",
+      "test"
+    ],
+    "coverImage": "../assets/images/alexandr-podvalny-220262-unsplash.jpg",
+    "coverWidth": 1600,
+    "coverHeight": 900,
+    "coverAlt": "M4 Template Test - Cover Image e Syntax Highlighting",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2027-04-20-m4-template-test-cover-image-e-syntax-highlighting.md",
+    "path": "./src/posts/2027-04-20-m4-template-test-cover-image-e-syntax-highlighting.html"
+  },
+  {
+    "name": "2027-04-27-welcome-to-dout-dev",
+    "title": "Welcome to dout.dev",
+    "date": "2027-04-27T00:00:00.000Z",
+    "dateString": "Tue Apr 27 2027",
+    "published": false,
+    "tags": [
+      {
+        "key": "blog",
+        "label": "Blog",
+        "url": "./tags/blog.html"
+      },
+      {
+        "key": "welcome",
+        "label": "Welcome",
+        "url": "./tags/welcome.html"
+      },
+      {
+        "key": "vanilla-js",
+        "label": "Vanilla-js",
+        "url": "./tags/vanilla-js.html"
+      }
+    ],
+    "series": null,
+    "description": "Introducing the new dout.dev blog built with vanilla JavaScript and modern web standards",
+    "excerpt": "Welcome to the New dout.dev",
+    "content": "<h2 id=\"welcome-to-the-new-dout-dev\" tabindex=\"0\" data-toc-anchor=\"true\">Welcome to the New dout.dev</h2>\n<p>Welcome to the brand new version of dout.dev! This blog has been completely rebuilt from the ground up using modern web technologies while maintaining a <strong>vanilla-first</strong> approach.</p>\n<h2 id=\"what-s-new\" tabindex=\"0\" data-toc-anchor=\"true\">What's New</h2>\n<h3 id=\"zero-runtime-dependencies\" tabindex=\"0\" data-toc-anchor=\"true\">Zero Runtime Dependencies</h3>\n<p>The new dout.dev runs entirely on vanilla JavaScript, CSS, and HTML. No frameworks, no runtime dependencies - just clean, fast, and accessible web standards.</p>\n<h3 id=\"wcag-2-2-aa-accessibility\" tabindex=\"0\" data-toc-anchor=\"true\">WCAG 2.2 AA Accessibility</h3>\n<p>Every aspect of this blog has been designed with accessibility in mind:</p>\n<ul>\n<li>Semantic HTML structure</li><li>Proper ARIA landmarks and labels</li><li>Keyboard navigation support</li><li>Screen reader optimizations</li><li>High contrast color schemes</li></ul>\n<h3 id=\"modern-build-pipeline\" tabindex=\"0\" data-toc-anchor=\"true\">Modern Build Pipeline</h3>\n<p>Behind the scenes, we use:</p>\n<ul>\n<li><strong>Custom CMS</strong>: Processes Markdown files into static HTML</li><li><strong>Template Engine</strong>: Proprietary system with includes, extends, and filters</li><li><strong>Vite</strong>: Modern build tooling for development and production</li><li><strong>Biome</strong>: Fast linting and formatting</li><li><strong>PostCSS</strong>: CSS processing and optimization</li></ul>\n<h3 id=\"performance-first\" tabindex=\"0\" data-toc-anchor=\"true\">Performance First</h3>\n<p>The site is optimized for Core Web Vitals:</p>\n<ul>\n<li>Lazy loading images</li><li>Minimal JavaScript</li><li>Critical CSS inlining</li><li>Progressive enhancement</li></ul>\n<h2 id=\"technical-highlights\" tabindex=\"0\" data-toc-anchor=\"true\">Technical Highlights</h2>\n<p>This blog showcases several interesting technical approaches:</p>\n<ol>\n<li><strong>Custom Template Engine</strong> - Built specifically for this use case</li><li><strong>Static Site Generation</strong> - All pages pre-rendered at build time</li><li><strong>Progressive Enhancement</strong> - Works without JavaScript, better with it</li><li><strong>Modern CSS</strong> - Using custom properties, grid, and modern features</li></ol>\n<h2 id=\"looking-forward\" tabindex=\"0\" data-toc-anchor=\"true\">Looking Forward</h2>\n<p>This rewrite sets the foundation for many exciting features planned for the future:</p>\n<ul>\n<li>Multi-language support (English/Italian)</li><li>Advanced search functionality</li><li>Related posts and series</li><li>Dark/light theme switching</li><li>RSS and JSON feeds</li></ul>\n<p>Stay tuned for more updates and technical deep-dives into how this blog is built!</p>\n<hr>\n<p><em>This post marks the beginning of a new chapter for dout.dev. Welcome aboard!</em></p>\n",
+    "toc": [
+      {
+        "id": "welcome-to-the-new-dout-dev",
+        "level": 2,
+        "text": "Welcome to the New dout.dev"
+      },
+      {
+        "id": "what-s-new",
+        "level": 2,
+        "text": "What's New"
+      },
+      {
+        "id": "zero-runtime-dependencies",
+        "level": 3,
+        "text": "Zero Runtime Dependencies"
+      },
+      {
+        "id": "wcag-2-2-aa-accessibility",
+        "level": 3,
+        "text": "WCAG 2.2 AA Accessibility"
+      },
+      {
+        "id": "modern-build-pipeline",
+        "level": 3,
+        "text": "Modern Build Pipeline"
+      },
+      {
+        "id": "performance-first",
+        "level": 3,
+        "text": "Performance First"
+      },
+      {
+        "id": "technical-highlights",
+        "level": 2,
+        "text": "Technical Highlights"
+      },
+      {
+        "id": "looking-forward",
+        "level": 2,
+        "text": "Looking Forward"
+      }
+    ],
+    "keywords": [
+      "dout",
+      "dev",
+      "new",
+      "modern",
+      "welcome",
+      "blog",
+      "css",
+      "web",
+      "javascript",
+      "html",
+      "build",
+      "custom"
+    ],
+    "coverImage": null,
+    "coverAlt": "Welcome to dout.dev",
+    "pinned": false,
+    "layout": "post",
+    "source": "data/posts/tests/2027-04-27-welcome-to-dout-dev.md",
+    "path": "./src/posts/2027-04-27-welcome-to-dout-dev.html"
   }
 ]

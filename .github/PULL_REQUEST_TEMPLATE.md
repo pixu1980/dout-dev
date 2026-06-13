@@ -31,8 +31,8 @@ Explain what changed and why.
 Fill this if PR includes article work.
 
 - [ ] Content is relevant to dout.dev
-- [ ] I read `CODE_OF_CONDUCT.md`
-- [ ] I read `CONTENT_GUIDELINES.md`
+- [ ] I read `.github/CODE_OF_CONDUCT.md`
+- [ ] I read `.github/community/CONTENT_GUIDELINES.md`
 - [ ] I filled frontmatter
 - [ ] I cited sources and references
 - [ ] I verified rights for images and assets
@@ -66,11 +66,11 @@ Describe impact on:
 
 To be filled by maintainers.
 
-| Maintainer | Vote | Notes |
-| --- | --- | --- |
-|  | approve / changes / reject |  |
-|  | approve / changes / reject |  |
-|  | approve / changes / reject |  |
+| Maintainer | Vote                       | Notes |
+| ---------- | -------------------------- | ----- |
+|            | approve / changes / reject |       |
+|            | approve / changes / reject |       |
+|            | approve / changes / reject |       |
 
 ## Decision
 

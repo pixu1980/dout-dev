@@ -1,24 +1,29 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>How I Built dout.dev</title>
-    <meta name="theme-color" content="#ff6b3d">
-    <meta name="description" content="What the stack is, exactly">
-    <meta name="author" content="Emiliano &quot;pixu1980&quot; Pisu">
-    <meta name="robots" content="index,follow">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="dout:analytics-endpoint" content="">
-    <meta name="dout:analytics-dashboard" content="/privacy.html">
-    <link rel="canonical" href="https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html">
-    <meta property="og:site_name" content="dout.dev">
-    <meta property="og:locale" content="en-US">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss">
-    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json">
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="What the stack is, exactly" />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
     <script>
       document.documentElement.dataset.userPreferences = 'loading';
       if (location.protocol === 'file:') {
@@ -59,58 +64,66 @@
           monospace;
       }
     </style>
-    
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="How I Built dout.dev">
-  <meta property="og:description" content="What the stack is, exactly">
-  <meta property="og:url" content="https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html">
-  <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-04-04-how-i-built-dout-dev.png">
-  <meta property="og:image:alt" content="Preview image for How I Built dout.dev">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="article:published_time" content="2026-04-04T00:00:00.000Z">
-  <meta property="article:modified_time" content="2026-04-04T00:00:00.000Z">
-  <meta property="article:author" content="Emiliano &quot;pixu1980&quot; Pisu">
-  <meta name="twitter:title" content="How I Built dout.dev">
-  <meta name="twitter:description" content="What the stack is, exactly">
-  <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-04-04-how-i-built-dout-dev.png">
-  <meta name="twitter:image:alt" content="Preview image for How I Built dout.dev">
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BlogPosting",
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How I Built dout.dev" />
+    <meta property="og:description" content="What the stack is, exactly" />
+    <meta property="og:url" content="https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html" />
+    <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-04-04-how-i-built-dout-dev.png" />
+    <meta property="og:image:alt" content="Preview image for How I Built dout.dev" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-04-04T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2026-04-04T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="twitter:title" content="How I Built dout.dev" />
+    <meta name="twitter:description" content="What the stack is, exactly" />
+    <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-04-04-how-i-built-dout-dev.png" />
+    <meta name="twitter:image:alt" content="Preview image for How I Built dout.dev" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
         "headline": "How I Built dout.dev",
         "description": "What the stack is, exactly",
         "datePublished": "2026-04-04T00:00:00.000Z",
         "dateModified": "2026-04-04T00:00:00.000Z",
         "author": {
-          "@type":"Person",
+          "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url":"https://dout.dev"
+          "url": "https://dout.dev"
         },
         "publisher": {
-          "@type":"Person",
+          "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url":"https://dout.dev"
+          "url": "https://dout.dev"
         },
-        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html"},
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html"
+        },
         "image": ["https://dout.dev/assets/og/posts/2026-04-04-how-i-built-dout-dev.png"],
         "keywords": "build, one, every, html, layer, aria, markdown, template, css, pipeline, theme, posts"
       }
-  </script>
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BreadcrumbList",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://dout.dev"},
-          {"@type":"ListItem","position":2,"name":"Archive","item":"https://dout.dev/archive.html"},
-          {"@type":"ListItem","position":3,"name": "How I Built dout.dev","item":"https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html"}
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How I Built dout.dev",
+            "item": "https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html"
+          }
         ]
       }
-  </script>
+    </script>
 
-    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/index.css" />
     <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
   </head>
   <body data-site-shell="">
@@ -122,265 +135,383 @@
     <a data-skip-link="" href="#main">Skip to main content</a>
     <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
     <header role="banner" data-site-header="">
-  <div data-container="" data-header-bar="">
-    <a data-brand="" href="/">
-      <span data-brand-mark="">dout.dev</span>
-      <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
-    </a>
-    <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-      <span aria-hidden="true">☰</span>
-    </button>
-    <nav id="mainmenu" data-main-nav="" aria-label="Main">
-      <ul data-main-links="" role="list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/archive.html">Archive</a></li>
-        <li><a href="/search.html">Search</a></li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-      <div data-header-actions="">
-        <color-scheme-switcher></color-scheme-switcher>
-        <display-preferences-popover></display-preferences-popover>
+      <div data-container="" data-header-bar="">
+        <a data-brand="" href="/">
+          <span data-brand-mark="">dout.dev</span>
+          <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="mainmenu" data-main-nav="" aria-label="Main">
+          <ul data-main-links="" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+          <div data-header-actions="">
+            <color-scheme-switcher></color-scheme-switcher>
+            <display-preferences-popover></display-preferences-popover>
+          </div>
+        </nav>
       </div>
-    </nav>
-  </div>
-</header>
-
-
-    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
-      
-  <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
-    <header data-post-hero="" aria-labelledby="post-title">
-      <p data-eyebrow="">Article</p>
-      <p data-post-meta="">
-        <time datetime="2026-04-04" itemprop="datePublished">
-          4 aprile 2026
-        </time>
-        <span data-post-divider="">/</span>
-        <a href="/archive.html">Archive</a>
-      </p>
-      <h1 id="post-title" itemprop="headline" tabindex="0">How I Built dout.dev</h1>
-      
-        <p data-post-description="">What the stack is, exactly</p>
-      
-      
-        <ul data-tag-list="" aria-label="Tags">
-          
-            <li><a data-tag="" href="/tags/making-of.html">Making-of</a></li>
-          
-            <li><a data-tag="" href="/tags/architecture.html">Architecture</a></li>
-          
-            <li><a data-tag="" href="/tags/static-site.html">Static-site</a></li>
-          
-        </ul>
-      
-      
-        <figure data-post-cover="">
-          <img src="/assets/og/posts/2026-04-04-how-i-built-dout-dev-card.png" alt="How I Built dout.dev" fetchpriority="high" decoding="async" width="1200" height="900">
-        </figure>
-      
     </header>
 
-    <section data-post-shell="" id="article-content" role="region" aria-labelledby="article-content-title">
-      <h2 id="article-content-title" data-visually-hidden="">Article content</h2>
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
+        <header data-post-hero="" aria-labelledby="post-title">
+          <p data-eyebrow="">Article</p>
+          <p data-post-meta="">
+            <time datetime="2026-04-04" itemprop="datePublished"> 4 aprile 2026 </time>
+            <span data-post-divider="">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 id="post-title" itemprop="headline" tabindex="0">How I Built dout.dev</h1>
 
-      <section data-prose="" itemprop="articleBody"><h2 id="what-the-stack-is-exactly" tabindex="0" data-toc-anchor="true">What the stack is, exactly</h2>
-<p>dout.dev is: markdown files in <code>data/posts/</code>, each with YAML front matter; a Node build script that scans, normalizes, and renders HTML; a small custom template engine; plain CSS with a two-layer token system; JavaScript that arrives after the document is already useful. No runtime, no framework, no server. A build command produces a <code>dist/</code> folder; GitHub Pages serves it.</p>
-<p>Every decision in the stack points at the same thing: the site should be trivial to host, portable across the next ten years of tooling changes, and fast to build so the pipeline never gets in the way of writing.</p>
-<h2 id="the-pipeline-in-one-picture" tabindex="0" data-toc-anchor="true">The pipeline, in one picture</h2>
-<p>The build is four stages, in this order:</p>
-<ol>
-<li><strong>Scan.</strong> Read every markdown file, parse front matter, validate required fields.</li><li><strong>Normalize.</strong> Compute slugs, excerpts, keywords, reading time, and the tag/month/series indexes.</li><li><strong>Render.</strong> Convert markdown to HTML, fill templates, write files under <code>src/</code>.</li><li><strong>Emit.</strong> Generate feeds, sitemap, search indexes, and OG images.</li></ol>
-<p>The pipeline runs in one direction. No circular dependencies, no hidden passes. Adding a post means adding one file; the build figures out everything else.</p>
-<h2 id="the-cms-layer" tabindex="0" data-toc-anchor="true">The CMS layer</h2>
-<p>The CMS reads front matter, derives slugs, builds the tag, month, and series datasets, computes next/previous pointers for each post, and produces typed normalized records the page generator can render without thinking. The markdown renderer also rewrites local image references into responsive <code>&lt;picture&gt;</code> elements with WebP sources, known dimensions, and lazy loading — the variants come from a prior Sharp pass that writes a manifest.</p>
-<p>This is the layer where complexity lives so it does not have to live in the browser.</p>
-<h2 id="the-template-engine" tabindex="0" data-toc-anchor="true">The template engine</h2>
-<p>I wrote a template engine instead of adopting one. The reason: I wanted templates that look like HTML documents, not a programming language wearing HTML clothes. The grammar has four primitives — <code>extends</code>, <code>block</code>, <code>include</code>, and inline expressions with an optional filter pipeline. Control flow uses custom elements (<code>&lt;if&gt;</code>, <code>&lt;for&gt;</code>) that stay consistent with the angle-bracket context.</p>
-<p>No <code>eval</code>. Expressions are parsed into a small AST and walked by an interpreter that only reads from the context object. Rendering is deterministic and side-effect-free.</p>
-<h2 id="css-tokens-before-anything-else" tabindex="0" data-toc-anchor="true">CSS: tokens before anything else</h2>
-<p>The CSS starts with a flat set of primitive tokens — spacing scale, type scale, line heights, surfaces, focus ring — and a second layer of semantic aliases that components actually read. Components write <code>color: var(--color-fg)</code>, never a hex literal. Theme switching flips the semantic layer at the root; every component picks it up for free.</p>
-<p>The dark theme, light theme, and accent color switching are under fifty lines of custom property definitions. No Sass, no CSS-in-JS.</p>
-<h2 id="accessibility-as-a-first-class-build-output" tabindex="0" data-toc-anchor="true">Accessibility as a first-class build output</h2>
-<p>Accessibility was a milestone constraint, not a final audit. Posts have focusable headings with stable <code>id</code>s, a sidebar outline synchronized with scroll, skip-links, <code>aria-current</code> on pagination, and a Playwright/axe-core check on every generated page that blocks the deploy if it fails.</p>
-<p>The markup is semantic before ARIA shows up. When ARIA does appear — <code>aria-live</code> on search results, <code>aria-expanded</code> on disclosure buttons — it is because native HTML genuinely does not cover the case.</p>
-<h2 id="progressive-enhancement-as-a-testable-contract" tabindex="0" data-toc-anchor="true">Progressive enhancement as a testable contract</h2>
-<p>Every page renders and navigates without JavaScript. The build verifies this with a Playwright check that runs key pages with JS disabled and asserts the core content is present.</p>
-<p>Interactive features follow one rule: any UI element that requires JavaScript starts <code>hidden</code> in the markup and is revealed by the enhancement script. The theme toggle, the copy button on code blocks, the scrollspy — none of them exist in the DOM until the script that powers them runs.</p>
-<h2 id="what-a-complete-build-produces" tabindex="0" data-toc-anchor="true">What a complete build produces</h2>
-<ul>
-<li>Posts, tag archives, month archives, and series archives — each with their own pagination and per-archive RSS feed</li><li>RSS 2.0, JSON Feed 1.1, sitemap.xml</li><li>OG images (1200×630 PNGs) for every post and archive, generated from an SVG template rasterized with Sharp</li><li>Responsive image variants and the manifest the renderer uses to emit <code>&lt;picture&gt;</code> elements</li><li>A search index consumed client-side</li></ul>
-<p>One build command. One <code>dist/</code> folder. No runtime dependency.</p>
-</section>
-    </section>
+          <p data-post-description="">What the stack is, exactly</p>
 
-    
-      <aside data-post-sidebar="" role="complementary" aria-labelledby="post-outline">
-        <nav data-post-toc="" aria-labelledby="post-outline">
-          <p data-eyebrow="" data-muted="">TOC</p>
-          <h2 id="post-outline">On this page</h2>
-          <ol data-post-toc-list="">
-            
+          <ul data-tag-list="" aria-label="Tags">
+            <li><a data-tag="" href="/tags/making-of.html">Making-of</a></li>
+
+            <li><a data-tag="" href="/tags/architecture.html">Architecture</a></li>
+
+            <li><a data-tag="" href="/tags/static-site.html">Static-site</a></li>
+          </ul>
+
+          <figure data-post-cover="">
+            <img
+              src="/assets/og/posts/2026-04-04-how-i-built-dout-dev-card.png"
+              alt="How I Built dout.dev"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="900"
+            />
+          </figure>
+        </header>
+
+        <section data-post-shell="" id="article-content" role="region" aria-labelledby="article-content-title">
+          <h2 id="article-content-title" data-visually-hidden="">Article content</h2>
+
+          <section data-prose="" itemprop="articleBody">
+            <h2 id="what-the-stack-is-exactly" tabindex="0" data-toc-anchor="true">What the stack is, exactly</h2>
+            <p>
+              dout.dev is: markdown files in <code>data/posts/</code>, each with YAML front matter; a Node build script
+              that scans, normalizes, and renders HTML; a small custom template engine; plain CSS with a two-layer token
+              system; JavaScript that arrives after the document is already useful. No runtime, no framework, no server.
+              A build command produces a <code>dist/</code> folder; GitHub Pages serves it.
+            </p>
+            <p>
+              Every decision in the stack points at the same thing: the site should be trivial to host, portable across
+              the next ten years of tooling changes, and fast to build so the pipeline never gets in the way of writing.
+            </p>
+            <h2 id="the-pipeline-in-one-picture" tabindex="0" data-toc-anchor="true">The pipeline, in one picture</h2>
+            <p>The build is four stages, in this order:</p>
+            <ol>
+              <li><strong>Scan.</strong> Read every markdown file, parse front matter, validate required fields.</li>
+              <li>
+                <strong>Normalize.</strong> Compute slugs, excerpts, keywords, reading time, and the tag/month/series
+                indexes.
+              </li>
+              <li>
+                <strong>Render.</strong> Convert markdown to HTML, fill templates, write files under <code>src/</code>.
+              </li>
+              <li><strong>Emit.</strong> Generate feeds, sitemap, search indexes, and OG images.</li>
+            </ol>
+            <p>
+              The pipeline runs in one direction. No circular dependencies, no hidden passes. Adding a post means adding
+              one file; the build figures out everything else.
+            </p>
+            <h2 id="the-cms-layer" tabindex="0" data-toc-anchor="true">The CMS layer</h2>
+            <p>
+              The CMS reads front matter, derives slugs, builds the tag, month, and series datasets, computes
+              next/previous pointers for each post, and produces typed normalized records the page generator can render
+              without thinking. The markdown renderer also rewrites local image references into responsive
+              <code>&lt;picture&gt;</code> elements with WebP sources, known dimensions, and lazy loading — the variants
+              come from a prior Sharp pass that writes a manifest.
+            </p>
+            <p>This is the layer where complexity lives so it does not have to live in the browser.</p>
+            <h2 id="the-template-engine" tabindex="0" data-toc-anchor="true">The template engine</h2>
+            <p>
+              I wrote a template engine instead of adopting one. The reason: I wanted templates that look like HTML
+              documents, not a programming language wearing HTML clothes. The grammar has four primitives —
+              <code>extends</code>, <code>block</code>, <code>include</code>, and inline expressions with an optional
+              filter pipeline. Control flow uses custom elements (<code>&lt;if&gt;</code>, <code>&lt;for&gt;</code>)
+              that stay consistent with the angle-bracket context.
+            </p>
+            <p>
+              No <code>eval</code>. Expressions are parsed into a small AST and walked by an interpreter that only reads
+              from the context object. Rendering is deterministic and side-effect-free.
+            </p>
+            <h2 id="css-tokens-before-anything-else" tabindex="0" data-toc-anchor="true">
+              CSS: tokens before anything else
+            </h2>
+            <p>
+              The CSS starts with a flat set of primitive tokens — spacing scale, type scale, line heights, surfaces,
+              focus ring — and a second layer of semantic aliases that components actually read. Components write
+              <code>color: var(--color-fg)</code>, never a hex literal. Theme switching flips the semantic layer at the
+              root; every component picks it up for free.
+            </p>
+            <p>
+              The dark theme, light theme, and accent color switching are under fifty lines of custom property
+              definitions. No Sass, no CSS-in-JS.
+            </p>
+            <h2 id="accessibility-as-a-first-class-build-output" tabindex="0" data-toc-anchor="true">
+              Accessibility as a first-class build output
+            </h2>
+            <p>
+              Accessibility was a milestone constraint, not a final audit. Posts have focusable headings with stable
+              <code>id</code>s, a sidebar outline synchronized with scroll, skip-links, <code>aria-current</code> on
+              pagination, and a Playwright/axe-core check on every generated page that blocks the deploy if it fails.
+            </p>
+            <p>
+              The markup is semantic before ARIA shows up. When ARIA does appear — <code>aria-live</code> on search
+              results, <code>aria-expanded</code> on disclosure buttons — it is because native HTML genuinely does not
+              cover the case.
+            </p>
+            <h2 id="progressive-enhancement-as-a-testable-contract" tabindex="0" data-toc-anchor="true">
+              Progressive enhancement as a testable contract
+            </h2>
+            <p>
+              Every page renders and navigates without JavaScript. The build verifies this with a Playwright check that
+              runs key pages with JS disabled and asserts the core content is present.
+            </p>
+            <p>
+              Interactive features follow one rule: any UI element that requires JavaScript starts
+              <code>hidden</code> in the markup and is revealed by the enhancement script. The theme toggle, the copy
+              button on code blocks, the scrollspy — none of them exist in the DOM until the script that powers them
+              runs.
+            </p>
+            <h2 id="what-a-complete-build-produces" tabindex="0" data-toc-anchor="true">
+              What a complete build produces
+            </h2>
+            <ul>
+              <li>
+                Posts, tag archives, month archives, and series archives — each with their own pagination and
+                per-archive RSS feed
+              </li>
+              <li>RSS 2.0, JSON Feed 1.1, sitemap.xml</li>
+              <li>
+                OG images (1200×630 PNGs) for every post and archive, generated from an SVG template rasterized with
+                Sharp
+              </li>
+              <li>
+                Responsive image variants and the manifest the renderer uses to emit
+                <code>&lt;picture&gt;</code> elements
+              </li>
+              <li>A search index consumed client-side</li>
+            </ul>
+            <p>One build command. One <code>dist/</code> folder. No runtime dependency.</p>
+          </section>
+        </section>
+
+        <aside data-post-sidebar="" role="complementary" aria-labelledby="post-outline">
+          <nav data-post-toc="" aria-labelledby="post-outline">
+            <p data-eyebrow="" data-muted="">TOC</p>
+            <h2 id="post-outline">On this page</h2>
+            <ol data-post-toc-list="">
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#what-the-stack-is-exactly">What the stack is, exactly</a>
               </li>
-            
+
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#the-pipeline-in-one-picture">The pipeline, in one picture</a>
+                <a data-post-toc-link="" data-level="2" href="#the-pipeline-in-one-picture"
+                  >The pipeline, in one picture</a
+                >
               </li>
-            
+
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#the-cms-layer">The CMS layer</a>
               </li>
-            
+
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#the-template-engine">The template engine</a>
               </li>
-            
-              <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#css-tokens-before-anything-else">CSS: tokens before anything else</a>
-              </li>
-            
-              <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#accessibility-as-a-first-class-build-output">Accessibility as a first-class build output</a>
-              </li>
-            
-              <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#progressive-enhancement-as-a-testable-contract">Progressive enhancement as a testable contract</a>
-              </li>
-            
-              <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#what-a-complete-build-produces">What a complete build produces</a>
-              </li>
-            
-          </ol>
-        </nav>
-      </aside>
-    
 
-    
-      <section data-comments-shell="" aria-labelledby="comments-title">
-        <div data-section-heading="">
-          <div>
-            <p data-eyebrow="">Discussion</p>
-            <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#css-tokens-before-anything-else"
+                  >CSS: tokens before anything else</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#accessibility-as-a-first-class-build-output"
+                  >Accessibility as a first-class build output</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#progressive-enhancement-as-a-testable-contract"
+                  >Progressive enhancement as a testable contract</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#what-a-complete-build-produces"
+                  >What a complete build produces</a
+                >
+              </li>
+            </ol>
+          </nav>
+        </aside>
+
+        <section data-comments-shell="" aria-labelledby="comments-title">
+          <div data-section-heading="">
+            <div>
+              <p data-eyebrow="">Discussion</p>
+              <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+            </div>
           </div>
-        </div>
-        <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
-        <script src="https://giscus.app/client.js" data-repo="pixu1980/dout-dev" data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU=" data-category="General" data-category-id="DIC_kwDOFJulQc4CjlkE" data-mapping="url" data-term="data/posts/2026-04-04-how-i-built-dout-dev.md" data-strict="0" data-reactions-enabled="1" data-emit-metadata="1" data-input-position="top" data-theme="dark" data-lang="en" data-loading="lazy" crossorigin="anonymous" async=""></script>
-      </section>
-    
+          <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2026-04-04-how-i-built-dout-dev.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
 
-    
-      <nav data-series-navigation="" aria-label="Series navigation">
-        
+        <nav data-series-navigation="" aria-label="Series navigation">
           <section data-series-navigation-group="" aria-labelledby="series-navigation-how-i-made-it">
             <p data-eyebrow="" data-muted="">Series</p>
             <h2 id="series-navigation-how-i-made-it">In this series: How I made it</h2>
             <ol data-series-navigation-links="">
-              
-                <li>
-                  <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="page">How I Built dout.dev (you are here)</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-04-21-cms-and-markdown-processing.html" aria-current="false">CMS and Markdown Processing</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false">Rebuilding dout.dev in Weeks With an AI Copilot</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-05-why-no-astro-eleventy-next.html" aria-current="false">Why I Skipped Astro, Eleventy and Next for My Blog</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-12-custom-ssg-pipeline.html" aria-current="false">Custom SSG Pipeline: Markdown to Static HTML</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-13-template-engine-and-template-structure.html" aria-current="false">Template Engine and Template Structure</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-14-archives-tags-months-series.html" aria-current="false">Archives, Tags, Months, and Series</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-15-progressive-enhancement-as-contract.html" aria-current="false">Progressive Enhancement as Contract</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-16-design-tokens-before-pages.html" aria-current="false">Design Tokens Before Pages</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-17-build-assets-pipeline.html" aria-current="false">Build Assets Pipeline</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html" aria-current="false">Feeds and Sitemaps at Build Time</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-19-og-images-at-build-time.html" aria-current="false">OG Images at Build Time</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-20-seo-metadata-without-rituals.html" aria-current="false">SEO Metadata Without Rituals</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-21-quality-gate-lint-format-verify.html" aria-current="false">Quality Gate: Linting, Formatting, and Verify</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-22-ci-cd-around-github-pages.html" aria-current="false">CI/CD Around GitHub Pages</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-23-vibe-coding-with-rigor.html" aria-current="false">Vibe Coding With Rigor</a>
-                </li>
-              
+              <li>
+                <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="page"
+                  >How I Built dout.dev (you are here)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-21-cms-and-markdown-processing.html" aria-current="false"
+                  >CMS and Markdown Processing</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false"
+                  >Rebuilding dout.dev in Weeks With an AI Copilot</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-05-why-no-astro-eleventy-next.html" aria-current="false"
+                  >Why I Skipped Astro, Eleventy and Next for My Blog</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-12-custom-ssg-pipeline.html" aria-current="false"
+                  >Custom SSG Pipeline: Markdown to Static HTML</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-13-template-engine-and-template-structure.html" aria-current="false"
+                  >Template Engine and Template Structure</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-14-archives-tags-months-series.html" aria-current="false"
+                  >Archives, Tags, Months, and Series</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-15-progressive-enhancement-as-contract.html" aria-current="false"
+                  >Progressive Enhancement as Contract</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-16-design-tokens-before-pages.html" aria-current="false"
+                  >Design Tokens Before Pages</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-17-build-assets-pipeline.html" aria-current="false">Build Assets Pipeline</a>
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html" aria-current="false"
+                  >Feeds and Sitemaps at Build Time</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-19-og-images-at-build-time.html" aria-current="false"
+                  >OG Images at Build Time</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-20-seo-metadata-without-rituals.html" aria-current="false"
+                  >SEO Metadata Without Rituals</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-21-quality-gate-lint-format-verify.html" aria-current="false"
+                  >Quality Gate: Linting, Formatting, and Verify</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-22-ci-cd-around-github-pages.html" aria-current="false"
+                  >CI/CD Around GitHub Pages</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-23-vibe-coding-with-rigor.html" aria-current="false">Vibe Coding With Rigor</a>
+              </li>
             </ol>
           </section>
-        
+        </nav>
+      </article>
+
+      <nav data-post-nav="" aria-label="Post navigation">
+        <a data-post-nav-card="" rel="next" href="/posts/2026-04-21-cms-and-markdown-processing.html">
+          <span data-post-nav-label="">Next</span>
+          <strong>CMS and Markdown Processing</strong>
+        </a>
       </nav>
-    
-  </article>
-
-  <nav data-post-nav="" aria-label="Post navigation">
-    
-    
-      <a data-post-nav-card="" rel="next" href="/posts/2026-04-21-cms-and-markdown-processing.html">
-        <span data-post-nav-label="">Next</span>
-        <strong>CMS and Markdown Processing</strong>
-      </a>
-    
-  </nav>
-
     </main>
 
     <footer role="contentinfo" data-site-footer="">
-  <div data-container="" data-footer-grid="">
-    <div data-footer-copy="">
-      <p data-footer-brand="">dout.dev</p>
-      <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
-      <p>© 2026 dout.dev</p>
-    </div>
-    <nav data-footer-nav="" aria-label="Footer">
-      <a href="/">Home</a>
-      <a href="/archive.html">Archive</a>
-      <a href="/search.html">Search</a>
-      <a href="/about.html">About</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/feed.rss">RSS</a>
-      <a href="/feed.json">JSON Feed</a>
-    </nav>
-  </div>
-</footer>
+      <div data-container="" data-footer-grid="">
+        <div data-footer-copy="">
+          <p data-footer-brand="">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav data-footer-nav="" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
 
     <script type="module" src="/scripts/main.js"></script>
-  
-
-</body></html>
+  </body>
+</html>

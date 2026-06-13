@@ -1,24 +1,29 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Progressive Enhancement as Contract</title>
-    <meta name="theme-color" content="#ff6b3d">
-    <meta name="description" content="The contract">
-    <meta name="author" content="Emiliano &quot;pixu1980&quot; Pisu">
-    <meta name="robots" content="index,follow">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="dout:analytics-endpoint" content="">
-    <meta name="dout:analytics-dashboard" content="/privacy.html">
-    <link rel="canonical" href="https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html">
-    <meta property="og:site_name" content="dout.dev">
-    <meta property="og:locale" content="en-US">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss">
-    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json">
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="The contract" />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
     <script>
       document.documentElement.dataset.userPreferences = 'loading';
       if (location.protocol === 'file:') {
@@ -59,58 +64,72 @@
           monospace;
       }
     </style>
-    
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Progressive Enhancement as Contract">
-  <meta property="og:description" content="The contract">
-  <meta property="og:url" content="https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html">
-  <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-05-15-progressive-enhancement-as-contract.png">
-  <meta property="og:image:alt" content="Preview image for Progressive Enhancement as Contract">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="article:published_time" content="2026-05-15T00:00:00.000Z">
-  <meta property="article:modified_time" content="2026-05-15T00:00:00.000Z">
-  <meta property="article:author" content="Emiliano &quot;pixu1980&quot; Pisu">
-  <meta name="twitter:title" content="Progressive Enhancement as Contract">
-  <meta name="twitter:description" content="The contract">
-  <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-05-15-progressive-enhancement-as-contract.png">
-  <meta name="twitter:image:alt" content="Preview image for Progressive Enhancement as Contract">
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BlogPosting",
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Progressive Enhancement as Contract" />
+    <meta property="og:description" content="The contract" />
+    <meta property="og:url" content="https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html" />
+    <meta
+      property="og:image"
+      content="https://dout.dev/assets/og/posts/2026-05-15-progressive-enhancement-as-contract.png"
+    />
+    <meta property="og:image:alt" content="Preview image for Progressive Enhancement as Contract" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-05-15T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2026-05-15T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="twitter:title" content="Progressive Enhancement as Contract" />
+    <meta name="twitter:description" content="The contract" />
+    <meta
+      name="twitter:image"
+      content="https://dout.dev/assets/og/posts/2026-05-15-progressive-enhancement-as-contract.png"
+    />
+    <meta name="twitter:image:alt" content="Preview image for Progressive Enhancement as Contract" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
         "headline": "Progressive Enhancement as Contract",
         "description": "The contract",
         "datePublished": "2026-05-15T00:00:00.000Z",
         "dateModified": "2026-05-15T00:00:00.000Z",
         "author": {
-          "@type":"Person",
+          "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url":"https://dout.dev"
+          "url": "https://dout.dev"
         },
         "publisher": {
-          "@type":"Person",
+          "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url":"https://dout.dev"
+          "url": "https://dout.dev"
         },
-        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html"},
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html"
+        },
         "image": ["https://dout.dev/assets/og/posts/2026-05-15-progressive-enhancement-as-contract.png"],
         "keywords": "search, enhancement, page, contract, javascript, links, code, form, build, progressive, html, button"
       }
-  </script>
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BreadcrumbList",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://dout.dev"},
-          {"@type":"ListItem","position":2,"name":"Archive","item":"https://dout.dev/archive.html"},
-          {"@type":"ListItem","position":3,"name": "Progressive Enhancement as Contract","item":"https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html"}
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Progressive Enhancement as Contract",
+            "item": "https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html"
+          }
         ]
       }
-  </script>
+    </script>
 
-    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/index.css" />
     <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
   </head>
   <body data-site-shell="">
@@ -122,103 +141,185 @@
     <a data-skip-link="" href="#main">Skip to main content</a>
     <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
     <header role="banner" data-site-header="">
-  <div data-container="" data-header-bar="">
-    <a data-brand="" href="/">
-      <span data-brand-mark="">dout.dev</span>
-      <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
-    </a>
-    <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-      <span aria-hidden="true">☰</span>
-    </button>
-    <nav id="mainmenu" data-main-nav="" aria-label="Main">
-      <ul data-main-links="" role="list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/archive.html">Archive</a></li>
-        <li><a href="/search.html">Search</a></li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-      <div data-header-actions="">
-        <color-scheme-switcher></color-scheme-switcher>
-        <display-preferences-popover></display-preferences-popover>
+      <div data-container="" data-header-bar="">
+        <a data-brand="" href="/">
+          <span data-brand-mark="">dout.dev</span>
+          <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="mainmenu" data-main-nav="" aria-label="Main">
+          <ul data-main-links="" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+          <div data-header-actions="">
+            <color-scheme-switcher></color-scheme-switcher>
+            <display-preferences-popover></display-preferences-popover>
+          </div>
+        </nav>
       </div>
-    </nav>
-  </div>
-</header>
-
-
-    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
-      
-  <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
-    <header data-post-hero="" aria-labelledby="post-title">
-      <p data-eyebrow="">Article</p>
-      <p data-post-meta="">
-        <time datetime="2026-05-15" itemprop="datePublished">
-          15 maggio 2026
-        </time>
-        <span data-post-divider="">/</span>
-        <a href="/archive.html">Archive</a>
-      </p>
-      <h1 id="post-title" itemprop="headline" tabindex="0">Progressive Enhancement as Contract</h1>
-      
-        <p data-post-description="">The contract</p>
-      
-      
-        <ul data-tag-list="" aria-label="Tags">
-          
-            <li><a data-tag="" href="/tags/making-of.html">Making-of</a></li>
-          
-            <li><a data-tag="" href="/tags/progressive-enhancement.html">Progressive-enhancement</a></li>
-          
-            <li><a data-tag="" href="/tags/accessibility.html">Accessibility</a></li>
-          
-            <li><a data-tag="" href="/tags/vanilla-js.html">Vanilla-js</a></li>
-          
-        </ul>
-      
-      
-        <figure data-post-cover="">
-          <img src="/assets/og/posts/2026-05-15-progressive-enhancement-as-contract-card.png" alt="Progressive Enhancement as Contract" fetchpriority="high" decoding="async" width="1200" height="900">
-        </figure>
-      
     </header>
 
-    <section data-post-shell="" id="article-content" role="region" aria-labelledby="article-content-title">
-      <h2 id="article-content-title" data-visually-hidden="">Article content</h2>
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
+        <header data-post-hero="" aria-labelledby="post-title">
+          <p data-eyebrow="">Article</p>
+          <p data-post-meta="">
+            <time datetime="2026-05-15" itemprop="datePublished"> 15 maggio 2026 </time>
+            <span data-post-divider="">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 id="post-title" itemprop="headline" tabindex="0">Progressive Enhancement as Contract</h1>
 
-      <section data-prose="" itemprop="articleBody"><h2 id="the-contract" tabindex="0" data-toc-anchor="true">The contract</h2>
-<p>Progressive enhancement has had a rough decade. Between single-page apps, islands architecture, and "modern web" sermons, the idea that a page should work without JavaScript got treated as either trivial or reactionary. Neither is true.</p>
-<p>The version I hold to, and that dout.dev ships, is this:</p>
-<blockquote>
-<p><strong>Every page renders, navigates, and communicates its core purpose without running a single byte of JavaScript. Every interactive feature is an enhancement, not a prerequisite.</strong></p>
-</blockquote>
-<p>That is a contract. It is falsifiable. You can test it by disabling JavaScript in the browser and clicking around.</p>
-<h2 id="what-still-works-with-js-disabled" tabindex="0" data-toc-anchor="true">What still works with JS disabled</h2>
-<p>A reader with no JavaScript, either by choice or because the script failed to load, gets:</p>
-<ul>
-<li><strong>The full content of every post.</strong> Text, images, code samples, headings, links.</li><li><strong>Navigation between pages.</strong> The header nav, archive links, tag and month archives, pagination.</li><li><strong>Search.</strong> The <code>search.html</code> page has a <code>&lt;form method="get" action="/search.html"&gt;</code>. With JS it filters live; without JS it is submitted as a GET request and the page loads with the same URL shape.</li><li><strong>Feeds and subscription links.</strong> The RSS and JSON Feed discovery links in the <code>&lt;head&gt;</code>.</li><li><strong>Comments discovery.</strong> Without Giscus running, the "comments live in GitHub Discussions" label and a direct link to the discussion.</li></ul>
-<p>What the reader loses: live search filtering, theme switching, scrollspy highlighting, the lazy-load WebP swap (native <code>loading="lazy"</code> on the fallback image still works), and the clipboard-copy button on code blocks.</p>
-<p>Everything the reader loses is an enhancement. Nothing that is essential to reading the blog requires JavaScript.</p>
-<h2 id="how-the-markup-makes-that-true" tabindex="0" data-toc-anchor="true">How the markup makes that true</h2>
-<p>The contract is enforced at markup time. Every interactive feature is layered on top of a working HTML primitive.</p>
-<h3 id="search" tabindex="0" data-toc-anchor="true">Search</h3>
-<pre is="pix-highlighter" data-lang="html"><code>&lt;form role="search" method="get" action="/search.html" data-search-form&gt;
+          <p data-post-description="">The contract</p>
+
+          <ul data-tag-list="" aria-label="Tags">
+            <li><a data-tag="" href="/tags/making-of.html">Making-of</a></li>
+
+            <li><a data-tag="" href="/tags/progressive-enhancement.html">Progressive-enhancement</a></li>
+
+            <li><a data-tag="" href="/tags/accessibility.html">Accessibility</a></li>
+
+            <li><a data-tag="" href="/tags/vanilla-js.html">Vanilla-js</a></li>
+          </ul>
+
+          <figure data-post-cover="">
+            <img
+              src="/assets/og/posts/2026-05-15-progressive-enhancement-as-contract-card.png"
+              alt="Progressive Enhancement as Contract"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="900"
+            />
+          </figure>
+        </header>
+
+        <section data-post-shell="" id="article-content" role="region" aria-labelledby="article-content-title">
+          <h2 id="article-content-title" data-visually-hidden="">Article content</h2>
+
+          <section data-prose="" itemprop="articleBody">
+            <h2 id="the-contract" tabindex="0" data-toc-anchor="true">The contract</h2>
+            <p>
+              Progressive enhancement has had a rough decade. Between single-page apps, islands architecture, and
+              "modern web" sermons, the idea that a page should work without JavaScript got treated as either trivial or
+              reactionary. Neither is true.
+            </p>
+            <p>The version I hold to, and that dout.dev ships, is this:</p>
+            <blockquote>
+              <p>
+                <strong
+                  >Every page renders, navigates, and communicates its core purpose without running a single byte of
+                  JavaScript. Every interactive feature is an enhancement, not a prerequisite.</strong
+                >
+              </p>
+            </blockquote>
+            <p>
+              That is a contract. It is falsifiable. You can test it by disabling JavaScript in the browser and clicking
+              around.
+            </p>
+            <h2 id="what-still-works-with-js-disabled" tabindex="0" data-toc-anchor="true">
+              What still works with JS disabled
+            </h2>
+            <p>A reader with no JavaScript, either by choice or because the script failed to load, gets:</p>
+            <ul>
+              <li><strong>The full content of every post.</strong> Text, images, code samples, headings, links.</li>
+              <li>
+                <strong>Navigation between pages.</strong> The header nav, archive links, tag and month archives,
+                pagination.
+              </li>
+              <li>
+                <strong>Search.</strong> The <code>search.html</code> page has a
+                <code>&lt;form method="get" action="/search.html"&gt;</code>. With JS it filters live; without JS it is
+                submitted as a GET request and the page loads with the same URL shape.
+              </li>
+              <li>
+                <strong>Feeds and subscription links.</strong> The RSS and JSON Feed discovery links in the
+                <code>&lt;head&gt;</code>.
+              </li>
+              <li>
+                <strong>Comments discovery.</strong> Without Giscus running, the "comments live in GitHub Discussions"
+                label and a direct link to the discussion.
+              </li>
+            </ul>
+            <p>
+              What the reader loses: live search filtering, theme switching, scrollspy highlighting, the lazy-load WebP
+              swap (native <code>loading="lazy"</code> on the fallback image still works), and the clipboard-copy button
+              on code blocks.
+            </p>
+            <p>
+              Everything the reader loses is an enhancement. Nothing that is essential to reading the blog requires
+              JavaScript.
+            </p>
+            <h2 id="how-the-markup-makes-that-true" tabindex="0" data-toc-anchor="true">
+              How the markup makes that true
+            </h2>
+            <p>
+              The contract is enforced at markup time. Every interactive feature is layered on top of a working HTML
+              primitive.
+            </p>
+            <h3 id="search" tabindex="0" data-toc-anchor="true">Search</h3>
+            <pre
+              is="pix-highlighter"
+              data-lang="html"
+            ><code>&lt;form role="search" method="get" action="/search.html" data-search-form&gt;
   &lt;label for="q"&gt;Search&lt;&#x2F;label&gt;
   &lt;input type="text" id="q" name="q" /&gt;
   &lt;button type="submit"&gt;Search&lt;&#x2F;button&gt;
-&lt;&#x2F;form&gt;</code></pre><p>With JS disabled, submitting the form loads <code>/search.html?q=whatever</code>. The server-rendered search page parses the URL and displays results from the prebuilt JSON indexes — no JS needed for that match, because the JSON is small enough to be parsed server-side at build.</p>
-<p>Wait, a static blog has no server. Right. The "server" in this case is the CMS, which at build time generates <code>/search.html</code> as a shell that reads URL params on page load. Without JS, the form submits, the page reloads with the URL, and the page itself shows a placeholder: "Enable JavaScript for live search, or browse by tag or month below." That placeholder links to the archive pages, which are fully static.</p>
-<p>That is the graceful-degradation path for search. It is not as good as the JS path, but it does not dead-end the reader.</p>
-<h3 id="theme-switching" tabindex="0" data-toc-anchor="true">Theme switching</h3>
-<pre is="pix-highlighter" data-lang="html"><code>&lt;button data-theme-toggle aria-pressed="false" hidden&gt;Toggle theme&lt;&#x2F;button&gt;</code></pre><p>The button is <code>hidden</code> in the initial markup. Only the JS that actually implements the theme switch removes the <code>hidden</code> attribute. Readers without JS never see a button that does nothing.</p>
-<p>This is a general pattern: any UI element that requires JS to function is hidden by default and revealed by the enhancement script. The opposite pattern — show the button, have it do nothing when clicked — is worse, because it breaks the "visible things work" contract that users assume.</p>
-<h3 id="scrollspy" tabindex="0" data-toc-anchor="true">Scrollspy</h3>
-<p>The outline navigation is a normal list of jump-links. Without JS, clicking a link scrolls to the section. With JS, the active section gets highlighted as the user scrolls. The enhancement is purely decorative; the base experience is unchanged.</p>
-<h3 id="code-blocks" tabindex="0" data-toc-anchor="true">Code blocks</h3>
-<p>Fenced code blocks render as plain <code>&lt;pre&gt;&lt;code&gt;</code> in the markdown output, upgraded by <code>&lt;pre is="pix-highlighter"&gt;</code> when JS runs. Without JS, the code is monospaced and unhighlighted. Readable. Not pretty.</p>
-<p>The copy button is added by the custom element's <code>connectedCallback</code> — no element in the pre-JS DOM, nothing to fail.</p>
-<h2 id="how-the-build-verifies-it" tabindex="0" data-toc-anchor="true">How the build verifies it</h2>
-<p>Writing the contract is not enough. The build enforces it with a small no-JS check.</p>
-<pre is="pix-highlighter" data-lang="js"><code>import { test } from 'node:test';
+&lt;&#x2F;form&gt;</code></pre>
+            <p>
+              With JS disabled, submitting the form loads <code>/search.html?q=whatever</code>. The server-rendered
+              search page parses the URL and displays results from the prebuilt JSON indexes — no JS needed for that
+              match, because the JSON is small enough to be parsed server-side at build.
+            </p>
+            <p>
+              Wait, a static blog has no server. Right. The "server" in this case is the CMS, which at build time
+              generates <code>/search.html</code> as a shell that reads URL params on page load. Without JS, the form
+              submits, the page reloads with the URL, and the page itself shows a placeholder: "Enable JavaScript for
+              live search, or browse by tag or month below." That placeholder links to the archive pages, which are
+              fully static.
+            </p>
+            <p>
+              That is the graceful-degradation path for search. It is not as good as the JS path, but it does not
+              dead-end the reader.
+            </p>
+            <h3 id="theme-switching" tabindex="0" data-toc-anchor="true">Theme switching</h3>
+            <pre
+              is="pix-highlighter"
+              data-lang="html"
+            ><code>&lt;button data-theme-toggle aria-pressed="false" hidden&gt;Toggle theme&lt;&#x2F;button&gt;</code></pre>
+            <p>
+              The button is <code>hidden</code> in the initial markup. Only the JS that actually implements the theme
+              switch removes the <code>hidden</code> attribute. Readers without JS never see a button that does nothing.
+            </p>
+            <p>
+              This is a general pattern: any UI element that requires JS to function is hidden by default and revealed
+              by the enhancement script. The opposite pattern — show the button, have it do nothing when clicked — is
+              worse, because it breaks the "visible things work" contract that users assume.
+            </p>
+            <h3 id="scrollspy" tabindex="0" data-toc-anchor="true">Scrollspy</h3>
+            <p>
+              The outline navigation is a normal list of jump-links. Without JS, clicking a link scrolls to the section.
+              With JS, the active section gets highlighted as the user scrolls. The enhancement is purely decorative;
+              the base experience is unchanged.
+            </p>
+            <h3 id="code-blocks" tabindex="0" data-toc-anchor="true">Code blocks</h3>
+            <p>
+              Fenced code blocks render as plain <code>&lt;pre&gt;&lt;code&gt;</code> in the markdown output, upgraded
+              by <code>&lt;pre is="pix-highlighter"&gt;</code> when JS runs. Without JS, the code is monospaced and
+              unhighlighted. Readable. Not pretty.
+            </p>
+            <p>
+              The copy button is added by the custom element's <code>connectedCallback</code> — no element in the pre-JS
+              DOM, nothing to fail.
+            </p>
+            <h2 id="how-the-build-verifies-it" tabindex="0" data-toc-anchor="true">How the build verifies it</h2>
+            <p>Writing the contract is not enough. The build enforces it with a small no-JS check.</p>
+            <pre is="pix-highlighter" data-lang="js"><code>import { test } from 'node:test';
 import { chromium } from 'playwright';
 
 test('home renders without JS', async () =&gt; {
@@ -241,204 +342,301 @@ test('home renders without JS', async () =&gt; {
   }
 
   await browser.close();
-});</code></pre><p>The check runs against the home, the archive, a random post, and the search page. It asserts that the essential content is present, that internal links resolve, and that no error text is shown. If any of these fails, the quality gate stops the build.</p>
-<p>That is the difference between "we care about progressive enhancement" and "the site provably works without JS."</p>
-<h2 id="what-i-explicitly-chose-not-to-support" tabindex="0" data-toc-anchor="true">What I explicitly chose not to support</h2>
-<ul>
-<li><strong>Readers on truly ancient browsers.</strong> The progressive enhancement contract is about JavaScript availability, not CSS support. If your browser does not understand container queries or <code>:has()</code>, you get a simpler layout; you still get the content. But I do not vendor polyfills for IE11.</li><li><strong>Offline fetch without service worker.</strong> Service worker caching is itself an enhancement. Without it, offline means no site.</li><li><strong>Form submission to external endpoints.</strong> The only form on the site is search, which submits to itself. I do not depend on external form processors.</li></ul>
-<h2 id="the-takeaway" tabindex="0" data-toc-anchor="true">The takeaway</h2>
-<p>Progressive enhancement is a testable contract, not a stance. Pick a clear line — "the core experience works without JS" — and let the build verify it. The result is a more resilient site and a simpler mental model. The enhancements can then be as ambitious as you want, because you know what they are enhancing.</p>
-<h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
-<ul>
-<li><a href="https://alistapart.com/article/understandingprogressiveenhancement/?from=dout.dev" target="_blank" referrerpolicy="strict-origin-when-cross-origin" rel="noopener">Understanding progressive enhancement — A List Apart</a></li><li><a href="https://resilientwebdesign.com/?from=dout.dev" target="_blank" referrerpolicy="strict-origin-when-cross-origin" rel="noopener">Resilient Web Design — Jeremy Keith</a></li><li><a href="https://playwright.dev/?from=dout.dev" target="_blank" referrerpolicy="strict-origin-when-cross-origin" rel="noopener">Playwright</a> — for headless no-JS verification</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript?from=dout.dev" target="_blank" referrerpolicy="strict-origin-when-cross-origin" rel="noopener"><code>&lt;noscript&gt;</code> — MDN</a></li></ul>
-</section>
-    </section>
+});</code></pre>
+            <p>
+              The check runs against the home, the archive, a random post, and the search page. It asserts that the
+              essential content is present, that internal links resolve, and that no error text is shown. If any of
+              these fails, the quality gate stops the build.
+            </p>
+            <p>
+              That is the difference between "we care about progressive enhancement" and "the site provably works
+              without JS."
+            </p>
+            <h2 id="what-i-explicitly-chose-not-to-support" tabindex="0" data-toc-anchor="true">
+              What I explicitly chose not to support
+            </h2>
+            <ul>
+              <li>
+                <strong>Readers on truly ancient browsers.</strong> The progressive enhancement contract is about
+                JavaScript availability, not CSS support. If your browser does not understand container queries or
+                <code>:has()</code>, you get a simpler layout; you still get the content. But I do not vendor polyfills
+                for IE11.
+              </li>
+              <li>
+                <strong>Offline fetch without service worker.</strong> Service worker caching is itself an enhancement.
+                Without it, offline means no site.
+              </li>
+              <li>
+                <strong>Form submission to external endpoints.</strong> The only form on the site is search, which
+                submits to itself. I do not depend on external form processors.
+              </li>
+            </ul>
+            <h2 id="the-takeaway" tabindex="0" data-toc-anchor="true">The takeaway</h2>
+            <p>
+              Progressive enhancement is a testable contract, not a stance. Pick a clear line — "the core experience
+              works without JS" — and let the build verify it. The result is a more resilient site and a simpler mental
+              model. The enhancements can then be as ambitious as you want, because you know what they are enhancing.
+            </p>
+            <h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
+            <ul>
+              <li>
+                <a
+                  href="https://alistapart.com/article/understandingprogressiveenhancement/?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Understanding progressive enhancement — A List Apart</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://resilientwebdesign.com/?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Resilient Web Design — Jeremy Keith</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://playwright.dev/?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Playwright</a
+                >
+                — for headless no-JS verification
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  ><code>&lt;noscript&gt;</code> — MDN</a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
 
-    
-      <aside data-post-sidebar="" role="complementary" aria-labelledby="post-outline">
-        <nav data-post-toc="" aria-labelledby="post-outline">
-          <p data-eyebrow="" data-muted="">TOC</p>
-          <h2 id="post-outline">On this page</h2>
-          <ol data-post-toc-list="">
-            
+        <aside data-post-sidebar="" role="complementary" aria-labelledby="post-outline">
+          <nav data-post-toc="" aria-labelledby="post-outline">
+            <p data-eyebrow="" data-muted="">TOC</p>
+            <h2 id="post-outline">On this page</h2>
+            <ol data-post-toc-list="">
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#the-contract">The contract</a>
               </li>
-            
+
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#what-still-works-with-js-disabled">What still works with JS disabled</a>
+                <a data-post-toc-link="" data-level="2" href="#what-still-works-with-js-disabled"
+                  >What still works with JS disabled</a
+                >
               </li>
-            
+
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#how-the-markup-makes-that-true">How the markup makes that true</a>
+                <a data-post-toc-link="" data-level="2" href="#how-the-markup-makes-that-true"
+                  >How the markup makes that true</a
+                >
               </li>
-            
+
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="3" href="#search">Search</a>
               </li>
-            
+
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="3" href="#theme-switching">Theme switching</a>
               </li>
-            
+
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="3" href="#scrollspy">Scrollspy</a>
               </li>
-            
+
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="3" href="#code-blocks">Code blocks</a>
               </li>
-            
+
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#how-the-build-verifies-it">How the build verifies it</a>
               </li>
-            
+
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#what-i-explicitly-chose-not-to-support">What I explicitly chose not to support</a>
+                <a data-post-toc-link="" data-level="2" href="#what-i-explicitly-chose-not-to-support"
+                  >What I explicitly chose not to support</a
+                >
               </li>
-            
+
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#the-takeaway">The takeaway</a>
               </li>
-            
+
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#references">References</a>
               </li>
-            
-          </ol>
-        </nav>
-      </aside>
-    
+            </ol>
+          </nav>
+        </aside>
 
-    
-      <section data-comments-shell="" aria-labelledby="comments-title">
-        <div data-section-heading="">
-          <div>
-            <p data-eyebrow="">Discussion</p>
-            <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+        <section data-comments-shell="" aria-labelledby="comments-title">
+          <div data-section-heading="">
+            <div>
+              <p data-eyebrow="">Discussion</p>
+              <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+            </div>
           </div>
-        </div>
-        <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
-        <script src="https://giscus.app/client.js" data-repo="pixu1980/dout-dev" data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU=" data-category="General" data-category-id="DIC_kwDOFJulQc4CjlkE" data-mapping="url" data-term="data/posts/2026-05-15-progressive-enhancement-as-contract.md" data-strict="0" data-reactions-enabled="1" data-emit-metadata="1" data-input-position="top" data-theme="dark" data-lang="en" data-loading="lazy" crossorigin="anonymous" async=""></script>
-      </section>
-    
+          <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2026-05-15-progressive-enhancement-as-contract.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
 
-    
-      <nav data-series-navigation="" aria-label="Series navigation">
-        
+        <nav data-series-navigation="" aria-label="Series navigation">
           <section data-series-navigation-group="" aria-labelledby="series-navigation-how-i-made-it">
             <p data-eyebrow="" data-muted="">Series</p>
             <h2 id="series-navigation-how-i-made-it">In this series: How I made it</h2>
             <ol data-series-navigation-links="">
-              
-                <li>
-                  <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="false">How I Built dout.dev</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-04-21-cms-and-markdown-processing.html" aria-current="false">CMS and Markdown Processing</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false">Rebuilding dout.dev in Weeks With an AI Copilot</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-05-why-no-astro-eleventy-next.html" aria-current="false">Why I Skipped Astro, Eleventy and Next for My Blog</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-12-custom-ssg-pipeline.html" aria-current="false">Custom SSG Pipeline: Markdown to Static HTML</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-13-template-engine-and-template-structure.html" aria-current="false">Template Engine and Template Structure</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-14-archives-tags-months-series.html" aria-current="false">Archives, Tags, Months, and Series</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-15-progressive-enhancement-as-contract.html" aria-current="page">Progressive Enhancement as Contract (you are here)</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-16-design-tokens-before-pages.html" aria-current="false">Design Tokens Before Pages</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-17-build-assets-pipeline.html" aria-current="false">Build Assets Pipeline</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html" aria-current="false">Feeds and Sitemaps at Build Time</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-19-og-images-at-build-time.html" aria-current="false">OG Images at Build Time</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-20-seo-metadata-without-rituals.html" aria-current="false">SEO Metadata Without Rituals</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-21-quality-gate-lint-format-verify.html" aria-current="false">Quality Gate: Linting, Formatting, and Verify</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-22-ci-cd-around-github-pages.html" aria-current="false">CI/CD Around GitHub Pages</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-23-vibe-coding-with-rigor.html" aria-current="false">Vibe Coding With Rigor</a>
-                </li>
-              
+              <li>
+                <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="false">How I Built dout.dev</a>
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-21-cms-and-markdown-processing.html" aria-current="false"
+                  >CMS and Markdown Processing</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false"
+                  >Rebuilding dout.dev in Weeks With an AI Copilot</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-05-why-no-astro-eleventy-next.html" aria-current="false"
+                  >Why I Skipped Astro, Eleventy and Next for My Blog</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-12-custom-ssg-pipeline.html" aria-current="false"
+                  >Custom SSG Pipeline: Markdown to Static HTML</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-13-template-engine-and-template-structure.html" aria-current="false"
+                  >Template Engine and Template Structure</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-14-archives-tags-months-series.html" aria-current="false"
+                  >Archives, Tags, Months, and Series</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-15-progressive-enhancement-as-contract.html" aria-current="page"
+                  >Progressive Enhancement as Contract (you are here)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-16-design-tokens-before-pages.html" aria-current="false"
+                  >Design Tokens Before Pages</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-17-build-assets-pipeline.html" aria-current="false">Build Assets Pipeline</a>
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html" aria-current="false"
+                  >Feeds and Sitemaps at Build Time</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-19-og-images-at-build-time.html" aria-current="false"
+                  >OG Images at Build Time</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-20-seo-metadata-without-rituals.html" aria-current="false"
+                  >SEO Metadata Without Rituals</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-21-quality-gate-lint-format-verify.html" aria-current="false"
+                  >Quality Gate: Linting, Formatting, and Verify</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-22-ci-cd-around-github-pages.html" aria-current="false"
+                  >CI/CD Around GitHub Pages</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-23-vibe-coding-with-rigor.html" aria-current="false">Vibe Coding With Rigor</a>
+              </li>
             </ol>
           </section>
-        
+        </nav>
+      </article>
+
+      <nav data-post-nav="" aria-label="Post navigation">
+        <a data-post-nav-card="" rel="prev" href="/posts/2026-05-14-archives-tags-months-series.html">
+          <span data-post-nav-label="">Previous</span>
+          <strong>Archives, Tags, Months, and Series</strong>
+        </a>
+
+        <a data-post-nav-card="" rel="next" href="/posts/2026-05-16-design-tokens-before-pages.html">
+          <span data-post-nav-label="">Next</span>
+          <strong>Design Tokens Before Pages</strong>
+        </a>
       </nav>
-    
-  </article>
-
-  <nav data-post-nav="" aria-label="Post navigation">
-    
-      <a data-post-nav-card="" rel="prev" href="/posts/2026-05-14-archives-tags-months-series.html">
-        <span data-post-nav-label="">Previous</span>
-        <strong>Archives, Tags, Months, and Series</strong>
-      </a>
-    
-    
-      <a data-post-nav-card="" rel="next" href="/posts/2026-05-16-design-tokens-before-pages.html">
-        <span data-post-nav-label="">Next</span>
-        <strong>Design Tokens Before Pages</strong>
-      </a>
-    
-  </nav>
-
     </main>
 
     <footer role="contentinfo" data-site-footer="">
-  <div data-container="" data-footer-grid="">
-    <div data-footer-copy="">
-      <p data-footer-brand="">dout.dev</p>
-      <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
-      <p>© 2026 dout.dev</p>
-    </div>
-    <nav data-footer-nav="" aria-label="Footer">
-      <a href="/">Home</a>
-      <a href="/archive.html">Archive</a>
-      <a href="/search.html">Search</a>
-      <a href="/about.html">About</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/feed.rss">RSS</a>
-      <a href="/feed.json">JSON Feed</a>
-    </nav>
-  </div>
-</footer>
+      <div data-container="" data-footer-grid="">
+        <div data-footer-copy="">
+          <p data-footer-brand="">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav data-footer-nav="" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
 
     <script type="module" src="/scripts/main.js"></script>
-  
-
-</body></html>
+  </body>
+</html>

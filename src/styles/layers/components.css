@@ -132,30 +132,30 @@
   }
 
   :where(
-      [data-hero-copy],
-      [data-hero-panel],
-      [data-page-hero],
-      [data-post-shell],
-      [data-comments-shell],
-      [data-archive-panel],
-      [data-card],
-      [data-post-card],
-      [data-feature-card],
-      [data-post-toc],
-      [data-main-links] a,
-      [data-menu-toggle],
-      button,
-      [data-button],
-      [data-post-nav-card],
-      [data-tag],
-      input[type='search'],
-      input[type='text'],
-      textarea,
-      select,
-      [data-pagination-link],
-      [data-pagination-edge],
-      #search-pagination a
-    ) {
+    [data-hero-copy],
+    [data-hero-panel],
+    [data-page-hero],
+    [data-post-shell],
+    [data-comments-shell],
+    [data-archive-panel],
+    [data-card],
+    [data-post-card],
+    [data-feature-card],
+    [data-post-toc],
+    [data-main-links] a,
+    [data-menu-toggle],
+    button,
+    [data-button],
+    [data-post-nav-card],
+    [data-tag],
+    input[type='search'],
+    input[type='text'],
+    textarea,
+    select,
+    [data-pagination-link],
+    [data-pagination-edge],
+    #search-pagination a
+  ) {
     corner-shape: var(--dout--corner-shape);
   }
 

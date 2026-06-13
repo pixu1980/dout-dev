@@ -72,18 +72,18 @@
   }
 
   :where(
-      [data-hero-copy],
-      [data-hero-panel],
-      [data-page-hero],
-      [data-post-shell],
-      [data-comments-shell],
-      [data-archive-panel],
-      [data-card],
-      [data-post-card],
-      [data-feature-card],
-      [data-series-navigation],
-      [data-post-toc]
-    ) {
+    [data-hero-copy],
+    [data-hero-panel],
+    [data-page-hero],
+    [data-post-shell],
+    [data-comments-shell],
+    [data-archive-panel],
+    [data-card],
+    [data-post-card],
+    [data-feature-card],
+    [data-series-navigation],
+    [data-post-toc]
+  ) {
     border: var(--dout--border-width) solid var(--dout--border);
     border-radius: var(--dout--radius-lg);
     background: var(--dout--surface);
@@ -92,16 +92,16 @@
   }
 
   :where(
-      [data-hero-copy],
-      [data-hero-panel],
-      [data-page-hero],
-      [data-post-shell],
-      [data-comments-shell],
-      [data-archive-panel],
-      [data-card],
-      [data-series-navigation],
-      [data-post-toc]
-    ) {
+    [data-hero-copy],
+    [data-hero-panel],
+    [data-page-hero],
+    [data-post-shell],
+    [data-comments-shell],
+    [data-archive-panel],
+    [data-card],
+    [data-series-navigation],
+    [data-post-toc]
+  ) {
     padding: var(--dout--panel-padding);
   }
 

@@ -196,8 +196,8 @@ Giscus integrates GitHub Discussions for post comments. Configuration is driven 
    ```bash
    cp .env.example .env.local
    ```
-   
 3. **Update `.env.local`** with your Giscus values:
+
    ```sh
    GISCUS_REPO=your-owner/your-repo
    GISCUS_REPO_ID=<from giscus.app>
@@ -207,6 +207,7 @@ Giscus integrates GitHub Discussions for post comments. Configuration is driven 
    GISCUS_STRICT=0
    # ... other settings
    ```
+
    (`.env.local` is git-ignored and stays local)
 
 4. **For production** (GitHub Actions): set these as repository secrets in GitHub:
@@ -214,7 +215,7 @@ Giscus integrates GitHub Discussions for post comments. Configuration is driven 
    - `GISCUS_REPO_ID`
    - `GISCUS_CATEGORY`
    - `GISCUS_CATEGORY_ID`
-   
+
    GitHub Actions will inject them at build time via `${{ secrets.GISCUS_REPO }}` etc.
 
 ### Configuration Options
@@ -263,7 +264,7 @@ Giscus integrates GitHub Discussions for post comments. Configuration is driven 
 │   ├── manifest.json       # Web App Manifest
 │   └── performance-test.html # Performance testing suite
 ├── dist/                   # Final build output
-└── .github/                # CI/CD workflows
+└── .github/                # CI/CD workflows, collaboration templates, and community docs
 ```
 
 ## Content Management
@@ -475,7 +476,7 @@ The build process expects specific favicon/manifest assets at the project root. 
 
 Where to place them:
 
-- Copy these files to the repository root (same level as `package.json`). `scripts/build-assets.js` resolves paths exactly as listed in `favicon.data.json`.
+- Copy these files to the repository root (same level as `package.json`). `scripts/assets/_build-assets.js` resolves paths exactly as listed in `favicon.data.json`.
 
 What the build script does:
 
@@ -497,7 +498,7 @@ How to fix build failure:
 touch favicon-96x96.png favicon.svg favicon.ico apple-touch-icon.png site.webmanifest
 ```
 
-- If you want different behavior (for example downgrade failure to warning), update `scripts/build-assets.js` in `processFavicons` and remove the `throw` after placeholder generation.
+- If you want different behavior (for example downgrade failure to warning), update `scripts/assets/_build-assets.js` in `processFavicons` and remove the `throw` after placeholder generation.
 
 Recommendations:
 
@@ -510,29 +511,29 @@ Use this map as the entry point for repository policies, contribution flow, mode
 
 Core community and contribution:
 
-- `README_COMMUNITY.md`: Community-first summary and contributor path overview.
-- `CONTRIBUTING.md`: How to contribute articles and source code, including review and voting expectations.
-- `CODE_OF_CONDUCT.md`: Expected behavior, unacceptable behavior, reporting, enforcement, and appeals.
-- `SUPPORT.md`: Where to ask questions, report bugs, and route security/moderation concerns.
+- `.github/community/README.md`: Community-first summary and contributor path overview.
+- `.github/CONTRIBUTING.md`: How to contribute articles and source code, including review and voting expectations.
+- `.github/CODE_OF_CONDUCT.md`: Expected behavior, unacceptable behavior, reporting, enforcement, and appeals.
+- `.github/SUPPORT.md`: Where to ask questions, report bugs, and route security/moderation concerns.
 
 Editorial policy and publishing:
 
-- `CONTENT_GUIDELINES.md`: Relevance criteria, article quality standards, attribution rules, and AI disclosure.
+- `.github/community/CONTENT_GUIDELINES.md`: Relevance criteria, article quality standards, attribution rules, and AI disclosure.
 - `ARTICLE_TEMPLATE.md`: Ready-to-use article structure and frontmatter template.
-- `PUBLISHING_STRATEGY.md`: End-to-end publishing and promotion workflow, including Discussion and LinkedIn patterns.
+- `.github/community/PUBLISHING_STRATEGY.md`: End-to-end publishing and promotion workflow, including Discussion and LinkedIn patterns.
 
 Governance and roles:
 
-- `GOVERNANCE.md`: Decision model, voting rules, veto boundaries, conflict-of-interest handling, and governance updates.
-- `CONTRIBUTION_TIERS.md`: Transparent progression from reader to contributor and maintainer roles.
+- `.github/community/GOVERNANCE.md`: Decision model, voting rules, veto boundaries, conflict-of-interest handling, and governance updates.
+- `.github/community/CONTRIBUTION_TIERS.md`: Transparent progression from reader to contributor and maintainer roles.
 - `docs/maintainer-vote-examples.md`: Practical voting scenarios for article and maintainer decisions.
 
 Safety, moderation, and legal:
 
-- `SECURITY.md`: Private vulnerability reporting scope, process, and disclosure guidance.
-- `MODERATION_POLICY.md`: Moderation levels, escalation path, and appeal model.
-- `LICENSE_POLICY.md`: Proposed dual-license strategy for source code and editorial content.
-- `OPEN_SOURCE_CHECKLIST.md`: Operational checklist for community health, GitHub settings, legal baseline, and moderation readiness.
+- `.github/SECURITY.md`: Private vulnerability reporting scope, process, and disclosure guidance.
+- `.github/community/MODERATION_POLICY.md`: Moderation levels, escalation path, and appeal model.
+- `.github/community/LICENSE_POLICY.md`: Proposed dual-license strategy for source code and editorial content.
+- `.github/community/OPEN_SOURCE_CHECKLIST.md`: Operational checklist for community health, GitHub settings, legal baseline, and moderation readiness.
 
 GitHub collaboration templates and ownership:
 

@@ -1,24 +1,29 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CI/CD Around GitHub Pages</title>
-    <meta name="theme-color" content="#ff6b3d">
-    <meta name="description" content="The gap GitHub Pages leaves open">
-    <meta name="author" content="Emiliano &quot;pixu1980&quot; Pisu">
-    <meta name="robots" content="index,follow">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="dout:analytics-endpoint" content="">
-    <meta name="dout:analytics-dashboard" content="/privacy.html">
-    <link rel="canonical" href="https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html">
-    <meta property="og:site_name" content="dout.dev">
-    <meta property="og:locale" content="en-US">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss">
-    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json">
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="The gap GitHub Pages leaves open" />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
     <script>
       document.documentElement.dataset.userPreferences = 'loading';
       if (location.protocol === 'file:') {
@@ -59,58 +64,66 @@
           monospace;
       }
     </style>
-    
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="CI/CD Around GitHub Pages">
-  <meta property="og:description" content="The gap GitHub Pages leaves open">
-  <meta property="og:url" content="https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html">
-  <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-05-22-ci-cd-around-github-pages.png">
-  <meta property="og:image:alt" content="Preview image for CI/CD Around GitHub Pages">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="article:published_time" content="2026-05-22T00:00:00.000Z">
-  <meta property="article:modified_time" content="2026-05-22T00:00:00.000Z">
-  <meta property="article:author" content="Emiliano &quot;pixu1980&quot; Pisu">
-  <meta name="twitter:title" content="CI/CD Around GitHub Pages">
-  <meta name="twitter:description" content="The gap GitHub Pages leaves open">
-  <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-05-22-ci-cd-around-github-pages.png">
-  <meta name="twitter:image:alt" content="Preview image for CI/CD Around GitHub Pages">
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BlogPosting",
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="CI/CD Around GitHub Pages" />
+    <meta property="og:description" content="The gap GitHub Pages leaves open" />
+    <meta property="og:url" content="https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html" />
+    <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-05-22-ci-cd-around-github-pages.png" />
+    <meta property="og:image:alt" content="Preview image for CI/CD Around GitHub Pages" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-05-22T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2026-05-22T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="twitter:title" content="CI/CD Around GitHub Pages" />
+    <meta name="twitter:description" content="The gap GitHub Pages leaves open" />
+    <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-05-22-ci-cd-around-github-pages.png" />
+    <meta name="twitter:image:alt" content="Preview image for CI/CD Around GitHub Pages" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
         "headline": "CI/CD Around GitHub Pages",
         "description": "The gap GitHub Pages leaves open",
         "datePublished": "2026-05-22T00:00:00.000Z",
         "dateModified": "2026-05-22T00:00:00.000Z",
         "author": {
-          "@type":"Person",
+          "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url":"https://dout.dev"
+          "url": "https://dout.dev"
         },
         "publisher": {
-          "@type":"Person",
+          "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url":"https://dout.dev"
+          "url": "https://dout.dev"
         },
-        "mainEntityOfPage": {"@type":"WebPage","@id":"https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html"},
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html"
+        },
         "image": ["https://dout.dev/assets/og/posts/2026-05-22-ci-cd-around-github-pages.png"],
         "keywords": "deploy, pages, github, preview, commit, one, repo, site, previews, rollback, actions, workflow"
       }
-  </script>
-  <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BreadcrumbList",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://dout.dev"},
-          {"@type":"ListItem","position":2,"name":"Archive","item":"https://dout.dev/archive.html"},
-          {"@type":"ListItem","position":3,"name": "CI/CD Around GitHub Pages","item":"https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html"}
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "CI/CD Around GitHub Pages",
+            "item": "https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html"
+          }
         ]
       }
-  </script>
+    </script>
 
-    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/index.css" />
     <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
   </head>
   <body data-site-shell="">
@@ -122,75 +135,86 @@
     <a data-skip-link="" href="#main">Skip to main content</a>
     <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
     <header role="banner" data-site-header="">
-  <div data-container="" data-header-bar="">
-    <a data-brand="" href="/">
-      <span data-brand-mark="">dout.dev</span>
-      <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
-    </a>
-    <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-      <span aria-hidden="true">☰</span>
-    </button>
-    <nav id="mainmenu" data-main-nav="" aria-label="Main">
-      <ul data-main-links="" role="list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/archive.html">Archive</a></li>
-        <li><a href="/search.html">Search</a></li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-      <div data-header-actions="">
-        <color-scheme-switcher></color-scheme-switcher>
-        <display-preferences-popover></display-preferences-popover>
+      <div data-container="" data-header-bar="">
+        <a data-brand="" href="/">
+          <span data-brand-mark="">dout.dev</span>
+          <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="mainmenu" data-main-nav="" aria-label="Main">
+          <ul data-main-links="" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+          <div data-header-actions="">
+            <color-scheme-switcher></color-scheme-switcher>
+            <display-preferences-popover></display-preferences-popover>
+          </div>
+        </nav>
       </div>
-    </nav>
-  </div>
-</header>
-
-
-    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
-      
-  <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
-    <header data-post-hero="" aria-labelledby="post-title">
-      <p data-eyebrow="">Article</p>
-      <p data-post-meta="">
-        <time datetime="2026-05-22" itemprop="datePublished">
-          22 maggio 2026
-        </time>
-        <span data-post-divider="">/</span>
-        <a href="/archive.html">Archive</a>
-      </p>
-      <h1 id="post-title" itemprop="headline" tabindex="0">CI/CD Around GitHub Pages</h1>
-      
-        <p data-post-description="">The gap GitHub Pages leaves open</p>
-      
-      
-        <ul data-tag-list="" aria-label="Tags">
-          
-            <li><a data-tag="" href="/tags/making-of.html">Making-of</a></li>
-          
-            <li><a data-tag="" href="/tags/ci.html">Ci</a></li>
-          
-            <li><a data-tag="" href="/tags/deployment.html">Deployment</a></li>
-          
-            <li><a data-tag="" href="/tags/github-pages.html">Github-pages</a></li>
-          
-        </ul>
-      
-      
-        <figure data-post-cover="">
-          <img src="/assets/og/posts/2026-05-22-ci-cd-around-github-pages-card.png" alt="CI/CD Around GitHub Pages" fetchpriority="high" decoding="async" width="1200" height="900">
-        </figure>
-      
     </header>
 
-    <section data-post-shell="" id="article-content" role="region" aria-labelledby="article-content-title">
-      <h2 id="article-content-title" data-visually-hidden="">Article content</h2>
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
+        <header data-post-hero="" aria-labelledby="post-title">
+          <p data-eyebrow="">Article</p>
+          <p data-post-meta="">
+            <time datetime="2026-05-22" itemprop="datePublished"> 22 maggio 2026 </time>
+            <span data-post-divider="">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 id="post-title" itemprop="headline" tabindex="0">CI/CD Around GitHub Pages</h1>
 
-      <section data-prose="" itemprop="articleBody"><h2 id="the-gap-github-pages-leaves-open" tabindex="0" data-toc-anchor="true">The gap GitHub Pages leaves open</h2>
-<p>GitHub Pages is excellent for serving a static site. It is also, by default, missing two features that Netlify and Vercel have made everyone expect: <strong>deploy previews on pull requests</strong>, and <strong>one-click rollback</strong> to a previous deploy.</p>
-<p>Neither is actually missing. They are just not turned on. The pieces exist in GitHub Actions; you have to wire them up. On dout.dev, that wiring is about 40 lines of YAML and one simple naming convention.</p>
-<h2 id="the-production-pipeline" tabindex="0" data-toc-anchor="true">The production pipeline</h2>
-<p>Production deploys run from <code>main</code> or from <code>workflow_dispatch</code>. The workflow has two jobs — build and deploy — and produces a site at <code>https://dout.dev</code>.</p>
-<pre is="pix-highlighter" data-lang="yaml"><code>name: Deploy Pages
+          <p data-post-description="">The gap GitHub Pages leaves open</p>
+
+          <ul data-tag-list="" aria-label="Tags">
+            <li><a data-tag="" href="/tags/making-of.html">Making-of</a></li>
+
+            <li><a data-tag="" href="/tags/ci.html">Ci</a></li>
+
+            <li><a data-tag="" href="/tags/deployment.html">Deployment</a></li>
+
+            <li><a data-tag="" href="/tags/github-pages.html">Github-pages</a></li>
+          </ul>
+
+          <figure data-post-cover="">
+            <img
+              src="/assets/og/posts/2026-05-22-ci-cd-around-github-pages-card.png"
+              alt="CI/CD Around GitHub Pages"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="900"
+            />
+          </figure>
+        </header>
+
+        <section data-post-shell="" id="article-content" role="region" aria-labelledby="article-content-title">
+          <h2 id="article-content-title" data-visually-hidden="">Article content</h2>
+
+          <section data-prose="" itemprop="articleBody">
+            <h2 id="the-gap-github-pages-leaves-open" tabindex="0" data-toc-anchor="true">
+              The gap GitHub Pages leaves open
+            </h2>
+            <p>
+              GitHub Pages is excellent for serving a static site. It is also, by default, missing two features that
+              Netlify and Vercel have made everyone expect: <strong>deploy previews on pull requests</strong>, and
+              <strong>one-click rollback</strong> to a previous deploy.
+            </p>
+            <p>
+              Neither is actually missing. They are just not turned on. The pieces exist in GitHub Actions; you have to
+              wire them up. On dout.dev, that wiring is about 40 lines of YAML and one simple naming convention.
+            </p>
+            <h2 id="the-production-pipeline" tabindex="0" data-toc-anchor="true">The production pipeline</h2>
+            <p>
+              Production deploys run from <code>main</code> or from <code>workflow_dispatch</code>. The workflow has two
+              jobs — build and deploy — and produces a site at <code>https://dout.dev</code>.
+            </p>
+            <pre is="pix-highlighter" data-lang="yaml"><code>name: Deploy Pages
 
 on:
   push:
@@ -229,11 +253,28 @@ jobs:
       url: DEPLOYMENT_PAGE_URL
     steps:
       - uses: actions/deploy-pages@v4
-        id: deployment</code></pre><p>That is a complete Pages workflow. The <code>concurrency</code> group prevents two overlapping deploys from fighting. The <code>environment: github-pages</code> line is required for the Pages deployment to succeed and also records deploy history.</p>
-<h2 id="pr-previews-without-a-third-party-service" tabindex="0" data-toc-anchor="true">PR previews, without a third-party service</h2>
-<p>GitHub Pages has one "live" site per repository. You cannot deploy a PR to a live preview URL the way Netlify does.</p>
-<p>What you can do: <strong>build the PR, upload the <code>dist/</code> as an artifact, and comment on the PR with a link to download it.</strong> A reviewer can extract the zip locally and open it. For a single-author blog, that is often enough.</p>
-<pre is="pix-highlighter" data-lang="yaml"><code>name: PR Build
+        id: deployment</code></pre>
+            <p>
+              That is a complete Pages workflow. The <code>concurrency</code> group prevents two overlapping deploys
+              from fighting. The <code>environment: github-pages</code> line is required for the Pages deployment to
+              succeed and also records deploy history.
+            </p>
+            <h2 id="pr-previews-without-a-third-party-service" tabindex="0" data-toc-anchor="true">
+              PR previews, without a third-party service
+            </h2>
+            <p>
+              GitHub Pages has one "live" site per repository. You cannot deploy a PR to a live preview URL the way
+              Netlify does.
+            </p>
+            <p>
+              What you can do:
+              <strong
+                >build the PR, upload the <code>dist/</code> as an artifact, and comment on the PR with a link to
+                download it.</strong
+              >
+              A reviewer can extract the zip locally and open it. For a single-author blog, that is often enough.
+            </p>
+            <pre is="pix-highlighter" data-lang="yaml"><code>name: PR Build
 
 on:
   pull_request:
@@ -255,212 +296,339 @@ jobs:
         with:
           name: dist-PR_NUMBER
           path: dist
-          retention-days: 14</code></pre><p>The artifact is named with the PR number, so CI history stays navigable. Retention is two weeks — long enough to review, short enough to not accumulate forever.</p>
-<h2 id="real-pr-previews-with-a-second-github-pages-repo" tabindex="0" data-toc-anchor="true">Real PR previews with a second GitHub Pages repo</h2>
-<p>For reviewers who want a clickable URL rather than a zip, there is a second pattern: a separate repository that hosts "preview" deploys at URLs like <code>preview-123.dout.dev</code>.</p>
-<p>The CI workflow pushes the PR's <code>dist/</code> into a subdirectory of the preview repo's <code>main</code> branch, and the preview site is configured to serve those subdirectories. A bot comments on the PR with the preview URL.</p>
-<p>This is more setup than most personal projects need. For dout.dev I use the zip-artifact pattern. For a team project, I would build the separate-repo preview pipeline.</p>
-<h2 id="rollback-in-one-minute" tabindex="0" data-toc-anchor="true">Rollback in one minute</h2>
-<p>This is the feature I use more often than I expected.</p>
-<p>When a bad deploy reaches production — wrong content, broken CSP, accidentally unpublished post — the recovery path is:</p>
-<ol>
-<li>Go to Actions → Deploy Pages in the repo.</li><li>Find the last known-good run.</li><li>Click "Re-run all jobs."</li></ol>
-<p>That rebuilds the old commit and redeploys it. One minute from "oh no" to "fixed."</p>
-<p>The prerequisites:</p>
-<ul>
-<li><strong>Every production deploy is triggered by a commit on <code>main</code>.</strong> No manual artifact uploads. Every deploy is reproducible from a specific SHA.</li><li><strong>Build-time inputs are either committed or in secrets.</strong> If a deploy depends on an environment variable that is not tracked, re-running the old commit with a new secret value produces a different artifact. That is the most common rollback failure mode.</li></ul>
-<p>The workflow at the top of this post satisfies both. That is why it rolls back cleanly.</p>
-<h2 id="the-commit-based-deploy-trail" tabindex="0" data-toc-anchor="true">The commit-based deploy trail</h2>
-<p>A useful side effect of "every deploy is a commit" is that the Actions history is the deploy history. You can see which commit is live right now, which commits have been deployed before, and how long each deploy took.</p>
-<p>The Pages environment in the repo settings also tracks "Active deployment" and shows the deployed commit SHA at the top. If you have to answer "what is live right now?" for a coworker, that screen is the authoritative source.</p>
-<h2 id="what-i-did-not-add" tabindex="0" data-toc-anchor="true">What I did not add</h2>
-<ul>
-<li><strong>Automatic atomic rollback on failure.</strong> If the build fails, no deploy happens. If the deploy itself fails, GitHub Pages does not update. That is the correct level of automation for a static site.</li><li><strong>Slack or email notifications on deploy.</strong> Overkill for a single-author blog. The Actions email notifications are enough.</li><li><strong>Canary deploys.</strong> A static blog does not need canaries. The unit of change is one post.</li></ul>
-<h2 id="the-takeaway" tabindex="0" data-toc-anchor="true">The takeaway</h2>
-<p>GitHub Pages with GitHub Actions is a complete deploy pipeline, including previews and rollback, if you accept that previews come as artifacts rather than live URLs. For most personal projects that is the right trade-off — no third-party service, no extra auth, and the same UI you are already using for the repo.</p>
-<h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
-<ul>
-<li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages?from=dout.dev" target="_blank" referrerpolicy="strict-origin-when-cross-origin" rel="noopener">GitHub Pages: deploy from GitHub Actions</a></li><li><a href="https://github.com/actions/deploy-pages?from=dout.dev" target="_blank" referrerpolicy="strict-origin-when-cross-origin" rel="noopener"><code>actions/deploy-pages</code></a></li><li><a href="https://github.com/actions/upload-artifact?from=dout.dev" target="_blank" referrerpolicy="strict-origin-when-cross-origin" rel="noopener"><code>actions/upload-artifact</code></a></li><li><a href="https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-deployments/managing-environments-for-deployment?from=dout.dev" target="_blank" referrerpolicy="strict-origin-when-cross-origin" rel="noopener">GitHub Environments</a></li></ul>
-</section>
-    </section>
-
-    
-      <aside data-post-sidebar="" role="complementary" aria-labelledby="post-outline">
-        <nav data-post-toc="" aria-labelledby="post-outline">
-          <p data-eyebrow="" data-muted="">TOC</p>
-          <h2 id="post-outline">On this page</h2>
-          <ol data-post-toc-list="">
-            
-              <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#the-gap-github-pages-leaves-open">The gap GitHub Pages leaves open</a>
+          retention-days: 14</code></pre>
+            <p>
+              The artifact is named with the PR number, so CI history stays navigable. Retention is two weeks — long
+              enough to review, short enough to not accumulate forever.
+            </p>
+            <h2 id="real-pr-previews-with-a-second-github-pages-repo" tabindex="0" data-toc-anchor="true">
+              Real PR previews with a second GitHub Pages repo
+            </h2>
+            <p>
+              For reviewers who want a clickable URL rather than a zip, there is a second pattern: a separate repository
+              that hosts "preview" deploys at URLs like <code>preview-123.dout.dev</code>.
+            </p>
+            <p>
+              The CI workflow pushes the PR's <code>dist/</code> into a subdirectory of the preview repo's
+              <code>main</code> branch, and the preview site is configured to serve those subdirectories. A bot comments
+              on the PR with the preview URL.
+            </p>
+            <p>
+              This is more setup than most personal projects need. For dout.dev I use the zip-artifact pattern. For a
+              team project, I would build the separate-repo preview pipeline.
+            </p>
+            <h2 id="rollback-in-one-minute" tabindex="0" data-toc-anchor="true">Rollback in one minute</h2>
+            <p>This is the feature I use more often than I expected.</p>
+            <p>
+              When a bad deploy reaches production — wrong content, broken CSP, accidentally unpublished post — the
+              recovery path is:
+            </p>
+            <ol>
+              <li>Go to Actions → Deploy Pages in the repo.</li>
+              <li>Find the last known-good run.</li>
+              <li>Click "Re-run all jobs."</li>
+            </ol>
+            <p>That rebuilds the old commit and redeploys it. One minute from "oh no" to "fixed."</p>
+            <p>The prerequisites:</p>
+            <ul>
+              <li>
+                <strong>Every production deploy is triggered by a commit on <code>main</code>.</strong> No manual
+                artifact uploads. Every deploy is reproducible from a specific SHA.
               </li>
-            
+              <li>
+                <strong>Build-time inputs are either committed or in secrets.</strong> If a deploy depends on an
+                environment variable that is not tracked, re-running the old commit with a new secret value produces a
+                different artifact. That is the most common rollback failure mode.
+              </li>
+            </ul>
+            <p>The workflow at the top of this post satisfies both. That is why it rolls back cleanly.</p>
+            <h2 id="the-commit-based-deploy-trail" tabindex="0" data-toc-anchor="true">
+              The commit-based deploy trail
+            </h2>
+            <p>
+              A useful side effect of "every deploy is a commit" is that the Actions history is the deploy history. You
+              can see which commit is live right now, which commits have been deployed before, and how long each deploy
+              took.
+            </p>
+            <p>
+              The Pages environment in the repo settings also tracks "Active deployment" and shows the deployed commit
+              SHA at the top. If you have to answer "what is live right now?" for a coworker, that screen is the
+              authoritative source.
+            </p>
+            <h2 id="what-i-did-not-add" tabindex="0" data-toc-anchor="true">What I did not add</h2>
+            <ul>
+              <li>
+                <strong>Automatic atomic rollback on failure.</strong> If the build fails, no deploy happens. If the
+                deploy itself fails, GitHub Pages does not update. That is the correct level of automation for a static
+                site.
+              </li>
+              <li>
+                <strong>Slack or email notifications on deploy.</strong> Overkill for a single-author blog. The Actions
+                email notifications are enough.
+              </li>
+              <li>
+                <strong>Canary deploys.</strong> A static blog does not need canaries. The unit of change is one post.
+              </li>
+            </ul>
+            <h2 id="the-takeaway" tabindex="0" data-toc-anchor="true">The takeaway</h2>
+            <p>
+              GitHub Pages with GitHub Actions is a complete deploy pipeline, including previews and rollback, if you
+              accept that previews come as artifacts rather than live URLs. For most personal projects that is the right
+              trade-off — no third-party service, no extra auth, and the same UI you are already using for the repo.
+            </p>
+            <h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
+            <ul>
+              <li>
+                <a
+                  href="https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >GitHub Pages: deploy from GitHub Actions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/actions/deploy-pages?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  ><code>actions/deploy-pages</code></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/actions/upload-artifact?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  ><code>actions/upload-artifact</code></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-deployments/managing-environments-for-deployment?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >GitHub Environments</a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <aside data-post-sidebar="" role="complementary" aria-labelledby="post-outline">
+          <nav data-post-toc="" aria-labelledby="post-outline">
+            <p data-eyebrow="" data-muted="">TOC</p>
+            <h2 id="post-outline">On this page</h2>
+            <ol data-post-toc-list="">
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-gap-github-pages-leaves-open"
+                  >The gap GitHub Pages leaves open</a
+                >
+              </li>
+
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#the-production-pipeline">The production pipeline</a>
               </li>
-            
+
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#pr-previews-without-a-third-party-service">PR previews, without a third-party service</a>
+                <a data-post-toc-link="" data-level="2" href="#pr-previews-without-a-third-party-service"
+                  >PR previews, without a third-party service</a
+                >
               </li>
-            
+
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#real-pr-previews-with-a-second-github-pages-repo">Real PR previews with a second GitHub Pages repo</a>
+                <a data-post-toc-link="" data-level="2" href="#real-pr-previews-with-a-second-github-pages-repo"
+                  >Real PR previews with a second GitHub Pages repo</a
+                >
               </li>
-            
+
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#rollback-in-one-minute">Rollback in one minute</a>
               </li>
-            
+
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#the-commit-based-deploy-trail">The commit-based deploy trail</a>
+                <a data-post-toc-link="" data-level="2" href="#the-commit-based-deploy-trail"
+                  >The commit-based deploy trail</a
+                >
               </li>
-            
+
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#what-i-did-not-add">What I did not add</a>
               </li>
-            
+
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#the-takeaway">The takeaway</a>
               </li>
-            
+
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#references">References</a>
               </li>
-            
-          </ol>
-        </nav>
-      </aside>
-    
+            </ol>
+          </nav>
+        </aside>
 
-    
-      <section data-comments-shell="" aria-labelledby="comments-title">
-        <div data-section-heading="">
-          <div>
-            <p data-eyebrow="">Discussion</p>
-            <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+        <section data-comments-shell="" aria-labelledby="comments-title">
+          <div data-section-heading="">
+            <div>
+              <p data-eyebrow="">Discussion</p>
+              <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+            </div>
           </div>
-        </div>
-        <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
-        <script src="https://giscus.app/client.js" data-repo="pixu1980/dout-dev" data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU=" data-category="General" data-category-id="DIC_kwDOFJulQc4CjlkE" data-mapping="url" data-term="data/posts/2026-05-22-ci-cd-around-github-pages.md" data-strict="0" data-reactions-enabled="1" data-emit-metadata="1" data-input-position="top" data-theme="dark" data-lang="en" data-loading="lazy" crossorigin="anonymous" async=""></script>
-      </section>
-    
+          <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2026-05-22-ci-cd-around-github-pages.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
 
-    
-      <nav data-series-navigation="" aria-label="Series navigation">
-        
+        <nav data-series-navigation="" aria-label="Series navigation">
           <section data-series-navigation-group="" aria-labelledby="series-navigation-how-i-made-it">
             <p data-eyebrow="" data-muted="">Series</p>
             <h2 id="series-navigation-how-i-made-it">In this series: How I made it</h2>
             <ol data-series-navigation-links="">
-              
-                <li>
-                  <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="false">How I Built dout.dev</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-04-21-cms-and-markdown-processing.html" aria-current="false">CMS and Markdown Processing</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false">Rebuilding dout.dev in Weeks With an AI Copilot</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-05-why-no-astro-eleventy-next.html" aria-current="false">Why I Skipped Astro, Eleventy and Next for My Blog</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-12-custom-ssg-pipeline.html" aria-current="false">Custom SSG Pipeline: Markdown to Static HTML</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-13-template-engine-and-template-structure.html" aria-current="false">Template Engine and Template Structure</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-14-archives-tags-months-series.html" aria-current="false">Archives, Tags, Months, and Series</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-15-progressive-enhancement-as-contract.html" aria-current="false">Progressive Enhancement as Contract</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-16-design-tokens-before-pages.html" aria-current="false">Design Tokens Before Pages</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-17-build-assets-pipeline.html" aria-current="false">Build Assets Pipeline</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html" aria-current="false">Feeds and Sitemaps at Build Time</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-19-og-images-at-build-time.html" aria-current="false">OG Images at Build Time</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-20-seo-metadata-without-rituals.html" aria-current="false">SEO Metadata Without Rituals</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-21-quality-gate-lint-format-verify.html" aria-current="false">Quality Gate: Linting, Formatting, and Verify</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-22-ci-cd-around-github-pages.html" aria-current="page">CI/CD Around GitHub Pages (you are here)</a>
-                </li>
-              
-                <li>
-                  <a href="/posts/2026-05-23-vibe-coding-with-rigor.html" aria-current="false">Vibe Coding With Rigor</a>
-                </li>
-              
+              <li>
+                <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="false">How I Built dout.dev</a>
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-21-cms-and-markdown-processing.html" aria-current="false"
+                  >CMS and Markdown Processing</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false"
+                  >Rebuilding dout.dev in Weeks With an AI Copilot</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-05-why-no-astro-eleventy-next.html" aria-current="false"
+                  >Why I Skipped Astro, Eleventy and Next for My Blog</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-12-custom-ssg-pipeline.html" aria-current="false"
+                  >Custom SSG Pipeline: Markdown to Static HTML</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-13-template-engine-and-template-structure.html" aria-current="false"
+                  >Template Engine and Template Structure</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-14-archives-tags-months-series.html" aria-current="false"
+                  >Archives, Tags, Months, and Series</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-15-progressive-enhancement-as-contract.html" aria-current="false"
+                  >Progressive Enhancement as Contract</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-16-design-tokens-before-pages.html" aria-current="false"
+                  >Design Tokens Before Pages</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-17-build-assets-pipeline.html" aria-current="false">Build Assets Pipeline</a>
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html" aria-current="false"
+                  >Feeds and Sitemaps at Build Time</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-19-og-images-at-build-time.html" aria-current="false"
+                  >OG Images at Build Time</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-20-seo-metadata-without-rituals.html" aria-current="false"
+                  >SEO Metadata Without Rituals</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-21-quality-gate-lint-format-verify.html" aria-current="false"
+                  >Quality Gate: Linting, Formatting, and Verify</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-22-ci-cd-around-github-pages.html" aria-current="page"
+                  >CI/CD Around GitHub Pages (you are here)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-23-vibe-coding-with-rigor.html" aria-current="false">Vibe Coding With Rigor</a>
+              </li>
             </ol>
           </section>
-        
+        </nav>
+      </article>
+
+      <nav data-post-nav="" aria-label="Post navigation">
+        <a data-post-nav-card="" rel="prev" href="/posts/2026-05-21-quality-gate-lint-format-verify.html">
+          <span data-post-nav-label="">Previous</span>
+          <strong>Quality Gate: Linting, Formatting, and Verify</strong>
+        </a>
+
+        <a data-post-nav-card="" rel="next" href="/posts/2026-05-23-vibe-coding-with-rigor.html">
+          <span data-post-nav-label="">Next</span>
+          <strong>Vibe Coding With Rigor</strong>
+        </a>
       </nav>
-    
-  </article>
-
-  <nav data-post-nav="" aria-label="Post navigation">
-    
-      <a data-post-nav-card="" rel="prev" href="/posts/2026-05-21-quality-gate-lint-format-verify.html">
-        <span data-post-nav-label="">Previous</span>
-        <strong>Quality Gate: Linting, Formatting, and Verify</strong>
-      </a>
-    
-    
-      <a data-post-nav-card="" rel="next" href="/posts/2026-05-23-vibe-coding-with-rigor.html">
-        <span data-post-nav-label="">Next</span>
-        <strong>Vibe Coding With Rigor</strong>
-      </a>
-    
-  </nav>
-
     </main>
 
     <footer role="contentinfo" data-site-footer="">
-  <div data-container="" data-footer-grid="">
-    <div data-footer-copy="">
-      <p data-footer-brand="">dout.dev</p>
-      <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
-      <p>© 2026 dout.dev</p>
-    </div>
-    <nav data-footer-nav="" aria-label="Footer">
-      <a href="/">Home</a>
-      <a href="/archive.html">Archive</a>
-      <a href="/search.html">Search</a>
-      <a href="/about.html">About</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/feed.rss">RSS</a>
-      <a href="/feed.json">JSON Feed</a>
-    </nav>
-  </div>
-</footer>
+      <div data-container="" data-footer-grid="">
+        <div data-footer-copy="">
+          <p data-footer-brand="">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav data-footer-nav="" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
 
     <script type="module" src="/scripts/main.js"></script>
-  
-
-</body></html>
+  </body>
+</html>

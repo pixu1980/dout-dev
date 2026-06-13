@@ -1,13 +1,13 @@
 name: Bug report
 description: Report a site or repository bug
-title: "[Bug]: "
+title: '[Bug]: '
 labels:
   - bug
 body:
   - type: markdown
     attributes:
       value: |
-        Do not use this template for vulnerabilities or sensitive data. For security issues, read SECURITY.md.
+        Do not use this template for vulnerabilities or sensitive data. For security issues, read .github/SECURITY.md.
   - type: textarea
     id: description
     attributes:
@@ -41,6 +41,6 @@ body:
     id: environment
     attributes:
       label: Environment
-      placeholder: "Browser, OS, device, URL"
+      placeholder: 'Browser, OS, device, URL'
     validations:
       required: false

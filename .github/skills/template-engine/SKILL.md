@@ -139,14 +139,14 @@ Use these entrypoints:
 
 Use this mapping when copying or refactoring the current engine into reusable skill-owned code:
 
-| Current repo file | Skill pack target |
-| --- | --- |
-| `scripts/template-engine/index.js` | `code/public/index.js` |
+| Current repo file                               | Skill pack target                                                             |
+| ----------------------------------------------- | ----------------------------------------------------------------------------- |
+| `scripts/template-engine/index.js`              | `code/public/index.js`                                                        |
 | `scripts/template-engine/_expression-parser.js` |
-| `scripts/template-engine/_filters.js` | `code/core/filters/builtin-filters.js` |
-| `scripts/template-engine/_renderer.js` | Split between `code/core/directives/`, `code/core/render/`, and adapter files |
-| `scripts/cms/marked-syntax.js` | `code/shared/portable-marked-options.js` |
-| `scripts/template-engine/tests/*.test.js` | `tests/unit/` or `tests/integration/` depending on scope |
+| `scripts/template-engine/_filters.js`           | `code/core/filters/builtin-filters.js`                                        |
+| `scripts/template-engine/_renderer.js`          | Split between `code/core/directives/`, `code/core/render/`, and adapter files |
+| `scripts/cms/marked-syntax.js`                  | `code/shared/portable-marked-options.js`                                      |
+| `scripts/template-engine/tests/*.test.js`       | `tests/unit/` or `tests/integration/` depending on scope                      |
 
 Prefer reusable names in the skill pack. Keep underscore-prefixed filenames only if they are truly
 internal compatibility shims during migration.
@@ -273,13 +273,13 @@ Before refactoring, identify what must remain stable:
 
 Use this decision table:
 
-| Situation | Preferred move |
-| --- | --- |
-| Only parser/filter bug | Fix the pure module directly |
-| Only directive bug in Node build flow | Patch current renderer with minimal scope |
-| Runtime support requested for string rendering only | Extend `renderString` and inject a loader/DOM adapter |
+| Situation                                                 | Preferred move                                                    |
+| --------------------------------------------------------- | ----------------------------------------------------------------- |
+| Only parser/filter bug                                    | Fix the pure module directly                                      |
+| Only directive bug in Node build flow                     | Patch current renderer with minimal scope                         |
+| Runtime support requested for string rendering only       | Extend `renderString` and inject a loader/DOM adapter             |
 | Runtime support requested for template-path rendering too | Add host adapters and keep Node defaults in the public entrypoint |
-| Both modes must coexist long-term | Extract a reusable core and thin Node/runtime adapters |
+| Both modes must coexist long-term                         | Extract a reusable core and thin Node/runtime adapters            |
 
 ### Step 4. For Dual Runtime, Separate the Layers
 
@@ -417,7 +417,7 @@ pnpm -s quality:check
 If you need focused execution during development, use the same Node test bootstrap as the repo script:
 
 ```bash
-node --import ./scripts/register-bundle-text-hooks.js --test scripts/template-engine/tests/*.test.js
+node --import ./scripts/testing/index.js --test scripts/template-engine/tests/*.test.js
 ```
 
 ## Done Criteria

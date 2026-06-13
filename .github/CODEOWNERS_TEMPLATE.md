@@ -7,11 +7,11 @@ Rename this file to `.github/CODEOWNERS` after replacing handles.
 * @TODO_OWNER
 
 # Community and governance files
-/CODE_OF_CONDUCT.md @TODO_OWNER
-/CONTRIBUTING.md @TODO_OWNER
-/GOVERNANCE.md @TODO_OWNER
-/SECURITY.md @TODO_OWNER
-/MODERATION_POLICY.md @TODO_OWNER
+/.github/CODE_OF_CONDUCT.md @TODO_OWNER
+/.github/CONTRIBUTING.md @TODO_OWNER
+/.github/community/GOVERNANCE.md @TODO_OWNER
+/.github/SECURITY.md @TODO_OWNER
+/.github/community/MODERATION_POLICY.md @TODO_OWNER
 
 # GitHub templates
 /.github/ @TODO_OWNER

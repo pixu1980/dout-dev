@@ -21,4 +21,4 @@ Adjustments:
 
 - If your build step changes, update the `Build site` step in `.github/workflows/deploy-pages.yml`.
 - If your local quality gate changes, keep `prepush:check` in `package.json` aligned with the expected release validations.
-- If you add or remove static deploy metadata, keep `scripts/build-assets.js` and `scripts/verify-dist.cjs` aligned.
+- If you add or remove static deploy metadata, keep `scripts/assets/_build-assets.js` and `scripts/verification/_verify-dist.cjs` aligned.

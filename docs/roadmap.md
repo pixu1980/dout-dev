@@ -89,9 +89,9 @@
 - [x] Biome config (lint+format) and PostCSS with combine-media-query.
 - [x] GH Action `ci.yml`: install, lint, build (no deploy yet).
 - [x] Template syntax validation in CI to prevent Liquid/Jekyll syntax usage.
-- [x] Complete linting infrastructure: `scripts/lint.js`, `scripts/format.js`, `scripts/format-check.js`
-- [x] Asset build system: `scripts/build-assets.js` with favicon, manifest, robots.txt generation
-- [x] HTML/A11Y/Links/Structure validation scripts in `scripts/linting/`
+- [x] Complete linting infrastructure: `scripts/quality/_lint.js`, `scripts/formatting/_format.js`, `scripts/formatting/_format-check.js`
+- [x] Asset build system: `scripts/assets/_build-assets.js` with favicon, manifest, robots.txt generation
+- [x] HTML/A11Y/Links/Structure validation scripts in `scripts/validation/`
 
 **DoD**
 
