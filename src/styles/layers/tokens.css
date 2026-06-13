@@ -62,6 +62,7 @@
     --dout--motion-fast: 160ms;
     --dout--motion-base: 180ms;
     --dout--motion-slow: 220ms;
+    --dout--motion-reveal: 560ms;
     --dout--motion-shimmer: 1200ms;
     --dout--motion-disabled: 0.001ms;
     --dout--motion-delay-none: 0ms;

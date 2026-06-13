@@ -23,7 +23,7 @@
     </script>
   </block>
   <block name="content">
-    <section data-page-hero aria-labelledby="search-title">
+    <section data-page-hero data-reveal aria-labelledby="search-title">
       <p data-eyebrow>Search</p>
       <h1 id="search-title">Search across posts, tags, series, and monthly archives.</h1>
       <p>Fast, static, and entirely client-side.</p>
@@ -36,6 +36,7 @@
         aria-label="Site search"
         data-card
         data-search-form
+        data-reveal
         action="/search.html"
         method="get"
       >
@@ -61,7 +62,7 @@
         </fieldset>
       </form>
 
-      <div data-search-toolbar>
+      <div data-search-toolbar data-reveal>
         <div
           data-cluster
           data-search-summary

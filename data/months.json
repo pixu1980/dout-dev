@@ -616,14 +616,43 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-13-how-pixhighlighter-is-built",
+        "title": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
+        "date": "2026-06-13T00:00:00.000Z",
+        "dateString": "Sat Jun 13 2026",
+        "path": "./src/posts/2026-06-13-how-pixhighlighter-is-built.html",
+        "url": "/posts/2026-06-13-how-pixhighlighter-is-built/",
+        "excerpt": "The shape of the component",
+        "coverImage": null,
+        "coverAlt": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "June 2026",
     "number": 6,
     "slug": "2026-06",
     "url": "./months/2026-06.html",
-    "count": 2,
+    "count": 3,
     "from": "2026-06-02T00:00:00.000Z",
-    "to": "2026-06-09T00:00:00.000Z"
+    "to": "2026-06-13T00:00:00.000Z"
   }
 ]

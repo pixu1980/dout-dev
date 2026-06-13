@@ -123,17 +123,11 @@ function renderResultItem(post) {
           )
           .join('')}</ul></footer>`
       : '';
-  const widthAttr = post.coverWidth ? ` width="${escapeHtml(post.coverWidth)}"` : '';
-  const heightAttr = post.coverHeight ? ` height="${escapeHtml(post.coverHeight)}"` : '';
-  const mediaMarkup = post.coverImage
-    ? `<figure data-post-card-media><a href="/posts/${escapeHtml(post.name)}.html" tabindex="-1"><img src="${escapeHtml(post.coverImage)}" alt="${escapeHtml(post.coverAlt || post.title)}" loading="lazy" decoding="async"${widthAttr}${heightAttr} /></a></figure>`
-    : '';
-  const cardVariant = post.coverImage ? 'with-media' : 'default';
 
   item.dataset.postFeedItem = '';
+  item.dataset.reveal = '';
   item.innerHTML = `
-    <article data-post-card data-post-card-variant="${cardVariant}">
-      ${mediaMarkup}
+    <article data-post-card data-post-card-variant="default">
       <div data-post-card-content>
         <div data-post-card-body>
           <header data-post-card-header>
@@ -154,6 +148,7 @@ function renderTagItem(tag) {
   const item = document.createElement('li');
 
   item.dataset.postFeedItem = '';
+  item.dataset.reveal = '';
   item.innerHTML = `
     <article data-post-card data-post-card-variant="default">
       <div data-post-card-content>
@@ -175,6 +170,7 @@ function renderSeriesItem(series) {
   const item = document.createElement('li');
 
   item.dataset.postFeedItem = '';
+  item.dataset.reveal = '';
   item.innerHTML = `
     <article data-post-card data-post-card-variant="default">
       <div data-post-card-content>
@@ -199,6 +195,7 @@ function renderMonthItem(month) {
   const item = document.createElement('li');
 
   item.dataset.postFeedItem = '';
+  item.dataset.reveal = '';
   item.innerHTML = `
     <article data-post-card data-post-card-variant="default">
       <div data-post-card-content>

@@ -93,6 +93,10 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://dout.dev/posts/2026-06-13-how-pixhighlighter-is-built.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://dout.dev/tags/making-of.html</loc>
     <changefreq>weekly</changefreq>
   </url>

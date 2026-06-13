@@ -6,7 +6,14 @@
     <description>Vanilla-first static blog with WCAG 2.2 AA accessibility</description>
     <atom:link href="https://dout.dev/feed.rss" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Tue, 09 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>How PixHighlighter Is Built Around the CSS Custom Highlight API</title>
+      <link>https://dout.dev/posts/2026-06-13-how-pixhighlighter-is-built.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-13-how-pixhighlighter-is-built.html</guid>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The shape of the component</description>
+    </item>
     <item>
       <title>WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links</title>
       <link>https://dout.dev/posts/2026-06-09-wcag-22-aa-without-aria-spam.html</link>

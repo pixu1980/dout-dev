@@ -137,7 +137,7 @@
     </header>
 
     <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
-      <section data-hero="" data-hero-variant="home" aria-labelledby="home-title">
+      <section data-hero="" data-hero-variant="home" data-reveal="" aria-labelledby="home-title">
         <div data-hero-copy="">
           <p data-eyebrow="">Editorial notes and stats</p>
           <h1 id="home-title">A handcrafted frontend journal for dout.dev.</h1>
@@ -167,7 +167,7 @@
           <dl data-hero-stats="">
             <div>
               <dt>Posts</dt>
-              <dd>18</dd>
+              <dd>19</dd>
             </div>
             <div>
               <dt>Topics</dt>
@@ -183,7 +183,7 @@
           <p data-eyebrow="" data-muted="">Featured</p>
 
           <div data-featured-posts="">
-            <article data-feature-card="">
+            <article data-feature-card="" data-reveal="">
               <p data-feature-card-meta="">
                 <time datetime="2026-04-04">4 aprile 2026</time>
               </p>
@@ -192,7 +192,20 @@
               <a data-text-link="" href="/posts/2026-04-04-how-i-built-dout-dev.html">Read the post</a>
             </article>
 
-            <article data-feature-card="">
+            <article data-feature-card="" data-reveal="">
+              <p data-feature-card-meta="">
+                <time datetime="2026-06-13">13 giugno 2026</time>
+              </p>
+              <h2>
+                <a href="/posts/2026-06-13-how-pixhighlighter-is-built.html"
+                  >How PixHighlighter Is Built Around the CSS Custom Highlight API</a
+                >
+              </h2>
+              <p>The shape of the component</p>
+              <a data-text-link="" href="/posts/2026-06-13-how-pixhighlighter-is-built.html">Read the post</a>
+            </article>
+
+            <article data-feature-card="" data-reveal="">
               <p data-feature-card-meta="">
                 <time datetime="2026-06-09">9 giugno 2026</time>
               </p>
@@ -204,24 +217,11 @@
               <p>The unpopular opinion</p>
               <a data-text-link="" href="/posts/2026-06-09-wcag-22-aa-without-aria-spam.html">Read the post</a>
             </article>
-
-            <article data-feature-card="">
-              <p data-feature-card-meta="">
-                <time datetime="2026-06-02">2 giugno 2026</time>
-              </p>
-              <h2>
-                <a href="/posts/2026-06-02-modern-css-is-enough.html"
-                  >Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production</a
-                >
-              </h2>
-              <p>The short version</p>
-              <a data-text-link="" href="/posts/2026-06-02-modern-css-is-enough.html">Read the post</a>
-            </article>
           </div>
         </div>
       </section>
 
-      <section data-section-heading="" aria-labelledby="latest-title">
+      <section data-section-heading="" data-reveal="" aria-labelledby="latest-title">
         <div>
           <p data-eyebrow="">Latest writing</p>
           <h2 id="latest-title">Fresh from the sources</h2>
@@ -240,21 +240,40 @@
           data-load-more-step=""
           data-load-more-label=""
         >
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-06-09-wcag-22-aa-without-aria-spam.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-06-09-wcag-22-aa-without-aria-spam-card.png"
-                    alt="WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <div data-post-card-content="">
+                <div data-post-card-body="">
+                  <header data-post-card-header="">
+                    <p data-post-card-meta="">
+                      <time datetime="2026-06-13">13 giugno 2026</time>
+                    </p>
 
+                    <h3 data-post-card-title="">
+                      <a href="/posts/2026-06-13-how-pixhighlighter-is-built.html"
+                        >How PixHighlighter Is Built Around the CSS Custom Highlight API</a
+                      >
+                    </h3>
+                  </header>
+
+                  <p data-post-card-excerpt="">The shape of the component</p>
+                </div>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/vanilla-js.html">Vanilla-js</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/frontend.html">Frontend</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/architecture.html">Architecture</a></li>
+                  </ul>
+                </footer>
+              </div>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -287,21 +306,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-06-02-modern-css-is-enough.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-06-02-modern-css-is-enough-card.png"
-                    alt="Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -332,21 +338,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-05-23-vibe-coding-with-rigor.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-05-23-vibe-coding-with-rigor-card.png"
-                    alt="Vibe Coding With Rigor"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -375,21 +368,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-05-22-ci-cd-around-github-pages.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-05-22-ci-cd-around-github-pages-card.png"
-                    alt="CI/CD Around GitHub Pages"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -420,21 +400,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-05-21-quality-gate-lint-format-verify.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-05-21-quality-gate-lint-format-verify-card.png"
-                    alt="Quality Gate: Linting, Formatting, and Verify"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -467,21 +434,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-05-20-seo-metadata-without-rituals.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-05-20-seo-metadata-without-rituals-card.png"
-                    alt="SEO Metadata Without Rituals"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -512,21 +466,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-05-19-og-images-at-build-time.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-05-19-og-images-at-build-time-card.png"
-                    alt="OG Images at Build Time"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -557,21 +498,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-05-18-feeds-and-sitemaps-at-build-time-card.png"
-                    alt="Feeds and Sitemaps at Build Time"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -604,21 +532,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-05-17-build-assets-pipeline.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-05-17-build-assets-pipeline-card.png"
-                    alt="Build Assets Pipeline"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -649,21 +564,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-05-16-design-tokens-before-pages.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-05-16-design-tokens-before-pages-card.png"
-                    alt="Design Tokens Before Pages"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -692,21 +594,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-05-15-progressive-enhancement-as-contract.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-05-15-progressive-enhancement-as-contract-card.png"
-                    alt="Progressive Enhancement as Contract"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -743,21 +632,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-05-14-archives-tags-months-series.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-05-14-archives-tags-months-series-card.png"
-                    alt="Archives, Tags, Months, and Series"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -790,21 +666,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-05-13-template-engine-and-template-structure.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-05-13-template-engine-and-template-structure-card.png"
-                    alt="Template Engine and Template Structure"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -837,21 +700,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-05-12-custom-ssg-pipeline.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-05-12-custom-ssg-pipeline-card.png"
-                    alt="Custom SSG Pipeline: Markdown to Static HTML"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -884,21 +734,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-05-05-why-no-astro-eleventy-next.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-05-05-why-no-astro-eleventy-next-card.png"
-                    alt="Why I Skipped Astro, Eleventy and Next for My Blog"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -929,21 +766,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot-card.png"
-                    alt="Rebuilding dout.dev in Weeks With an AI Copilot"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -974,21 +798,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-04-21-cms-and-markdown-processing.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-04-21-cms-and-markdown-processing-card.png"
-                    alt="CMS and Markdown Processing"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">
@@ -1019,21 +830,8 @@
             </article>
           </li>
 
-          <li data-post-feed-item="">
-            <article data-post-card="" data-post-card-variant="with-media">
-              <figure data-post-card-media="">
-                <a href="/posts/2026-04-04-how-i-built-dout-dev.html" tabindex="-1">
-                  <img
-                    src="/assets/og/posts/2026-04-04-how-i-built-dout-dev-card.png"
-                    alt="How I Built dout.dev"
-                    loading="lazy"
-                    decoding="async"
-                    width="1200"
-                    height="900"
-                  />
-                </a>
-              </figure>
-
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
               <div data-post-card-content="">
                 <div data-post-card-body="">
                   <header data-post-card-header="">

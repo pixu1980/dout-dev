@@ -88,6 +88,33 @@
     }
   }
 
+  @keyframes dout-reveal-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(1.25rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      :root:not([data-reduce-motion='true']) [data-reveal] {
+        animation: dout-reveal-fade-up var(--dout--motion-reveal) var(--dout--motion-ease-emphasis)
+          both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 26%;
+      }
+
+      :root:not([data-reduce-motion='true']) [data-post-feed-item][data-reveal] {
+        animation-range: entry 4% cover 22%;
+      }
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     [data-preferences-skeleton] [data-skeleton-text]::after,
     [data-preferences-skeleton] [data-skeleton-media]::after,
@@ -159,11 +186,25 @@
     corner-shape: var(--dout--corner-shape);
   }
 
-  :where([data-main-links] a, [data-footer-nav] a, [data-text-link], [data-button]) {
+  :where(
+    [data-main-links] a,
+    [data-footer-nav] a,
+    [data-text-link],
+    [data-button],
+    [data-tag],
+    [data-pagination-link],
+    [data-pagination-edge],
+    #search-pagination a,
+    input[type='search'],
+    input[type='text'],
+    textarea,
+    select
+  ) {
     transition:
       transform var(--dout--motion-base) var(--dout--motion-ease),
       background-color var(--dout--motion-base) var(--dout--motion-ease),
       border-color var(--dout--motion-base) var(--dout--motion-ease),
+      box-shadow var(--dout--motion-base) var(--dout--motion-ease),
       color var(--dout--motion-base) var(--dout--motion-ease);
   }
 
@@ -292,6 +333,8 @@
   button:hover,
   [data-menu-toggle]:hover {
     border-color: color-mix(in srgb, var(--dout--accent) 36%, var(--dout--border));
+    transform: translateY(calc(var(--dout--lift-y) / 2));
+    box-shadow: 0 10px 22px color-mix(in srgb, var(--dout--accent) 16%, transparent);
   }
 
   [data-button-variant='ghost'] {
@@ -327,6 +370,11 @@
     padding: var(--dout--card-padding);
     background-color: var(--dout--surface-strong);
     border: var(--dout--border-width) solid var(--dout--border);
+    transition:
+      transform var(--dout--motion-base) var(--dout--motion-ease),
+      box-shadow var(--dout--motion-base) var(--dout--motion-ease),
+      border-color var(--dout--motion-base) var(--dout--motion-ease),
+      background-color var(--dout--motion-base) var(--dout--motion-ease);
   }
 
   [data-feature-card] h2 {
@@ -436,6 +484,11 @@
     aspect-ratio: var(--dout--media-ratio-card);
     object-fit: cover;
     transition: transform var(--dout--motion-slow) var(--dout--motion-ease);
+  }
+
+  [data-post-card]:hover [data-post-card-media] img,
+  [data-post-card]:focus-within [data-post-card-media] img {
+    transform: scale(1.035);
   }
 
   [data-post-card-body] {
@@ -588,6 +641,13 @@
     border: var(--dout--border-width) solid color-mix(in srgb, var(--dout--accent) 28%, transparent);
     color: var(--dout--text);
     text-decoration: none;
+  }
+
+  [data-tag]:hover,
+  [data-tag]:focus-visible {
+    background: color-mix(in srgb, var(--dout--accent-soft) 78%, var(--dout--surface-strong) 22%);
+    border-color: color-mix(in srgb, var(--dout--accent) 42%, transparent);
+    transform: translateY(calc(var(--dout--lift-y) / 2));
   }
 
   [data-tag]::before {
@@ -994,6 +1054,15 @@
     padding: 0.85rem 1rem;
   }
 
+  input[type='search']:focus,
+  input[type='text']:focus,
+  textarea:focus,
+  select:focus {
+    border-color: color-mix(in srgb, var(--dout--accent) 44%, var(--dout--border));
+    box-shadow: 0 0 0 0.22rem color-mix(in srgb, var(--dout--accent) 14%, transparent);
+    outline: none;
+  }
+
   button[type='submit'] {
     min-height: calc(var(--dout--control-height-md) + 0.25rem);
     border-radius: var(--dout--radius-pill);
@@ -1038,6 +1107,13 @@
     background: var(--dout--accent);
     color: var(--dout--on-accent);
     border-color: transparent;
+  }
+
+  :where([data-pagination-link], [data-pagination-edge], #search-pagination a):hover,
+  :where([data-pagination-link], [data-pagination-edge], #search-pagination a):focus-visible {
+    background: color-mix(in srgb, var(--dout--accent-soft) 72%, var(--dout--surface-strong) 28%);
+    border-color: color-mix(in srgb, var(--dout--accent) 34%, var(--dout--border));
+    transform: translateY(calc(var(--dout--lift-y) / 2));
   }
 
   [data-pagination-gap] {

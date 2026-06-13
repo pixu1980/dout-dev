@@ -30,7 +30,7 @@
 </block>
 
 <block name="content">
-  <section data-hero data-hero-variant="home" aria-labelledby="home-title">
+  <section data-hero data-hero-variant="home" data-reveal aria-labelledby="home-title">
     <div data-hero-copy>
       <p data-eyebrow>Editorial notes and stats</p>
       <h1 id="home-title">A handcrafted frontend journal for dout.dev.</h1>
@@ -71,7 +71,7 @@
       <if condition="featuredPosts && featuredPosts.length">
         <div data-featured-posts>
           <for each="featured in featuredPosts">
-            <article data-feature-card>
+            <article data-feature-card data-reveal>
               <p data-feature-card-meta>
                 <time datetime="{{ featured.date | date:'YYYY-MM-DD' }}">{{ featured.date | date:'long' }}</time>
               </p>
@@ -85,7 +85,7 @@
     </div>
   </section>
 
-  <section data-section-heading aria-labelledby="latest-title">
+  <section data-section-heading data-reveal aria-labelledby="latest-title">
     <div>
       <p data-eyebrow>Latest writing</p>
       <h2 id="latest-title">Fresh from the sources</h2>
@@ -106,10 +106,10 @@
         data-load-more-label="{{ loadMore ? loadMore.buttonLabel : '' }}"
       >
         <for each="p in posts">
-          <li data-post-feed-item>
+          <li data-post-feed-item data-reveal>
             <include
               src="../components/post-card.html"
-              data='{"post": {{ p | json | raw }}, "headingLevel": "3", "showCover": true, "showExcerpt": true, "showTags": true}'
+              data='{"post": {{ p | json | raw }}, "headingLevel": "3", "showCover": false, "showExcerpt": true, "showTags": true}'
             ></include>
           </li>
         </for>

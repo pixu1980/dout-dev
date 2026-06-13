@@ -166,7 +166,7 @@
 
     <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
       <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting" aria-labelledby="post-title">
-        <header data-post-hero="" aria-labelledby="post-title">
+        <header data-post-hero="" data-reveal="" aria-labelledby="post-title">
           <p data-eyebrow="">Article</p>
           <p data-post-meta="">
             <time datetime="2026-06-09" itemprop="datePublished"> 9 giugno 2026 </time>
@@ -201,7 +201,13 @@
           </figure>
         </header>
 
-        <section data-post-shell="" id="article-content" role="region" aria-labelledby="article-content-title">
+        <section
+          data-post-shell=""
+          data-reveal=""
+          id="article-content"
+          role="region"
+          aria-labelledby="article-content-title"
+        >
           <h2 id="article-content-title" data-visually-hidden="">Article content</h2>
 
           <section data-prose="" itemprop="articleBody">
@@ -419,7 +425,7 @@
           </section>
         </section>
 
-        <aside data-post-sidebar="" role="complementary" aria-labelledby="post-outline">
+        <aside data-post-sidebar="" data-reveal="" role="complementary" aria-labelledby="post-outline">
           <nav data-post-toc="" aria-labelledby="post-outline">
             <p data-eyebrow="" data-muted="">TOC</p>
             <h2 id="post-outline">On this page</h2>
@@ -479,7 +485,7 @@
           </nav>
         </aside>
 
-        <section data-comments-shell="" aria-labelledby="comments-title">
+        <section data-comments-shell="" data-reveal="" aria-labelledby="comments-title">
           <div data-section-heading="">
             <div>
               <p data-eyebrow="">Discussion</p>
@@ -509,9 +515,14 @@
       </article>
 
       <nav data-post-nav="" aria-label="Post navigation">
-        <a data-post-nav-card="" rel="prev" href="/posts/2026-06-02-modern-css-is-enough.html">
+        <a data-post-nav-card="" data-reveal="" rel="prev" href="/posts/2026-06-02-modern-css-is-enough.html">
           <span data-post-nav-label="">Previous</span>
           <strong>Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production</strong>
+        </a>
+
+        <a data-post-nav-card="" data-reveal="" rel="next" href="/posts/2026-06-13-how-pixhighlighter-is-built.html">
+          <span data-post-nav-label="">Next</span>
+          <strong>How PixHighlighter Is Built Around the CSS Custom Highlight API</strong>
         </a>
       </nav>
     </main>

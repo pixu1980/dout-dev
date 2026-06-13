@@ -8,10 +8,22 @@
   :root[data-reduce-motion='true'] [data-feature-card]:hover,
   :root[data-reduce-motion='true'] [data-post-card]:hover,
   :root[data-reduce-motion='true'] [data-post-nav-card]:hover,
+  :root[data-reduce-motion='true'] [data-tag]:hover,
+  :root[data-reduce-motion='true'] button:hover,
+  :root[data-reduce-motion='true'] [data-menu-toggle]:hover,
+  :root[data-reduce-motion='true'] [data-pagination-link]:hover,
+  :root[data-reduce-motion='true'] [data-pagination-edge]:hover,
+  :root[data-reduce-motion='true'] #search-pagination a:hover,
   :root[data-reduce-motion='true'] ::view-transition-old(site-main),
   :root[data-reduce-motion='true'] ::view-transition-new(site-main),
   :root[data-reduce-motion='true'] [data-post-toc-link]:hover {
     transform: none;
+  }
+
+  :root[data-reduce-motion='true'] [data-reveal] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   :root[data-reduce-motion='true'] *,

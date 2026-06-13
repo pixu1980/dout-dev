@@ -43,7 +43,7 @@
 </block>
 
 <block name="content">
-  <section data-page-hero aria-labelledby="tag-title">
+  <section data-page-hero data-reveal aria-labelledby="tag-title">
     <p data-eyebrow>Topic archive</p>
     <h1 id="tag-title">{{ tag.name }}</h1>
     <p>Posts tagged with {{ tag.name }}.</p>
@@ -51,7 +51,7 @@
   </section>
 
   <section data-post-feed-shell aria-labelledby="tag-posts-title">
-    <div data-section-heading data-section-heading-feed>
+    <div data-section-heading data-section-heading-feed data-reveal>
       <div>
         <p data-eyebrow data-muted>Posts</p>
         <h2 id="tag-posts-title">Posts tagged with {{ tag.name }}</h2>
@@ -67,10 +67,10 @@
       data-load-more-label="{{ loadMore ? loadMore.buttonLabel : '' }}"
     >
       <for each="p in posts">
-        <li data-post-feed-item>
+        <li data-post-feed-item data-reveal>
           <include
             src="../components/post-card.html"
-            data='{"post": {{ p | json | raw }}, "headingLevel": "2", "showCover": true, "showExcerpt": true, "showTags": true}'
+            data='{"post": {{ p | json | raw }}, "headingLevel": "2", "showCover": false, "showExcerpt": true, "showTags": true}'
           ></include>
         </li>
       </for>

@@ -233,6 +233,15 @@
       "fallbackPngPath": "/assets/og/posts/2026-06-09-wcag-22-aa-without-aria-spam-card.png",
       "fallbackSvgPath": "/assets/og/posts/2026-06-09-wcag-22-aa-without-aria-spam-card.svg"
     },
+    "post:2026-06-13-how-pixhighlighter-is-built": {
+      "kind": "post",
+      "slug": "2026-06-13-how-pixhighlighter-is-built",
+      "hash": "77fc916cab6812127bf07dd31e5d0288f01ad8a1",
+      "pngPath": "/assets/og/posts/2026-06-13-how-pixhighlighter-is-built.png",
+      "svgPath": "/assets/og/posts/2026-06-13-how-pixhighlighter-is-built.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-13-how-pixhighlighter-is-built-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-13-how-pixhighlighter-is-built-card.svg"
+    },
     "tag:making-of": {
       "kind": "tag",
       "slug": "making-of",
