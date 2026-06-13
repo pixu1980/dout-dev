@@ -28,8 +28,8 @@
 
     --dout--font-weight-regular: 400;
     --dout--font-weight-strong: 700;
-    --dout--line-heading: 1.04;
-    --dout--line-copy: 1.72;
+    --dout--line-heading: 1.4;
+    --dout--line-copy: 1.4;
 
     --dout--typography-base: clamp(1rem, 0.94rem + 0.24vw, 1.12rem);
     --dout--typography-ratio: 1.25;

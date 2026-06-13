@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>How PixHighlighter Is Built Around the CSS Custom Highlight API</title>
     <meta name="theme-color" content="#ff6b3d" />
-    <meta name="description" content="The shape of the component" />
+    <meta name="description" content="The contract stays plain" />
     <meta name="author" content='Emiliano "pixu1980" Pisu' />
     <meta name="robots" content="index,follow" />
     <meta
@@ -45,7 +45,7 @@
         background: var(--dout--file-preview-bg);
         color: var(--dout--file-preview-text);
         font:
-          600 0.95rem/1.4 'Avenir Next',
+          600 0.95rem/1.3 'Avenir Next',
           'Segoe UI Variable Text',
           'Helvetica Neue',
           sans-serif;
@@ -57,7 +57,7 @@
 
       [data-file-preview-warning] code {
         font:
-          700 0.92em/1.2 'SFMono-Regular',
+          700 0.92em/1.3 'SFMono-Regular',
           'SF Mono',
           'Consolas',
           'Liberation Mono',
@@ -67,7 +67,7 @@
 
     <meta property="og:type" content="article" />
     <meta property="og:title" content="How PixHighlighter Is Built Around the CSS Custom Highlight API" />
-    <meta property="og:description" content="The shape of the component" />
+    <meta property="og:description" content="The contract stays plain" />
     <meta property="og:url" content="https://dout.dev/posts/2026-06-13-how-pixhighlighter-is-built.html" />
     <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-06-13-how-pixhighlighter-is-built.png" />
     <meta
@@ -80,7 +80,7 @@
     <meta property="article:modified_time" content="2026-06-13T00:00:00.000Z" />
     <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
     <meta name="twitter:title" content="How PixHighlighter Is Built Around the CSS Custom Highlight API" />
-    <meta name="twitter:description" content="The shape of the component" />
+    <meta name="twitter:description" content="The contract stays plain" />
     <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-06-13-how-pixhighlighter-is-built.png" />
     <meta
       name="twitter:image:alt"
@@ -91,7 +91,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
-        "description": "The shape of the component",
+        "description": "The contract stays plain",
         "datePublished": "2026-06-13T00:00:00.000Z",
         "dateModified": "2026-06-13T00:00:00.000Z",
         "author": {
@@ -109,7 +109,7 @@
           "@id": "https://dout.dev/posts/2026-06-13-how-pixhighlighter-is-built.html"
         },
         "image": ["https://dout.dev/assets/og/posts/2026-06-13-how-pixhighlighter-is-built.png"],
-        "keywords": "css, component, code, pixhighlighter, text, token, highlight, copy, theme, pix, every, ranges"
+        "keywords": "css, component, highlight, token, code, one, text, fallback, pixhighlighter, api, source, custom"
       }
     </script>
     <script type="application/ld+json">
@@ -177,7 +177,7 @@
             How PixHighlighter Is Built Around the CSS Custom Highlight API
           </h1>
 
-          <p data-post-description="">The shape of the component</p>
+          <p data-post-description="">The contract stays plain</p>
 
           <ul data-tag-list="" aria-label="Tags">
             <li><a data-tag="" href="/tags/vanilla-js.html">Vanilla-js</a></li>
@@ -209,139 +209,132 @@
           <h2 id="article-content-title" data-visually-hidden="">Article content</h2>
 
           <section data-prose="" itemprop="articleBody">
-            <h2 id="the-shape-of-the-component" tabindex="0" data-toc-anchor="true">The shape of the component</h2>
-            <p><code>PixHighlighter</code> starts with a deliberately plain contract:</p>
+            <h2 id="the-contract-stays-plain" tabindex="0" data-toc-anchor="true">The contract stays plain</h2>
+            <p><code>PixHighlighter</code> begins with the smallest useful shape:</p>
             <pre
               is="pix-highlighter"
               data-lang="html"
             ><code>&lt;pre is="pix-highlighter" data-lang="js"&gt;&lt;code&gt;const answer = 42;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</code></pre>
             <p>
-              That is a customized built-in element. The browser still sees a real <code>pre</code> element with a real
-              <code>code</code> child, so the source remains copyable, readable without JavaScript, and friendly to
-              assistive technology. The enhancement adds syntax color, a copy action, and a theme picker around that
-              existing text.
+              That is still a real <code>pre</code> element with a real <code>code</code> child. The source is readable
+              before JavaScript runs, copyable as text, and understandable to assistive technology. The component does
+              not need a custom shadow tree to make code look like code.
             </p>
             <p>
-              The component lives in <code>src/scripts/components/PixHighlighter/PixHighlighter.js</code>. It registers
-              itself as <code>pix-highlighter</code>, exports <code>enhancePixHighlighters()</code>, and also boots on
-              <code>DOMContentLoaded</code>. The main site hydration calls that same enhancer again after client-side
-              navigation, so newly swapped article content receives the same treatment as the first page load.
+              The important decision is what it refuses to do by default: the primary path does not wrap every token in
+              markup. The code block is not a pile of span wrappers. It is one text node that can be painted by the
+              browser.
             </p>
-            <h2 id="styles-are-installed-once" tabindex="0" data-toc-anchor="true">Styles are installed once</h2>
+            <h2 id="lexers-describe-positions" tabindex="0" data-toc-anchor="true">Lexers describe positions</h2>
             <p>
-              The component imports its CSS with <code>bundle-text:</code>. That includes the base component stylesheet
-              plus the theme files for Default, Prism, Pretty Lights, a dark preset, and Cyberpunk.
-            </p>
-            <p>
-              At runtime, <code>ensureComponentStyles()</code> tries to use <code>document.adoptedStyleSheets</code>. If
-              constructable stylesheets are available, one shared <code>CSSStyleSheet</code> is created and appended to
-              <code>document.adoptedStyleSheets</code>. If not, the component falls back to a managed
-              <code>&lt;style data-pix-highlighter-styles&gt;</code> element.
-            </p>
-            <p>
-              The important detail is that every code block shares the same style payload. A page with ten snippets does
-              not create ten copies of the CSS.
-            </p>
-            <h2 id="lexers-return-ranges-not-markup" tabindex="0" data-toc-anchor="true">
-              Lexers return ranges, not markup
-            </h2>
-            <p>
-              Each language module under <code>Lexers/</code> exports a scanner. JavaScript, TypeScript, CSS, JSON,
-              HTML, Python, Rust, C, C++, PHP, C#, Go, Markdown, YAML, and Bash all follow the same idea: walk the
-              source string, find meaningful ranges, and emit tokens like this:
+              Each lexer under <code>src/scripts/components/PixHighlighter/Lexers/</code> walks the source and emits
+              ranges:
             </p>
             <pre is="pix-highlighter" data-lang="js"><code>{ type: 'kw', start: 0, end: 5 }</code></pre>
             <p>
-              The lexers do not generate HTML. They only describe where a token starts, where it ends, and what visual
-              category it belongs to. That keeps parsing separate from rendering, and it lets the same token stream feed
-              two rendering paths.
+              That object says "the characters from 0 to 5 are a keyword." It does not say "insert a span here." Parsing
+              and rendering stay separate. The same token stream can power the modern renderer, the fallback renderer,
+              tests, and any future diagnostics without changing the source model.
             </p>
             <p>
               Language aliases are normalized before lookup. <code>javascript</code> becomes <code>js</code>,
               <code>typescript</code> becomes <code>ts</code>, <code>shell</code> and <code>zsh</code> become
-              <code>bash</code>, and empty language values fall back to <code>js</code>. That is small, but it means
-              content authors do not need to memorize one exact spelling for every fenced code block.
+              <code>bash</code>, and empty language values fall back to <code>js</code>. Content authors get a forgiving
+              interface; the renderer gets one clean language key.
             </p>
-            <h2 id="the-preferred-renderer-uses-css-highlights" tabindex="0" data-toc-anchor="true">
-              The preferred renderer uses CSS highlights
+            <h2 id="css-custom-highlight-api-does-the-painting" tabindex="0" data-toc-anchor="true">
+              CSS Custom Highlight API does the painting
             </h2>
             <p>
-              When the CSS Custom Highlight API is available, <code>PixHighlighter</code> keeps the code text as text.
-              It creates DOM <code>Range</code> objects for every token and stores them in shared
-              <code>Highlight</code> registries named after token types, for example <code>pix-kw</code>,
-              <code>pix-str</code>, and <code>pix-com</code>.
+              The best version of <code>PixHighlighter</code> uses the CSS Custom Highlight API. When
+              <code>CSS.highlights</code> and <code>Highlight</code> exist, the component creates DOM
+              <code>Range</code> objects for each token and stores them in named highlight registries:
             </p>
-            <p>The CSS then styles those names directly:</p>
+            <pre is="pix-highlighter" data-lang="js"><code>const highlight = new Highlight(range);
+CSS.highlights.set('pix-kw', highlight);</code></pre>
+            <p>CSS then styles those names directly:</p>
             <pre is="pix-highlighter" data-lang="css"><code>::highlight(pix-kw) {
   color: var(--dout--pix-kw);
 }</code></pre>
             <p>
-              That is the best version of the component because it avoids wrapping the code in dozens or hundreds of
-              spans. Selection stays clean, the DOM stays quiet, and the syntax colors remain themeable through CSS
-              variables.
+              That is the whole trick. The browser paints a range of text without changing the text into markup.
+              Selection stays clean. Copy stays clean. The DOM stays quiet. Themes remain normal CSS variables instead
+              of a second token system hidden inside generated spans.
             </p>
-            <h2 id="the-fallback-is-ordinary-markup" tabindex="0" data-toc-anchor="true">
-              The fallback is ordinary markup
+            <h2 id="the-fallback-is-deliberately-boring" tabindex="0" data-toc-anchor="true">
+              The fallback is deliberately boring
             </h2>
             <p>
-              If <code>CSS.highlights</code> or <code>Highlight</code> is missing, the component renders token spans
-              instead:
+              The rule is simple: fallback spans only when the Highlight API is unavailable. In that case, the component
+              maps the same token ranges to conservative markup:
             </p>
             <pre
               is="pix-highlighter"
               data-lang="html"
             ><code>&lt;span data-pix-token="kw"&gt;const&lt;&#x2F;span&gt;</code></pre>
             <p>
-              The fallback uses the same token types and the same visual rules. The only difference is the rendering
-              target. Modern browsers get highlight ranges; older environments get conservative markup. The content is
-              still the same code text.
+              The fallback is not a different highlighter. It is the same lexer output rendered into older browser
+              primitives. The CSS already has matching rules for <code>[data-pix-token='kw']</code>,
+              <code>[data-pix-token='str']</code>, and the rest of the token types, so the visual result remains close
+              without forcing modern browsers to carry extra DOM.
             </p>
-            <h2 id="themes-are-page-wide-state" tabindex="0" data-toc-anchor="true">Themes are page-wide state</h2>
+            <h2 id="styles-are-shared-once" tabindex="0" data-toc-anchor="true">Styles are shared once</h2>
             <p>
-              Every instance renders a small toolbar with a copy button and a theme picker. The picker is per block
-              visually, but the selected theme is global. <code>PixHighlighter.applyTheme()</code> writes the value to
-              <code>document.documentElement.dataset.pixHighlighterTheme</code>, stores it in <code>localStorage</code>,
-              and asks every active instance to sync its control state.
-            </p>
-            <p>
-              That avoids the odd experience of one snippet using a dark preset and the next one being Prism unless the
-              reader explicitly changes the whole page theme.
+              The component imports its CSS with <code>bundle-text:</code>. That bundle includes the base component
+              stylesheet plus the theme files.
             </p>
             <p>
-              The theme menu uses CSS anchor positioning when the browser supports it. When it does not, the component
-              measures the trigger, positions the list with fixed coordinates, and keeps it inside the viewport. The
-              behavior is progressive enhancement all the way down.
-            </p>
-            <h2 id="copy-is-based-on-the-source-text" tabindex="0" data-toc-anchor="true">
-              Copy is based on the source text
-            </h2>
-            <p>
-              The copy button reads <code>code.textContent</code>, not highlighted markup. If the Clipboard API exists,
-              it calls <code>navigator.clipboard.writeText()</code>. If that fails or is unavailable, it falls back to a
-              temporary textarea and <code>document.execCommand('copy')</code>.
+              At runtime, <code>ensureComponentStyles()</code> prefers <code>document.adoptedStyleSheets</code>. If
+              constructable stylesheets are available, one <code>CSSStyleSheet</code> is created and shared by every
+              instance. If not, the component injects one managed
+              <code>&lt;style data-pix-highlighter-styles&gt;</code> element.
             </p>
             <p>
-              The button state is intentionally tiny: idle, copied, or error. Each state swaps the icon and accessible
-              label, then resets after a short delay. The visible UI is compact, but the control still has a proper name
-              through <code>aria-label</code> and hidden text.
+              Ten code blocks still get one style payload. The component can appear throughout an article without
+              multiplying its CSS.
             </p>
-            <h2 id="why-this-shape-fits-dout-dev" tabindex="0" data-toc-anchor="true">Why this shape fits dout.dev</h2>
+            <h2 id="themes-are-page-state" tabindex="0" data-toc-anchor="true">Themes are page state</h2>
             <p>
-              <code>PixHighlighter</code> is not trying to beat a TextMate-grade highlighter at language fidelity. It is
-              built for a static editorial site with short examples, no runtime dependencies, and a design system that
-              already owns color and motion.
+              Every instance renders a compact toolbar with copy and theme controls. The picker appears per block, but
+              the selected theme is page-wide state. <code>PixHighlighter.applyTheme()</code> writes the value to
+              <code>document.documentElement.dataset.pixHighlighterTheme</code>, persists it in
+              <code>localStorage</code>, and syncs every active instance.
             </p>
-            <p>The component wins by keeping the contract small:</p>
+            <p>
+              That avoids a page where one snippet is using one palette and the next snippet is using another because of
+              local component state. Code theme is a reading preference, so the page owns it.
+            </p>
+            <p>
+              The menu also uses progressive layout. CSS anchor positioning handles the clean path. When the browser
+              lacks it, the component measures the trigger and keeps the list inside the viewport with fixed
+              coordinates.
+            </p>
+            <h2 id="copy-reads-the-source" tabindex="0" data-toc-anchor="true">Copy reads the source</h2>
+            <p>
+              The copy button reads <code>code.textContent</code>. It does not inspect highlight ranges, fallback spans,
+              toolbar state, or theme state. Highlighting is visual; the source text is the contract.
+            </p>
+            <p>
+              If the Clipboard API is available, the component calls <code>navigator.clipboard.writeText()</code>. If
+              that path fails, it falls back to a temporary textarea and <code>document.execCommand('copy')</code>. The
+              UI states are intentionally small: idle, copied, or error, each with an accessible label.
+            </p>
+            <h2 id="why-this-fits-dout-dev" tabindex="0" data-toc-anchor="true">Why this fits dout.dev</h2>
+            <p>
+              <code>PixHighlighter</code> is built for a static editorial site: short examples, no frontend framework,
+              no runtime highlighter dependency, and a design system that already owns typography, color, and motion.
+            </p>
+            <p>The architecture works because each layer has one job:</p>
             <ol>
               <li>Markdown emits semantic code blocks.</li>
               <li>Lexers produce token ranges.</li>
-              <li>The CSS Custom Highlight API paints those ranges when available.</li>
-              <li>Span markup keeps older browsers covered.</li>
-              <li>Themes and copy controls are progressive enhancements, not requirements.</li>
+              <li>The CSS Custom Highlight API paints those ranges without spans.</li>
+              <li>Fallback markup covers browsers without highlight support.</li>
+              <li>Toolbar actions enhance the block without becoming the content.</li>
             </ol>
             <p>
-              That is the pattern I like most in this codebase: ordinary HTML first, modern browser APIs where they
-              help, and fallback paths that do not require a second implementation of the content model.
+              That is the pattern I want here: ordinary HTML first, modern browser APIs where they remove markup, and a
+              fallback that preserves the same source text instead of inventing a second content model.
             </p>
           </section>
         </section>
@@ -352,49 +345,39 @@
             <h2 id="post-outline">On this page</h2>
             <ol data-post-toc-list="">
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#the-shape-of-the-component"
-                  >The shape of the component</a
+                <a data-post-toc-link="" data-level="2" href="#the-contract-stays-plain">The contract stays plain</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#lexers-describe-positions">Lexers describe positions</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#css-custom-highlight-api-does-the-painting"
+                  >CSS Custom Highlight API does the painting</a
                 >
               </li>
 
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#styles-are-installed-once">Styles are installed once</a>
-              </li>
-
-              <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#lexers-return-ranges-not-markup"
-                  >Lexers return ranges, not markup</a
+                <a data-post-toc-link="" data-level="2" href="#the-fallback-is-deliberately-boring"
+                  >The fallback is deliberately boring</a
                 >
               </li>
 
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#the-preferred-renderer-uses-css-highlights"
-                  >The preferred renderer uses CSS highlights</a
-                >
+                <a data-post-toc-link="" data-level="2" href="#styles-are-shared-once">Styles are shared once</a>
               </li>
 
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#the-fallback-is-ordinary-markup"
-                  >The fallback is ordinary markup</a
-                >
+                <a data-post-toc-link="" data-level="2" href="#themes-are-page-state">Themes are page state</a>
               </li>
 
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#themes-are-page-wide-state"
-                  >Themes are page-wide state</a
-                >
+                <a data-post-toc-link="" data-level="2" href="#copy-reads-the-source">Copy reads the source</a>
               </li>
 
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#copy-is-based-on-the-source-text"
-                  >Copy is based on the source text</a
-                >
-              </li>
-
-              <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#why-this-shape-fits-dout-dev"
-                  >Why this shape fits dout.dev</a
-                >
+                <a data-post-toc-link="" data-level="2" href="#why-this-fits-dout-dev">Why this fits dout.dev</a>
               </li>
             </ol>
           </nav>

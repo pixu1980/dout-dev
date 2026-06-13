@@ -91,26 +91,33 @@
   @keyframes dout-reveal-fade-up {
     from {
       opacity: 0;
-      transform: translateY(1.25rem);
+      transform: translateY(1.6rem);
+      filter: blur(0.28rem);
     }
 
     to {
       opacity: 1;
       transform: translateY(0);
+      filter: blur(0);
     }
   }
 
   @media (prefers-reduced-motion: no-preference) {
     @supports (animation-timeline: view()) {
-      :root:not([data-reduce-motion='true']) [data-reveal] {
+      :root:not([data-reduce-motion='true'])
+        :where(
+          [data-reveal],
+          [data-prose] > :where(p, ul, ol, blockquote, pre, figure, h2, h3, h4, h5, h6)
+        ) {
         animation: dout-reveal-fade-up var(--dout--motion-reveal) var(--dout--motion-ease-emphasis)
           both;
         animation-timeline: view();
-        animation-range: entry 0% cover 26%;
+        animation-range: entry 0% cover 34%;
+        will-change: opacity, transform, filter;
       }
 
       :root:not([data-reduce-motion='true']) [data-post-feed-item][data-reveal] {
-        animation-range: entry 4% cover 22%;
+        animation-range: entry 2% cover 30%;
       }
     }
   }
@@ -217,6 +224,12 @@
   [data-main-links] a:hover,
   [data-main-links] a[aria-current='page'] {
     background: color-mix(in srgb, var(--dout--accent) 14%, transparent);
+  }
+
+  [data-main-links] a:focus-visible {
+    background: color-mix(in srgb, var(--dout--accent) 18%, transparent);
+    box-shadow: 0 0 0 var(--dout--outline-width)
+      color-mix(in srgb, var(--dout--accent) 42%, transparent);
   }
 
   [data-comments-shell] {
@@ -330,6 +343,19 @@
     transform: translateY(var(--dout--lift-y));
   }
 
+  :where([data-button], button, [data-tag], [data-pagination-link], [data-pagination-edge]):active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  [data-button-variant='primary']:hover {
+    box-shadow: 0 18px 34px color-mix(in srgb, var(--dout--accent) 38%, transparent);
+  }
+
+  [data-button-variant='ghost']:hover {
+    border-color: color-mix(in srgb, var(--dout--accent) 32%, var(--dout--border));
+    background: color-mix(in srgb, var(--dout--accent-soft) 42%, transparent);
+  }
+
   button:hover,
   [data-menu-toggle]:hover {
     border-color: color-mix(in srgb, var(--dout--accent) 36%, var(--dout--border));
@@ -375,6 +401,12 @@
       box-shadow var(--dout--motion-base) var(--dout--motion-ease),
       border-color var(--dout--motion-base) var(--dout--motion-ease),
       background-color var(--dout--motion-base) var(--dout--motion-ease);
+  }
+
+  :where([data-feature-card], [data-post-card], [data-post-nav-card]):hover,
+  :where([data-feature-card], [data-post-card], [data-post-nav-card]):focus-within {
+    border-color: color-mix(in srgb, var(--dout--accent) 34%, var(--dout--border));
+    box-shadow: var(--dout--shadow-strong);
   }
 
   [data-feature-card] h2 {
@@ -875,12 +907,17 @@
     text-decoration-color: color-mix(in srgb, var(--dout--accent) 68%, transparent);
     text-decoration-thickness: 0.11em;
     text-underline-offset: 0.2em;
+    transition:
+      color var(--dout--motion-fast) var(--dout--motion-ease),
+      text-decoration-color var(--dout--motion-fast) var(--dout--motion-ease),
+      text-underline-offset var(--dout--motion-fast) var(--dout--motion-ease);
   }
 
   [data-prose] a:hover,
   [data-prose] a:focus-visible {
     color: color-mix(in srgb, var(--dout--text) 70%, var(--dout--accent-strong) 30%);
     text-decoration-color: var(--dout--accent-strong);
+    text-underline-offset: 0.3em;
   }
 
   [data-prose] pre:not([is='pix-highlighter']) {
@@ -953,9 +990,15 @@
   }
 
   [data-post-toc-link]:hover,
+  [data-post-toc-link]:focus-visible,
   [data-post-toc-link][aria-current='location'] {
     background: color-mix(in srgb, var(--dout--accent-soft) 68%, var(--dout--surface-strong) 32%);
     color: var(--dout--text);
+  }
+
+  [data-post-toc-link]:hover,
+  [data-post-toc-link]:focus-visible {
+    transform: translateX(0.12rem);
   }
 
   [data-post-nav-card] {
@@ -1059,6 +1102,7 @@
   textarea:focus,
   select:focus {
     border-color: color-mix(in srgb, var(--dout--accent) 44%, var(--dout--border));
+    background: color-mix(in srgb, var(--dout--surface-strong) 88%, var(--dout--accent-soft) 12%);
     box-shadow: 0 0 0 0.22rem color-mix(in srgb, var(--dout--accent) 14%, transparent);
     outline: none;
   }

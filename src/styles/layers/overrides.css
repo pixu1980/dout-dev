@@ -20,8 +20,12 @@
     transform: none;
   }
 
-  :root[data-reduce-motion='true'] [data-reveal] {
+  :root[data-reduce-motion='true'] [data-reveal],
+  :root[data-reduce-motion='true']
+    [data-prose]
+    > :where(p, ul, ol, blockquote, pre, figure, h2, h3, h4, h5, h6) {
     animation: none !important;
+    filter: none !important;
     opacity: 1 !important;
     transform: none !important;
   }
