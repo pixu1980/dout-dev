@@ -80,7 +80,7 @@
     --dout--accent-strong: hsl(var(--dout--accent-h) 96% 42%);
   }
 
-  :root:is([data-color-scheme='dark'], [data-theme='dark'])[data-increase-contrast='true'] {
+  :root:is([data-color-scheme='dark'], [data-color-scheme='dark'])[data-increase-contrast='true'] {
     --dout--bg: #100f12;
     --dout--bg-elevated: #17151a;
     --dout--surface: #17151a;
@@ -96,7 +96,7 @@
 
   @media (prefers-color-scheme: dark) {
     :root[data-increase-contrast='true']:not([data-color-scheme='light']):not(
-        [data-theme='light']
+        [data-color-scheme='light']
       ) {
       --dout--bg: #100f12;
       --dout--bg-elevated: #17151a;

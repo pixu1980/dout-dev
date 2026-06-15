@@ -118,7 +118,7 @@
     --dout--corner-shape: initial;
   }
 
-  :root:is([data-color-scheme='light'], [data-theme='light']) {
+  :root:is([data-color-scheme='light'], [data-color-scheme='light']) {
     --dout--bg: #faf8f5;
     --dout--bg-elevated: #ffffff;
     --dout--surface: rgba(255, 255, 255, 0.85);
@@ -132,7 +132,7 @@
     --dout--accent-soft: hsl(var(--dout--accent-h) 100% 92%);
   }
 
-  :root:is([data-color-scheme='dark'], [data-theme='dark']) {
+  :root:is([data-color-scheme='dark'], [data-color-scheme='dark']) {
     --dout--bg: #18161a;
     --dout--bg-elevated: #222028;
     --dout--surface: rgba(40, 38, 44, 0.8);
@@ -147,7 +147,7 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    :root:not([data-color-scheme='light']):not([data-theme='light']) {
+    :root:not([data-color-scheme='light']):not([data-color-scheme='light']) {
       --dout--bg: #18161a;
       --dout--bg-elevated: #222028;
       --dout--surface: rgba(40, 38, 44, 0.8);

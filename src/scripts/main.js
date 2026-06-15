@@ -131,29 +131,6 @@ function initGiscusThemeBridge() {
   }, 10000);
 }
 
-function initLegacyThemeBridge() {
-  if (legacyThemeBridgeInitialized) return;
-  legacyThemeBridgeInitialized = true;
-
-  const syncLegacyTheme = () => {
-    const colorScheme = document.documentElement.dataset.colorScheme;
-    if (colorScheme === 'light' || colorScheme === 'dark') {
-      document.documentElement.dataset.theme = colorScheme;
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-    }
-  };
-
-  const observer = new MutationObserver(syncLegacyTheme);
-
-  observer.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ['data-color-scheme'],
-  });
-
-  syncLegacyTheme();
-}
-
 function initAccentBridge() {
   if (accentBridgeInitialized) return;
 
@@ -581,7 +558,6 @@ async function bootSite() {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-    initLegacyThemeBridge();
     initAccentBridge();
     initNavigation();
     initSkipLinks();

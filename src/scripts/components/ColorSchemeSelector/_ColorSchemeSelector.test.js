@@ -85,7 +85,6 @@ beforeEach(() => {
   document.body.innerHTML = '';
   document.adoptedStyleSheets = [];
   document.documentElement.removeAttribute('data-color-scheme');
-  document.documentElement.removeAttribute('data-theme');
   document.documentElement.style.colorScheme = '';
   window.localStorage.clear();
 });

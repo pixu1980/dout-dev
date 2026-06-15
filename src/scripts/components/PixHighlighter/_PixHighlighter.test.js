@@ -175,7 +175,7 @@ beforeEach(() => {
   document.body.innerHTML = '';
   document.head.innerHTML = '';
   document.adoptedStyleSheets = [];
-  document.querySelector('[data-pix-highlighter-styles]')?.remove();
+  document.querySelector('[data-styles]')?.remove();
   delete document.documentElement.dataset.pixHighlighterTheme;
   window.localStorage.clear();
   PixHighlighter._uid = 0;
@@ -247,11 +247,9 @@ describe('PixHighlighter', () => {
     const first = createPseudoInstance({ code: 'const first = true;', lang: 'js' });
     const second = createPseudoInstance({ code: '<div>hi</div>', lang: 'html' });
 
-    const firstPrismOption = document.body.querySelector(
-      'button[data-pix-highlighter-theme-option="prism"]'
-    );
-    const firstThemeValue = first.querySelector('[data-pix-highlighter-theme-value]');
-    const secondThemeValue = second.querySelector('[data-pix-highlighter-theme-value]');
+    const firstPrismOption = document.body.querySelector('button[data-theme-option="prism"]');
+    const firstThemeValue = first.querySelector('[data-theme-value]');
+    const secondThemeValue = second.querySelector('[data-theme-value]');
 
     assert.equal(firstThemeValue.textContent, 'Default');
     assert.equal(secondThemeValue.textContent, 'Default');
@@ -266,7 +264,7 @@ describe('PixHighlighter', () => {
 
   test('copies the current code block content', async () => {
     const instance = createPseudoInstance({ code: 'const copied = true;', lang: 'js' });
-    const copyButton = instance.querySelector('button[data-pix-highlighter-copy]');
+    const copyButton = instance.querySelector('[data-copy]');
 
     copyButton.click();
     await Promise.resolve();
@@ -282,37 +280,31 @@ describe('PixHighlighter', () => {
 
     const instance = createPseudoInstance({ code: 'const plain = true;', lang: 'js' });
 
-    assert.ok(instance.querySelector('[data-pix-token="kw"]'));
+    assert.ok(instance.querySelector('[data-token="kw"]'));
     assert.equal(document.adoptedStyleSheets.length, 1);
   });
 
   test('renders a custom theme picker and icon-only copy button', () => {
     const instance = createPseudoInstance({ code: 'const themed = true;', lang: 'js' });
 
-    assert.ok(instance.querySelector('details[data-pix-highlighter-theme-picker]'));
-    assert.equal(
-      document.body.querySelectorAll('button[data-pix-highlighter-theme-option]').length,
-      7
-    );
-    assert.ok(instance.querySelector('button[data-pix-highlighter-copy] svg'));
+    assert.ok(instance.querySelector('details[data-theme-picker]'));
+    assert.equal(document.body.querySelectorAll('[data-theme-option]').length, 7);
+    assert.ok(instance.querySelector('[data-copy] svg'));
   });
 
   test('mounts theme menu outside the highlighter so block overflow cannot clip it', () => {
     const instance = createPseudoInstance({ code: 'const themed = true;', lang: 'js' });
-    const themeList = instance.querySelector('[data-pix-highlighter-theme-list]');
+    const themeList = instance.querySelector('[data-theme-list]');
 
     assert.equal(themeList, null);
-    assert.equal(
-      document.body.querySelector('[data-pix-highlighter-theme-list]')?.parentElement,
-      document.body
-    );
+    assert.equal(document.body.querySelector('[data-theme-list]')?.parentElement, document.body);
   });
 
   test('positions body-mounted theme menu with viewport coordinates', () => {
     const instance = createPseudoInstance({ code: 'const themed = true;', lang: 'js' });
-    const themePicker = instance.querySelector('details[data-pix-highlighter-theme-picker]');
-    const themeTrigger = instance.querySelector('summary[data-pix-highlighter-theme-trigger]');
-    const themeList = document.body.querySelector('[data-pix-highlighter-theme-list]');
+    const themePicker = instance.querySelector('details[data-theme-picker]');
+    const themeTrigger = instance.querySelector('[data-theme-trigger]');
+    const themeList = document.body.querySelector('[data-theme-list]');
 
     Object.defineProperty(window, 'innerWidth', {
       configurable: true,
@@ -346,7 +338,7 @@ describe('PixHighlighter', () => {
     assert.equal(themeTrigger.getAttribute('aria-expanded'), 'true');
     assert.match(
       themeTrigger.style.getPropertyValue('anchor-name'),
-      /^--dout--pix-highlighter-theme-trigger-/
+      /^--pix-highlighter--highlighter-theme-trigger-/
     );
     assert.equal(
       themeList.style.getPropertyValue('position-anchor'),
@@ -367,9 +359,9 @@ describe('PixHighlighter', () => {
 
   test('keeps viewport positioning even when anchor positioning is available', () => {
     const instance = createPseudoInstance({ code: 'const themed = true;', lang: 'js' });
-    const themePicker = instance.querySelector('details[data-pix-highlighter-theme-picker]');
-    const themeTrigger = instance.querySelector('summary[data-pix-highlighter-theme-trigger]');
-    const themeList = document.body.querySelector('[data-pix-highlighter-theme-list]');
+    const themePicker = instance.querySelector('details[data-theme-picker]');
+    const themeTrigger = instance.querySelector('[data-theme-trigger]');
+    const themeList = document.body.querySelector('[data-theme-list]');
 
     instance._supportsAnchorPositioning = true;
     instance._configureThemeAnchor();
@@ -421,7 +413,7 @@ describe('PixHighlighter', () => {
 
     try {
       const result = PixHighlighter.ensureComponentStyles();
-      const style = document.head.querySelector('style[data-pix-highlighter-styles]');
+      const style = document.head.querySelector('style[data-styles]');
 
       assert.equal(result, style);
       assert.ok(style);
@@ -463,11 +455,8 @@ describe('PixHighlighter', () => {
 
       const instance = document.querySelector("pre[is='pix-highlighter']");
 
-      assert.ok(instance?.querySelector('[data-pix-highlighter-toolbar]'));
-      assert.equal(
-        instance?.querySelector('[data-pix-highlighter-theme-value]')?.textContent,
-        'Default'
-      );
+      assert.ok(instance?.querySelector('[data-toolbar]'));
+      assert.equal(instance?.querySelector('[data-theme-value]')?.textContent, 'Default');
     } finally {
       Object.defineProperty(globalThis, 'customElements', {
         configurable: true,
@@ -510,19 +499,19 @@ describe('PixHighlighter', () => {
       componentSource.includes("registry.define('pix-highlighter', this, { extends: 'pre' });")
     );
     assert.ok(mainCss.includes('::highlight(pix-kw)'));
-    assert.ok(mainCss.includes('[data-pix-highlighter-theme-list]'));
+    assert.ok(mainCss.includes('[data-theme-list]'));
     assert.ok(mainCss.includes('height: 25rem'));
     assert.ok(mainCss.includes('overflow-y: auto'));
-    assert.ok(mainCss.includes("[data-pix-highlighter-theme='monokai']"));
-    assert.ok(mainCss.includes("[data-pix-highlighter-theme='nord']"));
+    assert.ok(mainCss.includes("[data-theme='monokai']"));
+    assert.ok(mainCss.includes("[data-theme='nord']"));
     assert.ok(!mainCss.includes('@import'));
-    assert.ok(themeDefaultsCss.includes('[data-pix-highlighter-toolbar]'));
+    assert.ok(themeDefaultsCss.includes('[data-toolbar]'));
     assert.ok(themeDefaultsCss.includes('position-anchor'));
     assert.ok(themeDefaultsCss.includes('anchor(bottom)'));
-    assert.ok(prismCss.includes("[data-pix-highlighter-theme='prism']"));
-    assert.ok(prettyLightsCss.includes("[data-pix-highlighter-theme='prettylights']"));
-    assert.ok(darculaCss.includes("[data-pix-highlighter-theme='darcula']"));
-    assert.ok(cyberpunkCss.includes("[data-pix-highlighter-theme='cyberpunk']"));
+    assert.ok(prismCss.includes("[data-theme='prism']"));
+    assert.ok(prettyLightsCss.includes("[data-theme='prettylights']"));
+    assert.ok(darculaCss.includes("[data-theme='darcula']"));
+    assert.ok(cyberpunkCss.includes("[data-theme='cyberpunk']"));
   });
 
   test('keeps lexer coverage across supported languages', () => {

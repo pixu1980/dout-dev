@@ -44,7 +44,7 @@ CSS then styles those names directly:
 
 ```css
 ::highlight(pix-kw) {
-  color: var(--dout--pix-kw);
+  color: var(--pix-highlighter--kw);
 }
 ```
 
@@ -55,16 +55,16 @@ That is the whole trick. The browser paints a range of text without changing the
 The rule is simple: fallback spans only when the Highlight API is unavailable. In that case, the component maps the same token ranges to conservative markup:
 
 ```html
-<span data-pix-token="kw">const</span>
+<span data-token="kw">const</span>
 ```
 
-The fallback is not a different highlighter. It is the same lexer output rendered into older browser primitives. The CSS already has matching rules for `[data-pix-token='kw']`, `[data-pix-token='str']`, and the rest of the token types, so the visual result remains close without forcing modern browsers to carry extra DOM.
+The fallback is not a different highlighter. It is the same lexer output rendered into older browser primitives. The CSS already has matching rules for `[data-token='kw']`, `[data-token='str']`, and the rest of the token types, so the visual result remains close without forcing modern browsers to carry extra DOM.
 
 ## Styles are shared once
 
 The component imports its CSS with `bundle-text:`. That bundle includes the base component stylesheet plus the theme files.
 
-At runtime, `ensureComponentStyles()` prefers `document.adoptedStyleSheets`. If constructable stylesheets are available, one `CSSStyleSheet` is created and shared by every instance. If not, the component injects one managed `<style data-pix-highlighter-styles>` element.
+At runtime, `ensureComponentStyles()` prefers `document.adoptedStyleSheets`. If constructable stylesheets are available, one `CSSStyleSheet` is created and shared by every instance. If not, the component injects one managed `<style data-styles>` element.
 
 Ten code blocks still get one style payload. The component can appear throughout an article without multiplying its CSS.
 

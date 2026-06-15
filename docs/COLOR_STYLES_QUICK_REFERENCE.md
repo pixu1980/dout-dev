@@ -86,8 +86,8 @@
 
 ```
 Ciclo: auto → dark → light → auto
-Salva in localStorage['theme']
-Imposta document.documentElement.dataset.theme
+Salva in localStorage['color-scheme']
+Imposta document.documentElement.dataset.colorScheme
 ```
 
 **Accent Picker** [righe 58-75](../src/scripts/main.js#L58-L75)
@@ -164,7 +164,7 @@ ACCENT (default, violet, green)
   --accent-soft: varies by theme
   --accent-strong: varies by theme
 
-LIGHT THEME (default + explicit :root[data-theme='light'])
+LIGHT THEME (default + explicit :root[data-color-scheme='light'])
   --bg: #f5efe6
   --text: #131117
   --text-muted: #625c67
@@ -173,7 +173,7 @@ LIGHT THEME (default + explicit :root[data-theme='light'])
   --shadow: 0 18px 48px rgba(32, 20, 9, 0.12)
   --shadow-strong: 0 28px 80px rgba(32, 20, 9, 0.18)
 
-DARK THEME (@media prefers-color-scheme: dark + :root[data-theme='dark'])
+DARK THEME (@media prefers-color-scheme: dark + :root[data-color-scheme='dark'])
   --bg: #0f0e13
   --text: #f7f1eb
   --text-muted: #b9aebd

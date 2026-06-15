@@ -71,7 +71,7 @@ Raw tokens alone are not enough for a theme-able site. I use two layers:
   --color-accent: #ff6b3d;
 }
 
-[data-theme='light'] {
+[data-color-scheme='light'] {
   --color-bg: #fafafa;
   --color-bg-raised: #ffffff;
   --color-fg: #1a1a1a;

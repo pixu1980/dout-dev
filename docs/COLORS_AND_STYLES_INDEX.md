@@ -213,7 +213,7 @@ open docs/COLOR_PALETTE_VISUAL.html
 ## ❓ Domande Frequenti
 
 **D: Come cambio tema da light a dark a runtime?**
-A: Il JavaScript in [src/scripts/main.js](../src/scripts/main.js#L28-L57) gestisce questo. Guarda la funzione `initThemeSwitcher()` → imposta `document.documentElement.dataset.theme`.
+A: Il JavaScript in [src/scripts/main.js](../src/scripts/main.js#L28-L57) gestisce questo. Guarda la funzione `initColorSchemeSwitcher()` → imposta `document.documentElement.dataset.colorScheme`.
 
 **D: Come aggiungo un nuovo accento?**
 A: Segui la sezione "Azioni Comuni" → "Aggiungere un nuovo accento" di questo file.

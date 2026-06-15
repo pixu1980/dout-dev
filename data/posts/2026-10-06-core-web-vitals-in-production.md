@@ -93,7 +93,7 @@ document.addEventListener('click', (event) => {
 
 A delegated click handler is cheaper than 20 individual ones. The work inside each handler is under 5ms on a mid-tier phone.
 
-**No synchronous layout thrashing.** When the theme changes, I write to `document.documentElement.dataset.theme`, which sets an attribute. The browser recomputes styles once on the next animation frame. No forced layout, no `offsetWidth` reads in a loop.
+**No synchronous layout thrashing.** When the color-scheme changes, I write to `document.documentElement.dataset.colorScheme`, which sets an attribute. The browser recomputes styles once on the next animation frame. No forced layout, no `offsetWidth` reads in a loop.
 
 ## Measuring it in production
 

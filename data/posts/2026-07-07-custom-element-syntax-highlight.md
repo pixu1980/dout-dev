@@ -128,7 +128,7 @@ pre[is='pix-highlighter'] {
 }
 ```
 
-No separate "light theme" and "dark theme" stylesheets. One set of rules, driven by semantic tokens, which flip based on `data-theme`.
+No separate "light theme" and "dark theme" stylesheets. One set of rules, driven by semantic tokens, which flip based on `data-color-scheme`.
 
 ## Accessibility
 

@@ -404,9 +404,9 @@
 
 **Implementation Notes**:
 
-- Header component includes brand, menu toggle (ARIA), main nav, theme switcher, and accent picker.
-- JS adds theme cycle (auto/dark/light), accent persistence, accessible nav with Escape and focus trap, and outside-click close.
-- CSS tokens extended with [data-theme] overrides; mobile nav styles; reduced-motion respected.
+- Header component includes brand, menu toggle (ARIA), main nav, color scheme switcher, and accent picker.
+- JS adds color scheme cycle (auto/dark/light), accent persistence, accessible nav with Escape and focus trap, and outside-click close.
+- CSS tokens extended with [data-color-scheme] overrides; mobile nav styles; reduced-motion respected.
 
 ---
 

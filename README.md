@@ -367,7 +367,7 @@ Notes:
 ### Theme, dark mode and accent color (M9)
 
 - Theme modes: auto (default), light, dark. The toggle in the header cycles through Auto → Dark → Light → Auto.
-- Persistence: user choice is stored in localStorage under `theme` and applied by setting `documentElement.dataset.theme`.
+- Persistence: user choice is stored in localStorage under `color-scheme` and applied by setting `documentElement.dataset.colorScheme`.
 - System preference: when set to Auto, `prefers-color-scheme` decides between light/dark; switching OS theme updates the site live.
 - Accent: choose among Default, Violet, Green. Stored as `accent` in localStorage and applied as `body[data-accent]`.
 - A11y: header menu is keyboard accessible with a focus trap when open; Escape closes it; outside click closes it on touch/mouse.

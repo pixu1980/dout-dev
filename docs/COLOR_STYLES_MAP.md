@@ -91,7 +91,7 @@
 ### **Override Tema Light Esplicito**
 
 ```css
-:root[data-theme='light'] {
+:root[data-color-scheme='light'] {
   /* Same as default light theme */
 }
 ```
@@ -99,7 +99,7 @@
 ### **Override Tema Dark Esplicito**
 
 ```css
-:root[data-theme='dark'] {
+:root[data-color-scheme='dark'] {
   /* Same as prefers-color-scheme: dark */
 }
 ```

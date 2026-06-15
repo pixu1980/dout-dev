@@ -248,7 +248,7 @@
 CSS.highlights.set('pix-kw', highlight);</code></pre>
             <p>CSS then styles those names directly:</p>
             <pre is="pix-highlighter" data-lang="css"><code>::highlight(pix-kw) {
-  color: var(--dout--pix-kw);
+  color: var(--pix-highlighter--kw);
 }</code></pre>
             <p>
               That is the whole trick. The browser paints a range of text without changing the text into markup.
@@ -265,11 +265,11 @@ CSS.highlights.set('pix-kw', highlight);</code></pre>
             <pre
               is="pix-highlighter"
               data-lang="html"
-            ><code>&lt;span data-pix-token="kw"&gt;const&lt;&#x2F;span&gt;</code></pre>
+            ><code>&lt;span data-token="kw"&gt;const&lt;&#x2F;span&gt;</code></pre>
             <p>
               The fallback is not a different highlighter. It is the same lexer output rendered into older browser
-              primitives. The CSS already has matching rules for <code>[data-pix-token='kw']</code>,
-              <code>[data-pix-token='str']</code>, and the rest of the token types, so the visual result remains close
+              primitives. The CSS already has matching rules for <code>[data-token='kw']</code>,
+              <code>[data-token='str']</code>, and the rest of the token types, so the visual result remains close
               without forcing modern browsers to carry extra DOM.
             </p>
             <h2 id="styles-are-shared-once" tabindex="0" data-toc-anchor="true">Styles are shared once</h2>
@@ -280,8 +280,7 @@ CSS.highlights.set('pix-kw', highlight);</code></pre>
             <p>
               At runtime, <code>ensureComponentStyles()</code> prefers <code>document.adoptedStyleSheets</code>. If
               constructable stylesheets are available, one <code>CSSStyleSheet</code> is created and shared by every
-              instance. If not, the component injects one managed
-              <code>&lt;style data-pix-highlighter-styles&gt;</code> element.
+              instance. If not, the component injects one managed <code>&lt;style data-styles&gt;</code> element.
             </p>
             <p>
               Ten code blocks still get one style payload. The component can appear throughout an article without

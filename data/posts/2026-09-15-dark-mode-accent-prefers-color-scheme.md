@@ -28,18 +28,18 @@ The switcher only works because the CSS is already token-driven. Every component
   --color-accent: #ff6b3d;
 }
 
-[data-theme='light'] {
+[data-color-scheme='light'] {
   --color-bg: #fafafa;
   --color-fg: #1a1a1a;
 }
 
-[data-theme='dark'] {
+[data-color-scheme='dark'] {
   --color-bg: #0b0b0f;
   --color-fg: #e7e7ef;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
+  :root:not([data-color-scheme]) {
     --color-bg: #0b0b0f;
     --color-fg: #e7e7ef;
   }
@@ -49,8 +49,8 @@ The switcher only works because the CSS is already token-driven. Every component
 The rules:
 
 - `:root` defines the defaults (the "auto" case without system preference).
-- `[data-theme='light']` and `[data-theme='dark']` override for explicit choices.
-- The `@media (prefers-color-scheme: dark)` block kicks in only when no explicit `data-theme` is set - the `:not([data-theme])` selector - so user choice always wins over system preference.
+- `[data-color-scheme='light']` and `[data-color-scheme='dark']` override for explicit choices.
+- The `@media (prefers-color-scheme: dark)` block kicks in only when no explicit `data-color-scheme` is set - the `:not([data-color-scheme])` selector - so user choice always wins over system preference.
 
 ## No flash of wrong theme
 
@@ -60,10 +60,10 @@ The browser must know the theme before it paints the first frame. That means the
 <script>
   (function () {
     try {
-      var stored = localStorage.getItem('theme');
+      var stored = localStorage.getItem('color-scheme');
       var stored_accent = localStorage.getItem('accent');
       if (stored === 'light' || stored === 'dark') {
-        document.documentElement.dataset.theme = stored;
+        document.documentElement.dataset.colorScheme = stored;
       }
       if (stored_accent) {
         document.body.dataset.accent = stored_accent;
@@ -96,23 +96,23 @@ const order = [null, 'dark', 'light'];
 
 function setTheme(value) {
   if (value === null) {
-    delete document.documentElement.dataset.theme;
-    localStorage.removeItem('theme');
+    delete document.documentElement.dataset.colorScheme;
+    localStorage.removeItem('color-scheme');
     label.textContent = 'Auto';
   } else {
-    document.documentElement.dataset.theme = value;
-    localStorage.setItem('theme', value);
+    document.documentElement.dataset.colorScheme = value;
+    localStorage.setItem('color-scheme', value);
     label.textContent = value === 'dark' ? 'Dark' : 'Light';
   }
 }
 
 toggle.addEventListener('click', () => {
-  const current = document.documentElement.dataset.theme ?? null;
+  const current = document.documentElement.dataset.colorScheme ?? null;
   const next = order[(order.indexOf(current) + 1) % order.length];
   setTheme(next);
 });
 
-const currentOnLoad = document.documentElement.dataset.theme ?? null;
+const currentOnLoad = document.documentElement.dataset.colorScheme ?? null;
 label.textContent = currentOnLoad === null ? 'Auto' : currentOnLoad === 'dark' ? 'Dark' : 'Light';
 ```
 
@@ -162,7 +162,7 @@ function syncGiscusTheme(theme) {
 }
 ```
 
-A MutationObserver on `document.documentElement` watches for `data-theme` changes and calls `syncGiscusTheme`. That keeps comments visually in sync with the rest of the page. Without this, switching from dark to light leaves the comments in a contrast mismatch.
+A MutationObserver on `document.documentElement` watches for `data-color-scheme` changes and calls `syncGiscusTheme`. That keeps comments visually in sync with the rest of the page. Without this, switching from dark to light leaves the comments in a contrast mismatch.
 
 ## Keyboard, focus, motion
 

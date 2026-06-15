@@ -50,9 +50,9 @@ const COMPONENT_STYLE_TEXT = [
 const COPY_RESET_DELAY = 2000;
 const THEME_MENU_OFFSET = 8;
 const THEME_MENU_VIEWPORT_MARGIN = 12;
-const THEME_STORAGE_KEY = 'pix-highlighter-theme';
+const STORAGE_KEY = 'pix-highlighter-theme';
 const ENHANCED_MARKER = Symbol('pixHighlighterEnhanced');
-const COMPONENT_STYLE_ATTRIBUTE = 'data-pix-highlighter-styles';
+const COMPONENT_STYLE_ATTRIBUTE = 'data-styles';
 let componentStyleSheet = null;
 let componentStyleElement = null;
 
@@ -63,8 +63,8 @@ function supportsAnchorPositioning() {
 
   try {
     return (
-      globalThis.CSS.supports('anchor-name: --dout--pix-anchor') &&
-      globalThis.CSS.supports('position-anchor: --dout--pix-anchor') &&
+      globalThis.CSS.supports('anchor-name: --pix-highlighter--anchor') &&
+      globalThis.CSS.supports('position-anchor: --pix-highlighter--anchor') &&
       globalThis.CSS.supports('top: anchor(bottom)')
     );
   } catch {
@@ -170,7 +170,7 @@ function getThemeLabel(theme) {
 
 function setIconButtonContent(button, iconMarkup, label) {
   if (!button) return;
-  button.innerHTML = `${iconMarkup}<span data-pix-highlighter-sr-only>${label}</span>`;
+  button.innerHTML = `${iconMarkup}<span data-sr-only>${label}</span>`;
   button.setAttribute('aria-label', label);
   button.title = label;
 }
@@ -238,7 +238,7 @@ class PixHighlighter extends HTMLPreElement {
   }
 
   static getSavedTheme() {
-    const savedTheme = getStorage()?.getItem(THEME_STORAGE_KEY);
+    const savedTheme = getStorage()?.getItem(STORAGE_KEY);
     return this.isThemeValue(savedTheme) ? savedTheme : null;
   }
 
@@ -269,7 +269,7 @@ class PixHighlighter extends HTMLPreElement {
     }
 
     if (persist) {
-      getStorage()?.setItem(THEME_STORAGE_KEY, normalizedTheme);
+      getStorage()?.setItem(STORAGE_KEY, normalizedTheme);
     }
 
     if (syncInstances) {
@@ -366,7 +366,7 @@ class PixHighlighter extends HTMLPreElement {
     if (this._isActive) return;
 
     this._isActive = true;
-    this.dataset.pixHighlighterRoot = '';
+    this.dataset.root = '';
     this.constructor.ensureComponentStyles();
     PixHighlighter.ensureThemeState();
     PixHighlighter.instances.add(this);
@@ -448,23 +448,21 @@ class PixHighlighter extends HTMLPreElement {
   }
 
   _ensureToolbar() {
-    const existingToolbar = this.querySelector('[data-pix-highlighter-toolbar]');
+    const existingToolbar = this.querySelector('[data-toolbar]');
 
     if (existingToolbar) {
-      this._themePicker = existingToolbar.querySelector('[data-pix-highlighter-theme-picker]');
-      this._themeTrigger = existingToolbar.querySelector('[data-pix-highlighter-theme-trigger]');
-      this._themeTriggerLabel = existingToolbar.querySelector('[data-pix-highlighter-theme-value]');
-      this._themeList = existingToolbar.querySelector('[data-pix-highlighter-theme-list]');
+      this._themePicker = existingToolbar.querySelector('[data-theme-picker]');
+      this._themeTrigger = existingToolbar.querySelector('[data-theme-trigger]');
+      this._themeTriggerLabel = existingToolbar.querySelector('[data-theme-value]');
+      this._themeList = existingToolbar.querySelector('[data-theme-list]');
       if (!this._themeList) {
         this._themeList = document.getElementById(
           this._themeTrigger?.getAttribute('aria-controls') || ''
         );
       }
-      this._copyButton = existingToolbar.querySelector('button[data-pix-highlighter-copy]');
+      this._copyButton = existingToolbar.querySelector('[data-copy]');
       this._themeOptionButtons = Array.from(
-        (this._themeList || existingToolbar).querySelectorAll(
-          'button[data-pix-highlighter-theme-option]'
-        )
+        (this._themeList || existingToolbar).querySelectorAll('[data-theme-option]')
       );
       this._teardownThemePicker();
       this._copyButton?.removeEventListener('click', this._onCopyClick);
@@ -480,32 +478,32 @@ class PixHighlighter extends HTMLPreElement {
     }
 
     const toolbar = document.createElement('span');
-    toolbar.dataset.pixHighlighterToolbar = '';
+    toolbar.dataset.toolbar = '';
     toolbar.setAttribute('role', 'group');
     toolbar.setAttribute('aria-label', 'Code block actions');
 
     const themePicker = document.createElement('details');
-    themePicker.dataset.pixHighlighterThemePicker = '';
+    themePicker.dataset.themePicker = '';
 
     const themeTrigger = document.createElement('summary');
-    themeTrigger.dataset.pixHighlighterThemeTrigger = '';
+    themeTrigger.dataset.themeTrigger = '';
     themeTrigger.setAttribute('aria-label', 'Syntax highlight theme');
 
     const triggerLabel = document.createElement('span');
-    triggerLabel.dataset.pixHighlighterThemeValue = '';
+    triggerLabel.dataset.themeValue = '';
 
     const triggerLeadingIcon = document.createElement('span');
-    triggerLeadingIcon.dataset.pixHighlighterThemeIcon = '';
+    triggerLeadingIcon.dataset.themeIcon = '';
     triggerLeadingIcon.innerHTML = PALETTE_ICON;
 
     const triggerChevron = document.createElement('span');
-    triggerChevron.dataset.pixHighlighterThemeChevron = '';
+    triggerChevron.dataset.themeChevron = '';
     triggerChevron.innerHTML = CHEVRON_ICON;
 
     themeTrigger.append(triggerLeadingIcon, triggerLabel, triggerChevron);
 
     const themeList = document.createElement('ul');
-    themeList.dataset.pixHighlighterThemeList = '';
+    themeList.dataset.themeList = '';
     themeList.id = `pix-highlighter-theme-list-${this._id}`;
     themeList.setAttribute('role', 'listbox');
     themeList.setAttribute('aria-label', 'Syntax highlight themes');
@@ -519,7 +517,7 @@ class PixHighlighter extends HTMLPreElement {
       const optionItem = document.createElement('li');
       const optionButton = document.createElement('button');
       optionButton.type = 'button';
-      optionButton.dataset.pixHighlighterThemeOption = option.value;
+      optionButton.dataset.themeOption = option.value;
       optionButton.setAttribute('role', 'option');
       optionButton.innerHTML = `<span>${option.label}</span><span aria-hidden="true">${option.value}</span>`;
       optionItem.appendChild(optionButton);
@@ -531,7 +529,7 @@ class PixHighlighter extends HTMLPreElement {
 
     const copyButton = document.createElement('button');
     copyButton.type = 'button';
-    copyButton.dataset.pixHighlighterCopy = '';
+    copyButton.dataset.copy = '';
     this._setCopyButtonState('idle', copyButton);
 
     toolbar.append(themePicker, copyButton);
@@ -602,13 +600,13 @@ class PixHighlighter extends HTMLPreElement {
 
     const styles = window.getComputedStyle(this);
     const propertyNames = [
-      '--dout--pix-bg',
-      '--dout--pix-fg',
-      '--dout--pix-toolbar-border',
-      '--dout--pix-toolbar-color',
-      '--dout--pix-toolbar-menu-accent',
-      '--dout--pix-toolbar-menu-bg',
-      '--dout--pix-toolbar-shadow',
+      '--pix-highlighter--bg',
+      '--pix-highlighter--fg',
+      '--pix-highlighter--toolbar-border',
+      '--pix-highlighter--toolbar-color',
+      '--pix-highlighter--toolbar-menu-accent',
+      '--pix-highlighter--toolbar-menu-bg',
+      '--pix-highlighter--toolbar-shadow',
     ];
 
     propertyNames.forEach((propertyName) => {
@@ -620,7 +618,7 @@ class PixHighlighter extends HTMLPreElement {
   }
 
   _getThemeAnchorName() {
-    return `--dout--pix-highlighter-theme-trigger-${this._id}`;
+    return `--pix-highlighter--highlighter-theme-trigger-${this._id}`;
   }
 
   _configureThemeAnchor() {
@@ -632,7 +630,7 @@ class PixHighlighter extends HTMLPreElement {
 
     this._themeTrigger.style.setProperty('anchor-name', anchorName);
     this._themeList.style.setProperty('position-anchor', anchorName);
-    this._themeList.style.setProperty('--dout--pix-anchor-offset', `${THEME_MENU_OFFSET}px`);
+    this._themeList.style.setProperty('--pix-highlighter--anchor-offset', `${THEME_MENU_OFFSET}px`);
     this._themeList.dataset.anchorPositioning = String(this._supportsAnchorPositioning);
   }
 
@@ -956,14 +954,14 @@ class PixHighlighter extends HTMLPreElement {
     }
 
     this._themeOptionButtons.forEach((button) => {
-      const selected = button.dataset.pixHighlighterThemeOption === theme;
+      const selected = button.dataset.themeOption === theme;
       button.toggleAttribute('data-selected', selected);
       button.setAttribute('aria-selected', String(selected));
     });
   }
 
   _handleThemeOptionClick(event) {
-    const theme = event.currentTarget.dataset.pixHighlighterThemeOption;
+    const theme = event.currentTarget.dataset.themeOption;
     PixHighlighter.applyTheme(theme);
     if (this._themePicker) {
       this._themePicker.open = false;
