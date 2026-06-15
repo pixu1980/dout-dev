@@ -40,6 +40,10 @@ const BODY_FONT_OPTIONS = Object.freeze([
     stack: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
   },
   { id: 'readable-serif', stack: "Charter, 'Bitstream Charter', 'Sitka Text', Georgia, serif" },
+  {
+    id: 'open-dyslexic',
+    stack: "'OpenDyslexic', 'Atkinson Hyperlegible', system-ui, sans-serif",
+  },
 ]);
 
 const CODE_FONT_OPTIONS = Object.freeze([

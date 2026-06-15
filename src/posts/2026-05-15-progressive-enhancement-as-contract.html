@@ -169,7 +169,7 @@
         <header data-post-hero="" data-reveal="" aria-labelledby="post-title">
           <p data-eyebrow="">Article</p>
           <p data-post-meta="">
-            <time datetime="2026-05-15" itemprop="datePublished"> 15 maggio 2026 </time>
+            <time datetime="2026-05-15" itemprop="datePublished"> May 15, 2026 </time>
             <span data-post-divider="">/</span>
             <a href="/archive.html">Archive</a>
           </p>
@@ -199,13 +199,7 @@
           </figure>
         </header>
 
-        <section
-          data-post-shell=""
-          data-reveal=""
-          id="article-content"
-          role="region"
-          aria-labelledby="article-content-title"
-        >
+        <section data-post-shell="" id="article-content" role="region" aria-labelledby="article-content-title">
           <h2 id="article-content-title" data-visually-hidden="">Article content</h2>
 
           <section data-prose="" itemprop="articleBody">
@@ -279,7 +273,7 @@
 &lt;&#x2F;form&gt;</code></pre>
             <p>
               With JS disabled, submitting the form loads <code>/search.html?q=whatever</code>. The server-rendered
-              search page parses the URL and displays results from the prebuilt JSON indexes — no JS needed for that
+              search page parses the URL and displays results from the prebuilt JSON indexes - no JS needed for that
               match, because the JSON is small enough to be parsed server-side at build.
             </p>
             <p>
@@ -304,7 +298,7 @@
             </p>
             <p>
               This is a general pattern: any UI element that requires JS to function is hidden by default and revealed
-              by the enhancement script. The opposite pattern — show the button, have it do nothing when clicked — is
+              by the enhancement script. The opposite pattern - show the button, have it do nothing when clicked - is
               worse, because it breaks the "visible things work" contract that users assume.
             </p>
             <h3 id="scrollspy" tabindex="0" data-toc-anchor="true">Scrollspy</h3>
@@ -320,7 +314,7 @@
               unhighlighted. Readable. Not pretty.
             </p>
             <p>
-              The copy button is added by the custom element's <code>connectedCallback</code> — no element in the pre-JS
+              The copy button is added by the custom element's <code>connectedCallback</code> - no element in the pre-JS
               DOM, nothing to fail.
             </p>
             <h2 id="how-the-build-verifies-it" tabindex="0" data-toc-anchor="true">How the build verifies it</h2>
@@ -379,8 +373,8 @@ test('home renders without JS', async () =&gt; {
             </ul>
             <h2 id="the-takeaway" tabindex="0" data-toc-anchor="true">The takeaway</h2>
             <p>
-              Progressive enhancement is a testable contract, not a stance. Pick a clear line — "the core experience
-              works without JS" — and let the build verify it. The result is a more resilient site and a simpler mental
+              Progressive enhancement is a testable contract, not a stance. Pick a clear line - "the core experience
+              works without JS" - and let the build verify it. The result is a more resilient site and a simpler mental
               model. The enhancements can then be as ambitious as you want, because you know what they are enhancing.
             </p>
             <h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
@@ -391,7 +385,7 @@ test('home renders without JS', async () =&gt; {
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  >Understanding progressive enhancement — A List Apart</a
+                  >Understanding progressive enhancement - A List Apart</a
                 >
               </li>
               <li>
@@ -400,7 +394,7 @@ test('home renders without JS', async () =&gt; {
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  >Resilient Web Design — Jeremy Keith</a
+                  >Resilient Web Design - Jeremy Keith</a
                 >
               </li>
               <li>
@@ -411,7 +405,7 @@ test('home renders without JS', async () =&gt; {
                   rel="noopener"
                   >Playwright</a
                 >
-                — for headless no-JS verification
+                - for headless no-JS verification
               </li>
               <li>
                 <a
@@ -419,17 +413,16 @@ test('home renders without JS', async () =&gt; {
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  ><code>&lt;noscript&gt;</code> — MDN</a
+                  ><code>&lt;noscript&gt;</code> - MDN</a
                 >
               </li>
             </ul>
           </section>
         </section>
 
-        <aside data-post-sidebar="" data-reveal="" role="complementary" aria-labelledby="post-outline">
+        <aside data-post-sidebar="" role="complementary" aria-labelledby="post-outline">
           <nav data-post-toc="" aria-labelledby="post-outline">
-            <p data-eyebrow="" data-muted="">TOC</p>
-            <h2 id="post-outline">On this page</h2>
+            <h2 id="post-outline">TOC</h2>
             <ol data-post-toc-list="">
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#the-contract">The contract</a>
@@ -485,12 +478,10 @@ test('home renders without JS', async () =&gt; {
         </aside>
 
         <section data-comments-shell="" data-reveal="" aria-labelledby="comments-title">
-          <div data-section-heading="">
-            <div>
-              <p data-eyebrow="">Discussion</p>
-              <h2 id="comments-title">Comments live in GitHub Discussions</h2>
-            </div>
-          </div>
+          <header data-section-heading="">
+            <p data-eyebrow="">Discussion</p>
+            <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+          </header>
           <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
           <script
             src="https://giscus.app/client.js"

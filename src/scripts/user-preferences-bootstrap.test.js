@@ -102,6 +102,23 @@ describe('user preferences bootstrap', () => {
     assert.equal(document.documentElement.style.fontSize, '');
   });
 
+  test('applies saved OpenDyslexic body font before revealing the page', () => {
+    window.localStorage.setItem(
+      STORAGE_KEYS.displayPreferences,
+      JSON.stringify({ bodyFont: 'open-dyslexic' })
+    );
+    document.documentElement.dataset.userPreferences = 'loading';
+
+    const applied = bootUserPreferences();
+
+    assert.equal(applied.displayPreferences.bodyFont, 'open-dyslexic');
+    assert.match(
+      document.documentElement.style.getPropertyValue('--dout--font-sans'),
+      /OpenDyslexic/
+    );
+    assert.equal(document.documentElement.dataset.userPreferences, 'ready');
+  });
+
   test('builds a dynamic DOM-based skeleton and keeps it visible for fifteen render frames', () => {
     const frameCallbacks = [];
     const frameWindow = {

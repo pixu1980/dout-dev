@@ -163,7 +163,7 @@
         <header data-post-hero="" data-reveal="" aria-labelledby="post-title">
           <p data-eyebrow="">Article</p>
           <p data-post-meta="">
-            <time datetime="2026-05-14" itemprop="datePublished"> 14 maggio 2026 </time>
+            <time datetime="2026-05-14" itemprop="datePublished"> May 14, 2026 </time>
             <span data-post-divider="">/</span>
             <a href="/archive.html">Archive</a>
           </p>
@@ -193,13 +193,7 @@
           </figure>
         </header>
 
-        <section
-          data-post-shell=""
-          data-reveal=""
-          id="article-content"
-          role="region"
-          aria-labelledby="article-content-title"
-        >
+        <section data-post-shell="" id="article-content" role="region" aria-labelledby="article-content-title">
           <h2 id="article-content-title" data-visually-hidden="">Article content</h2>
 
           <section data-prose="" itemprop="articleBody">
@@ -214,15 +208,15 @@
             <p>dout.dev ships three archives:</p>
             <ul>
               <li>
-                <strong>By tag</strong> — <code>/tags/&lt;slug&gt;.html</code>. Topical similarity. "Show me all the
+                <strong>By tag</strong> - <code>/tags/&lt;slug&gt;.html</code>. Topical similarity. "Show me all the
                 accessibility posts."
               </li>
               <li>
-                <strong>By month</strong> — <code>/months/&lt;YYYY-MM&gt;.html</code>. Temporal browsing. "What did you
+                <strong>By month</strong> - <code>/months/&lt;YYYY-MM&gt;.html</code>. Temporal browsing. "What did you
                 write in 2026-03?"
               </li>
               <li>
-                <strong>By series</strong> — <code>/series/&lt;slug&gt;.html</code>. Intentional groupings. "Read the
+                <strong>By series</strong> - <code>/series/&lt;slug&gt;.html</code>. Intentional groupings. "Read the
                 making-of series in order."
               </li>
             </ul>
@@ -310,7 +304,7 @@
   &lt;a href="/tags/accessibility.html" rel="prev"&gt;Previous&lt;&#x2F;a&gt;
   &lt;a href="/tags/accessibility.html"&gt;1&lt;&#x2F;a&gt;
   &lt;a href="/tags/accessibility/2/" aria-current="page"&gt;2&lt;&#x2F;a&gt;
-  &lt;span aria-hidden="true"&gt;…&lt;&#x2F;span&gt;
+  &lt;span aria-hidden="true"&gt;...&lt;&#x2F;span&gt;
   &lt;a href="/tags/accessibility/5/"&gt;5&lt;&#x2F;a&gt;
   &lt;a href="/tags/accessibility/3/" rel="next"&gt;Next&lt;&#x2F;a&gt;
 &lt;&#x2F;nav&gt;</code></pre>
@@ -326,7 +320,7 @@
             <pre
               is="pix-highlighter"
               data-lang="html"
-            ><code>&lt;link rel="alternate" type="application/rss+xml" title="dout.dev — accessibility" href="/tags/accessibility.xml" /&gt;</code></pre>
+            ><code>&lt;link rel="alternate" type="application/rss+xml" title="dout.dev - accessibility" href="/tags/accessibility.xml" /&gt;</code></pre>
             <p>
               The feed is generated from the tag-filtered subset of the dataset. Same template, same pagination-less
               shape (RSS does not paginate), different inputs. About ten extra lines of generator code per archive type.
@@ -367,7 +361,7 @@
   posts.sort((a, b) =&gt; b.date.localeCompare(a.date));
 }</code></pre>
             <p>
-              That is a six-line difference in the generator. The templates do not need to know — they receive posts in
+              That is a six-line difference in the generator. The templates do not need to know - they receive posts in
               the correct order and render them.
             </p>
             <h2 id="the-takeaway" tabindex="0" data-toc-anchor="true">The takeaway</h2>
@@ -385,7 +379,7 @@
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  >Pagination with <code>rel="next"</code> and <code>rel="prev"</code> — MDN</a
+                  >Pagination with <code>rel="next"</code> and <code>rel="prev"</code> - MDN</a
                 >
               </li>
               <li>
@@ -394,7 +388,7 @@
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  ><code>aria-current</code> — ARIA Authoring Practices Guide</a
+                  ><code>aria-current</code> - ARIA Authoring Practices Guide</a
                 >
               </li>
               <li>
@@ -412,17 +406,16 @@
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  >URL design — Kyle Neath</a
+                  >URL design - Kyle Neath</a
                 >
               </li>
             </ul>
           </section>
         </section>
 
-        <aside data-post-sidebar="" data-reveal="" role="complementary" aria-labelledby="post-outline">
+        <aside data-post-sidebar="" role="complementary" aria-labelledby="post-outline">
           <nav data-post-toc="" aria-labelledby="post-outline">
-            <p data-eyebrow="" data-muted="">TOC</p>
-            <h2 id="post-outline">On this page</h2>
+            <h2 id="post-outline">TOC</h2>
             <ol data-post-toc-list="">
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#three-ways-to-slice-the-same-posts"
@@ -472,12 +465,10 @@
         </aside>
 
         <section data-comments-shell="" data-reveal="" aria-labelledby="comments-title">
-          <div data-section-heading="">
-            <div>
-              <p data-eyebrow="">Discussion</p>
-              <h2 id="comments-title">Comments live in GitHub Discussions</h2>
-            </div>
-          </div>
+          <header data-section-heading="">
+            <p data-eyebrow="">Discussion</p>
+            <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+          </header>
           <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
           <script
             src="https://giscus.app/client.js"

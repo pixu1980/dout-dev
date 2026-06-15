@@ -111,7 +111,7 @@ export function registerBuiltinFilters(renderer) {
   });
 
   // Date formatting filter
-  renderer.registerFilter('date', (value, format = 'it-IT') => {
+  renderer.registerFilter('date', (value, format = 'en-US') => {
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return value;
 
@@ -121,13 +121,13 @@ export function registerBuiltinFilters(renderer) {
       if (format.includes('%d')) options.day = 'numeric';
       if (format.includes('%B')) options.month = 'long';
       if (format.includes('%Y')) options.year = 'numeric';
-      return date.toLocaleDateString('it-IT', options);
+      return date.toLocaleDateString('en-US', options);
     }
 
     // Handle predefined formats
     switch (format) {
       case 'full':
-        return date.toLocaleDateString('it-IT', {
+        return date.toLocaleDateString('en-US', {
           weekday: 'long',
           year: 'numeric',
           month: 'long',
@@ -135,21 +135,21 @@ export function registerBuiltinFilters(renderer) {
         });
 
       case 'long':
-        return date.toLocaleDateString('it-IT', {
+        return date.toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'long',
           day: 'numeric',
         });
 
       case 'medium':
-        return date.toLocaleDateString('it-IT', {
+        return date.toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'short',
           day: 'numeric',
         });
 
       case 'short':
-        return date.toLocaleDateString('it-IT', {
+        return date.toLocaleDateString('en-US', {
           year: '2-digit',
           month: 'numeric',
           day: 'numeric',
@@ -163,18 +163,18 @@ export function registerBuiltinFilters(renderer) {
 
       case 'DD MMM YYYY': {
         const months = [
-          'Gen',
+          'Jan',
           'Feb',
           'Mar',
           'Apr',
-          'Mag',
-          'Giu',
-          'Lug',
-          'Ago',
-          'Set',
-          'Ott',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
           'Nov',
-          'Dic',
+          'Dec',
         ];
         const day = date.getDate().toString().padStart(2, '0');
         const month = months[date.getMonth()];
@@ -183,10 +183,10 @@ export function registerBuiltinFilters(renderer) {
       }
 
       case 'time':
-        return date.toLocaleTimeString('it-IT');
+        return date.toLocaleTimeString('en-US');
 
       case 'datetime':
-        return date.toLocaleString('it-IT');
+        return date.toLocaleString('en-US');
       default: {
         // If it's not a predefined format, treat as locale
         const options = {
@@ -195,12 +195,12 @@ export function registerBuiltinFilters(renderer) {
           day: 'numeric',
         };
 
-        // Try to use as locale, fallback to 'it-IT' if invalid
+        // Try to use as locale, fallback to 'en-US' if invalid
         try {
           return date.toLocaleDateString(format, options);
         } catch (_e) {
-          console.warn(`Invalid locale "${format}", falling back to 'it-IT'`);
-          return date.toLocaleDateString('it-IT', options);
+          console.warn(`Invalid locale "${format}", falling back to 'en-US'`);
+          return date.toLocaleDateString('en-US', options);
         }
       }
     }
@@ -297,12 +297,12 @@ export function registerBuiltinFilters(renderer) {
     const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
     const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
-    if (diffMins < 1) return 'proprio ora';
-    if (diffMins < 60) return `${diffMins} ${diffMins === 1 ? 'minuto' : 'minuti'} fa`;
-    if (diffHours < 24) return `${diffHours} ${diffHours === 1 ? 'ora' : 'ore'} fa`;
-    if (diffDays < 30) return `${diffDays} ${diffDays === 1 ? 'giorno' : 'giorni'} fa`;
+    if (diffMins < 1) return 'just now';
+    if (diffMins < 60) return `${diffMins} ${diffMins === 1 ? 'minute' : 'minutes'} ago`;
+    if (diffHours < 24) return `${diffHours} ${diffHours === 1 ? 'hour' : 'hours'} ago`;
+    if (diffDays < 30) return `${diffDays} ${diffDays === 1 ? 'day' : 'days'} ago`;
 
-    return date.toLocaleDateString('it-IT');
+    return date.toLocaleDateString('en-US');
   });
 
   // Additional missing filters

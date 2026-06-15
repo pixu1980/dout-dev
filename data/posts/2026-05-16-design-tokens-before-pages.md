@@ -58,9 +58,9 @@ That is a single source of truth. It does not know about pages. It does not know
 
 Raw tokens alone are not enough for a theme-able site. I use two layers:
 
-**Primitive tokens** — the raw decisions above. They never change at runtime.
+**Primitive tokens** - the raw decisions above. They never change at runtime.
 
-**Semantic tokens** — aliases that map intent to primitives. These are the ones components actually read, and these are the ones that flip between themes.
+**Semantic tokens** - aliases that map intent to primitives. These are the ones components actually read, and these are the ones that flip between themes.
 
 ```css
 :root {
@@ -121,7 +121,7 @@ Without the two-layer setup, theming a site usually means touching every compone
 
 I did not build an elaborate token pipeline. No Style Dictionary, no JSON sources compiled into multiple formats, no cross-platform tokens. This is a single-target CSS project. A flat `.css` file that declares custom properties is enough, and any tooling beyond that would be overhead without a matching benefit.
 
-If the project grew multiplatform — iOS, Android, email, a design tool plugin — I would pull in Style Dictionary. Until then, one file and discipline.
+If the project grew multiplatform - iOS, Android, email, a design tool plugin - I would pull in Style Dictionary. Until then, one file and discipline.
 
 ## The takeaway
 
@@ -129,7 +129,7 @@ If you are starting a personal site or a small design system, write the token la
 
 ## References
 
-- [CSS Custom Properties — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
+- [CSS Custom Properties - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
 - [W3C Design Tokens Community Group](https://www.w3.org/community/design-tokens/)
 - [Style Dictionary](https://amzn.github.io/style-dictionary/)
-- [Open Props](https://open-props.style/) — a useful reference for a flat token set
+- [Open Props](https://open-props.style/) - a useful reference for a flat token set

@@ -13,7 +13,7 @@ Service workers are the feature most likely to end up on a "cool feature I added
 
 - A bug in your SW can break the site for returning visitors in ways that are hard to debug and slow to fix.
 - A greedy caching strategy can serve stale content to users who would prefer fresh.
-- Registering an SW at all commits you to a lifecycle — updates, skip-waiting, claim — that requires careful thought.
+- Registering an SW at all commits you to a lifecycle - updates, skip-waiting, claim - that requires careful thought.
 
 Given all that, why ship one? For a blog: the offline page. For a PWA: the install experience and the background resilience. For dout.dev, both.
 
@@ -24,10 +24,10 @@ What I refuse to do is cache everything, intercept every request, and ship an SW
 Three jobs, in order of importance.
 
 1. **Serve an offline fallback page** when the network is unreachable and the user requests a page that is not in cache.
-2. **Cache the critical shell** — the home page, the main CSS, the primary script bundle — so the next visit is instant even on a cold network.
+2. **Cache the critical shell** - the home page, the main CSS, the primary script bundle - so the next visit is instant even on a cold network.
 3. **Cache visited posts** on a stale-while-revalidate basis, so re-reading a post is instant and returning to it offline works.
 
-Everything else — images, feeds, analytics beacons, third-party assets — is not intercepted.
+Everything else - images, feeds, analytics beacons, third-party assets - is not intercepted.
 
 ## The precache list
 
@@ -60,7 +60,7 @@ self.addEventListener('activate', (event) => {
 });
 ```
 
-`self.clients.claim()` takes control of existing tabs on the first activation, so the new SW is in charge immediately instead of after a full reload. That is a judgment call — some projects prefer to wait for a reload to avoid mid-session inconsistencies. For a read-only blog, claiming is safe.
+`self.clients.claim()` takes control of existing tabs on the first activation, so the new SW is in charge immediately instead of after a full reload. That is a judgment call - some projects prefer to wait for a reload to avoid mid-session inconsistencies. For a read-only blog, claiming is safe.
 
 ## The fetch handler, in three cases
 
@@ -85,7 +85,7 @@ self.addEventListener('fetch', (event) => {
     );
     return;
   }
-  // …
+  // ...
 });
 ```
 
@@ -115,7 +115,7 @@ Returning cached content immediately keeps the page fast; the background fetch u
 
 ### 3. Everything else
 
-Images, feeds, third-party URLs, analytics beacons — pass through to the network without touching the cache. The SW explicitly does not intercept.
+Images, feeds, third-party URLs, analytics beacons - pass through to the network without touching the cache. The SW explicitly does not intercept.
 
 ```js
 // fall through to the network
@@ -150,7 +150,7 @@ A service worker on a blog is worth the 80 lines if you ship the three jobs: off
 
 ## References
 
-- [Service Worker API — MDN](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
-- [The Service Worker Lifecycle — web.dev](https://web.dev/articles/service-worker-lifecycle)
-- [Offline cookbook — Jake Archibald](https://web.dev/articles/offline-cookbook)
-- [Workbox](https://developer.chrome.com/docs/workbox) — if you want pre-built recipes
+- [Service Worker API - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+- [The Service Worker Lifecycle - web.dev](https://web.dev/articles/service-worker-lifecycle)
+- [Offline cookbook - Jake Archibald](https://web.dev/articles/offline-cookbook)
+- [Workbox](https://developer.chrome.com/docs/workbox) - if you want pre-built recipes

@@ -14,7 +14,7 @@ A long post benefits from a sidebar outline that highlights the current section 
 Most scrollspy implementations have three accessibility problems.
 
 1. They rely on the browser's scroll event, which fires too often and updates the active state with a jitter that confuses screen readers.
-2. They make the headings focusable in ways that break keyboard expectations — `tabindex="0"` on every `h2` is a trap, not a feature.
+2. They make the headings focusable in ways that break keyboard expectations - `tabindex="0"` on every `h2` is a trap, not a feature.
 3. They announce the current section via `aria-current` that changes several times per second during scroll, which turns the outline into a screaming live region.
 
 This post is the design I landed on after tripping over all three.
@@ -152,8 +152,8 @@ A good scrollspy is three primitives the platform already gives you: IDs on head
 
 ## References
 
-- [IntersectionObserver — MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver)
-- [`aria-current` — W3C ARIA](https://www.w3.org/TR/wai-aria-1.2/#aria-current)
-- [`tabindex` — HTML Living Standard](https://html.spec.whatwg.org/multipage/interaction.html#attr-tabindex)
-- [`prefers-reduced-motion` — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
+- [IntersectionObserver - MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver)
+- [`aria-current` - W3C ARIA](https://www.w3.org/TR/wai-aria-1.2/#aria-current)
+- [`tabindex` - HTML Living Standard](https://html.spec.whatwg.org/multipage/interaction.html#attr-tabindex)
+- [`prefers-reduced-motion` - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
 - [WCAG 2.2 2.4.11 Focus Not Obscured (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html)

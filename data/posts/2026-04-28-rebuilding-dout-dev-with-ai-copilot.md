@@ -18,11 +18,11 @@ What used to be a three-month weekend project compressed into a handful of focus
 
 The roadmap is not a vague "rewrite" entry. It is a sequence of concrete units of work:
 
-- M0–M2: repository bootstrap, template engine, and the in-repo CMS.
-- M3–M7: layouts, post page, archives, universal pagination, home/about/404/playground/offline.
-- M8–M10: responsive images, theming, client-side search.
-- M11–M15: SEO and OG images at build time, feeds, progressive-enhancement micro-UX, accessibility pass, CSP.
-- M17–M19: analytics (page hits only), CI/CD with preview on PR, quality and regression gate.
+- M0-M2: repository bootstrap, template engine, and the in-repo CMS.
+- M3-M7: layouts, post page, archives, universal pagination, home/about/404/playground/offline.
+- M8-M10: responsive images, theming, client-side search.
+- M11-M15: SEO and OG images at build time, feeds, progressive-enhancement micro-UX, accessibility pass, CSP.
+- M17-M19: analytics (page hits only), CI/CD with preview on PR, quality and regression gate.
 
 Each milestone had an exit checklist. When the list was green, I moved on. That discipline is what kept the AI useful instead of making it a distraction.
 
@@ -56,6 +56,6 @@ The more honest measure is that I finished. The previous rewrites stalled around
 
 ## What actually changed
 
-Writing posts is no longer a project. The pipeline turns markdown into a pre-rendered, accessible, fast page with feeds, sitemap, OG image, and comments — in the time it takes to run one build command. That is what nineteen milestones of engineering bought.
+Writing posts is no longer a project. The pipeline turns markdown into a pre-rendered, accessible, fast page with feeds, sitemap, OG image, and comments - in the time it takes to run one build command. That is what nineteen milestones of engineering bought.
 
 The rest of this series walks through each layer: what it does, why it is shaped that way, and where the tradeoffs landed.

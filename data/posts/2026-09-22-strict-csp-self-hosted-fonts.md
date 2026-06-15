@@ -15,7 +15,7 @@ On dout.dev the policy is strict enough to block an inline `<script>` I might wr
 
 ## The current policy
 
-Emitted via HTTP headers in production. Also mirrored as a `<meta>` tag for local preview (with one adjustment — `upgrade-insecure-requests` belongs in headers, not meta).
+Emitted via HTTP headers in production. Also mirrored as a `<meta>` tag for local preview (with one adjustment - `upgrade-insecure-requests` belongs in headers, not meta).
 
 ```
 Content-Security-Policy:
@@ -82,7 +82,7 @@ The mechanics:
 
 `font-display: swap` tells the browser to use the fallback font until the custom one loads. It prevents the "invisible text flash" that `font-display: block` can cause.
 
-The `crossorigin` on the preload is required even for same-origin fonts. Without it, the browser downloads the font twice — once for the preload, once for the actual request — because the cache key differs. One attribute, a real performance win.
+The `crossorigin` on the preload is required even for same-origin fonts. Without it, the browser downloads the font twice - once for the preload, once for the actual request - because the cache key differs. One attribute, a real performance win.
 
 ## The three gotchas
 
@@ -95,7 +95,7 @@ The strict policy broke three things before it worked. Each is worth calling out
 <button onclick="doThing()">Click</button>
 ```
 
-Every inline `on*` handler in the codebase got refactored into `addEventListener` calls in a shared script. Not hard, but easy to miss — and the browser console tells you exactly where the CSP violated, so it is a mechanical cleanup.
+Every inline `on*` handler in the codebase got refactored into `addEventListener` calls in a shared script. Not hard, but easy to miss - and the browser console tells you exactly where the CSP violated, so it is a mechanical cleanup.
 
 ### 2. `data:` images are commonly blocked
 
@@ -117,7 +117,7 @@ The policy will break something in the future. A new feature, a new library, a c
 
 ```
 Content-Security-Policy:
-  …;
+  ...;
   report-to csp-endpoint;
   report-uri /csp-report;
 ```
@@ -137,8 +137,8 @@ A strict CSP on a modern static site is achievable and not exotic. The enabling 
 
 ## References
 
-- [Content Security Policy Reference — content-security-policy.com](https://content-security-policy.com/)
+- [Content Security Policy Reference - content-security-policy.com](https://content-security-policy.com/)
 - [CSP on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP)
-- [Self-hosting Google Fonts — CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face-in-css/)
-- [`font-display` — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
-- [CSP Evaluator — Google](https://csp-evaluator.withgoogle.com/)
+- [Self-hosting Google Fonts - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face-in-css/)
+- [`font-display` - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
+- [CSP Evaluator - Google](https://csp-evaluator.withgoogle.com/)

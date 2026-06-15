@@ -14,7 +14,7 @@ Three constraints that usually pull in different directions.
 
 **Readable like HTML.** A template should look like a document, not a programming language wearing angle brackets. No curly-heavy logic mixed into markup.
 
-**Expressive enough for a real blog.** Conditionals, loops, nested layouts, inline expressions — the minimum viable set has to cover these or the CMS ends up exporting special-case data structures for every page type.
+**Expressive enough for a real blog.** Conditionals, loops, nested layouts, inline expressions - the minimum viable set has to cover these or the CMS ends up exporting special-case data structures for every page type.
 
 **No `eval`.** Anything user-controlled that turns into runtime code is a liability. The expression evaluator had to parse and interpret, not delegate to the JavaScript engine.
 
@@ -24,25 +24,25 @@ The resulting engine is a few hundred lines and lives under `scripts/template-en
 
 The grammar has exactly four things.
 
-**`<extends src="...">`** — a template declares that it extends a base layout. The base layout contains named slots.
+**`<extends src="...">`** - a template declares that it extends a base layout. The base layout contains named slots.
 
-**`<block name="...">`** — inside an extending template, a block overrides the same-named slot in the base layout.
+**`<block name="...">`** - inside an extending template, a block overrides the same-named slot in the base layout.
 
-**`<include src="...">`** — inline composition. The included fragment is inserted with access to the current context. Typical uses: the pagination component, the post card, the footer.
+**`<include src="...">`** - inline composition. The included fragment is inserted with access to the current context. Typical uses: the pagination component, the post card, the footer.
 
-**Expression references** — an expression reference can use an optional filter pipeline. Filters are ordinary functions. The grammar for expressions supports member access, ternary, logical operators, and literal values.
+**Expression references** - an expression reference can use an optional filter pipeline. Filters are ordinary functions. The grammar for expressions supports member access, ternary, logical operators, and literal values.
 
 Control flow is expressed with custom elements that look like HTML: `<if condition="...">`, `<for each="item in collection">`, `<switch>` with `<case>` and `<default>`. That keeps the templates in one grammar instead of mixing angle brackets with mustache-style blocks.
 
 ## How extends and blocks work
 
-The engine parses the base layout once and indexes its blocks by name. When an extending template is rendered, the engine walks the child template, collects its `<block>` elements, and uses them to override the parent slots. Anything in the extending template outside of a block is discarded by design — it would have no stable place to land.
+The engine parses the base layout once and indexes its blocks by name. When an extending template is rendered, the engine walks the child template, collects its `<block>` elements, and uses them to override the parent slots. Anything in the extending template outside of a block is discarded by design - it would have no stable place to land.
 
 The practical upshot is that a post template reads like this:
 
 ```html
 <extends src="./layouts/base.html">
-  <block name="title">Title from context — dout.dev</block>
+  <block name="title">Title from context - dout.dev</block>
   <block name="content">
     <article>...</article>
   </block>
@@ -60,7 +60,7 @@ Slots can have default content. Blocks are required only if the parent says so.
 
 ## Expressions without eval
 
-Expressions for values like post cover dimensions or tag counts look like JavaScript. They are not — they are parsed into a small AST and walked by an interpreter.
+Expressions for values like post cover dimensions or tag counts look like JavaScript. They are not - they are parsed into a small AST and walked by an interpreter.
 
 The interpreter supports:
 

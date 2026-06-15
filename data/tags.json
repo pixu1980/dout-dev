@@ -1606,12 +1606,46 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-14-why-display-preferences-popover-exists",
+        "title": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "date": "2026-06-14T00:00:00.000Z",
+        "dateString": "Sun Jun 14 2026",
+        "path": "./src/posts/2026-06-14-why-display-preferences-popover-exists.html",
+        "url": "/posts/2026-06-14-why-display-preferences-popover-exists/",
+        "excerpt": "Accessibility is not one feature",
+        "coverImage": null,
+        "coverAlt": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "responsive-design",
+            "label": "Responsive-design",
+            "url": "./tags/responsive-design.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Accessibility",
     "slug": "accessibility",
     "url": "./tags/accessibility.html",
-    "count": 3
+    "count": 4
   },
   {
     "key": "progressive-enhancement",
@@ -2469,12 +2503,46 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-14-why-display-preferences-popover-exists",
+        "title": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "date": "2026-06-14T00:00:00.000Z",
+        "dateString": "Sun Jun 14 2026",
+        "path": "./src/posts/2026-06-14-why-display-preferences-popover-exists.html",
+        "url": "/posts/2026-06-14-why-display-preferences-popover-exists/",
+        "excerpt": "Accessibility is not one feature",
+        "coverImage": null,
+        "coverAlt": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "responsive-design",
+            "label": "Responsive-design",
+            "url": "./tags/responsive-design.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Frontend",
     "slug": "frontend",
     "url": "./tags/frontend.html",
-    "count": 3
+    "count": 4
   },
   {
     "key": "a11y",
@@ -2513,11 +2581,89 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-14-why-display-preferences-popover-exists",
+        "title": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "date": "2026-06-14T00:00:00.000Z",
+        "dateString": "Sun Jun 14 2026",
+        "path": "./src/posts/2026-06-14-why-display-preferences-popover-exists.html",
+        "url": "/posts/2026-06-14-why-display-preferences-popover-exists/",
+        "excerpt": "Accessibility is not one feature",
+        "coverImage": null,
+        "coverAlt": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "responsive-design",
+            "label": "Responsive-design",
+            "url": "./tags/responsive-design.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "A11y",
     "slug": "a11y",
     "url": "./tags/a11y.html",
+    "count": 2
+  },
+  {
+    "key": "responsive-design",
+    "label": "Responsive-design",
+    "posts": [
+      {
+        "name": "2026-06-14-why-display-preferences-popover-exists",
+        "title": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "date": "2026-06-14T00:00:00.000Z",
+        "dateString": "Sun Jun 14 2026",
+        "path": "./src/posts/2026-06-14-why-display-preferences-popover-exists.html",
+        "url": "/posts/2026-06-14-why-display-preferences-popover-exists/",
+        "excerpt": "Accessibility is not one feature",
+        "coverImage": null,
+        "coverAlt": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "responsive-design",
+            "label": "Responsive-design",
+            "url": "./tags/responsive-design.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Responsive-design",
+    "slug": "responsive-design",
+    "url": "./tags/responsive-design.html",
     "count": 1
   }
 ]

@@ -160,7 +160,7 @@
         <header data-post-hero="" data-reveal="" aria-labelledby="post-title">
           <p data-eyebrow="">Article</p>
           <p data-post-meta="">
-            <time datetime="2026-05-12" itemprop="datePublished"> 12 maggio 2026 </time>
+            <time datetime="2026-05-12" itemprop="datePublished"> May 12, 2026 </time>
             <span data-post-divider="">/</span>
             <a href="/archive.html">Archive</a>
           </p>
@@ -190,13 +190,7 @@
           </figure>
         </header>
 
-        <section
-          data-post-shell=""
-          data-reveal=""
-          id="article-content"
-          role="region"
-          aria-labelledby="article-content-title"
-        >
+        <section data-post-shell="" id="article-content" role="region" aria-labelledby="article-content-title">
           <h2 id="article-content-title" data-visually-hidden="">Article content</h2>
 
           <section data-prose="" itemprop="articleBody">
@@ -272,7 +266,7 @@
             </ul>
             <p>
               OG images are worth their own post; they are rendered server-side at build time from an SVG template and
-              rasterized with Sharp. That one decision — "generate them at build, never at runtime" — eliminated an
+              rasterized with Sharp. That one decision - "generate them at build, never at runtime" - eliminated an
               entire category of infrastructure I did not want to maintain.
             </p>
             <h2 id="why-the-pipeline-stays-small" tabindex="0" data-toc-anchor="true">Why the pipeline stays small</h2>
@@ -298,16 +292,15 @@
             <h2 id="the-template-engine" tabindex="0" data-toc-anchor="true">The template engine</h2>
             <p>
               The next post in this series goes into how <code>extends</code>, <code>block</code>, <code>include</code>,
-              and the expression grammar work without <code>eval</code> — and why the grammar is close to HTML instead
+              and the expression grammar work without <code>eval</code> - and why the grammar is close to HTML instead
               of curly-brace syntax.
             </p>
           </section>
         </section>
 
-        <aside data-post-sidebar="" data-reveal="" role="complementary" aria-labelledby="post-outline">
+        <aside data-post-sidebar="" role="complementary" aria-labelledby="post-outline">
           <nav data-post-toc="" aria-labelledby="post-outline">
-            <p data-eyebrow="" data-muted="">TOC</p>
-            <h2 id="post-outline">On this page</h2>
+            <h2 id="post-outline">TOC</h2>
             <ol data-post-toc-list="">
               <li data-post-toc-item="">
                 <a data-post-toc-link="" data-level="2" href="#the-pipeline-in-one-picture"
@@ -345,12 +338,10 @@
         </aside>
 
         <section data-comments-shell="" data-reveal="" aria-labelledby="comments-title">
-          <div data-section-heading="">
-            <div>
-              <p data-eyebrow="">Discussion</p>
-              <h2 id="comments-title">Comments live in GitHub Discussions</h2>
-            </div>
-          </div>
+          <header data-section-heading="">
+            <p data-eyebrow="">Discussion</p>
+            <h2 id="comments-title">Comments live in GitHub Discussions</h2>
+          </header>
           <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
           <script
             src="https://giscus.app/client.js"

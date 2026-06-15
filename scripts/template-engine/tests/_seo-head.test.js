@@ -55,7 +55,7 @@ describe('TemplateEngine - SEO head rendering', () => {
       posts: [],
       stats: { posts: 0, series: 0, tags: 0 },
       title: 'dout.dev',
-      topTags: [],
+      topTags: [{ name: 'CSS', slug: 'css' }],
     });
 
     assertSocialTagsStayInHead(document, [
@@ -186,7 +186,7 @@ describe('TemplateEngine - SEO head rendering', () => {
       posts: [],
       stats: { posts: 3, series: 1, tags: 2 },
       title: 'dout.dev',
-      topTags: [],
+      topTags: [{ name: 'CSS', slug: 'css' }],
     });
 
     assert.notEqual(document.querySelector('[data-hero-copy] > [data-hero-stats]'), null);
@@ -211,6 +211,17 @@ describe('TemplateEngine - SEO head rendering', () => {
       document.querySelector('[data-feature-card] [data-text-link]')?.textContent.trim(),
       'Read the post'
     );
+    assert.equal(document.querySelector('[data-hero-copy]')?.tagName, 'ARTICLE');
+    assert.equal(document.querySelector('[data-hero-panel]')?.tagName, 'ARTICLE');
+    assert.equal(document.querySelector('[data-hero-actions]')?.tagName, 'SECTION');
+    assert.equal(document.querySelector('[data-hero-topics]')?.tagName, 'SECTION');
+    assert.equal(document.querySelector('[data-hero-stats]')?.tagName, 'SECTION');
+    assert.deepEqual(
+      Array.from(document.querySelectorAll('[data-hero-stats] > *')).map((node) => node.tagName),
+      ['DL', 'DL', 'DL']
+    );
+    assert.equal(document.querySelector('[data-section-heading] > header')?.tagName, 'HEADER');
+    assert.equal(document.querySelector('[data-section-heading-actions]')?.tagName, 'SECTION');
   });
 
   test('component CSS renders CTA arrows with SVG masks and crops side media predictably', () => {

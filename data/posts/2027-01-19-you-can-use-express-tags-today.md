@@ -1,9 +1,9 @@
 ---
-title: 'You can use express tags… TODAY!'
+title: 'You can use express tags... TODAY!'
 date: '2027-01-19'
 published: false
 tags: ['HTML', 'CSS']
-description: 'You can use express tags… TODAY!'
+description: 'You can use express tags... TODAY!'
 cover_image: './images/svg-code.jpg'
 canonical_url: false
 ---

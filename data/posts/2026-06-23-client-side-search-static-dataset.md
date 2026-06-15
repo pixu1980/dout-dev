@@ -21,10 +21,10 @@ On dout.dev this shipped as a single `search.html` page that loads prebuilt JSON
 
 Every time the CMS runs, it emits four files under `src/data/`:
 
-- `posts.json` — one entry per published post: title, slug, date, description, tags, series, keywords extracted from the body;
-- `tags.json` — one entry per tag: label, slug, count;
-- `months.json` — one per month: `YYYY-MM`, count;
-- `series.json` — one per series: label, slug, count.
+- `posts.json` - one entry per published post: title, slug, date, description, tags, series, keywords extracted from the body;
+- `tags.json` - one entry per tag: label, slug, count;
+- `months.json` - one per month: `YYYY-MM`, count;
+- `series.json` - one per series: label, slug, count.
 
 A post entry looks like this:
 
@@ -33,7 +33,7 @@ A post entry looks like this:
   "slug": "2026-05-19-html-native-template-engine",
   "title": "An HTML-Native Template Engine Without eval()",
   "date": "2026-05-19",
-  "description": "How the dout.dev template engine handles extends, blocks…",
+  "description": "How the dout.dev template engine handles extends, blocks...",
   "tags": ["architecture", "vanilla-js", "frontend"],
   "series": null,
   "keywords": ["template", "engine", "extends", "blocks", "eval", "sandbox"]
@@ -110,7 +110,7 @@ That single attribute is the whole accessibility story for live-updating results
 
 ## What about fuzzy matching and typos?
 
-I punted. The corpus is small enough that users who mistype a word can correct it faster than the algorithm could guess. If the blog grows past a few hundred posts I would revisit — probably with a trigram index built at the same CMS step.
+I punted. The corpus is small enough that users who mistype a word can correct it faster than the algorithm could guess. If the blog grows past a few hundred posts I would revisit - probably with a trigram index built at the same CMS step.
 
 The honest measurement is: on a corpus the size of dout.dev, exact-term search with field weighting is indistinguishable from fancier solutions in user satisfaction, and it costs a fraction of the bytes.
 
@@ -126,8 +126,8 @@ A static site can have a good search without a service. Build the indexes when y
 
 ## References
 
-- [URLSearchParams — MDN](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
-- [History API — MDN](https://developer.mozilla.org/en-US/docs/Web/API/History_API)
-- [Live regions — MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions)
-- [Lunr](https://lunrjs.com/) — if you outgrow the handwritten ranker
-- [Pagefind](https://pagefind.app/) — a solid static-search option at the "many thousands of pages" scale
+- [URLSearchParams - MDN](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
+- [History API - MDN](https://developer.mozilla.org/en-US/docs/Web/API/History_API)
+- [Live regions - MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions)
+- [Lunr](https://lunrjs.com/) - if you outgrow the handwritten ranker
+- [Pagefind](https://pagefind.app/) - a solid static-search option at the "many thousands of pages" scale

@@ -66,7 +66,7 @@ Asking for simpler versions is the single highest-leverage feedback I give the c
 - **Invented APIs.** Made-up flags, nonexistent methods. Less common on well-known libraries, more common on the boundary of the repo's own code.
 - **Over-engineered error handling.** Defensive code for cases that cannot occur. I sent the diff back with "trust the caller" and the second version was always shorter.
 - **Task-describing comments.** Comments like `// Fetch the user data from the server` above `fetchUser()`. Useless. I strip them on sight.
-- **Unnecessary abstractions.** "Let me extract this helper" — usually no, three lines inline is better than an abstraction with one caller.
+- **Unnecessary abstractions.** "Let me extract this helper" - usually no, three lines inline is better than an abstraction with one caller.
 
 None of these are deal-breakers. They are the shape of what the copilot tends to produce when under-specified.
 
@@ -74,7 +74,7 @@ None of these are deal-breakers. They are the shape of what the copilot tends to
 
 Each of the 19 milestones had a short document with the exit checklist. When the checklist was green, the milestone closed and I moved on. That structure, more than anything, kept the overall scope honest.
 
-The alternative — a single rolling backlog with no exit criteria — is how personal projects stall. Without milestones I would have still been "polishing" after three months and not shipped the blog.
+The alternative - a single rolling backlog with no exit criteria - is how personal projects stall. Without milestones I would have still been "polishing" after three months and not shipped the blog.
 
 ## What the copilot taught me about my own work
 
@@ -82,7 +82,7 @@ Two things I will keep after this project.
 
 **Most of my hesitation is not about the hard choice.** It is about the tedium of implementing the choice. Delegating the tedium compresses the space between "I know what to do" and "it is done." That is not laziness; it is leverage.
 
-**I am more opinionated than I thought.** When the copilot proposed something generic, I rejected it because it did not match the project's taste. I had to learn to articulate that taste explicitly — in prompts, in code comments, in README rules. Writing those articulations made the project more coherent.
+**I am more opinionated than I thought.** When the copilot proposed something generic, I rejected it because it did not match the project's taste. I had to learn to articulate that taste explicitly - in prompts, in code comments, in README rules. Writing those articulations made the project more coherent.
 
 ## The takeaway
 
@@ -91,4 +91,4 @@ Vibe coding done well is not "let the AI drive." It is "drive harder, with bette
 ## References
 
 - [Claude Code documentation](https://docs.claude.com/claude-code)
-- [Pair programming — Martin Fowler](https://martinfowler.com/articles/on-pair-programming.html)
+- [Pair programming - Martin Fowler](https://martinfowler.com/articles/on-pair-programming.html)

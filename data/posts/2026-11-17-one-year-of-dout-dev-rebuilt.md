@@ -21,7 +21,7 @@ Not growth hacks. Just the honest counters.
 
 **Total code shipped.** Approximately 8,000 lines of JavaScript (CMS, template engine, scripts), 3,500 lines of CSS, 1,200 lines of HTML templates. Smaller than I expected. The design system and the template engine are both under 1,000 lines each.
 
-**Bundle size on a post page.** HTML, about 30KB gzipped. CSS, about 8KB gzipped. JS, about 10KB gzipped. Fonts, about 25KB gzipped. Total critical-path bytes on a cold load: roughly 75KB. That is the Web-Almanac 10th percentile — a fraction of what most sites ship.
+**Bundle size on a post page.** HTML, about 30KB gzipped. CSS, about 8KB gzipped. JS, about 10KB gzipped. Fonts, about 25KB gzipped. Total critical-path bytes on a cold load: roughly 75KB. That is the Web-Almanac 10th percentile - a fraction of what most sites ship.
 
 **Lighthouse scores in the lab.** Performance 99, Accessibility 100, Best Practices 100, SEO 100. These are lab scores, not field, but they track closely for a simple static site.
 
@@ -37,11 +37,11 @@ Not growth hacks. Just the honest counters.
 
 Six things I got wrong.
 
-**I underestimated the pagination work.** "A pagination component should take a day." It took a week. URL shape, a11y, `rel="prev/next"`, ellipses, multi-archive support, server and client parity — each of those is an evening's work on its own. If I did it again, I would budget a week upfront.
+**I underestimated the pagination work.** "A pagination component should take a day." It took a week. URL shape, a11y, `rel="prev/next"`, ellipses, multi-archive support, server and client parity - each of those is an evening's work on its own. If I did it again, I would budget a week upfront.
 
 **I shipped the first OG image renderer without font installation.** For a week, every OG image had a system-font fallback that did not match the design. The fix was a one-line YAML step. The mistake was not testing the OG output in CI.
 
-**I forgot to test the search page without JavaScript the first time.** The page loaded but showed "Loading…" forever with JS disabled. The fix was a static fallback in the noscript path. The mistake was an implicit assumption that JS was always available.
+**I forgot to test the search page without JavaScript the first time.** The page loaded but showed "Loading..." forever with JS disabled. The fix was a static fallback in the noscript path. The mistake was an implicit assumption that JS was always available.
 
 **I added `aria-label` to things that did not need it.** Some of those labels made screen reader output worse. The rule I learned afterward: if visible text is present, do not add a redundant label. The cleanup was mechanical.
 
@@ -53,7 +53,7 @@ Six things I got wrong.
 
 Five decisions I would make again without hesitation.
 
-**Tokens before pages.** The design system was the best single time investment in the whole project. Every subsequent change — theming, accent color, contrast improvements — compounded on that foundation.
+**Tokens before pages.** The design system was the best single time investment in the whole project. Every subsequent change - theming, accent color, contrast improvements - compounded on that foundation.
 
 **Custom template engine instead of a library.** I expected to regret this. I do not. The engine is under 1,000 lines, fits in my head, and does exactly what the site needs. It never wakes me up at night.
 
@@ -71,7 +71,7 @@ Given everything I know now, the list of changes is short.
 
 **Use nonces in the CSP from day one.** The `'unsafe-inline'` concessions in the current policy are two inline scripts. Moving them to nonce-based CSP is a small build-time change I keep deferring.
 
-**Write the editorial plan before the rewrite, not after.** Knowing from the start that the rewrite would be followed by 30 posts would have shaped a few decisions — for example, the archive design would have been more opinionated, and the RSS feeds would have been structured for the series pattern sooner.
+**Write the editorial plan before the rewrite, not after.** Knowing from the start that the rewrite would be followed by 30 posts would have shaped a few decisions - for example, the archive design would have been more opinionated, and the RSS feeds would have been structured for the series pattern sooner.
 
 **Do the quality gate wiring in week one.** Covered above. CI from the start is the correct default, even on a personal project.
 
@@ -79,7 +79,7 @@ Given everything I know now, the list of changes is short.
 
 The vanilla-first stack, the design system, the template engine, the archives model, the URL shape, the CSP, the progressive enhancement contract, the build-time OG images, the accessible pagination, the service worker. All of these survive unchanged.
 
-The blog, the thing this was all for, also survives — and now has 30 posts on it.
+The blog, the thing this was all for, also survives - and now has 30 posts on it.
 
 ## The last word
 
@@ -89,7 +89,7 @@ Thanks for reading. The feeds are in the head of every page. The comments are on
 
 ## References
 
-- [Web Almanac — HTTP Archive](https://almanac.httparchive.org/) — for industry-baseline bundle sizes
+- [Web Almanac - HTTP Archive](https://almanac.httparchive.org/) - for industry-baseline bundle sizes
 - [Lighthouse documentation](https://developer.chrome.com/docs/lighthouse/overview)
 - [Chrome User Experience Report](https://developer.chrome.com/docs/crux)
-- [The nature of engineering — Will Larson](https://lethain.com/)
+- [The nature of engineering - Will Larson](https://lethain.com/)

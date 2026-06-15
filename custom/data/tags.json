@@ -11,10 +11,8 @@
         "path": "./custom/posts/2026-04-04-how-i-built-dout-dev.html",
         "url": "/posts/2026-04-04-how-i-built-dout-dev/",
         "excerpt": "What the stack is, exactly",
-        "coverImage": "../assets/images/how-dout-dev-is-built-cover.jpg",
-        "coverWidth": 1600,
-        "coverHeight": 900,
-        "coverAlt": "Blue cover artwork titled How This Blog Is Built, used for the dout.dev making-of article",
+        "coverImage": null,
+        "coverAlt": "How I Built dout.dev",
         "tags": [
           {
             "key": "making-of",
@@ -542,10 +540,8 @@
         "path": "./custom/posts/2026-04-04-how-i-built-dout-dev.html",
         "url": "/posts/2026-04-04-how-i-built-dout-dev/",
         "excerpt": "What the stack is, exactly",
-        "coverImage": "../assets/images/how-dout-dev-is-built-cover.jpg",
-        "coverWidth": 1600,
-        "coverHeight": 900,
-        "coverAlt": "Blue cover artwork titled How This Blog Is Built, used for the dout.dev making-of article",
+        "coverImage": null,
+        "coverAlt": "How I Built dout.dev",
         "tags": [
           {
             "key": "making-of",
@@ -661,12 +657,41 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-13-how-pixhighlighter-is-built",
+        "title": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
+        "date": "2026-06-13T00:00:00.000Z",
+        "dateString": "Sat Jun 13 2026",
+        "path": "./custom/posts/2026-06-13-how-pixhighlighter-is-built.html",
+        "url": "/posts/2026-06-13-how-pixhighlighter-is-built/",
+        "excerpt": "The contract stays plain",
+        "coverImage": null,
+        "coverAlt": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Architecture",
     "slug": "architecture",
     "url": "./tags/architecture.html",
-    "count": 4
+    "count": 5
   },
   {
     "key": "static-site",
@@ -680,10 +705,8 @@
         "path": "./custom/posts/2026-04-04-how-i-built-dout-dev.html",
         "url": "/posts/2026-04-04-how-i-built-dout-dev/",
         "excerpt": "What the stack is, exactly",
-        "coverImage": "../assets/images/how-dout-dev-is-built-cover.jpg",
-        "coverWidth": 1600,
-        "coverHeight": 900,
-        "coverAlt": "Blue cover artwork titled How This Blog Is Built, used for the dout.dev making-of article",
+        "coverImage": null,
+        "coverAlt": "How I Built dout.dev",
         "tags": [
           {
             "key": "making-of",
@@ -1247,12 +1270,46 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-09-wcag-22-aa-without-aria-spam",
+        "title": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
+        "date": "2026-06-09T00:00:00.000Z",
+        "dateString": "Tue Jun 09 2026",
+        "path": "./custom/posts/2026-06-09-wcag-22-aa-without-aria-spam.html",
+        "url": "/posts/2026-06-09-wcag-22-aa-without-aria-spam/",
+        "excerpt": "The unpopular opinion",
+        "coverImage": null,
+        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "html",
+            "label": "Html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Html",
     "slug": "html",
     "url": "./tags/html.html",
-    "count": 2
+    "count": 3
   },
   {
     "key": "archives",
@@ -1515,12 +1572,80 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-09-wcag-22-aa-without-aria-spam",
+        "title": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
+        "date": "2026-06-09T00:00:00.000Z",
+        "dateString": "Tue Jun 09 2026",
+        "path": "./custom/posts/2026-06-09-wcag-22-aa-without-aria-spam.html",
+        "url": "/posts/2026-06-09-wcag-22-aa-without-aria-spam/",
+        "excerpt": "The unpopular opinion",
+        "coverImage": null,
+        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "html",
+            "label": "Html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-06-14-why-display-preferences-popover-exists",
+        "title": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "date": "2026-06-14T00:00:00.000Z",
+        "dateString": "Sun Jun 14 2026",
+        "path": "./custom/posts/2026-06-14-why-display-preferences-popover-exists.html",
+        "url": "/posts/2026-06-14-why-display-preferences-popover-exists/",
+        "excerpt": "Accessibility is not one feature",
+        "coverImage": null,
+        "coverAlt": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "responsive-design",
+            "label": "Responsive-design",
+            "url": "./tags/responsive-design.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Accessibility",
     "slug": "accessibility",
     "url": "./tags/accessibility.html",
-    "count": 2
+    "count": 4
   },
   {
     "key": "progressive-enhancement",
@@ -1603,12 +1728,70 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-02-modern-css-is-enough",
+        "title": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
+        "date": "2026-06-02T00:00:00.000Z",
+        "dateString": "Tue Jun 02 2026",
+        "path": "./custom/posts/2026-06-02-modern-css-is-enough.html",
+        "url": "/posts/2026-06-02-modern-css-is-enough/",
+        "excerpt": "The short version",
+        "coverImage": null,
+        "coverAlt": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
+        "tags": [
+          {
+            "key": "css",
+            "label": "Css",
+            "url": "./tags/css.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-06-13-how-pixhighlighter-is-built",
+        "title": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
+        "date": "2026-06-13T00:00:00.000Z",
+        "dateString": "Sat Jun 13 2026",
+        "path": "./custom/posts/2026-06-13-how-pixhighlighter-is-built.html",
+        "url": "/posts/2026-06-13-how-pixhighlighter-is-built/",
+        "excerpt": "The contract stays plain",
+        "coverImage": null,
+        "coverAlt": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Vanilla-js",
     "slug": "vanilla-js",
     "url": "./tags/vanilla-js.html",
-    "count": 1
+    "count": 3
   },
   {
     "key": "design-systems",
@@ -1681,12 +1864,41 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-02-modern-css-is-enough",
+        "title": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
+        "date": "2026-06-02T00:00:00.000Z",
+        "dateString": "Tue Jun 02 2026",
+        "path": "./custom/posts/2026-06-02-modern-css-is-enough.html",
+        "url": "/posts/2026-06-02-modern-css-is-enough/",
+        "excerpt": "The short version",
+        "coverImage": null,
+        "coverAlt": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
+        "tags": [
+          {
+            "key": "css",
+            "label": "Css",
+            "url": "./tags/css.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Css",
     "slug": "css",
     "url": "./tags/css.html",
-    "count": 1
+    "count": 2
   },
   {
     "key": "build-assets",
@@ -2194,6 +2406,264 @@
     "name": "Github-pages",
     "slug": "github-pages",
     "url": "./tags/github-pages.html",
+    "count": 1
+  },
+  {
+    "key": "frontend",
+    "label": "Frontend",
+    "posts": [
+      {
+        "name": "2026-06-02-modern-css-is-enough",
+        "title": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
+        "date": "2026-06-02T00:00:00.000Z",
+        "dateString": "Tue Jun 02 2026",
+        "path": "./custom/posts/2026-06-02-modern-css-is-enough.html",
+        "url": "/posts/2026-06-02-modern-css-is-enough/",
+        "excerpt": "The short version",
+        "coverImage": null,
+        "coverAlt": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
+        "tags": [
+          {
+            "key": "css",
+            "label": "Css",
+            "url": "./tags/css.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-06-09-wcag-22-aa-without-aria-spam",
+        "title": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
+        "date": "2026-06-09T00:00:00.000Z",
+        "dateString": "Tue Jun 09 2026",
+        "path": "./custom/posts/2026-06-09-wcag-22-aa-without-aria-spam.html",
+        "url": "/posts/2026-06-09-wcag-22-aa-without-aria-spam/",
+        "excerpt": "The unpopular opinion",
+        "coverImage": null,
+        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "html",
+            "label": "Html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-06-13-how-pixhighlighter-is-built",
+        "title": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
+        "date": "2026-06-13T00:00:00.000Z",
+        "dateString": "Sat Jun 13 2026",
+        "path": "./custom/posts/2026-06-13-how-pixhighlighter-is-built.html",
+        "url": "/posts/2026-06-13-how-pixhighlighter-is-built/",
+        "excerpt": "The contract stays plain",
+        "coverImage": null,
+        "coverAlt": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-06-14-why-display-preferences-popover-exists",
+        "title": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "date": "2026-06-14T00:00:00.000Z",
+        "dateString": "Sun Jun 14 2026",
+        "path": "./custom/posts/2026-06-14-why-display-preferences-popover-exists.html",
+        "url": "/posts/2026-06-14-why-display-preferences-popover-exists/",
+        "excerpt": "Accessibility is not one feature",
+        "coverImage": null,
+        "coverAlt": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "responsive-design",
+            "label": "Responsive-design",
+            "url": "./tags/responsive-design.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Frontend",
+    "slug": "frontend",
+    "url": "./tags/frontend.html",
+    "count": 4
+  },
+  {
+    "key": "a11y",
+    "label": "A11y",
+    "posts": [
+      {
+        "name": "2026-06-09-wcag-22-aa-without-aria-spam",
+        "title": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
+        "date": "2026-06-09T00:00:00.000Z",
+        "dateString": "Tue Jun 09 2026",
+        "path": "./custom/posts/2026-06-09-wcag-22-aa-without-aria-spam.html",
+        "url": "/posts/2026-06-09-wcag-22-aa-without-aria-spam/",
+        "excerpt": "The unpopular opinion",
+        "coverImage": null,
+        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "html",
+            "label": "Html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-06-14-why-display-preferences-popover-exists",
+        "title": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "date": "2026-06-14T00:00:00.000Z",
+        "dateString": "Sun Jun 14 2026",
+        "path": "./custom/posts/2026-06-14-why-display-preferences-popover-exists.html",
+        "url": "/posts/2026-06-14-why-display-preferences-popover-exists/",
+        "excerpt": "Accessibility is not one feature",
+        "coverImage": null,
+        "coverAlt": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "responsive-design",
+            "label": "Responsive-design",
+            "url": "./tags/responsive-design.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "A11y",
+    "slug": "a11y",
+    "url": "./tags/a11y.html",
+    "count": 2
+  },
+  {
+    "key": "responsive-design",
+    "label": "Responsive-design",
+    "posts": [
+      {
+        "name": "2026-06-14-why-display-preferences-popover-exists",
+        "title": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "date": "2026-06-14T00:00:00.000Z",
+        "dateString": "Sun Jun 14 2026",
+        "path": "./custom/posts/2026-06-14-why-display-preferences-popover-exists.html",
+        "url": "/posts/2026-06-14-why-display-preferences-popover-exists/",
+        "excerpt": "Accessibility is not one feature",
+        "coverImage": null,
+        "coverAlt": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "Accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "a11y",
+            "label": "A11y",
+            "url": "./tags/a11y.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "responsive-design",
+            "label": "Responsive-design",
+            "url": "./tags/responsive-design.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Responsive-design",
+    "slug": "responsive-design",
+    "url": "./tags/responsive-design.html",
     "count": 1
   }
 ]

@@ -456,6 +456,8 @@ Oftentimes, to accomplish the style you want you may want to structure your HTML
 
 1. Keep HTML semantics and use CSS for styling
 
+  Prefer flex or grid with `gap` for internal component spacing before adding sibling margins.
+
    In general, let the styling to CSS and let your HTML structured in a way that makes sense semantically.
 
    There are exceptions to this rule but always ensure that the adopted structure does not go against any HTML semantic rules.

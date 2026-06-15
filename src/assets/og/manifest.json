@@ -242,6 +242,15 @@
       "fallbackPngPath": "/assets/og/posts/2026-06-13-how-pixhighlighter-is-built-card.png",
       "fallbackSvgPath": "/assets/og/posts/2026-06-13-how-pixhighlighter-is-built-card.svg"
     },
+    "post:2026-06-14-why-display-preferences-popover-exists": {
+      "kind": "post",
+      "slug": "2026-06-14-why-display-preferences-popover-exists",
+      "hash": "3e61b46a2e145b6fc6f24f5c75518c300c79609c",
+      "pngPath": "/assets/og/posts/2026-06-14-why-display-preferences-popover-exists.png",
+      "svgPath": "/assets/og/posts/2026-06-14-why-display-preferences-popover-exists.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-14-why-display-preferences-popover-exists-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-14-why-display-preferences-popover-exists-card.svg"
+    },
     "tag:making-of": {
       "kind": "tag",
       "slug": "making-of",
@@ -437,6 +446,13 @@
       "hash": "116350e90ce9f3ded1550525c5e56a62da0b3b14",
       "pngPath": "/assets/og/tags/a11y.png",
       "svgPath": "/assets/og/tags/a11y.svg"
+    },
+    "tag:responsive-design": {
+      "kind": "tag",
+      "slug": "responsive-design",
+      "hash": "b0e14af41110ff5dce880ff3b9932bb392531446",
+      "pngPath": "/assets/og/tags/responsive-design.png",
+      "svgPath": "/assets/og/tags/responsive-design.svg"
     },
     "month:2026-04": {
       "kind": "month",

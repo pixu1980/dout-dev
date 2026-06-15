@@ -46,7 +46,7 @@ The contract is enforced at markup time. Every interactive feature is layered on
 </form>
 ```
 
-With JS disabled, submitting the form loads `/search.html?q=whatever`. The server-rendered search page parses the URL and displays results from the prebuilt JSON indexes — no JS needed for that match, because the JSON is small enough to be parsed server-side at build.
+With JS disabled, submitting the form loads `/search.html?q=whatever`. The server-rendered search page parses the URL and displays results from the prebuilt JSON indexes - no JS needed for that match, because the JSON is small enough to be parsed server-side at build.
 
 Wait, a static blog has no server. Right. The "server" in this case is the CMS, which at build time generates `/search.html` as a shell that reads URL params on page load. Without JS, the form submits, the page reloads with the URL, and the page itself shows a placeholder: "Enable JavaScript for live search, or browse by tag or month below." That placeholder links to the archive pages, which are fully static.
 
@@ -60,7 +60,7 @@ That is the graceful-degradation path for search. It is not as good as the JS pa
 
 The button is `hidden` in the initial markup. Only the JS that actually implements the theme switch removes the `hidden` attribute. Readers without JS never see a button that does nothing.
 
-This is a general pattern: any UI element that requires JS to function is hidden by default and revealed by the enhancement script. The opposite pattern — show the button, have it do nothing when clicked — is worse, because it breaks the "visible things work" contract that users assume.
+This is a general pattern: any UI element that requires JS to function is hidden by default and revealed by the enhancement script. The opposite pattern - show the button, have it do nothing when clicked - is worse, because it breaks the "visible things work" contract that users assume.
 
 ### Scrollspy
 
@@ -70,7 +70,7 @@ The outline navigation is a normal list of jump-links. Without JS, clicking a li
 
 Fenced code blocks render as plain `<pre><code>` in the markdown output, upgraded by `<pre is="pix-highlighter">` when JS runs. Without JS, the code is monospaced and unhighlighted. Readable. Not pretty.
 
-The copy button is added by the custom element's `connectedCallback` — no element in the pre-JS DOM, nothing to fail.
+The copy button is added by the custom element's `connectedCallback` - no element in the pre-JS DOM, nothing to fail.
 
 ## How the build verifies it
 
@@ -115,11 +115,11 @@ That is the difference between "we care about progressive enhancement" and "the 
 
 ## The takeaway
 
-Progressive enhancement is a testable contract, not a stance. Pick a clear line — "the core experience works without JS" — and let the build verify it. The result is a more resilient site and a simpler mental model. The enhancements can then be as ambitious as you want, because you know what they are enhancing.
+Progressive enhancement is a testable contract, not a stance. Pick a clear line - "the core experience works without JS" - and let the build verify it. The result is a more resilient site and a simpler mental model. The enhancements can then be as ambitious as you want, because you know what they are enhancing.
 
 ## References
 
-- [Understanding progressive enhancement — A List Apart](https://alistapart.com/article/understandingprogressiveenhancement/)
-- [Resilient Web Design — Jeremy Keith](https://resilientwebdesign.com/)
-- [Playwright](https://playwright.dev/) — for headless no-JS verification
-- [`<noscript>` — MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript)
+- [Understanding progressive enhancement - A List Apart](https://alistapart.com/article/understandingprogressiveenhancement/)
+- [Resilient Web Design - Jeremy Keith](https://resilientwebdesign.com/)
+- [Playwright](https://playwright.dev/) - for headless no-JS verification
+- [`<noscript>` - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript)

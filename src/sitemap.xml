@@ -97,6 +97,10 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://dout.dev/posts/2026-06-14-why-display-preferences-popover-exists.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://dout.dev/tags/making-of.html</loc>
     <changefreq>weekly</changefreq>
   </url>
@@ -206,6 +210,10 @@
   </url>
   <url>
     <loc>https://dout.dev/tags/a11y.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/tags/responsive-design.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>

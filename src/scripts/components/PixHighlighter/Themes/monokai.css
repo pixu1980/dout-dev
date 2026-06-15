@@ -1,0 +1,32 @@
+@layer components {
+  :root[data-pix-highlighter-theme='monokai'] pre[is='pix-highlighter'] {
+    --dout--pix-bg: #272822;
+    --dout--pix-fg: #f8f8f2;
+    --dout--pix-kw: #f92672;
+    --dout--pix-str: #e6db74;
+    --dout--pix-num: #ae81ff;
+    --dout--pix-com: #88846f;
+    --dout--pix-id: #f8f8f2;
+    --dout--pix-op: #f92672;
+    --dout--pix-tag: #f92672;
+    --dout--pix-attr: #a6e22e;
+    --dout--pix-key: #66d9ef;
+    --dout--pix-var: #fd971f;
+    --dout--pix-mac: #fd5ff0;
+    --dout--pix-pp: #66d9ef;
+    --dout--pix-prop: #a6e22e;
+    --dout--pix-type: #66d9ef;
+    --dout--pix-mdh: #a6e22e;
+    --dout--pix-mde: #f92672;
+    --dout--pix-mds: #e6db74;
+    --dout--pix-mdc: #88846f;
+    --dout--pix-mdl: #66d9ef;
+    --dout--pix-mdbq: #b8b8b2;
+    --dout--pix-mdli: #fd971f;
+    --dout--pix-mdhr: #5f5a4b;
+    --dout--pix-mdimg: #ae81ff;
+    --dout--pix-tab-size: 2;
+    --dout--pix-line-height: 1.55;
+    --dout--pix-text-shadow: none;
+  }
+}

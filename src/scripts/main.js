@@ -3,17 +3,16 @@
  * Core functionality and progressive enhancement
  */
 
-import { initLazyImages } from './lazy-images.js';
-import { initArticleNavigation } from './article-navigation.js';
-import { initExternalLinks } from './external-links.js';
-import { initPostFeedLayout } from './post-feed-layout.js';
-import { initPostFeedLoadMore } from './post-feed-load-more.js';
-import { initAnalyticsDashboard, trackPageView } from './analytics.js';
-import './components/ColorSchemeSelector/ColorSchemeSelector.js';
-import './components/AccentColorSelector/AccentColorSelector.js';
-import './components/DisplayPreferencesPopover/DisplayPreferencesPopover.js';
-import './components/PostFeedLayoutSelector/PostFeedLayoutSelector.js';
-import { enhancePixHighlighters } from './components/PixHighlighter/PixHighlighter.js';
+import {
+  initAnalyticsDashboard,
+  initArticleNavigation,
+  initExternalLinks,
+  initLazyImages,
+  initPostFeedLayout,
+  initPostFeedLoadMore,
+  trackPageView,
+} from './core/index.js';
+import { enhancePixHighlighters } from './components/index.js';
 
 const MANAGED_HEAD_SELECTOR = [
   'meta[name="description"]',

@@ -34,7 +34,7 @@ HTML5 already gives you landmarks. A screen reader or a "Rotor" in VoiceOver rea
   <main id="main">
     <article>
       <h1>Post title</h1>
-      <p>…</p>
+      <p>...</p>
     </article>
   </main>
 
@@ -48,7 +48,7 @@ No `role="banner"`, no `role="main"`, no `role="navigation"`. Each element annou
 
 ## Heading order is a real check, not a nicety
 
-Heading order is one of the WCAG 2.2 success criteria most sites fail silently. The rule: each page has one `h1`, and subsequent headings go down the tree in order — `h2`, then `h3`, never skipping.
+Heading order is one of the WCAG 2.2 success criteria most sites fail silently. The rule: each page has one `h1`, and subsequent headings go down the tree in order - `h2`, then `h3`, never skipping.
 
 On dout.dev, the post layout enforces it. The post title is always `h1`. Section headings in the markdown body start at `h2`. The post generator validates the tree at build time; if a post starts with `###`, the build fails.
 
@@ -125,7 +125,7 @@ All of these are cases where a sighted user has a visual cue that non-sighted us
 
 - `aria-label` on an icon that already has accessible text nearby.
 - `role="button"` on a `<button>`.
-- `aria-hidden="true"` on decorative icons that were inside a labeled parent — `<span aria-hidden="true">` on a pure SVG icon is fine; on a structural element it is a bug.
+- `aria-hidden="true"` on decorative icons that were inside a labeled parent - `<span aria-hidden="true">` on a pure SVG icon is fine; on a structural element it is a bug.
 
 ARIA without a reason is noise for screen readers and maintenance for you.
 
@@ -135,8 +135,8 @@ WCAG 2.2 AA is not a ceiling. It is a baseline, and most of it is achievable wit
 
 ## References
 
-- [WCAG 2.2 at a Glance — W3C](https://www.w3.org/WAI/standards-guidelines/wcag/glance/)
-- [Understanding WCAG 2.2 — W3C](https://www.w3.org/WAI/WCAG22/Understanding/)
-- [Using ARIA — W3C](https://www.w3.org/TR/using-aria/)
-- [`:focus-visible` — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
+- [WCAG 2.2 at a Glance - W3C](https://www.w3.org/WAI/standards-guidelines/wcag/glance/)
+- [Understanding WCAG 2.2 - W3C](https://www.w3.org/WAI/WCAG22/Understanding/)
+- [Using ARIA - W3C](https://www.w3.org/TR/using-aria/)
+- [`:focus-visible` - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
 - [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/)

@@ -145,9 +145,9 @@ If you last wrote CSS seriously three years ago, the landscape is different. Con
 
 ## References
 
-- [Container queries — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_container_queries)
-- [CSS nesting — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting)
-- [`:has()` selector — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:has)
-- [Cascade layers — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer)
-- [Logical properties and values — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values)
-- [Can I use](https://caniuse.com/) — check baseline before you ship
+- [Container queries - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_container_queries)
+- [CSS nesting - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting)
+- [`:has()` selector - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:has)
+- [Cascade layers - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer)
+- [Logical properties and values - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values)
+- [Can I use](https://caniuse.com/) - check baseline before you ship

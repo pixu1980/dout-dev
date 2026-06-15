@@ -9,13 +9,13 @@ canonical_url: false
 
 ## The claim
 
-An accessibility audit is not a three-week project. For a static blog of reasonable size, a complete manual audit — automated scan plus keyboard-only pass plus screen reader pass — fits in one afternoon. This post is the protocol I use.
+An accessibility audit is not a three-week project. For a static blog of reasonable size, a complete manual audit - automated scan plus keyboard-only pass plus screen reader pass - fits in one afternoon. This post is the protocol I use.
 
 Three passes. Each catches a different class of problem. None replaces the others.
 
 ## Pass 1: axe, in the browser
 
-Axe-core is the de facto standard for automated a11y checks. It catches mechanical violations — missing labels, contrast failures, heading order skips, ARIA misuse, missing alt text, keyboard traps in known patterns. What it does not catch is semantic correctness and interaction-level issues.
+Axe-core is the de facto standard for automated a11y checks. It catches mechanical violations - missing labels, contrast failures, heading order skips, ARIA misuse, missing alt text, keyboard traps in known patterns. What it does not catch is semantic correctness and interaction-level issues.
 
 Time budget: 30 minutes for a small site.
 
@@ -56,7 +56,7 @@ The protocol:
 
 1. **Tab through the home page.** Every interactive element should receive a visible focus ring. The ring should never be invisible or cut off.
 2. **Activate each interactive element with Enter or Space.** Buttons work with Space; links with Enter; both should do the right thing.
-3. **Navigate to a post.** Scroll with arrow keys or Page Down. Tab through the outline. Click an outline link — focus should land inside the section.
+3. **Navigate to a post.** Scroll with arrow keys or Page Down. Tab through the outline. Click an outline link - focus should land inside the section.
 4. **Open the theme menu (or any modal).** Tab cycles within it. Escape closes it. Focus returns to the trigger.
 5. **Submit the search form.** Results render. Tab moves into the results list.
 
@@ -79,16 +79,16 @@ I use VoiceOver on macOS because it is built in and most of my readers on Apple 
 
 Basic VoiceOver commands:
 
-- `Cmd+F5` — toggle VoiceOver.
-- `Ctrl+Option+arrow` — move through content.
-- `Ctrl+Option+U` — open the Rotor, which navigates by headings, landmarks, links, etc.
-- `Ctrl+Option+Space` — activate the current element.
+- `Cmd+F5` - toggle VoiceOver.
+- `Ctrl+Option+arrow` - move through content.
+- `Ctrl+Option+U` - open the Rotor, which navigates by headings, landmarks, links, etc.
+- `Ctrl+Option+Space` - activate the current element.
 
 The audit protocol:
 
 1. **Land on the home page with VO on.** The page title is announced. The main nav is a landmark. The article list is readable.
 2. **Open the Rotor with `Ctrl+Option+U` and navigate by landmarks.** You should hear `banner`, `main`, `contentinfo`. No orphan landmarks. No missing landmarks.
-3. **Navigate by headings.** The heading tree should be correct — one `h1`, descending properly. If you hear a skip ("h2 … h4"), that is a violation.
+3. **Navigate by headings.** The heading tree should be correct - one `h1`, descending properly. If you hear a skip ("h2 ... h4"), that is a violation.
 4. **Open a post.** The title is read. The date is read (or skipped if decorative). The article content is navigable.
 5. **Interact with the outline.** Activating a link moves focus, and VO should announce the heading it landed on.
 6. **Open the theme menu.** VO announces "dialog" on open, the first focusable element, and the title.
@@ -107,7 +107,7 @@ These are the findings that automated tools cannot produce. They are also the on
 I keep a simple markdown log per audit. Date, scope, findings, status.
 
 ```markdown
-# A11y audit — 2026-11-10
+# A11y audit - 2026-11-10
 
 ## Scope
 
@@ -141,7 +141,7 @@ Accessibility auditing on a static blog is bounded work with clear protocols. Ax
 
 - [axe-core](https://github.com/dequelabs/axe-core)
 - [WebAIM: Screen reader user survey](https://webaim.org/projects/screenreadersurvey/)
-- [VoiceOver for macOS — Apple docs](https://support.apple.com/guide/voiceover/welcome/mac)
+- [VoiceOver for macOS - Apple docs](https://support.apple.com/guide/voiceover/welcome/mac)
 - [NVDA screen reader](https://www.nvaccess.org/)
 - [WCAG 2.2 Quick Reference](https://www.w3.org/WAI/WCAG22/quickref/)
 - [A11y Project checklist](https://www.a11yproject.com/checklist/)

@@ -42,7 +42,7 @@ The image that is going to be your Largest Contentful Paint should load eagerly.
 <img src="hero.jpg" alt="Hero image" width="1200" height="800" loading="eager" fetchpriority="high" />
 ```
 
-`fetchpriority="high"` tells the browser this resource should be prioritized over others. Use it sparingly — if everything is "high", nothing is. One LCP candidate per page.
+`fetchpriority="high"` tells the browser this resource should be prioritized over others. Use it sparingly - if everything is "high", nothing is. One LCP candidate per page.
 
 ### 2. `<source>` inside `<picture>`
 
@@ -57,7 +57,7 @@ For large below-the-fold `<picture>` blocks, the fix is to store the `srcset` in
     data-srcset="/img/hero-320.webp 320w, /img/hero-640.webp 640w"
     sizes="(max-width: 640px) 100vw, 640px"
   />
-  <img src="/img/hero.jpg" alt="…" width="1920" height="1280" loading="lazy" />
+  <img src="/img/hero.jpg" alt="..." width="1920" height="1280" loading="lazy" />
 </picture>
 ```
 
@@ -82,10 +82,10 @@ This is the only reliable way I have found to avoid eager downloads of large Web
 
 ### 3. Iframes from third parties
 
-Giscus, CodePen embeds, video embeds: these are expensive third-party resources that you do not want to load on every page view. `loading="lazy"` on the iframe helps, but you often want stricter control — load only when the user scrolls close, or only when a "Show comments" button is pressed.
+Giscus, CodePen embeds, video embeds: these are expensive third-party resources that you do not want to load on every page view. `loading="lazy"` on the iframe helps, but you often want stricter control - load only when the user scrolls close, or only when a "Show comments" button is pressed.
 
 ```html
-<div class="comments-shell" data-giscus-src="https://giscus.app/client.js" data-giscus-attrs='{ "data-repo": "…" }'>
+<div class="comments-shell" data-giscus-src="https://giscus.app/client.js" data-giscus-attrs='{ "data-repo": "..." }'>
   <button type="button" class="load-comments">Load comments</button>
 </div>
 ```
@@ -127,8 +127,8 @@ Native lazy is a good default. Use it first. Reach for IntersectionObserver when
 
 ## References
 
-- [`loading` attribute — MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/loading)
-- [`fetchpriority` — MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority)
-- [IntersectionObserver — MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver)
-- [Browser-level image lazy loading — web.dev](https://web.dev/articles/browser-level-image-lazy-loading)
-- [Lazy-loading iframes — web.dev](https://web.dev/articles/iframe-lazy-loading)
+- [`loading` attribute - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/loading)
+- [`fetchpriority` - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority)
+- [IntersectionObserver - MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver)
+- [Browser-level image lazy loading - web.dev](https://web.dev/articles/browser-level-image-lazy-loading)
+- [Lazy-loading iframes - web.dev](https://web.dev/articles/iframe-lazy-loading)

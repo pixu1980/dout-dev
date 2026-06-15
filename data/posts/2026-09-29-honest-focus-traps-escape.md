@@ -9,7 +9,7 @@ canonical_url: false
 
 ## The misconception
 
-"Focus trap" has a bad reputation because most implementations get it wrong. A trap that is actually a prison — where the user cannot escape with Escape, cannot close with a click outside, and cannot tell that they are trapped — is a bug.
+"Focus trap" has a bad reputation because most implementations get it wrong. A trap that is actually a prison - where the user cannot escape with Escape, cannot close with a click outside, and cannot tell that they are trapped - is a bug.
 
 A focus trap done right is a kindness. It says: "while this overlay is open, Tab cycles within it. When you close it, focus returns where it came from. Escape works. Outside click works."
 
@@ -19,7 +19,7 @@ On dout.dev the mobile menu, the search dialog, and any future modal follow the 
 
 Two criteria, both required.
 
-1. **The overlay is modal.** The user is expected to interact with it or dismiss it before doing anything else. A non-modal popover — a tooltip, an inline disclosure — should not trap focus.
+1. **The overlay is modal.** The user is expected to interact with it or dismiss it before doing anything else. A non-modal popover - a tooltip, an inline disclosure - should not trap focus.
 2. **The overlay visually blocks the rest of the page.** A full-screen dialog, a slide-in panel, a menu that darkens the page behind it.
 
 If either is false, do not add a trap. A tooltip trap is a bug.
@@ -33,7 +33,7 @@ let previouslyFocused = null;
 
 function openOverlay(overlay) {
   previouslyFocused = document.activeElement;
-  // …
+  // ...
 }
 
 function closeOverlay(overlay) {
@@ -187,7 +187,7 @@ The overlay element itself needs the right roles and attributes, not just the JS
 ```html
 <div class="overlay" role="dialog" aria-modal="true" aria-labelledby="overlay-title" hidden>
   <h2 id="overlay-title">Menu</h2>
-  <!-- … -->
+  <!-- ... -->
 </div>
 ```
 
@@ -211,7 +211,7 @@ A focus trap is not the JavaScript pattern. It is the contract: remember where f
 ## References
 
 - [WAI-ARIA Authoring Practices: Dialog (Modal) Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)
-- [Inert — MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert)
+- [Inert - MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert)
 - [WCAG 2.1.1 Keyboard](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html)
 - [WCAG 2.4.3 Focus Order](https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html)
-- [focus-trap (library)](https://github.com/focus-trap/focus-trap) — if you prefer a ready-made option
+- [focus-trap (library)](https://github.com/focus-trap/focus-trap) - if you prefer a ready-made option

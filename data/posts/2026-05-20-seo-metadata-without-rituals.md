@@ -42,7 +42,7 @@ JSON-LD is the format Google, Bing, and LinkedIn want for structured data. It is
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Canonical, Structured Data, Hreflang: SEO Without Cargo Culting",
-    "description": "The SEO tags that actually do work on a static blog…",
+    "description": "The SEO tags that actually do work on a static blog...",
     "datePublished": "2026-10-13",
     "author": {
       "@type": "Person",
@@ -82,9 +82,9 @@ The heuristic: if I cannot point at a concrete consumer behavior, I do not ship 
 `hreflang` tells crawlers which language a page is in and what the equivalents are in other languages.
 
 ```html
-<link rel="alternate" hreflang="en-US" href="https://dout.dev/posts/…" />
-<link rel="alternate" hreflang="it-IT" href="https://dout.dev/it/posts/…" />
-<link rel="alternate" hreflang="x-default" href="https://dout.dev/posts/…" />
+<link rel="alternate" hreflang="en-US" href="https://dout.dev/posts/..." />
+<link rel="alternate" hreflang="it-IT" href="https://dout.dev/it/posts/..." />
+<link rel="alternate" hreflang="x-default" href="https://dout.dev/posts/..." />
 ```
 
 dout.dev is English only. The roadmap removed the i18n milestone. So hreflang is a no-op for my case and I do not ship it. Writing it out here for completeness: the moment a site has localized content, hreflang is non-optional, and omitting it is a real SEO hit.
@@ -98,10 +98,10 @@ These are not strictly SEO, but they are discovery. Every post has:
 ```html
 <meta property="og:site_name" content="dout.dev" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="…" />
-<meta property="og:description" content="…" />
-<meta property="og:url" content="…" />
-<meta property="og:image" content="…" />
+<meta property="og:title" content="..." />
+<meta property="og:description" content="..." />
+<meta property="og:url" content="..." />
+<meta property="og:image" content="..." />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="en_US" />
@@ -134,13 +134,13 @@ Two findings from the first months after publishing.
 
 ## The takeaway
 
-SEO on a blog is not magic. Three tags — canonical, structured data, Open Graph — cover most of the actual behavior. Hreflang only when you have multiple languages. Skip the dozens of "recommended" tags unless you can point at the consumer behavior they enable. The goal is a clean, honest document, not a holiday tree of meta tags.
+SEO on a blog is not magic. Three tags - canonical, structured data, Open Graph - cover most of the actual behavior. Hreflang only when you have multiple languages. Skip the dozens of "recommended" tags unless you can point at the consumer behavior they enable. The goal is a clean, honest document, not a holiday tree of meta tags.
 
 ## References
 
-- [Canonical URLs — Google Search Central](https://developers.google.com/search/docs/crawling-indexing/canonicalization)
-- [Structured data general guidelines — Google](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data)
-- [Schema.org — BlogPosting](https://schema.org/BlogPosting)
-- [Hreflang guide — Google](https://developers.google.com/search/docs/specialty/international/localized-versions)
+- [Canonical URLs - Google Search Central](https://developers.google.com/search/docs/crawling-indexing/canonicalization)
+- [Structured data general guidelines - Google](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data)
+- [Schema.org - BlogPosting](https://schema.org/BlogPosting)
+- [Hreflang guide - Google](https://developers.google.com/search/docs/specialty/international/localized-versions)
 - [Open Graph protocol](https://ogp.me/)
 - [JSON-LD Playground](https://json-ld.org/playground/)

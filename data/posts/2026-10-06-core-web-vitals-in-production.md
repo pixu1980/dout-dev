@@ -11,9 +11,9 @@ canonical_url: false
 
 Core Web Vitals are not a complete performance model. They are three numbers Google decided matter for user experience, and they correlate strongly with perceived quality. For a content site, the three are:
 
-- **LCP (Largest Contentful Paint)** — how long until the main element of the page appears. Target: under 2.5s.
-- **CLS (Cumulative Layout Shift)** — how much the layout jumps during load. Target: under 0.1.
-- **INP (Interaction to Next Paint)** — how responsive the page feels on click or keystroke. Target: under 200ms.
+- **LCP (Largest Contentful Paint)** - how long until the main element of the page appears. Target: under 2.5s.
+- **CLS (Cumulative Layout Shift)** - how much the layout jumps during load. Target: under 0.1.
+- **INP (Interaction to Next Paint)** - how responsive the page feels on click or keystroke. Target: under 200ms.
 
 On dout.dev the live numbers are well under target on desktop and comfortably under on mobile. This post is what made that achievable, with the specific choices that matter.
 
@@ -26,7 +26,7 @@ For a blog, the LCP element is almost always the post cover image or the first h
 ```html
 <img
   src="/assets/images/cover.jpg"
-  alt="…"
+  alt="..."
   width="1200"
   height="630"
   loading="eager"
@@ -99,8 +99,8 @@ A delegated click handler is cheaper than 20 individual ones. The work inside ea
 
 Lab measurements (Lighthouse) are useful for finding regressions. Field measurements (real users) are the ones that actually count for SEO. For a small site without a backend, the options are:
 
-- **Chrome User Experience Report (CrUX)** — Google publishes aggregate field data for origins with enough traffic. Check your site on PageSpeed Insights; if "Real user experience" appears, CrUX has data.
-- **Web Vitals JS library** — ship a small script that posts LCP, CLS, INP to your analytics. On dout.dev the analytics endpoint is a simple POST that records page hits and metrics without cookies.
+- **Chrome User Experience Report (CrUX)** - Google publishes aggregate field data for origins with enough traffic. Check your site on PageSpeed Insights; if "Real user experience" appears, CrUX has data.
+- **Web Vitals JS library** - ship a small script that posts LCP, CLS, INP to your analytics. On dout.dev the analytics endpoint is a simple POST that records page hits and metrics without cookies.
 
 The library is under 3KB gzipped and the handler is short:
 
@@ -116,7 +116,7 @@ onCLS(send);
 onINP(send);
 ```
 
-Collecting field vitals for a small blog is optional. Collecting them is how you catch regressions that lab tests miss — device variability, network variability, the long tail of "users on 3G in a basement."
+Collecting field vitals for a small blog is optional. Collecting them is how you catch regressions that lab tests miss - device variability, network variability, the long tail of "users on 3G in a basement."
 
 ## The cost I did not pay
 
@@ -130,10 +130,10 @@ Core Web Vitals on a static blog are a solved problem if you make the right smal
 
 ## References
 
-- [Core Web Vitals — web.dev](https://web.dev/articles/vitals)
+- [Core Web Vitals - web.dev](https://web.dev/articles/vitals)
 - [Optimize LCP](https://web.dev/articles/optimize-lcp)
 - [Optimize CLS](https://web.dev/articles/optimize-cls)
 - [Optimize INP](https://web.dev/articles/optimize-inp)
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
 - [Chrome User Experience Report](https://developer.chrome.com/docs/crux)
-- [Font metric matching — web.dev](https://web.dev/articles/font-fallbacks)
+- [Font metric matching - web.dev](https://web.dev/articles/font-fallbacks)

@@ -61,7 +61,7 @@ class PixHighlighter extends HTMLPreElement {
 customElements.define('pix-highlighter', PixHighlighter, { extends: 'pre' });
 ```
 
-The element only runs where `<pre is="pix-highlighter">` exists in the DOM. The bulk of the site — every page without a code block — pays nothing for it.
+The element only runs where `<pre is="pix-highlighter">` exists in the DOM. The bulk of the site - every page without a code block - pays nothing for it.
 
 ## The lexers are small on purpose
 
@@ -132,7 +132,7 @@ No separate "light theme" and "dark theme" stylesheets. One set of rules, driven
 
 ## Accessibility
 
-The copy-to-clipboard button has a visible label and an accessible name. The `<pre>` has a semantic code region, the `<code>` inside keeps the text content intact, and the token spans are decorative — aria-hidden would be wrong because they do contain the text the screen reader should read; the tokens are styling, not semantics.
+The copy-to-clipboard button has a visible label and an accessible name. The `<pre>` has a semantic code region, the `<code>` inside keeps the text content intact, and the token spans are decorative - aria-hidden would be wrong because they do contain the text the screen reader should read; the tokens are styling, not semantics.
 
 On a keyboard-only pass, the copy button receives focus with a visible ring, press fires the copy, and `aria-live="polite"` on a sibling span announces "Copied."
 
@@ -144,12 +144,12 @@ The cutoff I used: fewer than twenty languages, short code samples, theme integr
 
 ## The takeaway
 
-Custom elements are underrated. A ~300-line `pix-highlighter` replaces a dependency I would have carried forever, integrates with the design system instead of a theme file, and only runs where it is needed. That pattern — small, scoped, declarative — fits the rest of dout.dev.
+Custom elements are underrated. A ~300-line `pix-highlighter` replaces a dependency I would have carried forever, integrates with the design system instead of a theme file, and only runs where it is needed. That pattern - small, scoped, declarative - fits the rest of dout.dev.
 
 ## References
 
-- [Web Components: Custom Elements — MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements)
-- [Customized built-in elements — HTML Living Standard](https://html.spec.whatwg.org/multipage/custom-elements.html#customized-built-in-elements)
-- [Shiki](https://shiki.style/) — if you need TextMate-grade output
-- [Prism](https://prismjs.com/) — if you need runtime highlighting with minimal setup
-- [Highlight.js](https://highlightjs.org/) — the other runtime option
+- [Web Components: Custom Elements - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements)
+- [Customized built-in elements - HTML Living Standard](https://html.spec.whatwg.org/multipage/custom-elements.html#customized-built-in-elements)
+- [Shiki](https://shiki.style/) - if you need TextMate-grade output
+- [Prism](https://prismjs.com/) - if you need runtime highlighting with minimal setup
+- [Highlight.js](https://highlightjs.org/) - the other runtime option

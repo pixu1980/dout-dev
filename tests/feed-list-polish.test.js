@@ -59,6 +59,29 @@ describe('feed list polish', () => {
     assert.doesNotMatch(resultRenderer, /coverImage/);
     assert.doesNotMatch(resultRenderer, /with-media/);
     assert.match(resultRenderer, /data-post-card-variant="default"/);
+    assert.doesNotMatch(resultRenderer, /<div data-post-card-content/);
+    assert.doesNotMatch(resultRenderer, /<div data-post-card-body/);
+    assert.match(resultRenderer, /<section data-post-card-content>/);
+  });
+
+  test('reusable templates prefer semantic wrappers over generic div blocks', async () => {
+    const [homeTemplate, postCardTemplate] = await Promise.all([
+      readFile(join(TEMPLATES_ROOT, 'home.html'), 'utf8'),
+      readFile(join(PROJECT_ROOT, 'src', 'components', 'post-card.html'), 'utf8'),
+    ]);
+
+    assert.match(homeTemplate, /<article data-hero-copy>/);
+    assert.match(homeTemplate, /<article data-hero-panel>/);
+    assert.match(homeTemplate, /<section data-hero-actions>/);
+    assert.match(homeTemplate, /<section data-hero-topics aria-label="Popular topics">/);
+    assert.match(homeTemplate, /<section data-hero-stats>/);
+    assert.match(
+      homeTemplate,
+      /<header>[\s\S]*<h2 id="latest-title">Fresh from the sources<\/h2>[\s\S]*<\/header>/
+    );
+    assert.match(postCardTemplate, /<section data-post-card-content>/);
+    assert.doesNotMatch(postCardTemplate, /<div data-post-card-content>/);
+    assert.doesNotMatch(postCardTemplate, /<div data-post-card-body>/);
   });
 
   test('scroll reveal motion is CSS-driven and has a reduced-motion escape hatch', async () => {

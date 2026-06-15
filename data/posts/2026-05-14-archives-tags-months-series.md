@@ -14,9 +14,9 @@ A blog is a time-ordered list of posts. That linear view is useful for the home 
 
 dout.dev ships three archives:
 
-- **By tag** — `/tags/<slug>.html`. Topical similarity. "Show me all the accessibility posts."
-- **By month** — `/months/<YYYY-MM>.html`. Temporal browsing. "What did you write in 2026-03?"
-- **By series** — `/series/<slug>.html`. Intentional groupings. "Read the making-of series in order."
+- **By tag** - `/tags/<slug>.html`. Topical similarity. "Show me all the accessibility posts."
+- **By month** - `/months/<YYYY-MM>.html`. Temporal browsing. "What did you write in 2026-03?"
+- **By series** - `/series/<slug>.html`. Intentional groupings. "Read the making-of series in order."
 
 Each is a first-class surface with its own page, its own RSS feed, its own OG image, and its own pagination. All three are generated from the same normalized dataset the post generator uses, so there is no drift between what a tag page shows and what the post pages claim.
 
@@ -77,7 +77,7 @@ Three small details that make pagination accessible and crawlable.
   <a href="/tags/accessibility.html" rel="prev">Previous</a>
   <a href="/tags/accessibility.html">1</a>
   <a href="/tags/accessibility/2/" aria-current="page">2</a>
-  <span aria-hidden="true">…</span>
+  <span aria-hidden="true">...</span>
   <a href="/tags/accessibility/5/">5</a>
   <a href="/tags/accessibility/3/" rel="next">Next</a>
 </nav>
@@ -90,7 +90,7 @@ The `aria-label="Pagination"` on the `<nav>` is required because the page has mo
 Each archive has its own RSS feed. `/tags/accessibility.xml` contains only posts tagged accessibility. Subscribers who care about one topic can follow it without seeing the rest.
 
 ```html
-<link rel="alternate" type="application/rss+xml" title="dout.dev — accessibility" href="/tags/accessibility.xml" />
+<link rel="alternate" type="application/rss+xml" title="dout.dev - accessibility" href="/tags/accessibility.xml" />
 ```
 
 The feed is generated from the tag-filtered subset of the dataset. Same template, same pagination-less shape (RSS does not paginate), different inputs. About ten extra lines of generator code per archive type.
@@ -131,7 +131,7 @@ if (archive.kind === 'series') {
 }
 ```
 
-That is a six-line difference in the generator. The templates do not need to know — they receive posts in the correct order and render them.
+That is a six-line difference in the generator. The templates do not need to know - they receive posts in the correct order and render them.
 
 ## The takeaway
 
@@ -139,7 +139,7 @@ Archives are a design surface, not a free byproduct of having tags. Decide the U
 
 ## References
 
-- [Pagination with `rel="next"` and `rel="prev"` — MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel)
-- [`aria-current` — ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/practices/structural-roles/#aria-current)
+- [Pagination with `rel="next"` and `rel="prev"` - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel)
+- [`aria-current` - ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/practices/structural-roles/#aria-current)
 - [Sitemaps Protocol](https://www.sitemaps.org/protocol.html)
-- [URL design — Kyle Neath](https://warpspire.com/posts/url-design/)
+- [URL design - Kyle Neath](https://warpspire.com/posts/url-design/)

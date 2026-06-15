@@ -10,7 +10,7 @@ canonical_url: false
 
 ## The problem and the usual solutions
 
-Every post needs a social preview image — the card that appears when someone shares the URL on Slack, Twitter, or LinkedIn. The options usually break down like this.
+Every post needs a social preview image - the card that appears when someone shares the URL on Slack, Twitter, or LinkedIn. The options usually break down like this.
 
 - **Hand-design each one.** A Figma file, a designer, exported PNGs. Works. Does not scale.
 - **Runtime service** (Vercel OG, Cloudinary). A URL like `og.dev/render?title=...` produces an image on demand. Works. Adds a third-party dependency, latency, and a potential point of failure.
@@ -47,7 +47,7 @@ That template has variables where the title, date, and author go. The generator 
 
 The hardest single problem in OG image generation is fitting a variable-length title inside a fixed-width box without it running off the edge.
 
-The brute-force solution — "measure the text, wrap manually" — requires a font metrics library. The simpler solution — greedy wrapping with a conservative line-length budget — is what I use.
+The brute-force solution - "measure the text, wrap manually" - requires a font metrics library. The simpler solution - greedy wrapping with a conservative line-length budget - is what I use.
 
 ```js
 function wrapTitle(title, maxChars = 26) {
@@ -149,6 +149,6 @@ You do not need a runtime OG service, a headless browser, or a third-party API. 
 ## References
 
 - [Open Graph protocol](https://ogp.me/)
-- [Sharp — high-performance image processing](https://sharp.pixelplumbing.com/)
+- [Sharp - high-performance image processing](https://sharp.pixelplumbing.com/)
 - [Twitter Cards documentation](https://developer.x.com/en/docs/x-for-websites/cards/overview/abouts-cards)
 - [Facebook sharing debugger](https://developers.facebook.com/tools/debug/)

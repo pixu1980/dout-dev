@@ -50,31 +50,29 @@
       <p data-eyebrow data-muted>Your controls</p>
       <h2>Tracking status</h2>
       <p id="analytics-status" data-analytics-status>Loading analytics status…</p>
-      <div data-privacy-actions>
+      <section data-privacy-actions aria-label="Privacy actions">
         <button type="button" data-button data-button-variant="primary" data-analytics-toggle>
           Disable page-hit tracking
         </button>
         <button type="button" data-button data-button-variant="ghost" data-analytics-clear>
           Clear local page-hit data
         </button>
-      </div>
+      </section>
       <p data-muted>Downloads below export only the counts stored in this browser.</p>
-      <div data-privacy-downloads>
+      <section data-privacy-downloads aria-label="Analytics downloads">
         <a data-text-link href="#" data-analytics-download="json">Download JSON</a>
         <a data-text-link href="#" data-analytics-download="csv">Download CSV</a>
-      </div>
+      </section>
     </article>
   </section>
 
   <section data-card data-privacy-card aria-labelledby="analytics-dashboard-title">
-    <div data-section-heading>
-      <div>
-        <p data-eyebrow data-muted>Dashboard</p>
-        <h2 id="analytics-dashboard-title">Local page-hit summary</h2>
-      </div>
-    </div>
-    <div data-analytics-dashboard>
+    <header data-section-heading>
+      <p data-eyebrow data-muted>Dashboard</p>
+      <h2 id="analytics-dashboard-title">Local page-hit summary</h2>
+    </header>
+    <section data-analytics-dashboard aria-label="Analytics summary data">
       <p data-muted>No local analytics data recorded yet.</p>
-    </div>
+    </section>
   </section>
 </block>

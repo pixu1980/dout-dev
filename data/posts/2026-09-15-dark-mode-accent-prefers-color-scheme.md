@@ -3,7 +3,7 @@ title: 'Dark Mode, Accent Color, `prefers-color-scheme`: the Theme Switcher From
 date: '2026-09-15'
 published: false
 tags: ['design-systems', 'css', 'a11y', 'accessibility']
-description: 'How the theme switcher on dout.dev cycles light/dark/auto, respects system preference, and lets users pick an accent color — without a framework.'
+description: 'How the theme switcher on dout.dev cycles light/dark/auto, respects system preference, and lets users pick an accent color - without a framework.'
 canonical_url: false
 ---
 
@@ -50,7 +50,7 @@ The rules:
 
 - `:root` defines the defaults (the "auto" case without system preference).
 - `[data-theme='light']` and `[data-theme='dark']` override for explicit choices.
-- The `@media (prefers-color-scheme: dark)` block kicks in only when no explicit `data-theme` is set — the `:not([data-theme])` selector — so user choice always wins over system preference.
+- The `@media (prefers-color-scheme: dark)` block kicks in only when no explicit `data-theme` is set - the `:not([data-theme])` selector - so user choice always wins over system preference.
 
 ## No flash of wrong theme
 
@@ -126,7 +126,7 @@ In "auto" mode, when the OS switches theme, the site should update live. The `ma
 const media = matchMedia('(prefers-color-scheme: dark)');
 media.addEventListener('change', () => {
   // The CSS handles the color change automatically via the media query.
-  // Nothing for us to do — the media query in CSS observes the same source.
+  // Nothing for us to do - the media query in CSS observes the same source.
 });
 ```
 
@@ -190,8 +190,8 @@ A theme switcher that does not flash, respects the system, persists the user's c
 
 ## References
 
-- [`prefers-color-scheme` — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
-- [`matchMedia` — MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)
-- [Theme switcher without FART — web.dev](https://web.dev/articles/color-scheme)
+- [`prefers-color-scheme` - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
+- [`matchMedia` - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)
+- [Theme switcher without FART - web.dev](https://web.dev/articles/color-scheme)
 - [Giscus customization API](https://giscus.app/)
-- [`color-mix()` — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix)
+- [`color-mix()` - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix)

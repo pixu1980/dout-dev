@@ -29,7 +29,7 @@ Three things, each of which I expected to eventually need on dout.dev.
 
 **Extract a package.** If the template engine, the CMS, or the syntax highlighter becomes useful outside this repo, it moves into `packages/pix-template-engine/` without restructuring anything. The workspace already knows how to build and test sub-packages.
 
-**Share dev tooling across packages.** Biome config, Prettier config, TypeScript config, Playwright config — any of these can live at the root and be inherited by packages. A workspace makes this natural.
+**Share dev tooling across packages.** Biome config, Prettier config, TypeScript config, Playwright config - any of these can live at the root and be inherited by packages. A workspace makes this natural.
 
 **Run scripts across the graph.** `pnpm -r test`, `pnpm -r build`, `pnpm -r lint`. If there are multiple packages, you get parallel execution and topological ordering for free.
 
@@ -58,17 +58,17 @@ pnpm workspaces hoist shared dependencies to the root `node_modules`. That means
 - Per-package versions are respected when they differ.
 - `node_modules/.bin` at the root contains the CLIs from any package.
 
-The hoisting is usually invisible and always correct. The one case where it is not invisible is when a tool reads `node_modules` directly and makes assumptions — older tools occasionally get confused. I have not hit this on dout.dev, but it is the reason some projects still prefer yarn 1 or npm with explicit workspaces.
+The hoisting is usually invisible and always correct. The one case where it is not invisible is when a tool reads `node_modules` directly and makes assumptions - older tools occasionally get confused. I have not hit this on dout.dev, but it is the reason some projects still prefer yarn 1 or npm with explicit workspaces.
 
 ## Per-package `package.json`?
 
 Currently there is only the root `package.json`. If I extracted the template engine into `packages/pix-template-engine/`, it would have its own `package.json` with `name`, `version`, `exports`, and dependencies declared there. The main repo would reference it as `"pix-template-engine": "workspace:*"`.
 
-The `workspace:*` protocol means "use the current version in the workspace, whatever that is." It is the feature that makes local development across packages painless — you do not `npm link`, you do not publish to a test registry. You just work across the tree.
+The `workspace:*` protocol means "use the current version in the workspace, whatever that is." It is the feature that makes local development across packages painless - you do not `npm link`, you do not publish to a test registry. You just work across the tree.
 
 ## Monorepo vs workspace
 
-These terms get conflated. A monorepo is a repository that contains multiple projects. A workspace is a package-manager feature that supports monorepos. You can have a monorepo without workspaces (you can have a monorepo without any package manager conventions at all, like the Linux kernel). You cannot really have workspaces without a monorepo — it would be pointless.
+These terms get conflated. A monorepo is a repository that contains multiple projects. A workspace is a package-manager feature that supports monorepos. You can have a monorepo without workspaces (you can have a monorepo without any package manager conventions at all, like the Linux kernel). You cannot really have workspaces without a monorepo - it would be pointless.
 
 For dout.dev, I currently have a monorepo-of-one, with workspace tooling ready for the day it becomes a monorepo-of-several.
 
@@ -80,5 +80,5 @@ A pnpm workspace on a single-site repo is cheap insurance. It costs nothing toda
 
 - [pnpm workspaces](https://pnpm.io/workspaces)
 - [The `workspace:` protocol](https://pnpm.io/workspaces#workspace-protocol-workspace)
-- [Monorepo tooling comparison — monorepo.tools](https://monorepo.tools/)
-- [Nx](https://nx.dev/) — if the workspace grows beyond pnpm-native capabilities
+- [Monorepo tooling comparison - monorepo.tools](https://monorepo.tools/)
+- [Nx](https://nx.dev/) - if the workspace grows beyond pnpm-native capabilities

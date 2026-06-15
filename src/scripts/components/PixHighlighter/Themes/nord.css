@@ -1,0 +1,32 @@
+@layer components {
+  :root[data-pix-highlighter-theme='nord'] pre[is='pix-highlighter'] {
+    --dout--pix-bg: #2e3440;
+    --dout--pix-fg: #d8dee9;
+    --dout--pix-kw: #81a1c1;
+    --dout--pix-str: #a3be8c;
+    --dout--pix-num: #b48ead;
+    --dout--pix-com: #616e88;
+    --dout--pix-id: #e5e9f0;
+    --dout--pix-op: #88c0d0;
+    --dout--pix-tag: #81a1c1;
+    --dout--pix-attr: #8fbcbb;
+    --dout--pix-key: #5e81ac;
+    --dout--pix-var: #d08770;
+    --dout--pix-mac: #bf616a;
+    --dout--pix-pp: #ebcb8b;
+    --dout--pix-prop: #88c0d0;
+    --dout--pix-type: #8fbcbb;
+    --dout--pix-mdh: #88c0d0;
+    --dout--pix-mde: #d08770;
+    --dout--pix-mds: #ebcb8b;
+    --dout--pix-mdc: #616e88;
+    --dout--pix-mdl: #81a1c1;
+    --dout--pix-mdbq: #a7b1c2;
+    --dout--pix-mdli: #b48ead;
+    --dout--pix-mdhr: #4c566a;
+    --dout--pix-mdimg: #8fbcbb;
+    --dout--pix-tab-size: 2;
+    --dout--pix-line-height: 1.55;
+    --dout--pix-text-shadow: none;
+  }
+}

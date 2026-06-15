@@ -128,16 +128,14 @@ function renderResultItem(post) {
   item.dataset.reveal = '';
   item.innerHTML = `
     <article data-post-card data-post-card-variant="default">
-      <div data-post-card-content>
-        <div data-post-card-body>
-          <header data-post-card-header>
-            <p data-post-card-meta><time datetime="${escapeHtml(post.date)}">${escapeHtml(post.dateString || post.date || '')}</time></p>
-            <h2 data-post-card-title><a href="/posts/${escapeHtml(post.name)}.html">${escapeHtml(post.title)}</a></h2>
-          </header>
-          <p data-post-card-excerpt>${escapeHtml(post.excerpt || '')}</p>
-        </div>
+      <section data-post-card-content>
+        <header data-post-card-header>
+          <p data-post-card-meta><time datetime="${escapeHtml(post.date)}">${escapeHtml(post.dateString || post.date || '')}</time></p>
+          <h2 data-post-card-title><a href="/posts/${escapeHtml(post.name)}.html">${escapeHtml(post.title)}</a></h2>
+        </header>
+        <p data-post-card-excerpt>${escapeHtml(post.excerpt || '')}</p>
         ${tagsMarkup}
-      </div>
+      </section>
     </article>
   `;
 
@@ -151,15 +149,13 @@ function renderTagItem(tag) {
   item.dataset.reveal = '';
   item.innerHTML = `
     <article data-post-card data-post-card-variant="default">
-      <div data-post-card-content>
-        <div data-post-card-body>
-          <header data-post-card-header>
-            <p data-post-card-meta>Tag</p>
-            <h2 data-post-card-title><a href="/tags/${escapeHtml(tag.slug)}.html">${escapeHtml(applyTagDisplayCase(tag.label || tag.name))}</a></h2>
-          </header>
-          <p data-post-card-excerpt>${escapeHtml(String(tag.count || 0))} post(s)</p>
-        </div>
-      </div>
+      <section data-post-card-content>
+        <header data-post-card-header>
+          <p data-post-card-meta>Tag</p>
+          <h2 data-post-card-title><a href="/tags/${escapeHtml(tag.slug)}.html">${escapeHtml(applyTagDisplayCase(tag.label || tag.name))}</a></h2>
+        </header>
+        <p data-post-card-excerpt>${escapeHtml(String(tag.count || 0))} post(s)</p>
+      </section>
     </article>
   `;
 
@@ -173,18 +169,16 @@ function renderSeriesItem(series) {
   item.dataset.reveal = '';
   item.innerHTML = `
     <article data-post-card data-post-card-variant="default">
-      <div data-post-card-content>
-        <div data-post-card-body>
-          <header data-post-card-header>
-            <p data-post-card-meta>Series</p>
-            <h2 data-post-card-title><a href="/series/${escapeHtml(series.slug)}.html">${escapeHtml(series.title)}</a></h2>
-          </header>
-          <p data-post-card-excerpt>${escapeHtml(`A series of posts about ${series.title}.`)}</p>
-        </div>
+      <section data-post-card-content>
+        <header data-post-card-header>
+          <p data-post-card-meta>Series</p>
+          <h2 data-post-card-title><a href="/series/${escapeHtml(series.slug)}.html">${escapeHtml(series.title)}</a></h2>
+        </header>
+        <p data-post-card-excerpt>${escapeHtml(`A series of posts about ${series.title}.`)}</p>
         <footer data-post-card-footer>
           <p data-post-card-meta>${escapeHtml(String(series.count || series.posts?.length || 0))} post(s)</p>
         </footer>
-      </div>
+      </section>
     </article>
   `;
 
@@ -198,15 +192,13 @@ function renderMonthItem(month) {
   item.dataset.reveal = '';
   item.innerHTML = `
     <article data-post-card data-post-card-variant="default">
-      <div data-post-card-content>
-        <div data-post-card-body>
-          <header data-post-card-header>
-            <p data-post-card-meta>Month</p>
-            <h2 data-post-card-title><a href="/months/${escapeHtml(month.slug || month.key)}.html">${escapeHtml(month.label || month.name)}</a></h2>
-          </header>
-          <p data-post-card-excerpt>${escapeHtml(String(month.count || 0))} post(s)</p>
-        </div>
-      </div>
+      <section data-post-card-content>
+        <header data-post-card-header>
+          <p data-post-card-meta>Month</p>
+          <h2 data-post-card-title><a href="/months/${escapeHtml(month.slug || month.key)}.html">${escapeHtml(month.label || month.name)}</a></h2>
+        </header>
+        <p data-post-card-excerpt>${escapeHtml(String(month.count || 0))} post(s)</p>
+      </section>
     </article>
   `;
 

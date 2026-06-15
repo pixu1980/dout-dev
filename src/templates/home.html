@@ -31,45 +31,45 @@
 
 <block name="content">
   <section data-hero data-hero-variant="home" data-reveal aria-labelledby="home-title">
-    <div data-hero-copy>
+    <article data-hero-copy>
       <p data-eyebrow>Editorial notes and stats</p>
       <h1 id="home-title">A handcrafted frontend journal for dout.dev.</h1>
       <p data-hero-lede>
         Field notes on CSS, accessibility, design systems, and the mechanics of publishing a fast static site without
         the usual framework gloss.
       </p>
-      <div data-hero-actions>
+      <section data-hero-actions>
         <a data-button data-button-variant="primary" href="/archive.html">Browse the archive</a>
         <a data-button data-button-variant="ghost" href="{{ site.rssFeedPath | default:'/feed.rss' }}"
           >Follow via RSS</a
         >
-      </div>
+      </section>
       <if condition="topTags && topTags.length">
-        <div data-hero-topics aria-label="Popular topics">
+        <section data-hero-topics aria-label="Popular topics">
           <for each="tag in topTags">
             <a data-tag href="/tags/{{ tag.slug }}.html">{{ tag.name }}</a>
           </for>
-        </div>
+        </section>
       </if>
-      <dl data-hero-stats>
-        <div>
+      <section data-hero-stats>
+        <dl>
           <dt>Posts</dt>
           <dd>{{ stats.posts }}</dd>
-        </div>
-        <div>
+        </dl>
+        <dl>
           <dt>Topics</dt>
           <dd>{{ stats.tags }}</dd>
-        </div>
-        <div>
+        </dl>
+        <dl>
           <dt>Series</dt>
           <dd>{{ stats.series }}</dd>
-        </div>
-      </dl>
-    </div>
-    <div data-hero-panel>
+        </dl>
+      </section>
+    </article>
+    <article data-hero-panel>
       <p data-eyebrow data-muted>Featured</p>
       <if condition="featuredPosts && featuredPosts.length">
-        <div data-featured-posts>
+        <section data-featured-posts aria-label="Featured posts">
           <for each="featured in featuredPosts">
             <article data-feature-card data-reveal>
               <p data-feature-card-meta>
@@ -80,19 +80,19 @@
               <a data-text-link href="/posts/{{ featured.name }}.html">Read the post</a>
             </article>
           </for>
-        </div>
+        </section>
       </if>
-    </div>
+    </article>
   </section>
 
   <section data-section-heading data-reveal aria-labelledby="latest-title">
-    <div>
+    <header>
       <p data-eyebrow>Latest writing</p>
       <h2 id="latest-title">Fresh from the sources</h2>
-    </div>
-    <div data-section-heading-actions>
+    </header>
+    <section data-section-heading-actions>
       <a data-text-link href="/archive.html">See the full archive</a>
-    </div>
+    </section>
   </section>
 
   <if condition="posts && posts.length">

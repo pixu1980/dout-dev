@@ -54,7 +54,7 @@ The final stage produces everything that is derived but not a page:
 - `src/data/*.json` for the client-side search index;
 - `src/assets/og/posts/*.png` for social previews.
 
-OG images are worth their own post; they are rendered server-side at build time from an SVG template and rasterized with Sharp. That one decision — "generate them at build, never at runtime" — eliminated an entire category of infrastructure I did not want to maintain.
+OG images are worth their own post; they are rendered server-side at build time from an SVG template and rasterized with Sharp. That one decision - "generate them at build, never at runtime" - eliminated an entire category of infrastructure I did not want to maintain.
 
 ## Why the pipeline stays small
 
@@ -70,4 +70,4 @@ The result is a build that runs in under a few seconds on a cold cache and is ch
 
 ## The template engine
 
-The next post in this series goes into how `extends`, `block`, `include`, and the expression grammar work without `eval` — and why the grammar is close to HTML instead of curly-brace syntax.
+The next post in this series goes into how `extends`, `block`, `include`, and the expression grammar work without `eval` - and why the grammar is close to HTML instead of curly-brace syntax.

@@ -30,7 +30,7 @@ Instead of abstract principles, here is the literal breakdown of tasks over the 
 
 - Repetitive refactors across dozens of files
 - Renaming tokens in the design system
-- Boilerplate docstrings (which I later deleted — more on that below)
+- Boilerplate docstrings (which I later deleted - more on that below)
 - Search-and-explain across the repo
 
 **Tasks I did without copilot help.**
@@ -64,7 +64,7 @@ Five habits that started as experiments and stuck.
 
 **I do not delegate decisions.** The copilot is a good implementer. It is a mediocre decision-maker. When a decision needs judgment, I make it; the copilot executes.
 
-**I keep units of work small.** One commit, one outcome. The moment a session drifts to "while we're here…" it is time to close it and start a new one.
+**I keep units of work small.** One commit, one outcome. The moment a session drifts to "while we're here..." it is time to close it and start a new one.
 
 ## The habits that did not survive
 
@@ -80,7 +80,7 @@ I will not give a 10x or 3x number, because "productivity" is not a single axis.
 
 **Projects finished.** Without the copilot, my completion rate on side projects that reach "shippable" is approximately zero. With the copilot, I have finished one major project (dout.dev) and started two smaller ones. That is a meaningful delta, and it is not captured by commits-per-hour.
 
-**Mechanical refactors per hour.** 10-20x faster. Rename this token, change this API signature, update every template to use the new include — these are the copilot's home turf.
+**Mechanical refactors per hour.** 10-20x faster. Rename this token, change this API signature, update every template to use the new include - these are the copilot's home turf.
 
 **Novel-code per hour.** 1.5-2x faster at most. The copilot produces a first draft, I rewrite most of it, net speedup is modest. The value is in not staring at a blank file.
 
@@ -116,5 +116,5 @@ If you are considering this kind of workflow for real, my advice is: start with 
 
 - [Claude Code](https://docs.claude.com/claude-code)
 - [Anthropic engineering blog](https://www.anthropic.com/engineering)
-- [AI-assisted coding study — GitHub](https://github.blog/news-insights/research/)
-- [The limits of LLM-based code generation — academic survey](https://arxiv.org/list/cs.SE/recent)
+- [AI-assisted coding study - GitHub](https://github.blog/news-insights/research/)
+- [The limits of LLM-based code generation - academic survey](https://arxiv.org/list/cs.SE/recent)

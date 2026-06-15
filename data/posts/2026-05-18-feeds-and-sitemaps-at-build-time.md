@@ -38,7 +38,7 @@ Despite being old, RSS remains the format that every reader supports. If you shi
       <link>https://dout.dev/posts/2026-06-30-rss-json-feed-sitemap-at-build-time.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2026-06-30-rss-json-feed-sitemap-at-build-time.html</guid>
       <pubDate>Tue, 30 Jun 2026 08:00:00 GMT</pubDate>
-      <description><![CDATA[The three distribution files every blog should ship…]]></description>
+      <description><![CDATA[The three distribution files every blog should ship...]]></description>
     </item>
   </channel>
 </rss>
@@ -67,14 +67,14 @@ JSON Feed is worth shipping alongside RSS. The format is human-readable, trivial
       "url": "https://dout.dev/posts/2026-06-30-rss-json-feed-sitemap-at-build-time.html",
       "title": "RSS + JSON Feed + Sitemap at Build Time",
       "date_published": "2026-06-30T08:00:00Z",
-      "summary": "The three distribution files every blog should ship…",
+      "summary": "The three distribution files every blog should ship...",
       "tags": ["seo", "static-site", "architecture"]
     }
   ]
 }
 ```
 
-The cost of adding it is an extra file and twenty lines of generator code. The benefit is any reader that speaks JSON Feed gets richer metadata — tags, summaries, author — without the ceremony of extension namespaces in XML.
+The cost of adding it is an extra file and twenty lines of generator code. The benefit is any reader that speaks JSON Feed gets richer metadata - tags, summaries, author - without the ceremony of extension namespaces in XML.
 
 ## Sitemap: every URL or no URL
 
@@ -95,7 +95,7 @@ The dout.dev sitemap includes posts, tag pages, month archives, series archives,
     <loc>https://dout.dev/posts/2026-06-30-rss-json-feed-sitemap-at-build-time.html</loc>
     <lastmod>2026-06-30</lastmod>
   </url>
-  <!-- … -->
+  <!-- ... -->
 </urlset>
 ```
 
@@ -108,7 +108,7 @@ An underrated feature: each tag page and each month archive on dout.dev has its 
 The feeds are generated from the same dataset as the main feed, filtered to the tag or month. It is free to produce, because the normalized data already has the tag and month indexes.
 
 ```html
-<link rel="alternate" type="application/rss+xml" title="dout.dev — accessibility" href="/tags/accessibility.xml" />
+<link rel="alternate" type="application/rss+xml" title="dout.dev - accessibility" href="/tags/accessibility.xml" />
 ```
 
 That `<link rel="alternate">` is how readers auto-discover the feed. Every tag page ships it.
@@ -128,8 +128,8 @@ Shipping RSS, JSON Feed, and a sitemap is an afternoon of generator code. The pa
 
 ## References
 
-- [RSS 2.0 Specification — RSS Advisory Board](https://www.rssboard.org/rss-specification)
-- [JSON Feed v1.1 — JSON Feed](https://www.jsonfeed.org/version/1.1/)
+- [RSS 2.0 Specification - RSS Advisory Board](https://www.rssboard.org/rss-specification)
+- [JSON Feed v1.1 - JSON Feed](https://www.jsonfeed.org/version/1.1/)
 - [Sitemaps Protocol](https://www.sitemaps.org/protocol.html)
 - [Google Search Central: sitemaps](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview)
 - [W3C Feed Validation Service](https://validator.w3.org/feed/)

@@ -48,6 +48,8 @@ describe('TemplateEngine - Built-in Filters', () => {
 
     assert.ok(result.includes('<time>'));
     assert.ok(result.includes('</time>'));
+    assert.ok(result.includes('December'));
+    assert.ok(!result.includes('dicembre'));
 
     cleanupTestDir();
   });
@@ -329,6 +331,8 @@ describe('TemplateEngine - Built-in Filters', () => {
     writeFileSync(join(TEST_DIR, 'strftime.html'), strftimeTemplate);
     const result = engine.render('strftime.html', { date: testDate });
     assert.ok(result.includes('<time>') && result.includes('</time>'));
+    assert.ok(result.includes('December'));
+    assert.ok(!result.includes('Dic'));
 
     cleanupTestDir();
   });

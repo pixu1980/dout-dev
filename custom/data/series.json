@@ -11,10 +11,8 @@
         "path": "./custom/posts/2026-04-04-how-i-built-dout-dev.html",
         "url": "/posts/2026-04-04-how-i-built-dout-dev/",
         "excerpt": "What the stack is, exactly",
-        "coverImage": "../assets/images/how-dout-dev-is-built-cover.jpg",
-        "coverWidth": 1600,
-        "coverHeight": 900,
-        "coverAlt": "Blue cover artwork titled How This Blog Is Built, used for the dout.dev making-of article",
+        "coverImage": null,
+        "coverAlt": "How I Built dout.dev",
         "tags": [
           {
             "key": "making-of",

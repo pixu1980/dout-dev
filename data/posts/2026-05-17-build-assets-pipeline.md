@@ -80,7 +80,7 @@ When the renderer encounters an image with a local path, it looks up the manifes
   />
   <source
     type="image/jpeg"
-    data-srcset="/assets/images/keyboard-320.jpg 320w, …"
+    data-srcset="/assets/images/keyboard-320.jpg 320w, ..."
     sizes="(max-width: 640px) 100vw, 640px"
   />
   <img
@@ -148,8 +148,8 @@ Responsive images do not need a service. A build step that generates variants, a
 
 ## References
 
-- [`<picture>` — MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
-- [Responsive images — MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images)
-- [Optimize Cumulative Layout Shift — web.dev](https://web.dev/articles/optimize-cls)
+- [`<picture>` - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
+- [Responsive images - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images)
+- [Optimize Cumulative Layout Shift - web.dev](https://web.dev/articles/optimize-cls)
 - [Sharp image processing library](https://sharp.pixelplumbing.com/)
-- [IntersectionObserver — MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver)
+- [IntersectionObserver - MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver)

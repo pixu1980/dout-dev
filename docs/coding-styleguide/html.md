@@ -30,6 +30,10 @@ Which also translates in better code readability and maintainability, and more i
 
 Please refer to [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) for a complete list of Semantic HTML elements (more than 100 and it doesn't makes sense to list all of them here).
 
+When a block is independently reusable or distributable, prefer `article` over a generic `div`.
+
+When a block groups related content under its own heading, prefer `section`. If no heading or landmark label exists and the element is only structural, keep the simplest valid wrapper instead of forcing `section`.
+
 Don't do this ⬇️:
 
 ```html

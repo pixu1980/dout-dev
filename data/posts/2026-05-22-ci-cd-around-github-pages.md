@@ -16,7 +16,7 @@ Neither is actually missing. They are just not turned on. The pieces exist in Gi
 
 ## The production pipeline
 
-Production deploys run from `main` or from `workflow_dispatch`. The workflow has two jobs — build and deploy — and produces a site at `https://dout.dev`.
+Production deploys run from `main` or from `workflow_dispatch`. The workflow has two jobs - build and deploy - and produces a site at `https://dout.dev`.
 
 ```yaml
 name: Deploy Pages
@@ -95,7 +95,7 @@ jobs:
           retention-days: 14
 ```
 
-The artifact is named with the PR number, so CI history stays navigable. Retention is two weeks — long enough to review, short enough to not accumulate forever.
+The artifact is named with the PR number, so CI history stays navigable. Retention is two weeks - long enough to review, short enough to not accumulate forever.
 
 ## Real PR previews with a second GitHub Pages repo
 
@@ -109,7 +109,7 @@ This is more setup than most personal projects need. For dout.dev I use the zip-
 
 This is the feature I use more often than I expected.
 
-When a bad deploy reaches production — wrong content, broken CSP, accidentally unpublished post — the recovery path is:
+When a bad deploy reaches production - wrong content, broken CSP, accidentally unpublished post - the recovery path is:
 
 1. Go to Actions → Deploy Pages in the repo.
 2. Find the last known-good run.
@@ -138,7 +138,7 @@ The Pages environment in the repo settings also tracks "Active deployment" and s
 
 ## The takeaway
 
-GitHub Pages with GitHub Actions is a complete deploy pipeline, including previews and rollback, if you accept that previews come as artifacts rather than live URLs. For most personal projects that is the right trade-off — no third-party service, no extra auth, and the same UI you are already using for the repo.
+GitHub Pages with GitHub Actions is a complete deploy pipeline, including previews and rollback, if you accept that previews come as artifacts rather than live URLs. For most personal projects that is the right trade-off - no third-party service, no extra auth, and the same UI you are already using for the repo.
 
 ## References
 
