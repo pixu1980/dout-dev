@@ -16,7 +16,7 @@ The version I hold to, and that dout.dev ships, is this:
 
 > **Every page renders, navigates, and communicates its core purpose without running a single byte of JavaScript. Every interactive feature is an enhancement, not a prerequisite.**
 
-That is a contract. It is falsifiable. You can test it by disabling JavaScript in the browser and clicking around.
+**That is a contract. It is falsifiable.** You can test it by disabling JavaScript in the browser and clicking around.
 
 ## What still works with JS disabled
 

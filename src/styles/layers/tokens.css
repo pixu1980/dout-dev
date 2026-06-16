@@ -21,10 +21,9 @@
     --dout--shadow-strong: 0 28px 80px rgba(32, 20, 9, 0.12);
     --dout--on-accent: #0f0b0a;
 
-    --dout--font-display:
-      'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
-    --dout--font-sans: 'Avenir Next', 'Segoe UI Variable Text', 'Helvetica Neue', sans-serif;
-    --dout--font-mono: 'IBM Plex Mono', 'SFMono-Regular', 'Cascadia Code', Consolas, monospace;
+    --dout--font-display: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --dout--font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --dout--font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 
     --dout--font-weight-regular: 400;
     --dout--font-weight-strong: 700;

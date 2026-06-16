@@ -13,7 +13,7 @@ canonical_url: false
 
 dout.dev is: markdown files in `data/posts/`, each with YAML front matter; a Node build script that scans, normalizes, and renders HTML; a small custom template engine; plain CSS with a two-layer token system; JavaScript that arrives after the document is already useful. No runtime, no framework, no server. A build command produces a `dist/` folder; GitHub Pages serves it.
 
-Every decision in the stack points at the same thing: the site should be trivial to host, portable across the next ten years of tooling changes, and fast to build so the pipeline never gets in the way of writing.
+**Every decision in the stack points at the same thing:** the site should be trivial to host, portable across the next ten years of tooling changes, and fast to build so the pipeline never gets in the way of writing.
 
 ## The pipeline, in one picture
 

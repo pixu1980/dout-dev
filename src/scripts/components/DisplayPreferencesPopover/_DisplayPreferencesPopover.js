@@ -50,9 +50,9 @@ const ACCESSIBILITY_OPTIONS = [
 
 const HEADING_FONT_OPTIONS = [
   {
-    id: 'editorial-serif',
-    label: 'Editorial Serif',
-    stack: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
+    id: 'system-sans',
+    label: 'System Sans',
+    stack: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
   },
   {
     id: 'humanist-sans',
@@ -60,9 +60,9 @@ const HEADING_FONT_OPTIONS = [
     stack: "'Avenir Next', 'Segoe UI Variable Text', 'Helvetica Neue', sans-serif",
   },
   {
-    id: 'system-sans',
-    label: 'System Sans',
-    stack: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    id: 'editorial-serif',
+    label: 'Editorial Serif',
+    stack: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
   },
   {
     id: 'book-serif',
@@ -74,18 +74,23 @@ const HEADING_FONT_OPTIONS = [
     label: 'Rounded Sans',
     stack: "Optima, Candara, 'Trebuchet MS', 'Gill Sans', sans-serif",
   },
+  {
+    id: 'open-dyslexic',
+    label: 'OpenDyslexic',
+    stack: "'OpenDyslexic', 'Atkinson Hyperlegible', system-ui, sans-serif",
+  },
 ];
 
 const BODY_FONT_OPTIONS = [
   {
-    id: 'humanist-sans',
-    label: 'Humanist Sans',
-    stack: "'Avenir Next', 'Segoe UI Variable Text', 'Helvetica Neue', sans-serif",
-  },
-  {
     id: 'system-sans',
     label: 'System Sans',
     stack: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+  },
+  {
+    id: 'humanist-sans',
+    label: 'Humanist Sans',
+    stack: "'Avenir Next', 'Segoe UI Variable Text', 'Helvetica Neue', sans-serif",
   },
   {
     id: 'book-serif',
@@ -111,14 +116,14 @@ const BODY_FONT_OPTIONS = [
 
 const CODE_FONT_OPTIONS = [
   {
-    id: 'plex-mono',
-    label: 'Plex Mono',
-    stack: "'IBM Plex Mono', 'SFMono-Regular', 'Cascadia Code', Consolas, monospace",
-  },
-  {
     id: 'system-mono',
     label: 'System Mono',
     stack: "ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace",
+  },
+  {
+    id: 'plex-mono',
+    label: 'Plex Mono',
+    stack: "'IBM Plex Mono', 'SFMono-Regular', 'Cascadia Code', Consolas, monospace",
   },
   {
     id: 'cascadia-mono',
@@ -139,10 +144,10 @@ const FONT_OPTIONS = {
 };
 
 const DEFAULT_PREFERENCES = Object.freeze({
-  bodyFont: 'humanist-sans',
-  codeFont: 'plex-mono',
+  bodyFont: 'system-sans',
+  codeFont: 'system-mono',
   fontScale: '100%',
-  headingFont: 'editorial-serif',
+  headingFont: 'system-sans',
   increaseContrast: false,
   radiusPreset: 'rounded',
   reduceMotion: false,

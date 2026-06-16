@@ -11,7 +11,7 @@ canonical_url: false
 
 For about ten years, serious frontend work leaned on tooling that papered over missing CSS features: Sass for nesting, Styled Components for dynamic theming, BEM conventions for scoping, utility frameworks for constraint. Most of those reasons quietly disappeared in the last two browser cycles. Modern CSS has container queries, native nesting, `:has()`, cascade layers, logical properties, `color-mix()`, `clamp()`, and more. On dout.dev I ship all of these, and the CSS is shorter than it would have been five years ago.
 
-This post is not "CSS is cool now." It is a walk through the specific modern features that let me delete a preprocessor and a handful of conventions.
+This post is not "CSS is cool now." It is **a walk through specific modern features that let me delete a preprocessor and a handful of conventions**.
 
 ## Container queries instead of media queries
 

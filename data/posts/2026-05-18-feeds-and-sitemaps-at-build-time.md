@@ -16,7 +16,7 @@ A blog that does not ship feeds and a sitemap is a blog that nobody can reliably
 - `feed.json` for modern readers that prefer JSON Feed;
 - `sitemap.xml` for crawlers.
 
-On dout.dev all three are generated at build time from the same normalized dataset the page generator uses. No external tooling. No runtime hit.
+On dout.dev **all three are generated at build time** from the same normalized dataset the page generator uses. No external tooling. No runtime hit.
 
 ## RSS 2.0 is still the lingua franca
 

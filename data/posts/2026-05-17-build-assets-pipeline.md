@@ -10,7 +10,7 @@ canonical_url: false
 
 ## The goal
 
-Every image on this blog has to satisfy four non-negotiable constraints:
+**Every image on this blog has to satisfy four non-negotiable constraints:**
 
 1. **Correct size for the viewport.** No 2000px hero shipped to a phone.
 2. **Modern format where supported.** WebP for browsers that accept it, raster fallback for the rest.

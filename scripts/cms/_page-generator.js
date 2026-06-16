@@ -732,7 +732,10 @@ function generateStaticPages(dataset, config, renderer) {
       loadMore,
       topTags,
       stats: {
-        posts: latestPosts.length,
+        featured: featuredPosts.length,
+        latest: latestPosts.length,
+        months: dataset.months?.length || 0,
+        posts: (dataset.posts || []).filter((post) => post.published).length || latestPosts.length,
         tags: dataset.tags?.length || 0,
         series: dataset.series?.length || 0,
       },

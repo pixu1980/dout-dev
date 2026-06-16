@@ -14,7 +14,7 @@ A single-author blog does not need CI the way a team product does. But any site 
 
 > Does this change still produce a correct, accessible, valid site?
 
-The gate on dout.dev is a single command, `pnpm quality:check`, that runs the same checks locally and in GitHub Actions. If it is green, the site is publishable. If it is red, it tells me which layer broke.
+The gate on dout.dev is a single command, **`pnpm quality:check`**, that runs the same checks locally and in GitHub Actions. If it is green, the site is publishable. If it is red, it tells me which layer broke.
 
 ## What the gate actually runs
 

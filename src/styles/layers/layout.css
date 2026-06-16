@@ -59,15 +59,16 @@
   [data-hero] {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
     gap: var(--dout--space-6);
 
     > * {
       flex: 1 1 min(100%, 18rem);
+      min-width: 0;
     }
 
     > [data-hero-copy] {
       flex-basis: min(100%, 31rem);
+      min-width: 0;
     }
   }
 

@@ -36,10 +36,12 @@
   h1,
   h2,
   h3 {
+    max-inline-size: 100%;
     font-family: var(--dout--font-display);
     font-weight: var(--dout--font-weight-strong);
     line-height: var(--dout--line-heading);
     letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
   }
 
   h1 {

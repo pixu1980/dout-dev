@@ -686,12 +686,56 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-16-the-end-of-borrowed-abstractions",
+        "title": "The End of Borrowed Abstractions",
+        "date": "2026-06-16T00:00:00.000Z",
+        "dateString": "Tue Jun 16 2026",
+        "path": "./src/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
+        "excerpt": "The reflex that shaped software",
+        "coverImage": null,
+        "coverAlt": "The End of Borrowed Abstractions",
+        "tags": [
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "security",
+            "label": "Security",
+            "url": "./tags/security.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Architecture",
     "slug": "architecture",
     "url": "./tags/architecture.html",
-    "count": 5
+    "count": 6
   },
   {
     "key": "static-site",
@@ -1080,12 +1124,56 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-16-the-end-of-borrowed-abstractions",
+        "title": "The End of Borrowed Abstractions",
+        "date": "2026-06-16T00:00:00.000Z",
+        "dateString": "Tue Jun 16 2026",
+        "path": "./src/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
+        "excerpt": "The reflex that shaped software",
+        "coverImage": null,
+        "coverAlt": "The End of Borrowed Abstractions",
+        "tags": [
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "security",
+            "label": "Security",
+            "url": "./tags/security.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Ai-copilot",
     "slug": "ai-copilot",
     "url": "./tags/ai-copilot.html",
-    "count": 2
+    "count": 3
   },
   {
     "key": "workflow",
@@ -1786,12 +1874,56 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-16-the-end-of-borrowed-abstractions",
+        "title": "The End of Borrowed Abstractions",
+        "date": "2026-06-16T00:00:00.000Z",
+        "dateString": "Tue Jun 16 2026",
+        "path": "./src/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
+        "excerpt": "The reflex that shaped software",
+        "coverImage": null,
+        "coverAlt": "The End of Borrowed Abstractions",
+        "tags": [
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "security",
+            "label": "Security",
+            "url": "./tags/security.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Vanilla-js",
     "slug": "vanilla-js",
     "url": "./tags/vanilla-js.html",
-    "count": 3
+    "count": 4
   },
   {
     "key": "design-systems",
@@ -2537,12 +2669,56 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-16-the-end-of-borrowed-abstractions",
+        "title": "The End of Borrowed Abstractions",
+        "date": "2026-06-16T00:00:00.000Z",
+        "dateString": "Tue Jun 16 2026",
+        "path": "./src/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
+        "excerpt": "The reflex that shaped software",
+        "coverImage": null,
+        "coverAlt": "The End of Borrowed Abstractions",
+        "tags": [
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "security",
+            "label": "Security",
+            "url": "./tags/security.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Frontend",
     "slug": "frontend",
     "url": "./tags/frontend.html",
-    "count": 4
+    "count": 5
   },
   {
     "key": "a11y",
@@ -2664,6 +2840,114 @@
     "name": "Responsive-design",
     "slug": "responsive-design",
     "url": "./tags/responsive-design.html",
+    "count": 1
+  },
+  {
+    "key": "ai",
+    "label": "Ai",
+    "posts": [
+      {
+        "name": "2026-06-16-the-end-of-borrowed-abstractions",
+        "title": "The End of Borrowed Abstractions",
+        "date": "2026-06-16T00:00:00.000Z",
+        "dateString": "Tue Jun 16 2026",
+        "path": "./src/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
+        "excerpt": "The reflex that shaped software",
+        "coverImage": null,
+        "coverAlt": "The End of Borrowed Abstractions",
+        "tags": [
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "security",
+            "label": "Security",
+            "url": "./tags/security.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Ai",
+    "slug": "ai",
+    "url": "./tags/ai.html",
+    "count": 1
+  },
+  {
+    "key": "security",
+    "label": "Security",
+    "posts": [
+      {
+        "name": "2026-06-16-the-end-of-borrowed-abstractions",
+        "title": "The End of Borrowed Abstractions",
+        "date": "2026-06-16T00:00:00.000Z",
+        "dateString": "Tue Jun 16 2026",
+        "path": "./src/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
+        "excerpt": "The reflex that shaped software",
+        "coverImage": null,
+        "coverAlt": "The End of Borrowed Abstractions",
+        "tags": [
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "security",
+            "label": "Security",
+            "url": "./tags/security.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Security",
+    "slug": "security",
+    "url": "./tags/security.html",
     "count": 1
   }
 ]

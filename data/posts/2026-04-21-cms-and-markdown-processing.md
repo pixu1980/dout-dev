@@ -16,7 +16,7 @@ A recent OpenReplay piece, [The Good And Bad Of Using Markdown As A CMS](https:/
 - MDX tied to a framework runtime and component model;
 - a Git-backed editorial tool that stores content as Markdown.
 
-Those are related, but they are not the same thing. The trade-offs move with each one.
+*Those are related, but they are not the same thing.* The trade-offs move with each one.
 
 On dout.dev, the setup is plain Markdown plus front matter, a custom CMS pipeline, and an HTML-native template engine. No MDX. No admin UI. No database. That choice is excellent for some problems and the wrong answer for others.
 
@@ -66,7 +66,7 @@ Use Markdown when the content is text-first, developer-owned, and benefits from 
 
 For dout.dev, Markdown is the right source format: single author, strong opinions about portability and static output, content that is mostly narrative. For a marketing team, product catalog, or newsroom, I would not stretch this model.
 
-Markdown is a great source format. It is sometimes a CMS. It is never all of the CMS by itself.
+**Markdown is a great source format.** It is sometimes a CMS. It is never all of the CMS by itself.
 
 ## References
 

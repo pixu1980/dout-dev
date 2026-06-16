@@ -526,5 +526,140 @@
     "description": "A series of posts about How I made it.",
     "url": "./series/how-i-made-it.html",
     "count": 16
+  },
+  {
+    "slug": "bold-opinions",
+    "title": "Bold Opinions",
+    "posts": [
+      {
+        "name": "2026-05-23-vibe-coding-with-rigor",
+        "title": "Vibe Coding With Rigor",
+        "date": "2026-05-23T00:00:00.000Z",
+        "dateString": "Sat May 23 2026",
+        "path": "./custom/posts/2026-05-23-vibe-coding-with-rigor.html",
+        "url": "/posts/2026-05-23-vibe-coding-with-rigor/",
+        "excerpt": "The term I am reclaiming",
+        "coverImage": null,
+        "coverAlt": "Vibe Coding With Rigor",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "workflow",
+            "label": "Workflow",
+            "url": "./tags/workflow.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-06-16-the-end-of-borrowed-abstractions",
+        "title": "The End of Borrowed Abstractions",
+        "date": "2026-06-16T00:00:00.000Z",
+        "dateString": "Tue Jun 16 2026",
+        "path": "./custom/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
+        "excerpt": "The reflex that shaped software",
+        "coverImage": null,
+        "coverAlt": "The End of Borrowed Abstractions",
+        "tags": [
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "security",
+            "label": "Security",
+            "url": "./tags/security.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "description": "A series of posts about Bold Opinions.",
+    "url": "./series/bold-opinions.html",
+    "count": 2
+  },
+  {
+    "slug": "the-future-of-software",
+    "title": "The Future of Software",
+    "posts": [
+      {
+        "name": "2026-06-16-the-end-of-borrowed-abstractions",
+        "title": "The End of Borrowed Abstractions",
+        "date": "2026-06-16T00:00:00.000Z",
+        "dateString": "Tue Jun 16 2026",
+        "path": "./custom/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
+        "excerpt": "The reflex that shaped software",
+        "coverImage": null,
+        "coverAlt": "The End of Borrowed Abstractions",
+        "tags": [
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "security",
+            "label": "Security",
+            "url": "./tags/security.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "description": "A series of posts about The Future of Software.",
+    "url": "./series/the-future-of-software.html",
+    "count": 1
   }
 ]

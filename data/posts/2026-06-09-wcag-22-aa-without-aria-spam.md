@@ -9,7 +9,7 @@ canonical_url: false
 
 ## The unpopular opinion
 
-Most accessibility failures I see in production are not missing features. They are HTML that was never semantic, covered in ARIA attributes that were supposed to fix the damage. That approach is a tax forever. ARIA is a powerful tool and also a trap: the first rule of ARIA is to not use it if a native element would do the job.
+*Most accessibility failures I see in production are not missing features.* They are HTML that was never semantic, covered in ARIA attributes that were supposed to fix the damage. That approach is a tax forever. ARIA is a powerful tool and also a trap: the first rule of ARIA is to not use it if a native element would do the job.
 
 For dout.dev I made a rule for myself. **Every page starts as semantic HTML. ARIA only shows up when there is no native alternative.** That rule covered most of the WCAG 2.2 AA checklist before I wrote a single `aria-*` attribute.
 

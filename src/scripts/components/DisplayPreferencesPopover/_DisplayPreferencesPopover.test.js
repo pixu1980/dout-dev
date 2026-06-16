@@ -310,19 +310,28 @@ describe('DisplayPreferencesPopover', () => {
     const applied = applyPreferencesToDocument(DEFAULT_PREFERENCES);
 
     assert.equal(applied.fontScale, '100%');
-    assert.equal(applied.headingFont, HEADING_FONT_OPTIONS[0].id);
-    assert.equal(applied.bodyFont, BODY_FONT_OPTIONS[0].id);
-    assert.equal(applied.codeFont, CODE_FONT_OPTIONS[0].id);
+    assert.equal(applied.headingFont, 'system-sans');
+    assert.equal(applied.bodyFont, 'system-sans');
+    assert.equal(applied.codeFont, 'system-mono');
+    assert.equal(HEADING_FONT_OPTIONS[0].id, 'system-sans');
+    assert.equal(BODY_FONT_OPTIONS[0].id, 'system-sans');
+    assert.equal(CODE_FONT_OPTIONS[0].id, 'system-mono');
     assert.equal(applied.radiusPreset, RADIUS_PRESET_OPTIONS[1].id);
   });
 
-  test('supports OpenDyslexic as a body font preference', () => {
+  test('supports OpenDyslexic as heading and body font preferences', () => {
     const applied = applyPreferencesToDocument({
       ...DEFAULT_PREFERENCES,
       bodyFont: 'open-dyslexic',
+      headingFont: 'open-dyslexic',
     });
 
     assert.equal(applied.bodyFont, 'open-dyslexic');
+    assert.equal(applied.headingFont, 'open-dyslexic');
+    assert.match(
+      document.documentElement.style.getPropertyValue('--dout--font-display'),
+      /OpenDyslexic/
+    );
     assert.match(
       document.documentElement.style.getPropertyValue('--dout--font-sans'),
       /OpenDyslexic/

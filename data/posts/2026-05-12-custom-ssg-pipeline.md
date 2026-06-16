@@ -17,7 +17,7 @@ Everything starts in `data/posts/`. Each post is a markdown file with YAML front
 3. **Render.** Convert markdown to HTML, pass the normalized dataset and per-page context into the template engine, write files under `src/`.
 4. **Emit.** Generate feeds, sitemap, search indexes, and OG images.
 
-The pipeline is a plain Node script orchestrated from `scripts/cms/build.js`. No framework, no plugin system, no watcher magic outside of a small `cms:watch` entry point.
+**The pipeline is a plain Node script** orchestrated from `scripts/cms/build.js`. No framework, no plugin system, no watcher magic outside of a small `cms:watch` entry point.
 
 ## Stage 1: scan
 

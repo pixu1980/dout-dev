@@ -19,7 +19,7 @@ Those constraints are not abstract. They are concrete:
 - transparent surfaces that lower readability;
 - font sizes and font families that make text easier to parse.
 
-If the UI ignores those settings, it is not accessible, even when every button has a good label.
+**If the UI ignores those settings, it is not accessible**, even when every button has a good label.
 
 ## Responsive design is accessibility
 

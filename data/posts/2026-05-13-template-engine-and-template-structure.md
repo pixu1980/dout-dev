@@ -18,7 +18,7 @@ Three constraints that usually pull in different directions.
 
 **No `eval`.** Anything user-controlled that turns into runtime code is a liability. The expression evaluator had to parse and interpret, not delegate to the JavaScript engine.
 
-The resulting engine is a few hundred lines and lives under `scripts/template-engine/`. It runs during the CMS build. It does not ship to the browser.
+**The resulting engine is a few hundred lines** and lives under `scripts/template-engine/`. It runs during the CMS build. It does not ship to the browser.
 
 ## The four primitives
 

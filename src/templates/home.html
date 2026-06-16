@@ -46,9 +46,12 @@
       </section>
       <if condition="topTags && topTags.length">
         <section data-hero-topics aria-label="Popular topics">
-          <for each="tag in topTags">
-            <a data-tag href="/tags/{{ tag.slug }}.html">{{ tag.name }}</a>
-          </for>
+          <h2 data-hero-topics-title>Popular Topics</h2>
+          <div data-hero-topic-list>
+            <for each="tag in topTags">
+              <a data-tag href="/tags/{{ tag.slug }}.html">{{ tag.name }}</a>
+            </for>
+          </div>
         </section>
       </if>
       <section data-hero-stats>
@@ -63,6 +66,18 @@
         <dl>
           <dt>Series</dt>
           <dd>{{ stats.series }}</dd>
+        </dl>
+        <dl>
+          <dt>Months</dt>
+          <dd>{{ stats.months }}</dd>
+        </dl>
+        <dl>
+          <dt>Featured</dt>
+          <dd>{{ stats.featured }}</dd>
+        </dl>
+        <dl>
+          <dt>Latest</dt>
+          <dd>{{ stats.latest }}</dd>
         </dl>
       </section>
     </article>

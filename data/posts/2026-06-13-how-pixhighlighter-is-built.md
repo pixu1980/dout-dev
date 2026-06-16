@@ -17,7 +17,7 @@ canonical_url: false
 
 That is still a real `pre` element with a real `code` child. The source is readable before JavaScript runs, copyable as text, and understandable to assistive technology. The component does not need a custom shadow tree to make code look like code.
 
-The important decision is what it refuses to do by default: the primary path does not wrap every token in markup. The code block is not a pile of span wrappers. It is one text node that can be painted by the browser.
+**The important decision is what it refuses to do by default:** the primary path does not wrap every token in markup. The code block is not a pile of span wrappers. It is one text node that can be painted by the browser.
 
 ## Lexers describe positions
 

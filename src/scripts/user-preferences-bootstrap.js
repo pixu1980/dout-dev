@@ -27,12 +27,12 @@ const ACCENT_OPTIONS = Object.freeze([
 
 const BODY_FONT_OPTIONS = Object.freeze([
   {
-    id: 'humanist-sans',
-    stack: "'Avenir Next', 'Segoe UI Variable Text', 'Helvetica Neue', sans-serif",
-  },
-  {
     id: 'system-sans',
     stack: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+  },
+  {
+    id: 'humanist-sans',
+    stack: "'Avenir Next', 'Segoe UI Variable Text', 'Helvetica Neue', sans-serif",
   },
   { id: 'book-serif', stack: "Georgia, Cambria, 'Times New Roman', serif" },
   {
@@ -47,30 +47,34 @@ const BODY_FONT_OPTIONS = Object.freeze([
 ]);
 
 const CODE_FONT_OPTIONS = Object.freeze([
+  { id: 'system-mono', stack: "ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" },
   {
     id: 'plex-mono',
     stack: "'IBM Plex Mono', 'SFMono-Regular', 'Cascadia Code', Consolas, monospace",
   },
-  { id: 'system-mono', stack: "ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" },
   { id: 'cascadia-mono', stack: "'Cascadia Code', 'SFMono-Regular', Menlo, Consolas, monospace" },
   { id: 'classic-mono', stack: "'Courier New', Courier, monospace" },
 ]);
 
 const HEADING_FONT_OPTIONS = Object.freeze([
   {
-    id: 'editorial-serif',
-    stack: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
+    id: 'system-sans',
+    stack: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
   },
   {
     id: 'humanist-sans',
     stack: "'Avenir Next', 'Segoe UI Variable Text', 'Helvetica Neue', sans-serif",
   },
   {
-    id: 'system-sans',
-    stack: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    id: 'editorial-serif',
+    stack: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
   },
   { id: 'book-serif', stack: "Baskerville, 'Times New Roman', Georgia, serif" },
   { id: 'rounded-sans', stack: "Optima, Candara, 'Trebuchet MS', 'Gill Sans', sans-serif" },
+  {
+    id: 'open-dyslexic',
+    stack: "'OpenDyslexic', 'Atkinson Hyperlegible', system-ui, sans-serif",
+  },
 ]);
 
 const COLOR_SCHEMES = Object.freeze(['light', 'dark', 'system']);
@@ -78,11 +82,11 @@ const FONT_SCALE_OPTIONS = Object.freeze(['75%', '80%', '90%', '100%', '110%', '
 const LAYOUTS = Object.freeze(['list', 'grid']);
 const RADIUS_PRESET_OPTIONS = Object.freeze(['square', 'rounded', 'squircle']);
 const DEFAULT_PREFERENCES = Object.freeze({
-  bodyFont: 'humanist-sans',
-  codeFont: 'plex-mono',
+  bodyFont: 'system-sans',
+  codeFont: 'system-mono',
   colorScheme: 'system',
   fontScale: '100%',
-  headingFont: 'editorial-serif',
+  headingFont: 'system-sans',
   postFeedLayout: 'list',
   radiusPreset: 'rounded',
 });

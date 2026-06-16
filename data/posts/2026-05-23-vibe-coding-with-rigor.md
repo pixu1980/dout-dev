@@ -3,7 +3,7 @@ title: 'Vibe Coding With Rigor'
 date: '2026-05-23'
 published: true
 tags: ['making-of', 'ai-copilot', 'workflow']
-series: 'How I made it'
+series: ['How I made it', 'Bold Opinions']
 description: 'The milestone rhythm, prompting pattern, review loop, and delegation rules that kept the dout.dev rebuild disciplined while using an AI copilot.'
 canonical_url: false
 ---
@@ -14,7 +14,7 @@ canonical_url: false
 
 > Vibe coding is **driving an AI copilot hard with clear intent, small units of work, and strict review, while keeping the architectural decisions in your own head.**
 
-The vibe is the speed. The rigor is the review. This post is the workflow that made 19 milestones shippable without the repo turning into a science fair.
+**The vibe is the speed. The rigor is the review.** This post is the workflow that made 19 milestones shippable without the repo turning into a science fair.
 
 ## The unit of work
 

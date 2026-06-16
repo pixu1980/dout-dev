@@ -12,7 +12,7 @@ canonical_url: false
 
 If someone asks me today "what should I use for a personal developer blog," my answer is almost always Astro. It is a reasonable default. The ergonomics are good, the output is lean, the community is active, and the opinionated parts are mostly defensible.
 
-For dout.dev, I did not pick Astro. Nor Eleventy, nor Next, nor the half-dozen other solid options. I wrote a static site generator from scratch, on purpose. This post is the honest accounting of why - not to argue the frameworks are wrong, but to explain when building your own pipeline is actually a reasonable choice rather than a vanity project.
+For dout.dev, **I did not pick Astro. Nor Eleventy, nor Next**. I wrote a static site generator from scratch, on purpose. This post is the honest accounting of why - not to argue the frameworks are wrong, but to explain when building your own pipeline is actually a reasonable choice rather than a vanity project.
 
 ## The three hidden costs of a framework for a blog
 

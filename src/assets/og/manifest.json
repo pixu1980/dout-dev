@@ -251,6 +251,15 @@
       "fallbackPngPath": "/assets/og/posts/2026-06-14-why-display-preferences-popover-exists-card.png",
       "fallbackSvgPath": "/assets/og/posts/2026-06-14-why-display-preferences-popover-exists-card.svg"
     },
+    "post:2026-06-16-the-end-of-borrowed-abstractions": {
+      "kind": "post",
+      "slug": "2026-06-16-the-end-of-borrowed-abstractions",
+      "hash": "191fc1cdd535645a772e17ee2eef8d6c3d05fbac",
+      "pngPath": "/assets/og/posts/2026-06-16-the-end-of-borrowed-abstractions.png",
+      "svgPath": "/assets/og/posts/2026-06-16-the-end-of-borrowed-abstractions.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-16-the-end-of-borrowed-abstractions-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-16-the-end-of-borrowed-abstractions-card.svg"
+    },
     "tag:making-of": {
       "kind": "tag",
       "slug": "making-of",
@@ -454,6 +463,20 @@
       "pngPath": "/assets/og/tags/responsive-design.png",
       "svgPath": "/assets/og/tags/responsive-design.svg"
     },
+    "tag:ai": {
+      "kind": "tag",
+      "slug": "ai",
+      "hash": "17f9a084272f342214fe20447be5c07ce7f5c62a",
+      "pngPath": "/assets/og/tags/ai.png",
+      "svgPath": "/assets/og/tags/ai.svg"
+    },
+    "tag:security": {
+      "kind": "tag",
+      "slug": "security",
+      "hash": "5256ff8029c3d6fc853d22a3fab4e577fa3d1a8f",
+      "pngPath": "/assets/og/tags/security.png",
+      "svgPath": "/assets/og/tags/security.svg"
+    },
     "month:2026-04": {
       "kind": "month",
       "slug": "2026-04",
@@ -481,6 +504,20 @@
       "hash": "15068c5db404e39e10e32f2ea7a6a94a65abbda9",
       "pngPath": "/assets/og/series/how-i-made-it.png",
       "svgPath": "/assets/og/series/how-i-made-it.svg"
+    },
+    "series:bold-opinions": {
+      "kind": "series",
+      "slug": "bold-opinions",
+      "hash": "f2c08db24adb94c69d6532706dec268dda216e9a",
+      "pngPath": "/assets/og/series/bold-opinions.png",
+      "svgPath": "/assets/og/series/bold-opinions.svg"
+    },
+    "series:the-future-of-software": {
+      "kind": "series",
+      "slug": "the-future-of-software",
+      "hash": "fd4861a4f74639b4ceaa173baae7890dbc70832a",
+      "pngPath": "/assets/og/series/the-future-of-software.png",
+      "svgPath": "/assets/og/series/the-future-of-software.svg"
     }
   }
 }

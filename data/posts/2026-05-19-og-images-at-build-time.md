@@ -16,7 +16,7 @@ Every post needs a social preview image - the card that appears when someone sha
 - **Runtime service** (Vercel OG, Cloudinary). A URL like `og.dev/render?title=...` produces an image on demand. Works. Adds a third-party dependency, latency, and a potential point of failure.
 - **Build-time renderer.** Generate the PNG when the site builds, commit it to the static output. Works. Is under your control.
 
-For dout.dev I went build-time, for one reason: I wanted the image to be a byproduct of the build, cacheable as a static file, with zero runtime dependency. The implementation is about 150 lines of Node.
+For dout.dev I went build-time, for one reason: **I wanted the image to be a byproduct of the build, cacheable as a static file, with zero runtime dependency.** The implementation is about 150 lines of Node.
 
 ## The SVG template
 

@@ -12,7 +12,7 @@ canonical_url: false
 
 I did not "ask an AI to build my blog." I rebuilt dout.dev as a hands-on engineering project and used an AI copilot the same way you would use a very patient, very fast pair-programmer who happens to remember every file you pointed at. The difference from previous attempts is not that I wrote less code. It is that I spent far less time on the parts that used to drain me: boilerplate, repetitive refactors, sanity-checking conventions across hundreds of files, and the kind of careful mechanical work that makes a codebase consistent.
 
-What used to be a three-month weekend project compressed into a handful of focused sessions, split across nineteen milestones. This is the tally.
+**What used to be a three-month weekend project compressed into a handful of focused sessions**, split across nineteen milestones. This is the tally.
 
 ## The milestones I actually shipped
 

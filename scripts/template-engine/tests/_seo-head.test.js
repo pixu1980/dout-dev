@@ -184,7 +184,7 @@ describe('TemplateEngine - SEO head rendering', () => {
       loadMore: null,
       ogImageUrl: 'https://dout.dev/assets/og/pages/home.png',
       posts: [],
-      stats: { posts: 3, series: 1, tags: 2 },
+      stats: { featured: 1, latest: 3, months: 2, posts: 3, series: 1, tags: 2 },
       title: 'dout.dev',
       topTags: [{ name: 'CSS', slug: 'css' }],
     });
@@ -215,10 +215,14 @@ describe('TemplateEngine - SEO head rendering', () => {
     assert.equal(document.querySelector('[data-hero-panel]')?.tagName, 'ARTICLE');
     assert.equal(document.querySelector('[data-hero-actions]')?.tagName, 'SECTION');
     assert.equal(document.querySelector('[data-hero-topics]')?.tagName, 'SECTION');
+    assert.equal(
+      document.querySelector('[data-hero-topics-title]')?.textContent.trim(),
+      'Popular Topics'
+    );
     assert.equal(document.querySelector('[data-hero-stats]')?.tagName, 'SECTION');
     assert.deepEqual(
       Array.from(document.querySelectorAll('[data-hero-stats] > *')).map((node) => node.tagName),
-      ['DL', 'DL', 'DL']
+      ['DL', 'DL', 'DL', 'DL', 'DL', 'DL']
     );
     assert.equal(document.querySelector('[data-section-heading] > header')?.tagName, 'HEADER');
     assert.equal(document.querySelector('[data-section-heading-actions]')?.tagName, 'SECTION');

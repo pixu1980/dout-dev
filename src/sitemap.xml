@@ -101,6 +101,10 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://dout.dev/posts/2026-06-16-the-end-of-borrowed-abstractions.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://dout.dev/tags/making-of.html</loc>
     <changefreq>weekly</changefreq>
   </url>
@@ -217,6 +221,14 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://dout.dev/tags/ai.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/tags/security.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://dout.dev/months/2026-04.html</loc>
     <changefreq>weekly</changefreq>
   </url>
@@ -230,6 +242,14 @@
   </url>
   <url>
     <loc>https://dout.dev/series/how-i-made-it.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/series/bold-opinions.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/series/the-future-of-software.html</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

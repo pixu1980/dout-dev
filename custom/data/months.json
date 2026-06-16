@@ -679,14 +679,58 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-16-the-end-of-borrowed-abstractions",
+        "title": "The End of Borrowed Abstractions",
+        "date": "2026-06-16T00:00:00.000Z",
+        "dateString": "Tue Jun 16 2026",
+        "path": "./custom/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
+        "excerpt": "The reflex that shaped software",
+        "coverImage": null,
+        "coverAlt": "The End of Borrowed Abstractions",
+        "tags": [
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "Frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "security",
+            "label": "Security",
+            "url": "./tags/security.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "June 2026",
     "number": 6,
     "slug": "2026-06",
     "url": "./months/2026-06.html",
-    "count": 4,
+    "count": 5,
     "from": "2026-06-02T00:00:00.000Z",
-    "to": "2026-06-14T00:00:00.000Z"
+    "to": "2026-06-16T00:00:00.000Z"
   }
 ]

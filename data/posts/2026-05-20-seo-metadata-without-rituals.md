@@ -12,7 +12,7 @@ canonical_url: false
 
 "SEO" is a category name. Inside it are a dozen unrelated concerns, some of which matter for most sites and many of which do not. This post is the handful of tags I ship on dout.dev because they demonstrably help crawlers and discovery, and the handful I do not ship because they are noise.
 
-The line I draw: a tag earns its place if a major crawler uses it or if it improves a demonstrable discovery behavior. If it is "recommended" but nobody can point to the behavior it improves, I leave it out.
+**The line I draw:** a tag earns its place if a major crawler uses it or if it improves a demonstrable discovery behavior. If it is "recommended" but nobody can point to the behavior it improves, I leave it out.
 
 ## Canonical URLs: one real URL per page
 

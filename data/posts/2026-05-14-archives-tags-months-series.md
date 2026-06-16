@@ -18,7 +18,7 @@ dout.dev ships three archives:
 - **By month** - `/months/<YYYY-MM>.html`. Temporal browsing. "What did you write in 2026-03?"
 - **By series** - `/series/<slug>.html`. Intentional groupings. "Read the making-of series in order."
 
-Each is a first-class surface with its own page, its own RSS feed, its own OG image, and its own pagination. All three are generated from the same normalized dataset the post generator uses, so there is no drift between what a tag page shows and what the post pages claim.
+**Each is a first-class surface** with its own page, its own RSS feed, its own OG image, and its own pagination. All three are generated from the same normalized dataset the post generator uses, so there is no drift between what a tag page shows and what the post pages claim.
 
 ## The URL shape
 

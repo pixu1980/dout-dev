@@ -12,7 +12,7 @@ canonical_url: false
 
 GitHub Pages is excellent for serving a static site. It is also, by default, missing two features that Netlify and Vercel have made everyone expect: **deploy previews on pull requests**, and **one-click rollback** to a previous deploy.
 
-Neither is actually missing. They are just not turned on. The pieces exist in GitHub Actions; you have to wire them up. On dout.dev, that wiring is about 40 lines of YAML and one simple naming convention.
+*Neither is actually missing.* They are just not turned on. The pieces exist in GitHub Actions; you have to wire them up. On dout.dev, that wiring is about 40 lines of YAML and one simple naming convention.
 
 ## The production pipeline
 

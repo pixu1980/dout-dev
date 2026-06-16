@@ -12,7 +12,7 @@ canonical_url: false
 
 Every time I started a personal site and went "page first, design system later," I ended up with a pile of local exceptions. A `margin-top: 24px` here, a `color: #f5a623` there, a breakpoint at `768px` on one component and `720px` on another. By the third page the design was already incoherent, and the only way to fix it was to go back and retrofit tokens onto a living codebase. That is the worst moment to do it.
 
-For dout.dev I flipped the order. Tokens first, components second, pages third. This post is what that looks like in practice.
+For dout.dev I flipped the order. **Tokens first, components second, pages third.** This post is what that looks like in practice.
 
 ## What I mean by "tokens"
 

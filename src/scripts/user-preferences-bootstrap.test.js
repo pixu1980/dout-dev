@@ -100,18 +100,35 @@ describe('user preferences bootstrap', () => {
     assert.equal(document.documentElement.dataset.radiusPreset, 'rounded');
     assert.equal(document.documentElement.hasAttribute('data-increase-contrast'), false);
     assert.equal(document.documentElement.style.fontSize, '');
+    assert.match(
+      document.documentElement.style.getPropertyValue('--dout--font-display'),
+      /system-ui/i
+    );
+    assert.match(
+      document.documentElement.style.getPropertyValue('--dout--font-sans'),
+      /system-ui/i
+    );
+    assert.match(
+      document.documentElement.style.getPropertyValue('--dout--font-mono'),
+      /ui-monospace/i
+    );
   });
 
-  test('applies saved OpenDyslexic body font before revealing the page', () => {
+  test('applies saved OpenDyslexic heading and body fonts before revealing the page', () => {
     window.localStorage.setItem(
       STORAGE_KEYS.displayPreferences,
-      JSON.stringify({ bodyFont: 'open-dyslexic' })
+      JSON.stringify({ bodyFont: 'open-dyslexic', headingFont: 'open-dyslexic' })
     );
     document.documentElement.dataset.userPreferences = 'loading';
 
     const applied = bootUserPreferences();
 
     assert.equal(applied.displayPreferences.bodyFont, 'open-dyslexic');
+    assert.equal(applied.displayPreferences.headingFont, 'open-dyslexic');
+    assert.match(
+      document.documentElement.style.getPropertyValue('--dout--font-display'),
+      /OpenDyslexic/
+    );
     assert.match(
       document.documentElement.style.getPropertyValue('--dout--font-sans'),
       /OpenDyslexic/
