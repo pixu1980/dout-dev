@@ -1,33 +1,36 @@
-@layer components {
-  :root:not([data-pix-highlighter-theme]) pre[is='pix-highlighter'],
-  :root[data-pix-highlighter-theme='default'] pre[is='pix-highlighter'] {
-    --pix-highlighter--bg: #0b0d10;
-    --pix-highlighter--fg: #e6e6e6;
-    --pix-highlighter--kw: #c792ea;
-    --pix-highlighter--str: #ecc48d;
-    --pix-highlighter--num: #f78c6c;
-    --pix-highlighter--com: #697098;
-    --pix-highlighter--id: #82aaff;
-    --pix-highlighter--op: #c3e88d;
-    --pix-highlighter--tag: #5ad4e6;
-    --pix-highlighter--attr: #f2ae49;
-    --pix-highlighter--key: #ffcc66;
-    --pix-highlighter--var: #d5ff80;
-    --pix-highlighter--mac: #ff9dd9;
-    --pix-highlighter--pp: #8bd5ff;
-    --pix-highlighter--prop: #9cdcfe;
-    --pix-highlighter--type: #7fd5a3;
-    --pix-highlighter--mdh: #5ad4e6;
-    --pix-highlighter--mde: #f2ae49;
-    --pix-highlighter--mds: #ffd166;
-    --pix-highlighter--mdc: #c3e88d;
-    --pix-highlighter--mdl: #80cbc4;
-    --pix-highlighter--mdbq: #a0a7bd;
-    --pix-highlighter--mdli: #b3e5fc;
-    --pix-highlighter--mdhr: #6c7a89;
-    --pix-highlighter--mdimg: #90caf9;
-    --pix-highlighter--tab-size: 2;
-    --pix-highlighter--line-height: 1.5;
-    --pix-highlighter--text-shadow: none;
+@layer pix-components {
+  @layer pix-highlighter {
+    :root:not([data-pix-highlighter-theme]) pre[is='pix-highlighter'],
+    :root[data-pix-highlighter-theme='default'] pre[is='pix-highlighter'] {
+      --pix-highlighter--bg: #0b0d10;
+      --pix-highlighter--fg: #e6e6e6;
+      --pix-highlighter--kw: #c792ea;
+      --pix-highlighter--str: #ecc48d;
+      --pix-highlighter--num: #f78c6c;
+      --pix-highlighter--com: #697098;
+      --pix-highlighter--id: #82aaff;
+      --pix-highlighter--op: #c3e88d;
+      --pix-highlighter--tag: #5ad4e6;
+      --pix-highlighter--attr: #f2ae49;
+      --pix-highlighter--key: #ffcc66;
+      --pix-highlighter--var: #d5ff80;
+      --pix-highlighter--mac: #ff9dd9;
+      --pix-highlighter--pp: #8bd5ff;
+      --pix-highlighter--prop: #9cdcfe;
+      --pix-highlighter--type: #7fd5a3;
+      --pix-highlighter--mdh: #5ad4e6;
+      --pix-highlighter--mde: #f2ae49;
+      --pix-highlighter--mds: #ffd166;
+      --pix-highlighter--mdc: #c3e88d;
+      --pix-highlighter--mdl: #80cbc4;
+      --pix-highlighter--mdbq: #a0a7bd;
+      --pix-highlighter--mdli: #b3e5fc;
+      --pix-highlighter--mdhr: #6c7a89;
+      --pix-highlighter--mdimg: #90caf9;
+
+      --pix-highlighter--tab-size: 2;
+      --pix-highlighter--line-height: 1.5;
+      --pix-highlighter--text-shadow: none;
+    }
   }
 }

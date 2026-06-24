@@ -1002,6 +1002,7 @@
     font-size: 1em;
     background: var(--dout--accent-soft);
     color: contrast-color(var(--dout--accent-soft));
+    overflow-wrap: anywhere;
   }
 
   [data-comments-shell],

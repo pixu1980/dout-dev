@@ -120,7 +120,7 @@ function adoptComponentStyles() {
   }
 
   if (!document.adoptedStyleSheets.includes(componentStyleSheet)) {
-    document.adoptedStyleSheets = [...document.adoptedStyleSheets, componentStyleSheet];
+    document.adoptedStyleSheets.push(componentStyleSheet);
   }
 
   return componentStyleSheet;
@@ -934,7 +934,7 @@ class PixHighlighter extends HTMLPreElement {
       }
 
       const tokenElement = document.createElement('span');
-      tokenElement.dataset.pixToken = token.type;
+      tokenElement.dataset.token = token.type;
       tokenElement.textContent = text.slice(token.start, token.end);
       fragment.append(tokenElement);
       cursor = token.end;

@@ -1,33 +1,35 @@
-@layer components {
-  :root[data-pix-highlighter-theme='prettylights'] pre[is='pix-highlighter'] {
-    --pix-highlighter--bg: light-dark(#f6f8fa, #151b23);
-    --pix-highlighter--fg: light-dark(#1f2328, #f0f6fc);
-    --pix-highlighter--kw: light-dark(#cf222e, #ff7b72);
-    --pix-highlighter--str: light-dark(#0a3069, #a5d6ff);
-    --pix-highlighter--num: light-dark(#1f2328, #f0f6fc);
-    --pix-highlighter--com: light-dark(#59636e, #9198a1);
-    --pix-highlighter--id: light-dark(#6639ba, #d2a8ff);
-    --pix-highlighter--op: light-dark(#0550ae, #79c0ff);
-    --pix-highlighter--tag: light-dark(#0550ae, #7ee787);
-    --pix-highlighter--attr: light-dark(#0550ae, #79c0ff);
-    --pix-highlighter--key: light-dark(#0550ae, #7ee787);
-    --pix-highlighter--var: light-dark(#953800, #ffa657);
-    --pix-highlighter--mac: light-dark(#6639ba, #d2a8ff);
-    --pix-highlighter--pp: light-dark(#59636e, #9198a1);
-    --pix-highlighter--prop: light-dark(#0550ae, #7ee787);
-    --pix-highlighter--type: light-dark(#6639ba, #d2a8ff);
-    --pix-highlighter--mdh: light-dark(#0550ae, #1f6feb);
-    --pix-highlighter--mde: light-dark(#6639ba, #d2a8ff);
-    --pix-highlighter--mds: light-dark(#1f2328, #f0f6fc);
-    --pix-highlighter--mdc: light-dark(#116329, #7ee787);
-    --pix-highlighter--mdl: light-dark(#0a3069, #a5d6ff);
-    --pix-highlighter--mdbq: light-dark(#59636e, #9198a1);
-    --pix-highlighter--mdli: light-dark(#953800, #ffa657);
-    --pix-highlighter--mdhr: light-dark(#59636e, #9198a1);
-    --pix-highlighter--mdimg: light-dark(#953800, #ffa657);
-    --pix-highlighter--tab-size: 2;
-    --pix-highlighter--line-height: 1.6;
-    --pix-highlighter--text-shadow: none;
-    color-scheme: light dark;
+@layer pix-components {
+  @layer pix-highlighter {
+    :root[data-pix-highlighter-theme='prettylights'] pre[is='pix-highlighter'] {
+      --pix-highlighter--bg: light-dark(#f6f8fa, #151b23);
+      --pix-highlighter--fg: light-dark(#1f2328, #f0f6fc);
+      --pix-highlighter--kw: light-dark(#cf222e, #ff7b72);
+      --pix-highlighter--str: light-dark(#0a3069, #a5d6ff);
+      --pix-highlighter--num: light-dark(#1f2328, #f0f6fc);
+      --pix-highlighter--com: light-dark(#59636e, #9198a1);
+      --pix-highlighter--id: light-dark(#6639ba, #d2a8ff);
+      --pix-highlighter--op: light-dark(#0550ae, #79c0ff);
+      --pix-highlighter--tag: light-dark(#0550ae, #7ee787);
+      --pix-highlighter--attr: light-dark(#0550ae, #79c0ff);
+      --pix-highlighter--key: light-dark(#0550ae, #7ee787);
+      --pix-highlighter--var: light-dark(#953800, #ffa657);
+      --pix-highlighter--mac: light-dark(#6639ba, #d2a8ff);
+      --pix-highlighter--pp: light-dark(#59636e, #9198a1);
+      --pix-highlighter--prop: light-dark(#0550ae, #7ee787);
+      --pix-highlighter--type: light-dark(#6639ba, #d2a8ff);
+      --pix-highlighter--mdh: light-dark(#0550ae, #1f6feb);
+      --pix-highlighter--mde: light-dark(#6639ba, #d2a8ff);
+      --pix-highlighter--mds: light-dark(#1f2328, #f0f6fc);
+      --pix-highlighter--mdc: light-dark(#116329, #7ee787);
+      --pix-highlighter--mdl: light-dark(#0a3069, #a5d6ff);
+      --pix-highlighter--mdbq: light-dark(#59636e, #9198a1);
+      --pix-highlighter--mdli: light-dark(#953800, #ffa657);
+      --pix-highlighter--mdhr: light-dark(#59636e, #9198a1);
+      --pix-highlighter--mdimg: light-dark(#953800, #ffa657);
+
+      --pix-highlighter--tab-size: 2;
+      --pix-highlighter--line-height: 1.6;
+      --pix-highlighter--text-shadow: none;
+    }
   }
 }

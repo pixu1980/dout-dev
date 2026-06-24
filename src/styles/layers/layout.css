@@ -39,13 +39,18 @@
   [data-main-nav] {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: var(--dout--space-5);
+    flex: 1 0 auto;
+    min-width: 0;
   }
 
   [data-main-links] {
     display: flex;
     flex-wrap: wrap;
     gap: var(--dout--space-2);
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   [data-header-actions] {
@@ -54,6 +59,7 @@
     align-items: center;
     justify-content: flex-end;
     gap: var(--dout--space-2);
+    flex-shrink: 0;
   }
 
   [data-hero] {
@@ -233,7 +239,8 @@
 
     [data-header-actions] {
       width: 100%;
-      justify-content: flex-start;
+      justify-content: flex-end;
+      gap: var(--dout--space-3);
     }
 
     [data-brand-tag] {

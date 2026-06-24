@@ -1,33 +1,35 @@
-@layer components {
-  :root[data-pix-highlighter-theme='prism'] pre[is='pix-highlighter'] {
-    --pix-highlighter--bg: #f5f2f0;
-    --pix-highlighter--fg: #000000;
-    --pix-highlighter--kw: #07a;
-    --pix-highlighter--str: #690;
-    --pix-highlighter--num: #905;
-    --pix-highlighter--com: slategray;
-    --pix-highlighter--id: #5f5a57;
-    --pix-highlighter--op: #9a6e3a;
-    --pix-highlighter--tag: #905;
-    --pix-highlighter--attr: #690;
-    --pix-highlighter--key: #905;
-    --pix-highlighter--var: #e90;
-    --pix-highlighter--mac: #dd4a68;
-    --pix-highlighter--pp: slategray;
-    --pix-highlighter--prop: #905;
-    --pix-highlighter--type: #dd4a68;
-    --pix-highlighter--mdh: #07a;
-    --pix-highlighter--mde: #dd4a68;
-    --pix-highlighter--mds: #000000;
-    --pix-highlighter--mdc: #690;
-    --pix-highlighter--mdl: #07a;
-    --pix-highlighter--mdbq: slategray;
-    --pix-highlighter--mdli: #905;
-    --pix-highlighter--mdhr: #999;
-    --pix-highlighter--mdimg: #e90;
-    --pix-highlighter--tab-size: 2;
-    --pix-highlighter--font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    --pix-highlighter--line-height: 1.5;
-    --pix-highlighter--text-shadow: 0 1px white;
+@layer pix-components {
+  @layer pix-highlighter {
+    :root[data-pix-highlighter-theme='prism'] pre[is='pix-highlighter'] {
+      --pix-highlighter--bg: #f5f2f0;
+      --pix-highlighter--fg: #000000;
+      --pix-highlighter--kw: #07a;
+      --pix-highlighter--str: #690;
+      --pix-highlighter--num: #905;
+      --pix-highlighter--com: slategray;
+      --pix-highlighter--id: #5f5a57;
+      --pix-highlighter--op: #9a6e3a;
+      --pix-highlighter--tag: #905;
+      --pix-highlighter--attr: #690;
+      --pix-highlighter--key: #905;
+      --pix-highlighter--var: #e90;
+      --pix-highlighter--mac: #dd4a68;
+      --pix-highlighter--pp: slategray;
+      --pix-highlighter--prop: #905;
+      --pix-highlighter--type: #dd4a68;
+      --pix-highlighter--mdh: #07a;
+      --pix-highlighter--mde: #dd4a68;
+      --pix-highlighter--mds: #000000;
+      --pix-highlighter--mdc: #690;
+      --pix-highlighter--mdl: #07a;
+      --pix-highlighter--mdbq: slategray;
+      --pix-highlighter--mdli: #905;
+      --pix-highlighter--mdhr: #999;
+      --pix-highlighter--mdimg: #e90;
+
+      --pix-highlighter--tab-size: 2;
+      --pix-highlighter--line-height: 1.5;
+      --pix-highlighter--text-shadow: 0 1px white;
+    }
   }
 }

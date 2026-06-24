@@ -1,0 +1,141 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - banner
+      - main:
+        - article:
+          - generic:
+            - paragraph
+            - paragraph:
+              - time
+            - heading [level=1]
+            - paragraph
+            - list:
+              - listitem:
+                - generic: "#"
+              - listitem:
+                - generic: "#"
+              - listitem:
+                - generic: "#"
+              - listitem:
+                - generic: "#"
+            - figure
+          - generic:
+            - heading [level=2]
+            - generic:
+              - heading [level=2]
+              - paragraph:
+                - strong
+                - strong
+              - paragraph:
+                - emphasis
+              - heading [level=2]
+              - paragraph:
+                - code
+                - code
+                - code
+              - generic:
+                - code
+              - paragraph:
+                - code
+                - code
+              - heading [level=2]
+              - paragraph
+              - paragraph:
+                - strong:
+                  - code
+              - generic:
+                - code
+              - paragraph
+              - heading [level=2]
+              - paragraph:
+                - code
+              - paragraph:
+                - code
+                - code
+              - paragraph
+              - heading [level=2]
+              - paragraph
+              - paragraph
+              - list:
+                - listitem
+                - listitem
+                - listitem
+              - paragraph
+              - paragraph
+              - list:
+                - listitem:
+                  - strong:
+                    - code
+                - listitem:
+                  - strong
+              - paragraph
+              - heading [level=2]
+              - paragraph
+              - paragraph
+              - heading [level=2]
+              - list:
+                - listitem:
+                  - strong
+                - listitem:
+                  - strong
+                - listitem:
+                  - strong
+              - heading [level=2]
+              - paragraph
+              - heading [level=2]
+              - list:
+                - listitem
+                - listitem:
+                  - generic:
+                    - code
+                - listitem:
+                  - generic:
+                    - code
+                - listitem
+          - complementary:
+            - navigation:
+              - heading [level=2]
+              - list:
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+          - generic:
+            - generic:
+              - paragraph
+            - paragraph
+          - navigation:
+            - generic:
+              - paragraph
+              - heading [level=2]
+              - list:
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+                - listitem
+        - navigation:
+          - generic:
+            - strong
+          - generic:
+            - strong
+      - contentinfo:
+        - generic:
+          - navigation
