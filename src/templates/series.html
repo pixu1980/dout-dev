@@ -37,18 +37,18 @@
 </block>
 
 <block name="content">
-  <section data-page-hero data-reveal aria-labelledby="series-title">
+  <section data-page-hero data-reveal>
     <p data-eyebrow>Series</p>
-    <h1 id="series-title">{{ series.title }}</h1>
+    <h1>{{ series.title }}</h1>
     <if condition="series.description">
       <p>{{ series.description }}</p>
     </if>
   </section>
 
-  <section data-post-feed-shell aria-labelledby="series-posts-title">
+  <section data-post-feed-shell>
     <header data-section-heading data-section-heading-feed data-reveal>
       <p data-eyebrow data-muted>Posts</p>
-      <h2 id="series-posts-title">Posts in this series</h2>
+      <h2>Posts in this series</h2>
     </header>
 
     <ul

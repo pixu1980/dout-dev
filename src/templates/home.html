@@ -30,30 +30,27 @@
 </block>
 
 <block name="content">
-  <section data-hero data-hero-variant="home" data-reveal aria-labelledby="home-title">
+  <section data-hero data-hero-variant="home" data-reveal>
     <article data-hero-copy>
-      <p data-eyebrow>Editorial notes and stats</p>
-      <h1 id="home-title">A handcrafted frontend journal for dout.dev.</h1>
-      <p data-hero-lede>
-        Field notes on CSS, accessibility, design systems, and the mechanics of publishing a fast static site without
-        the usual framework gloss.
-      </p>
+      <if condition="specialPost">
+        <section data-hero-special>
+          <p data-eyebrow>Featured story</p>
+          <article data-feature-card data-reveal>
+            <p data-feature-card-meta>
+              <time datetime="{{ specialPost.date | date:'YYYY-MM-DD' }}">{{ specialPost.date | date:'long' }}</time>
+            </p>
+            <h1><a href="/posts/{{ specialPost.name }}.html">{{ specialPost.title }}</a></h1>
+            <p>{{ specialPost.excerpt }}</p>
+            <a data-text-link href="/posts/{{ specialPost.name }}.html">Read the story</a>
+          </article>
+        </section>
+      </if>
       <section data-hero-actions>
         <a data-button data-button-variant="primary" href="/archive.html">Browse the archive</a>
         <a data-button data-button-variant="ghost" href="{{ site.rssFeedPath | default:'/feed.rss' }}"
           >Follow via RSS</a
         >
       </section>
-      <if condition="topTags && topTags.length">
-        <section data-hero-topics aria-label="Popular topics">
-          <h2 data-hero-topics-title>Popular Topics</h2>
-          <div data-hero-topic-list>
-            <for each="tag in topTags">
-              <a data-tag href="/tags/{{ tag.slug }}.html">{{ tag.name }}</a>
-            </for>
-          </div>
-        </section>
-      </if>
       <section data-hero-stats>
         <dl>
           <dt>Posts</dt>
@@ -82,7 +79,7 @@
       </section>
     </article>
     <article data-hero-panel>
-      <p data-eyebrow data-muted>Featured</p>
+      <p data-eyebrow data-muted>Featured Articles</p>
       <if condition="featuredPosts && featuredPosts.length">
         <section data-featured-posts aria-label="Featured posts">
           <for each="featured in featuredPosts">
@@ -100,18 +97,25 @@
     </article>
   </section>
 
-  <section data-section-heading data-reveal aria-labelledby="latest-title">
-    <header>
-      <p data-eyebrow>Latest writing</p>
-      <h2 id="latest-title">Fresh from the sources</h2>
-    </header>
-    <section data-section-heading-actions>
-      <a data-text-link href="/archive.html">See the full archive</a>
+  <if condition="topTags && topTags.length">
+    <section data-popular-topics aria-label="Popular topics">
+      <p data-popular-topics-title data-eyebrow>Popular Topics</p>
+      <div data-tag-list>
+        <for each="tag in topTags">
+          <a data-tag href="/tags/{{ tag.slug }}.html">{{ tag.name }}</a>
+        </for>
+      </div>
     </section>
-  </section>
+  </if>
 
   <if condition="posts && posts.length">
-    <section data-post-feed-shell aria-labelledby="latest-title">
+    <section data-post-feed-shell>
+      <header data-reveal>
+        <p data-eyebrow>Recent Articles</p>
+        <section data-section-heading-actions>
+          <a data-text-link href="/archive.html">See the full archive</a>
+        </section>
+      </header>
       <ul
         data-post-feed
         data-post-feed-variant="feature-list"

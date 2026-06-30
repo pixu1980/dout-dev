@@ -57,7 +57,7 @@ function toTimestamp(value) {
 
 const DEFAULT_POST_FEED_STEP = 10;
 const HOME_INITIAL_POSTS = 20;
-const HOME_FEATURED_POSTS = 3;
+const HOME_FEATURED_POSTS = 2;
 const OG_FALLBACK_COVER_WIDTH = 1200;
 const OG_FALLBACK_COVER_HEIGHT = 900;
 
@@ -153,12 +153,14 @@ export function buildPostFeedLoadMoreConfig(
 export function getHomePageFeedModel(posts) {
   const published = (posts || []).filter((post) => post?.published);
   const latestPosts = sortPostsByDateDesc(published);
-  const featuredPosts = sortPostsByPinnedThenDateDesc(published).slice(0, HOME_FEATURED_POSTS);
+  const featuredPosts = sortPostsByDateDesc(published).slice(0, HOME_FEATURED_POSTS);
   const featuredPost = featuredPosts[0] || null;
+  const specialPost = (published || []).find((post) => post.pinned) || featuredPost;
 
   return {
     featuredPost,
     featuredPosts,
+    specialPost,
     latestPosts,
     loadMore: buildPostFeedLoadMoreConfig(latestPosts.length, {
       initialCount: HOME_INITIAL_POSTS,
@@ -711,9 +713,8 @@ function generateStaticPages(dataset, config, renderer) {
 
   // Home: latest posts by publication date, with a separate featured selection
   try {
-    const { featuredPost, featuredPosts, latestPosts, loadMore } = getHomePageFeedModel(
-      dataset.posts || []
-    );
+    const { featuredPost, featuredPosts, specialPost, latestPosts, loadMore } =
+      getHomePageFeedModel(dataset.posts || []);
     const topTags = (dataset.tags || [])
       .slice()
       .sort((a, b) => (b.count || 0) - (a.count || 0))
@@ -729,6 +730,7 @@ function generateStaticPages(dataset, config, renderer) {
       posts: latestPosts,
       featuredPost,
       featuredPosts,
+      specialPost,
       loadMore,
       topTags,
       stats: {

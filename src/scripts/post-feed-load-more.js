@@ -1,6 +1,6 @@
 import { refreshPostFeedLayouts } from './post-feed-layout.js';
 
-const FEED_SELECTOR = '[data-load-more-feed="true"]';
+const FEED_SELECTOR = '[data-load-more-feed="true"]:not([data-skeleton-node])';
 const DEFAULT_STEP = 10;
 
 function parsePositiveInteger(value, fallback) {
@@ -29,11 +29,11 @@ function updateFeed(state) {
   const remainingCount = Math.max(state.items.length - visibleCount, 0);
 
   state.items.forEach((item, index) => {
-    item.hidden = index >= visibleCount;
+    item.style.display = index >= visibleCount ? 'none' : '';
   });
 
   state.status.textContent = `Showing ${visibleCount} of ${state.items.length} posts`;
-  state.button.hidden = remainingCount === 0;
+  state.button.style.display = remainingCount === 0 ? 'none' : '';
   state.button.textContent = formatRemainingLabel(state.baseLabel, remainingCount, state.step);
 
   refreshPostFeedLayouts();
@@ -53,7 +53,7 @@ function createControls(feed, baseLabel) {
   button.dataset.buttonVariant = 'ghost';
   button.textContent = baseLabel;
 
-  controls.append(status, button);
+  controls.append(button, status);
   feed.insertAdjacentElement('afterend', controls);
 
   return { button, status };
@@ -61,6 +61,10 @@ function createControls(feed, baseLabel) {
 
 function initLoadMoreFeed(feed) {
   if (!(feed instanceof HTMLElement) || feed.dataset.loadMoreReady === 'true') {
+    return;
+  }
+
+  if (feed.closest('[data-preferences-skeleton]')) {
     return;
   }
 

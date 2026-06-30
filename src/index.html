@@ -137,44 +137,32 @@
     </header>
 
     <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
-      <section data-hero="" data-hero-variant="home" data-reveal="" aria-labelledby="home-title">
+      <section data-hero="" data-hero-variant="home" data-reveal="">
         <article data-hero-copy="">
-          <p data-eyebrow="">Editorial notes and stats</p>
-          <h1 id="home-title">A handcrafted frontend journal for dout.dev.</h1>
-          <p data-hero-lede="">
-            Field notes on CSS, accessibility, design systems, and the mechanics of publishing a fast static site
-            without the usual framework gloss.
-          </p>
+          <section data-hero-special="">
+            <p data-eyebrow="">Featured story</p>
+            <article data-feature-card="" data-reveal="">
+              <p data-feature-card-meta="">
+                <time datetime="2026-04-04">April 4, 2026</time>
+              </p>
+              <h1><a href="/posts/2026-04-04-how-i-built-dout-dev.html">How I Built dout.dev</a></h1>
+              <p>What the stack is, exactly</p>
+              <a data-text-link="" href="/posts/2026-04-04-how-i-built-dout-dev.html">Read the story</a>
+            </article>
+          </section>
+
           <section data-hero-actions="">
             <a data-button="" data-button-variant="primary" href="/archive.html">Browse the archive</a>
             <a data-button="" data-button-variant="ghost" href="/feed.rss">Follow via RSS</a>
           </section>
-
-          <section data-hero-topics="" aria-label="Popular topics">
-            <h2 data-hero-topics-title="">Popular Topics</h2>
-            <div data-hero-topic-list="">
-              <a data-tag="" href="/tags/making-of.html">Making-of</a>
-
-              <a data-tag="" href="/tags/architecture.html">Architecture</a>
-
-              <a data-tag="" href="/tags/static-site.html">Static-site</a>
-
-              <a data-tag="" href="/tags/frontend.html">Frontend</a>
-
-              <a data-tag="" href="/tags/seo.html">Seo</a>
-
-              <a data-tag="" href="/tags/accessibility.html">Accessibility</a>
-            </div>
-          </section>
-
           <section data-hero-stats="">
             <dl>
               <dt>Posts</dt>
-              <dd>21</dd>
+              <dd>22</dd>
             </dl>
             <dl>
               <dt>Topics</dt>
-              <dd>31</dd>
+              <dd>32</dd>
             </dl>
             <dl>
               <dt>Series</dt>
@@ -186,25 +174,29 @@
             </dl>
             <dl>
               <dt>Featured</dt>
-              <dd>3</dd>
+              <dd>2</dd>
             </dl>
             <dl>
               <dt>Latest</dt>
-              <dd>21</dd>
+              <dd>22</dd>
             </dl>
           </section>
         </article>
         <article data-hero-panel="">
-          <p data-eyebrow="" data-muted="">Featured</p>
+          <p data-eyebrow="" data-muted="">Featured Articles</p>
 
           <section data-featured-posts="" aria-label="Featured posts">
             <article data-feature-card="" data-reveal="">
               <p data-feature-card-meta="">
-                <time datetime="2026-04-04">April 4, 2026</time>
+                <time datetime="2026-06-23">June 23, 2026</time>
               </p>
-              <h2><a href="/posts/2026-04-04-how-i-built-dout-dev.html">How I Built dout.dev</a></h2>
-              <p>What the stack is, exactly</p>
-              <a data-text-link="" href="/posts/2026-04-04-how-i-built-dout-dev.html">Read the post</a>
+              <h2>
+                <a href="/posts/2026-06-23-client-side-search-static-dataset.html"
+                  >Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking</a
+                >
+              </h2>
+              <p>The constraint</p>
+              <a data-text-link="" href="/posts/2026-06-23-client-side-search-static-dataset.html">Read the post</a>
             </article>
 
             <article data-feature-card="" data-reveal="">
@@ -217,36 +209,34 @@
               <p>The reflex that shaped software</p>
               <a data-text-link="" href="/posts/2026-06-16-the-end-of-borrowed-abstractions.html">Read the post</a>
             </article>
-
-            <article data-feature-card="" data-reveal="">
-              <p data-feature-card-meta="">
-                <time datetime="2026-06-14">June 14, 2026</time>
-              </p>
-              <h2>
-                <a href="/posts/2026-06-14-why-display-preferences-popover-exists.html"
-                  >Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences</a
-                >
-              </h2>
-              <p>Accessibility is not one feature</p>
-              <a data-text-link="" href="/posts/2026-06-14-why-display-preferences-popover-exists.html"
-                >Read the post</a
-              >
-            </article>
           </section>
         </article>
       </section>
 
-      <section data-section-heading="" data-reveal="" aria-labelledby="latest-title">
-        <header>
-          <p data-eyebrow="">Latest writing</p>
-          <h2 id="latest-title">Fresh from the sources</h2>
-        </header>
-        <section data-section-heading-actions="">
-          <a data-text-link="" href="/archive.html">See the full archive</a>
-        </section>
+      <section data-popular-topics="" aria-label="Popular topics">
+        <p data-popular-topics-title="" data-eyebrow="">Popular Topics</p>
+        <div data-tag-list="">
+          <a data-tag="" href="/tags/making-of.html">Making-of</a>
+
+          <a data-tag="" href="/tags/architecture.html">Architecture</a>
+
+          <a data-tag="" href="/tags/static-site.html">Static-site</a>
+
+          <a data-tag="" href="/tags/vanilla-js.html">Vanilla-js</a>
+
+          <a data-tag="" href="/tags/frontend.html">Frontend</a>
+
+          <a data-tag="" href="/tags/seo.html">Seo</a>
+        </div>
       </section>
 
-      <section data-post-feed-shell="" aria-labelledby="latest-title">
+      <section data-post-feed-shell="">
+        <header data-reveal="">
+          <p data-eyebrow="">Recent Articles</p>
+          <section data-section-heading-actions="">
+            <a data-text-link="" href="/archive.html">See the full archive</a>
+          </section>
+        </header>
         <ul
           data-post-feed=""
           data-post-feed-variant="feature-list"
@@ -255,6 +245,38 @@
           data-load-more-step="10"
           data-load-more-label="Load 10 more posts"
         >
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-06-23">June 23, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-06-23-client-side-search-static-dataset.html"
+                      >Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The constraint</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/vanilla-js.html">Vanilla-js</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/search.html">Search</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/architecture.html">Architecture</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/static-site.html">Static-site</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
           <li data-post-feed-item="" data-reveal="">
             <article data-post-card="" data-post-card-variant="default">
               <section data-post-card-content="">

@@ -105,6 +105,10 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://dout.dev/posts/2026-06-23-client-side-search-static-dataset.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://dout.dev/tags/making-of.html</loc>
     <changefreq>weekly</changefreq>
   </url>
@@ -226,6 +230,10 @@
   </url>
   <url>
     <loc>https://dout.dev/tags/security.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dout.dev/tags/search.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>

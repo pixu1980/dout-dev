@@ -260,6 +260,15 @@
       "fallbackPngPath": "/assets/og/posts/2026-06-16-the-end-of-borrowed-abstractions-card.png",
       "fallbackSvgPath": "/assets/og/posts/2026-06-16-the-end-of-borrowed-abstractions-card.svg"
     },
+    "post:2026-06-23-client-side-search-static-dataset": {
+      "kind": "post",
+      "slug": "2026-06-23-client-side-search-static-dataset",
+      "hash": "4892c9318a0b82ed5a0874b909dadfbc55f325cc",
+      "pngPath": "/assets/og/posts/2026-06-23-client-side-search-static-dataset.png",
+      "svgPath": "/assets/og/posts/2026-06-23-client-side-search-static-dataset.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-23-client-side-search-static-dataset-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-23-client-side-search-static-dataset-card.svg"
+    },
     "tag:making-of": {
       "kind": "tag",
       "slug": "making-of",
@@ -476,6 +485,13 @@
       "hash": "5256ff8029c3d6fc853d22a3fab4e577fa3d1a8f",
       "pngPath": "/assets/og/tags/security.png",
       "svgPath": "/assets/og/tags/security.svg"
+    },
+    "tag:search": {
+      "kind": "tag",
+      "slug": "search",
+      "hash": "b657435fc3867cc04d620e33234734d26639f521",
+      "pngPath": "/assets/og/tags/search.png",
+      "svgPath": "/assets/og/tags/search.svg"
     },
     "month:2026-04": {
       "kind": "month",

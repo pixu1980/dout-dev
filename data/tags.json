@@ -730,12 +730,46 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-23-client-side-search-static-dataset",
+        "title": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "date": "2026-06-23T00:00:00.000Z",
+        "dateString": "Tue Jun 23 2026",
+        "path": "./src/posts/2026-06-23-client-side-search-static-dataset.html",
+        "url": "/posts/2026-06-23-client-side-search-static-dataset/",
+        "excerpt": "The constraint",
+        "coverImage": null,
+        "coverAlt": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "search",
+            "label": "Search",
+            "url": "./tags/search.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "Static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Architecture",
     "slug": "architecture",
     "url": "./tags/architecture.html",
-    "count": 6
+    "count": 7
   },
   {
     "key": "static-site",
@@ -934,12 +968,46 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-23-client-side-search-static-dataset",
+        "title": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "date": "2026-06-23T00:00:00.000Z",
+        "dateString": "Tue Jun 23 2026",
+        "path": "./src/posts/2026-06-23-client-side-search-static-dataset.html",
+        "url": "/posts/2026-06-23-client-side-search-static-dataset/",
+        "excerpt": "The constraint",
+        "coverImage": null,
+        "coverAlt": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "search",
+            "label": "Search",
+            "url": "./tags/search.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "Static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Static-site",
     "slug": "static-site",
     "url": "./tags/static-site.html",
-    "count": 6
+    "count": 7
   },
   {
     "key": "cms",
@@ -1918,12 +1986,46 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-23-client-side-search-static-dataset",
+        "title": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "date": "2026-06-23T00:00:00.000Z",
+        "dateString": "Tue Jun 23 2026",
+        "path": "./src/posts/2026-06-23-client-side-search-static-dataset.html",
+        "url": "/posts/2026-06-23-client-side-search-static-dataset/",
+        "excerpt": "The constraint",
+        "coverImage": null,
+        "coverAlt": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "search",
+            "label": "Search",
+            "url": "./tags/search.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "Static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Vanilla-js",
     "slug": "vanilla-js",
     "url": "./tags/vanilla-js.html",
-    "count": 4
+    "count": 5
   },
   {
     "key": "design-systems",
@@ -2948,6 +3050,50 @@
     "name": "Security",
     "slug": "security",
     "url": "./tags/security.html",
+    "count": 1
+  },
+  {
+    "key": "search",
+    "label": "Search",
+    "posts": [
+      {
+        "name": "2026-06-23-client-side-search-static-dataset",
+        "title": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "date": "2026-06-23T00:00:00.000Z",
+        "dateString": "Tue Jun 23 2026",
+        "path": "./src/posts/2026-06-23-client-side-search-static-dataset.html",
+        "url": "/posts/2026-06-23-client-side-search-static-dataset/",
+        "excerpt": "The constraint",
+        "coverImage": null,
+        "coverAlt": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "search",
+            "label": "Search",
+            "url": "./tags/search.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "Static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Search",
+    "slug": "search",
+    "url": "./tags/search.html",
     "count": 1
   }
 ]

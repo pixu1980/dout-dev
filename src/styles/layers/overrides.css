@@ -13,7 +13,7 @@
   :root[data-reduce-motion='true'] [data-menu-toggle]:hover,
   :root[data-reduce-motion='true'] [data-pagination-link]:hover,
   :root[data-reduce-motion='true'] [data-pagination-edge]:hover,
-  :root[data-reduce-motion='true'] #search-pagination a:hover,
+  :root[data-reduce-motion='true'] [data-pagination] a:hover,
   :root[data-reduce-motion='true'] ::view-transition-old(site-main),
   :root[data-reduce-motion='true'] ::view-transition-new(site-main),
   :root[data-reduce-motion='true'] [data-post-toc-link]:hover {

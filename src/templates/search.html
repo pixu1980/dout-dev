@@ -23,9 +23,9 @@
     </script>
   </block>
   <block name="content">
-    <section data-page-hero data-reveal aria-labelledby="search-title">
+    <section data-page-hero data-reveal>
       <p data-eyebrow>Search</p>
-      <h1 id="search-title">Search across posts, tags, series, and monthly archives.</h1>
+      <h1>Search across posts, tags, series, and monthly archives.</h1>
       <p>Fast, static, and entirely client-side.</p>
     </section>
 
@@ -49,8 +49,8 @@
           value="{{ query | default:'' }}"
         />
         <button type="submit">Search</button>
-        <fieldset data-cluster aria-labelledby="type-filters-label">
-          <legend id="type-filters-label">Filter by type</legend>
+        <fieldset data-cluster>
+          <legend>Filter by type</legend>
           <input id="type-post" type="checkbox" name="type" value="post" checked />
           <label for="type-post">Posts</label>
           <input id="type-tag" type="checkbox" name="type" value="tag" checked />

@@ -6,6 +6,14 @@ const STORAGE_KEYS = Object.freeze({
 });
 
 const MINIMUM_USER_PREFERENCES_RENDER_FRAMES = 15;
+const SKELETON_EXCLUDED_ATTR_PREFIXES = Object.freeze([
+  'data-load-more-',
+  'data-post-feed',
+  'data-post-card',
+  'data-menu-toggle',
+  'data-skip-link',
+]);
+
 const SKELETON_EXCLUDED_SELECTORS = [
   '[data-preferences-skeleton]',
   '[data-file-preview-warning]',
@@ -314,9 +322,13 @@ function shouldSkipSkeletonElement(element) {
   return element.matches(SKELETON_EXCLUDED_SELECTORS);
 }
 
+function shouldExcludeSkeletonAttribute(name) {
+  return SKELETON_EXCLUDED_ATTR_PREFIXES.some((prefix) => name.startsWith(prefix));
+}
+
 function copySkeletonLayoutAttributes(sourceElement, skeletonElement) {
   for (const { name, value } of sourceElement.attributes) {
-    if (name.startsWith('data-')) {
+    if (name.startsWith('data-') && !shouldExcludeSkeletonAttribute(name)) {
       skeletonElement.setAttribute(name, value);
     }
   }

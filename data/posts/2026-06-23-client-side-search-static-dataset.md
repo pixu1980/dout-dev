@@ -1,7 +1,7 @@
 ---
 title: 'Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking'
 date: '2026-06-23'
-published: false
+published: true
 tags: ['vanilla-js', 'search', 'architecture', 'static-site']
 description: 'How dout.dev ships a search experience without a backend: prebuilt JSON indexes, a light ranking function, URL-driven filters and pagination.'
 canonical_url: false

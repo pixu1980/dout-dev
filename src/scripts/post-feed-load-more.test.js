@@ -48,7 +48,7 @@ function buildFeedMarkup(count, { initial = 10, step = 10 } = {}) {
 
 function getVisibleItems() {
   return Array.from(document.querySelectorAll('[data-post-feed-item]')).filter(
-    (item) => !item.hidden
+    (item) => item.style.display !== 'none'
   );
 }
 
@@ -79,7 +79,7 @@ describe('post-feed-load-more', () => {
     button?.click();
     assert.equal(getVisibleItems().length, 25);
     assert.equal(status?.textContent, 'Showing 25 of 25 posts');
-    assert.equal(button?.hidden, true);
+    assert.equal(button?.style.display, 'none');
   });
 
   test('skips control creation when the feed already fits the initial batch', () => {

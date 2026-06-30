@@ -1,10 +1,12 @@
 @layer base {
-  html,
-  body {
-    min-height: 100%;
+  html {
+    height: 100%;
   }
 
   body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: var(--dout--font-sans);
     font-size: var(--dout--step-0);
     line-height: var(--dout--line-copy);

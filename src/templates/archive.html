@@ -25,14 +25,14 @@
 </block>
 
 <block name="content">
-  <section data-page-hero data-reveal aria-labelledby="archive-title">
+  <section data-page-hero>
     <p data-eyebrow>Archive</p>
-    <h1 id="archive-title">The complete dout.dev archive.</h1>
+    <h1>The complete dout.dev archive.</h1>
     <p>Browse everything by time, by topic, or by longer-running series.</p>
   </section>
 
   <section data-archive-grid aria-label="Archive navigation">
-    <article data-card data-archive-panel data-reveal>
+    <article data-card data-archive-panel>
       <h2>By month</h2>
       <ul data-archive-links role="list">
         <for each="month in months">
@@ -44,7 +44,7 @@
       </ul>
     </article>
 
-    <article data-card data-archive-panel data-reveal>
+    <article data-card data-archive-panel>
       <h2>By topic</h2>
       <ul data-archive-links role="list">
         <for each="tag in tags">
@@ -56,7 +56,7 @@
       </ul>
     </article>
 
-    <article data-card data-archive-panel data-reveal>
+    <article data-card data-archive-panel>
       <h2>By series</h2>
       <ul data-archive-links role="list">
         <for each="entry in series">

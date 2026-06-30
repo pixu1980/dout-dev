@@ -73,11 +73,11 @@ describe('feed list polish', () => {
     assert.match(homeTemplate, /<article data-hero-copy>/);
     assert.match(homeTemplate, /<article data-hero-panel>/);
     assert.match(homeTemplate, /<section data-hero-actions>/);
-    assert.match(homeTemplate, /<section data-hero-topics aria-label="Popular topics">/);
+    assert.match(homeTemplate, /<section data-popular-topics aria-label="Popular topics">/);
     assert.match(homeTemplate, /<section data-hero-stats>/);
     assert.match(
       homeTemplate,
-      /<header>[\s\S]*<h2 id="latest-title">Fresh from the sources<\/h2>[\s\S]*<\/header>/
+      /<header[^>]*>[\s\S]*<p data-eyebrow>Recent Articles<\/p>[\s\S]*<\/header>/
     );
     assert.match(postCardTemplate, /<section data-post-card-content>/);
     assert.doesNotMatch(postCardTemplate, /<div data-post-card-content>/);

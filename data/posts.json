@@ -2070,7 +2070,7 @@
     "title": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
     "date": "2026-06-23T00:00:00.000Z",
     "dateString": "Tue Jun 23 2026",
-    "published": false,
+    "published": true,
     "tags": [
       {
         "key": "vanilla-js",
