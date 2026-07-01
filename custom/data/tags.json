@@ -521,12 +521,51 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-07-01-pi-dev-deepseek-v4-flash-daily-loop",
+        "title": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "date": "2026-07-01T00:00:00.000Z",
+        "dateString": "Wed Jul 01 2026",
+        "path": "./custom/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop.html",
+        "url": "/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop/",
+        "excerpt": "The headline numbers",
+        "coverImage": null,
+        "coverAlt": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "tags": [
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "workflow",
+            "label": "Workflow",
+            "url": "./tags/workflow.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "tooling",
+            "label": "Tooling",
+            "url": "./tags/tooling.html"
+          },
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Making-of",
     "slug": "making-of",
     "url": "./tags/making-of.html",
-    "count": 16
+    "count": 17
   },
   {
     "key": "architecture",
@@ -730,12 +769,46 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-23-client-side-search-static-dataset",
+        "title": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "date": "2026-06-23T00:00:00.000Z",
+        "dateString": "Tue Jun 23 2026",
+        "path": "./custom/posts/2026-06-23-client-side-search-static-dataset.html",
+        "url": "/posts/2026-06-23-client-side-search-static-dataset/",
+        "excerpt": "The constraint",
+        "coverImage": null,
+        "coverAlt": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "search",
+            "label": "Search",
+            "url": "./tags/search.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "Static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Architecture",
     "slug": "architecture",
     "url": "./tags/architecture.html",
-    "count": 6
+    "count": 7
   },
   {
     "key": "static-site",
@@ -934,12 +1007,46 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-23-client-side-search-static-dataset",
+        "title": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "date": "2026-06-23T00:00:00.000Z",
+        "dateString": "Tue Jun 23 2026",
+        "path": "./custom/posts/2026-06-23-client-side-search-static-dataset.html",
+        "url": "/posts/2026-06-23-client-side-search-static-dataset/",
+        "excerpt": "The constraint",
+        "coverImage": null,
+        "coverAlt": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "search",
+            "label": "Search",
+            "url": "./tags/search.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "Static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Static-site",
     "slug": "static-site",
     "url": "./tags/static-site.html",
-    "count": 6
+    "count": 7
   },
   {
     "key": "cms",
@@ -1168,12 +1275,51 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-07-01-pi-dev-deepseek-v4-flash-daily-loop",
+        "title": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "date": "2026-07-01T00:00:00.000Z",
+        "dateString": "Wed Jul 01 2026",
+        "path": "./custom/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop.html",
+        "url": "/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop/",
+        "excerpt": "The headline numbers",
+        "coverImage": null,
+        "coverAlt": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "tags": [
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "workflow",
+            "label": "Workflow",
+            "url": "./tags/workflow.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "tooling",
+            "label": "Tooling",
+            "url": "./tags/tooling.html"
+          },
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Ai-copilot",
     "slug": "ai-copilot",
     "url": "./tags/ai-copilot.html",
-    "count": 3
+    "count": 4
   },
   {
     "key": "workflow",
@@ -1236,12 +1382,51 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-07-01-pi-dev-deepseek-v4-flash-daily-loop",
+        "title": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "date": "2026-07-01T00:00:00.000Z",
+        "dateString": "Wed Jul 01 2026",
+        "path": "./custom/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop.html",
+        "url": "/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop/",
+        "excerpt": "The headline numbers",
+        "coverImage": null,
+        "coverAlt": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "tags": [
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "workflow",
+            "label": "Workflow",
+            "url": "./tags/workflow.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "tooling",
+            "label": "Tooling",
+            "url": "./tags/tooling.html"
+          },
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Workflow",
     "slug": "workflow",
     "url": "./tags/workflow.html",
-    "count": 2
+    "count": 3
   },
   {
     "key": "template-engine",
@@ -1918,12 +2103,46 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-23-client-side-search-static-dataset",
+        "title": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "date": "2026-06-23T00:00:00.000Z",
+        "dateString": "Tue Jun 23 2026",
+        "path": "./custom/posts/2026-06-23-client-side-search-static-dataset.html",
+        "url": "/posts/2026-06-23-client-side-search-static-dataset/",
+        "excerpt": "The constraint",
+        "coverImage": null,
+        "coverAlt": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "search",
+            "label": "Search",
+            "url": "./tags/search.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "Static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Vanilla-js",
     "slug": "vanilla-js",
     "url": "./tags/vanilla-js.html",
-    "count": 4
+    "count": 5
   },
   {
     "key": "design-systems",
@@ -2323,12 +2542,51 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-07-01-pi-dev-deepseek-v4-flash-daily-loop",
+        "title": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "date": "2026-07-01T00:00:00.000Z",
+        "dateString": "Wed Jul 01 2026",
+        "path": "./custom/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop.html",
+        "url": "/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop/",
+        "excerpt": "The headline numbers",
+        "coverImage": null,
+        "coverAlt": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "tags": [
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "workflow",
+            "label": "Workflow",
+            "url": "./tags/workflow.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "tooling",
+            "label": "Tooling",
+            "url": "./tags/tooling.html"
+          },
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Tooling",
     "slug": "tooling",
     "url": "./tags/tooling.html",
-    "count": 1
+    "count": 2
   },
   {
     "key": "linting",
@@ -2889,12 +3147,51 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-07-01-pi-dev-deepseek-v4-flash-daily-loop",
+        "title": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "date": "2026-07-01T00:00:00.000Z",
+        "dateString": "Wed Jul 01 2026",
+        "path": "./custom/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop.html",
+        "url": "/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop/",
+        "excerpt": "The headline numbers",
+        "coverImage": null,
+        "coverAlt": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "tags": [
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "workflow",
+            "label": "Workflow",
+            "url": "./tags/workflow.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "tooling",
+            "label": "Tooling",
+            "url": "./tags/tooling.html"
+          },
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "Ai",
     "slug": "ai",
     "url": "./tags/ai.html",
-    "count": 1
+    "count": 2
   },
   {
     "key": "security",
@@ -2948,6 +3245,50 @@
     "name": "Security",
     "slug": "security",
     "url": "./tags/security.html",
+    "count": 1
+  },
+  {
+    "key": "search",
+    "label": "Search",
+    "posts": [
+      {
+        "name": "2026-06-23-client-side-search-static-dataset",
+        "title": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "date": "2026-06-23T00:00:00.000Z",
+        "dateString": "Tue Jun 23 2026",
+        "path": "./custom/posts/2026-06-23-client-side-search-static-dataset.html",
+        "url": "/posts/2026-06-23-client-side-search-static-dataset/",
+        "excerpt": "The constraint",
+        "coverImage": null,
+        "coverAlt": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "Vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "search",
+            "label": "Search",
+            "url": "./tags/search.html"
+          },
+          {
+            "key": "architecture",
+            "label": "Architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "Static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false
+      }
+    ],
+    "name": "Search",
+    "slug": "search",
+    "url": "./tags/search.html",
     "count": 1
   }
 ]

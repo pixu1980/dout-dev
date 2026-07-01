@@ -603,11 +603,50 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-07-01-pi-dev-deepseek-v4-flash-daily-loop",
+        "title": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "date": "2026-07-01T00:00:00.000Z",
+        "dateString": "Wed Jul 01 2026",
+        "path": "./custom/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop.html",
+        "url": "/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop/",
+        "excerpt": "The headline numbers",
+        "coverImage": null,
+        "coverAlt": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "tags": [
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "workflow",
+            "label": "Workflow",
+            "url": "./tags/workflow.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "tooling",
+            "label": "Tooling",
+            "url": "./tags/tooling.html"
+          },
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "description": "A series of posts about Bold Opinions.",
     "url": "./series/bold-opinions.html",
-    "count": 2
+    "count": 3
   },
   {
     "slug": "the-future-of-software",
@@ -656,10 +695,49 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-07-01-pi-dev-deepseek-v4-flash-daily-loop",
+        "title": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "date": "2026-07-01T00:00:00.000Z",
+        "dateString": "Wed Jul 01 2026",
+        "path": "./custom/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop.html",
+        "url": "/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop/",
+        "excerpt": "The headline numbers",
+        "coverImage": null,
+        "coverAlt": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "tags": [
+          {
+            "key": "ai-copilot",
+            "label": "Ai-copilot",
+            "url": "./tags/ai-copilot.html"
+          },
+          {
+            "key": "workflow",
+            "label": "Workflow",
+            "url": "./tags/workflow.html"
+          },
+          {
+            "key": "ai",
+            "label": "Ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "tooling",
+            "label": "Tooling",
+            "url": "./tags/tooling.html"
+          },
+          {
+            "key": "making-of",
+            "label": "Making-of",
+            "url": "./tags/making-of.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "description": "A series of posts about The Future of Software.",
     "url": "./series/the-future-of-software.html",
-    "count": 1
+    "count": 2
   }
 ]
