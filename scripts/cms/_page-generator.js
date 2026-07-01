@@ -57,7 +57,7 @@ function toTimestamp(value) {
 
 const DEFAULT_POST_FEED_STEP = 10;
 const HOME_INITIAL_POSTS = 20;
-const HOME_FEATURED_POSTS = 2;
+const HOME_FEATURED_POSTS = 3;
 const OG_FALLBACK_COVER_WIDTH = 1200;
 const OG_FALLBACK_COVER_HEIGHT = 900;
 
