@@ -1,7 +1,7 @@
 [
   {
     "key": "making-of",
-    "label": "Making-of",
+    "label": "making-of",
     "posts": [
       {
         "name": "2026-04-04-how-i-built-dout-dev",
@@ -16,17 +16,17 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -45,22 +45,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "cms",
-            "label": "Cms",
+            "label": "cms",
             "url": "./tags/cms.html"
           },
           {
             "key": "markdown",
-            "label": "Markdown",
+            "label": "markdown",
             "url": "./tags/markdown.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -79,17 +79,17 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "ai-copilot",
-            "label": "Ai-copilot",
+            "label": "ai-copilot",
             "url": "./tags/ai-copilot.html"
           },
           {
             "key": "workflow",
-            "label": "Workflow",
+            "label": "workflow",
             "url": "./tags/workflow.html"
           }
         ],
@@ -108,17 +108,17 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -137,22 +137,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           },
           {
             "key": "cms",
-            "label": "Cms",
+            "label": "cms",
             "url": "./tags/cms.html"
           }
         ],
@@ -171,22 +171,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "template-engine",
-            "label": "Template-engine",
+            "label": "template-engine",
             "url": "./tags/template-engine.html"
           },
           {
             "key": "html",
-            "label": "Html",
+            "label": "html",
             "url": "./tags/html.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           }
         ],
@@ -205,22 +205,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "archives",
-            "label": "Archives",
+            "label": "archives",
             "url": "./tags/archives.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           }
         ],
@@ -239,22 +239,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "progressive-enhancement",
-            "label": "Progressive-enhancement",
+            "label": "progressive-enhancement",
             "url": "./tags/progressive-enhancement.html"
           },
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           },
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           }
         ],
@@ -273,17 +273,17 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "design-systems",
-            "label": "Design-systems",
+            "label": "design-systems",
             "url": "./tags/design-systems.html"
           },
           {
             "key": "css",
-            "label": "Css",
+            "label": "css",
             "url": "./tags/css.html"
           }
         ],
@@ -302,22 +302,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "build-assets",
-            "label": "Build-assets",
+            "label": "build-assets",
             "url": "./tags/build-assets.html"
           },
           {
             "key": "performance",
-            "label": "Performance",
+            "label": "performance",
             "url": "./tags/performance.html"
           },
           {
             "key": "images",
-            "label": "Images",
+            "label": "images",
             "url": "./tags/images.html"
           }
         ],
@@ -336,22 +336,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "feeds",
-            "label": "Feeds",
+            "label": "feeds",
             "url": "./tags/feeds.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -370,22 +370,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "opengraph",
-            "label": "Opengraph",
+            "label": "opengraph",
             "url": "./tags/opengraph.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -404,22 +404,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "opengraph",
-            "label": "Opengraph",
+            "label": "opengraph",
             "url": "./tags/opengraph.html"
           },
           {
             "key": "html",
-            "label": "Html",
+            "label": "html",
             "url": "./tags/html.html"
           }
         ],
@@ -438,22 +438,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "tooling",
-            "label": "Tooling",
+            "label": "tooling",
             "url": "./tags/tooling.html"
           },
           {
             "key": "linting",
-            "label": "Linting",
+            "label": "linting",
             "url": "./tags/linting.html"
           },
           {
             "key": "ci",
-            "label": "Ci",
+            "label": "ci",
             "url": "./tags/ci.html"
           }
         ],
@@ -472,22 +472,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "ci",
-            "label": "Ci",
+            "label": "ci",
             "url": "./tags/ci.html"
           },
           {
             "key": "deployment",
-            "label": "Deployment",
+            "label": "deployment",
             "url": "./tags/deployment.html"
           },
           {
             "key": "github-pages",
-            "label": "Github-pages",
+            "label": "github-pages",
             "url": "./tags/github-pages.html"
           }
         ],
@@ -506,31 +506,31 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "ai-copilot",
-            "label": "Ai-copilot",
+            "label": "ai-copilot",
             "url": "./tags/ai-copilot.html"
           },
           {
             "key": "workflow",
-            "label": "Workflow",
+            "label": "workflow",
             "url": "./tags/workflow.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Making-of",
+    "name": "making-of",
     "slug": "making-of",
     "url": "./tags/making-of.html",
     "count": 16
   },
   {
     "key": "architecture",
-    "label": "Architecture",
+    "label": "architecture",
     "posts": [
       {
         "name": "2026-04-04-how-i-built-dout-dev",
@@ -545,17 +545,17 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -574,17 +574,17 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -603,22 +603,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           },
           {
             "key": "cms",
-            "label": "Cms",
+            "label": "cms",
             "url": "./tags/cms.html"
           }
         ],
@@ -637,22 +637,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "template-engine",
-            "label": "Template-engine",
+            "label": "template-engine",
             "url": "./tags/template-engine.html"
           },
           {
             "key": "html",
-            "label": "Html",
+            "label": "html",
             "url": "./tags/html.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           }
         ],
@@ -671,17 +671,17 @@
         "tags": [
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           }
         ],
@@ -700,32 +700,32 @@
         "tags": [
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "ai",
-            "label": "Ai",
+            "label": "ai",
             "url": "./tags/ai.html"
           },
           {
             "key": "ai-copilot",
-            "label": "Ai-copilot",
+            "label": "ai-copilot",
             "url": "./tags/ai-copilot.html"
           },
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           },
           {
             "key": "security",
-            "label": "Security",
+            "label": "security",
             "url": "./tags/security.html"
           }
         ],
@@ -744,36 +744,36 @@
         "tags": [
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "search",
-            "label": "Search",
+            "label": "search",
             "url": "./tags/search.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Architecture",
+    "name": "architecture",
     "slug": "architecture",
     "url": "./tags/architecture.html",
     "count": 7
   },
   {
     "key": "static-site",
-    "label": "Static-site",
+    "label": "static-site",
     "posts": [
       {
         "name": "2026-04-04-how-i-built-dout-dev",
@@ -788,17 +788,17 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -817,22 +817,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "cms",
-            "label": "Cms",
+            "label": "cms",
             "url": "./tags/cms.html"
           },
           {
             "key": "markdown",
-            "label": "Markdown",
+            "label": "markdown",
             "url": "./tags/markdown.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -851,17 +851,17 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -880,22 +880,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           },
           {
             "key": "cms",
-            "label": "Cms",
+            "label": "cms",
             "url": "./tags/cms.html"
           }
         ],
@@ -914,22 +914,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "feeds",
-            "label": "Feeds",
+            "label": "feeds",
             "url": "./tags/feeds.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -948,22 +948,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "opengraph",
-            "label": "Opengraph",
+            "label": "opengraph",
             "url": "./tags/opengraph.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -982,36 +982,36 @@
         "tags": [
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "search",
-            "label": "Search",
+            "label": "search",
             "url": "./tags/search.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Static-site",
+    "name": "static-site",
     "slug": "static-site",
     "url": "./tags/static-site.html",
     "count": 7
   },
   {
     "key": "cms",
-    "label": "Cms",
+    "label": "cms",
     "posts": [
       {
         "name": "2026-04-21-cms-and-markdown-processing",
@@ -1026,22 +1026,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "cms",
-            "label": "Cms",
+            "label": "cms",
             "url": "./tags/cms.html"
           },
           {
             "key": "markdown",
-            "label": "Markdown",
+            "label": "markdown",
             "url": "./tags/markdown.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -1060,36 +1060,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           },
           {
             "key": "cms",
-            "label": "Cms",
+            "label": "cms",
             "url": "./tags/cms.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Cms",
+    "name": "cms",
     "slug": "cms",
     "url": "./tags/cms.html",
     "count": 2
   },
   {
     "key": "markdown",
-    "label": "Markdown",
+    "label": "markdown",
     "posts": [
       {
         "name": "2026-04-21-cms-and-markdown-processing",
@@ -1104,36 +1104,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "cms",
-            "label": "Cms",
+            "label": "cms",
             "url": "./tags/cms.html"
           },
           {
             "key": "markdown",
-            "label": "Markdown",
+            "label": "markdown",
             "url": "./tags/markdown.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Markdown",
+    "name": "markdown",
     "slug": "markdown",
     "url": "./tags/markdown.html",
     "count": 1
   },
   {
     "key": "ai-copilot",
-    "label": "Ai-copilot",
+    "label": "ai-copilot",
     "posts": [
       {
         "name": "2026-04-28-rebuilding-dout-dev-with-ai-copilot",
@@ -1148,17 +1148,17 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "ai-copilot",
-            "label": "Ai-copilot",
+            "label": "ai-copilot",
             "url": "./tags/ai-copilot.html"
           },
           {
             "key": "workflow",
-            "label": "Workflow",
+            "label": "workflow",
             "url": "./tags/workflow.html"
           }
         ],
@@ -1177,17 +1177,17 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "ai-copilot",
-            "label": "Ai-copilot",
+            "label": "ai-copilot",
             "url": "./tags/ai-copilot.html"
           },
           {
             "key": "workflow",
-            "label": "Workflow",
+            "label": "workflow",
             "url": "./tags/workflow.html"
           }
         ],
@@ -1206,46 +1206,46 @@
         "tags": [
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "ai",
-            "label": "Ai",
+            "label": "ai",
             "url": "./tags/ai.html"
           },
           {
             "key": "ai-copilot",
-            "label": "Ai-copilot",
+            "label": "ai-copilot",
             "url": "./tags/ai-copilot.html"
           },
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           },
           {
             "key": "security",
-            "label": "Security",
+            "label": "security",
             "url": "./tags/security.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Ai-copilot",
+    "name": "ai-copilot",
     "slug": "ai-copilot",
     "url": "./tags/ai-copilot.html",
     "count": 3
   },
   {
     "key": "workflow",
-    "label": "Workflow",
+    "label": "workflow",
     "posts": [
       {
         "name": "2026-04-28-rebuilding-dout-dev-with-ai-copilot",
@@ -1260,17 +1260,17 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "ai-copilot",
-            "label": "Ai-copilot",
+            "label": "ai-copilot",
             "url": "./tags/ai-copilot.html"
           },
           {
             "key": "workflow",
-            "label": "Workflow",
+            "label": "workflow",
             "url": "./tags/workflow.html"
           }
         ],
@@ -1289,31 +1289,31 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "ai-copilot",
-            "label": "Ai-copilot",
+            "label": "ai-copilot",
             "url": "./tags/ai-copilot.html"
           },
           {
             "key": "workflow",
-            "label": "Workflow",
+            "label": "workflow",
             "url": "./tags/workflow.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Workflow",
+    "name": "workflow",
     "slug": "workflow",
     "url": "./tags/workflow.html",
     "count": 2
   },
   {
     "key": "template-engine",
-    "label": "Template-engine",
+    "label": "template-engine",
     "posts": [
       {
         "name": "2026-05-13-template-engine-and-template-structure",
@@ -1328,36 +1328,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "template-engine",
-            "label": "Template-engine",
+            "label": "template-engine",
             "url": "./tags/template-engine.html"
           },
           {
             "key": "html",
-            "label": "Html",
+            "label": "html",
             "url": "./tags/html.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Template-engine",
+    "name": "template-engine",
     "slug": "template-engine",
     "url": "./tags/template-engine.html",
     "count": 1
   },
   {
     "key": "html",
-    "label": "Html",
+    "label": "html",
     "posts": [
       {
         "name": "2026-05-13-template-engine-and-template-structure",
@@ -1372,22 +1372,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "template-engine",
-            "label": "Template-engine",
+            "label": "template-engine",
             "url": "./tags/template-engine.html"
           },
           {
             "key": "html",
-            "label": "Html",
+            "label": "html",
             "url": "./tags/html.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           }
         ],
@@ -1406,22 +1406,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "opengraph",
-            "label": "Opengraph",
+            "label": "opengraph",
             "url": "./tags/opengraph.html"
           },
           {
             "key": "html",
-            "label": "Html",
+            "label": "html",
             "url": "./tags/html.html"
           }
         ],
@@ -1440,36 +1440,36 @@
         "tags": [
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           },
           {
             "key": "a11y",
-            "label": "A11y",
+            "label": "a11y",
             "url": "./tags/a11y.html"
           },
           {
             "key": "html",
-            "label": "Html",
+            "label": "html",
             "url": "./tags/html.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Html",
+    "name": "html",
     "slug": "html",
     "url": "./tags/html.html",
     "count": 3
   },
   {
     "key": "archives",
-    "label": "Archives",
+    "label": "archives",
     "posts": [
       {
         "name": "2026-05-14-archives-tags-months-series",
@@ -1484,36 +1484,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "archives",
-            "label": "Archives",
+            "label": "archives",
             "url": "./tags/archives.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Archives",
+    "name": "archives",
     "slug": "archives",
     "url": "./tags/archives.html",
     "count": 1
   },
   {
     "key": "seo",
-    "label": "Seo",
+    "label": "seo",
     "posts": [
       {
         "name": "2026-05-14-archives-tags-months-series",
@@ -1528,22 +1528,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "archives",
-            "label": "Archives",
+            "label": "archives",
             "url": "./tags/archives.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           }
         ],
@@ -1562,22 +1562,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "feeds",
-            "label": "Feeds",
+            "label": "feeds",
             "url": "./tags/feeds.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -1596,22 +1596,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "opengraph",
-            "label": "Opengraph",
+            "label": "opengraph",
             "url": "./tags/opengraph.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -1630,36 +1630,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "opengraph",
-            "label": "Opengraph",
+            "label": "opengraph",
             "url": "./tags/opengraph.html"
           },
           {
             "key": "html",
-            "label": "Html",
+            "label": "html",
             "url": "./tags/html.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Seo",
+    "name": "seo",
     "slug": "seo",
     "url": "./tags/seo.html",
     "count": 4
   },
   {
     "key": "accessibility",
-    "label": "Accessibility",
+    "label": "accessibility",
     "posts": [
       {
         "name": "2026-05-14-archives-tags-months-series",
@@ -1674,22 +1674,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "archives",
-            "label": "Archives",
+            "label": "archives",
             "url": "./tags/archives.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           }
         ],
@@ -1708,22 +1708,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "progressive-enhancement",
-            "label": "Progressive-enhancement",
+            "label": "progressive-enhancement",
             "url": "./tags/progressive-enhancement.html"
           },
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           },
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           }
         ],
@@ -1742,22 +1742,22 @@
         "tags": [
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           },
           {
             "key": "a11y",
-            "label": "A11y",
+            "label": "a11y",
             "url": "./tags/a11y.html"
           },
           {
             "key": "html",
-            "label": "Html",
+            "label": "html",
             "url": "./tags/html.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           }
         ],
@@ -1776,36 +1776,36 @@
         "tags": [
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           },
           {
             "key": "a11y",
-            "label": "A11y",
+            "label": "a11y",
             "url": "./tags/a11y.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           },
           {
             "key": "responsive-design",
-            "label": "Responsive-design",
+            "label": "responsive-design",
             "url": "./tags/responsive-design.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Accessibility",
+    "name": "accessibility",
     "slug": "accessibility",
     "url": "./tags/accessibility.html",
     "count": 4
   },
   {
     "key": "progressive-enhancement",
-    "label": "Progressive-enhancement",
+    "label": "progressive-enhancement",
     "posts": [
       {
         "name": "2026-05-15-progressive-enhancement-as-contract",
@@ -1820,36 +1820,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "progressive-enhancement",
-            "label": "Progressive-enhancement",
+            "label": "progressive-enhancement",
             "url": "./tags/progressive-enhancement.html"
           },
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           },
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Progressive-enhancement",
+    "name": "progressive-enhancement",
     "slug": "progressive-enhancement",
     "url": "./tags/progressive-enhancement.html",
     "count": 1
   },
   {
     "key": "vanilla-js",
-    "label": "Vanilla-js",
+    "label": "vanilla-js",
     "posts": [
       {
         "name": "2026-05-15-progressive-enhancement-as-contract",
@@ -1864,22 +1864,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "progressive-enhancement",
-            "label": "Progressive-enhancement",
+            "label": "progressive-enhancement",
             "url": "./tags/progressive-enhancement.html"
           },
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           },
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           }
         ],
@@ -1898,17 +1898,17 @@
         "tags": [
           {
             "key": "css",
-            "label": "Css",
+            "label": "css",
             "url": "./tags/css.html"
           },
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           }
         ],
@@ -1927,17 +1927,17 @@
         "tags": [
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           }
         ],
@@ -1956,32 +1956,32 @@
         "tags": [
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "ai",
-            "label": "Ai",
+            "label": "ai",
             "url": "./tags/ai.html"
           },
           {
             "key": "ai-copilot",
-            "label": "Ai-copilot",
+            "label": "ai-copilot",
             "url": "./tags/ai-copilot.html"
           },
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           },
           {
             "key": "security",
-            "label": "Security",
+            "label": "security",
             "url": "./tags/security.html"
           }
         ],
@@ -2000,36 +2000,36 @@
         "tags": [
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "search",
-            "label": "Search",
+            "label": "search",
             "url": "./tags/search.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Vanilla-js",
+    "name": "vanilla-js",
     "slug": "vanilla-js",
     "url": "./tags/vanilla-js.html",
     "count": 5
   },
   {
     "key": "design-systems",
-    "label": "Design-systems",
+    "label": "design-systems",
     "posts": [
       {
         "name": "2026-05-16-design-tokens-before-pages",
@@ -2044,31 +2044,31 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "design-systems",
-            "label": "Design-systems",
+            "label": "design-systems",
             "url": "./tags/design-systems.html"
           },
           {
             "key": "css",
-            "label": "Css",
+            "label": "css",
             "url": "./tags/css.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Design-systems",
+    "name": "design-systems",
     "slug": "design-systems",
     "url": "./tags/design-systems.html",
     "count": 1
   },
   {
     "key": "css",
-    "label": "Css",
+    "label": "css",
     "posts": [
       {
         "name": "2026-05-16-design-tokens-before-pages",
@@ -2083,17 +2083,17 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "design-systems",
-            "label": "Design-systems",
+            "label": "design-systems",
             "url": "./tags/design-systems.html"
           },
           {
             "key": "css",
-            "label": "Css",
+            "label": "css",
             "url": "./tags/css.html"
           }
         ],
@@ -2112,31 +2112,31 @@
         "tags": [
           {
             "key": "css",
-            "label": "Css",
+            "label": "css",
             "url": "./tags/css.html"
           },
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Css",
+    "name": "css",
     "slug": "css",
     "url": "./tags/css.html",
     "count": 2
   },
   {
     "key": "build-assets",
-    "label": "Build-assets",
+    "label": "build-assets",
     "posts": [
       {
         "name": "2026-05-17-build-assets-pipeline",
@@ -2151,36 +2151,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "build-assets",
-            "label": "Build-assets",
+            "label": "build-assets",
             "url": "./tags/build-assets.html"
           },
           {
             "key": "performance",
-            "label": "Performance",
+            "label": "performance",
             "url": "./tags/performance.html"
           },
           {
             "key": "images",
-            "label": "Images",
+            "label": "images",
             "url": "./tags/images.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Build-assets",
+    "name": "build-assets",
     "slug": "build-assets",
     "url": "./tags/build-assets.html",
     "count": 1
   },
   {
     "key": "performance",
-    "label": "Performance",
+    "label": "performance",
     "posts": [
       {
         "name": "2026-05-17-build-assets-pipeline",
@@ -2195,36 +2195,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "build-assets",
-            "label": "Build-assets",
+            "label": "build-assets",
             "url": "./tags/build-assets.html"
           },
           {
             "key": "performance",
-            "label": "Performance",
+            "label": "performance",
             "url": "./tags/performance.html"
           },
           {
             "key": "images",
-            "label": "Images",
+            "label": "images",
             "url": "./tags/images.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Performance",
+    "name": "performance",
     "slug": "performance",
     "url": "./tags/performance.html",
     "count": 1
   },
   {
     "key": "images",
-    "label": "Images",
+    "label": "images",
     "posts": [
       {
         "name": "2026-05-17-build-assets-pipeline",
@@ -2239,36 +2239,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "build-assets",
-            "label": "Build-assets",
+            "label": "build-assets",
             "url": "./tags/build-assets.html"
           },
           {
             "key": "performance",
-            "label": "Performance",
+            "label": "performance",
             "url": "./tags/performance.html"
           },
           {
             "key": "images",
-            "label": "Images",
+            "label": "images",
             "url": "./tags/images.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Images",
+    "name": "images",
     "slug": "images",
     "url": "./tags/images.html",
     "count": 1
   },
   {
     "key": "feeds",
-    "label": "Feeds",
+    "label": "feeds",
     "posts": [
       {
         "name": "2026-05-18-feeds-and-sitemaps-at-build-time",
@@ -2283,36 +2283,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "feeds",
-            "label": "Feeds",
+            "label": "feeds",
             "url": "./tags/feeds.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Feeds",
+    "name": "feeds",
     "slug": "feeds",
     "url": "./tags/feeds.html",
     "count": 1
   },
   {
     "key": "opengraph",
-    "label": "Opengraph",
+    "label": "opengraph",
     "posts": [
       {
         "name": "2026-05-19-og-images-at-build-time",
@@ -2327,22 +2327,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "opengraph",
-            "label": "Opengraph",
+            "label": "opengraph",
             "url": "./tags/opengraph.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
@@ -2361,36 +2361,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "seo",
-            "label": "Seo",
+            "label": "seo",
             "url": "./tags/seo.html"
           },
           {
             "key": "opengraph",
-            "label": "Opengraph",
+            "label": "opengraph",
             "url": "./tags/opengraph.html"
           },
           {
             "key": "html",
-            "label": "Html",
+            "label": "html",
             "url": "./tags/html.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Opengraph",
+    "name": "opengraph",
     "slug": "opengraph",
     "url": "./tags/opengraph.html",
     "count": 2
   },
   {
     "key": "tooling",
-    "label": "Tooling",
+    "label": "tooling",
     "posts": [
       {
         "name": "2026-05-21-quality-gate-lint-format-verify",
@@ -2405,36 +2405,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "tooling",
-            "label": "Tooling",
+            "label": "tooling",
             "url": "./tags/tooling.html"
           },
           {
             "key": "linting",
-            "label": "Linting",
+            "label": "linting",
             "url": "./tags/linting.html"
           },
           {
             "key": "ci",
-            "label": "Ci",
+            "label": "ci",
             "url": "./tags/ci.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Tooling",
+    "name": "tooling",
     "slug": "tooling",
     "url": "./tags/tooling.html",
     "count": 1
   },
   {
     "key": "linting",
-    "label": "Linting",
+    "label": "linting",
     "posts": [
       {
         "name": "2026-05-21-quality-gate-lint-format-verify",
@@ -2449,36 +2449,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "tooling",
-            "label": "Tooling",
+            "label": "tooling",
             "url": "./tags/tooling.html"
           },
           {
             "key": "linting",
-            "label": "Linting",
+            "label": "linting",
             "url": "./tags/linting.html"
           },
           {
             "key": "ci",
-            "label": "Ci",
+            "label": "ci",
             "url": "./tags/ci.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Linting",
+    "name": "linting",
     "slug": "linting",
     "url": "./tags/linting.html",
     "count": 1
   },
   {
     "key": "ci",
-    "label": "Ci",
+    "label": "ci",
     "posts": [
       {
         "name": "2026-05-21-quality-gate-lint-format-verify",
@@ -2493,22 +2493,22 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "tooling",
-            "label": "Tooling",
+            "label": "tooling",
             "url": "./tags/tooling.html"
           },
           {
             "key": "linting",
-            "label": "Linting",
+            "label": "linting",
             "url": "./tags/linting.html"
           },
           {
             "key": "ci",
-            "label": "Ci",
+            "label": "ci",
             "url": "./tags/ci.html"
           }
         ],
@@ -2527,36 +2527,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "ci",
-            "label": "Ci",
+            "label": "ci",
             "url": "./tags/ci.html"
           },
           {
             "key": "deployment",
-            "label": "Deployment",
+            "label": "deployment",
             "url": "./tags/deployment.html"
           },
           {
             "key": "github-pages",
-            "label": "Github-pages",
+            "label": "github-pages",
             "url": "./tags/github-pages.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Ci",
+    "name": "ci",
     "slug": "ci",
     "url": "./tags/ci.html",
     "count": 2
   },
   {
     "key": "deployment",
-    "label": "Deployment",
+    "label": "deployment",
     "posts": [
       {
         "name": "2026-05-22-ci-cd-around-github-pages",
@@ -2571,36 +2571,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "ci",
-            "label": "Ci",
+            "label": "ci",
             "url": "./tags/ci.html"
           },
           {
             "key": "deployment",
-            "label": "Deployment",
+            "label": "deployment",
             "url": "./tags/deployment.html"
           },
           {
             "key": "github-pages",
-            "label": "Github-pages",
+            "label": "github-pages",
             "url": "./tags/github-pages.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Deployment",
+    "name": "deployment",
     "slug": "deployment",
     "url": "./tags/deployment.html",
     "count": 1
   },
   {
     "key": "github-pages",
-    "label": "Github-pages",
+    "label": "github-pages",
     "posts": [
       {
         "name": "2026-05-22-ci-cd-around-github-pages",
@@ -2615,36 +2615,36 @@
         "tags": [
           {
             "key": "making-of",
-            "label": "Making-of",
+            "label": "making-of",
             "url": "./tags/making-of.html"
           },
           {
             "key": "ci",
-            "label": "Ci",
+            "label": "ci",
             "url": "./tags/ci.html"
           },
           {
             "key": "deployment",
-            "label": "Deployment",
+            "label": "deployment",
             "url": "./tags/deployment.html"
           },
           {
             "key": "github-pages",
-            "label": "Github-pages",
+            "label": "github-pages",
             "url": "./tags/github-pages.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Github-pages",
+    "name": "github-pages",
     "slug": "github-pages",
     "url": "./tags/github-pages.html",
     "count": 1
   },
   {
     "key": "frontend",
-    "label": "Frontend",
+    "label": "frontend",
     "posts": [
       {
         "name": "2026-06-02-modern-css-is-enough",
@@ -2659,17 +2659,17 @@
         "tags": [
           {
             "key": "css",
-            "label": "Css",
+            "label": "css",
             "url": "./tags/css.html"
           },
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           }
         ],
@@ -2688,22 +2688,22 @@
         "tags": [
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           },
           {
             "key": "a11y",
-            "label": "A11y",
+            "label": "a11y",
             "url": "./tags/a11y.html"
           },
           {
             "key": "html",
-            "label": "Html",
+            "label": "html",
             "url": "./tags/html.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           }
         ],
@@ -2722,17 +2722,17 @@
         "tags": [
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           }
         ],
@@ -2751,22 +2751,22 @@
         "tags": [
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           },
           {
             "key": "a11y",
-            "label": "A11y",
+            "label": "a11y",
             "url": "./tags/a11y.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           },
           {
             "key": "responsive-design",
-            "label": "Responsive-design",
+            "label": "responsive-design",
             "url": "./tags/responsive-design.html"
           }
         ],
@@ -2785,46 +2785,46 @@
         "tags": [
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "ai",
-            "label": "Ai",
+            "label": "ai",
             "url": "./tags/ai.html"
           },
           {
             "key": "ai-copilot",
-            "label": "Ai-copilot",
+            "label": "ai-copilot",
             "url": "./tags/ai-copilot.html"
           },
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           },
           {
             "key": "security",
-            "label": "Security",
+            "label": "security",
             "url": "./tags/security.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Frontend",
+    "name": "frontend",
     "slug": "frontend",
     "url": "./tags/frontend.html",
     "count": 5
   },
   {
     "key": "a11y",
-    "label": "A11y",
+    "label": "a11y",
     "posts": [
       {
         "name": "2026-06-09-wcag-22-aa-without-aria-spam",
@@ -2839,22 +2839,22 @@
         "tags": [
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           },
           {
             "key": "a11y",
-            "label": "A11y",
+            "label": "a11y",
             "url": "./tags/a11y.html"
           },
           {
             "key": "html",
-            "label": "Html",
+            "label": "html",
             "url": "./tags/html.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           }
         ],
@@ -2873,36 +2873,36 @@
         "tags": [
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           },
           {
             "key": "a11y",
-            "label": "A11y",
+            "label": "a11y",
             "url": "./tags/a11y.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           },
           {
             "key": "responsive-design",
-            "label": "Responsive-design",
+            "label": "responsive-design",
             "url": "./tags/responsive-design.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "A11y",
+    "name": "a11y",
     "slug": "a11y",
     "url": "./tags/a11y.html",
     "count": 2
   },
   {
     "key": "responsive-design",
-    "label": "Responsive-design",
+    "label": "responsive-design",
     "posts": [
       {
         "name": "2026-06-14-why-display-preferences-popover-exists",
@@ -2917,36 +2917,36 @@
         "tags": [
           {
             "key": "accessibility",
-            "label": "Accessibility",
+            "label": "accessibility",
             "url": "./tags/accessibility.html"
           },
           {
             "key": "a11y",
-            "label": "A11y",
+            "label": "a11y",
             "url": "./tags/a11y.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           },
           {
             "key": "responsive-design",
-            "label": "Responsive-design",
+            "label": "responsive-design",
             "url": "./tags/responsive-design.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Responsive-design",
+    "name": "responsive-design",
     "slug": "responsive-design",
     "url": "./tags/responsive-design.html",
     "count": 1
   },
   {
     "key": "ai",
-    "label": "Ai",
+    "label": "ai",
     "posts": [
       {
         "name": "2026-06-16-the-end-of-borrowed-abstractions",
@@ -2961,46 +2961,46 @@
         "tags": [
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "ai",
-            "label": "Ai",
+            "label": "ai",
             "url": "./tags/ai.html"
           },
           {
             "key": "ai-copilot",
-            "label": "Ai-copilot",
+            "label": "ai-copilot",
             "url": "./tags/ai-copilot.html"
           },
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           },
           {
             "key": "security",
-            "label": "Security",
+            "label": "security",
             "url": "./tags/security.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Ai",
+    "name": "ai",
     "slug": "ai",
     "url": "./tags/ai.html",
     "count": 1
   },
   {
     "key": "security",
-    "label": "Security",
+    "label": "security",
     "posts": [
       {
         "name": "2026-06-16-the-end-of-borrowed-abstractions",
@@ -3015,46 +3015,46 @@
         "tags": [
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "ai",
-            "label": "Ai",
+            "label": "ai",
             "url": "./tags/ai.html"
           },
           {
             "key": "ai-copilot",
-            "label": "Ai-copilot",
+            "label": "ai-copilot",
             "url": "./tags/ai-copilot.html"
           },
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "frontend",
-            "label": "Frontend",
+            "label": "frontend",
             "url": "./tags/frontend.html"
           },
           {
             "key": "security",
-            "label": "Security",
+            "label": "security",
             "url": "./tags/security.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Security",
+    "name": "security",
     "slug": "security",
     "url": "./tags/security.html",
     "count": 1
   },
   {
     "key": "search",
-    "label": "Search",
+    "label": "search",
     "posts": [
       {
         "name": "2026-06-23-client-side-search-static-dataset",
@@ -3069,29 +3069,29 @@
         "tags": [
           {
             "key": "vanilla-js",
-            "label": "Vanilla-js",
+            "label": "vanilla-js",
             "url": "./tags/vanilla-js.html"
           },
           {
             "key": "search",
-            "label": "Search",
+            "label": "search",
             "url": "./tags/search.html"
           },
           {
             "key": "architecture",
-            "label": "Architecture",
+            "label": "architecture",
             "url": "./tags/architecture.html"
           },
           {
             "key": "static-site",
-            "label": "Static-site",
+            "label": "static-site",
             "url": "./tags/static-site.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "Search",
+    "name": "search",
     "slug": "search",
     "url": "./tags/search.html",
     "count": 1

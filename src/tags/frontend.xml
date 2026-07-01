@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>dout.dev — Frontend</title>
+    <title>dout.dev — frontend</title>
     <link>https://dout.dev/tags/frontend/</link>
-    <description>RSS feed for posts tagged with Frontend</description>
+    <description>RSS feed for posts tagged with frontend</description>
     <atom:link href="https://dout.dev/tags/frontend.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
     <lastBuildDate>Tue, 16 Jun 2026 00:00:00 GMT</lastBuildDate>

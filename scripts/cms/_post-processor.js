@@ -27,7 +27,7 @@ export function processMarkdown(filePath, raw) {
   const title = data.title || inferTitle(slug);
   const date = pickDate(data.date, slug);
   const published = data.published !== false;
-  const tagList = normalizeTags(data.tags).map((t) => ({ key: t, label: capitalize(t) }));
+  const tagList = normalizeTags(data.tags).map((t) => ({ key: t, label: t }));
   const html = marked(content, createMarkedOptions());
   const articleContent = buildArticleContent(sanitizeArticleHtml(html));
   // Determine cover dimensions if coverImage points to a local asset
@@ -154,9 +154,6 @@ function buildExcerpt(html) {
   }
 
   return document.body.textContent?.replace(/\s+/g, ' ').trim().slice(0, 180) || '';
-}
-function capitalize(s) {
-  return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 }
 
 // Basic keyword extraction (English stopwords), frequency-based top terms

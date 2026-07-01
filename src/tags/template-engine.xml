@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>dout.dev — Template-engine</title>
+    <title>dout.dev — template-engine</title>
     <link>https://dout.dev/tags/template-engine/</link>
-    <description>RSS feed for posts tagged with Template-engine</description>
+    <description>RSS feed for posts tagged with template-engine</description>
     <atom:link href="https://dout.dev/tags/template-engine.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
     <lastBuildDate>Wed, 13 May 2026 00:00:00 GMT</lastBuildDate>

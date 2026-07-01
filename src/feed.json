@@ -21,10 +21,10 @@
       "image": "https://dout.dev/assets/og/posts/2026-06-23-client-side-search-static-dataset.png",
       "date_published": "2026-06-23T00:00:00.000Z",
       "tags": [
-        "Vanilla-js",
-        "Search",
-        "Architecture",
-        "Static-site"
+        "vanilla-js",
+        "search",
+        "architecture",
+        "static-site"
       ]
     },
     {
@@ -36,12 +36,12 @@
       "image": "https://dout.dev/assets/og/posts/2026-06-16-the-end-of-borrowed-abstractions.png",
       "date_published": "2026-06-16T00:00:00.000Z",
       "tags": [
-        "Architecture",
-        "Ai",
-        "Ai-copilot",
-        "Vanilla-js",
-        "Frontend",
-        "Security"
+        "architecture",
+        "ai",
+        "ai-copilot",
+        "vanilla-js",
+        "frontend",
+        "security"
       ]
     },
     {
@@ -53,10 +53,10 @@
       "image": "https://dout.dev/assets/og/posts/2026-06-14-why-display-preferences-popover-exists.png",
       "date_published": "2026-06-14T00:00:00.000Z",
       "tags": [
-        "Accessibility",
-        "A11y",
-        "Frontend",
-        "Responsive-design"
+        "accessibility",
+        "a11y",
+        "frontend",
+        "responsive-design"
       ]
     },
     {
@@ -68,9 +68,9 @@
       "image": "https://dout.dev/assets/og/posts/2026-06-13-how-pixhighlighter-is-built.png",
       "date_published": "2026-06-13T00:00:00.000Z",
       "tags": [
-        "Vanilla-js",
-        "Frontend",
-        "Architecture"
+        "vanilla-js",
+        "frontend",
+        "architecture"
       ]
     },
     {
@@ -82,10 +82,10 @@
       "image": "https://dout.dev/assets/og/posts/2026-06-09-wcag-22-aa-without-aria-spam.png",
       "date_published": "2026-06-09T00:00:00.000Z",
       "tags": [
-        "Accessibility",
-        "A11y",
-        "Html",
-        "Frontend"
+        "accessibility",
+        "a11y",
+        "html",
+        "frontend"
       ]
     },
     {
@@ -97,9 +97,9 @@
       "image": "https://dout.dev/assets/og/posts/2026-06-02-modern-css-is-enough.png",
       "date_published": "2026-06-02T00:00:00.000Z",
       "tags": [
-        "Css",
-        "Vanilla-js",
-        "Frontend"
+        "css",
+        "vanilla-js",
+        "frontend"
       ]
     },
     {
@@ -111,9 +111,9 @@
       "image": "https://dout.dev/assets/og/posts/2026-05-23-vibe-coding-with-rigor.png",
       "date_published": "2026-05-23T00:00:00.000Z",
       "tags": [
-        "Making-of",
-        "Ai-copilot",
-        "Workflow"
+        "making-of",
+        "ai-copilot",
+        "workflow"
       ]
     },
     {
@@ -125,10 +125,10 @@
       "image": "https://dout.dev/assets/og/posts/2026-05-22-ci-cd-around-github-pages.png",
       "date_published": "2026-05-22T00:00:00.000Z",
       "tags": [
-        "Making-of",
-        "Ci",
-        "Deployment",
-        "Github-pages"
+        "making-of",
+        "ci",
+        "deployment",
+        "github-pages"
       ]
     },
     {
@@ -140,10 +140,10 @@
       "image": "https://dout.dev/assets/og/posts/2026-05-21-quality-gate-lint-format-verify.png",
       "date_published": "2026-05-21T00:00:00.000Z",
       "tags": [
-        "Making-of",
-        "Tooling",
-        "Linting",
-        "Ci"
+        "making-of",
+        "tooling",
+        "linting",
+        "ci"
       ]
     },
     {
@@ -155,10 +155,10 @@
       "image": "https://dout.dev/assets/og/posts/2026-05-20-seo-metadata-without-rituals.png",
       "date_published": "2026-05-20T00:00:00.000Z",
       "tags": [
-        "Making-of",
-        "Seo",
-        "Opengraph",
-        "Html"
+        "making-of",
+        "seo",
+        "opengraph",
+        "html"
       ]
     },
     {
@@ -170,10 +170,10 @@
       "image": "https://dout.dev/assets/og/posts/2026-05-19-og-images-at-build-time.png",
       "date_published": "2026-05-19T00:00:00.000Z",
       "tags": [
-        "Making-of",
-        "Opengraph",
-        "Seo",
-        "Static-site"
+        "making-of",
+        "opengraph",
+        "seo",
+        "static-site"
       ]
     },
     {
@@ -185,10 +185,10 @@
       "image": "https://dout.dev/assets/og/posts/2026-05-18-feeds-and-sitemaps-at-build-time.png",
       "date_published": "2026-05-18T00:00:00.000Z",
       "tags": [
-        "Making-of",
-        "Feeds",
-        "Seo",
-        "Static-site"
+        "making-of",
+        "feeds",
+        "seo",
+        "static-site"
       ]
     },
     {
@@ -200,10 +200,10 @@
       "image": "https://dout.dev/assets/og/posts/2026-05-17-build-assets-pipeline.png",
       "date_published": "2026-05-17T00:00:00.000Z",
       "tags": [
-        "Making-of",
-        "Build-assets",
-        "Performance",
-        "Images"
+        "making-of",
+        "build-assets",
+        "performance",
+        "images"
       ]
     },
     {
@@ -215,9 +215,9 @@
       "image": "https://dout.dev/assets/og/posts/2026-05-16-design-tokens-before-pages.png",
       "date_published": "2026-05-16T00:00:00.000Z",
       "tags": [
-        "Making-of",
-        "Design-systems",
-        "Css"
+        "making-of",
+        "design-systems",
+        "css"
       ]
     },
     {
@@ -229,10 +229,10 @@
       "image": "https://dout.dev/assets/og/posts/2026-05-15-progressive-enhancement-as-contract.png",
       "date_published": "2026-05-15T00:00:00.000Z",
       "tags": [
-        "Making-of",
-        "Progressive-enhancement",
-        "Accessibility",
-        "Vanilla-js"
+        "making-of",
+        "progressive-enhancement",
+        "accessibility",
+        "vanilla-js"
       ]
     },
     {
@@ -244,10 +244,10 @@
       "image": "https://dout.dev/assets/og/posts/2026-05-14-archives-tags-months-series.png",
       "date_published": "2026-05-14T00:00:00.000Z",
       "tags": [
-        "Making-of",
-        "Archives",
-        "Seo",
-        "Accessibility"
+        "making-of",
+        "archives",
+        "seo",
+        "accessibility"
       ]
     },
     {
@@ -259,10 +259,10 @@
       "image": "https://dout.dev/assets/og/posts/2026-05-13-template-engine-and-template-structure.png",
       "date_published": "2026-05-13T00:00:00.000Z",
       "tags": [
-        "Making-of",
-        "Template-engine",
-        "Html",
-        "Architecture"
+        "making-of",
+        "template-engine",
+        "html",
+        "architecture"
       ]
     },
     {
@@ -274,10 +274,10 @@
       "image": "https://dout.dev/assets/og/posts/2026-05-12-custom-ssg-pipeline.png",
       "date_published": "2026-05-12T00:00:00.000Z",
       "tags": [
-        "Making-of",
-        "Architecture",
-        "Static-site",
-        "Cms"
+        "making-of",
+        "architecture",
+        "static-site",
+        "cms"
       ]
     },
     {
@@ -289,9 +289,9 @@
       "image": "https://dout.dev/assets/og/posts/2026-05-05-why-no-astro-eleventy-next.png",
       "date_published": "2026-05-05T00:00:00.000Z",
       "tags": [
-        "Making-of",
-        "Architecture",
-        "Static-site"
+        "making-of",
+        "architecture",
+        "static-site"
       ]
     },
     {
@@ -303,9 +303,9 @@
       "image": "https://dout.dev/assets/og/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.png",
       "date_published": "2026-04-28T00:00:00.000Z",
       "tags": [
-        "Making-of",
-        "Ai-copilot",
-        "Workflow"
+        "making-of",
+        "ai-copilot",
+        "workflow"
       ]
     }
   ]

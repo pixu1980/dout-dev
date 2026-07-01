@@ -1181,7 +1181,7 @@
     border: var(--dout--border-width) solid var(--dout--border);
     background: var(--dout--surface-strong);
     color: var(--dout--text);
-    padding: 0.85rem 1rem;
+    padding: 0 1rem;
   }
 
   input[type='search']:focus,

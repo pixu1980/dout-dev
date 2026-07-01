@@ -4,15 +4,8 @@ import { refreshPostFeedLayouts } from './post-feed-layout.js';
 
 const PAGE_SIZE = 10;
 
-// Tags whose display label should be fully uppercase (keep in sync with _filters.js)
-const TAG_UPPERCASE_MAP = new Map([
-  ['css', 'CSS'],
-  ['html', 'HTML'],
-]);
-
 function applyTagDisplayCase(label) {
-  const key = String(label).toLowerCase().trim();
-  return TAG_UPPERCASE_MAP.get(key) || label;
+  return String(label).toLowerCase().trim();
 }
 
 let searchIndexesPromise = null;

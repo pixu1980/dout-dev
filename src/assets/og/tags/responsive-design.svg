@@ -29,8 +29,8 @@
   <rect x="128" y="118" width="260" height="42" rx="21" ry="21" fill="#2f8fd8" fill-opacity="0.16" />
   <text x="150" y="145" fill="#F7F0E8" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif" font-size="19" font-weight="800" letter-spacing="0.08em">TOPIC ARCHIVE</text>
   <text x="998" y="548" text-anchor="middle" fill="#FFFFFF" fill-opacity="0.05" font-family="Georgia, Times New Roman, serif" font-size="150" font-weight="700" letter-spacing="0">DOUT</text>
-  <text x="138" y="252" fill="#FFF8F0" font-family="Georgia, Times New Roman, serif" font-size="70" font-weight="700" letter-spacing="0"><tspan x="138" dy="0">Responsive-design</tspan></text>
-  <text x="142" y="446" fill="#D7CFC4" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif" font-size="28" font-weight="500" letter-spacing="0"><tspan x="142" dy="0">Posts tagged with Responsive-design. Follow</tspan><tspan x="142" dy="38">related posts across the full archive.</tspan></text>
+  <text x="138" y="252" fill="#FFF8F0" font-family="Georgia, Times New Roman, serif" font-size="70" font-weight="700" letter-spacing="0"><tspan x="138" dy="0">responsive-design</tspan></text>
+  <text x="142" y="446" fill="#D7CFC4" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif" font-size="28" font-weight="500" letter-spacing="0"><tspan x="142" dy="0">Posts tagged with responsive-design. Follow</tspan><tspan x="142" dy="38">related posts across the full archive.</tspan></text>
   <rect x="128" y="496" width="210" height="2" fill="#2f8fd8" />
   <text x="128" y="520" fill="#F7F0E8" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" font-weight="800" letter-spacing="0.04em">DOUT.DEV / EDITORIAL</text>
   <text x="1052" y="520" text-anchor="end" fill="#BDB3A7" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="0">https://dout.dev</text>

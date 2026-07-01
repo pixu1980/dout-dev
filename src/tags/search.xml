@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>dout.dev — Search</title>
+    <title>dout.dev — search</title>
     <link>https://dout.dev/tags/search/</link>
-    <description>RSS feed for posts tagged with Search</description>
+    <description>RSS feed for posts tagged with search</description>
     <atom:link href="https://dout.dev/tags/search.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
     <lastBuildDate>Tue, 23 Jun 2026 00:00:00 GMT</lastBuildDate>

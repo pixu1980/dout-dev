@@ -31,15 +31,8 @@ function getTagHref(tag) {
   return `/tags/${utilSlug(tag)}.html`;
 }
 
-// Tags whose display label should be fully uppercase
-const TAG_UPPERCASE_MAP = new Map([
-  ['css', 'CSS'],
-  ['html', 'HTML'],
-]);
-
 function applyTagDisplayCase(label) {
-  const key = String(label).toLowerCase().trim();
-  return TAG_UPPERCASE_MAP.get(key) || label;
+  return String(label).toLowerCase().trim();
 }
 
 function getTagLabel(tag) {
