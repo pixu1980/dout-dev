@@ -1,6 +1,6 @@
 import { refreshPostFeedLayouts } from './post-feed-layout.js';
 
-const FEED_SELECTOR = '[data-load-more-feed="true"]:not([data-skeleton-node])';
+const FEED_SELECTOR = '[data-load-more-feed="true"]';
 const DEFAULT_STEP = 10;
 
 function parsePositiveInteger(value, fallback) {
@@ -61,10 +61,6 @@ function createControls(feed, baseLabel) {
 
 function initLoadMoreFeed(feed) {
   if (!(feed instanceof HTMLElement) || feed.dataset.loadMoreReady === 'true') {
-    return;
-  }
-
-  if (feed.closest('[data-preferences-skeleton]')) {
     return;
   }
 

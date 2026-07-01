@@ -1,7 +1,7 @@
 const STORAGE_KEY = 'post-feed-layout';
 const DEFAULT_LAYOUT = 'list';
 const LAYOUTS = ['list', 'grid'];
-const POST_FEED_SELECTOR = '[data-post-feed]:not([data-skeleton-node])';
+const POST_FEED_SELECTOR = '[data-post-feed]';
 
 let hasInitialized = false;
 let scheduledFrame = 0;

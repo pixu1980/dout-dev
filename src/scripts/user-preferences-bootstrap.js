@@ -5,26 +5,6 @@ const STORAGE_KEYS = Object.freeze({
   postFeedLayout: 'post-feed-layout',
 });
 
-const MINIMUM_USER_PREFERENCES_RENDER_FRAMES = 15;
-const SKELETON_EXCLUDED_ATTR_PREFIXES = Object.freeze([
-  'data-load-more-',
-  'data-post-feed',
-  'data-post-card',
-  'data-menu-toggle',
-  'data-skip-link',
-]);
-
-const SKELETON_EXCLUDED_SELECTORS = [
-  '[data-preferences-skeleton]',
-  '[data-file-preview-warning]',
-  '[data-skip-link]',
-  '[aria-live]',
-  'script',
-  'style',
-  'template',
-  'noscript',
-].join(',');
-
 const ACCENT_OPTIONS = Object.freeze([
   { h: 16, id: 'coral', l: 58, s: 95 },
   { h: 340, id: 'rose', l: 62, s: 90 },
@@ -283,146 +263,12 @@ function markUserPreferencesReady(targetDocument = document) {
   targetDocument.documentElement.dataset.userPreferences = 'ready';
 }
 
-function getSkeletonTextWidth(text) {
-  const length = String(text || '').trim().length;
-  return `${Math.min(42, Math.max(4, Math.round(length * 0.58)))}ch`;
-}
-
-function createSkeletonText(text, targetDocument) {
-  const placeholder = targetDocument.createElement('span');
-  placeholder.dataset.skeletonText = 'true';
-  placeholder.style.setProperty('--skeleton-text-inline', getSkeletonTextWidth(text));
-  return placeholder;
-}
-
-function createSkeletonMedia(sourceElement, targetDocument) {
-  const placeholder = targetDocument.createElement('span');
-  placeholder.dataset.skeletonMedia = 'true';
-  placeholder.dataset.skeletonTag = sourceElement.localName;
-
-  if (sourceElement.width && sourceElement.height) {
-    placeholder.style.aspectRatio = `${sourceElement.width} / ${sourceElement.height}`;
-  }
-
-  return placeholder;
-}
-
-function createSkeletonControl(sourceElement, targetDocument) {
-  const placeholder = targetDocument.createElement('span');
-  placeholder.dataset.skeletonControl = 'true';
-  placeholder.dataset.skeletonTag = sourceElement.localName;
-  placeholder.style.setProperty(
-    '--skeleton-control-inline',
-    getSkeletonTextWidth(sourceElement.textContent || sourceElement.getAttribute('aria-label'))
-  );
-  return placeholder;
-}
-
-function shouldSkipSkeletonElement(element) {
-  return element.matches(SKELETON_EXCLUDED_SELECTORS);
-}
-
-function shouldExcludeSkeletonAttribute(name) {
-  return SKELETON_EXCLUDED_ATTR_PREFIXES.some((prefix) => name.startsWith(prefix));
-}
-
-function copySkeletonLayoutAttributes(sourceElement, skeletonElement) {
-  for (const { name, value } of sourceElement.attributes) {
-    if (name.startsWith('data-') && !shouldExcludeSkeletonAttribute(name)) {
-      skeletonElement.setAttribute(name, value);
-    }
-  }
-
-  skeletonElement.dataset.skeletonNode = 'true';
-  skeletonElement.dataset.skeletonTag = sourceElement.localName;
-}
-
-function createSkeletonNode(sourceNode, targetDocument) {
-  if (sourceNode.nodeType === 3) {
-    const text = sourceNode.textContent?.trim();
-    return text ? createSkeletonText(text, targetDocument) : null;
-  }
-
-  if (sourceNode.nodeType !== 1 || shouldSkipSkeletonElement(sourceNode)) {
-    return null;
-  }
-
-  if (['canvas', 'img', 'picture', 'svg', 'video'].includes(sourceNode.localName)) {
-    return createSkeletonMedia(sourceNode, targetDocument);
-  }
-
-  if (['button', 'input', 'select', 'textarea'].includes(sourceNode.localName)) {
-    return createSkeletonControl(sourceNode, targetDocument);
-  }
-
-  const skeletonElement = targetDocument.createElement(sourceNode.localName);
-  copySkeletonLayoutAttributes(sourceNode, skeletonElement);
-
-  for (const childNode of sourceNode.childNodes) {
-    const childSkeleton = createSkeletonNode(childNode, targetDocument);
-    if (childSkeleton) {
-      skeletonElement.appendChild(childSkeleton);
-    }
-  }
-
-  return skeletonElement;
-}
-
-function populatePreferencesSkeleton(targetDocument = document) {
-  const skeleton = targetDocument.querySelector('[data-preferences-skeleton]');
-  if (!skeleton) {
-    return null;
-  }
-
-  const surface = targetDocument.createElement('div');
-  surface.dataset.preferencesSkeletonSurface = '';
-
-  for (const child of targetDocument.body.children) {
-    const childSkeleton = createSkeletonNode(child, targetDocument);
-    if (childSkeleton) {
-      surface.appendChild(childSkeleton);
-    }
-  }
-
-  skeleton.replaceChildren(surface);
-  skeleton.dataset.skeletonGenerated = 'true';
-  skeleton.setAttribute('inert', '');
-  return skeleton;
-}
-
-function afterUserPreferencesRender(callback, targetWindow) {
-  if (typeof targetWindow?.requestAnimationFrame !== 'function') {
-    callback();
-    return;
-  }
-
-  let remainingFrames = MINIMUM_USER_PREFERENCES_RENDER_FRAMES;
-
-  const waitForFrame = () => {
-    remainingFrames -= 1;
-
-    if (remainingFrames <= 0) {
-      callback();
-      return;
-    }
-
-    targetWindow.requestAnimationFrame(waitForFrame);
-  };
-
-  targetWindow.requestAnimationFrame(waitForFrame);
-}
-
 function bootUserPreferences(options = {}) {
   const targetDocument = options.document || document;
-  const targetWindow =
-    options.window || targetDocument.defaultView || (typeof window !== 'undefined' ? window : null);
 
-  try {
-    return applyUserPreferences({ ...options, document: targetDocument });
-  } finally {
-    populatePreferencesSkeleton(targetDocument);
-    afterUserPreferencesRender(() => markUserPreferencesReady(targetDocument), targetWindow);
-  }
+  const result = applyUserPreferences({ ...options, document: targetDocument });
+  markUserPreferencesReady(targetDocument);
+  return result;
 }
 
 if (typeof document !== 'undefined') {
@@ -430,7 +276,6 @@ if (typeof document !== 'undefined') {
 }
 
 export {
-  afterUserPreferencesRender,
   applyAccentColor,
   applyColorScheme,
   applyDisplayPreferences,
@@ -440,6 +285,5 @@ export {
   DEFAULT_PREFERENCES,
   markUserPreferencesReady,
   normalizePreferences,
-  populatePreferencesSkeleton,
   STORAGE_KEYS,
 };

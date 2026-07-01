@@ -25,7 +25,7 @@
     <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
     <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
     <script>
-      document.documentElement.dataset.userPreferences = 'loading';
+      document.documentElement.dataset.userPreferences = 'ready';
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
       }
@@ -95,7 +95,6 @@
       This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
       Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
     </p>
-    <div data-preferences-skeleton="" aria-hidden="true" inert=""></div>
     <a data-skip-link="" href="#main">Skip to main content</a>
     <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
     <header role="banner" data-site-header="">
@@ -143,17 +142,24 @@
           <label for="q">Query</label>
           <input id="q" name="q" type="search" placeholder="Search posts, tags, and series..." value="" />
           <button type="submit">Search</button>
-          <fieldset data-cluster="">
-            <legend>Filter by type</legend>
-            <input id="type-post" type="checkbox" name="type" value="post" checked="" />
-            <label for="type-post">Posts</label>
-            <input id="type-tag" type="checkbox" name="type" value="tag" checked="" />
-            <label for="type-tag">Tags</label>
-            <input id="type-series" type="checkbox" name="type" value="series" checked="" />
-            <label for="type-series">Series</label>
-            <input id="type-month" type="checkbox" name="type" value="month" checked="" />
-            <label for="type-month">Months</label>
-          </fieldset>
+          <div data-cluster="" role="group" aria-label="Filter by type">
+            <label data-search-filter="">
+              <input type="checkbox" name="type" value="post" checked="" />
+              <span>Posts</span>
+            </label>
+            <label data-search-filter="">
+              <input type="checkbox" name="type" value="tag" checked="" />
+              <span>Tags</span>
+            </label>
+            <label data-search-filter="">
+              <input type="checkbox" name="type" value="series" checked="" />
+              <span>Series</span>
+            </label>
+            <label data-search-filter="">
+              <input type="checkbox" name="type" value="month" checked="" />
+              <span>Months</span>
+            </label>
+          </div>
         </form>
 
         <div data-search-toolbar="" data-reveal="">

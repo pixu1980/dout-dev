@@ -25,7 +25,7 @@
     <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
     <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
     <script>
-      document.documentElement.dataset.userPreferences = 'loading';
+      document.documentElement.dataset.userPreferences = 'ready';
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
       }
@@ -118,7 +118,6 @@
       This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
       Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
     </p>
-    <div data-preferences-skeleton="" aria-hidden="true" inert=""></div>
     <a data-skip-link="" href="#main">Skip to main content</a>
     <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
     <header role="banner" data-site-header="">

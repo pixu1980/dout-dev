@@ -49,17 +49,24 @@
           value="{{ query | default:'' }}"
         />
         <button type="submit">Search</button>
-        <fieldset data-cluster>
-          <legend>Filter by type</legend>
-          <input id="type-post" type="checkbox" name="type" value="post" checked />
-          <label for="type-post">Posts</label>
-          <input id="type-tag" type="checkbox" name="type" value="tag" checked />
-          <label for="type-tag">Tags</label>
-          <input id="type-series" type="checkbox" name="type" value="series" checked />
-          <label for="type-series">Series</label>
-          <input id="type-month" type="checkbox" name="type" value="month" checked />
-          <label for="type-month">Months</label>
-        </fieldset>
+        <div data-cluster role="group" aria-label="Filter by type">
+          <label data-search-filter>
+            <input type="checkbox" name="type" value="post" checked />
+            <span>Posts</span>
+          </label>
+          <label data-search-filter>
+            <input type="checkbox" name="type" value="tag" checked />
+            <span>Tags</span>
+          </label>
+          <label data-search-filter>
+            <input type="checkbox" name="type" value="series" checked />
+            <span>Series</span>
+          </label>
+          <label data-search-filter>
+            <input type="checkbox" name="type" value="month" checked />
+            <span>Months</span>
+          </label>
+        </div>
       </form>
 
       <div data-search-toolbar data-reveal>

@@ -31,6 +31,7 @@ color-scheme-switcher label {
   background: var(--dout--surface-strong);
   color: var(--dout--text);
   cursor: pointer;
+  corner-shape: var(--dout--corner-shape);
   transition:
     background-color var(--dout--motion-fast) var(--dout--motion-ease),
     color var(--dout--motion-fast) var(--dout--motion-ease);
@@ -60,6 +61,17 @@ color-scheme-switcher label[data-active] {
   background: var(--dout--accent);
   color: var(--dout--on-accent);
   font-weight: 600;
+  corner-shape: var(--dout--corner-shape);
+}
+
+color-scheme-switcher label:first-of-type[data-active] {
+  border-start-start-radius: var(--dout--control-segment-radius);
+  border-end-start-radius: var(--dout--control-segment-radius);
+}
+
+color-scheme-switcher label:last-of-type[data-active] {
+  border-start-end-radius: var(--dout--control-segment-radius);
+  border-end-end-radius: var(--dout--control-segment-radius);
 }
 
 color-scheme-switcher label[data-active]:hover {
@@ -83,6 +95,7 @@ color-scheme-switcher input[type='radio'] {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+  outline: none;
 }
 
 color-scheme-switcher [data-visually-hidden] {
