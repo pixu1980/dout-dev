@@ -184,7 +184,7 @@
   [data-privacy-grid] {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: stretch;
     gap: var(--dout--space-5);
 
     > * {

@@ -1022,6 +1022,11 @@
     width: 100%;
   }
 
+  [data-card] {
+    display: flex;
+    flex-direction: column;
+  }
+
   [data-archive-panel] {
     display: flex;
     flex-direction: column;
