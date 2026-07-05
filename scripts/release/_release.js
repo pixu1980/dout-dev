@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 import { execFileSync } from 'node:child_process';
+import { createInterface } from 'node:readline';
+import { stdin as input, stdout as output } from 'node:process';
 
 const GIT_LOG_COMMIT_SEPARATOR = '\u001e';
 const CONVENTIONAL_COMMIT_SUBJECT_PATTERN =
@@ -148,9 +150,44 @@ function amendGeneratedArtifactsIfNeeded() {
   run('git', ['commit', '--amend', '--no-edit']);
 }
 
-export function release() {
+/**
+ * Prompt the user with a yes/no question at the terminal.
+ */
+export async function askYesNo(question) {
+  const rl = createInterface({ input, output });
+
+  return new Promise((resolve) => {
+    rl.question(question, (answer) => {
+      rl.close();
+      resolve(answer.trim().toLowerCase() === 'y');
+    });
+  });
+}
+
+export async function release() {
   ensureCleanWorktree();
-  const detectedRelease = detectReleaseType();
+
+  let detectedRelease;
+  try {
+    detectedRelease = detectReleaseType();
+  } catch (error) {
+    if (!error.message.includes('No Conventional Commits found')) {
+      throw error;
+    }
+
+    console.error(error.message);
+    const proceed = await askYesNo(
+      "Nessun Conventional Commit trovato dall'ultimo tag. Forzare una release patch? (y/N): "
+    );
+
+    if (!proceed) {
+      console.log('Release annullata.');
+      process.exit(1);
+    }
+
+    const latestTag = getLatestTag();
+    detectedRelease = { latestTag, releaseType: 'patch' };
+  }
 
   console.log(
     `Detected ${detectedRelease.releaseType} release from Conventional Commits since ${detectedRelease.latestTag || 'the first commit'}.`
@@ -174,5 +211,5 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     process.exit(1);
   }
 
-  release();
+  await release();
 }
