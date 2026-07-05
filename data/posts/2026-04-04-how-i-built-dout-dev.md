@@ -1,5 +1,5 @@
 ---
-title: 'How I Built dout.dev (And Why I Didn''t Use a Framework Like a Normal Person)'
+title: 'How I Built dout.dev (and why I did not use a framework like a normal person)'
 date: '2026-04-04'
 published: true
 tags: ['making-of', 'architecture', 'static-site']

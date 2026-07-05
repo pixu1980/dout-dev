@@ -3,9 +3,8 @@ title: "Article title"
 description: "Short description for preview and social sharing."
 author: "Name or handle"
 date: "YYYY-MM-DD"
-tags:
-  - tag-1
-  - tag-2
+tags: ['tag-1', 'tag-2']
+series: "Series name"
 status: "draft"
 canonical: ""
 discussion: ""

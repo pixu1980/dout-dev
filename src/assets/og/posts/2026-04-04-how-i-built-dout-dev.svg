@@ -29,7 +29,7 @@
   <rect x="128" y="118" width="260" height="42" rx="21" ry="21" fill="#ff6b3d" fill-opacity="0.16" />
   <text x="150" y="145" fill="#F7F0E8" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif" font-size="19" font-weight="800" letter-spacing="0.08em">DOUT.DEV</text>
   <text x="998" y="548" text-anchor="middle" fill="#FFFFFF" fill-opacity="0.05" font-family="Georgia, Times New Roman, serif" font-size="150" font-weight="700" letter-spacing="0">DOUT</text>
-  <text x="138" y="252" fill="#FFF8F0" font-family="Georgia, Times New Roman, serif" font-size="70" font-weight="700" letter-spacing="0"><tspan x="138" dy="0">How I Built dout.dev (And</tspan><tspan x="138" dy="82">Why I Didn&#39;t Use a</tspan><tspan x="138" dy="82">Framework...</tspan></text>
+  <text x="138" y="252" fill="#FFF8F0" font-family="Georgia, Times New Roman, serif" font-size="70" font-weight="700" letter-spacing="0"><tspan x="138" dy="0">How I Built dout.dev (and</tspan><tspan x="138" dy="82">why I did not use a</tspan><tspan x="138" dy="82">framework...</tspan></text>
   <text x="142" y="446" fill="#D7CFC4" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif" font-size="28" font-weight="500" letter-spacing="0"><tspan x="142" dy="0">A technical walkthrough of how dout.dev goes from</tspan><tspan x="142" dy="38">markdown...</tspan><tspan x="142" dy="38">What the stack is, exactly (TL;DR: files + Node +...</tspan></text>
   <rect x="128" y="496" width="210" height="2" fill="#ff6b3d" />
   <text x="128" y="520" fill="#F7F0E8" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" font-weight="800" letter-spacing="0.04em">DOUT.DEV / EDITORIAL</text>
