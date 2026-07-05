@@ -141,8 +141,6 @@ Every time I follow it, the ruleset reads like a coherent paragraph instead of a
 }
 ```
 
----
-
 Look at that ruleset. Now look at your last project's CSS. If the two don't look alike, you know what to do.
 
 I'm not going to tell you this hierarchy is the One True Way™, I've been in this game long enough to know that CSS is a language, not a religion, and anyone who tells you there's exactly one correct way to order properties is selling something (probably a linter rule they wrote). But I _will_ tell you this: having _any_ consistent order is infinitely better than having no order at all. The specific convention matters less than the fact that you have one and you follow it.
@@ -160,4 +158,3 @@ So here's my challenge to you: pick any ruleset in your current project. Reorder
 And when you find that bug, think about this: the hierarchy found it, not a linter. A linter can tell you "duplicate property detected." The hierarchy tells you _why_ it's a duplicate and _which one wins_.
 
 Told you. CSS is a language, not a config file.
-```
