@@ -212,16 +212,16 @@
               a tax.
             </p>
             <ul>
-              <li>
+              <li data-reveal="">
                 <strong>Prism or highlight.js at runtime.</strong> Small API, reasonable language support, but it ships
                 JavaScript to every reader even for cold visits that never view code.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Shiki at build time.</strong> Produces beautiful, VS Code-parity output, but pulls a full
                 TextMate grammar engine into the build. The dependency graph is non-trivial and the output HTML is
                 dense.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Pygments or Rouge via a Ruby dependency.</strong> Excellent output, but I did not want a
                 second-language toolchain in the pipeline.
               </li>
@@ -245,10 +245,12 @@
             <h2 id="the-custom-element" tabindex="0" data-toc-anchor="true">The custom element</h2>
             <p>The element is under 300 lines. It knows how to:</p>
             <ol>
-              <li>Read <code>lang</code> and pick the lexer.</li>
-              <li>Tokenize the text content into <code>{ type, value }</code> tuples.</li>
-              <li>Render a sequence of <code>&lt;span class="tok-&lt;type&gt;"&gt;</code> wrapping the tokens.</li>
-              <li>Expose a <code>copy</code> button that puts the raw source on the clipboard.</li>
+              <li data-reveal="">Read <code>lang</code> and pick the lexer.</li>
+              <li data-reveal="">Tokenize the text content into <code>{ type, value }</code> tuples.</li>
+              <li data-reveal="">
+                Render a sequence of <code>&lt;span class="tok-&lt;type&gt;"&gt;</code> wrapping the tokens.
+              </li>
+              <li data-reveal="">Expose a <code>copy</code> button that puts the raw source on the clipboard.</li>
             </ol>
             <pre is="pix-highlighter" data-lang="js"><code>class PixHighlighter extends HTMLPreElement {
   connectedCallback() {
@@ -373,7 +375,7 @@ customElements.define('pix-highlighter', PixHighlighter, { extends: 'pre' });</c
             </p>
             <h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
             <ul>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements?from=dout.dev"
                   target="_blank"
@@ -382,7 +384,7 @@ customElements.define('pix-highlighter', PixHighlighter, { extends: 'pre' });</c
                   >Web Components: Custom Elements - MDN</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://html.spec.whatwg.org/multipage/custom-elements.html?from=dout.dev#customized-built-in-elements"
                   target="_blank"
@@ -391,7 +393,7 @@ customElements.define('pix-highlighter', PixHighlighter, { extends: 'pre' });</c
                   >Customized built-in elements - HTML Living Standard</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://shiki.style/?from=dout.dev"
                   target="_blank"
@@ -401,7 +403,7 @@ customElements.define('pix-highlighter', PixHighlighter, { extends: 'pre' });</c
                 >
                 - if you need TextMate-grade output
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://prismjs.com/?from=dout.dev"
                   target="_blank"
@@ -411,7 +413,7 @@ customElements.define('pix-highlighter', PixHighlighter, { extends: 'pre' });</c
                 >
                 - if you need runtime highlighting with minimal setup
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://highlightjs.org/?from=dout.dev"
                   target="_blank"

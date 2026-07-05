@@ -29,6 +29,12 @@ Pi ships with exactly four core tools: `read`, `write`, `edit`, and `bash`. Thre
 
 That last point is the one most people miss. Pi does not remove safety. Pi removes **friction**. You still review every change. You still see the exact command before it runs. You still decide when the loop is done. What you give up is a layer of confirmation dialogs that, in my experience, do not actually catch the kind of mistakes that matter and mostly just slow down the parts of the work that are already correct.
 
+And the entire thing is **open source at its core**. The repository at [github.com/earendil-works/pi](https://github.com/earendil-works/pi) is MIT-licensed, and everything — the core loop, the tool harness, the MCP bridge, the provider abstraction — is readable, forkable, and hackable. You can strip it down, patch it, or build your own distribution. There is no proprietary layer, no closed-source enterprise edition, no telemetry-gated feature. The CLI, the TUI, the extension system, and the skill loader are all there in plain TypeScript.
+
+The consequence is that the extension API is unusually clean. Pi exposes a small, well-documented set of primitives — tools, MCP servers, skills, prompt templates, and themes — and you wire them together with a `package.json` and a single `main` file. The package manager (`pi packages`) discovers, installs, and updates extensions from [pi.dev/packages](https://pi.dev/packages/), where anyone can publish.
+
+I maintain a small extension myself: [`@pixu1980/pi-path-picker`](https://pi.dev/packages/@pixu1980/pi-path-picker), a tool that autocompletes file paths inside the agent prompt. The source lives at [github.com/pixu1980/pi-coding-agent-extensions](https://github.com/pixu1980/pi-coding-agent-extensions), and the entire implementation — registering a custom tool, hooking into the prompt lifecycle, handling tab-completion in the TUI — fits in a handful of files. It is a good example of how little ceremony is involved: you write a TypeScript class, export it, publish it, and it works. No build step beyond TypeScript, no configuration wizard, no permission manifest.
+
 The other thing Pi gets right is the provider model. It supports 20+ providers out of the box, including Anthropic, OpenAI, Google, xAI, Mistral, Groq, OpenRouter, and DeepSeek. DeepSeek is a first-class native provider because it speaks the OpenAI-compatible API, and you can switch models mid-session. The configuration lives in `~/.pi/agent/models.json` and you can register as many models as you want.
 
 I have seven models registered at any given time. I switch between them depending on the task. The default for almost everything I do is DeepSeek V4 Flash.
@@ -73,15 +79,29 @@ A heavy day, two milestones plus a refactor plus a documentation pass, has been 
 
 There is also `pi-deepseek-cache`, a small extension that pins the system prompt and tool definitions to keep the prefix-cache hot, and the developer reports a 95%+ cache hit rate once the loop stabilizes. I have not measured my own hit rate that carefully, but I have watched my daily bill drop when I started using it, and the savings are real.
 
-## What I stopped using
+## The closed-source trap I walked away from
 
-I am not going to pretend the alternatives do not work. They do. They are just more expensive in ways that matter at the personal-tooling scale.
+Let me be direct, because the marketing is designed to obscure this.
 
-- **Cursor and the heavy IDE agents.** Great for some workflows, expensive at the per-month subscription rate for the kind of agent-loop-heavy work I do, and they want to own the editor.
-- **Claude Code and the Anthropic-native loops.** Excellent model, very good tool harness, but at Opus-class pricing, an output-heavy agent loop is roughly an order of magnitude more expensive than the same loop on V4-Flash, and for the work I do day-to-day the quality delta is not worth that multiplier.
-- **ChatGPT-style web UIs.** Fine for one-shot questions. Useless for in-repo work, because the context does not survive a session and the tools are limited to copy-paste.
+**Cursor** is a VS Code fork with proprietary extensions glued to someone else's APIs. You do not own the loop, you do not own the integrations, and you pay a per-month subscription that rises without your consent. The model is venture-funded price suppression: lose money on every seat, make it up on the locked-in base when the music stops. The usual playbook.
 
-I am not saying these tools are bad. I am saying that for a developer who lives inside agent loops and who cares about the difference between a $0.30 day and a $5 day, the combination of Pi and DeepSeek V4 Flash is a structurally better default.
+**Claude Code** is a genuinely good tool harness owned by Anthropic, which means it exists to sell Anthropic models. You are not the customer of the tool — you are the inventory. The pricing is opaque, the model access is gated, and the open-source contributions are decorative. When Anthropic raises Opus pricing next quarter — and it will — your loop cost triples and you have no alternative provider to switch to within the same harness. That is not a product. That is **addiction by design**: low-dose introductory offer, price escalates after the habit forms.
+
+**ChatGPT, GitHub Copilot, Codex** — all proprietary. All trained on public data the companies would never let you train on. All designed to make you dependent on a closed API that can change terms, pricing, or access at any time with zero recourse. The open-weight models from DeepSeek, Mistral, and Llama are structurally more aligned with your interest as a developer: you can run them, fork them, audit them, and switch between them without asking for permission.
+
+**OpenCode** and the emerging ecosystem of open-agent toolkits are moving in the right direction: tools that assume you want transparency, portability, and the freedom to change the model without changing the harness. That is the principle that matters. Not "AI for everyone" as a slogan, but **"AI you control"** as a property of the software.
+
+Pi is the only one of these that is open source at its core — MIT-licensed from day one, with a package registry where anyone can publish an extension without a review board or a commercial agreement. My `@pixu1980/pi-path-picker` is a small example, but the fact that I can write it, publish it, and use it without asking anyone is the entire difference between a platform and a prison.
+
+### The extension potential is genuinely infinite
+
+The most surreal part of this setup is that the model itself can write extensions for the harness that runs it.
+
+DeepSeek V4 Flash reads the Pi extension documentation — a few pages of TypeScript interfaces and a `package.json` schema — and generates working extensions on the first try. I have done it. You describe what you want in plain English, the model reads the API docs from the repository, and it produces a complete extension: tool registration, prompt hooks, TUI integration, the whole thing. One prompt.
+
+That is the loop squared. You use an open-source agent to call an open-weight model, and the model extends the agent while you watch. The harness grows its own capabilities. There is no approval queue, no marketplace gatekeeper, no SDK version lock. You just describe, generate, publish, and use.
+
+It is incredible, it is satisfying, and it is the most empowering development workflow I have ever experienced. The ceiling is not set by a product manager's roadmap. The ceiling is set by what you can describe in a prompt.
 
 ## The honest trade-offs
 

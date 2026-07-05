@@ -209,19 +209,19 @@
               build is four stages, in this exact order, no jumping around:
             </p>
             <ol>
-              <li>
+              <li data-reveal="">
                 <strong>Scan.</strong> Read every markdown file, parse front matter, validate required fields. Yell if
                 something's missing.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Normalize.</strong> Compute slug, excerpt, keywords, reading time, canonical URL, tag and month
                 and series indexes. This is where the thinking happens.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Render.</strong> Convert markdown to HTML, pass the normalized dataset and per-page context into
                 the template engine, write files under <code>src/</code>.
               </li>
-              <li><strong>Emit.</strong> Generate feeds, sitemap, search indexes, and OG images.</li>
+              <li data-reveal=""><strong>Emit.</strong> Generate feeds, sitemap, search indexes, and OG images.</li>
             </ol>
             <p>
               <strong>The pipeline is a plain Node script</strong> orchestrated from <code>scripts/cms/build.js</code>.
@@ -250,11 +250,15 @@
             </h2>
             <p>Normalization is where most of the thinking happens. Given the raw post records, it produces:</p>
             <ul>
-              <li>a stable slug per post, derived from the filename, with a predictable URL;</li>
-              <li>an excerpt and a keyword set, computed from the rendered body (after a first pass of markdown);</li>
-              <li>the tag index, the month index, and the series index, each with counts and canonical slugs;</li>
-              <li>the next/previous pointers for each post;</li>
-              <li>the pagination plan for every listing view.</li>
+              <li data-reveal="">a stable slug per post, derived from the filename, with a predictable URL;</li>
+              <li data-reveal="">
+                an excerpt and a keyword set, computed from the rendered body (after a first pass of markdown);
+              </li>
+              <li data-reveal="">
+                the tag index, the month index, and the series index, each with counts and canonical slugs;
+              </li>
+              <li data-reveal="">the next/previous pointers for each post;</li>
+              <li data-reveal="">the pagination plan for every listing view.</li>
             </ul>
             <p>
               This step is deliberately pure. Given the same inputs it returns the same outputs. Pure functions are like
@@ -285,10 +289,12 @@
             </h2>
             <p>The final stage produces everything that is derived but not a page:</p>
             <ul>
-              <li><code>feed.rss</code>, <code>feed.json</code>, <code>feed.xml</code> for subscribers;</li>
-              <li><code>sitemap.xml</code> for crawlers;</li>
-              <li><code>src/data/*.json</code> for the client-side search index;</li>
-              <li><code>src/assets/og/posts/*.png</code> for social previews.</li>
+              <li data-reveal="">
+                <code>feed.rss</code>, <code>feed.json</code>, <code>feed.xml</code> for subscribers;
+              </li>
+              <li data-reveal=""><code>sitemap.xml</code> for crawlers;</li>
+              <li data-reveal=""><code>src/data/*.json</code> for the client-side search index;</li>
+              <li data-reveal=""><code>src/assets/og/posts/*.png</code> for social previews.</li>
             </ul>
             <p>
               OG images are worth their own post; they are rendered server-side at build time from an SVG template and

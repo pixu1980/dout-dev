@@ -317,11 +317,11 @@ CSS.highlights.set('pix-kw', highlight);</code></pre>
             </p>
             <p>The architecture works because each layer has ONE job:</p>
             <ol>
-              <li>Markdown emits semantic code blocks.</li>
-              <li>Lexers produce token ranges.</li>
-              <li>The CSS Custom Highlight API paints those ranges without spans.</li>
-              <li>Fallback markup covers browsers without highlight support.</li>
-              <li>Toolbar actions enhance the block without becoming the content.</li>
+              <li data-reveal="">Markdown emits semantic code blocks.</li>
+              <li data-reveal="">Lexers produce token ranges.</li>
+              <li data-reveal="">The CSS Custom Highlight API paints those ranges without spans.</li>
+              <li data-reveal="">Fallback markup covers browsers without highlight support.</li>
+              <li data-reveal="">Toolbar actions enhance the block without becoming the content.</li>
             </ol>
             <p>
               That is the pattern I want here: ordinary HTML first, modern browser APIs where they remove markup, and a

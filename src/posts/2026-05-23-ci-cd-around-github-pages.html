@@ -304,18 +304,18 @@ jobs:
               recovery path is:
             </p>
             <ol>
-              <li>Go to Actions → Deploy Pages in the repo.</li>
-              <li>Find the last known-good run.</li>
-              <li>Click "Re-run all jobs."</li>
+              <li data-reveal="">Go to Actions → Deploy Pages in the repo.</li>
+              <li data-reveal="">Find the last known-good run.</li>
+              <li data-reveal="">Click "Re-run all jobs."</li>
             </ol>
             <p>That rebuilds the old commit and redeploys it. One minute from "oh no" to "fixed."</p>
             <p>The prerequisites:</p>
             <ul>
-              <li>
+              <li data-reveal="">
                 <strong>Every production deploy is triggered by a commit on <code>main</code>.</strong> No manual
                 artifact uploads. Every deploy is reproducible from a specific SHA.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Build-time inputs are either committed or in secrets.</strong> If a deploy depends on an
                 environment variable that is not tracked, re-running the old commit with a new secret value produces a
                 different artifact. That is the most common rollback failure mode.
@@ -339,16 +339,16 @@ jobs:
               What I did NOT add (because over-engineering is a sin)
             </h2>
             <ul>
-              <li>
+              <li data-reveal="">
                 <strong>Automatic atomic rollback on failure.</strong> If the build fails, no deploy happens. If the
                 deploy itself fails, GitHub Pages does not update. That is the correct level of automation for a static
                 site.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Slack or email notifications on deploy.</strong> Overkill for a single-author blog. The Actions
                 email notifications are enough.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Canary deploys.</strong> A static blog does not need canaries. The unit of change is one post.
               </li>
             </ul>

@@ -215,9 +215,11 @@
             </h2>
             <p>A static blog has no backend. That is the whole fucking point. So search has to satisfy three rules:</p>
             <ol>
-              <li>No server. No Algolia, no Lunr-as-a-service, no runtime dependency.</li>
-              <li>Small payload. A reader who never opens the search page should pay nothing.</li>
-              <li>Real results. Not just title contains-term. Tags, keywords, and series should rank too.</li>
+              <li data-reveal="">No server. No Algolia, no Lunr-as-a-service, no runtime dependency.</li>
+              <li data-reveal="">Small payload. A reader who never opens the search page should pay nothing.</li>
+              <li data-reveal="">
+                Real results. Not just title contains-term. Tags, keywords, and series should rank too.
+              </li>
             </ol>
             <p>
               On dout.dev this shipped as a single <code>search.html</code> page that loads prebuilt JSON indexes from
@@ -229,13 +231,13 @@
             </h2>
             <p>Every time the CMS runs, it emits four files under <code>src/data/</code>:</p>
             <ul>
-              <li>
+              <li data-reveal="">
                 <code>posts.json</code> - one entry per published post: title, slug, date, description, tags, series,
                 keywords extracted from the body;
               </li>
-              <li><code>tags.json</code> - one entry per tag: label, slug, count;</li>
-              <li><code>months.json</code> - one per month: <code>YYYY-MM</code>, count;</li>
-              <li><code>series.json</code> - one per series: label, slug, count.</li>
+              <li data-reveal=""><code>tags.json</code> - one entry per tag: label, slug, count;</li>
+              <li data-reveal=""><code>months.json</code> - one per month: <code>YYYY-MM</code>, count;</li>
+              <li data-reveal=""><code>series.json</code> - one per series: label, slug, count.</li>
             </ul>
             <p>A post entry looks like this:</p>
             <pre is="pix-highlighter" data-lang="json"><code>{
@@ -258,9 +260,11 @@
             </p>
             <pre is="pix-highlighter"><code>/search.html?q=template&amp;type=post&amp;type=tag&amp;page=2</code></pre>
             <ul>
-              <li><code>q</code> is the query term.</li>
-              <li><code>type</code> is repeatable and filters the result stream (post, tag, series, month).</li>
-              <li><code>page</code> is the pagination index, 1-based.</li>
+              <li data-reveal=""><code>q</code> is the query term.</li>
+              <li data-reveal="">
+                <code>type</code> is repeatable and filters the result stream (post, tag, series, month).
+              </li>
+              <li data-reveal=""><code>page</code> is the pagination index, 1-based.</li>
             </ul>
             <p>
               Any change to the form updates the URL via <code>history.pushState</code>. No framework. No state library.
@@ -333,15 +337,15 @@
               What it does not do, and why that is fine
             </h2>
             <ul>
-              <li>
+              <li data-reveal="">
                 <strong>No search-as-you-type with network calls.</strong> Every keystroke scores against the in-memory
                 dataset, which is already loaded.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>No analytics on queries.</strong> The site analytics are page hits only (no cookies), and search
                 is intentionally out of scope.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>No autocomplete.</strong> It could be added with the same dataset and twenty more lines. I did
                 not need it.
               </li>
@@ -354,7 +358,7 @@
             </p>
             <h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
             <ul>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams?from=dout.dev"
                   target="_blank"
@@ -363,7 +367,7 @@
                   >URLSearchParams - MDN</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://developer.mozilla.org/en-US/docs/Web/API/History_API?from=dout.dev"
                   target="_blank"
@@ -372,7 +376,7 @@
                   >History API - MDN</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions?from=dout.dev"
                   target="_blank"
@@ -381,7 +385,7 @@
                   >Live regions - MDN</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://lunrjs.com/?from=dout.dev"
                   target="_blank"
@@ -391,7 +395,7 @@
                 >
                 - if you outgrow the handwritten ranker
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://pagefind.app/?from=dout.dev"
                   target="_blank"

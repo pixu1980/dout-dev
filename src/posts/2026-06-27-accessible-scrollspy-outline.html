@@ -216,15 +216,15 @@
             </p>
             <p>Most scrollspy implementations have three accessibility problems.</p>
             <ol>
-              <li>
+              <li data-reveal="">
                 They rely on the browser's scroll event, which fires too often and updates the active state with a
                 jitter that confuses screen readers.
               </li>
-              <li>
+              <li data-reveal="">
                 They make the headings focusable in ways that break keyboard expectations - <code>tabindex="0"</code> on
                 every <code>h2</code> is a trap, not a feature.
               </li>
-              <li>
+              <li data-reveal="">
                 They announce the current section via <code>aria-current</code> that changes several times per second
                 during scroll, which turns the outline into a screaming live region.
               </li>
@@ -392,7 +392,7 @@ target.scrollIntoView({
             </p>
             <h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
             <ul>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver?from=dout.dev"
                   target="_blank"
@@ -401,7 +401,7 @@ target.scrollIntoView({
                   >IntersectionObserver - MDN</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://www.w3.org/TR/wai-aria-1.2/?from=dout.dev#aria-current"
                   target="_blank"
@@ -410,7 +410,7 @@ target.scrollIntoView({
                   ><code>aria-current</code> - W3C ARIA</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://html.spec.whatwg.org/multipage/interaction.html?from=dout.dev#attr-tabindex"
                   target="_blank"
@@ -419,7 +419,7 @@ target.scrollIntoView({
                   ><code>tabindex</code> - HTML Living Standard</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion?from=dout.dev"
                   target="_blank"
@@ -428,7 +428,7 @@ target.scrollIntoView({
                   ><code>prefers-reduced-motion</code> - MDN</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html?from=dout.dev"
                   target="_blank"

@@ -106,6 +106,10 @@ function buildArticleContent(html) {
     footnotesSection.setAttribute('aria-label', 'Footnotes');
   }
 
+  document.querySelectorAll('li').forEach((item) => {
+    item.setAttribute('data-reveal', '');
+  });
+
   return {
     content: document.body.innerHTML,
     toc,

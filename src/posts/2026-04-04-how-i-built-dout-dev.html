@@ -229,18 +229,18 @@
             </h2>
             <p>The build is four stages, in this exact order:</p>
             <ol>
-              <li>
+              <li data-reveal="">
                 <strong>Scan.</strong> Read every markdown file, parse front matter, validate required fields. Yell if
                 something's missing.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Normalize.</strong> Compute slugs, excerpts, keywords, reading time, and the tag/month/series
                 indexes.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Render.</strong> Convert markdown to HTML, fill templates, write files under <code>src/</code>.
               </li>
-              <li><strong>Emit.</strong> Generate feeds, sitemap, search indexes, and OG images.</li>
+              <li data-reveal=""><strong>Emit.</strong> Generate feeds, sitemap, search indexes, and OG images.</li>
             </ol>
             <p>
               The pipeline runs in one direction. No circular dependency bullshit. No hidden passes. Adding a post means
@@ -336,20 +336,20 @@
               What a complete build produces (the stuff that comes out)
             </h2>
             <ul>
-              <li>
+              <li data-reveal="">
                 Posts, tag archives, month archives, and series archives — each with their own pagination and
                 per-archive RSS feed
               </li>
-              <li>RSS 2.0, JSON Feed 1.1, sitemap.xml</li>
-              <li>
+              <li data-reveal="">RSS 2.0, JSON Feed 1.1, sitemap.xml</li>
+              <li data-reveal="">
                 OG images (1200×630 PNGs) for every post and archive, generated from an SVG template rasterized with
                 Sharp
               </li>
-              <li>
+              <li data-reveal="">
                 Responsive image variants and the manifest the renderer uses to emit
                 <code>&lt;picture&gt;</code> elements
               </li>
-              <li>A search index consumed client-side</li>
+              <li data-reveal="">A search index consumed client-side</li>
             </ul>
             <p>
               One build command. One <code>dist/</code> folder. Zero runtime dependencies. Like the good old days, when

@@ -216,12 +216,12 @@
               list. The tradeoffs are real:
             </p>
             <ul>
-              <li>
+              <li data-reveal="">
                 A bug in your SW can break the site for returning visitors in ways that are hard to debug and slow to
                 fix.
               </li>
-              <li>A greedy caching strategy can serve stale content to users who would prefer fresh.</li>
-              <li>
+              <li data-reveal="">A greedy caching strategy can serve stale content to users who would prefer fresh.</li>
+              <li data-reveal="">
                 Registering an SW at all commits you to a lifecycle - updates, skip-waiting, claim - that requires
                 careful thought.
               </li>
@@ -237,15 +237,15 @@
             <h2 id="the-scope" tabindex="0" data-toc-anchor="true">The scope</h2>
             <p>Three jobs, in order of importance.</p>
             <ol>
-              <li>
+              <li data-reveal="">
                 <strong>Serve an offline fallback page</strong> when the network is unreachable and the user requests a
                 page that is not in cache.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Cache the critical shell</strong> - the home page, the main CSS, the primary script bundle - so
                 the next visit is instant even on a cold network.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Cache visited posts</strong> on a stale-while-revalidate basis, so re-reading a post is instant
                 and returning to it offline works.
               </li>
@@ -369,10 +369,14 @@ self.addEventListener('install', (event) =&gt; {
             </p>
             <h2 id="what-i-did-not-add" tabindex="0" data-toc-anchor="true">What I did not add</h2>
             <ul>
-              <li><strong>Background sync.</strong> The blog has nothing to sync. Readers do not post content.</li>
-              <li><strong>Push notifications.</strong> Reader-initiated subscriptions belong to the RSS layer.</li>
-              <li><strong>Periodic background sync.</strong> Same reason.</li>
-              <li>
+              <li data-reveal="">
+                <strong>Background sync.</strong> The blog has nothing to sync. Readers do not post content.
+              </li>
+              <li data-reveal="">
+                <strong>Push notifications.</strong> Reader-initiated subscriptions belong to the RSS layer.
+              </li>
+              <li data-reveal=""><strong>Periodic background sync.</strong> Same reason.</li>
+              <li data-reveal="">
                 <strong>Navigation preload.</strong> A legitimate optimization, but it adds complexity I did not need
                 for the current page load times.
               </li>
@@ -389,7 +393,7 @@ self.addEventListener('install', (event) =&gt; {
             </p>
             <h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
             <ul>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API?from=dout.dev"
                   target="_blank"
@@ -398,7 +402,7 @@ self.addEventListener('install', (event) =&gt; {
                   >Service Worker API - MDN</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://web.dev/articles/service-worker-lifecycle?from=dout.dev"
                   target="_blank"
@@ -407,7 +411,7 @@ self.addEventListener('install', (event) =&gt; {
                   >The Service Worker Lifecycle - web.dev</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://web.dev/articles/offline-cookbook?from=dout.dev"
                   target="_blank"
@@ -416,7 +420,7 @@ self.addEventListener('install', (event) =&gt; {
                   >Offline cookbook - Jake Archibald</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://developer.chrome.com/docs/workbox?from=dout.dev"
                   target="_blank"

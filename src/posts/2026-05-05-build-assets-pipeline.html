@@ -218,15 +218,15 @@
               Non-negotiable. Like my morning coffee.
             </p>
             <ol>
-              <li><strong>Correct size for the viewport.</strong> No 2000px hero shipped to a phone.</li>
-              <li>
+              <li data-reveal=""><strong>Correct size for the viewport.</strong> No 2000px hero shipped to a phone.</li>
+              <li data-reveal="">
                 <strong>Modern format where supported.</strong> WebP for browsers that accept it, raster fallback for
                 the rest.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Zero cumulative layout shift.</strong> Width and height reserved BEFORE the image downloads.
               </li>
-              <li><strong>Lazy on-reveal.</strong> Off-screen images do not block the main thread.</li>
+              <li data-reveal=""><strong>Lazy on-reveal.</strong> Off-screen images do not block the main thread.</li>
             </ol>
             <p>
               The pipeline that delivers that is entirely build-time. There is NO image CDN, no runtime resize, no
@@ -262,11 +262,11 @@
               <code>src/assets/images/</code>:
             </p>
             <ul>
-              <li>
+              <li data-reveal="">
                 <code>image.jpg</code> → <code>image-320.jpg</code>, <code>image-640.jpg</code>,
                 <code>image-960.jpg</code>, <code>image-1280.jpg</code>, NEVER upscaled;
               </li>
-              <li>a WebP base (<code>image.webp</code>) and matching WebP variants at each size.</li>
+              <li data-reveal="">a WebP base (<code>image.webp</code>) and matching WebP variants at each size.</li>
             </ul>
             <p>
               The output of that step is a manifest file (<code>src/assets/images-manifest.json</code>) with entries
@@ -365,15 +365,15 @@ document.querySelectorAll('source[data-srcset]').forEach((s) =&gt; io.observe(s)
               What I did NOT do (because engineering is about saying no)
             </h2>
             <ul>
-              <li>
+              <li data-reveal="">
                 <strong>No runtime image CDN.</strong> Every variant is on disk, served by GitHub Pages, cached at the
                 edge.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>No AVIF yet.</strong> AVIF support is excellent, but WebP still beats it on encode time for the
                 gains at the sizes this blog uses. I will reconsider when AVIF encoders catch up. Not today.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>No third-party "lazyload.js".</strong> Twelve lines of IntersectionObserver replaces it. Twelve.
                 Lines.
               </li>

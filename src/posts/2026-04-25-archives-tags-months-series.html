@@ -224,15 +224,15 @@
             </p>
             <p>dout.dev ships three archives:</p>
             <ul>
-              <li>
+              <li data-reveal="">
                 <strong>By tag</strong> — <code>/tags/&lt;slug&gt;.html</code>. Topical similarity. "Show me all the
                 accessibility posts."
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>By month</strong> — <code>/months/&lt;YYYY-MM&gt;.html</code>. Temporal browsing. "What did you
                 write in January 2026?"
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>By series</strong> — <code>/series/&lt;slug&gt;.html</code>. Intentional groupings. "Read the
                 making-of series in order, you animal."
               </li>
@@ -250,11 +250,11 @@
               anyone who says otherwise is wrong.
             </p>
             <ul>
-              <li>
+              <li data-reveal="">
                 <strong>Page 1 is flat.</strong> <code>/tags/accessibility.html</code>,
                 <code>/months/2026-08.html</code>, <code>/series/making-of.html</code>.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Pages 2+ live in a subfolder.</strong> <code>/tags/accessibility/2/</code>,
                 <code>/months/2026-08/2/</code>, <code>/series/making-of/2/</code>.
               </li>
@@ -343,11 +343,11 @@
             </h2>
             <p>Slugging is the kind of thing that looks trivial until it bites you in the ass. The rules:</p>
             <ol>
-              <li>Lowercase.</li>
-              <li>Replace spaces with hyphens.</li>
-              <li>Strip punctuation except hyphens.</li>
-              <li>Collapse consecutive hyphens.</li>
-              <li>Strip leading and trailing hyphens.</li>
+              <li data-reveal="">Lowercase.</li>
+              <li data-reveal="">Replace spaces with hyphens.</li>
+              <li data-reveal="">Strip punctuation except hyphens.</li>
+              <li data-reveal="">Collapse consecutive hyphens.</li>
+              <li data-reveal="">Strip leading and trailing hyphens.</li>
             </ol>
             <pre is="pix-highlighter" data-lang="js"><code>function slugify(input) {
   return input

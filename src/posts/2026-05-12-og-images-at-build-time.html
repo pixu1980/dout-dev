@@ -218,15 +218,15 @@
               Twitter, or LinkedIn. The options usually break down like this:
             </p>
             <ul>
-              <li>
+              <li data-reveal="">
                 <strong>Hand-design each one.</strong> A Figma file, a designer, exported PNGs. Works. Does not scale.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Runtime service</strong> (Vercel OG, Cloudinary). A URL like
                 <code>og.dev/render?title=...</code> produces an image on demand. Works. Adds a third-party dependency,
                 latency, and a potential point of failure.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Build-time renderer.</strong> Generate the PNG when the site builds, commit it to the static
                 output. Works. Is under your control.
               </li>
@@ -345,10 +345,10 @@ export async function generateOgImage(post, outputPath) {
             </p>
             <p>Two paths:</p>
             <ol>
-              <li>
+              <li data-reveal="">
                 <strong>Embed the font as a base64 data URL inside the SVG.</strong> Works. Balloons the file size.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Preload the font at the Sharp layer.</strong> Sharp uses the system fontconfig; you install the
                 font on the runner and reference it by name.
               </li>

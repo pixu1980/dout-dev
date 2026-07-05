@@ -243,60 +243,60 @@
             </p>
             <p>The way I see it, every CSS ruleset tells a story, and the story has a logical narrative arc:</p>
             <ol>
-              <li>
+              <li data-reveal="">
                 <strong>Custom properties</strong> come first because they're the inputs. They're resolved by the
                 cascade before <em>any</em> property does anything. You want them declared before they're consumed, and
                 grouping them at the top makes the ruleset's "API surface" immediately visible.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Position</strong> comes next because it takes the element <em>out of flow</em> before you even
                 think about sizing or coloring it. Setting <code>position: absolute</code> after <code>width</code> is
                 technically fine, but logically backwards, you're picking a layout strategy for the element before you
                 decide its dimensions.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Display</strong> right after position, because it determines the formatting context. Flex, grid,
                 block, the element needs to know <em>how to be a box</em> before you can meaningfully set
                 <code>gap</code>, <code>place-content</code>, or <code>align-items</code>.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Opacity &amp; visibility</strong> live here because they affect the box's presence without
                 touching layout. They're the border between layout and paint.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Box-model</strong> (width, padding, border, margin), the geometry. Inside-out: content size
                 first, then padding, then border, then margin. <code>box-sizing</code> at the top of the section because
                 it changes the math for everything below.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Colors &amp; background</strong>, the paint. Text color, background, shadows, filters. These
                 trigger repaints but not re-layouts (mostly).
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Typography</strong>, because after you've painted the background, you render the text on top.
                 <code>font</code>, <code>line-height</code>, <code>text-align</code>, <code>white-space</code>,
                 <code>text-shadow</code>.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Transforms &amp; animations</strong>, the compositor stage. <code>transform</code>,
                 <code>transition</code>, <code>animation</code>. These are the last thing that happens visually, but
                 they're also the most performance-sensitive, so having them in one block makes it easy to audit
                 <code>will-change</code> usage.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Helpers</strong>, <code>appearance</code>, <code>cursor</code>, <code>pointer-events</code>.
                 Utility properties that don't fit anywhere else.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Pseudo-elements</strong> (<code>&amp;::before</code>, <code>&amp;::after</code>), they're part
                 of the element's visual tree, nested in.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Variants &amp; pseudo-selectors</strong>, state changes: <code>&amp;.error</code>,
                 <code>&amp;[aria-hidden]</code>, <code>&amp;:hover</code>. These override everything above, so they come
                 last in the declaration block.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Media queries</strong> and <strong>children</strong>, scoping. <code>@media</code>,
                 <code>&amp; span</code>, <code>&amp; &gt; *</code>. These are <em>new contexts</em> that restart the
                 hierarchy. The comment says "repeat css hierarchy here" because each of these blocks is a fresh ruleset

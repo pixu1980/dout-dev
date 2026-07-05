@@ -115,7 +115,7 @@
           "@id": "https://dout.dev/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html"
         },
         "image": ["https://dout.dev/assets/og/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.png"],
-        "keywords": "agent, loop, deepseek, flash, context, model, tokens, work, cost, per, cache, read"
+        "keywords": "agent, model, loop, deepseek, flash, context, tokens, prompt, cost, open, tool, harness"
       }
     </script>
     <script type="application/ld+json">
@@ -213,25 +213,25 @@
             <h2 id="the-headline-numbers" tabindex="0" data-toc-anchor="true">The headline numbers</h2>
             <p>I will get the math out of the way first, because the cost is the part that surprises people.</p>
             <ul>
-              <li>
+              <li data-reveal="">
                 <strong>Pi</strong> is an open-source terminal coding agent. MIT-licensed, written in TypeScript, four
                 core tools (<code>read</code>, <code>write</code>, <code>edit</code>, <code>bash</code>) plus three
                 opt-in read-only ones (<code>grep</code>, <code>find</code>, <code>ls</code>). No plan mode, no
                 sub-agents, no permission popups, no IDE lock-in.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>DeepSeek V4 Flash</strong> is a 284B-parameter Mixture-of-Experts model with only 13B active per
                 token, a 1M-token context window, and pricing that lands at
                 <strong>$0.14 per million input tokens</strong> (cache miss),
                 <strong>$0.0028 per million input tokens</strong> (cache hit), and
                 <strong>$0.28 per million output tokens</strong> on the official API. Open weights, MIT license.
               </li>
-              <li>
+              <li data-reveal="">
                 A typical agent-loop session of mine reads, edits, and writes across a few hundred kilobytes of context,
                 runs a few tool calls, and produces a few thousand tokens of reasoning. The bill is
                 <strong>fractions of a cent</strong>.
               </li>
-              <li>
+              <li data-reveal="">
                 A heavy day, the kind where I ship two milestones and refactor a subsystem end-to-end, lands somewhere
                 between <strong>$0.30 and $0.90</strong>.
               </li>
@@ -265,6 +265,54 @@
               You still decide when the loop is done. What you give up is a layer of confirmation dialogs that, in my
               experience, do not actually catch the kind of mistakes that matter and mostly just slow down the parts of
               the work that are already correct.
+            </p>
+            <p>
+              And the entire thing is <strong>open source at its core</strong>. The repository at
+              <a
+                href="https://github.com/earendil-works/pi?from=dout.dev"
+                target="_blank"
+                referrerpolicy="strict-origin-when-cross-origin"
+                rel="noopener"
+                >github.com/earendil-works/pi</a
+              >
+              is MIT-licensed, and everything — the core loop, the tool harness, the MCP bridge, the provider
+              abstraction — is readable, forkable, and hackable. You can strip it down, patch it, or build your own
+              distribution. There is no proprietary layer, no closed-source enterprise edition, no telemetry-gated
+              feature. The CLI, the TUI, the extension system, and the skill loader are all there in plain TypeScript.
+            </p>
+            <p>
+              The consequence is that the extension API is unusually clean. Pi exposes a small, well-documented set of
+              primitives — tools, MCP servers, skills, prompt templates, and themes — and you wire them together with a
+              <code>package.json</code> and a single <code>main</code> file. The package manager (<code
+                >pi packages</code
+              >) discovers, installs, and updates extensions from
+              <a
+                href="https://pi.dev/packages/?from=dout.dev"
+                target="_blank"
+                referrerpolicy="strict-origin-when-cross-origin"
+                rel="noopener"
+                >pi.dev/packages</a
+              >, where anyone can publish.
+            </p>
+            <p>
+              I maintain a small extension myself:
+              <a
+                href="https://pi.dev/packages/@pixu1980/pi-path-picker?from=dout.dev"
+                target="_blank"
+                referrerpolicy="strict-origin-when-cross-origin"
+                rel="noopener"
+                ><code>@pixu1980/pi-path-picker</code></a
+              >, a tool that autocompletes file paths inside the agent prompt. The source lives at
+              <a
+                href="https://github.com/pixu1980/pi-coding-agent-extensions?from=dout.dev"
+                target="_blank"
+                referrerpolicy="strict-origin-when-cross-origin"
+                rel="noopener"
+                >github.com/pixu1980/pi-coding-agent-extensions</a
+              >, and the entire implementation — registering a custom tool, hooking into the prompt lifecycle, handling
+              tab-completion in the TUI — fits in a handful of files. It is a good example of how little ceremony is
+              involved: you write a TypeScript class, export it, publish it, and it works. No build step beyond
+              TypeScript, no configuration wizard, no permission manifest.
             </p>
             <p>
               The other thing Pi gets right is the provider model. It supports 20+ providers out of the box, including
@@ -308,26 +356,26 @@
             <h2 id="the-daily-loop" tabindex="0" data-toc-anchor="true">The daily loop</h2>
             <p>Here is the loop, condensed.</p>
             <ol>
-              <li>
+              <li data-reveal="">
                 <strong>Start the agent in the project root.</strong> <code>pi</code> runs in the terminal, reads the
                 project context, and shows me the current state of the working tree.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>State the outcome in one paragraph.</strong> Not a task list. A paragraph a smart colleague
                 could act on cold. "Refactor the search indexer to use a prebuilt JSON dataset. Match the conventions in
                 <code>scripts/cms/_index.js</code>. Do not touch the post template. Return the new file and the minimal
                 diff to wire it up."
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Let the agent run the tool loop.</strong> It reads files, runs <code>pnpm test</code>, runs
                 <code>pnpm lint</code>, edits the right places, and reports back. Most of my sessions are 5 to 20 tool
                 calls.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Read the diff.</strong> This is the part I never skip. Pi shows me exactly what changed, in
                 which files, and I approve, reject, or steer.
               </li>
-              <li><strong>Ship.</strong> Commit, push, let CI do the rest.</li>
+              <li data-reveal=""><strong>Ship.</strong> Commit, push, let CI do the rest.</li>
             </ol>
             <p>
               The 1M context window matters more than I expected. Most of my projects are well under that, but the
@@ -344,12 +392,12 @@
               migration. The agent loop for one of those usually looks like:
             </p>
             <ul>
-              <li>
+              <li data-reveal="">
                 200k–500k tokens of input across the session, most of which is the system prompt, the project context,
                 and the files being read.
               </li>
-              <li>5k–20k tokens of output, which includes reasoning, diffs, and the final response.</li>
-              <li>
+              <li data-reveal="">5k–20k tokens of output, which includes reasoning, diffs, and the final response.</li>
+              <li data-reveal="">
                 Most of those input tokens are <strong>cache hits</strong> after the first turn, because Pi re-sends the
                 same system prompt and the same long project context on every iteration.
               </li>
@@ -374,56 +422,90 @@
               stabilizes. I have not measured my own hit rate that carefully, but I have watched my daily bill drop when
               I started using it, and the savings are real.
             </p>
-            <h2 id="what-i-stopped-using" tabindex="0" data-toc-anchor="true">What I stopped using</h2>
+            <h2 id="the-closed-source-trap-i-walked-away-from" tabindex="0" data-toc-anchor="true">
+              The closed-source trap I walked away from
+            </h2>
+            <p>Let me be direct, because the marketing is designed to obscure this.</p>
             <p>
-              I am not going to pretend the alternatives do not work. They do. They are just more expensive in ways that
-              matter at the personal-tooling scale.
+              <strong>Cursor</strong> is a VS Code fork with proprietary extensions glued to someone else's APIs. You do
+              not own the loop, you do not own the integrations, and you pay a per-month subscription that rises without
+              your consent. The model is venture-funded price suppression: lose money on every seat, make it up on the
+              locked-in base when the music stops. The usual playbook.
             </p>
-            <ul>
-              <li>
-                <strong>Cursor and the heavy IDE agents.</strong> Great for some workflows, expensive at the per-month
-                subscription rate for the kind of agent-loop-heavy work I do, and they want to own the editor.
-              </li>
-              <li>
-                <strong>Claude Code and the Anthropic-native loops.</strong> Excellent model, very good tool harness,
-                but at Opus-class pricing, an output-heavy agent loop is roughly an order of magnitude more expensive
-                than the same loop on V4-Flash, and for the work I do day-to-day the quality delta is not worth that
-                multiplier.
-              </li>
-              <li>
-                <strong>ChatGPT-style web UIs.</strong> Fine for one-shot questions. Useless for in-repo work, because
-                the context does not survive a session and the tools are limited to copy-paste.
-              </li>
-            </ul>
             <p>
-              I am not saying these tools are bad. I am saying that for a developer who lives inside agent loops and who
-              cares about the difference between a $0.30 day and a $5 day, the combination of Pi and DeepSeek V4 Flash
-              is a structurally better default.
+              <strong>Claude Code</strong> is a genuinely good tool harness owned by Anthropic, which means it exists to
+              sell Anthropic models. You are not the customer of the tool — you are the inventory. The pricing is
+              opaque, the model access is gated, and the open-source contributions are decorative. When Anthropic raises
+              Opus pricing next quarter — and it will — your loop cost triples and you have no alternative provider to
+              switch to within the same harness. That is not a product. That is <strong>addiction by design</strong>:
+              low-dose introductory offer, price escalates after the habit forms.
+            </p>
+            <p>
+              <strong>ChatGPT, GitHub Copilot, Codex</strong> — all proprietary. All trained on public data the
+              companies would never let you train on. All designed to make you dependent on a closed API that can change
+              terms, pricing, or access at any time with zero recourse. The open-weight models from DeepSeek, Mistral,
+              and Llama are structurally more aligned with your interest as a developer: you can run them, fork them,
+              audit them, and switch between them without asking for permission.
+            </p>
+            <p>
+              <strong>OpenCode</strong> and the emerging ecosystem of open-agent toolkits are moving in the right
+              direction: tools that assume you want transparency, portability, and the freedom to change the model
+              without changing the harness. That is the principle that matters. Not "AI for everyone" as a slogan, but
+              <strong>"AI you control"</strong> as a property of the software.
+            </p>
+            <p>
+              Pi is the only one of these that is open source at its core — MIT-licensed from day one, with a package
+              registry where anyone can publish an extension without a review board or a commercial agreement. My
+              <code>@pixu1980/pi-path-picker</code> is a small example, but the fact that I can write it, publish it,
+              and use it without asking anyone is the entire difference between a platform and a prison.
+            </p>
+            <h3 id="the-extension-potential-is-genuinely-infinite" tabindex="0" data-toc-anchor="true">
+              The extension potential is genuinely infinite
+            </h3>
+            <p>
+              The most surreal part of this setup is that the model itself can write extensions for the harness that
+              runs it.
+            </p>
+            <p>
+              DeepSeek V4 Flash reads the Pi extension documentation — a few pages of TypeScript interfaces and a
+              <code>package.json</code> schema — and generates working extensions on the first try. I have done it. You
+              describe what you want in plain English, the model reads the API docs from the repository, and it produces
+              a complete extension: tool registration, prompt hooks, TUI integration, the whole thing. One prompt.
+            </p>
+            <p>
+              That is the loop squared. You use an open-source agent to call an open-weight model, and the model extends
+              the agent while you watch. The harness grows its own capabilities. There is no approval queue, no
+              marketplace gatekeeper, no SDK version lock. You just describe, generate, publish, and use.
+            </p>
+            <p>
+              It is incredible, it is satisfying, and it is the most empowering development workflow I have ever
+              experienced. The ceiling is not set by a product manager's roadmap. The ceiling is set by what you can
+              describe in a prompt.
             </p>
             <h2 id="the-honest-trade-offs" tabindex="0" data-toc-anchor="true">The honest trade-offs</h2>
             <p>Nothing is free. Here is what I give up.</p>
             <ul>
-              <li>
+              <li data-reveal="">
                 <strong>V4-Flash is still labeled Preview.</strong> The model is fast, cheap, and very good, but the
                 weights are still in the preview line and the API name change in July 2026 means I will need to update
                 configuration at some point.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Pi does not babysit me.</strong> No permission popups, no dry-run confirmation, no safe-mode. If
                 I let the agent run a destructive command, it runs. This is a feature for me, but it is a sharp edge for
                 someone used to a more guided harness.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>No plan mode out of the box.</strong> I write my own prompt template when I want a planning
                 step. Some people will hate this. I do not, because I find that hardcoded plan modes get in the way of
                 the kind of small, fast, in-the-flow work I do most of the time.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>The model is Chinese-trained on a large multilingual corpus.</strong> I do not consider this a
                 trade-off, but it is a fact. V4-Flash is excellent at English, very good at the rest of the languages I
                 touch, and explicitly licensed for commercial use.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Long-context reasoning still degrades past a point.</strong> The 1M context is a budget, not a
                 free pass. The agent loop is at its best when the relevant files are well within the first 200k–400k
                 tokens, and the rest of the context is supporting material.
@@ -455,7 +537,7 @@
             <p>That is the new default. I am not going back.</p>
             <h2 id="sources" tabindex="0" data-toc-anchor="true">Sources</h2>
             <ul>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://pi.dev/?from=dout.dev"
                   target="_blank"
@@ -464,7 +546,7 @@
                   >pi.dev — official site</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://github.com/earendil-works/pi?from=dout.dev"
                   target="_blank"
@@ -473,7 +555,7 @@
                   >earendil-works/pi on GitHub</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://api-docs.deepseek.com/news/news260424?from=dout.dev"
                   target="_blank"
@@ -482,7 +564,7 @@
                   >DeepSeek V4 Preview release notes (April 24, 2026)</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://api-docs.deepseek.com/quick_start/pricing?from=dout.dev"
                   target="_blank"
@@ -491,7 +573,7 @@
                   >DeepSeek API — Models and pricing</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://api-docs.deepseek.com/quick_start/agent_integrations/pi_mono?from=dout.dev"
                   target="_blank"
@@ -500,7 +582,7 @@
                   >DeepSeek API — Integrate with Pi</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash?from=dout.dev"
                   target="_blank"
@@ -509,7 +591,7 @@
                   >DeepSeek V4 Flash on Hugging Face</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://huggingface.co/blog/deepseekv4?from=dout.dev"
                   target="_blank"
@@ -518,7 +600,7 @@
                   >Hugging Face — DeepSeek V4 blog post</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://hokai.io/hub/models/deepseek-v4-flash?from=dout.dev"
                   target="_blank"
@@ -527,7 +609,7 @@
                   >HokAI — DeepSeek V4 Flash model profile</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://codersera.com/blog/deepseek-v4-flash-deep-dive/amp/?from=dout.dev"
                   target="_blank"
@@ -536,7 +618,7 @@
                   >Codersera — DeepSeek V4 Flash deep dive</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://www.runlocalai.co/models/deepseek-v4-flash?from=dout.dev"
                   target="_blank"
@@ -545,7 +627,7 @@
                   >RunLocalAI — DeepSeek V4 Flash model profile</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://github.com/rohaquinlop/pi-deepseek-cache?from=dout.dev"
                   target="_blank"
@@ -554,7 +636,7 @@
                   >rohaquinlop/pi-deepseek-cache on GitHub</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://github.com/TheTrebor/pi-reasonix?from=dout.dev"
                   target="_blank"
@@ -563,7 +645,7 @@
                   >thetrebor/pi-reasonix on GitHub</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://pick-right.com/tools/pi/?from=dout.dev"
                   target="_blank"
@@ -572,7 +654,7 @@
                   >Pi Review — Pick Right</a
                 >
               </li>
-              <li>
+              <li data-reveal="">
                 <a
                   href="https://shenxianpeng.github.io/en/posts/2026/pi-deepseek/?from=dout.dev"
                   target="_blank"
@@ -616,7 +698,15 @@
               </li>
 
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#what-i-stopped-using">What I stopped using</a>
+                <a data-post-toc-link="" data-level="2" href="#the-closed-source-trap-i-walked-away-from"
+                  >The closed-source trap I walked away from</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="3" href="#the-extension-potential-is-genuinely-infinite"
+                  >The extension potential is genuinely infinite</a
+                >
               </li>
 
               <li data-post-toc-item="">

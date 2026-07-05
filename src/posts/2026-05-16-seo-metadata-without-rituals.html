@@ -233,14 +233,14 @@
             ><code>&lt;link rel="canonical" href="https://dout.dev/posts/some-post.html" /&gt;</code></pre>
             <p>The value is the absolute URL of the page as it lives on the site. Three rules. Follow them.</p>
             <ol>
-              <li>
+              <li data-reveal="">
                 <strong>Always absolute.</strong> Relative canonicals work but are ambiguous in practice. Don't be
                 ambiguous.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Always HTTPS.</strong> Never redirect through HTTP; the canonical declares HTTPS directly.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Self-referential on normal pages.</strong> A post's canonical points at itself. An archive's
                 canonical points at itself.
               </li>
@@ -275,12 +275,14 @@
 }</code></pre>
             <p>That block earns its place because:</p>
             <ul>
-              <li><strong>Google Discover</strong> uses it to decide whether a post is article content.</li>
-              <li>
+              <li data-reveal="">
+                <strong>Google Discover</strong> uses it to decide whether a post is article content.
+              </li>
+              <li data-reveal="">
                 <strong>Mastodon, Slack, and some RSS readers</strong> enrich link previews when structured data is
                 present.
               </li>
-              <li>
+              <li data-reveal="">
                 <strong>Google Search Console</strong> reports structured data errors, which means the build can be
                 verified.
               </li>

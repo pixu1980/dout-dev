@@ -224,9 +224,13 @@
               that crawlers have to guess at. Both problems are fixed with three files:
             </p>
             <ul>
-              <li><code>feed.rss</code> for the greybeards who still use actual RSS readers (I love you people);</li>
-              <li><code>feed.json</code> for the modern readers who prefer JSON Feed (I also love you);</li>
-              <li><code>sitemap.xml</code> for crawlers (I tolerate you).</li>
+              <li data-reveal="">
+                <code>feed.rss</code> for the greybeards who still use actual RSS readers (I love you people);
+              </li>
+              <li data-reveal="">
+                <code>feed.json</code> for the modern readers who prefer JSON Feed (I also love you);
+              </li>
+              <li data-reveal=""><code>sitemap.xml</code> for crawlers (I tolerate you).</li>
             </ul>
             <p>
               On dout.dev <strong>all three are generated at build time</strong> from the same normalized dataset the
@@ -345,10 +349,12 @@
               artifacts in <code>dist/</code>, and served as plain static files by GitHub Pages. That means:
             </p>
             <ul>
-              <li>No feed service to maintain.</li>
-              <li>No cache invalidation problem.</li>
-              <li>No rate limiting, no throttling, no 500 errors on publish spikes.</li>
-              <li>The feed is always consistent with the site it describes, because they come from the same build.</li>
+              <li data-reveal="">No feed service to maintain.</li>
+              <li data-reveal="">No cache invalidation problem.</li>
+              <li data-reveal="">No rate limiting, no throttling, no 500 errors on publish spikes.</li>
+              <li data-reveal="">
+                The feed is always consistent with the site it describes, because they come from the same build.
+              </li>
             </ul>
             <p>
               This is the elegance of static sites: everything is a file. Your feed is a file. Your sitemap is a file.
