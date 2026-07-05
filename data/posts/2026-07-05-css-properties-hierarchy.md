@@ -20,7 +20,7 @@ Every time you touch that file, you waste a few seconds scanning for what you ne
 
 So I developed a system. A hierarchy that mirrors the browser's own rendering pipeline: **outside-in, layout-first, paint-last**.
 
-The way I see it, every CSS ruleset tells a story, and the story has a logical arc:
+The way I see it, every CSS ruleset tells a story, and the story has a logical narrative arc:
 
 1. **Custom properties** come first because they're the inputs. They're resolved by the cascade before _any_ property does anything. You want them declared before they're consumed, and grouping them at the top makes the ruleset's "API surface" immediately visible.
 2. **Position** comes next because it takes the element _out of flow_ before you even think about sizing or coloring it. Setting `position: absolute` after `width` is technically fine, but logically backwards, you're picking a layout strategy for the element before you decide its dimensions.
