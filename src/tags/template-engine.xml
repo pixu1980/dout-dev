@@ -6,13 +6,13 @@
     <description>RSS feed for posts tagged with template-engine</description>
     <atom:link href="https://dout.dev/tags/template-engine.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Wed, 13 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>Template Engine and Template Structure</title>
-      <link>https://dout.dev/posts/2026-05-13-template-engine-and-template-structure.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-13-template-engine-and-template-structure.html</guid>
-      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
-      <description>Three constraints that shaped the grammar</description>
+      <title>Template Engine and Template Structure (Or: Why I Didn&apos;t Use Handlebars Like a Normal Person)</title>
+      <link>https://dout.dev/posts/2026-04-21-template-engine-and-template-structure.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-template-engine-and-template-structure.html</guid>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Three constraints that shaped the grammar (because constraints are good, actually)</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread</title>
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="The honest framing" />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
+    <script>
+      document.documentElement.dataset.userPreferences = 'ready';
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      :root {
+        --dout--file-preview-border: #d9a441;
+        --dout--file-preview-bg: #fff3cd;
+        --dout--file-preview-text: #5c3b00;
+      }
+
+      [data-file-preview-warning] {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--dout--file-preview-border);
+        background: var(--dout--file-preview-bg);
+        color: var(--dout--file-preview-text);
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] [data-file-preview-warning] {
+        display: block;
+      }
+
+      [data-file-preview-warning] code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread"
+    />
+    <meta property="og:description" content="The honest framing" />
+    <meta property="og:url" content="https://dout.dev/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html" />
+    <meta
+      property="og:image"
+      content="https://dout.dev/assets/og/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Preview image for Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-04-11T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2026-04-11T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta
+      name="twitter:title"
+      content="Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread"
+    />
+    <meta name="twitter:description" content="The honest framing" />
+    <meta
+      name="twitter:image"
+      content="https://dout.dev/assets/og/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Preview image for Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread",
+        "description": "The honest framing",
+        "datePublished": "2026-04-11T00:00:00.000Z",
+        "dateModified": "2026-04-11T00:00:00.000Z",
+        "author": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html"
+        },
+        "image": ["https://dout.dev/assets/og/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.png"],
+        "keywords": "copilot, time, code, build, less, project, milestones, actually, diff, have, dev, honest"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread",
+            "item": "https://dout.dev/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html"
+          }
+        ]
+      }
+    </script>
+
+    <link rel="stylesheet" href="/styles/index.css" />
+    <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
+  </head>
+  <body data-site-shell="">
+    <p data-file-preview-warning="" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a data-skip-link="" href="#main">Skip to main content</a>
+    <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" data-site-header="">
+      <div data-container="" data-header-bar="">
+        <a data-brand="" href="/">
+          <span data-brand-mark="">dout.dev</span>
+          <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <nav id="mainmenu" data-main-nav="" aria-label="Main">
+          <ul data-main-links="" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div data-header-actions="">
+          <color-scheme-switcher></color-scheme-switcher>
+          <display-preferences-popover></display-preferences-popover>
+          <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting">
+        <header data-post-hero="" data-reveal="">
+          <p data-eyebrow="">Article</p>
+          <p data-post-meta="">
+            <time datetime="2026-04-11" itemprop="datePublished"> April 11, 2026 </time>
+            <span data-post-divider="">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 itemprop="headline" tabindex="0">
+            Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread
+          </h1>
+
+          <p data-post-description="">The honest framing</p>
+
+          <ul data-tag-list="" aria-label="Tags">
+            <li><a data-tag="" href="/tags/making-of.html">making-of</a></li>
+
+            <li><a data-tag="" href="/tags/ai.html">ai</a></li>
+
+            <li><a data-tag="" href="/tags/workflow.html">workflow</a></li>
+          </ul>
+
+          <figure data-post-cover="">
+            <img
+              src="/assets/og/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot-card.png"
+              alt="Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="900"
+            />
+          </figure>
+        </header>
+
+        <section data-post-shell="" role="region">
+          <h2 data-visually-hidden="">Article content</h2>
+
+          <section data-prose="" itemprop="articleBody">
+            <h2 id="the-honest-framing" tabindex="0" data-toc-anchor="true">The honest framing</h2>
+            <p>
+              I did not "ask an AI to build my blog." If that's what you heard, you've been reading too many LinkedIn
+              posts from people who've never shipped a goddamn thing.
+            </p>
+            <p>
+              I rebuilt dout.dev as a hands-on engineering project and used an AI copilot the same way you'd use a very
+              patient, very fast pair-programmer who happens to remember every file you ever pointed at. The difference
+              from previous attempts is not that I wrote less code. It's that I spent far less time on the parts that
+              used to drain the life out of me: boilerplate, repetitive refactors, sanity-checking conventions across
+              hundreds of files, and the kind of careful mechanical work that makes a codebase consistent instead of a
+              crime scene.
+            </p>
+            <p>
+              <strong
+                >What used to be a three-month weekend project compressed into a handful of focused sessions</strong
+              >, split across nineteen milestones. This is the tally. Real numbers. No business-speak.
+            </p>
+            <h2 id="the-milestones-i-actually-shipped-yes-i-kept-track" tabindex="0" data-toc-anchor="true">
+              The milestones I actually shipped (yes, I kept track)
+            </h2>
+            <p>The roadmap is not a vague "rewrite" entry. It's a sequence of concrete, shippable units of work:</p>
+            <ul>
+              <li>M0-M2: repository bootstrap, template engine, and the in-repo CMS.</li>
+              <li>M3-M7: layouts, post page, archives, universal pagination, home/about/404/playground/offline.</li>
+              <li>M8-M10: responsive images, theming, client-side search.</li>
+              <li>
+                M11-M15: SEO and OG images at build time, feeds, progressive-enhancement micro-UX, accessibility pass,
+                CSP.
+              </li>
+              <li>
+                M17-M19: analytics (page hits only, I'm not a monster), CI/CD with preview on PR, quality and regression
+                gate.
+              </li>
+            </ul>
+            <p>
+              Each milestone had an exit checklist. When the list was green, I moved on. That discipline is what kept
+              the AI useful instead of making it a distraction. Without it, you're just vibe-coding with extra steps.
+            </p>
+            <h2 id="what-the-copilot-did-well-the-honest-part" tabindex="0" data-toc-anchor="true">
+              What the copilot did well (the honest part)
+            </h2>
+            <p>Three things carried most of the weight.</p>
+            <p>
+              <strong>Repeat-at-scale edits.</strong> Rename a token across the design system, adjust heading semantics
+              in dozens of templates, regenerate feed entries when the schema changes. I described the intent once and
+              audited the diff afterwards. That's maybe a third of the total time I spent on the rewrite, and it's the
+              part I would otherwise have abandoned out of sheer boredom.
+            </p>
+            <p>
+              <strong>Search-and-explain inside the repo.</strong> "Show me every place where we compute the canonical
+              URL." "What renders the article sidebar and where does the scrollspy wire up?" I would have answered these
+              questions eventually with ripgrep and memory. The copilot answered them in seconds and kept me in flow.
+              Flow is expensive; interruption is the enemy.
+            </p>
+            <p>
+              <strong>Drafts I could edit.</strong> For the template engine, the CMS normalization, the OG image
+              renderer, the archive paginator, I asked for a starting draft, read it, threw away the parts I did not
+              like, and shaped the rest. That's faster than a blank file, and it's faster than copying-and-adapting
+              something I half remember from a past project. It's like having a junior dev who never gets tired and
+              never takes offense when you delete their code.
+            </p>
+            <h2 id="what-i-did-not-delegate-because-i-have-standards" tabindex="0" data-toc-anchor="true">
+              What I did not delegate (because I have standards)
+            </h2>
+            <p>
+              The architecture decisions. Whether to use a framework or build a template engine. Whether to render OG
+              images with Sharp at build time or punt to a runtime service. Whether to accept an extra dependency for
+              code highlighting or write a custom element. What "WCAG 2.2 AA" actually means in the post layout and how
+              to verify it. The CSP. The information architecture of archives. The pagination URL shape.
+            </p>
+            <p>
+              I also did not delegate judgment on code quality. The copilot would happily write something that works; I
+              read the diff and asked for a smaller, simpler, more boring version at least half the time. Boring is a
+              feature. Boring code doesn't break at 2 AM.
+            </p>
+            <h2 id="what-it-got-wrong-because-nothing-is-perfect" tabindex="0" data-toc-anchor="true">
+              What it got wrong (because nothing is perfect)
+            </h2>
+            <p>
+              It invented a nonexistent flag in a tool once. It occasionally produced patterns that passed tests but did
+              not match the rest of the codebase. It sometimes wrote comments that described the task instead of the
+              code. And it needed to be told, often, that adding error handling for an impossible case is worse than not
+              adding it.
+            </p>
+            <p>
+              None of these are catastrophic. All of them are the reason a human still reads every diff. If you're not
+              reading the diff, you're not engineering. You're gambling.
+            </p>
+            <h2 id="the-time-i-actually-saved-real-numbers-no-bullshit" tabindex="0" data-toc-anchor="true">
+              The time I actually saved (real numbers, no bullshit)
+            </h2>
+            <p>
+              Realistic estimate, without the copilot, for the nineteen milestones in the shape they landed: three to
+              five months of evenings and weekends. With the copilot, driven hard with clear prompts and strict reviews:
+              a handful of focused weeks. The ratio is not 10x and it's not 2x. It depends on the task. Mechanical
+              refactors and exploratory scaffolding are much faster; architectural decisions and accessibility audits
+              are not.
+            </p>
+            <p>
+              The more honest measure is that I FINISHED. The previous rewrites stalled around milestone M5 or M6,
+              because the gap between "I can see the finish line" and "I have the energy to walk there" was too wide.
+              The copilot didn't close that gap. It just made the middle part less soul-crushing.
+            </p>
+            <h2 id="what-actually-changed" tabindex="0" data-toc-anchor="true">What actually changed</h2>
+            <p>
+              Writing posts is no longer a project. The pipeline turns markdown into a pre-rendered, accessible, fast
+              page with feeds, sitemap, OG image, and comments — in the time it takes to run one build command. That's
+              what nineteen milestones of engineering bought.
+            </p>
+            <p>
+              The rest of this series walks through each layer: what it does, why it's shaped that way, and where the
+              tradeoffs landed. Read it or don't. I wrote it either way.
+            </p>
+          </section>
+        </section>
+
+        <aside data-post-sidebar="" role="complementary">
+          <nav data-post-toc="">
+            <h2>TOC</h2>
+            <ol data-post-toc-list="">
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-honest-framing">The honest framing</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-milestones-i-actually-shipped-yes-i-kept-track"
+                  >The milestones I actually shipped (yes, I kept track)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#what-the-copilot-did-well-the-honest-part"
+                  >What the copilot did well (the honest part)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#what-i-did-not-delegate-because-i-have-standards"
+                  >What I did not delegate (because I have standards)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#what-it-got-wrong-because-nothing-is-perfect"
+                  >What it got wrong (because nothing is perfect)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-time-i-actually-saved-real-numbers-no-bullshit"
+                  >The time I actually saved (real numbers, no bullshit)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#what-actually-changed">What actually changed</a>
+              </li>
+            </ol>
+          </nav>
+        </aside>
+
+        <section data-comments-shell="" data-reveal="">
+          <header data-section-heading="">
+            <p data-eyebrow="">Discussion</p>
+            <h2>Comments live in GitHub Discussions</h2>
+          </header>
+          <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
+
+        <nav data-series-navigation="" data-reveal="" aria-label="Series navigation">
+          <section data-series-navigation-group="">
+            <p data-eyebrow="" data-muted="">Series</p>
+            <h2>In this series: How I made it</h2>
+            <ol data-series-navigation-links="">
+              <li>
+                <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="false"
+                  >How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-07-cms-and-markdown-processing.html" aria-current="false"
+                  >CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html" aria-current="page"
+                  >Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread (you are
+                  here)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-14-why-no-astro-eleventy-next.html" aria-current="false"
+                  >Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-18-custom-ssg-pipeline.html" aria-current="false"
+                  >Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-21-template-engine-and-template-structure.html" aria-current="false"
+                  >Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-25-archives-tags-months-series.html" aria-current="false"
+                  >Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-28-progressive-enhancement-as-contract.html" aria-current="false"
+                  >Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-02-design-tokens-before-pages.html" aria-current="false"
+                  >Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-05-build-assets-pipeline.html" aria-current="false"
+                  >Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html" aria-current="false"
+                  >Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-12-og-images-at-build-time.html" aria-current="false"
+                  >OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-16-seo-metadata-without-rituals.html" aria-current="false"
+                  >SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-19-quality-gate-lint-format-verify.html" aria-current="false"
+                  >Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-23-ci-cd-around-github-pages.html" aria-current="false"
+                  >CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-26-vibe-coding-with-rigor.html" aria-current="false"
+                  >Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="false"
+                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="false"
+                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-06-how-pixhighlighter-is-built.html" aria-current="false"
+                  >How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-09-why-display-preferences-popover-exists.html" aria-current="false"
+                  >Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-16-client-side-search-static-dataset.html" aria-current="false"
+                  >Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-23-custom-element-syntax-highlight.html" aria-current="false"
+                  >A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-27-accessible-scrollspy-outline.html" aria-current="false"
+                  >Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-30-honest-lazy-loading.html" aria-current="false"
+                  >Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-04-pragmatic-service-worker.html" aria-current="false"
+                  >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false"
+                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
+                >
+              </li>
+            </ol>
+          </section>
+        </nav>
+      </article>
+
+      <nav data-post-nav="" aria-label="Post navigation">
+        <a data-post-nav-card="" data-reveal="" rel="prev" href="/posts/2026-04-07-cms-and-markdown-processing.html">
+          <span data-post-nav-label="">Previous</span>
+          <strong>CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)</strong>
+        </a>
+
+        <a data-post-nav-card="" data-reveal="" rel="next" href="/posts/2026-04-14-why-no-astro-eleventy-next.html">
+          <span data-post-nav-label="">Next</span>
+          <strong>Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)</strong>
+        </a>
+      </nav>
+    </main>
+
+    <footer role="contentinfo" data-site-footer="">
+      <div data-container="" data-footer-grid="">
+        <div data-footer-copy="">
+          <p data-footer-brand="">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav data-footer-nav="" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
+</html>

@@ -6,13 +6,13 @@
     <description>RSS feed for posts tagged with search</description>
     <atom:link href="https://dout.dev/tags/search.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Tue, 23 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking</title>
-      <link>https://dout.dev/posts/2026-06-23-client-side-search-static-dataset.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-23-client-side-search-static-dataset.html</guid>
-      <pubDate>Tue, 23 Jun 2026 00:00:00 GMT</pubDate>
-      <description>The constraint</description>
+      <title>Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</title>
+      <link>https://dout.dev/posts/2026-06-16-client-side-search-static-dataset.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-16-client-side-search-static-dataset.html</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The constraint (no backend, no excuses)</description>
     </item>
   </channel>
 </rss>

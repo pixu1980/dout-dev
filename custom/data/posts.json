@@ -90,7 +90,7 @@
     "path": "./custom/posts/2026-04-04-how-i-built-dout-dev.html"
   },
   {
-    "name": "2026-04-21-cms-and-markdown-processing",
+    "name": "2026-04-07-cms-and-markdown-processing",
     "title": "CMS and Markdown Processing",
     "date": "2026-04-21T00:00:00.000Z",
     "dateString": "Tue Apr 21 2026",
@@ -176,11 +176,11 @@
     "coverAlt": "CMS and Markdown Processing",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-04-21-cms-and-markdown-processing.md",
-    "path": "./custom/posts/2026-04-21-cms-and-markdown-processing.html"
+    "source": "data/posts/2026-04-07-cms-and-markdown-processing.md",
+    "path": "./custom/posts/2026-04-07-cms-and-markdown-processing.html"
   },
   {
-    "name": "2026-04-28-rebuilding-dout-dev-with-ai-copilot",
+    "name": "2026-04-11-rebuilding-dout-dev-with-ai-copilot",
     "title": "Rebuilding dout.dev in Weeks With an AI Copilot",
     "date": "2026-04-28T00:00:00.000Z",
     "dateString": "Tue Apr 28 2026",
@@ -261,11 +261,11 @@
     "coverAlt": "Rebuilding dout.dev in Weeks With an AI Copilot",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.md",
-    "path": "./custom/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html"
+    "source": "data/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.md",
+    "path": "./custom/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html"
   },
   {
-    "name": "2026-05-05-why-no-astro-eleventy-next",
+    "name": "2026-04-14-why-no-astro-eleventy-next",
     "title": "Why I Skipped Astro, Eleventy and Next for My Blog",
     "date": "2026-05-05T00:00:00.000Z",
     "dateString": "Tue May 05 2026",
@@ -341,11 +341,11 @@
     "coverAlt": "Why I Skipped Astro, Eleventy and Next for My Blog",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-05-05-why-no-astro-eleventy-next.md",
-    "path": "./custom/posts/2026-05-05-why-no-astro-eleventy-next.html"
+    "source": "data/posts/2026-04-14-why-no-astro-eleventy-next.md",
+    "path": "./custom/posts/2026-04-14-why-no-astro-eleventy-next.html"
   },
   {
-    "name": "2026-05-12-custom-ssg-pipeline",
+    "name": "2026-04-18-custom-ssg-pipeline",
     "title": "Custom SSG Pipeline: Markdown to Static HTML",
     "date": "2026-05-12T00:00:00.000Z",
     "dateString": "Tue May 12 2026",
@@ -431,11 +431,11 @@
     "coverAlt": "Custom SSG Pipeline: Markdown to Static HTML",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-05-12-custom-ssg-pipeline.md",
-    "path": "./custom/posts/2026-05-12-custom-ssg-pipeline.html"
+    "source": "data/posts/2026-04-18-custom-ssg-pipeline.md",
+    "path": "./custom/posts/2026-04-18-custom-ssg-pipeline.html"
   },
   {
-    "name": "2026-05-13-template-engine-and-template-structure",
+    "name": "2026-04-21-template-engine-and-template-structure",
     "title": "Template Engine and Template Structure",
     "date": "2026-05-13T00:00:00.000Z",
     "dateString": "Wed May 13 2026",
@@ -521,11 +521,11 @@
     "coverAlt": "Template Engine and Template Structure",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-05-13-template-engine-and-template-structure.md",
-    "path": "./custom/posts/2026-05-13-template-engine-and-template-structure.html"
+    "source": "data/posts/2026-04-21-template-engine-and-template-structure.md",
+    "path": "./custom/posts/2026-04-21-template-engine-and-template-structure.html"
   },
   {
-    "name": "2026-05-14-archives-tags-months-series",
+    "name": "2026-04-25-archives-tags-months-series",
     "title": "Archives, Tags, Months, and Series",
     "date": "2026-05-14T00:00:00.000Z",
     "dateString": "Thu May 14 2026",
@@ -621,11 +621,11 @@
     "coverAlt": "Archives, Tags, Months, and Series",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-05-14-archives-tags-months-series.md",
-    "path": "./custom/posts/2026-05-14-archives-tags-months-series.html"
+    "source": "data/posts/2026-04-25-archives-tags-months-series.md",
+    "path": "./custom/posts/2026-04-25-archives-tags-months-series.html"
   },
   {
-    "name": "2026-05-15-progressive-enhancement-as-contract",
+    "name": "2026-04-28-progressive-enhancement-as-contract",
     "title": "Progressive Enhancement as Contract",
     "date": "2026-05-15T00:00:00.000Z",
     "dateString": "Fri May 15 2026",
@@ -731,11 +731,11 @@
     "coverAlt": "Progressive Enhancement as Contract",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-05-15-progressive-enhancement-as-contract.md",
-    "path": "./custom/posts/2026-05-15-progressive-enhancement-as-contract.html"
+    "source": "data/posts/2026-04-28-progressive-enhancement-as-contract.md",
+    "path": "./custom/posts/2026-04-28-progressive-enhancement-as-contract.html"
   },
   {
-    "name": "2026-05-16-design-tokens-before-pages",
+    "name": "2026-05-02-design-tokens-before-pages",
     "title": "Design Tokens Before Pages",
     "date": "2026-05-16T00:00:00.000Z",
     "dateString": "Sat May 16 2026",
@@ -821,11 +821,11 @@
     "coverAlt": "Design Tokens Before Pages",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-05-16-design-tokens-before-pages.md",
-    "path": "./custom/posts/2026-05-16-design-tokens-before-pages.html"
+    "source": "data/posts/2026-05-02-design-tokens-before-pages.md",
+    "path": "./custom/posts/2026-05-02-design-tokens-before-pages.html"
   },
   {
-    "name": "2026-05-17-build-assets-pipeline",
+    "name": "2026-05-05-build-assets-pipeline",
     "title": "Build Assets Pipeline",
     "date": "2026-05-17T00:00:00.000Z",
     "dateString": "Sun May 17 2026",
@@ -921,11 +921,11 @@
     "coverAlt": "Build Assets Pipeline",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-05-17-build-assets-pipeline.md",
-    "path": "./custom/posts/2026-05-17-build-assets-pipeline.html"
+    "source": "data/posts/2026-05-05-build-assets-pipeline.md",
+    "path": "./custom/posts/2026-05-05-build-assets-pipeline.html"
   },
   {
-    "name": "2026-05-18-feeds-and-sitemaps-at-build-time",
+    "name": "2026-05-09-feeds-and-sitemaps-at-build-time",
     "title": "Feeds and Sitemaps at Build Time",
     "date": "2026-05-18T00:00:00.000Z",
     "dateString": "Mon May 18 2026",
@@ -1016,11 +1016,11 @@
     "coverAlt": "Feeds and Sitemaps at Build Time",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-05-18-feeds-and-sitemaps-at-build-time.md",
-    "path": "./custom/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html"
+    "source": "data/posts/2026-05-09-feeds-and-sitemaps-at-build-time.md",
+    "path": "./custom/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html"
   },
   {
-    "name": "2026-05-19-og-images-at-build-time",
+    "name": "2026-05-12-og-images-at-build-time",
     "title": "OG Images at Build Time",
     "date": "2026-05-19T00:00:00.000Z",
     "dateString": "Tue May 19 2026",
@@ -1116,11 +1116,11 @@
     "coverAlt": "OG Images at Build Time",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-05-19-og-images-at-build-time.md",
-    "path": "./custom/posts/2026-05-19-og-images-at-build-time.html"
+    "source": "data/posts/2026-05-12-og-images-at-build-time.md",
+    "path": "./custom/posts/2026-05-12-og-images-at-build-time.html"
   },
   {
-    "name": "2026-05-20-seo-metadata-without-rituals",
+    "name": "2026-05-16-seo-metadata-without-rituals",
     "title": "SEO Metadata Without Rituals",
     "date": "2026-05-20T00:00:00.000Z",
     "dateString": "Wed May 20 2026",
@@ -1221,11 +1221,11 @@
     "coverAlt": "SEO Metadata Without Rituals",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-05-20-seo-metadata-without-rituals.md",
-    "path": "./custom/posts/2026-05-20-seo-metadata-without-rituals.html"
+    "source": "data/posts/2026-05-16-seo-metadata-without-rituals.md",
+    "path": "./custom/posts/2026-05-16-seo-metadata-without-rituals.html"
   },
   {
-    "name": "2026-05-21-quality-gate-lint-format-verify",
+    "name": "2026-05-19-quality-gate-lint-format-verify",
     "title": "Quality Gate: Linting, Formatting, and Verify",
     "date": "2026-05-21T00:00:00.000Z",
     "dateString": "Thu May 21 2026",
@@ -1255,7 +1255,7 @@
     "series": "How I made it",
     "description": "What runs before every merge on dout.dev: linting, formatting checks, HTML validation, accessibility validation, and dist verification.",
     "excerpt": "Why the gate exists",
-    "content": "<h2 id=\"why-the-gate-exists\" tabindex=\"0\" data-toc-anchor=\"true\">Why the gate exists</h2>\n<p>A single-author blog does not need CI the way a team product does. But any site that accepts drive-by contributions, or any site that I want to be able to touch in six months without re-learning, benefits from a gate that answers one question at merge time:</p>\n<blockquote>\n<p>Does this change still produce a correct, accessible, valid site?</p>\n</blockquote>\n<p>The gate on dout.dev is a single command, <strong><code>pnpm quality:check</code></strong>, that runs the same checks locally and in GitHub Actions. If it is green, the site is publishable. If it is red, it tells me which layer broke.</p>\n<h2 id=\"what-the-gate-actually-runs\" tabindex=\"0\" data-toc-anchor=\"true\">What the gate actually runs</h2>\n<pre is=\"pix-highlighter\" data-lang=\"bash\"><code>pnpm test\npnpm spellcheck\npnpm format:check\npnpm format:check:html\npnpm validate:all</code></pre><p>Five commands, each doing one thing.</p>\n<p><strong><code>pnpm test</code></strong> - Node's built-in test runner on the CMS and template-engine code. Fast. No Jest, no Vitest, no configuration surface.</p>\n<p><strong><code>pnpm spellcheck</code></strong> - cspell against the markdown and HTML files. Catches typos in posts and navigation labels before they reach the reader.</p>\n<p><strong><code>pnpm format:check</code></strong> - Biome in check mode over JavaScript. Enforces the single formatter.</p>\n<p><strong><code>pnpm format:check:html</code></strong> - Prettier in check mode over HTML templates. HTML formatting is one of those things everyone forgets to verify until a diff becomes impossible to review.</p>\n<p><strong><code>pnpm validate:all</code></strong> - a composite of HTML validation, structural validation, link checking, and accessibility validation. The one that catches the most real bugs.</p>\n<h2 id=\"html-validation\" tabindex=\"0\" data-toc-anchor=\"true\">HTML validation</h2>\n<p>HTML validation is underrated. Bad nesting, missing alt text, heading skips, unused IDs - all of these slip past manual review and all of them matter. The validator on dout.dev runs against every file under <code>src/</code> and <code>dist/</code> and reports problems with file and line.</p>\n<pre is=\"pix-highlighter\" data-lang=\"js\"><code>import { readFileSync } from 'node:fs';\nimport { HTMLHint } from 'htmlhint';\n\nfunction validateHtml(file) {\n  const rules = {\n    'doctype-first': true,\n    'tag-pair': true,\n    'attr-lowercase': true,\n    'attr-value-double-quotes': true,\n    'alt-require': true,\n    'id-unique': true,\n    'title-require': true,\n  };\n  const source = readFileSync(file, 'utf8');\n  return HTMLHint.verify(source, rules);\n}</code></pre><p>HTMLHint is not the only option. <code>@linthtml/linthtml</code> is similar. For deep validation the W3C Nu Validator is authoritative. For this project HTMLHint is enough.</p>\n<h2 id=\"link-validation\" tabindex=\"0\" data-toc-anchor=\"true\">Link validation</h2>\n<p>Every internal link on the site gets resolved to an actual file at build time. A broken link in a post or in the navigation fails the build.</p>\n<pre is=\"pix-highlighter\" data-lang=\"js\"><code>function validateLinks(dir) {\n  const failures = [];\n  for (const file of walk(dir)) {\n    const html = readFileSync(file, 'utf8');\n    for (const href of extractHrefs(html)) {\n      if (isInternal(href) &amp;&amp; !exists(resolveToFile(href))) {\n        failures.push({ file, href });\n      }\n    }\n  }\n  return failures;\n}</code></pre><p>External links are checked only occasionally, not on every build, because network flakiness should not fail a PR. A scheduled task runs external-link validation once a week.</p>\n<h2 id=\"accessibility-validation\" tabindex=\"0\" data-toc-anchor=\"true\">Accessibility validation</h2>\n<p>The a11y check runs axe-core over every generated page, using Playwright as the headless browser. It catches a significant fraction of WCAG issues automatically - missing labels, insufficient contrast, heading order problems, keyboard trap candidates.</p>\n<pre is=\"pix-highlighter\" data-lang=\"js\"><code>import { test, expect } from '@playwright/test';\nimport { injectAxe, checkA11y } from '@axe-core/playwright';\n\ntest('posts pass axe', async ({ page }) =&gt; {\n  await page.goto('/posts/2026-06-09-wcag-22-aa-without-aria-spam.html');\n  await injectAxe(page);\n  await checkA11y(page, null, {\n    detailedReport: true,\n    detailedReportOptions: { html: true },\n  });\n});</code></pre><p>Axe does not catch everything. Nothing does. What it catches is the base rate of failures that keep creeping in through drive-by edits.</p>\n<h2 id=\"the-one-i-added-after-getting-burned\" tabindex=\"0\" data-toc-anchor=\"true\">The one I added after getting burned</h2>\n<p>Early in the project, I shipped a build with a broken CSP meta tag. The page rendered; the browser silently refused to load the JavaScript. The fix is a build-time check that verifies the generated CSP is well-formed and covers the scripts referenced in the HTML.</p>\n<pre is=\"pix-highlighter\" data-lang=\"js\"><code>function validateCsp(html) {\n  const csp = extractCspMeta(html);\n  const scripts = extractInlineAndExternalScripts(html);\n  const violations = scripts.filter((s) =&gt; !cspAllows(csp, s));\n  return violations;\n}</code></pre><p>This is the kind of check you write exactly once, after exactly one production incident.</p>\n<h2 id=\"the-gate-lives-in-one-file\" tabindex=\"0\" data-toc-anchor=\"true\">The gate lives in one file</h2>\n<p>All of this is wired in <code>.github/workflows/deploy-pages.yml</code> as a single step:</p>\n<pre is=\"pix-highlighter\" data-lang=\"yaml\"><code>- name: Build site\n  run: pnpm build\n\n- name: Quality gate\n  run: pnpm quality:check</code></pre><p>Locally I run <code>pnpm quality:check</code> before any push. If I am about to merge something significant, I also run <code>pnpm test:visual</code> - the Playwright visual regression suite - which is slower and therefore not on the default path.</p>\n<h2 id=\"what-i-did-not-add\" tabindex=\"0\" data-toc-anchor=\"true\">What I did not add</h2>\n<ul>\n<li><strong>No commit message linting.</strong> I write commits in the shape I need; convention beats enforcement for a single-author repo.</li><li><strong>No bundle size budget as a hard gate.</strong> I check it occasionally with Lighthouse. It has never regressed enough to warrant a budget check.</li><li><strong>No dependency update bot.</strong> Dependabot PRs on a personal site are noise. I update manually when something actually needs updating.</li></ul>\n<h2 id=\"the-takeaway\" tabindex=\"0\" data-toc-anchor=\"true\">The takeaway</h2>\n<p>A quality gate is a contract with your future self. Write it once, keep it small, run it everywhere. The specific checks that matter depend on the project. For a static editorial site, HTML validity, link integrity, and axe-core accessibility cover most of what goes wrong.</p>\n<h2 id=\"references\" tabindex=\"0\" data-toc-anchor=\"true\">References</h2>\n<ul>\n<li><a href=\"https://biomejs.dev/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Biome</a></li><li><a href=\"https://prettier.io/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Prettier</a></li><li><a href=\"https://htmlhint.com/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">HTMLHint</a></li><li><a href=\"https://github.com/dequelabs/axe-core?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">axe-core</a></li><li><a href=\"https://playwright.dev/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Playwright</a></li><li><a href=\"https://validator.w3.org/nu/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">W3C Nu HTML Checker</a></li></ul>\n",
+    "content": "<h2 id=\"why-the-gate-exists\" tabindex=\"0\" data-toc-anchor=\"true\">Why the gate exists</h2>\n<p>A single-author blog does not need CI the way a team product does. But any site that accepts drive-by contributions, or any site that I want to be able to touch in six months without re-learning, benefits from a gate that answers one question at merge time:</p>\n<blockquote>\n<p>Does this change still produce a correct, accessible, valid site?</p>\n</blockquote>\n<p>The gate on dout.dev is a single command, <strong><code>pnpm quality:check</code></strong>, that runs the same checks locally and in GitHub Actions. If it is green, the site is publishable. If it is red, it tells me which layer broke.</p>\n<h2 id=\"what-the-gate-actually-runs\" tabindex=\"0\" data-toc-anchor=\"true\">What the gate actually runs</h2>\n<pre is=\"pix-highlighter\" data-lang=\"bash\"><code>pnpm test\npnpm spellcheck\npnpm format:check\npnpm format:check:html\npnpm validate:all</code></pre><p>Five commands, each doing one thing.</p>\n<p><strong><code>pnpm test</code></strong> - Node's built-in test runner on the CMS and template-engine code. Fast. No Jest, no Vitest, no configuration surface.</p>\n<p><strong><code>pnpm spellcheck</code></strong> - cspell against the markdown and HTML files. Catches typos in posts and navigation labels before they reach the reader.</p>\n<p><strong><code>pnpm format:check</code></strong> - Biome in check mode over JavaScript. Enforces the single formatter.</p>\n<p><strong><code>pnpm format:check:html</code></strong> - Prettier in check mode over HTML templates. HTML formatting is one of those things everyone forgets to verify until a diff becomes impossible to review.</p>\n<p><strong><code>pnpm validate:all</code></strong> - a composite of HTML validation, structural validation, link checking, and accessibility validation. The one that catches the most real bugs.</p>\n<h2 id=\"html-validation\" tabindex=\"0\" data-toc-anchor=\"true\">HTML validation</h2>\n<p>HTML validation is underrated. Bad nesting, missing alt text, heading skips, unused IDs - all of these slip past manual review and all of them matter. The validator on dout.dev runs against every file under <code>src/</code> and <code>dist/</code> and reports problems with file and line.</p>\n<pre is=\"pix-highlighter\" data-lang=\"js\"><code>import { readFileSync } from 'node:fs';\nimport { HTMLHint } from 'htmlhint';\n\nfunction validateHtml(file) {\n  const rules = {\n    'doctype-first': true,\n    'tag-pair': true,\n    'attr-lowercase': true,\n    'attr-value-double-quotes': true,\n    'alt-require': true,\n    'id-unique': true,\n    'title-require': true,\n  };\n  const source = readFileSync(file, 'utf8');\n  return HTMLHint.verify(source, rules);\n}</code></pre><p>HTMLHint is not the only option. <code>@linthtml/linthtml</code> is similar. For deep validation the W3C Nu Validator is authoritative. For this project HTMLHint is enough.</p>\n<h2 id=\"link-validation\" tabindex=\"0\" data-toc-anchor=\"true\">Link validation</h2>\n<p>Every internal link on the site gets resolved to an actual file at build time. A broken link in a post or in the navigation fails the build.</p>\n<pre is=\"pix-highlighter\" data-lang=\"js\"><code>function validateLinks(dir) {\n  const failures = [];\n  for (const file of walk(dir)) {\n    const html = readFileSync(file, 'utf8');\n    for (const href of extractHrefs(html)) {\n      if (isInternal(href) &amp;&amp; !exists(resolveToFile(href))) {\n        failures.push({ file, href });\n      }\n    }\n  }\n  return failures;\n}</code></pre><p>External links are checked only occasionally, not on every build, because network flakiness should not fail a PR. A scheduled task runs external-link validation once a week.</p>\n<h2 id=\"accessibility-validation\" tabindex=\"0\" data-toc-anchor=\"true\">Accessibility validation</h2>\n<p>The a11y check runs axe-core over every generated page, using Playwright as the headless browser. It catches a significant fraction of WCAG issues automatically - missing labels, insufficient contrast, heading order problems, keyboard trap candidates.</p>\n<pre is=\"pix-highlighter\" data-lang=\"js\"><code>import { test, expect } from '@playwright/test';\nimport { injectAxe, checkA11y } from '@axe-core/playwright';\n\ntest('posts pass axe', async ({ page }) =&gt; {\n  await page.goto('/posts/2026-06-02-wcag-22-aa-without-aria-spam.html');\n  await injectAxe(page);\n  await checkA11y(page, null, {\n    detailedReport: true,\n    detailedReportOptions: { html: true },\n  });\n});</code></pre><p>Axe does not catch everything. Nothing does. What it catches is the base rate of failures that keep creeping in through drive-by edits.</p>\n<h2 id=\"the-one-i-added-after-getting-burned\" tabindex=\"0\" data-toc-anchor=\"true\">The one I added after getting burned</h2>\n<p>Early in the project, I shipped a build with a broken CSP meta tag. The page rendered; the browser silently refused to load the JavaScript. The fix is a build-time check that verifies the generated CSP is well-formed and covers the scripts referenced in the HTML.</p>\n<pre is=\"pix-highlighter\" data-lang=\"js\"><code>function validateCsp(html) {\n  const csp = extractCspMeta(html);\n  const scripts = extractInlineAndExternalScripts(html);\n  const violations = scripts.filter((s) =&gt; !cspAllows(csp, s));\n  return violations;\n}</code></pre><p>This is the kind of check you write exactly once, after exactly one production incident.</p>\n<h2 id=\"the-gate-lives-in-one-file\" tabindex=\"0\" data-toc-anchor=\"true\">The gate lives in one file</h2>\n<p>All of this is wired in <code>.github/workflows/deploy-pages.yml</code> as a single step:</p>\n<pre is=\"pix-highlighter\" data-lang=\"yaml\"><code>- name: Build site\n  run: pnpm build\n\n- name: Quality gate\n  run: pnpm quality:check</code></pre><p>Locally I run <code>pnpm quality:check</code> before any push. If I am about to merge something significant, I also run <code>pnpm test:visual</code> - the Playwright visual regression suite - which is slower and therefore not on the default path.</p>\n<h2 id=\"what-i-did-not-add\" tabindex=\"0\" data-toc-anchor=\"true\">What I did not add</h2>\n<ul>\n<li><strong>No commit message linting.</strong> I write commits in the shape I need; convention beats enforcement for a single-author repo.</li><li><strong>No bundle size budget as a hard gate.</strong> I check it occasionally with Lighthouse. It has never regressed enough to warrant a budget check.</li><li><strong>No dependency update bot.</strong> Dependabot PRs on a personal site are noise. I update manually when something actually needs updating.</li></ul>\n<h2 id=\"the-takeaway\" tabindex=\"0\" data-toc-anchor=\"true\">The takeaway</h2>\n<p>A quality gate is a contract with your future self. Write it once, keep it small, run it everywhere. The specific checks that matter depend on the project. For a static editorial site, HTML validity, link integrity, and axe-core accessibility cover most of what goes wrong.</p>\n<h2 id=\"references\" tabindex=\"0\" data-toc-anchor=\"true\">References</h2>\n<ul>\n<li><a href=\"https://biomejs.dev/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Biome</a></li><li><a href=\"https://prettier.io/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Prettier</a></li><li><a href=\"https://htmlhint.com/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">HTMLHint</a></li><li><a href=\"https://github.com/dequelabs/axe-core?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">axe-core</a></li><li><a href=\"https://playwright.dev/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">Playwright</a></li><li><a href=\"https://validator.w3.org/nu/?from=dout.dev\" target=\"_blank\" referrerpolicy=\"strict-origin-when-cross-origin\" rel=\"noopener\">W3C Nu HTML Checker</a></li></ul>\n",
     "toc": [
       {
         "id": "why-the-gate-exists",
@@ -1326,11 +1326,11 @@
     "coverAlt": "Quality Gate: Linting, Formatting, and Verify",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-05-21-quality-gate-lint-format-verify.md",
-    "path": "./custom/posts/2026-05-21-quality-gate-lint-format-verify.html"
+    "source": "data/posts/2026-05-19-quality-gate-lint-format-verify.md",
+    "path": "./custom/posts/2026-05-19-quality-gate-lint-format-verify.html"
   },
   {
-    "name": "2026-05-22-ci-cd-around-github-pages",
+    "name": "2026-05-23-ci-cd-around-github-pages",
     "title": "CI/CD Around GitHub Pages",
     "date": "2026-05-22T00:00:00.000Z",
     "dateString": "Fri May 22 2026",
@@ -1426,11 +1426,11 @@
     "coverAlt": "CI/CD Around GitHub Pages",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-05-22-ci-cd-around-github-pages.md",
-    "path": "./custom/posts/2026-05-22-ci-cd-around-github-pages.html"
+    "source": "data/posts/2026-05-23-ci-cd-around-github-pages.md",
+    "path": "./custom/posts/2026-05-23-ci-cd-around-github-pages.html"
   },
   {
-    "name": "2026-05-23-vibe-coding-with-rigor",
+    "name": "2026-05-26-vibe-coding-with-rigor",
     "title": "Vibe Coding With Rigor",
     "date": "2026-05-23T00:00:00.000Z",
     "dateString": "Sat May 23 2026",
@@ -1534,11 +1534,11 @@
     "coverAlt": "Vibe Coding With Rigor",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-05-23-vibe-coding-with-rigor.md",
-    "path": "./custom/posts/2026-05-23-vibe-coding-with-rigor.html"
+    "source": "data/posts/2026-05-26-vibe-coding-with-rigor.md",
+    "path": "./custom/posts/2026-05-26-vibe-coding-with-rigor.html"
   },
   {
-    "name": "2026-06-02-modern-css-is-enough",
+    "name": "2026-05-30-modern-css-is-enough",
     "title": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
     "date": "2026-06-02T00:00:00.000Z",
     "dateString": "Tue Jun 02 2026",
@@ -1634,11 +1634,11 @@
     "coverAlt": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-06-02-modern-css-is-enough.md",
-    "path": "./custom/posts/2026-06-02-modern-css-is-enough.html"
+    "source": "data/posts/2026-05-30-modern-css-is-enough.md",
+    "path": "./custom/posts/2026-05-30-modern-css-is-enough.html"
   },
   {
-    "name": "2026-06-09-wcag-22-aa-without-aria-spam",
+    "name": "2026-06-02-wcag-22-aa-without-aria-spam",
     "title": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
     "date": "2026-06-09T00:00:00.000Z",
     "dateString": "Tue Jun 09 2026",
@@ -1739,11 +1739,11 @@
     "coverAlt": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-06-09-wcag-22-aa-without-aria-spam.md",
-    "path": "./custom/posts/2026-06-09-wcag-22-aa-without-aria-spam.html"
+    "source": "data/posts/2026-06-02-wcag-22-aa-without-aria-spam.md",
+    "path": "./custom/posts/2026-06-02-wcag-22-aa-without-aria-spam.html"
   },
   {
-    "name": "2026-06-13-how-pixhighlighter-is-built",
+    "name": "2026-06-06-how-pixhighlighter-is-built",
     "title": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
     "date": "2026-06-13T00:00:00.000Z",
     "dateString": "Sat Jun 13 2026",
@@ -1829,11 +1829,11 @@
     "coverAlt": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-06-13-how-pixhighlighter-is-built.md",
-    "path": "./custom/posts/2026-06-13-how-pixhighlighter-is-built.html"
+    "source": "data/posts/2026-06-06-how-pixhighlighter-is-built.md",
+    "path": "./custom/posts/2026-06-06-how-pixhighlighter-is-built.html"
   },
   {
-    "name": "2026-06-14-why-display-preferences-popover-exists",
+    "name": "2026-06-09-why-display-preferences-popover-exists",
     "title": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
     "date": "2026-06-14T00:00:00.000Z",
     "dateString": "Sun Jun 14 2026",
@@ -1939,11 +1939,11 @@
     "coverAlt": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-06-14-why-display-preferences-popover-exists.md",
-    "path": "./custom/posts/2026-06-14-why-display-preferences-popover-exists.html"
+    "source": "data/posts/2026-06-09-why-display-preferences-popover-exists.md",
+    "path": "./custom/posts/2026-06-09-why-display-preferences-popover-exists.html"
   },
   {
-    "name": "2026-06-16-the-end-of-borrowed-abstractions",
+    "name": "2026-06-13-the-end-of-borrowed-abstractions",
     "title": "The End of Borrowed Abstractions",
     "date": "2026-06-16T00:00:00.000Z",
     "dateString": "Tue Jun 16 2026",
@@ -2062,11 +2062,11 @@
     "coverAlt": "The End of Borrowed Abstractions",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-06-16-the-end-of-borrowed-abstractions.md",
-    "path": "./custom/posts/2026-06-16-the-end-of-borrowed-abstractions.html"
+    "source": "data/posts/2026-06-13-the-end-of-borrowed-abstractions.md",
+    "path": "./custom/posts/2026-06-13-the-end-of-borrowed-abstractions.html"
   },
   {
-    "name": "2026-06-23-client-side-search-static-dataset",
+    "name": "2026-06-16-client-side-search-static-dataset",
     "title": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
     "date": "2026-06-23T00:00:00.000Z",
     "dateString": "Tue Jun 23 2026",
@@ -2162,11 +2162,11 @@
     "coverAlt": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-06-23-client-side-search-static-dataset.md",
-    "path": "./custom/posts/2026-06-23-client-side-search-static-dataset.html"
+    "source": "data/posts/2026-06-16-client-side-search-static-dataset.md",
+    "path": "./custom/posts/2026-06-16-client-side-search-static-dataset.html"
   },
   {
-    "name": "2026-07-01-pi-dev-deepseek-v4-flash-daily-loop",
+    "name": "2026-06-20-pi-dev-deepseek-v4-flash-daily-loop",
     "title": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
     "date": "2026-07-01T00:00:00.000Z",
     "dateString": "Wed Jul 01 2026",
@@ -2270,11 +2270,11 @@
     "coverAlt": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop.md",
-    "path": "./custom/posts/2026-07-01-pi-dev-deepseek-v4-flash-daily-loop.html"
+    "source": "data/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.md",
+    "path": "./custom/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html"
   },
   {
-    "name": "2026-07-07-custom-element-syntax-highlight",
+    "name": "2026-06-23-custom-element-syntax-highlight",
     "title": "A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`",
     "date": "2026-07-07T00:00:00.000Z",
     "dateString": "Tue Jul 07 2026",
@@ -2365,11 +2365,11 @@
     "coverAlt": "A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-07-07-custom-element-syntax-highlight.md",
-    "path": "./custom/posts/2026-07-07-custom-element-syntax-highlight.html"
+    "source": "data/posts/2026-06-23-custom-element-syntax-highlight.md",
+    "path": "./custom/posts/2026-06-23-custom-element-syntax-highlight.html"
   },
   {
-    "name": "2026-07-21-accessible-scrollspy-outline",
+    "name": "2026-06-27-accessible-scrollspy-outline",
     "title": "Accessible Scrollspy and Outline Without `contenteditable`",
     "date": "2026-07-21T00:00:00.000Z",
     "dateString": "Tue Jul 21 2026",
@@ -2470,11 +2470,11 @@
     "coverAlt": "Accessible Scrollspy and Outline Without `contenteditable`",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-07-21-accessible-scrollspy-outline.md",
-    "path": "./custom/posts/2026-07-21-accessible-scrollspy-outline.html"
+    "source": "data/posts/2026-06-27-accessible-scrollspy-outline.md",
+    "path": "./custom/posts/2026-06-27-accessible-scrollspy-outline.html"
   },
   {
-    "name": "2026-07-28-honest-lazy-loading",
+    "name": "2026-06-30-honest-lazy-loading",
     "title": "Honest Lazy Loading: IntersectionObserver vs Native `loading=\"lazy\"`",
     "date": "2026-07-28T00:00:00.000Z",
     "dateString": "Tue Jul 28 2026",
@@ -2570,11 +2570,11 @@
     "coverAlt": "Honest Lazy Loading: IntersectionObserver vs Native `loading=\"lazy\"`",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-07-28-honest-lazy-loading.md",
-    "path": "./custom/posts/2026-07-28-honest-lazy-loading.html"
+    "source": "data/posts/2026-06-30-honest-lazy-loading.md",
+    "path": "./custom/posts/2026-06-30-honest-lazy-loading.html"
   },
   {
-    "name": "2026-09-01-pragmatic-service-worker",
+    "name": "2026-07-04-pragmatic-service-worker",
     "title": "A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse",
     "date": "2026-09-01T00:00:00.000Z",
     "dateString": "Tue Sep 01 2026",
@@ -2685,11 +2685,11 @@
     "coverAlt": "A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-09-01-pragmatic-service-worker.md",
-    "path": "./custom/posts/2026-09-01-pragmatic-service-worker.html"
+    "source": "data/posts/2026-07-04-pragmatic-service-worker.md",
+    "path": "./custom/posts/2026-07-04-pragmatic-service-worker.html"
   },
   {
-    "name": "2026-09-15-dark-mode-accent-prefers-color-scheme",
+    "name": "2026-07-07-dark-mode-accent-prefers-color-scheme",
     "title": "Dark Mode, Accent Color, `prefers-color-scheme`: the Theme Switcher From Scratch",
     "date": "2026-09-15T00:00:00.000Z",
     "dateString": "Tue Sep 15 2026",
@@ -2790,11 +2790,11 @@
     "coverAlt": "Dark Mode, Accent Color, `prefers-color-scheme`: the Theme Switcher From Scratch",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-09-15-dark-mode-accent-prefers-color-scheme.md",
-    "path": "./custom/posts/2026-09-15-dark-mode-accent-prefers-color-scheme.html"
+    "source": "data/posts/2026-07-07-dark-mode-accent-prefers-color-scheme.md",
+    "path": "./custom/posts/2026-07-07-dark-mode-accent-prefers-color-scheme.html"
   },
   {
-    "name": "2026-09-22-strict-csp-self-hosted-fonts",
+    "name": "2026-07-11-strict-csp-self-hosted-fonts",
     "title": "Strict CSP + Self-Hosted Fonts: `unsafe-inline` Is a Bad Friend",
     "date": "2026-09-22T00:00:00.000Z",
     "dateString": "Tue Sep 22 2026",
@@ -2895,11 +2895,11 @@
     "coverAlt": "Strict CSP + Self-Hosted Fonts: `unsafe-inline` Is a Bad Friend",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-09-22-strict-csp-self-hosted-fonts.md",
-    "path": "./custom/posts/2026-09-22-strict-csp-self-hosted-fonts.html"
+    "source": "data/posts/2026-07-11-strict-csp-self-hosted-fonts.md",
+    "path": "./custom/posts/2026-07-11-strict-csp-self-hosted-fonts.html"
   },
   {
-    "name": "2026-09-29-honest-focus-traps-escape",
+    "name": "2026-07-14-honest-focus-traps-escape",
     "title": "Honest Focus Traps and Escape: Keyboard-First Menus",
     "date": "2026-09-29T00:00:00.000Z",
     "dateString": "Tue Sep 29 2026",
@@ -2985,11 +2985,11 @@
     "coverAlt": "Honest Focus Traps and Escape: Keyboard-First Menus",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-09-29-honest-focus-traps-escape.md",
-    "path": "./custom/posts/2026-09-29-honest-focus-traps-escape.html"
+    "source": "data/posts/2026-07-14-honest-focus-traps-escape.md",
+    "path": "./custom/posts/2026-07-14-honest-focus-traps-escape.html"
   },
   {
-    "name": "2026-10-06-core-web-vitals-in-production",
+    "name": "2026-07-18-core-web-vitals-in-production",
     "title": "Core Web Vitals in Production: LCP, CLS, INP on a Static Blog",
     "date": "2026-10-06T00:00:00.000Z",
     "dateString": "Tue Oct 06 2026",
@@ -3075,11 +3075,11 @@
     "coverAlt": "Core Web Vitals in Production: LCP, CLS, INP on a Static Blog",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-10-06-core-web-vitals-in-production.md",
-    "path": "./custom/posts/2026-10-06-core-web-vitals-in-production.html"
+    "source": "data/posts/2026-07-18-core-web-vitals-in-production.md",
+    "path": "./custom/posts/2026-07-18-core-web-vitals-in-production.html"
   },
   {
-    "name": "2026-10-20-pnpm-workspaces-for-a-single-site",
+    "name": "2026-07-21-pnpm-workspaces-for-a-single-site",
     "title": "pnpm Workspaces for a Single Site: Needed or Not",
     "date": "2026-10-20T00:00:00.000Z",
     "dateString": "Tue Oct 20 2026",
@@ -3170,11 +3170,11 @@
     "coverAlt": "pnpm Workspaces for a Single Site: Needed or Not",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-10-20-pnpm-workspaces-for-a-single-site.md",
-    "path": "./custom/posts/2026-10-20-pnpm-workspaces-for-a-single-site.html"
+    "source": "data/posts/2026-07-21-pnpm-workspaces-for-a-single-site.md",
+    "path": "./custom/posts/2026-07-21-pnpm-workspaces-for-a-single-site.html"
   },
   {
-    "name": "2026-10-27-counterpoint-frontend-twitter-takes",
+    "name": "2026-07-25-counterpoint-frontend-twitter-takes",
     "title": "Counterpoint: Not Every Frontend Twitter Take Is True",
     "date": "2026-10-27T00:00:00.000Z",
     "dateString": "Tue Oct 27 2026",
@@ -3265,11 +3265,11 @@
     "coverAlt": "Counterpoint: Not Every Frontend Twitter Take Is True",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-10-27-counterpoint-frontend-twitter-takes.md",
-    "path": "./custom/posts/2026-10-27-counterpoint-frontend-twitter-takes.html"
+    "source": "data/posts/2026-07-25-counterpoint-frontend-twitter-takes.md",
+    "path": "./custom/posts/2026-07-25-counterpoint-frontend-twitter-takes.html"
   },
   {
-    "name": "2026-11-03-six-months-with-ai-copilot",
+    "name": "2026-07-28-six-months-with-ai-copilot",
     "title": "Six Months With an AI Copilot: What I Delegate, What I Do Not",
     "date": "2026-11-03T00:00:00.000Z",
     "dateString": "Tue Nov 03 2026",
@@ -3360,11 +3360,11 @@
     "coverAlt": "Six Months With an AI Copilot: What I Delegate, What I Do Not",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-11-03-six-months-with-ai-copilot.md",
-    "path": "./custom/posts/2026-11-03-six-months-with-ai-copilot.html"
+    "source": "data/posts/2026-07-28-six-months-with-ai-copilot.md",
+    "path": "./custom/posts/2026-07-28-six-months-with-ai-copilot.html"
   },
   {
-    "name": "2026-11-10-manual-a11y-audit",
+    "name": "2026-08-01-manual-a11y-audit",
     "title": "Manual A11y Audit: axe, Keyboard, Screen Reader in an Afternoon",
     "date": "2026-11-10T00:00:00.000Z",
     "dateString": "Tue Nov 10 2026",
@@ -3455,8 +3455,8 @@
     "coverAlt": "Manual A11y Audit: axe, Keyboard, Screen Reader in an Afternoon",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2026-11-10-manual-a11y-audit.md",
-    "path": "./custom/posts/2026-11-10-manual-a11y-audit.html"
+    "source": "data/posts/2026-08-01-manual-a11y-audit.md",
+    "path": "./custom/posts/2026-08-01-manual-a11y-audit.html"
   },
   {
     "name": "2026-11-17-one-year-of-dout-dev-rebuilt",
@@ -3670,7 +3670,7 @@
     "path": "./custom/posts/2027-02-09-you-can-edit-css.html"
   },
   {
-    "name": "2027-02-23-css-properties-hierarchy",
+    "name": "2026-07-05-css-properties-hierarchy",
     "title": "CSS Properties Hierarchy",
     "date": "2027-02-23T00:00:00.000Z",
     "dateString": "Tue Feb 23 2027",
@@ -3701,11 +3701,11 @@
     "coverAlt": "CSS Properties Hierarchy",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2027-02-23-css-properties-hierarchy.md",
-    "path": "./custom/posts/2027-02-23-css-properties-hierarchy.html"
+    "source": "data/posts/2026-07-05-css-properties-hierarchy.md",
+    "path": "./custom/posts/2026-07-05-css-properties-hierarchy.html"
   },
   {
-    "name": "2027-04-06-accessibility-by-design",
+    "name": "2026-08-08-accessibility-by-design",
     "title": "Accessibility by Design",
     "date": "2027-04-06T00:00:00.000Z",
     "dateString": "Tue Apr 06 2027",
@@ -3778,11 +3778,11 @@
     "coverAlt": "Green accessibility-themed cover used to validate article hero readability and contrast",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2027-04-06-accessibility-by-design.md",
-    "path": "./custom/posts/2027-04-06-accessibility-by-design.html"
+    "source": "data/posts/2026-08-08-accessibility-by-design.md",
+    "path": "./custom/posts/2026-08-08-accessibility-by-design.html"
   },
   {
-    "name": "2027-04-13-introducing-css-grid-the-future-of-web-layout",
+    "name": "2026-08-11-introducing-css-grid-the-future-of-web-layout",
     "title": "Introducing CSS Grid - The Future of Web Layout 🎨",
     "date": "2027-04-13T00:00:00.000Z",
     "dateString": "Tue Apr 13 2027",
@@ -3860,11 +3860,11 @@
     "coverAlt": "Introducing CSS Grid - The Future of Web Layout 🎨",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2027-04-13-introducing-css-grid-the-future-of-web-layout.md",
-    "path": "./custom/posts/2027-04-13-introducing-css-grid-the-future-of-web-layout.html"
+    "source": "data/posts/2026-08-11-introducing-css-grid-the-future-of-web-layout.md",
+    "path": "./custom/posts/2026-08-11-introducing-css-grid-the-future-of-web-layout.html"
   },
   {
-    "name": "2027-05-04-how-to-write-agent-skills-that-actually-trigger",
+    "name": "2026-08-15-how-to-write-agent-skills-that-actually-trigger",
     "title": "How to Write Agent Skills That Actually Trigger",
     "date": "2027-05-04T00:00:00.000Z",
     "dateString": "Tue May 04 2027",
@@ -3955,8 +3955,8 @@
     "coverAlt": "How to Write Agent Skills That Actually Trigger",
     "pinned": false,
     "layout": "post",
-    "source": "data/posts/2027-05-04-how-to-write-agent-skills-that-actually-trigger.md",
-    "path": "./custom/posts/2027-05-04-how-to-write-agent-skills-that-actually-trigger.html"
+    "source": "data/posts/2026-08-15-how-to-write-agent-skills-that-actually-trigger.md",
+    "path": "./custom/posts/2026-08-15-how-to-write-agent-skills-that-actually-trigger.html"
   },
   {
     "name": "2026-11-24-a-post-with-a-cover-image",

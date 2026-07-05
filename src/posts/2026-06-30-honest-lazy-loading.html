@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</title>
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="The two tools, in one paragraph" />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2026-06-30-honest-lazy-loading.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
+    <script>
+      document.documentElement.dataset.userPreferences = 'ready';
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      :root {
+        --dout--file-preview-border: #d9a441;
+        --dout--file-preview-bg: #fff3cd;
+        --dout--file-preview-text: #5c3b00;
+      }
+
+      [data-file-preview-warning] {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--dout--file-preview-border);
+        background: var(--dout--file-preview-bg);
+        color: var(--dout--file-preview-text);
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] [data-file-preview-warning] {
+        display: block;
+      }
+
+      [data-file-preview-warning] code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)"
+    />
+    <meta property="og:description" content="The two tools, in one paragraph" />
+    <meta property="og:url" content="https://dout.dev/posts/2026-06-30-honest-lazy-loading.html" />
+    <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-06-30-honest-lazy-loading.png" />
+    <meta
+      property="og:image:alt"
+      content="Preview image for Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-06-30T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2026-06-30T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta
+      name="twitter:title"
+      content="Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)"
+    />
+    <meta name="twitter:description" content="The two tools, in one paragraph" />
+    <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-06-30-honest-lazy-loading.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Preview image for Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)",
+        "description": "The two tools, in one paragraph",
+        "datePublished": "2026-06-30T00:00:00.000Z",
+        "dateModified": "2026-06-30T00:00:00.000Z",
+        "author": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dout.dev/posts/2026-06-30-honest-lazy-loading.html" },
+        "image": ["https://dout.dev/assets/og/posts/2026-06-30-honest-lazy-loading.png"],
+        "keywords": "lazy, loading, browser, intersectionobserver, native, load, fold, image, images, picture, below, button"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)",
+            "item": "https://dout.dev/posts/2026-06-30-honest-lazy-loading.html"
+          }
+        ]
+      }
+    </script>
+
+    <link rel="stylesheet" href="/styles/index.css" />
+    <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
+  </head>
+  <body data-site-shell="">
+    <p data-file-preview-warning="" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a data-skip-link="" href="#main">Skip to main content</a>
+    <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" data-site-header="">
+      <div data-container="" data-header-bar="">
+        <a data-brand="" href="/">
+          <span data-brand-mark="">dout.dev</span>
+          <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <nav id="mainmenu" data-main-nav="" aria-label="Main">
+          <ul data-main-links="" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div data-header-actions="">
+          <color-scheme-switcher></color-scheme-switcher>
+          <display-preferences-popover></display-preferences-popover>
+          <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting">
+        <header data-post-hero="" data-reveal="">
+          <p data-eyebrow="">Article</p>
+          <p data-post-meta="">
+            <time datetime="2026-06-30" itemprop="datePublished"> June 30, 2026 </time>
+            <span data-post-divider="">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 itemprop="headline" tabindex="0">
+            Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)
+          </h1>
+
+          <p data-post-description="">The two tools, in one paragraph</p>
+
+          <ul data-tag-list="" aria-label="Tags">
+            <li><a data-tag="" href="/tags/performance.html">performance</a></li>
+
+            <li><a data-tag="" href="/tags/frontend.html">frontend</a></li>
+
+            <li><a data-tag="" href="/tags/vanilla-js.html">vanilla-js</a></li>
+          </ul>
+
+          <figure data-post-cover="">
+            <img
+              src="/assets/og/posts/2026-06-30-honest-lazy-loading-card.png"
+              alt="Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="900"
+            />
+          </figure>
+        </header>
+
+        <section data-post-shell="" role="region">
+          <h2 data-visually-hidden="">Article content</h2>
+
+          <section data-prose="" itemprop="articleBody">
+            <h2 id="the-two-tools-in-one-paragraph" tabindex="0" data-toc-anchor="true">
+              The two tools, in one paragraph
+            </h2>
+            <p>
+              Native <code>loading="lazy"</code> on <code>&lt;img&gt;</code> and <code>&lt;iframe&gt;</code> is a
+              browser-managed hint. The browser decides when to load based on its own heuristics, and it usually does a
+              good job. IntersectionObserver is a programmable primitive that tells your code exactly when an element
+              enters a viewport band. Both are useful. They are not the same thing, and treating them as interchangeable
+              is how you end up with images that load too late or scripts that fire too early.
+            </p>
+            <p>This post is the mental model I use to pick between them.</p>
+            <h2 id="the-happy-path-native-lazy-on-images-below-the-fold" tabindex="0" data-toc-anchor="true">
+              The happy path: native lazy on images below the fold
+            </h2>
+            <p>For most images on a blog, native lazy loading is correct and sufficient.</p>
+            <pre
+              is="pix-highlighter"
+              data-lang="html"
+            ><code>&lt;img src="keyboard.jpg" alt="A keyboard on a wooden desk" width="1920" height="1280" loading="lazy" decoding="async" /&gt;</code></pre>
+            <p>What this gets you, for free:</p>
+            <ul>
+              <li>The image does not download until the browser predicts it is needed.</li>
+              <li>No JavaScript required.</li>
+              <li>The <code>decoding="async"</code> hint tells the browser it can decode off the main thread.</li>
+              <li>
+                <code>width</code> and <code>height</code> reserve the aspect-ratio box so there is no layout shift when
+                the image eventually arrives.
+              </li>
+            </ul>
+            <p>
+              The browser's heuristic is not perfect, but it is tuned for the 80% case of scrolling pages. If your
+              images are content images on a standard reading flow, <code>loading="lazy"</code> does the job.
+            </p>
+            <h2 id="where-native-lazy-is-wrong" tabindex="0" data-toc-anchor="true">Where native lazy is wrong</h2>
+            <p>
+              Three situations where you should not use <code>loading="lazy"</code>, or where you have to combine it
+              with IntersectionObserver.
+            </p>
+            <h3 id="1-lcp-candidates-above-the-fold" tabindex="0" data-toc-anchor="true">
+              1. LCP candidates above the fold
+            </h3>
+            <p>
+              The image that is going to be your Largest Contentful Paint should load eagerly. Setting
+              <code>loading="lazy"</code> on an LCP image delays the one number that most affects your page quality
+              metric.
+            </p>
+            <pre
+              is="pix-highlighter"
+              data-lang="html"
+            ><code>&lt;img src="hero.jpg" alt="Hero image" width="1200" height="800" loading="eager" fetchpriority="high" /&gt;</code></pre>
+            <p>
+              <code>fetchpriority="high"</code> tells the browser this resource should be prioritized over others. Use
+              it sparingly - if everything is "high", nothing is. One LCP candidate per page.
+            </p>
+            <h3 id="2-source-inside-picture" tabindex="0" data-toc-anchor="true">
+              2. <code>&lt;source&gt;</code> inside <code>&lt;picture&gt;</code>
+            </h3>
+            <p>
+              <code>loading="lazy"</code> on an <code>&lt;img&gt;</code> inside a <code>&lt;picture&gt;</code> applies
+              to the image as a whole. But the <code>&lt;source&gt;</code> elements inside the picture have already been
+              evaluated by the time the browser decides whether to defer the image. The browser will still download a
+              WebP variant even if the fallback <code>&lt;img&gt;</code> is lazy.
+            </p>
+            <p>
+              For large below-the-fold <code>&lt;picture&gt;</code> blocks, the fix is to store the
+              <code>srcset</code> in <code>data-srcset</code> and swap it with IntersectionObserver when the element is
+              near the viewport.
+            </p>
+            <pre is="pix-highlighter" data-lang="html"><code>&lt;picture&gt;
+  &lt;source
+    type="image/webp"
+    data-srcset="/img/hero-320.webp 320w, /img/hero-640.webp 640w"
+    sizes="(max-width: 640px) 100vw, 640px"
+  /&gt;
+  &lt;img src="/img/hero.jpg" alt="..." width="1920" height="1280" loading="lazy" /&gt;
+&lt;&#x2F;picture&gt;</code></pre>
+            <pre is="pix-highlighter" data-lang="js"><code>const io = new IntersectionObserver(
+  (entries) =&gt; {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      const source = entry.target;
+      source.srcset = source.dataset.srcset;
+      source.removeAttribute('data-srcset');
+      io.unobserve(source);
+    }
+  },
+  { rootMargin: '200px' }
+);
+
+document.querySelectorAll('source[data-srcset]').forEach((s) =&gt; io.observe(s));</code></pre>
+            <p>
+              This is the only reliable way I have found to avoid eager downloads of large WebP variants for
+              below-the-fold pictures.
+            </p>
+            <h3 id="3-iframes-from-third-parties" tabindex="0" data-toc-anchor="true">3. Iframes from third parties</h3>
+            <p>
+              Giscus, CodePen embeds, video embeds: these are expensive third-party resources that you do not want to
+              load on every page view. <code>loading="lazy"</code> on the iframe helps, but you often want stricter
+              control - load only when the user scrolls close, or only when a "Show comments" button is pressed.
+            </p>
+            <pre
+              is="pix-highlighter"
+              data-lang="html"
+            ><code>&lt;div class="comments-shell" data-giscus-src="https://giscus.app/client.js" data-giscus-attrs='{ "data-repo": "..." }'&gt;
+  &lt;button type="button" class="load-comments"&gt;Load comments&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;</code></pre>
+            <pre
+              is="pix-highlighter"
+              data-lang="js"
+            ><code>document.querySelector('.load-comments')?.addEventListener('click', (e) =&gt; {
+  const shell = e.target.closest('.comments-shell');
+  const attrs = JSON.parse(shell.dataset.giscusAttrs);
+  const script = document.createElement('script');
+  script.src = shell.dataset.giscusSrc;
+  for (const [k, v] of Object.entries(attrs)) script.setAttribute(k, v);
+  script.crossOrigin = 'anonymous';
+  script.async = true;
+  shell.appendChild(script);
+  e.target.remove();
+});</code></pre>
+            <p>
+              The cost of opting into "click to load" for comments is one button and a 20-line handler. The benefit is a
+              significantly smaller critical path for readers who do not engage with comments.
+            </p>
+            <p>
+              On dout.dev I ship the Giscus embed lazily via <code>data-loading="lazy"</code> and do not hide it behind
+              a button, because comments are part of the editorial experience. On a page with heavier embeds, the button
+              pattern is the right default.
+            </p>
+            <h2 id="the-mental-model" tabindex="0" data-toc-anchor="true">The mental model</h2>
+            <ul>
+              <li>
+                Is the element above the fold and likely the LCP? → <code>loading="eager"</code> +
+                <code>fetchpriority="high"</code>.
+              </li>
+              <li>Is it an image or plain iframe below the fold? → <code>loading="lazy"</code>.</li>
+              <li>
+                Is it a <code>&lt;source&gt;</code> inside a <code>&lt;picture&gt;</code> below the fold? →
+                IntersectionObserver with <code>data-srcset</code> swap.
+              </li>
+              <li>
+                Is it a heavy third-party embed? → IntersectionObserver with a bigger root margin, or a click-to-load
+                button.
+              </li>
+            </ul>
+            <p>Everything else is a variation.</p>
+            <h2 id="what-i-do-not-do" tabindex="0" data-toc-anchor="true">What I do not do</h2>
+            <p>
+              I do not reinvent native lazy for plain images. I do not ship a "lazyload.js" dependency. I do not observe
+              scroll events. IntersectionObserver is already in every target browser and has been for years.
+            </p>
+            <h2 id="the-takeaway" tabindex="0" data-toc-anchor="true">The takeaway</h2>
+            <p>
+              Native lazy is a good default. Use it first. Reach for IntersectionObserver when the browser's heuristic
+              is not under your control (nested picture sources, third-party iframes, expensive runtime costs). The two
+              tools complement each other; they do not compete.
+            </p>
+            <h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
+            <ul>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/loading?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  ><code>loading</code> attribute - MDN</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  ><code>fetchpriority</code> - MDN</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >IntersectionObserver - MDN</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://web.dev/articles/browser-level-image-lazy-loading?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Browser-level image lazy loading - web.dev</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://web.dev/articles/iframe-lazy-loading?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Lazy-loading iframes - web.dev</a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <aside data-post-sidebar="" role="complementary">
+          <nav data-post-toc="">
+            <h2>TOC</h2>
+            <ol data-post-toc-list="">
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-two-tools-in-one-paragraph"
+                  >The two tools, in one paragraph</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-happy-path-native-lazy-on-images-below-the-fold"
+                  >The happy path: native lazy on images below the fold</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#where-native-lazy-is-wrong"
+                  >Where native lazy is wrong</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="3" href="#1-lcp-candidates-above-the-fold"
+                  >1. LCP candidates above the fold</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="3" href="#2-source-inside-picture"
+                  >2. &lt;source&gt; inside &lt;picture&gt;</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="3" href="#3-iframes-from-third-parties"
+                  >3. Iframes from third parties</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-mental-model">The mental model</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#what-i-do-not-do">What I do not do</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-takeaway">The takeaway</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#references">References</a>
+              </li>
+            </ol>
+          </nav>
+        </aside>
+
+        <section data-comments-shell="" data-reveal="">
+          <header data-section-heading="">
+            <p data-eyebrow="">Discussion</p>
+            <h2>Comments live in GitHub Discussions</h2>
+          </header>
+          <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2026-06-30-honest-lazy-loading.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
+
+        <nav data-series-navigation="" data-reveal="" aria-label="Series navigation">
+          <section data-series-navigation-group="">
+            <p data-eyebrow="" data-muted="">Series</p>
+            <h2>In this series: How I made it</h2>
+            <ol data-series-navigation-links="">
+              <li>
+                <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="false"
+                  >How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-07-cms-and-markdown-processing.html" aria-current="false"
+                  >CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false"
+                  >Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-14-why-no-astro-eleventy-next.html" aria-current="false"
+                  >Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-18-custom-ssg-pipeline.html" aria-current="false"
+                  >Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-21-template-engine-and-template-structure.html" aria-current="false"
+                  >Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-25-archives-tags-months-series.html" aria-current="false"
+                  >Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-28-progressive-enhancement-as-contract.html" aria-current="false"
+                  >Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-02-design-tokens-before-pages.html" aria-current="false"
+                  >Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-05-build-assets-pipeline.html" aria-current="false"
+                  >Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html" aria-current="false"
+                  >Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-12-og-images-at-build-time.html" aria-current="false"
+                  >OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-16-seo-metadata-without-rituals.html" aria-current="false"
+                  >SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-19-quality-gate-lint-format-verify.html" aria-current="false"
+                  >Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-23-ci-cd-around-github-pages.html" aria-current="false"
+                  >CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-26-vibe-coding-with-rigor.html" aria-current="false"
+                  >Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="false"
+                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="false"
+                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-06-how-pixhighlighter-is-built.html" aria-current="false"
+                  >How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-09-why-display-preferences-popover-exists.html" aria-current="false"
+                  >Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-16-client-side-search-static-dataset.html" aria-current="false"
+                  >Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-23-custom-element-syntax-highlight.html" aria-current="false"
+                  >A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-27-accessible-scrollspy-outline.html" aria-current="false"
+                  >Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-30-honest-lazy-loading.html" aria-current="page"
+                  >Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference) (you are
+                  here)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-04-pragmatic-service-worker.html" aria-current="false"
+                  >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false"
+                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
+                >
+              </li>
+            </ol>
+          </section>
+        </nav>
+      </article>
+
+      <nav data-post-nav="" aria-label="Post navigation">
+        <a data-post-nav-card="" data-reveal="" rel="prev" href="/posts/2026-06-27-accessible-scrollspy-outline.html">
+          <span data-post-nav-label="">Previous</span>
+          <strong>Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</strong>
+        </a>
+
+        <a data-post-nav-card="" data-reveal="" rel="next" href="/posts/2026-07-04-pragmatic-service-worker.html">
+          <span data-post-nav-label="">Next</span>
+          <strong>A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</strong>
+        </a>
+      </nav>
+    </main>
+
+    <footer role="contentinfo" data-site-footer="">
+      <div data-container="" data-footer-grid="">
+        <div data-footer-copy="">
+          <p data-footer-brand="">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav data-footer-nav="" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
+</html>

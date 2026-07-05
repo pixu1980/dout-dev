@@ -6,55 +6,69 @@
     <description>RSS feed for posts tagged with architecture</description>
     <atom:link href="https://dout.dev/tags/architecture.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Tue, 23 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking</title>
-      <link>https://dout.dev/posts/2026-06-23-client-side-search-static-dataset.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-23-client-side-search-static-dataset.html</guid>
+      <title>A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</title>
+      <link>https://dout.dev/posts/2026-07-04-pragmatic-service-worker.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-07-04-pragmatic-service-worker.html</guid>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 GMT</pubDate>
+      <description>The case against most service workers</description>
+    </item>
+    <item>
+      <title>A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</title>
+      <link>https://dout.dev/posts/2026-06-23-custom-element-syntax-highlight.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-23-custom-element-syntax-highlight.html</guid>
       <pubDate>Tue, 23 Jun 2026 00:00:00 GMT</pubDate>
-      <description>The constraint</description>
+      <description>The stack I did not want</description>
+    </item>
+    <item>
+      <title>Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</title>
+      <link>https://dout.dev/posts/2026-06-16-client-side-search-static-dataset.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-16-client-side-search-static-dataset.html</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The constraint (no backend, no excuses)</description>
     </item>
     <item>
       <title>The End of Borrowed Abstractions</title>
-      <link>https://dout.dev/posts/2026-06-16-the-end-of-borrowed-abstractions.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-16-the-end-of-borrowed-abstractions.html</guid>
-      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <link>https://dout.dev/posts/2026-06-13-the-end-of-borrowed-abstractions.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-13-the-end-of-borrowed-abstractions.html</guid>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
       <description>The reflex that shaped software</description>
     </item>
     <item>
-      <title>How PixHighlighter Is Built Around the CSS Custom Highlight API</title>
-      <link>https://dout.dev/posts/2026-06-13-how-pixhighlighter-is-built.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-13-how-pixhighlighter-is-built.html</guid>
-      <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
-      <description>The contract stays plain</description>
+      <title>How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</title>
+      <link>https://dout.dev/posts/2026-06-06-how-pixhighlighter-is-built.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-06-how-pixhighlighter-is-built.html</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The contract stays plain (because HTML should be readable)</description>
     </item>
     <item>
-      <title>Template Engine and Template Structure</title>
-      <link>https://dout.dev/posts/2026-05-13-template-engine-and-template-structure.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-13-template-engine-and-template-structure.html</guid>
-      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
-      <description>Three constraints that shaped the grammar</description>
+      <title>Template Engine and Template Structure (Or: Why I Didn&apos;t Use Handlebars Like a Normal Person)</title>
+      <link>https://dout.dev/posts/2026-04-21-template-engine-and-template-structure.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-template-engine-and-template-structure.html</guid>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Three constraints that shaped the grammar (because constraints are good, actually)</description>
     </item>
     <item>
-      <title>Custom SSG Pipeline: Markdown to Static HTML</title>
-      <link>https://dout.dev/posts/2026-05-12-custom-ssg-pipeline.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-12-custom-ssg-pipeline.html</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>The pipeline, in one picture</description>
+      <title>Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)</title>
+      <link>https://dout.dev/posts/2026-04-18-custom-ssg-pipeline.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-18-custom-ssg-pipeline.html</guid>
+      <pubDate>Sat, 18 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The pipeline, in one picture (because I know you&apos;re skimming)</description>
     </item>
     <item>
-      <title>Why I Skipped Astro, Eleventy and Next for My Blog</title>
-      <link>https://dout.dev/posts/2026-05-05-why-no-astro-eleventy-next.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-05-why-no-astro-eleventy-next.html</guid>
-      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+      <title>Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)</title>
+      <link>https://dout.dev/posts/2026-04-14-why-no-astro-eleventy-next.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-14-why-no-astro-eleventy-next.html</guid>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
       <description>The default answer and why I ignored it</description>
     </item>
     <item>
-      <title>How I Built dout.dev</title>
+      <title>How I Built dout.dev (And Why I Didn&apos;t Use a Framework Like a Normal Person)</title>
       <link>https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html</guid>
       <pubDate>Sat, 04 Apr 2026 00:00:00 GMT</pubDate>
-      <description>What the stack is, exactly</description>
+      <description>What the stack is, exactly (TL;DR: files + Node + blood)</description>
     </item>
   </channel>
 </rss>

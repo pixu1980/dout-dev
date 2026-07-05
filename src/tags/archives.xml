@@ -6,13 +6,13 @@
     <description>RSS feed for posts tagged with archives</description>
     <atom:link href="https://dout.dev/tags/archives.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Thu, 14 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>Archives, Tags, Months, and Series</title>
-      <link>https://dout.dev/posts/2026-05-14-archives-tags-months-series.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-14-archives-tags-months-series.html</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <description>Three ways to slice the same posts</description>
+      <title>Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)</title>
+      <link>https://dout.dev/posts/2026-04-25-archives-tags-months-series.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-25-archives-tags-months-series.html</guid>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Three ways to slice the same posts (because one axis is never enough)</description>
     </item>
   </channel>
 </rss>

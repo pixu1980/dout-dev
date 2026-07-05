@@ -6,19 +6,26 @@
     <description>RSS feed for posts tagged with workflow</description>
     <atom:link href="https://dout.dev/tags/workflow.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Sat, 23 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>Vibe Coding With Rigor</title>
-      <link>https://dout.dev/posts/2026-05-23-vibe-coding-with-rigor.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-23-vibe-coding-with-rigor.html</guid>
-      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
-      <description>The term I am reclaiming</description>
+      <title>Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing</title>
+      <link>https://dout.dev/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html</guid>
+      <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The headline numbers</description>
     </item>
     <item>
-      <title>Rebuilding dout.dev in Weeks With an AI Copilot</title>
-      <link>https://dout.dev/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html</guid>
-      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <title>Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</title>
+      <link>https://dout.dev/posts/2026-05-26-vibe-coding-with-rigor.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-26-vibe-coding-with-rigor.html</guid>
+      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+      <description>The term I am reclaiming (because &quot;vibe coding&quot; got a bad rap)</description>
+    </item>
+    <item>
+      <title>Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread</title>
+      <link>https://dout.dev/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html</guid>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 GMT</pubDate>
       <description>The honest framing</description>
     </item>
   </channel>

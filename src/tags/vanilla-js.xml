@@ -6,41 +6,69 @@
     <description>RSS feed for posts tagged with vanilla-js</description>
     <atom:link href="https://dout.dev/tags/vanilla-js.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Tue, 23 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking</title>
-      <link>https://dout.dev/posts/2026-06-23-client-side-search-static-dataset.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-23-client-side-search-static-dataset.html</guid>
+      <title>A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</title>
+      <link>https://dout.dev/posts/2026-07-04-pragmatic-service-worker.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-07-04-pragmatic-service-worker.html</guid>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 GMT</pubDate>
+      <description>The case against most service workers</description>
+    </item>
+    <item>
+      <title>Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</title>
+      <link>https://dout.dev/posts/2026-06-30-honest-lazy-loading.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-30-honest-lazy-loading.html</guid>
+      <pubDate>Tue, 30 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The two tools, in one paragraph</description>
+    </item>
+    <item>
+      <title>Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</title>
+      <link>https://dout.dev/posts/2026-06-27-accessible-scrollspy-outline.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-27-accessible-scrollspy-outline.html</guid>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The feature and its trap</description>
+    </item>
+    <item>
+      <title>A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</title>
+      <link>https://dout.dev/posts/2026-06-23-custom-element-syntax-highlight.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-23-custom-element-syntax-highlight.html</guid>
       <pubDate>Tue, 23 Jun 2026 00:00:00 GMT</pubDate>
-      <description>The constraint</description>
+      <description>The stack I did not want</description>
+    </item>
+    <item>
+      <title>Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</title>
+      <link>https://dout.dev/posts/2026-06-16-client-side-search-static-dataset.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-16-client-side-search-static-dataset.html</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The constraint (no backend, no excuses)</description>
     </item>
     <item>
       <title>The End of Borrowed Abstractions</title>
-      <link>https://dout.dev/posts/2026-06-16-the-end-of-borrowed-abstractions.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-16-the-end-of-borrowed-abstractions.html</guid>
-      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <link>https://dout.dev/posts/2026-06-13-the-end-of-borrowed-abstractions.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-13-the-end-of-borrowed-abstractions.html</guid>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
       <description>The reflex that shaped software</description>
     </item>
     <item>
-      <title>How PixHighlighter Is Built Around the CSS Custom Highlight API</title>
-      <link>https://dout.dev/posts/2026-06-13-how-pixhighlighter-is-built.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-13-how-pixhighlighter-is-built.html</guid>
-      <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
-      <description>The contract stays plain</description>
+      <title>How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</title>
+      <link>https://dout.dev/posts/2026-06-06-how-pixhighlighter-is-built.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-06-how-pixhighlighter-is-built.html</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The contract stays plain (because HTML should be readable)</description>
     </item>
     <item>
-      <title>Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production</title>
-      <link>https://dout.dev/posts/2026-06-02-modern-css-is-enough.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-02-modern-css-is-enough.html</guid>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
-      <description>The short version</description>
+      <title>Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</title>
+      <link>https://dout.dev/posts/2026-05-30-modern-css-is-enough.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-30-modern-css-is-enough.html</guid>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <description>The short version (for the impatient)</description>
     </item>
     <item>
-      <title>Progressive Enhancement as Contract</title>
-      <link>https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html</guid>
-      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
-      <description>The contract</description>
+      <title>Progressive Enhancement as Contract (Yes, It Works Without JS. No, I&apos;m Not Kidding.)</title>
+      <link>https://dout.dev/posts/2026-04-28-progressive-enhancement-as-contract.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-28-progressive-enhancement-as-contract.html</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The contract (read this part)</description>
     </item>
   </channel>
 </rss>

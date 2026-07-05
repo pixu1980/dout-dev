@@ -15,15 +15,16 @@ accent-color-selector [data-accent-selector] {
 
 accent-color-selector [data-accent-selector-label] {
   padding: 0 0.5rem;
-  font-size: 0.875rem;
   color: var(--dout--text-muted);
+  font-size: 0.875rem;
   white-space: nowrap;
 }
 
 accent-color-selector [data-accent-button] {
+  position: relative;
   width: var(--dout--control-height-sm);
-  height: var(--dout--control-height-sm);
   min-width: var(--dout--control-height-sm);
+  height: var(--dout--control-height-sm);
   padding: 0;
   border: 2px solid var(--dout--border);
   border-radius: 50%;
@@ -32,29 +33,28 @@ accent-color-selector [data-accent-button] {
     var(--dout--accent-preview-s),
     var(--dout--accent-preview-l)
   );
-  cursor: pointer;
   transition:
     transform var(--dout--motion-fast) var(--dout--motion-ease),
     border-color var(--dout--motion-fast) var(--dout--motion-ease),
     box-shadow var(--dout--motion-fast) var(--dout--motion-ease);
-  position: relative;
-}
+  cursor: pointer;
 
-accent-color-selector [data-accent-button]:hover {
-  transform: scale(1.08);
-  border-color: var(--dout--text-muted);
-}
+  &:hover {
+    border-color: var(--dout--text-muted);
+    transform: scale(1.08);
+  }
 
-accent-color-selector [data-accent-button][aria-checked='true'] {
-  border-color: var(--dout--text);
-  border-width: 3px;
-  box-shadow: 0 0 0 2px var(--dout--surface-strong);
-  transform: scale(1.1);
-}
+  &[aria-checked='true'] {
+    border-width: 3px;
+    border-color: var(--dout--text);
+    box-shadow: 0 0 0 2px var(--dout--surface-strong);
+    transform: scale(1.1);
+  }
 
-accent-color-selector [data-accent-button]:focus-visible {
-  outline: var(--dout--outline-width) solid var(--dout--accent);
-  outline-offset: var(--dout--focus-offset);
+  &:focus-visible {
+    outline: var(--dout--outline-width) solid var(--dout--accent);
+    outline-offset: var(--dout--focus-offset);
+  }
 }
 
 :root[data-reduce-motion='true'] accent-color-selector [data-accent-button]:hover,

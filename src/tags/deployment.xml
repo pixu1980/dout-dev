@@ -6,13 +6,13 @@
     <description>RSS feed for posts tagged with deployment</description>
     <atom:link href="https://dout.dev/tags/deployment.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Fri, 22 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>CI/CD Around GitHub Pages</title>
-      <link>https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html</guid>
-      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
-      <description>The gap GitHub Pages leaves open</description>
+      <title>CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)</title>
+      <link>https://dout.dev/posts/2026-05-23-ci-cd-around-github-pages.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-23-ci-cd-around-github-pages.html</guid>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
+      <description>The gap GitHub Pages leaves open (it&apos;s not that bad)</description>
     </item>
   </channel>
 </rss>

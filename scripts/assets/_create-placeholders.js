@@ -44,7 +44,7 @@ async function create() {
 
   // create a minimal tag feed for any tag referenced in tests (a few common ones)
   const tags = [
-    'a11y',
+    'accessibility',
     'blog',
     'css',
     'design',
@@ -55,7 +55,7 @@ async function create() {
     'm4',
     'markdown',
     'releases',
-    'responsive',
+    'responsive-design',
     'syntax-highlight-element',
     'test',
     'vanilla-js',

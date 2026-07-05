@@ -90,14 +90,14 @@ test('buildOgImages renders archive badge and description copy', async () => {
 
   const dataset = {
     posts: [],
-    tags: [{ key: 'ai-copilot', slug: 'ai-copilot', label: 'Ai-copilot', name: 'Ai-copilot' }],
+    tags: [{ key: 'ai', slug: 'ai', label: 'AI', name: 'AI' }],
     months: [{ key: '2026-04', slug: '2026-04', label: 'April 2026', name: 'April 2026' }],
     series: [{ slug: 'system-notes', title: 'System Notes', description: 'Series description' }],
   };
 
   await buildOgImages({ dataset, config, outputDir: TMP });
 
-  const tagSvg = await readFile(join(TMP, 'tags', 'ai-copilot.svg'), 'utf8');
+  const tagSvg = await readFile(join(TMP, 'tags', 'ai.svg'), 'utf8');
   const monthSvg = await readFile(join(TMP, 'months', '2026-04.svg'), 'utf8');
   const seriesSvg = await readFile(join(TMP, 'series', 'system-notes.svg'), 'utf8');
   const tagText = normalizeSvgText(tagSvg);

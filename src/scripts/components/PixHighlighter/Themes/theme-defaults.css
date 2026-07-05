@@ -36,17 +36,10 @@
       --pix-highlighter--anchor-offset: 8px;
 
       position: relative;
-      container-type: inline-size;
       display: block;
-      white-space: pre;
-      word-spacing: normal;
-      word-break: normal;
-      word-wrap: normal;
-      overflow: auto;
-      tab-size: var(--pix-highlighter--tab-size, 2);
-      hyphens: none;
       padding: 0.75rem 1rem 1rem;
       border-radius: var(--dout--radius-md, 0.85rem);
+      overflow: auto;
       color: var(--pix-highlighter--fg);
       background-color: var(--pix-highlighter--bg);
 
@@ -68,7 +61,14 @@
 
       font-size: 1em;
       line-height: var(--pix-highlighter--line-height, 1.5);
+      word-spacing: normal;
+      white-space: pre;
       text-shadow: var(--pix-highlighter--text-shadow, none);
+      word-break: normal;
+      hyphens: none;
+      tab-size: var(--pix-highlighter--tab-size, 2);
+      container-type: inline-size;
+      word-wrap: normal;
 
       code {
         display: block;

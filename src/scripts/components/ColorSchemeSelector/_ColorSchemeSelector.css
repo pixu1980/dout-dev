@@ -28,60 +28,60 @@ color-scheme-switcher label {
   min-height: var(--dout--control-height-sm);
   padding: 0 0.75rem;
   border-radius: 0;
-  background: var(--dout--surface-strong);
   color: var(--dout--text);
-  cursor: pointer;
-  corner-shape: var(--dout--corner-shape);
+  background: var(--dout--surface-strong);
   transition:
     background-color var(--dout--motion-fast) var(--dout--motion-ease),
     color var(--dout--motion-fast) var(--dout--motion-ease);
-  -webkit-user-select: none;
+  cursor: pointer;
   user-select: none;
-}
+  corner-shape: var(--dout--corner-shape);
+  -webkit-user-select: none;
 
-color-scheme-switcher label:hover {
-  background: var(--dout--surface);
+  &:hover {
+    background: var(--dout--surface);
+  }
+
+  &:first-of-type {
+    border-start-start-radius: var(--dout--control-segment-inner-radius);
+    border-end-start-radius: var(--dout--control-segment-inner-radius);
+  }
+
+  &:last-of-type {
+    border-start-end-radius: var(--dout--control-segment-inner-radius);
+    border-end-end-radius: var(--dout--control-segment-inner-radius);
+  }
+
+  &[data-active] {
+    color: var(--dout--on-accent);
+    background: var(--dout--accent);
+    font-weight: 600;
+    corner-shape: var(--dout--corner-shape);
+  }
+
+  &:first-of-type[data-active] {
+    border-start-start-radius: var(--dout--control-segment-radius);
+    border-end-start-radius: var(--dout--control-segment-radius);
+  }
+
+  &:last-of-type[data-active] {
+    border-start-end-radius: var(--dout--control-segment-radius);
+    border-end-end-radius: var(--dout--control-segment-radius);
+  }
+
+  &[data-active]:hover {
+    background: var(--dout--accent-strong);
+  }
 }
 
 color-scheme-switcher label + label {
   border-left: var(--dout--border-width) solid var(--dout--border);
 }
 
-color-scheme-switcher label:first-of-type {
-  border-start-start-radius: var(--dout--control-segment-inner-radius);
-  border-end-start-radius: var(--dout--control-segment-inner-radius);
-}
-
-color-scheme-switcher label:last-of-type {
-  border-start-end-radius: var(--dout--control-segment-inner-radius);
-  border-end-end-radius: var(--dout--control-segment-inner-radius);
-}
-
-color-scheme-switcher label[data-active] {
-  background: var(--dout--accent);
-  color: var(--dout--on-accent);
-  font-weight: 600;
-  corner-shape: var(--dout--corner-shape);
-}
-
-color-scheme-switcher label:first-of-type[data-active] {
-  border-start-start-radius: var(--dout--control-segment-radius);
-  border-end-start-radius: var(--dout--control-segment-radius);
-}
-
-color-scheme-switcher label:last-of-type[data-active] {
-  border-start-end-radius: var(--dout--control-segment-radius);
-  border-end-end-radius: var(--dout--control-segment-radius);
-}
-
-color-scheme-switcher label[data-active]:hover {
-  background: var(--dout--accent-strong);
-}
-
 color-scheme-switcher svg {
+  display: block;
   width: var(--dout--icon-size-lg);
   height: var(--dout--icon-size-lg);
-  display: block;
   pointer-events: none;
   fill: currentColor;
 }
@@ -91,11 +91,11 @@ color-scheme-switcher input[type='radio'] {
   width: var(--dout--visually-hidden-size);
   height: var(--dout--visually-hidden-size);
   padding: 0;
+  border: 0;
   margin: var(--dout--visually-hidden-offset);
+  outline: none;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border: 0;
-  outline: none;
 }
 
 color-scheme-switcher [data-visually-hidden] {
@@ -103,8 +103,8 @@ color-scheme-switcher [data-visually-hidden] {
   width: var(--dout--visually-hidden-size);
   height: var(--dout--visually-hidden-size);
   padding: 0;
+  border: 0;
   margin: var(--dout--visually-hidden-offset);
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border: 0;
 }

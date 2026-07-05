@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</title>
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="The feature and its trap" />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2026-06-27-accessible-scrollspy-outline.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
+    <script>
+      document.documentElement.dataset.userPreferences = 'ready';
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      :root {
+        --dout--file-preview-border: #d9a441;
+        --dout--file-preview-bg: #fff3cd;
+        --dout--file-preview-text: #5c3b00;
+      }
+
+      [data-file-preview-warning] {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--dout--file-preview-border);
+        background: var(--dout--file-preview-bg);
+        color: var(--dout--file-preview-text);
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] [data-file-preview-warning] {
+        display: block;
+      }
+
+      [data-file-preview-warning] code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)"
+    />
+    <meta property="og:description" content="The feature and its trap" />
+    <meta property="og:url" content="https://dout.dev/posts/2026-06-27-accessible-scrollspy-outline.html" />
+    <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-06-27-accessible-scrollspy-outline.png" />
+    <meta
+      property="og:image:alt"
+      content="Preview image for Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-06-27T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2026-06-27T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta
+      name="twitter:title"
+      content="Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)"
+    />
+    <meta name="twitter:description" content="The feature and its trap" />
+    <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-06-27-accessible-scrollspy-outline.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Preview image for Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)",
+        "description": "The feature and its trap",
+        "datePublished": "2026-06-27T00:00:00.000Z",
+        "dateModified": "2026-06-27T00:00:00.000Z",
+        "author": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2026-06-27-accessible-scrollspy-outline.html"
+        },
+        "image": ["https://dout.dev/assets/og/posts/2026-06-27-accessible-scrollspy-outline.png"],
+        "keywords": "current, heading, scroll, link, outline, headings, aria, focus, user, tabindex, smooth, section"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)",
+            "item": "https://dout.dev/posts/2026-06-27-accessible-scrollspy-outline.html"
+          }
+        ]
+      }
+    </script>
+
+    <link rel="stylesheet" href="/styles/index.css" />
+    <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
+  </head>
+  <body data-site-shell="">
+    <p data-file-preview-warning="" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a data-skip-link="" href="#main">Skip to main content</a>
+    <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" data-site-header="">
+      <div data-container="" data-header-bar="">
+        <a data-brand="" href="/">
+          <span data-brand-mark="">dout.dev</span>
+          <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <nav id="mainmenu" data-main-nav="" aria-label="Main">
+          <ul data-main-links="" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div data-header-actions="">
+          <color-scheme-switcher></color-scheme-switcher>
+          <display-preferences-popover></display-preferences-popover>
+          <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting">
+        <header data-post-hero="" data-reveal="">
+          <p data-eyebrow="">Article</p>
+          <p data-post-meta="">
+            <time datetime="2026-06-27" itemprop="datePublished"> June 27, 2026 </time>
+            <span data-post-divider="">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 itemprop="headline" tabindex="0">
+            Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)
+          </h1>
+
+          <p data-post-description="">The feature and its trap</p>
+
+          <ul data-tag-list="" aria-label="Tags">
+            <li><a data-tag="" href="/tags/accessibility.html">accessibility</a></li>
+
+            <li><a data-tag="" href="/tags/vanilla-js.html">vanilla-js</a></li>
+
+            <li><a data-tag="" href="/tags/frontend.html">frontend</a></li>
+          </ul>
+
+          <figure data-post-cover="">
+            <img
+              src="/assets/og/posts/2026-06-27-accessible-scrollspy-outline-card.png"
+              alt="Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="900"
+            />
+          </figure>
+        </header>
+
+        <section data-post-shell="" role="region">
+          <h2 data-visually-hidden="">Article content</h2>
+
+          <section data-prose="" itemprop="articleBody">
+            <h2 id="the-feature-and-its-trap" tabindex="0" data-toc-anchor="true">The feature and its trap</h2>
+            <p>
+              A long post benefits from a sidebar outline that highlights the current section as the user scrolls. On a
+              blog with 1500-word articles, it is the difference between a linear reading experience and a navigable
+              document.
+            </p>
+            <p>Most scrollspy implementations have three accessibility problems.</p>
+            <ol>
+              <li>
+                They rely on the browser's scroll event, which fires too often and updates the active state with a
+                jitter that confuses screen readers.
+              </li>
+              <li>
+                They make the headings focusable in ways that break keyboard expectations - <code>tabindex="0"</code> on
+                every <code>h2</code> is a trap, not a feature.
+              </li>
+              <li>
+                They announce the current section via <code>aria-current</code> that changes several times per second
+                during scroll, which turns the outline into a screaming live region.
+              </li>
+            </ol>
+            <p>This post is the design I landed on after tripping over all three.</p>
+            <h2 id="the-dom-shape" tabindex="0" data-toc-anchor="true">The DOM shape</h2>
+            <p>
+              The outline is a normal <code>&lt;nav&gt;</code> with a list of anchor links to heading IDs. That is the
+              document you would get from a static site with no JavaScript. Everything else is enhancement.
+            </p>
+            <pre is="pix-highlighter" data-lang="html"><code>&lt;aside class="post-outline"&gt;
+  &lt;nav aria-label="Article outline"&gt;
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;a href="#the-feature-and-its-trap"&gt;The feature and its trap&lt;&#x2F;a&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;
+        &lt;a href="#the-dom-shape"&gt;The DOM shape&lt;&#x2F;a&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;
+        &lt;a href="#observing-headings-not-scroll"&gt;Observing headings, not scroll&lt;&#x2F;a&gt;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ol&gt;
+  &lt;&#x2F;nav&gt;
+&lt;&#x2F;aside&gt;</code></pre>
+            <p>
+              Without JS: you get a jump-link navigation. With JS: the active link gets
+              <code>aria-current="location"</code> based on what is currently visible.
+            </p>
+            <h2 id="headings-have-ids-and-they-are-focusable-on-purpose" tabindex="0" data-toc-anchor="true">
+              Headings have IDs, and they are focusable on purpose
+            </h2>
+            <p>
+              The post generator emits IDs on every heading (<code>## The DOM shape</code> →
+              <code>id="the-dom-shape"</code>). It also adds <code>tabindex="-1"</code> to headings, so they can receive
+              programmatic focus when a user activates an outline link. Without that, focus remains on the link that was
+              activated, and the next tab stop is inside the link list instead of the section body.
+            </p>
+            <pre
+              is="pix-highlighter"
+              data-lang="html"
+            ><code>&lt;h2 id="the-dom-shape" tabindex="-1"&gt;The DOM shape&lt;&#x2F;h2&gt;</code></pre>
+            <p>
+              <code>tabindex="-1"</code> makes the heading programmatically focusable without adding it to the tab
+              order. That is the shape you want for anchor targets. <code>tabindex="0"</code> would make every heading a
+              tab stop and is wrong.
+            </p>
+            <h2 id="observing-headings-not-scroll" tabindex="0" data-toc-anchor="true">
+              Observing headings, not scroll
+            </h2>
+            <p>
+              Listening to <code>scroll</code> and computing which heading is "current" is a trap. It fires constantly,
+              it does not know about the viewport's relevance cone, and it forces you to recompute heading positions on
+              resize.
+            </p>
+            <p>
+              The right primitive is IntersectionObserver. Point it at the headings with a top-biased root margin, and
+              let it tell you when headings enter or leave the relevance zone.
+            </p>
+            <pre
+              is="pix-highlighter"
+              data-lang="js"
+            ><code>const headings = document.querySelectorAll('article h2[id], article h3[id]');
+const outline = document.querySelector('.post-outline');
+
+let currentId = null;
+
+const io = new IntersectionObserver(
+  (entries) =&gt; {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        currentId = entry.target.id;
+      }
+    }
+    if (currentId) updateOutline(currentId);
+  },
+  {
+    rootMargin: '-20% 0px -70% 0px',
+    threshold: 0,
+  }
+);
+
+for (const h of headings) io.observe(h);</code></pre>
+            <p>
+              The <code>rootMargin</code> shrinks the "active" band to the upper part of the viewport. A heading is
+              "current" when it enters that band, which matches the reader's expectation.
+            </p>
+            <h2 id="updating-the-outline-without-thrashing-aria" tabindex="0" data-toc-anchor="true">
+              Updating the outline without thrashing ARIA
+            </h2>
+            <p>
+              The update function removes <code>aria-current</code> from all outline links and adds it only to the
+              active one. That is a tiny DOM change, not a re-render.
+            </p>
+            <pre is="pix-highlighter" data-lang="js"><code>function updateOutline(id) {
+  const active = outline.querySelector('[aria-current]');
+  if (active) active.removeAttribute('aria-current');
+
+  const next = outline.querySelector(`a[href="#${CSS.escape(id)}"]`);
+  if (next) next.setAttribute('aria-current', 'location');
+}</code></pre>
+            <p>
+              <code>aria-current="location"</code> is the correct value for "this link points at the user's current
+              location in the document." <code>aria-current="page"</code> is wrong here; that one is for pagination or
+              site navigation.
+            </p>
+            <h2 id="throttling-is-not-needed" tabindex="0" data-toc-anchor="true">Throttling is not needed</h2>
+            <p>
+              IntersectionObserver is already asynchronous and batched. Callbacks fire at animation-frame cadence at
+              most, and only when the observed elements actually cross a threshold. No
+              <code>requestAnimationFrame</code> wrapper, no <code>throttle</code>, no debouncer. Writing one of those
+              on top of IntersectionObserver is a code smell.
+            </p>
+            <h2 id="smooth-scroll-and-focus-after-link-click" tabindex="0" data-toc-anchor="true">
+              Smooth scroll and focus after link click
+            </h2>
+            <p>
+              When the user clicks an outline link, the default behavior jumps to the anchor. On dout.dev the behavior
+              is enhanced: smooth-scroll to the heading, then move focus to the heading so that subsequent tab keys land
+              inside the section.
+            </p>
+            <pre is="pix-highlighter" data-lang="js"><code>outline.addEventListener('click', (e) =&gt; {
+  const link = e.target.closest('a[href^="#"]');
+  if (!link) return;
+  e.preventDefault();
+
+  const id = decodeURIComponent(link.hash.slice(1));
+  const target = document.getElementById(id);
+  if (!target) return;
+
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  target.focus({ preventScroll: true });
+
+  history.pushState(null, '', `#${id}`);
+});</code></pre>
+            <p>Two subtleties.</p>
+            <p>
+              <strong><code>preventScroll: true</code> on focus.</strong> Without it, <code>focus()</code> scrolls the
+              heading to the top of the viewport, which fights the smooth-scroll animation.
+            </p>
+            <p>
+              <strong><code>history.pushState</code> instead of assigning <code>location.hash</code>.</strong> Setting
+              the hash re-triggers the native jump and cancels the smooth scroll. Pushing the URL manually gives the
+              user a shareable link without breaking the animation.
+            </p>
+            <h2 id="reduced-motion" tabindex="0" data-toc-anchor="true">Reduced motion</h2>
+            <p>Anyone with <code>prefers-reduced-motion: reduce</code> gets an instant scroll instead of smooth.</p>
+            <pre
+              is="pix-highlighter"
+              data-lang="js"
+            ><code>const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+target.scrollIntoView({
+  behavior: reduceMotion ? 'auto' : 'smooth',
+  block: 'start',
+});</code></pre>
+            <p>
+              The cost is one line. The benefit is that users with vestibular sensitivity do not get attacked by your
+              animations.
+            </p>
+            <h2 id="the-takeaway" tabindex="0" data-toc-anchor="true">The takeaway</h2>
+            <p>
+              A good scrollspy is three primitives the platform already gives you: IDs on headings,
+              <code>tabindex="-1"</code> on the targets, and IntersectionObserver for the activation logic. Anything
+              more than that is a leak.
+            </p>
+            <h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
+            <ul>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >IntersectionObserver - MDN</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.w3.org/TR/wai-aria-1.2/?from=dout.dev#aria-current"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  ><code>aria-current</code> - W3C ARIA</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://html.spec.whatwg.org/multipage/interaction.html?from=dout.dev#attr-tabindex"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  ><code>tabindex</code> - HTML Living Standard</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  ><code>prefers-reduced-motion</code> - MDN</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >WCAG 2.2 2.4.11 Focus Not Obscured (Minimum)</a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <aside data-post-sidebar="" role="complementary">
+          <nav data-post-toc="">
+            <h2>TOC</h2>
+            <ol data-post-toc-list="">
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-feature-and-its-trap">The feature and its trap</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-dom-shape">The DOM shape</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#headings-have-ids-and-they-are-focusable-on-purpose"
+                  >Headings have IDs, and they are focusable on purpose</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#observing-headings-not-scroll"
+                  >Observing headings, not scroll</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#updating-the-outline-without-thrashing-aria"
+                  >Updating the outline without thrashing ARIA</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#throttling-is-not-needed">Throttling is not needed</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#smooth-scroll-and-focus-after-link-click"
+                  >Smooth scroll and focus after link click</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#reduced-motion">Reduced motion</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-takeaway">The takeaway</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#references">References</a>
+              </li>
+            </ol>
+          </nav>
+        </aside>
+
+        <section data-comments-shell="" data-reveal="">
+          <header data-section-heading="">
+            <p data-eyebrow="">Discussion</p>
+            <h2>Comments live in GitHub Discussions</h2>
+          </header>
+          <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2026-06-27-accessible-scrollspy-outline.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
+
+        <nav data-series-navigation="" data-reveal="" aria-label="Series navigation">
+          <section data-series-navigation-group="">
+            <p data-eyebrow="" data-muted="">Series</p>
+            <h2>In this series: How I made it</h2>
+            <ol data-series-navigation-links="">
+              <li>
+                <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="false"
+                  >How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-07-cms-and-markdown-processing.html" aria-current="false"
+                  >CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false"
+                  >Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-14-why-no-astro-eleventy-next.html" aria-current="false"
+                  >Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-18-custom-ssg-pipeline.html" aria-current="false"
+                  >Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-21-template-engine-and-template-structure.html" aria-current="false"
+                  >Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-25-archives-tags-months-series.html" aria-current="false"
+                  >Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-28-progressive-enhancement-as-contract.html" aria-current="false"
+                  >Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-02-design-tokens-before-pages.html" aria-current="false"
+                  >Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-05-build-assets-pipeline.html" aria-current="false"
+                  >Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html" aria-current="false"
+                  >Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-12-og-images-at-build-time.html" aria-current="false"
+                  >OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-16-seo-metadata-without-rituals.html" aria-current="false"
+                  >SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-19-quality-gate-lint-format-verify.html" aria-current="false"
+                  >Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-23-ci-cd-around-github-pages.html" aria-current="false"
+                  >CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-26-vibe-coding-with-rigor.html" aria-current="false"
+                  >Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="false"
+                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="false"
+                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-06-how-pixhighlighter-is-built.html" aria-current="false"
+                  >How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-09-why-display-preferences-popover-exists.html" aria-current="false"
+                  >Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-16-client-side-search-static-dataset.html" aria-current="false"
+                  >Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-23-custom-element-syntax-highlight.html" aria-current="false"
+                  >A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-27-accessible-scrollspy-outline.html" aria-current="page"
+                  >Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done) (you are here)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-30-honest-lazy-loading.html" aria-current="false"
+                  >Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-04-pragmatic-service-worker.html" aria-current="false"
+                  >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false"
+                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
+                >
+              </li>
+            </ol>
+          </section>
+
+          <section data-series-navigation-group="">
+            <p data-eyebrow="" data-muted="">Series</p>
+            <h2>In this series: pix-components</h2>
+            <ol data-series-navigation-links="">
+              <li>
+                <a href="/posts/2026-06-06-how-pixhighlighter-is-built.html" aria-current="false"
+                  >How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-23-custom-element-syntax-highlight.html" aria-current="false"
+                  >A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-27-accessible-scrollspy-outline.html" aria-current="page"
+                  >Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done) (you are here)</a
+                >
+              </li>
+            </ol>
+          </section>
+        </nav>
+      </article>
+
+      <nav data-post-nav="" aria-label="Post navigation">
+        <a
+          data-post-nav-card=""
+          data-reveal=""
+          rel="prev"
+          href="/posts/2026-06-23-custom-element-syntax-highlight.html"
+        >
+          <span data-post-nav-label="">Previous</span>
+          <strong>A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</strong>
+        </a>
+
+        <a data-post-nav-card="" data-reveal="" rel="next" href="/posts/2026-06-30-honest-lazy-loading.html">
+          <span data-post-nav-label="">Next</span>
+          <strong>Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</strong>
+        </a>
+      </nav>
+    </main>
+
+    <footer role="contentinfo" data-site-footer="">
+      <div data-container="" data-footer-grid="">
+        <div data-footer-copy="">
+          <p data-footer-brand="">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav data-footer-nav="" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
+</html>

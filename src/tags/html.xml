@@ -6,27 +6,34 @@
     <description>RSS feed for posts tagged with html</description>
     <atom:link href="https://dout.dev/tags/html.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Tue, 09 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links</title>
-      <link>https://dout.dev/posts/2026-06-09-wcag-22-aa-without-aria-spam.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-09-wcag-22-aa-without-aria-spam.html</guid>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
-      <description>The unpopular opinion</description>
+      <title>CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</title>
+      <link>https://dout.dev/posts/2026-07-05-css-properties-hierarchy.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-07-05-css-properties-hierarchy.html</guid>
+      <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
+      <description>:root { --border-radius: 5px; } .element { /* css custom properties */ --var--example: 1; ​ /* position */ position: absolute; inset: 0; /* top, right, bottom, left */ z-index: 1; </description>
     </item>
     <item>
-      <title>SEO Metadata Without Rituals</title>
-      <link>https://dout.dev/posts/2026-05-20-seo-metadata-without-rituals.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-20-seo-metadata-without-rituals.html</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>The short version</description>
+      <title>WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That&apos;s 80% of It)</title>
+      <link>https://dout.dev/posts/2026-06-02-wcag-22-aa-without-aria-spam.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-02-wcag-22-aa-without-aria-spam.html</guid>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The unpopular opinion (brace yourself)</description>
     </item>
     <item>
-      <title>Template Engine and Template Structure</title>
-      <link>https://dout.dev/posts/2026-05-13-template-engine-and-template-structure.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-13-template-engine-and-template-structure.html</guid>
-      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
-      <description>Three constraints that shaped the grammar</description>
+      <title>SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don&apos;t Have To)</title>
+      <link>https://dout.dev/posts/2026-05-16-seo-metadata-without-rituals.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-16-seo-metadata-without-rituals.html</guid>
+      <pubDate>Sat, 16 May 2026 00:00:00 GMT</pubDate>
+      <description>The short version (TL;DR for the impatient)</description>
+    </item>
+    <item>
+      <title>Template Engine and Template Structure (Or: Why I Didn&apos;t Use Handlebars Like a Normal Person)</title>
+      <link>https://dout.dev/posts/2026-04-21-template-engine-and-template-structure.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-template-engine-and-template-structure.html</guid>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Three constraints that shaped the grammar (because constraints are good, actually)</description>
     </item>
   </channel>
 </rss>

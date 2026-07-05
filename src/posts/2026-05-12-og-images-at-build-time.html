@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)</title>
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="The problem and the usual solutions (none of which I wanted)" />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2026-05-12-og-images-at-build-time.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
+    <script>
+      document.documentElement.dataset.userPreferences = 'ready';
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      :root {
+        --dout--file-preview-border: #d9a441;
+        --dout--file-preview-bg: #fff3cd;
+        --dout--file-preview-text: #5c3b00;
+      }
+
+      [data-file-preview-warning] {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--dout--file-preview-border);
+        background: var(--dout--file-preview-bg);
+        color: var(--dout--file-preview-text);
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] [data-file-preview-warning] {
+        display: block;
+      }
+
+      [data-file-preview-warning] code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)"
+    />
+    <meta property="og:description" content="The problem and the usual solutions (none of which I wanted)" />
+    <meta property="og:url" content="https://dout.dev/posts/2026-05-12-og-images-at-build-time.html" />
+    <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-05-12-og-images-at-build-time.png" />
+    <meta
+      property="og:image:alt"
+      content="Preview image for OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-05-12T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2026-05-12T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta
+      name="twitter:title"
+      content="OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)"
+    />
+    <meta name="twitter:description" content="The problem and the usual solutions (none of which I wanted)" />
+    <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-05-12-og-images-at-build-time.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Preview image for OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)",
+        "description": "The problem and the usual solutions (none of which I wanted)",
+        "datePublished": "2026-05-12T00:00:00.000Z",
+        "dateModified": "2026-05-12T00:00:00.000Z",
+        "author": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2026-05-12-og-images-at-build-time.html"
+        },
+        "image": ["https://dout.dev/assets/og/posts/2026-05-12-og-images-at-build-time.png"],
+        "keywords": "image, build, svg, sharp, png, time, one, works, lines, font, problem, post"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)",
+            "item": "https://dout.dev/posts/2026-05-12-og-images-at-build-time.html"
+          }
+        ]
+      }
+    </script>
+
+    <link rel="stylesheet" href="/styles/index.css" />
+    <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
+  </head>
+  <body data-site-shell="">
+    <p data-file-preview-warning="" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a data-skip-link="" href="#main">Skip to main content</a>
+    <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" data-site-header="">
+      <div data-container="" data-header-bar="">
+        <a data-brand="" href="/">
+          <span data-brand-mark="">dout.dev</span>
+          <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <nav id="mainmenu" data-main-nav="" aria-label="Main">
+          <ul data-main-links="" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div data-header-actions="">
+          <color-scheme-switcher></color-scheme-switcher>
+          <display-preferences-popover></display-preferences-popover>
+          <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting">
+        <header data-post-hero="" data-reveal="">
+          <p data-eyebrow="">Article</p>
+          <p data-post-meta="">
+            <time datetime="2026-05-12" itemprop="datePublished"> May 12, 2026 </time>
+            <span data-post-divider="">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 itemprop="headline" tabindex="0">
+            OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)
+          </h1>
+
+          <p data-post-description="">The problem and the usual solutions (none of which I wanted)</p>
+
+          <ul data-tag-list="" aria-label="Tags">
+            <li><a data-tag="" href="/tags/making-of.html">making-of</a></li>
+
+            <li><a data-tag="" href="/tags/opengraph.html">opengraph</a></li>
+
+            <li><a data-tag="" href="/tags/seo.html">seo</a></li>
+
+            <li><a data-tag="" href="/tags/static-site.html">static-site</a></li>
+          </ul>
+
+          <figure data-post-cover="">
+            <img
+              src="/assets/og/posts/2026-05-12-og-images-at-build-time-card.png"
+              alt="OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="900"
+            />
+          </figure>
+        </header>
+
+        <section data-post-shell="" role="region">
+          <h2 data-visually-hidden="">Article content</h2>
+
+          <section data-prose="" itemprop="articleBody">
+            <h2 id="the-problem-and-the-usual-solutions-none-of-which-i-wanted" tabindex="0" data-toc-anchor="true">
+              The problem and the usual solutions (none of which I wanted)
+            </h2>
+            <p>
+              Every post needs a social preview image — the card that appears when someone shares the URL on Slack,
+              Twitter, or LinkedIn. The options usually break down like this:
+            </p>
+            <ul>
+              <li>
+                <strong>Hand-design each one.</strong> A Figma file, a designer, exported PNGs. Works. Does not scale.
+              </li>
+              <li>
+                <strong>Runtime service</strong> (Vercel OG, Cloudinary). A URL like
+                <code>og.dev/render?title=...</code> produces an image on demand. Works. Adds a third-party dependency,
+                latency, and a potential point of failure.
+              </li>
+              <li>
+                <strong>Build-time renderer.</strong> Generate the PNG when the site builds, commit it to the static
+                output. Works. Is under your control.
+              </li>
+            </ul>
+            <p>
+              For dout.dev I went build-time, for one reason:
+              <strong
+                >I wanted the image to be a byproduct of the build, cacheable as a static file, with zero runtime
+                dependency.</strong
+              >
+              The implementation is about 150 lines of Node. That's it.
+            </p>
+            <h2 id="the-svg-template-the-trick-that-makes-it-work" tabindex="0" data-toc-anchor="true">
+              The SVG template (the trick that makes it work)
+            </h2>
+            <p>
+              The trick is that OG images are rasterized SVGs. SVG is a markup language I can generate with the same
+              template engine as the rest of the site. Sharp then converts the SVG to PNG at 1200×630, which is the OG
+              card spec.
+            </p>
+            <pre
+              is="pix-highlighter"
+              data-lang="xml"
+            ><code>&lt;svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"&gt;
+  &lt;rect width="1200" height="630" fill="#0b0b0f" /&gt;
+  &lt;text x="80" y="180" font-family="Inter, sans-serif" font-size="24" fill="#ff6b3d"
+        font-weight="600" letter-spacing="0.08em"&gt;DOUT.DEV&lt;&#x2F;text&gt;
+  &lt;text x="80" y="320" font-family="Inter, sans-serif" font-size="64" fill="#e7e7ef"
+        font-weight="700" style="line-height: 1.1"&gt;
+    &lt;tspan x="80" dy="0"&gt;OG Images at Build Time&lt;&#x2F;tspan&gt;
+    &lt;tspan x="80" dy="80"&gt;SVG + Sharp in 150 Lines&lt;&#x2F;tspan&gt;
+  &lt;&#x2F;text&gt;
+  &lt;text x="80" y="540" font-family="Inter, sans-serif" font-size="24" fill="#a0a0b4"&gt;
+    by Some Nerd · Some Date
+  &lt;&#x2F;text&gt;
+&lt;&#x2F;svg&gt;</code></pre>
+            <p>
+              That template has variables where the title, date, and author go. The generator produces one per post.
+              Simple. Elegant. No bullshit.
+            </p>
+            <h2 id="the-line-break-problem-harder-than-it-looks" tabindex="0" data-toc-anchor="true">
+              The line-break problem (harder than it looks)
+            </h2>
+            <p>
+              The hardest single problem in OG image generation is fitting a variable-length title inside a fixed-width
+              box without it running off the edge. You'd think this would be solved. You'd be wrong.
+            </p>
+            <p>
+              The brute-force solution — "measure the text, wrap manually" — requires a font metrics library. The
+              simpler solution — greedy wrapping with a conservative line-length budget — is what I use.
+            </p>
+            <pre is="pix-highlighter" data-lang="js"><code>function wrapTitle(title, maxChars = 26) {
+  const words = title.split(/\s+/);
+  const lines = [];
+  let current = '';
+  for (const word of words) {
+    if ((current + ' ' + word).trim().length &gt; maxChars) {
+      lines.push(current);
+      current = word;
+    } else {
+      current = (current + ' ' + word).trim();
+    }
+  }
+  if (current) lines.push(current);
+  return lines.slice(0, 3);
+}</code></pre>
+            <p>
+              26 characters is an empirical value for Inter at 64px in a 1040px box with 80px margins. I tuned it once,
+              compared against the longest real titles, and moved on. The generator truncates to three lines because
+              four looks cramped.
+            </p>
+            <h2 id="the-rasterization-sharp-go-brrr" tabindex="0" data-toc-anchor="true">
+              The rasterization (Sharp, go brrr)
+            </h2>
+            <p>Sharp handles the SVG-to-PNG conversion. It is a one-liner with reasonable defaults.</p>
+            <pre is="pix-highlighter" data-lang="js"><code>import sharp from 'sharp';
+
+async function renderOg(svg, outputPath) {
+  await sharp(Buffer.from(svg)).resize(1200, 630).png({ compressionLevel: 9 }).toFile(outputPath);
+}</code></pre>
+            <p>
+              <code>compressionLevel: 9</code> squeezes the PNG a bit at the cost of build time. On a small blog the
+              total is under a second per image, so it is worth it.
+            </p>
+            <h2 id="the-full-generator-in-shape-150-lines-with-helpers" tabindex="0" data-toc-anchor="true">
+              The full generator, in shape (~150 lines with helpers)
+            </h2>
+            <pre is="pix-highlighter" data-lang="js"><code>import { readFileSync } from 'node:fs';
+import sharp from 'sharp';
+
+const template = readFileSync('src/og-template.svg', 'utf8');
+
+export async function generateOgImage(post, outputPath) {
+  const lines = wrapTitle(post.title);
+  const titleSvg = lines.map((line, i) =&gt;
+    `&lt;tspan x="80" dy="${i === 0 ? 0 : 80}"&gt;${escapeXml(line)}&lt;&#x2F;tspan&gt;`
+  ).join('');
+
+  const svg = template
+    .replace('&lt;title-placeholder&gt;', titleSvg)
+    .replace('&lt;date-placeholder&gt;', formatDate(post.date))
+    .replace('&lt;author-placeholder&gt;', 'Some Nerd');
+
+  await sharp(Buffer.from(svg)).png({ compressionLevel: 9 }).toFile(outputPath);
+}</code></pre>
+            <p>
+              150 lines with the helpers included. No fonts-as-files wizardry. No headless browser. No Puppeteer. No
+              "let's spin up Chrome just to render an image." That would be insane.
+            </p>
+            <h2 id="fonts-the-caveat-you-have-to-handle-because-nothing-is-free" tabindex="0" data-toc-anchor="true">
+              Fonts: the caveat you have to handle (because nothing is free)
+            </h2>
+            <p>
+              SVG <code>font-family="Inter"</code> only works if the system rendering the SVG has Inter installed, which
+              is not the case on GitHub Actions runners. Because why would it be?
+            </p>
+            <p>Two paths:</p>
+            <ol>
+              <li>
+                <strong>Embed the font as a base64 data URL inside the SVG.</strong> Works. Balloons the file size.
+              </li>
+              <li>
+                <strong>Preload the font at the Sharp layer.</strong> Sharp uses the system fontconfig; you install the
+                font on the runner and reference it by name.
+              </li>
+            </ol>
+            <p>
+              On dout.dev I went with option 2: a GitHub Actions step installs Inter before the build runs. That keeps
+              the SVG clean and the bundles lean.
+            </p>
+            <pre is="pix-highlighter" data-lang="yaml"><code>- name: Install Inter font
+  run: |
+    wget -q https://fonts.google.com/download?family=Inter -O inter.zip
+    unzip -q inter.zip -d /usr/share/fonts/inter
+    fc-cache -f</code></pre>
+            <p>
+              The URL for Google Fonts bulk download is stable enough; if it breaks, I self-host the
+              <code>.ttf</code> in the repo.
+            </p>
+            <h2 id="what-the-generator-outputs-the-artifacts" tabindex="0" data-toc-anchor="true">
+              What the generator outputs (the artifacts)
+            </h2>
+            <p>
+              One PNG per post, under <code>src/assets/og/posts/&lt;slug&gt;.png</code>. The CMS also generates month OG
+              images under <code>src/assets/og/months/</code> and writes a manifest at
+              <code>src/assets/og/manifest.json</code> so other build steps can reference them.
+            </p>
+            <p>The post template references the image in the <code>&lt;head&gt;</code>:</p>
+            <pre
+              is="pix-highlighter"
+              data-lang="html"
+            ><code>&lt;meta property="og:image" content="https://dout.dev/assets/og/posts/some-post.png" /&gt;
+&lt;meta property="og:image:width" content="1200" /&gt;
+&lt;meta property="og:image:height" content="630" /&gt;
+&lt;meta name="twitter:card" content="summary_large_image" /&gt;</code></pre>
+            <p>
+              <code>og:image:width</code> and <code>og:image:height</code> are not strictly required, but many crawlers
+              check them and Mastodon's preview service will happily show a tiny image if dimensions are missing. Like a
+              thumbnail from 2005.
+            </p>
+            <h2 id="the-takeaway" tabindex="0" data-toc-anchor="true">The takeaway</h2>
+            <p>
+              You do NOT need a runtime OG service, a headless browser, or a third-party API. A templated SVG, a
+              wrapping function, and Sharp cover the whole problem in 150 lines. It runs at build time, commits to
+              <code>dist/</code>, and costs nothing after the first build.
+            </p>
+            <p>No server. No API key. No "we're sorry, the OG image service is down." Just files.</p>
+          </section>
+        </section>
+
+        <aside data-post-sidebar="" role="complementary">
+          <nav data-post-toc="">
+            <h2>TOC</h2>
+            <ol data-post-toc-list="">
+              <li data-post-toc-item="">
+                <a
+                  data-post-toc-link=""
+                  data-level="2"
+                  href="#the-problem-and-the-usual-solutions-none-of-which-i-wanted"
+                  >The problem and the usual solutions (none of which I wanted)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-svg-template-the-trick-that-makes-it-work"
+                  >The SVG template (the trick that makes it work)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-line-break-problem-harder-than-it-looks"
+                  >The line-break problem (harder than it looks)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-rasterization-sharp-go-brrr"
+                  >The rasterization (Sharp, go brrr)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-full-generator-in-shape-150-lines-with-helpers"
+                  >The full generator, in shape (~150 lines with helpers)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a
+                  data-post-toc-link=""
+                  data-level="2"
+                  href="#fonts-the-caveat-you-have-to-handle-because-nothing-is-free"
+                  >Fonts: the caveat you have to handle (because nothing is free)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#what-the-generator-outputs-the-artifacts"
+                  >What the generator outputs (the artifacts)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-takeaway">The takeaway</a>
+              </li>
+            </ol>
+          </nav>
+        </aside>
+
+        <section data-comments-shell="" data-reveal="">
+          <header data-section-heading="">
+            <p data-eyebrow="">Discussion</p>
+            <h2>Comments live in GitHub Discussions</h2>
+          </header>
+          <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2026-05-12-og-images-at-build-time.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
+
+        <nav data-series-navigation="" data-reveal="" aria-label="Series navigation">
+          <section data-series-navigation-group="">
+            <p data-eyebrow="" data-muted="">Series</p>
+            <h2>In this series: How I made it</h2>
+            <ol data-series-navigation-links="">
+              <li>
+                <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="false"
+                  >How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-07-cms-and-markdown-processing.html" aria-current="false"
+                  >CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false"
+                  >Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-14-why-no-astro-eleventy-next.html" aria-current="false"
+                  >Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-18-custom-ssg-pipeline.html" aria-current="false"
+                  >Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-21-template-engine-and-template-structure.html" aria-current="false"
+                  >Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-25-archives-tags-months-series.html" aria-current="false"
+                  >Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-28-progressive-enhancement-as-contract.html" aria-current="false"
+                  >Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-02-design-tokens-before-pages.html" aria-current="false"
+                  >Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-05-build-assets-pipeline.html" aria-current="false"
+                  >Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html" aria-current="false"
+                  >Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-12-og-images-at-build-time.html" aria-current="page"
+                  >OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp) (you are here)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-16-seo-metadata-without-rituals.html" aria-current="false"
+                  >SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-19-quality-gate-lint-format-verify.html" aria-current="false"
+                  >Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-23-ci-cd-around-github-pages.html" aria-current="false"
+                  >CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-26-vibe-coding-with-rigor.html" aria-current="false"
+                  >Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="false"
+                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="false"
+                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-06-how-pixhighlighter-is-built.html" aria-current="false"
+                  >How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-09-why-display-preferences-popover-exists.html" aria-current="false"
+                  >Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-16-client-side-search-static-dataset.html" aria-current="false"
+                  >Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-23-custom-element-syntax-highlight.html" aria-current="false"
+                  >A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-27-accessible-scrollspy-outline.html" aria-current="false"
+                  >Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-30-honest-lazy-loading.html" aria-current="false"
+                  >Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-04-pragmatic-service-worker.html" aria-current="false"
+                  >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false"
+                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
+                >
+              </li>
+            </ol>
+          </section>
+        </nav>
+      </article>
+
+      <nav data-post-nav="" aria-label="Post navigation">
+        <a
+          data-post-nav-card=""
+          data-reveal=""
+          rel="prev"
+          href="/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html"
+        >
+          <span data-post-nav-label="">Previous</span>
+          <strong>Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)</strong>
+        </a>
+
+        <a data-post-nav-card="" data-reveal="" rel="next" href="/posts/2026-05-16-seo-metadata-without-rituals.html">
+          <span data-post-nav-label="">Next</span>
+          <strong>SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)</strong>
+        </a>
+      </nav>
+    </main>
+
+    <footer role="contentinfo" data-site-footer="">
+      <div data-container="" data-footer-grid="">
+        <div data-footer-copy="">
+          <p data-footer-brand="">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav data-footer-nav="" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
+</html>

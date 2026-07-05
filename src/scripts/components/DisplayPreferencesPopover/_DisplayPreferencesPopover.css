@@ -17,23 +17,23 @@ display-preferences-popover [data-preferences-toggle] {
   padding: 0;
   border: var(--dout--border-width) solid var(--dout--border);
   border-radius: var(--dout--radius-pill);
-  background: color-mix(in srgb, var(--dout--surface-strong) 82%, var(--dout--accent-soft) 18%);
   color: var(--dout--text);
+  background: color-mix(in srgb, var(--dout--surface-strong) 82%, var(--dout--accent-soft) 18%);
   box-shadow: inset 0 0 0 var(--dout--border-width)
     color-mix(in srgb, var(--dout--surface-strong) 84%, transparent);
-  corner-shape: var(--dout--corner-shape);
   transition:
     border-color var(--dout--motion-fast) var(--dout--motion-ease),
     background-color var(--dout--motion-fast) var(--dout--motion-ease),
     color var(--dout--motion-fast) var(--dout--motion-ease),
     transform var(--dout--motion-fast) var(--dout--motion-ease);
   cursor: pointer;
-}
+  corner-shape: var(--dout--corner-shape);
 
-display-preferences-popover [data-preferences-toggle]:hover {
-  border-color: color-mix(in srgb, var(--dout--accent) 36%, var(--dout--border));
-  background: color-mix(in srgb, var(--dout--accent-soft) 54%, var(--dout--surface-strong) 46%);
-  color: var(--dout--text);
+  &:hover {
+    border-color: color-mix(in srgb, var(--dout--accent) 36%, var(--dout--border));
+    color: var(--dout--text);
+    background: color-mix(in srgb, var(--dout--accent-soft) 54%, var(--dout--surface-strong) 46%);
+  }
 }
 
 display-preferences-popover[data-open='true'] [data-preferences-toggle] {
@@ -53,29 +53,33 @@ display-preferences-popover[data-open='true'] [data-preferences-toggle] svg {
 
 display-preferences-popover [data-preferences-panel] {
   position: fixed;
-  z-index: calc(var(--dout--z-header) + 20);
-  display: none;
   top: var(--dout--popover-block-start);
   right: max(var(--dout--space-4), calc((100vw - var(--dout--container)) / 2));
+  z-index: calc(var(--dout--z-header) + 20);
+  display: none;
+  opacity: 0;
   width: min(var(--dout--popover-width), calc(100vw - (var(--dout--space-4) * 2)));
   max-height: min(80vh, 44rem);
-  margin: 0;
   padding: var(--dout--space-4);
-  overflow: auto;
   border: var(--dout--border-width) solid var(--dout--border);
   border-radius: var(--dout--radius-lg);
-  background: color-mix(in srgb, var(--dout--surface-strong) 96%, transparent);
+  margin: 0;
+  overflow: auto;
   color: var(--dout--text);
+  background: color-mix(in srgb, var(--dout--surface-strong) 96%, transparent);
   box-shadow: var(--dout--shadow-strong);
   backdrop-filter: blur(calc(var(--dout--blur-header) + 4px));
-  corner-shape: var(--dout--corner-shape);
-  opacity: 0;
   transform: translateY(-0.35rem);
   transition:
     opacity var(--dout--motion-base) var(--dout--motion-ease),
     transform var(--dout--motion-base) var(--dout--motion-ease),
     overlay var(--dout--motion-base) var(--dout--motion-ease) allow-discrete,
     display var(--dout--motion-base) var(--dout--motion-ease) allow-discrete;
+  corner-shape: var(--dout--corner-shape);
+
+  &::backdrop {
+    background: transparent;
+  }
 }
 
 display-preferences-popover [data-preferences-panel]:popover-open,
@@ -85,17 +89,6 @@ display-preferences-popover [data-preferences-panel][data-open='true'] {
   gap: var(--dout--space-4);
   opacity: 1;
   transform: translateY(0);
-}
-
-@starting-style {
-  display-preferences-popover [data-preferences-panel]:popover-open {
-    opacity: 0;
-    transform: translateY(-0.35rem);
-  }
-}
-
-display-preferences-popover [data-preferences-panel]::backdrop {
-  background: transparent;
 }
 
 display-preferences-popover [data-preferences-panel-header] {
@@ -174,26 +167,26 @@ display-preferences-popover [data-preferences-choice-grid] {
 display-preferences-popover [data-preferences-choice] {
   position: relative;
   display: flex;
-  gap: 0.75rem;
   align-items: center;
+  gap: 0.75rem;
   min-width: 0;
   padding: 0.8rem;
   border: var(--dout--border-width) solid var(--dout--border);
   border-radius: var(--dout--radius-md);
-  background: color-mix(in srgb, var(--dout--surface-strong) 72%, transparent);
   color: var(--dout--text);
-  corner-shape: var(--dout--corner-shape);
-  cursor: pointer;
+  background: color-mix(in srgb, var(--dout--surface-strong) 72%, transparent);
   transition:
     border-color var(--dout--motion-fast) var(--dout--motion-ease),
     background-color var(--dout--motion-fast) var(--dout--motion-ease),
     box-shadow var(--dout--motion-fast) var(--dout--motion-ease),
     transform var(--dout--motion-fast) var(--dout--motion-ease);
-}
+  cursor: pointer;
+  corner-shape: var(--dout--corner-shape);
 
-display-preferences-popover [data-preferences-choice]:hover {
-  border-color: color-mix(in srgb, var(--dout--accent) 26%, var(--dout--border));
-  transform: translateY(calc(var(--dout--lift-y) / 2));
+  &:hover {
+    border-color: color-mix(in srgb, var(--dout--accent) 26%, var(--dout--border));
+    transform: translateY(calc(var(--dout--lift-y) / 2));
+  }
 }
 
 display-preferences-popover [data-preferences-choice][data-selected='true'],
@@ -209,17 +202,17 @@ display-preferences-popover [data-preferences-choice] input[type='radio'] {
   width: var(--dout--visually-hidden-size);
   height: var(--dout--visually-hidden-size);
   padding: 0;
+  border: 0;
   margin: var(--dout--visually-hidden-offset);
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border: 0;
 }
 
 display-preferences-popover [data-preferences-choice-preview] {
   display: flex;
-  gap: 0.45rem;
-  align-items: end;
   flex: 0 0 4.25rem;
+  align-items: end;
+  gap: 0.45rem;
   width: 4.25rem;
   min-width: 4.25rem;
 }
@@ -233,11 +226,11 @@ display-preferences-popover [data-preferences-choice-preview] span {
   background: color-mix(in srgb, var(--dout--surface-strong) 74%, var(--dout--accent-soft) 26%);
   box-shadow: inset 0 var(--dout--border-width) 0
     color-mix(in srgb, var(--dout--surface-strong) 85%, transparent);
-}
 
-display-preferences-popover [data-preferences-choice-preview] span:last-child {
-  min-height: 1.6rem;
-  align-self: end;
+  &:last-child {
+    align-self: end;
+    min-height: 1.6rem;
+  }
 }
 
 display-preferences-popover [data-radius-preview='square'] span {
@@ -250,12 +243,6 @@ display-preferences-popover [data-radius-preview='rounded'] span {
 
 display-preferences-popover [data-radius-preview='squircle'] span {
   border-radius: 1rem;
-}
-
-@supports (corner-shape: squircle) {
-  display-preferences-popover [data-radius-preview='squircle'] span {
-    corner-shape: squircle;
-  }
 }
 
 display-preferences-popover [data-preferences-choice-copy] {
@@ -321,35 +308,35 @@ display-preferences-popover [data-preferences-field] label {
 display-preferences-popover [data-preferences-field] select {
   width: 100%;
   min-width: 0;
+  max-width: 100%;
   height: var(--dout--control-icon-size);
   min-height: var(--dout--control-icon-size);
-  max-width: 100%;
-  font-size: 0.9rem;
-  line-height: 1.25;
-  color: var(--dout--text);
-  background-color: color-mix(in srgb, var(--dout--surface-strong) 95%, transparent);
   border: var(--dout--border-width) solid var(--dout--border);
   border-radius: var(--dout--radius-sm);
-  corner-shape: var(--dout--corner-shape);
-  appearance: none;
-  -webkit-appearance: none;
+  color: var(--dout--text);
+  background-color: color-mix(in srgb, var(--dout--surface-strong) 95%, transparent);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23808080' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.65rem center;
   background-size: 0.65rem;
-  cursor: pointer;
+  background-position: right 0.65rem center;
+  background-repeat: no-repeat;
+  font-size: 0.9rem;
+  line-height: 1.25;
   transition:
     border-color var(--dout--motion-fast) var(--dout--motion-ease),
     background-color var(--dout--motion-fast) var(--dout--motion-ease);
-}
+  appearance: none;
+  cursor: pointer;
+  corner-shape: var(--dout--corner-shape);
+  -webkit-appearance: none;
 
-display-preferences-popover [data-preferences-field] select:hover {
-  border-color: color-mix(in srgb, var(--dout--accent) 36%, var(--dout--border));
-}
+  &:hover {
+    border-color: color-mix(in srgb, var(--dout--accent) 36%, var(--dout--border));
+  }
 
-display-preferences-popover [data-preferences-field] select:focus-visible {
-  outline: 2px solid var(--dout--accent);
-  outline-offset: 1px;
+  &:focus-visible {
+    outline: 2px solid var(--dout--accent);
+    outline-offset: 1px;
+  }
 }
 
 display-preferences-popover accent-color-selector {
@@ -359,14 +346,14 @@ display-preferences-popover accent-color-selector {
 display-preferences-popover accent-color-selector [data-accent-selector] {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
   align-items: center;
+  gap: 0.75rem;
   width: 100%;
 }
 
 display-preferences-popover accent-color-selector [data-accent-selector-label] {
-  padding: 0;
   flex-basis: 100%;
+  padding: 0;
 }
 
 display-preferences-popover [data-visually-hidden] {
@@ -374,10 +361,10 @@ display-preferences-popover [data-visually-hidden] {
   width: var(--dout--visually-hidden-size);
   height: var(--dout--visually-hidden-size);
   padding: 0;
+  border: 0;
   margin: var(--dout--visually-hidden-offset);
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border: 0;
 }
 
 :root[data-reduce-transparency='true'] display-preferences-popover [data-preferences-panel] {
@@ -390,6 +377,19 @@ display-preferences-popover [data-visually-hidden] {
 :root[data-reduce-motion='true'] display-preferences-popover [data-preferences-panel],
 :root[data-reduce-motion='true'] display-preferences-popover [data-preferences-choice]:hover {
   transform: none !important;
+}
+
+@starting-style {
+  display-preferences-popover [data-preferences-panel]:popover-open {
+    opacity: 0;
+    transform: translateY(-0.35rem);
+  }
+}
+
+@supports (corner-shape: squircle) {
+  display-preferences-popover [data-radius-preview='squircle'] span {
+    corner-shape: squircle;
+  }
 }
 
 @media (max-width: 720px) {

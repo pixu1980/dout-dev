@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dout.dev — July 2026</title>
+    <link>https://dout.dev/months/2026-07/</link>
+    <description>RSS feed for posts from July 2026</description>
+    <atom:link href="https://dout.dev/months/2026-07.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sun, 05 Jul 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</title>
+      <link>https://dout.dev/posts/2026-07-05-css-properties-hierarchy.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-07-05-css-properties-hierarchy.html</guid>
+      <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
+      <description>:root { --border-radius: 5px; } .element { /* css custom properties */ --var--example: 1; ​ /* position */ position: absolute; inset: 0; /* top, right, bottom, left */ z-index: 1; </description>
+    </item>
+    <item>
+      <title>A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</title>
+      <link>https://dout.dev/posts/2026-07-04-pragmatic-service-worker.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-07-04-pragmatic-service-worker.html</guid>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 GMT</pubDate>
+      <description>The case against most service workers</description>
+    </item>
+  </channel>
+</rss>

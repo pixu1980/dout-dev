@@ -6,13 +6,13 @@
     <description>RSS feed for posts tagged with feeds</description>
     <atom:link href="https://dout.dev/tags/feeds.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Mon, 18 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>Feeds and Sitemaps at Build Time</title>
-      <link>https://dout.dev/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html</guid>
-      <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
-      <description>The distribution minimum</description>
+      <title>Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)</title>
+      <link>https://dout.dev/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html</guid>
+      <pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate>
+      <description>The distribution minimum (three files, that&apos;s it)</description>
     </item>
   </channel>
 </rss>

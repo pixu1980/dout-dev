@@ -6,13 +6,13 @@
     <description>RSS feed for posts tagged with responsive-design</description>
     <atom:link href="https://dout.dev/tags/responsive-design.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Sun, 14 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences</title>
-      <link>https://dout.dev/posts/2026-06-14-why-display-preferences-popover-exists.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-14-why-display-preferences-popover-exists.html</guid>
-      <pubDate>Sun, 14 Jun 2026 00:00:00 GMT</pubDate>
-      <description>Accessibility is not one feature</description>
+      <title>Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It&apos;s User Preferences)</title>
+      <link>https://dout.dev/posts/2026-06-09-why-display-preferences-popover-exists.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-09-why-display-preferences-popover-exists.html</guid>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <description>Accessibility is not one feature (it&apos;s ALL of them)</description>
     </item>
   </channel>
 </rss>

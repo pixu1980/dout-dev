@@ -1,7 +1,5 @@
 @layer tokens {
   :root {
-    color-scheme: light dark;
-
     --dout--accent-h: 16;
     --dout--accent-s: 95%;
     --dout--accent-l: 58%;
@@ -115,6 +113,31 @@
     --dout--radius-lg: var(--dout--radius-size);
     --dout--radius-pill: var(--dout--radius-size);
     --dout--corner-shape: initial;
+    color-scheme: light dark;
+
+    &[data-radius-preset='square'] {
+      --dout--radius-size: 0px;
+      --dout--radius-sm: 0px;
+      --dout--radius-md: 0px;
+      --dout--radius-lg: 0px;
+      --dout--radius-pill: 0px;
+    }
+
+    &[data-radius-preset='rounded'] {
+      --dout--radius-size: 4px;
+      --dout--radius-sm: 4px;
+      --dout--radius-md: 4px;
+      --dout--radius-lg: 4px;
+      --dout--radius-pill: 4px;
+    }
+
+    &[data-radius-preset='squircle'] {
+      --dout--radius-size: 1rem;
+      --dout--radius-sm: 1rem;
+      --dout--radius-md: 1rem;
+      --dout--radius-lg: 1rem;
+      --dout--radius-pill: 1rem;
+    }
   }
 
   :root:is([data-color-scheme='light'], [data-color-scheme='light']) {
@@ -145,6 +168,14 @@
     --dout--accent-soft: hsl(var(--dout--accent-h) 80% 25%);
   }
 
+  body[data-accent='violet'] {
+    --dout--accent-h: 340;
+  }
+
+  body[data-accent='green'] {
+    --dout--accent-h: 145;
+  }
+
   @media (prefers-color-scheme: dark) {
     :root:not([data-color-scheme='light']):not([data-color-scheme='light']) {
       --dout--bg: #18161a;
@@ -161,41 +192,9 @@
     }
   }
 
-  :root[data-radius-preset='square'] {
-    --dout--radius-size: 0px;
-    --dout--radius-sm: 0px;
-    --dout--radius-md: 0px;
-    --dout--radius-lg: 0px;
-    --dout--radius-pill: 0px;
-  }
-
-  :root[data-radius-preset='rounded'] {
-    --dout--radius-size: 4px;
-    --dout--radius-sm: 4px;
-    --dout--radius-md: 4px;
-    --dout--radius-lg: 4px;
-    --dout--radius-pill: 4px;
-  }
-
-  :root[data-radius-preset='squircle'] {
-    --dout--radius-size: 1rem;
-    --dout--radius-sm: 1rem;
-    --dout--radius-md: 1rem;
-    --dout--radius-lg: 1rem;
-    --dout--radius-pill: 1rem;
-  }
-
   @supports (corner-shape: squircle) {
     :root[data-radius-preset='squircle'] {
       --dout--corner-shape: squircle;
     }
-  }
-
-  body[data-accent='violet'] {
-    --dout--accent-h: 340;
-  }
-
-  body[data-accent='green'] {
-    --dout--accent-h: 145;
   }
 }

@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>How I Built dout.dev</title>
+    <title>How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)</title>
     <meta name="theme-color" content="#ff6b3d" />
-    <meta name="description" content="What the stack is, exactly" />
+    <meta name="description" content="What the stack is, exactly (TL;DR: files + Node + blood)" />
     <meta name="author" content='Emiliano "pixu1980" Pisu' />
     <meta name="robots" content="index,follow" />
     <meta
@@ -66,26 +66,32 @@
     </style>
 
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="How I Built dout.dev" />
-    <meta property="og:description" content="What the stack is, exactly" />
+    <meta property="og:title" content="How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)" />
+    <meta property="og:description" content="What the stack is, exactly (TL;DR: files + Node + blood)" />
     <meta property="og:url" content="https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html" />
     <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-04-04-how-i-built-dout-dev.png" />
-    <meta property="og:image:alt" content="Preview image for How I Built dout.dev" />
+    <meta
+      property="og:image:alt"
+      content="Preview image for How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="article:published_time" content="2026-04-04T00:00:00.000Z" />
     <meta property="article:modified_time" content="2026-04-04T00:00:00.000Z" />
     <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
-    <meta name="twitter:title" content="How I Built dout.dev" />
-    <meta name="twitter:description" content="What the stack is, exactly" />
+    <meta name="twitter:title" content="How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)" />
+    <meta name="twitter:description" content="What the stack is, exactly (TL;DR: files + Node + blood)" />
     <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-04-04-how-i-built-dout-dev.png" />
-    <meta name="twitter:image:alt" content="Preview image for How I Built dout.dev" />
+    <meta
+      name="twitter:image:alt"
+      content="Preview image for How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)"
+    />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "headline": "How I Built dout.dev",
-        "description": "What the stack is, exactly",
+        "headline": "How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)",
+        "description": "What the stack is, exactly (TL;DR: files + Node + blood)",
         "datePublished": "2026-04-04T00:00:00.000Z",
         "dateModified": "2026-04-04T00:00:00.000Z",
         "author": {
@@ -103,7 +109,7 @@
           "@id": "https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html"
         },
         "image": ["https://dout.dev/assets/og/posts/2026-04-04-how-i-built-dout-dev.png"],
-        "keywords": "build, one, every, html, layer, aria, markdown, template, css, pipeline, theme, posts"
+        "keywords": "build, one, like, every, html, css, layer, aria, markdown, template, page, pipeline"
       }
     </script>
     <script type="application/ld+json">
@@ -116,7 +122,7 @@
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "How I Built dout.dev",
+            "name": "How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)",
             "item": "https://dout.dev/posts/2026-04-04-how-i-built-dout-dev.html"
           }
         ]
@@ -166,9 +172,11 @@
             <span data-post-divider="">/</span>
             <a href="/archive.html">Archive</a>
           </p>
-          <h1 itemprop="headline" tabindex="0">How I Built dout.dev</h1>
+          <h1 itemprop="headline" tabindex="0">
+            How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)
+          </h1>
 
-          <p data-post-description="">What the stack is, exactly</p>
+          <p data-post-description="">What the stack is, exactly (TL;DR: files + Node + blood)</p>
 
           <ul data-tag-list="" aria-label="Tags">
             <li><a data-tag="" href="/tags/making-of.html">making-of</a></li>
@@ -181,7 +189,7 @@
           <figure data-post-cover="">
             <img
               src="/assets/og/posts/2026-04-04-how-i-built-dout-dev-card.png"
-              alt="How I Built dout.dev"
+              alt="How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)"
               fetchpriority="high"
               decoding="async"
               width="1200"
@@ -194,22 +202,34 @@
           <h2 data-visually-hidden="">Article content</h2>
 
           <section data-prose="" itemprop="articleBody">
-            <h2 id="what-the-stack-is-exactly" tabindex="0" data-toc-anchor="true">What the stack is, exactly</h2>
+            <h2 id="what-the-stack-is-exactly-tl-dr-files-node-blood" tabindex="0" data-toc-anchor="true">
+              What the stack is, exactly (TL;DR: files + Node + blood)
+            </h2>
             <p>
               dout.dev is: markdown files in <code>data/posts/</code>, each with YAML front matter; a Node build script
-              that scans, normalizes, and renders HTML; a small custom template engine; plain CSS with a two-layer token
-              system; JavaScript that arrives after the document is already useful. No runtime, no framework, no server.
-              A build command produces a <code>dist/</code> folder; GitHub Pages serves it.
+              that scans, normalizes, and renders HTML; a small custom template engine because I hate people; plain CSS
+              with a two-layer token system because I'm not an animal; JavaScript that shows up <em>after</em> the page
+              is already useful. No runtime, no framework, no server. One build command produces a
+              <code>dist/</code> folder; GitHub Pages serves it. End of story.
             </p>
             <p>
-              <strong>Every decision in the stack points at the same thing:</strong> the site should be trivial to host,
-              portable across the next ten years of tooling changes, and fast to build so the pipeline never gets in the
-              way of writing.
+              <strong>Every goddamn decision in the stack points at the same thing:</strong> the site should be trivial
+              to host, portable across the next ten years of tooling changes (yes, ten, not two sprints), and fast to
+              build so the pipeline never gets in the way of writing.
             </p>
-            <h2 id="the-pipeline-in-one-picture" tabindex="0" data-toc-anchor="true">The pipeline, in one picture</h2>
-            <p>The build is four stages, in this order:</p>
+            <h2
+              id="the-pipeline-in-one-picture-because-nobody-gives-a-shit-about-the-details"
+              tabindex="0"
+              data-toc-anchor="true"
+            >
+              The pipeline, in one picture (because nobody gives a shit about the details)
+            </h2>
+            <p>The build is four stages, in this exact order:</p>
             <ol>
-              <li><strong>Scan.</strong> Read every markdown file, parse front matter, validate required fields.</li>
+              <li>
+                <strong>Scan.</strong> Read every markdown file, parse front matter, validate required fields. Yell if
+                something's missing.
+              </li>
               <li>
                 <strong>Normalize.</strong> Compute slugs, excerpts, keywords, reading time, and the tag/month/series
                 indexes.
@@ -220,75 +240,101 @@
               <li><strong>Emit.</strong> Generate feeds, sitemap, search indexes, and OG images.</li>
             </ol>
             <p>
-              The pipeline runs in one direction. No circular dependencies, no hidden passes. Adding a post means adding
-              one file; the build figures out everything else.
+              The pipeline runs in one direction. No circular dependency bullshit. No hidden passes. Adding a post means
+              adding one file; the build figures out everything else like a well-trained autistic savant.
             </p>
-            <h2 id="the-cms-layer" tabindex="0" data-toc-anchor="true">The CMS layer</h2>
+            <h2 id="the-cms-layer-where-complexity-goes-to-die" tabindex="0" data-toc-anchor="true">
+              The CMS layer (where complexity goes to die)
+            </h2>
             <p>
-              The CMS reads front matter, derives slugs, builds the tag, month, and series datasets, computes
-              next/previous pointers for each post, and produces typed normalized records the page generator can render
-              without thinking. The markdown renderer also rewrites local image references into responsive
-              <code>&lt;picture&gt;</code> elements with WebP sources, known dimensions, and lazy loading - the variants
+              The CMS reads front matter, derives slugs, builds the tag/month/series datasets, computes next/previous
+              pointers for each post, and produces typed normalized records the page generator can render without
+              thinking. The markdown renderer also rewrites local image references into responsive
+              <code>&lt;picture&gt;</code> elements with WebP sources, known dimensions, and lazy loading — the variants
               come from a prior Sharp pass that writes a manifest.
             </p>
-            <p>This is the layer where complexity lives so it does not have to live in the browser.</p>
-            <h2 id="the-template-engine" tabindex="0" data-toc-anchor="true">The template engine</h2>
+            <p>
+              This is the layer where complexity lives so it <em>doesn't have to live in the browser</em>. Because the
+              browser is already fucked up enough without us piling on.
+            </p>
+            <h2
+              id="the-template-engine-a-k-a-why-i-wrote-my-own-like-a-goddamn-psychopath"
+              tabindex="0"
+              data-toc-anchor="true"
+            >
+              The template engine (A.K.A. why I wrote my own like a goddamn psychopath)
+            </h2>
             <p>
               I wrote a template engine instead of adopting one. The reason: I wanted templates that look like HTML
-              documents, not a programming language wearing HTML clothes. The grammar has four primitives -
+              documents, not a programming language wearing HTML clothes. The grammar has four primitives —
               <code>extends</code>, <code>block</code>, <code>include</code>, and inline expressions with an optional
               filter pipeline. Control flow uses custom elements (<code>&lt;if&gt;</code>, <code>&lt;for&gt;</code>)
               that stay consistent with the angle-bracket context.
             </p>
             <p>
               No <code>eval</code>. Expressions are parsed into a small AST and walked by an interpreter that only reads
-              from the context object. Rendering is deterministic and side-effect-free.
+              from the context object. Rendering is deterministic and side-effect-free. Just the way I like it:
+              predictable, boring, working.
             </p>
-            <h2 id="css-tokens-before-anything-else" tabindex="0" data-toc-anchor="true">
-              CSS: tokens before anything else
+            <h2
+              id="css-tokens-before-anything-else-even-jesus-had-tokens-before-dying"
+              tabindex="0"
+              data-toc-anchor="true"
+            >
+              CSS: tokens before anything else (even Jesus had tokens before dying)
             </h2>
             <p>
-              The CSS starts with a flat set of primitive tokens - spacing scale, type scale, line heights, surfaces,
-              focus ring - and a second layer of semantic aliases that components actually read. Components write
-              <code>color: var(--color-fg)</code>, never a hex literal. Theme switching flips the semantic layer at the
-              root; every component picks it up for free.
+              The CSS starts with a flat set of primitive tokens — spacing scale, type scale, line heights, surfaces,
+              focus ring — and a second layer of semantic aliases that components actually read. Components write
+              <code>color: var(--color-fg)</code>, never a literal hex value. Theme switching flips the semantic layer
+              at the root; every component picks it up for free. Like magic, but with CSS variables.
             </p>
             <p>
               The dark theme, light theme, and accent color switching are under fifty lines of custom property
-              definitions. No Sass, no CSS-in-JS.
+              definitions. No Sass. No CSS-in-JS. No bullshit.
             </p>
-            <h2 id="accessibility-as-a-first-class-build-output" tabindex="0" data-toc-anchor="true">
-              Accessibility as a first-class build output
+            <h2
+              id="accessibility-as-a-first-class-build-output-don-t-be-a-dick-to-disabled-people"
+              tabindex="0"
+              data-toc-anchor="true"
+            >
+              Accessibility as a first-class build output (don't be a dick to disabled people)
             </h2>
             <p>
-              Accessibility was a milestone constraint, not a final audit. Posts have focusable headings with stable
-              <code>id</code>s, a sidebar outline synchronized with scroll, skip-links, <code>aria-current</code> on
-              pagination, and a Playwright/axe-core check on every generated page that blocks the deploy if it fails.
+              Accessibility was a <em>milestone constraint</em>, not a final audit. Posts have focusable headings with
+              stable <code>id</code>s, a sidebar outline synchronized with scroll, skip-links,
+              <code>aria-current</code> on pagination, and a Playwright/axe-core check on every generated page that
+              blocks the deploy if it fails.
             </p>
             <p>
-              The markup is semantic before ARIA shows up. When ARIA does appear - <code>aria-live</code> on search
-              results, <code>aria-expanded</code> on disclosure buttons - it is because native HTML genuinely does not
-              cover the case.
+              The markup is semantic <em>before</em> ARIA shows up. When ARIA does appear — <code>aria-live</code> on
+              search results, <code>aria-expanded</code> on disclosure buttons — it's because native HTML genuinely
+              doesn't cover the case. Not because it's trendy.
             </p>
-            <h2 id="progressive-enhancement-as-a-testable-contract" tabindex="0" data-toc-anchor="true">
-              Progressive enhancement as a testable contract
+            <h2
+              id="progressive-enhancement-as-a-testable-contract-i-swear-to-god-it-works-without-js"
+              tabindex="0"
+              data-toc-anchor="true"
+            >
+              Progressive enhancement as a testable contract (I swear to god it works without JS)
             </h2>
             <p>
               Every page renders and navigates without JavaScript. The build verifies this with a Playwright check that
-              runs key pages with JS disabled and asserts the core content is present.
+              runs key pages with JS disabled and asserts the core content is present. It's a contract. It's
+              falsifiable. Try it.
             </p>
             <p>
               Interactive features follow one rule: any UI element that requires JavaScript starts
               <code>hidden</code> in the markup and is revealed by the enhancement script. The theme toggle, the copy
-              button on code blocks, the scrollspy - none of them exist in the DOM until the script that powers them
-              runs.
+              button on code blocks, the scrollspy — none of them exist in the DOM until the script that powers them
+              runs. Sounds extreme. It's actually just proper fucking engineering.
             </p>
-            <h2 id="what-a-complete-build-produces" tabindex="0" data-toc-anchor="true">
-              What a complete build produces
+            <h2 id="what-a-complete-build-produces-the-stuff-that-comes-out" tabindex="0" data-toc-anchor="true">
+              What a complete build produces (the stuff that comes out)
             </h2>
             <ul>
               <li>
-                Posts, tag archives, month archives, and series archives - each with their own pagination and
+                Posts, tag archives, month archives, and series archives — each with their own pagination and
                 per-archive RSS feed
               </li>
               <li>RSS 2.0, JSON Feed 1.1, sitemap.xml</li>
@@ -302,7 +348,10 @@
               </li>
               <li>A search index consumed client-side</li>
             </ul>
-            <p>One build command. One <code>dist/</code> folder. No runtime dependency.</p>
+            <p>
+              One build command. One <code>dist/</code> folder. Zero runtime dependencies. Like the good old days, when
+              websites were websites and not applications pretending to be websites.
+            </p>
           </section>
         </section>
 
@@ -311,44 +360,65 @@
             <h2>TOC</h2>
             <ol data-post-toc-list="">
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#what-the-stack-is-exactly">What the stack is, exactly</a>
-              </li>
-
-              <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#the-pipeline-in-one-picture"
-                  >The pipeline, in one picture</a
+                <a data-post-toc-link="" data-level="2" href="#what-the-stack-is-exactly-tl-dr-files-node-blood"
+                  >What the stack is, exactly (TL;DR: files + Node + blood)</a
                 >
               </li>
 
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#the-cms-layer">The CMS layer</a>
-              </li>
-
-              <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#the-template-engine">The template engine</a>
-              </li>
-
-              <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#css-tokens-before-anything-else"
-                  >CSS: tokens before anything else</a
+                <a
+                  data-post-toc-link=""
+                  data-level="2"
+                  href="#the-pipeline-in-one-picture-because-nobody-gives-a-shit-about-the-details"
+                  >The pipeline, in one picture (because nobody gives a shit about the details)</a
                 >
               </li>
 
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#accessibility-as-a-first-class-build-output"
-                  >Accessibility as a first-class build output</a
+                <a data-post-toc-link="" data-level="2" href="#the-cms-layer-where-complexity-goes-to-die"
+                  >The CMS layer (where complexity goes to die)</a
                 >
               </li>
 
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#progressive-enhancement-as-a-testable-contract"
-                  >Progressive enhancement as a testable contract</a
+                <a
+                  data-post-toc-link=""
+                  data-level="2"
+                  href="#the-template-engine-a-k-a-why-i-wrote-my-own-like-a-goddamn-psychopath"
+                  >The template engine (A.K.A. why I wrote my own like a goddamn psychopath)</a
                 >
               </li>
 
               <li data-post-toc-item="">
-                <a data-post-toc-link="" data-level="2" href="#what-a-complete-build-produces"
-                  >What a complete build produces</a
+                <a
+                  data-post-toc-link=""
+                  data-level="2"
+                  href="#css-tokens-before-anything-else-even-jesus-had-tokens-before-dying"
+                  >CSS: tokens before anything else (even Jesus had tokens before dying)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a
+                  data-post-toc-link=""
+                  data-level="2"
+                  href="#accessibility-as-a-first-class-build-output-don-t-be-a-dick-to-disabled-people"
+                  >Accessibility as a first-class build output (don't be a dick to disabled people)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a
+                  data-post-toc-link=""
+                  data-level="2"
+                  href="#progressive-enhancement-as-a-testable-contract-i-swear-to-god-it-works-without-js"
+                  >Progressive enhancement as a testable contract (I swear to god it works without JS)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#what-a-complete-build-produces-the-stuff-that-comes-out"
+                  >What a complete build produces (the stuff that comes out)</a
                 >
               </li>
             </ol>
@@ -388,94 +458,158 @@
             <ol data-series-navigation-links="">
               <li>
                 <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="page"
-                  >How I Built dout.dev (you are here)</a
+                  >How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person) (you are here)</a
                 >
               </li>
 
               <li>
-                <a href="/posts/2026-04-21-cms-and-markdown-processing.html" aria-current="false"
-                  >CMS and Markdown Processing</a
+                <a href="/posts/2026-04-07-cms-and-markdown-processing.html" aria-current="false"
+                  >CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)</a
                 >
               </li>
 
               <li>
-                <a href="/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false"
-                  >Rebuilding dout.dev in Weeks With an AI Copilot</a
+                <a href="/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false"
+                  >Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread</a
                 >
               </li>
 
               <li>
-                <a href="/posts/2026-05-05-why-no-astro-eleventy-next.html" aria-current="false"
-                  >Why I Skipped Astro, Eleventy and Next for My Blog</a
+                <a href="/posts/2026-04-14-why-no-astro-eleventy-next.html" aria-current="false"
+                  >Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)</a
                 >
               </li>
 
               <li>
-                <a href="/posts/2026-05-12-custom-ssg-pipeline.html" aria-current="false"
-                  >Custom SSG Pipeline: Markdown to Static HTML</a
+                <a href="/posts/2026-04-18-custom-ssg-pipeline.html" aria-current="false"
+                  >Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)</a
                 >
               </li>
 
               <li>
-                <a href="/posts/2026-05-13-template-engine-and-template-structure.html" aria-current="false"
-                  >Template Engine and Template Structure</a
+                <a href="/posts/2026-04-21-template-engine-and-template-structure.html" aria-current="false"
+                  >Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)</a
                 >
               </li>
 
               <li>
-                <a href="/posts/2026-05-14-archives-tags-months-series.html" aria-current="false"
-                  >Archives, Tags, Months, and Series</a
+                <a href="/posts/2026-04-25-archives-tags-months-series.html" aria-current="false"
+                  >Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)</a
                 >
               </li>
 
               <li>
-                <a href="/posts/2026-05-15-progressive-enhancement-as-contract.html" aria-current="false"
-                  >Progressive Enhancement as Contract</a
+                <a href="/posts/2026-04-28-progressive-enhancement-as-contract.html" aria-current="false"
+                  >Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)</a
                 >
               </li>
 
               <li>
-                <a href="/posts/2026-05-16-design-tokens-before-pages.html" aria-current="false"
-                  >Design Tokens Before Pages</a
+                <a href="/posts/2026-05-02-design-tokens-before-pages.html" aria-current="false"
+                  >Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)</a
                 >
               </li>
 
               <li>
-                <a href="/posts/2026-05-17-build-assets-pipeline.html" aria-current="false">Build Assets Pipeline</a>
-              </li>
-
-              <li>
-                <a href="/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html" aria-current="false"
-                  >Feeds and Sitemaps at Build Time</a
+                <a href="/posts/2026-05-05-build-assets-pipeline.html" aria-current="false"
+                  >Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)</a
                 >
               </li>
 
               <li>
-                <a href="/posts/2026-05-19-og-images-at-build-time.html" aria-current="false"
-                  >OG Images at Build Time</a
+                <a href="/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html" aria-current="false"
+                  >Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)</a
                 >
               </li>
 
               <li>
-                <a href="/posts/2026-05-20-seo-metadata-without-rituals.html" aria-current="false"
-                  >SEO Metadata Without Rituals</a
+                <a href="/posts/2026-05-12-og-images-at-build-time.html" aria-current="false"
+                  >OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)</a
                 >
               </li>
 
               <li>
-                <a href="/posts/2026-05-21-quality-gate-lint-format-verify.html" aria-current="false"
-                  >Quality Gate: Linting, Formatting, and Verify</a
+                <a href="/posts/2026-05-16-seo-metadata-without-rituals.html" aria-current="false"
+                  >SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)</a
                 >
               </li>
 
               <li>
-                <a href="/posts/2026-05-22-ci-cd-around-github-pages.html" aria-current="false"
-                  >CI/CD Around GitHub Pages</a
+                <a href="/posts/2026-05-19-quality-gate-lint-format-verify.html" aria-current="false"
+                  >Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)</a
                 >
               </li>
 
               <li>
-                <a href="/posts/2026-05-23-vibe-coding-with-rigor.html" aria-current="false">Vibe Coding With Rigor</a>
+                <a href="/posts/2026-05-23-ci-cd-around-github-pages.html" aria-current="false"
+                  >CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-26-vibe-coding-with-rigor.html" aria-current="false"
+                  >Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="false"
+                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="false"
+                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-06-how-pixhighlighter-is-built.html" aria-current="false"
+                  >How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-09-why-display-preferences-popover-exists.html" aria-current="false"
+                  >Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-16-client-side-search-static-dataset.html" aria-current="false"
+                  >Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-23-custom-element-syntax-highlight.html" aria-current="false"
+                  >A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-27-accessible-scrollspy-outline.html" aria-current="false"
+                  >Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-30-honest-lazy-loading.html" aria-current="false"
+                  >Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-04-pragmatic-service-worker.html" aria-current="false"
+                  >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false"
+                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
+                >
               </li>
             </ol>
           </section>
@@ -483,9 +617,9 @@
       </article>
 
       <nav data-post-nav="" aria-label="Post navigation">
-        <a data-post-nav-card="" data-reveal="" rel="next" href="/posts/2026-04-21-cms-and-markdown-processing.html">
+        <a data-post-nav-card="" data-reveal="" rel="next" href="/posts/2026-04-07-cms-and-markdown-processing.html">
           <span data-post-nav-label="">Next</span>
-          <strong>CMS and Markdown Processing</strong>
+          <strong>CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)</strong>
         </a>
       </nav>
     </main>

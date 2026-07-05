@@ -6,20 +6,27 @@
     <description>RSS feed for posts tagged with css</description>
     <atom:link href="https://dout.dev/tags/css.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Tue, 02 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production</title>
-      <link>https://dout.dev/posts/2026-06-02-modern-css-is-enough.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-02-modern-css-is-enough.html</guid>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
-      <description>The short version</description>
+      <title>CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</title>
+      <link>https://dout.dev/posts/2026-07-05-css-properties-hierarchy.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-07-05-css-properties-hierarchy.html</guid>
+      <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
+      <description>:root { --border-radius: 5px; } .element { /* css custom properties */ --var--example: 1; ​ /* position */ position: absolute; inset: 0; /* top, right, bottom, left */ z-index: 1; </description>
     </item>
     <item>
-      <title>Design Tokens Before Pages</title>
-      <link>https://dout.dev/posts/2026-05-16-design-tokens-before-pages.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-16-design-tokens-before-pages.html</guid>
-      <pubDate>Sat, 16 May 2026 00:00:00 GMT</pubDate>
-      <description>The mistake I kept making</description>
+      <title>Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</title>
+      <link>https://dout.dev/posts/2026-05-30-modern-css-is-enough.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-30-modern-css-is-enough.html</guid>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <description>The short version (for the impatient)</description>
+    </item>
+    <item>
+      <title>Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)</title>
+      <link>https://dout.dev/posts/2026-05-02-design-tokens-before-pages.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-02-design-tokens-before-pages.html</guid>
+      <pubDate>Sat, 02 May 2026 00:00:00 GMT</pubDate>
+      <description>The mistake I kept making (repeat after me: tokens first)</description>
     </item>
   </channel>
 </rss>

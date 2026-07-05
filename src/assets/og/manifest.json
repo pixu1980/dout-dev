@@ -74,200 +74,254 @@
     "post:2026-04-04-how-i-built-dout-dev": {
       "kind": "post",
       "slug": "2026-04-04-how-i-built-dout-dev",
-      "hash": "6134f7c4c880dd52d0b69e0ae840ad09bb997179",
+      "hash": "5610d8ee56f2a9a13cb6809ec3cc1abd3ef2f68e",
       "pngPath": "/assets/og/posts/2026-04-04-how-i-built-dout-dev.png",
       "svgPath": "/assets/og/posts/2026-04-04-how-i-built-dout-dev.svg",
       "fallbackPngPath": "/assets/og/posts/2026-04-04-how-i-built-dout-dev-card.png",
       "fallbackSvgPath": "/assets/og/posts/2026-04-04-how-i-built-dout-dev-card.svg"
     },
-    "post:2026-04-21-cms-and-markdown-processing": {
+    "post:2026-04-07-cms-and-markdown-processing": {
       "kind": "post",
-      "slug": "2026-04-21-cms-and-markdown-processing",
-      "hash": "a3aeade5285b961e88663f0dce8c0389cfedd542",
-      "pngPath": "/assets/og/posts/2026-04-21-cms-and-markdown-processing.png",
-      "svgPath": "/assets/og/posts/2026-04-21-cms-and-markdown-processing.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-04-21-cms-and-markdown-processing-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-04-21-cms-and-markdown-processing-card.svg"
+      "slug": "2026-04-07-cms-and-markdown-processing",
+      "hash": "df881de88b96cf1cca8006d972abdf0db05873fc",
+      "pngPath": "/assets/og/posts/2026-04-07-cms-and-markdown-processing.png",
+      "svgPath": "/assets/og/posts/2026-04-07-cms-and-markdown-processing.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-04-07-cms-and-markdown-processing-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-04-07-cms-and-markdown-processing-card.svg"
     },
-    "post:2026-04-28-rebuilding-dout-dev-with-ai-copilot": {
+    "post:2026-04-11-rebuilding-dout-dev-with-ai-copilot": {
       "kind": "post",
-      "slug": "2026-04-28-rebuilding-dout-dev-with-ai-copilot",
-      "hash": "93f1ed90ebccbcd90d58431d69935e100555c901",
-      "pngPath": "/assets/og/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.png",
-      "svgPath": "/assets/og/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot-card.svg"
+      "slug": "2026-04-11-rebuilding-dout-dev-with-ai-copilot",
+      "hash": "4f2fabc58e95abbb73e8ac307b7d60f202434e88",
+      "pngPath": "/assets/og/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.png",
+      "svgPath": "/assets/og/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot-card.svg"
     },
-    "post:2026-05-05-why-no-astro-eleventy-next": {
+    "post:2026-04-14-why-no-astro-eleventy-next": {
       "kind": "post",
-      "slug": "2026-05-05-why-no-astro-eleventy-next",
-      "hash": "01d93a62b8d8976042f78cf08d402ac7a79cb1e8",
-      "pngPath": "/assets/og/posts/2026-05-05-why-no-astro-eleventy-next.png",
-      "svgPath": "/assets/og/posts/2026-05-05-why-no-astro-eleventy-next.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-05-05-why-no-astro-eleventy-next-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-05-05-why-no-astro-eleventy-next-card.svg"
+      "slug": "2026-04-14-why-no-astro-eleventy-next",
+      "hash": "ea02a56182a744aa65bc0de57766721f9337c8a7",
+      "pngPath": "/assets/og/posts/2026-04-14-why-no-astro-eleventy-next.png",
+      "svgPath": "/assets/og/posts/2026-04-14-why-no-astro-eleventy-next.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-04-14-why-no-astro-eleventy-next-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-04-14-why-no-astro-eleventy-next-card.svg"
     },
-    "post:2026-05-12-custom-ssg-pipeline": {
+    "post:2026-04-18-custom-ssg-pipeline": {
       "kind": "post",
-      "slug": "2026-05-12-custom-ssg-pipeline",
-      "hash": "22183758dc7c28469ebe4651a80373c1418a6706",
-      "pngPath": "/assets/og/posts/2026-05-12-custom-ssg-pipeline.png",
-      "svgPath": "/assets/og/posts/2026-05-12-custom-ssg-pipeline.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-05-12-custom-ssg-pipeline-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-05-12-custom-ssg-pipeline-card.svg"
+      "slug": "2026-04-18-custom-ssg-pipeline",
+      "hash": "1fd16be529cbe648182a3057c20b1aeb107a13d1",
+      "pngPath": "/assets/og/posts/2026-04-18-custom-ssg-pipeline.png",
+      "svgPath": "/assets/og/posts/2026-04-18-custom-ssg-pipeline.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-04-18-custom-ssg-pipeline-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-04-18-custom-ssg-pipeline-card.svg"
     },
-    "post:2026-05-13-template-engine-and-template-structure": {
+    "post:2026-04-21-template-engine-and-template-structure": {
       "kind": "post",
-      "slug": "2026-05-13-template-engine-and-template-structure",
-      "hash": "01e1e8344d52d23781b2d1f009cc6a21ba9581df",
-      "pngPath": "/assets/og/posts/2026-05-13-template-engine-and-template-structure.png",
-      "svgPath": "/assets/og/posts/2026-05-13-template-engine-and-template-structure.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-05-13-template-engine-and-template-structure-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-05-13-template-engine-and-template-structure-card.svg"
+      "slug": "2026-04-21-template-engine-and-template-structure",
+      "hash": "2373fd48a5319b3f4c694b97841f72fc41c0fc18",
+      "pngPath": "/assets/og/posts/2026-04-21-template-engine-and-template-structure.png",
+      "svgPath": "/assets/og/posts/2026-04-21-template-engine-and-template-structure.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-04-21-template-engine-and-template-structure-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-04-21-template-engine-and-template-structure-card.svg"
     },
-    "post:2026-05-14-archives-tags-months-series": {
+    "post:2026-04-25-archives-tags-months-series": {
       "kind": "post",
-      "slug": "2026-05-14-archives-tags-months-series",
-      "hash": "ce8b7a78d98c0634d0ee2b0e2b90a9dacd4275ef",
-      "pngPath": "/assets/og/posts/2026-05-14-archives-tags-months-series.png",
-      "svgPath": "/assets/og/posts/2026-05-14-archives-tags-months-series.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-05-14-archives-tags-months-series-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-05-14-archives-tags-months-series-card.svg"
+      "slug": "2026-04-25-archives-tags-months-series",
+      "hash": "a81160ade12d7cd7965af2dd471d4ef8c9679038",
+      "pngPath": "/assets/og/posts/2026-04-25-archives-tags-months-series.png",
+      "svgPath": "/assets/og/posts/2026-04-25-archives-tags-months-series.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-04-25-archives-tags-months-series-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-04-25-archives-tags-months-series-card.svg"
     },
-    "post:2026-05-15-progressive-enhancement-as-contract": {
+    "post:2026-04-28-progressive-enhancement-as-contract": {
       "kind": "post",
-      "slug": "2026-05-15-progressive-enhancement-as-contract",
-      "hash": "c2ef1eaf3838a044cd0ea6aea8366e0eb2cab3c9",
-      "pngPath": "/assets/og/posts/2026-05-15-progressive-enhancement-as-contract.png",
-      "svgPath": "/assets/og/posts/2026-05-15-progressive-enhancement-as-contract.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-05-15-progressive-enhancement-as-contract-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-05-15-progressive-enhancement-as-contract-card.svg"
+      "slug": "2026-04-28-progressive-enhancement-as-contract",
+      "hash": "f91cc48b5520cf690e7ca8b75c9d509248289bfa",
+      "pngPath": "/assets/og/posts/2026-04-28-progressive-enhancement-as-contract.png",
+      "svgPath": "/assets/og/posts/2026-04-28-progressive-enhancement-as-contract.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-04-28-progressive-enhancement-as-contract-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-04-28-progressive-enhancement-as-contract-card.svg"
     },
-    "post:2026-05-16-design-tokens-before-pages": {
+    "post:2026-05-02-design-tokens-before-pages": {
       "kind": "post",
-      "slug": "2026-05-16-design-tokens-before-pages",
-      "hash": "93f4918dde8e9e75aeab428cd1aa5286684e16c2",
-      "pngPath": "/assets/og/posts/2026-05-16-design-tokens-before-pages.png",
-      "svgPath": "/assets/og/posts/2026-05-16-design-tokens-before-pages.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-05-16-design-tokens-before-pages-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-05-16-design-tokens-before-pages-card.svg"
+      "slug": "2026-05-02-design-tokens-before-pages",
+      "hash": "0b88cc54ab7d58fb3c413cf75635184fa7109c38",
+      "pngPath": "/assets/og/posts/2026-05-02-design-tokens-before-pages.png",
+      "svgPath": "/assets/og/posts/2026-05-02-design-tokens-before-pages.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-02-design-tokens-before-pages-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-02-design-tokens-before-pages-card.svg"
     },
-    "post:2026-05-17-build-assets-pipeline": {
+    "post:2026-05-05-build-assets-pipeline": {
       "kind": "post",
-      "slug": "2026-05-17-build-assets-pipeline",
-      "hash": "5e3be631f0665d15575e0d25fb0a1f2304ab67d8",
-      "pngPath": "/assets/og/posts/2026-05-17-build-assets-pipeline.png",
-      "svgPath": "/assets/og/posts/2026-05-17-build-assets-pipeline.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-05-17-build-assets-pipeline-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-05-17-build-assets-pipeline-card.svg"
+      "slug": "2026-05-05-build-assets-pipeline",
+      "hash": "df039dd82be9e01c8cf10dd622220c2043332453",
+      "pngPath": "/assets/og/posts/2026-05-05-build-assets-pipeline.png",
+      "svgPath": "/assets/og/posts/2026-05-05-build-assets-pipeline.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-05-build-assets-pipeline-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-05-build-assets-pipeline-card.svg"
     },
-    "post:2026-05-18-feeds-and-sitemaps-at-build-time": {
+    "post:2026-05-09-feeds-and-sitemaps-at-build-time": {
       "kind": "post",
-      "slug": "2026-05-18-feeds-and-sitemaps-at-build-time",
-      "hash": "35e06ea5003458e0d0fc88ea04939520819ebe73",
-      "pngPath": "/assets/og/posts/2026-05-18-feeds-and-sitemaps-at-build-time.png",
-      "svgPath": "/assets/og/posts/2026-05-18-feeds-and-sitemaps-at-build-time.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-05-18-feeds-and-sitemaps-at-build-time-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-05-18-feeds-and-sitemaps-at-build-time-card.svg"
+      "slug": "2026-05-09-feeds-and-sitemaps-at-build-time",
+      "hash": "68edf7f7e4b98821e79c61ba6105d48cd42e46a4",
+      "pngPath": "/assets/og/posts/2026-05-09-feeds-and-sitemaps-at-build-time.png",
+      "svgPath": "/assets/og/posts/2026-05-09-feeds-and-sitemaps-at-build-time.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-09-feeds-and-sitemaps-at-build-time-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-09-feeds-and-sitemaps-at-build-time-card.svg"
     },
-    "post:2026-05-19-og-images-at-build-time": {
+    "post:2026-05-12-og-images-at-build-time": {
       "kind": "post",
-      "slug": "2026-05-19-og-images-at-build-time",
-      "hash": "8f092d79213040f30885ef30dae6148d1f89bdb0",
-      "pngPath": "/assets/og/posts/2026-05-19-og-images-at-build-time.png",
-      "svgPath": "/assets/og/posts/2026-05-19-og-images-at-build-time.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-05-19-og-images-at-build-time-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-05-19-og-images-at-build-time-card.svg"
+      "slug": "2026-05-12-og-images-at-build-time",
+      "hash": "41eae95ede296bcfdefe31c7855c25746164cc82",
+      "pngPath": "/assets/og/posts/2026-05-12-og-images-at-build-time.png",
+      "svgPath": "/assets/og/posts/2026-05-12-og-images-at-build-time.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-12-og-images-at-build-time-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-12-og-images-at-build-time-card.svg"
     },
-    "post:2026-05-20-seo-metadata-without-rituals": {
+    "post:2026-05-16-seo-metadata-without-rituals": {
       "kind": "post",
-      "slug": "2026-05-20-seo-metadata-without-rituals",
-      "hash": "57110088a7b28cee8388fe09b5f65ce98ca08774",
-      "pngPath": "/assets/og/posts/2026-05-20-seo-metadata-without-rituals.png",
-      "svgPath": "/assets/og/posts/2026-05-20-seo-metadata-without-rituals.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-05-20-seo-metadata-without-rituals-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-05-20-seo-metadata-without-rituals-card.svg"
+      "slug": "2026-05-16-seo-metadata-without-rituals",
+      "hash": "4c22414de2b7b2bdc1fc284ba748bcd860288d6a",
+      "pngPath": "/assets/og/posts/2026-05-16-seo-metadata-without-rituals.png",
+      "svgPath": "/assets/og/posts/2026-05-16-seo-metadata-without-rituals.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-16-seo-metadata-without-rituals-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-16-seo-metadata-without-rituals-card.svg"
     },
-    "post:2026-05-21-quality-gate-lint-format-verify": {
+    "post:2026-05-19-quality-gate-lint-format-verify": {
       "kind": "post",
-      "slug": "2026-05-21-quality-gate-lint-format-verify",
-      "hash": "c0a40a119e59214256dbc15745bbd0eff0da3292",
-      "pngPath": "/assets/og/posts/2026-05-21-quality-gate-lint-format-verify.png",
-      "svgPath": "/assets/og/posts/2026-05-21-quality-gate-lint-format-verify.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-05-21-quality-gate-lint-format-verify-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-05-21-quality-gate-lint-format-verify-card.svg"
+      "slug": "2026-05-19-quality-gate-lint-format-verify",
+      "hash": "2c30b6260aef8fbbc5cf21fb6eb9d6d4287ad3ed",
+      "pngPath": "/assets/og/posts/2026-05-19-quality-gate-lint-format-verify.png",
+      "svgPath": "/assets/og/posts/2026-05-19-quality-gate-lint-format-verify.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-19-quality-gate-lint-format-verify-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-19-quality-gate-lint-format-verify-card.svg"
     },
-    "post:2026-05-22-ci-cd-around-github-pages": {
+    "post:2026-05-23-ci-cd-around-github-pages": {
       "kind": "post",
-      "slug": "2026-05-22-ci-cd-around-github-pages",
-      "hash": "d58a87b7a96a61bbec3cc6f62cad4a1405bab8c2",
-      "pngPath": "/assets/og/posts/2026-05-22-ci-cd-around-github-pages.png",
-      "svgPath": "/assets/og/posts/2026-05-22-ci-cd-around-github-pages.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-05-22-ci-cd-around-github-pages-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-05-22-ci-cd-around-github-pages-card.svg"
+      "slug": "2026-05-23-ci-cd-around-github-pages",
+      "hash": "c01f02368358e462e2d9fd9f431715a0ac34d31a",
+      "pngPath": "/assets/og/posts/2026-05-23-ci-cd-around-github-pages.png",
+      "svgPath": "/assets/og/posts/2026-05-23-ci-cd-around-github-pages.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-23-ci-cd-around-github-pages-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-23-ci-cd-around-github-pages-card.svg"
     },
-    "post:2026-05-23-vibe-coding-with-rigor": {
+    "post:2026-05-26-vibe-coding-with-rigor": {
       "kind": "post",
-      "slug": "2026-05-23-vibe-coding-with-rigor",
-      "hash": "b95a0aa0f5ea8cb4a1e49842eb68818a25dadb56",
-      "pngPath": "/assets/og/posts/2026-05-23-vibe-coding-with-rigor.png",
-      "svgPath": "/assets/og/posts/2026-05-23-vibe-coding-with-rigor.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-05-23-vibe-coding-with-rigor-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-05-23-vibe-coding-with-rigor-card.svg"
+      "slug": "2026-05-26-vibe-coding-with-rigor",
+      "hash": "a10e2c72cff992f7601955ed806d95980cd16f47",
+      "pngPath": "/assets/og/posts/2026-05-26-vibe-coding-with-rigor.png",
+      "svgPath": "/assets/og/posts/2026-05-26-vibe-coding-with-rigor.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-26-vibe-coding-with-rigor-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-26-vibe-coding-with-rigor-card.svg"
     },
-    "post:2026-06-02-modern-css-is-enough": {
+    "post:2026-05-30-modern-css-is-enough": {
       "kind": "post",
-      "slug": "2026-06-02-modern-css-is-enough",
-      "hash": "783f689bd8fe2eda333411422c1358c6ce533a13",
-      "pngPath": "/assets/og/posts/2026-06-02-modern-css-is-enough.png",
-      "svgPath": "/assets/og/posts/2026-06-02-modern-css-is-enough.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-06-02-modern-css-is-enough-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-06-02-modern-css-is-enough-card.svg"
+      "slug": "2026-05-30-modern-css-is-enough",
+      "hash": "99f7de898d6440c5286df29c89a5f96467d0da44",
+      "pngPath": "/assets/og/posts/2026-05-30-modern-css-is-enough.png",
+      "svgPath": "/assets/og/posts/2026-05-30-modern-css-is-enough.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-05-30-modern-css-is-enough-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-05-30-modern-css-is-enough-card.svg"
     },
-    "post:2026-06-09-wcag-22-aa-without-aria-spam": {
+    "post:2026-06-02-wcag-22-aa-without-aria-spam": {
       "kind": "post",
-      "slug": "2026-06-09-wcag-22-aa-without-aria-spam",
-      "hash": "6e77d50576cd3b259c27a522d4943c5440e861d4",
-      "pngPath": "/assets/og/posts/2026-06-09-wcag-22-aa-without-aria-spam.png",
-      "svgPath": "/assets/og/posts/2026-06-09-wcag-22-aa-without-aria-spam.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-06-09-wcag-22-aa-without-aria-spam-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-06-09-wcag-22-aa-without-aria-spam-card.svg"
+      "slug": "2026-06-02-wcag-22-aa-without-aria-spam",
+      "hash": "0cfb8f6444f224cb67bcf189b6862ccf2002a005",
+      "pngPath": "/assets/og/posts/2026-06-02-wcag-22-aa-without-aria-spam.png",
+      "svgPath": "/assets/og/posts/2026-06-02-wcag-22-aa-without-aria-spam.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-02-wcag-22-aa-without-aria-spam-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-02-wcag-22-aa-without-aria-spam-card.svg"
     },
-    "post:2026-06-13-how-pixhighlighter-is-built": {
+    "post:2026-06-06-how-pixhighlighter-is-built": {
       "kind": "post",
-      "slug": "2026-06-13-how-pixhighlighter-is-built",
-      "hash": "f691c98ca64664a31e7e93a0ca3dfe274b2bf686",
-      "pngPath": "/assets/og/posts/2026-06-13-how-pixhighlighter-is-built.png",
-      "svgPath": "/assets/og/posts/2026-06-13-how-pixhighlighter-is-built.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-06-13-how-pixhighlighter-is-built-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-06-13-how-pixhighlighter-is-built-card.svg"
+      "slug": "2026-06-06-how-pixhighlighter-is-built",
+      "hash": "90a309aabec141bf0a2c5f70dd8122e9c5c19c09",
+      "pngPath": "/assets/og/posts/2026-06-06-how-pixhighlighter-is-built.png",
+      "svgPath": "/assets/og/posts/2026-06-06-how-pixhighlighter-is-built.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-06-how-pixhighlighter-is-built-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-06-how-pixhighlighter-is-built-card.svg"
     },
-    "post:2026-06-14-why-display-preferences-popover-exists": {
+    "post:2026-06-09-why-display-preferences-popover-exists": {
       "kind": "post",
-      "slug": "2026-06-14-why-display-preferences-popover-exists",
-      "hash": "3e61b46a2e145b6fc6f24f5c75518c300c79609c",
-      "pngPath": "/assets/og/posts/2026-06-14-why-display-preferences-popover-exists.png",
-      "svgPath": "/assets/og/posts/2026-06-14-why-display-preferences-popover-exists.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-06-14-why-display-preferences-popover-exists-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-06-14-why-display-preferences-popover-exists-card.svg"
+      "slug": "2026-06-09-why-display-preferences-popover-exists",
+      "hash": "a07c18206fb17c2b6c692114cfb59f7db8401586",
+      "pngPath": "/assets/og/posts/2026-06-09-why-display-preferences-popover-exists.png",
+      "svgPath": "/assets/og/posts/2026-06-09-why-display-preferences-popover-exists.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-09-why-display-preferences-popover-exists-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-09-why-display-preferences-popover-exists-card.svg"
     },
-    "post:2026-06-16-the-end-of-borrowed-abstractions": {
+    "post:2026-06-13-the-end-of-borrowed-abstractions": {
       "kind": "post",
-      "slug": "2026-06-16-the-end-of-borrowed-abstractions",
-      "hash": "191fc1cdd535645a772e17ee2eef8d6c3d05fbac",
-      "pngPath": "/assets/og/posts/2026-06-16-the-end-of-borrowed-abstractions.png",
-      "svgPath": "/assets/og/posts/2026-06-16-the-end-of-borrowed-abstractions.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-06-16-the-end-of-borrowed-abstractions-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-06-16-the-end-of-borrowed-abstractions-card.svg"
+      "slug": "2026-06-13-the-end-of-borrowed-abstractions",
+      "hash": "10d303b5bfcb214eadb7e47bbbf0afdeffaebecc",
+      "pngPath": "/assets/og/posts/2026-06-13-the-end-of-borrowed-abstractions.png",
+      "svgPath": "/assets/og/posts/2026-06-13-the-end-of-borrowed-abstractions.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-13-the-end-of-borrowed-abstractions-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-13-the-end-of-borrowed-abstractions-card.svg"
     },
-    "post:2026-06-23-client-side-search-static-dataset": {
+    "post:2026-06-16-client-side-search-static-dataset": {
       "kind": "post",
-      "slug": "2026-06-23-client-side-search-static-dataset",
-      "hash": "4892c9318a0b82ed5a0874b909dadfbc55f325cc",
-      "pngPath": "/assets/og/posts/2026-06-23-client-side-search-static-dataset.png",
-      "svgPath": "/assets/og/posts/2026-06-23-client-side-search-static-dataset.svg",
-      "fallbackPngPath": "/assets/og/posts/2026-06-23-client-side-search-static-dataset-card.png",
-      "fallbackSvgPath": "/assets/og/posts/2026-06-23-client-side-search-static-dataset-card.svg"
+      "slug": "2026-06-16-client-side-search-static-dataset",
+      "hash": "972ba8f615358a5b1b7b0d00d88aa394f1d5cd97",
+      "pngPath": "/assets/og/posts/2026-06-16-client-side-search-static-dataset.png",
+      "svgPath": "/assets/og/posts/2026-06-16-client-side-search-static-dataset.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-16-client-side-search-static-dataset-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-16-client-side-search-static-dataset-card.svg"
+    },
+    "post:2026-06-20-pi-dev-deepseek-v4-flash-daily-loop": {
+      "kind": "post",
+      "slug": "2026-06-20-pi-dev-deepseek-v4-flash-daily-loop",
+      "hash": "f070851054babb1857781354489ebabda0627591",
+      "pngPath": "/assets/og/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.png",
+      "svgPath": "/assets/og/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop-card.svg"
+    },
+    "post:2026-06-23-custom-element-syntax-highlight": {
+      "kind": "post",
+      "slug": "2026-06-23-custom-element-syntax-highlight",
+      "hash": "76dd0975194aad516f7f6837860cc61170ca27fe",
+      "pngPath": "/assets/og/posts/2026-06-23-custom-element-syntax-highlight.png",
+      "svgPath": "/assets/og/posts/2026-06-23-custom-element-syntax-highlight.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-23-custom-element-syntax-highlight-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-23-custom-element-syntax-highlight-card.svg"
+    },
+    "post:2026-06-27-accessible-scrollspy-outline": {
+      "kind": "post",
+      "slug": "2026-06-27-accessible-scrollspy-outline",
+      "hash": "cabcb226914032358dbcdc1e2ca15a56b60da9ff",
+      "pngPath": "/assets/og/posts/2026-06-27-accessible-scrollspy-outline.png",
+      "svgPath": "/assets/og/posts/2026-06-27-accessible-scrollspy-outline.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-27-accessible-scrollspy-outline-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-27-accessible-scrollspy-outline-card.svg"
+    },
+    "post:2026-06-30-honest-lazy-loading": {
+      "kind": "post",
+      "slug": "2026-06-30-honest-lazy-loading",
+      "hash": "8b419208660aaf8ebd84c7f45e83a60ca275b119",
+      "pngPath": "/assets/og/posts/2026-06-30-honest-lazy-loading.png",
+      "svgPath": "/assets/og/posts/2026-06-30-honest-lazy-loading.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-06-30-honest-lazy-loading-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-06-30-honest-lazy-loading-card.svg"
+    },
+    "post:2026-07-04-pragmatic-service-worker": {
+      "kind": "post",
+      "slug": "2026-07-04-pragmatic-service-worker",
+      "hash": "5e2b8495beaa35ccfe5309f0ac4eb133aaa8ed60",
+      "pngPath": "/assets/og/posts/2026-07-04-pragmatic-service-worker.png",
+      "svgPath": "/assets/og/posts/2026-07-04-pragmatic-service-worker.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-07-04-pragmatic-service-worker-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-07-04-pragmatic-service-worker-card.svg"
+    },
+    "post:2026-07-05-css-properties-hierarchy": {
+      "kind": "post",
+      "slug": "2026-07-05-css-properties-hierarchy",
+      "hash": "b52c38731d15db8313adf98c36069fc51bfdcf37",
+      "pngPath": "/assets/og/posts/2026-07-05-css-properties-hierarchy.png",
+      "svgPath": "/assets/og/posts/2026-07-05-css-properties-hierarchy.svg",
+      "fallbackPngPath": "/assets/og/posts/2026-07-05-css-properties-hierarchy-card.png",
+      "fallbackSvgPath": "/assets/og/posts/2026-07-05-css-properties-hierarchy-card.svg"
     },
     "tag:making-of": {
       "kind": "tag",
@@ -304,12 +358,12 @@
       "pngPath": "/assets/og/tags/markdown.png",
       "svgPath": "/assets/og/tags/markdown.svg"
     },
-    "tag:ai-copilot": {
+    "tag:ai": {
       "kind": "tag",
-      "slug": "ai-copilot",
-      "hash": "4540faa360f84470fd9be17adf157baac3522cde",
-      "pngPath": "/assets/og/tags/ai-copilot.png",
-      "svgPath": "/assets/og/tags/ai-copilot.svg"
+      "slug": "ai",
+      "hash": "493c4e884d9c49c3c2a7140465e49546946395fc",
+      "pngPath": "/assets/og/tags/ai.png",
+      "svgPath": "/assets/og/tags/ai.svg"
     },
     "tag:workflow": {
       "kind": "tag",
@@ -458,26 +512,12 @@
       "pngPath": "/assets/og/tags/frontend.png",
       "svgPath": "/assets/og/tags/frontend.svg"
     },
-    "tag:a11y": {
-      "kind": "tag",
-      "slug": "a11y",
-      "hash": "49aee8c1c8e9038a1587f139a6a9e5777260a123",
-      "pngPath": "/assets/og/tags/a11y.png",
-      "svgPath": "/assets/og/tags/a11y.svg"
-    },
     "tag:responsive-design": {
       "kind": "tag",
       "slug": "responsive-design",
       "hash": "02b02a1fea57ff369400339a920e33939f024a52",
       "pngPath": "/assets/og/tags/responsive-design.png",
       "svgPath": "/assets/og/tags/responsive-design.svg"
-    },
-    "tag:ai": {
-      "kind": "tag",
-      "slug": "ai",
-      "hash": "493c4e884d9c49c3c2a7140465e49546946395fc",
-      "pngPath": "/assets/og/tags/ai.png",
-      "svgPath": "/assets/og/tags/ai.svg"
     },
     "tag:security": {
       "kind": "tag",
@@ -514,6 +554,13 @@
       "pngPath": "/assets/og/months/2026-06.png",
       "svgPath": "/assets/og/months/2026-06.svg"
     },
+    "month:2026-07": {
+      "kind": "month",
+      "slug": "2026-07",
+      "hash": "13b3abbbcc7de5ec3c112470dcfdcd2702eb423c",
+      "pngPath": "/assets/og/months/2026-07.png",
+      "svgPath": "/assets/og/months/2026-07.svg"
+    },
     "series:how-i-made-it": {
       "kind": "series",
       "slug": "how-i-made-it",
@@ -527,6 +574,13 @@
       "hash": "f2c08db24adb94c69d6532706dec268dda216e9a",
       "pngPath": "/assets/og/series/bold-opinions.png",
       "svgPath": "/assets/og/series/bold-opinions.svg"
+    },
+    "series:pix-components": {
+      "kind": "series",
+      "slug": "pix-components",
+      "hash": "43decf32e605a94afb47a15bdfc185079611c1b5",
+      "pngPath": "/assets/og/series/pix-components.png",
+      "svgPath": "/assets/og/series/pix-components.svg"
     },
     "series:the-future-of-software": {
       "kind": "series",

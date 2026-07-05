@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</title>
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="The contract stays plain (because HTML should be readable)" />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2026-06-06-how-pixhighlighter-is-built.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
+    <script>
+      document.documentElement.dataset.userPreferences = 'ready';
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      :root {
+        --dout--file-preview-border: #d9a441;
+        --dout--file-preview-bg: #fff3cd;
+        --dout--file-preview-text: #5c3b00;
+      }
+
+      [data-file-preview-warning] {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--dout--file-preview-border);
+        background: var(--dout--file-preview-bg);
+        color: var(--dout--file-preview-text);
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] [data-file-preview-warning] {
+        display: block;
+      }
+
+      [data-file-preview-warning] code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)"
+    />
+    <meta property="og:description" content="The contract stays plain (because HTML should be readable)" />
+    <meta property="og:url" content="https://dout.dev/posts/2026-06-06-how-pixhighlighter-is-built.html" />
+    <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-06-06-how-pixhighlighter-is-built.png" />
+    <meta
+      property="og:image:alt"
+      content="Preview image for How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-06-06T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2026-06-06T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta
+      name="twitter:title"
+      content="How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)"
+    />
+    <meta name="twitter:description" content="The contract stays plain (because HTML should be readable)" />
+    <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-06-06-how-pixhighlighter-is-built.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Preview image for How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)",
+        "description": "The contract stays plain (because HTML should be readable)",
+        "datePublished": "2026-06-06T00:00:00.000Z",
+        "dateModified": "2026-06-06T00:00:00.000Z",
+        "author": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2026-06-06-how-pixhighlighter-is-built.html"
+        },
+        "image": ["https://dout.dev/assets/og/posts/2026-06-06-how-pixhighlighter-is-built.png"],
+        "keywords": "token, code, css, highlight, fallback, source, text, component, markup, one, state, pixhighlighter"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)",
+            "item": "https://dout.dev/posts/2026-06-06-how-pixhighlighter-is-built.html"
+          }
+        ]
+      }
+    </script>
+
+    <link rel="stylesheet" href="/styles/index.css" />
+    <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
+  </head>
+  <body data-site-shell="">
+    <p data-file-preview-warning="" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a data-skip-link="" href="#main">Skip to main content</a>
+    <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" data-site-header="">
+      <div data-container="" data-header-bar="">
+        <a data-brand="" href="/">
+          <span data-brand-mark="">dout.dev</span>
+          <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <nav id="mainmenu" data-main-nav="" aria-label="Main">
+          <ul data-main-links="" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div data-header-actions="">
+          <color-scheme-switcher></color-scheme-switcher>
+          <display-preferences-popover></display-preferences-popover>
+          <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting">
+        <header data-post-hero="" data-reveal="">
+          <p data-eyebrow="">Article</p>
+          <p data-post-meta="">
+            <time datetime="2026-06-06" itemprop="datePublished"> June 6, 2026 </time>
+            <span data-post-divider="">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 itemprop="headline" tabindex="0">
+            How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)
+          </h1>
+
+          <p data-post-description="">The contract stays plain (because HTML should be readable)</p>
+
+          <ul data-tag-list="" aria-label="Tags">
+            <li><a data-tag="" href="/tags/vanilla-js.html">vanilla-js</a></li>
+
+            <li><a data-tag="" href="/tags/frontend.html">frontend</a></li>
+
+            <li><a data-tag="" href="/tags/architecture.html">architecture</a></li>
+          </ul>
+
+          <figure data-post-cover="">
+            <img
+              src="/assets/og/posts/2026-06-06-how-pixhighlighter-is-built-card.png"
+              alt="How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="900"
+            />
+          </figure>
+        </header>
+
+        <section data-post-shell="" role="region">
+          <h2 data-visually-hidden="">Article content</h2>
+
+          <section data-prose="" itemprop="articleBody">
+            <h2 id="the-contract-stays-plain-because-html-should-be-readable" tabindex="0" data-toc-anchor="true">
+              The contract stays plain (because HTML should be readable)
+            </h2>
+            <p><code>PixHighlighter</code> begins with the smallest useful shape:</p>
+            <pre
+              is="pix-highlighter"
+              data-lang="html"
+            ><code>&lt;pre is="pix-highlighter" data-lang="js"&gt;&lt;code&gt;const answer = 42;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</code></pre>
+            <p>
+              That is still a real <code>&lt;pre&gt;</code> element with a real <code>&lt;code&gt;</code> child. The
+              source is readable BEFORE JavaScript runs, copyable as text, and understandable to assistive technology.
+              The component does not need a custom shadow tree to make code look like code.
+            </p>
+            <p>
+              <strong>The important decision is what it refuses to do by default:</strong> the primary path does NOT
+              wrap every token in markup. The code block is not a pile of span wrappers. It is ONE text node that can be
+              painted by the browser. This is the kind of detail that separates "it works" from "it works well."
+            </p>
+            <h2 id="lexers-describe-positions-not-markup" tabindex="0" data-toc-anchor="true">
+              Lexers describe positions (not markup)
+            </h2>
+            <p>
+              Each lexer under <code>src/scripts/components/PixHighlighter/Lexers/</code> walks the source and emits
+              ranges:
+            </p>
+            <pre is="pix-highlighter" data-lang="js"><code>{ type: 'kw', start: 0, end: 5 }</code></pre>
+            <p>
+              That object says "the characters from 0 to 5 are a keyword." It does NOT say "insert a span here." Parsing
+              and rendering stay separate. The same token stream can power the modern renderer, the fallback renderer,
+              tests, and any future diagnostics without changing the source model.
+            </p>
+            <p>
+              Language aliases are normalized before lookup. <code>javascript</code> becomes <code>js</code>,
+              <code>typescript</code> becomes <code>ts</code>, <code>shell</code> and <code>zsh</code> become
+              <code>bash</code>. Content authors get a forgiving interface; the renderer gets ONE clean language key.
+              Consistency is a feature.
+            </p>
+            <h2
+              id="css-custom-highlight-api-does-the-painting-this-is-the-clever-part"
+              tabindex="0"
+              data-toc-anchor="true"
+            >
+              CSS Custom Highlight API does the painting (this is the clever part)
+            </h2>
+            <p>
+              The best version of <code>PixHighlighter</code> uses the CSS Custom Highlight API. When
+              <code>CSS.highlights</code> and <code>Highlight</code> exist, the component creates DOM
+              <code>Range</code> objects for each token and stores them in named highlight registries:
+            </p>
+            <pre is="pix-highlighter" data-lang="js"><code>const highlight = new Highlight(range);
+CSS.highlights.set('pix-kw', highlight);</code></pre>
+            <p>CSS then styles those names directly:</p>
+            <pre is="pix-highlighter" data-lang="css"><code>::highlight(pix-kw) {
+  color: var(--pix-highlighter--kw);
+}</code></pre>
+            <p>
+              That is the whole goddamn trick. The browser paints a range of text WITHOUT changing the text into markup.
+              Selection stays clean. Copy stays clean. The DOM stays quiet. Themes remain normal CSS variables instead
+              of a second token system hidden inside generated spans.
+            </p>
+            <h2 id="the-fallback-is-deliberately-boring-because-boring-is-reliable" tabindex="0" data-toc-anchor="true">
+              The fallback is deliberately boring (because boring is reliable)
+            </h2>
+            <p>
+              The rule is simple: fallback spans only when the Highlight API is unavailable. In that case, the component
+              maps the same token ranges to conservative markup:
+            </p>
+            <pre
+              is="pix-highlighter"
+              data-lang="html"
+            ><code>&lt;span data-token="kw"&gt;const&lt;&#x2F;span&gt;</code></pre>
+            <p>
+              The fallback is NOT a different highlighter. It is the same lexer output rendered into older browser
+              primitives. The CSS already has matching rules for <code>[data-token='kw']</code>,
+              <code>[data-token='str']</code>, and the rest of the token types, so the visual result remains close
+              without forcing modern browsers to carry extra DOM.
+            </p>
+            <h2 id="styles-are-shared-once-because-performance-matters" tabindex="0" data-toc-anchor="true">
+              Styles are shared once (because performance matters)
+            </h2>
+            <p>
+              Ten code blocks still get ONE style payload. The component can appear throughout an article without
+              multiplying its CSS. No duplication. No waste.
+            </p>
+            <h2 id="themes-are-page-state-not-component-state" tabindex="0" data-toc-anchor="true">
+              Themes are page state (not component state)
+            </h2>
+            <p>
+              Every instance renders a compact toolbar with copy and theme controls. The picker appears per block, but
+              the selected theme is page-wide state. That avoids a page where one snippet is using one palette and the
+              next snippet is using another because of local component state. Code theme is a reading preference, so the
+              page owns it.
+            </p>
+            <h2 id="copy-reads-the-source-not-the-highlights" tabindex="0" data-toc-anchor="true">
+              Copy reads the source (not the highlights)
+            </h2>
+            <p>
+              The copy button reads <code>code.textContent</code>. It does NOT inspect highlight ranges, fallback spans,
+              toolbar state, or theme state. Highlighting is visual; the source text is the contract.
+            </p>
+            <h2 id="why-this-fits-dout-dev-the-architecture-summary" tabindex="0" data-toc-anchor="true">
+              Why this fits dout.dev (the architecture summary)
+            </h2>
+            <p>
+              <code>PixHighlighter</code> is built for a static editorial site: short examples, no frontend framework,
+              no runtime highlighter dependency, and a design system that already owns typography, color, and motion.
+            </p>
+            <p>The architecture works because each layer has ONE job:</p>
+            <ol>
+              <li>Markdown emits semantic code blocks.</li>
+              <li>Lexers produce token ranges.</li>
+              <li>The CSS Custom Highlight API paints those ranges without spans.</li>
+              <li>Fallback markup covers browsers without highlight support.</li>
+              <li>Toolbar actions enhance the block without becoming the content.</li>
+            </ol>
+            <p>
+              That is the pattern I want here: ordinary HTML first, modern browser APIs where they remove markup, and a
+              fallback that preserves the same source text instead of inventing a second content model.
+            </p>
+          </section>
+        </section>
+
+        <aside data-post-sidebar="" role="complementary">
+          <nav data-post-toc="">
+            <h2>TOC</h2>
+            <ol data-post-toc-list="">
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-contract-stays-plain-because-html-should-be-readable"
+                  >The contract stays plain (because HTML should be readable)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#lexers-describe-positions-not-markup"
+                  >Lexers describe positions (not markup)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a
+                  data-post-toc-link=""
+                  data-level="2"
+                  href="#css-custom-highlight-api-does-the-painting-this-is-the-clever-part"
+                  >CSS Custom Highlight API does the painting (this is the clever part)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a
+                  data-post-toc-link=""
+                  data-level="2"
+                  href="#the-fallback-is-deliberately-boring-because-boring-is-reliable"
+                  >The fallback is deliberately boring (because boring is reliable)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#styles-are-shared-once-because-performance-matters"
+                  >Styles are shared once (because performance matters)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#themes-are-page-state-not-component-state"
+                  >Themes are page state (not component state)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#copy-reads-the-source-not-the-highlights"
+                  >Copy reads the source (not the highlights)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#why-this-fits-dout-dev-the-architecture-summary"
+                  >Why this fits dout.dev (the architecture summary)</a
+                >
+              </li>
+            </ol>
+          </nav>
+        </aside>
+
+        <section data-comments-shell="" data-reveal="">
+          <header data-section-heading="">
+            <p data-eyebrow="">Discussion</p>
+            <h2>Comments live in GitHub Discussions</h2>
+          </header>
+          <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2026-06-06-how-pixhighlighter-is-built.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
+
+        <nav data-series-navigation="" data-reveal="" aria-label="Series navigation">
+          <section data-series-navigation-group="">
+            <p data-eyebrow="" data-muted="">Series</p>
+            <h2>In this series: How I made it</h2>
+            <ol data-series-navigation-links="">
+              <li>
+                <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="false"
+                  >How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-07-cms-and-markdown-processing.html" aria-current="false"
+                  >CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false"
+                  >Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-14-why-no-astro-eleventy-next.html" aria-current="false"
+                  >Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-18-custom-ssg-pipeline.html" aria-current="false"
+                  >Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-21-template-engine-and-template-structure.html" aria-current="false"
+                  >Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-25-archives-tags-months-series.html" aria-current="false"
+                  >Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-28-progressive-enhancement-as-contract.html" aria-current="false"
+                  >Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-02-design-tokens-before-pages.html" aria-current="false"
+                  >Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-05-build-assets-pipeline.html" aria-current="false"
+                  >Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html" aria-current="false"
+                  >Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-12-og-images-at-build-time.html" aria-current="false"
+                  >OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-16-seo-metadata-without-rituals.html" aria-current="false"
+                  >SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-19-quality-gate-lint-format-verify.html" aria-current="false"
+                  >Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-23-ci-cd-around-github-pages.html" aria-current="false"
+                  >CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-26-vibe-coding-with-rigor.html" aria-current="false"
+                  >Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="false"
+                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="false"
+                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-06-how-pixhighlighter-is-built.html" aria-current="page"
+                  >How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty) (you are
+                  here)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-09-why-display-preferences-popover-exists.html" aria-current="false"
+                  >Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-16-client-side-search-static-dataset.html" aria-current="false"
+                  >Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-23-custom-element-syntax-highlight.html" aria-current="false"
+                  >A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-27-accessible-scrollspy-outline.html" aria-current="false"
+                  >Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-30-honest-lazy-loading.html" aria-current="false"
+                  >Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-04-pragmatic-service-worker.html" aria-current="false"
+                  >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false"
+                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
+                >
+              </li>
+            </ol>
+          </section>
+
+          <section data-series-navigation-group="">
+            <p data-eyebrow="" data-muted="">Series</p>
+            <h2>In this series: pix-components</h2>
+            <ol data-series-navigation-links="">
+              <li>
+                <a href="/posts/2026-06-06-how-pixhighlighter-is-built.html" aria-current="page"
+                  >How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty) (you are
+                  here)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-23-custom-element-syntax-highlight.html" aria-current="false"
+                  >A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-27-accessible-scrollspy-outline.html" aria-current="false"
+                  >Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</a
+                >
+              </li>
+            </ol>
+          </section>
+        </nav>
+      </article>
+
+      <nav data-post-nav="" aria-label="Post navigation">
+        <a data-post-nav-card="" data-reveal="" rel="prev" href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html">
+          <span data-post-nav-label="">Previous</span>
+          <strong>WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</strong>
+        </a>
+
+        <a
+          data-post-nav-card=""
+          data-reveal=""
+          rel="next"
+          href="/posts/2026-06-09-why-display-preferences-popover-exists.html"
+        >
+          <span data-post-nav-label="">Next</span>
+          <strong
+            >Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)</strong
+          >
+        </a>
+      </nav>
+    </main>
+
+    <footer role="contentinfo" data-site-footer="">
+      <div data-container="" data-footer-grid="">
+        <div data-footer-copy="">
+          <p data-footer-brand="">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav data-footer-nav="" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
+</html>

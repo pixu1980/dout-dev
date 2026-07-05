@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)</title>
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="The distribution minimum (three files, that's it)" />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
+    <script>
+      document.documentElement.dataset.userPreferences = 'ready';
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      :root {
+        --dout--file-preview-border: #d9a441;
+        --dout--file-preview-bg: #fff3cd;
+        --dout--file-preview-text: #5c3b00;
+      }
+
+      [data-file-preview-warning] {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--dout--file-preview-border);
+        background: var(--dout--file-preview-bg);
+        color: var(--dout--file-preview-text);
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] [data-file-preview-warning] {
+        display: block;
+      }
+
+      [data-file-preview-warning] code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)"
+    />
+    <meta property="og:description" content="The distribution minimum (three files, that's it)" />
+    <meta property="og:url" content="https://dout.dev/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html" />
+    <meta
+      property="og:image"
+      content="https://dout.dev/assets/og/posts/2026-05-09-feeds-and-sitemaps-at-build-time.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Preview image for Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-05-09T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2026-05-09T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta
+      name="twitter:title"
+      content="Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)"
+    />
+    <meta name="twitter:description" content="The distribution minimum (three files, that's it)" />
+    <meta
+      name="twitter:image"
+      content="https://dout.dev/assets/og/posts/2026-05-09-feeds-and-sitemaps-at-build-time.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Preview image for Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)",
+        "description": "The distribution minimum (three files, that's it)",
+        "datePublished": "2026-05-09T00:00:00.000Z",
+        "dateModified": "2026-05-09T00:00:00.000Z",
+        "author": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html"
+        },
+        "image": ["https://dout.dev/assets/og/posts/2026-05-09-feeds-and-sitemaps-at-build-time.png"],
+        "keywords": "feed, rss, sitemap, page, json, ship, readers, tag, files, month, feeds, blog"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)",
+            "item": "https://dout.dev/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html"
+          }
+        ]
+      }
+    </script>
+
+    <link rel="stylesheet" href="/styles/index.css" />
+    <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
+  </head>
+  <body data-site-shell="">
+    <p data-file-preview-warning="" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a data-skip-link="" href="#main">Skip to main content</a>
+    <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" data-site-header="">
+      <div data-container="" data-header-bar="">
+        <a data-brand="" href="/">
+          <span data-brand-mark="">dout.dev</span>
+          <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <nav id="mainmenu" data-main-nav="" aria-label="Main">
+          <ul data-main-links="" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div data-header-actions="">
+          <color-scheme-switcher></color-scheme-switcher>
+          <display-preferences-popover></display-preferences-popover>
+          <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting">
+        <header data-post-hero="" data-reveal="">
+          <p data-eyebrow="">Article</p>
+          <p data-post-meta="">
+            <time datetime="2026-05-09" itemprop="datePublished"> May 9, 2026 </time>
+            <span data-post-divider="">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 itemprop="headline" tabindex="0">
+            Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)
+          </h1>
+
+          <p data-post-description="">The distribution minimum (three files, that's it)</p>
+
+          <ul data-tag-list="" aria-label="Tags">
+            <li><a data-tag="" href="/tags/making-of.html">making-of</a></li>
+
+            <li><a data-tag="" href="/tags/feeds.html">feeds</a></li>
+
+            <li><a data-tag="" href="/tags/seo.html">seo</a></li>
+
+            <li><a data-tag="" href="/tags/static-site.html">static-site</a></li>
+          </ul>
+
+          <figure data-post-cover="">
+            <img
+              src="/assets/og/posts/2026-05-09-feeds-and-sitemaps-at-build-time-card.png"
+              alt="Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="900"
+            />
+          </figure>
+        </header>
+
+        <section data-post-shell="" role="region">
+          <h2 data-visually-hidden="">Article content</h2>
+
+          <section data-prose="" itemprop="articleBody">
+            <h2 id="the-distribution-minimum-three-files-that-s-it" tabindex="0" data-toc-anchor="true">
+              The distribution minimum (three files, that's it)
+            </h2>
+            <p>
+              A blog that does not ship feeds and a sitemap is a blog that nobody can reliably subscribe to, and a blog
+              that crawlers have to guess at. Both problems are fixed with three files:
+            </p>
+            <ul>
+              <li><code>feed.rss</code> for the greybeards who still use actual RSS readers (I love you people);</li>
+              <li><code>feed.json</code> for the modern readers who prefer JSON Feed (I also love you);</li>
+              <li><code>sitemap.xml</code> for crawlers (I tolerate you).</li>
+            </ul>
+            <p>
+              On dout.dev <strong>all three are generated at build time</strong> from the same normalized dataset the
+              page generator uses. No external tooling. No runtime hit. No excuses.
+            </p>
+            <h2 id="rss-2-0-is-still-the-lingua-franca-yes-in-2026" tabindex="0" data-toc-anchor="true">
+              RSS 2.0 is still the lingua franca (yes, in 2026)
+            </h2>
+            <p>
+              Despite being old enough to drink in most countries, RSS remains the format that every reader supports. If
+              you ship exactly one feed, ship RSS. The schema is tiny and the templating is a for-loop.
+            </p>
+            <pre is="pix-highlighter" data-lang="xml"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"&gt;
+  &lt;channel&gt;
+    &lt;title&gt;dout.dev&lt;&#x2F;title&gt;
+    &lt;link&gt;https://dout.dev&lt;&#x2F;link&gt;
+    &lt;description&gt;Vanilla-first static blog on web standards and AI-assisted engineering.&lt;&#x2F;description&gt;
+    &lt;language&gt;en-us&lt;&#x2F;language&gt;
+    &lt;lastBuildDate&gt;Mon, 30 Jun 2026 08:00:00 GMT&lt;&#x2F;lastBuildDate&gt;
+    &lt;atom:link href="https://dout.dev/feed.rss" rel="self" type="application/rss+xml" /&gt;
+    &lt;item&gt;
+      &lt;title&gt;How Feeds Work at Build Time&lt;&#x2F;title&gt;
+      &lt;link&gt;https://dout.dev/posts/feeds.html&lt;&#x2F;link&gt;
+      &lt;guid isPermaLink="true"&gt;https://dout.dev/posts/feeds.html&lt;&#x2F;guid&gt;
+      &lt;pubDate&gt;Tue, 30 Jun 2026 08:00:00 GMT&lt;&#x2F;pubDate&gt;
+      &lt;description&gt;&lt;![CDATA[The three distribution files every blog should ship...]]&gt;&lt;&#x2F;description&gt;
+    &lt;&#x2F;item&gt;
+  &lt;&#x2F;channel&gt;
+&lt;&#x2F;rss&gt;</code></pre>
+            <p>Two things are easy to get wrong here. Don't get them wrong.</p>
+            <p>
+              <strong>The <code>lastBuildDate</code> and <code>pubDate</code> must be RFC 822.</strong> Not ISO. Not "a
+              date." RFC 822 with a four-digit year is the correct shape. Readers will silently drop items that do not
+              parse. I learned this the hard way so you don't have to.
+            </p>
+            <p>
+              <strong>The <code>&lt;atom:link rel="self"&gt;</code> is not optional.</strong> It is the self-reference
+              that tells aggregators where the feed lives. Some validators treat it as a warning; some treat it as a
+              bug; some readers ignore it. Ship it anyway.
+            </p>
+            <h2 id="json-feed-is-not-a-curiosity-it-actually-rocks" tabindex="0" data-toc-anchor="true">
+              JSON Feed is not a curiosity (it actually rocks)
+            </h2>
+            <p>
+              JSON Feed is worth shipping alongside RSS. The format is human-readable, trivial to parse, and the spec is
+              under one screen. Readers like NetNewsWire and Readwise speak it natively.
+            </p>
+            <pre is="pix-highlighter" data-lang="json"><code>{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "dout.dev",
+  "home_page_url": "https://dout.dev",
+  "feed_url": "https://dout.dev/feed.json",
+  "items": [
+    {
+      "id": "https://dout.dev/posts/some-post.html",
+      "url": "https://dout.dev/posts/some-post.html",
+      "title": "Feeds at Build Time",
+      "date_published": "2026-06-30T08:00:00Z",
+      "tags": ["seo", "static-site"]
+    }
+  ]
+}</code></pre>
+            <p>
+              The cost of adding it is an extra file and twenty lines of generator code. The benefit is any reader that
+              speaks JSON Feed gets richer metadata — tags, summaries, author — without the ceremony of extension
+              namespaces in XML. Twenty lines. Do it.
+            </p>
+            <h2 id="sitemap-every-url-or-no-url-pick-one" tabindex="0" data-toc-anchor="true">
+              Sitemap: every URL or no URL (pick one)
+            </h2>
+            <p>
+              The sitemap is for crawlers. If you ship it, ship EVERYTHING. Partial sitemaps are worse than no sitemap
+              because they implicitly tell the crawler "these are the interesting pages," which de-weights everything
+              not listed.
+            </p>
+            <p>
+              The dout.dev sitemap includes posts, tag pages, month archives, series archives, the home page, the about
+              page, and the search page. It does NOT include the 404, the offline page, or the playground.
+            </p>
+            <p>
+              The <code>changefreq</code> and <code>priority</code> fields are advisory. Google has said publicly that
+              it mostly ignores them. I still ship them because other crawlers read them and the cost is nothing.
+              Zero-cost optional metadata is always a yes.
+            </p>
+            <h2
+              id="per-tag-and-per-month-rss-for-people-who-give-a-shit-about-one-topic"
+              tabindex="0"
+              data-toc-anchor="true"
+            >
+              Per-tag and per-month RSS (for people who give a shit about one topic)
+            </h2>
+            <p>
+              An underrated feature: each tag page and each month archive on dout.dev has its own RSS feed. A reader who
+              cares about <code>accessibility</code> but not about <code>css</code> can subscribe to
+              <code>/tags/accessibility.xml</code> and never see a post outside that tag.
+            </p>
+            <p>
+              The feeds are generated from the same dataset as the main feed, filtered to the tag or month. It is free
+              to produce, because the normalized data already has the tag and month indexes. Free as in beer and free as
+              in effort.
+            </p>
+            <pre
+              is="pix-highlighter"
+              data-lang="html"
+            ><code>&lt;link rel="alternate" type="application/rss+xml" title="dout.dev - accessibility" href="/tags/accessibility.xml" /&gt;</code></pre>
+            <p>
+              That <code>&lt;link rel="alternate"&gt;</code> is how readers auto-discover the feed. Every tag page ships
+              it. Every month page ships it. No exceptions.
+            </p>
+            <h2 id="the-build-time-angle-the-part-that-actually-matters" tabindex="0" data-toc-anchor="true">
+              The build-time angle (the part that actually matters)
+            </h2>
+            <p>
+              None of this happens at runtime. The feeds and sitemap are generated when the CMS builds, committed as
+              artifacts in <code>dist/</code>, and served as plain static files by GitHub Pages. That means:
+            </p>
+            <ul>
+              <li>No feed service to maintain.</li>
+              <li>No cache invalidation problem.</li>
+              <li>No rate limiting, no throttling, no 500 errors on publish spikes.</li>
+              <li>The feed is always consistent with the site it describes, because they come from the same build.</li>
+            </ul>
+            <p>
+              This is the elegance of static sites: everything is a file. Your feed is a file. Your sitemap is a file.
+              Your images are files. Your pages are files. Files don't crash.
+            </p>
+            <h2 id="the-takeaway" tabindex="0" data-toc-anchor="true">The takeaway</h2>
+            <p>
+              Shipping RSS, JSON Feed, and a sitemap is an afternoon of generator code. The payoff is measurable:
+              crawlers find your content, readers subscribe, and the blog stops being a black box to the rest of the
+              web. If your blog doesn't have feeds in 2026, fix that before you write another post.
+            </p>
+          </section>
+        </section>
+
+        <aside data-post-sidebar="" role="complementary">
+          <nav data-post-toc="">
+            <h2>TOC</h2>
+            <ol data-post-toc-list="">
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-distribution-minimum-three-files-that-s-it"
+                  >The distribution minimum (three files, that's it)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#rss-2-0-is-still-the-lingua-franca-yes-in-2026"
+                  >RSS 2.0 is still the lingua franca (yes, in 2026)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#json-feed-is-not-a-curiosity-it-actually-rocks"
+                  >JSON Feed is not a curiosity (it actually rocks)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#sitemap-every-url-or-no-url-pick-one"
+                  >Sitemap: every URL or no URL (pick one)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a
+                  data-post-toc-link=""
+                  data-level="2"
+                  href="#per-tag-and-per-month-rss-for-people-who-give-a-shit-about-one-topic"
+                  >Per-tag and per-month RSS (for people who give a shit about one topic)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-build-time-angle-the-part-that-actually-matters"
+                  >The build-time angle (the part that actually matters)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-takeaway">The takeaway</a>
+              </li>
+            </ol>
+          </nav>
+        </aside>
+
+        <section data-comments-shell="" data-reveal="">
+          <header data-section-heading="">
+            <p data-eyebrow="">Discussion</p>
+            <h2>Comments live in GitHub Discussions</h2>
+          </header>
+          <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2026-05-09-feeds-and-sitemaps-at-build-time.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
+
+        <nav data-series-navigation="" data-reveal="" aria-label="Series navigation">
+          <section data-series-navigation-group="">
+            <p data-eyebrow="" data-muted="">Series</p>
+            <h2>In this series: How I made it</h2>
+            <ol data-series-navigation-links="">
+              <li>
+                <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="false"
+                  >How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-07-cms-and-markdown-processing.html" aria-current="false"
+                  >CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false"
+                  >Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-14-why-no-astro-eleventy-next.html" aria-current="false"
+                  >Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-18-custom-ssg-pipeline.html" aria-current="false"
+                  >Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-21-template-engine-and-template-structure.html" aria-current="false"
+                  >Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-25-archives-tags-months-series.html" aria-current="false"
+                  >Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-28-progressive-enhancement-as-contract.html" aria-current="false"
+                  >Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-02-design-tokens-before-pages.html" aria-current="false"
+                  >Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-05-build-assets-pipeline.html" aria-current="false"
+                  >Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html" aria-current="page"
+                  >Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.) (you are here)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-12-og-images-at-build-time.html" aria-current="false"
+                  >OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-16-seo-metadata-without-rituals.html" aria-current="false"
+                  >SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-19-quality-gate-lint-format-verify.html" aria-current="false"
+                  >Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-23-ci-cd-around-github-pages.html" aria-current="false"
+                  >CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-26-vibe-coding-with-rigor.html" aria-current="false"
+                  >Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="false"
+                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="false"
+                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-06-how-pixhighlighter-is-built.html" aria-current="false"
+                  >How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-09-why-display-preferences-popover-exists.html" aria-current="false"
+                  >Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-16-client-side-search-static-dataset.html" aria-current="false"
+                  >Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-23-custom-element-syntax-highlight.html" aria-current="false"
+                  >A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-27-accessible-scrollspy-outline.html" aria-current="false"
+                  >Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-30-honest-lazy-loading.html" aria-current="false"
+                  >Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-04-pragmatic-service-worker.html" aria-current="false"
+                  >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false"
+                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
+                >
+              </li>
+            </ol>
+          </section>
+        </nav>
+      </article>
+
+      <nav data-post-nav="" aria-label="Post navigation">
+        <a data-post-nav-card="" data-reveal="" rel="prev" href="/posts/2026-05-05-build-assets-pipeline.html">
+          <span data-post-nav-label="">Previous</span>
+          <strong>Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)</strong>
+        </a>
+
+        <a data-post-nav-card="" data-reveal="" rel="next" href="/posts/2026-05-12-og-images-at-build-time.html">
+          <span data-post-nav-label="">Next</span>
+          <strong>OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)</strong>
+        </a>
+      </nav>
+    </main>
+
+    <footer role="contentinfo" data-site-footer="">
+      <div data-container="" data-footer-grid="">
+        <div data-footer-copy="">
+          <p data-footer-brand="">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav data-footer-nav="" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
+</html>

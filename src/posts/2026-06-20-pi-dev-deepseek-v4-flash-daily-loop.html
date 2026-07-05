@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing</title>
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="The headline numbers" />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
+    <script>
+      document.documentElement.dataset.userPreferences = 'ready';
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      :root {
+        --dout--file-preview-border: #d9a441;
+        --dout--file-preview-bg: #fff3cd;
+        --dout--file-preview-text: #5c3b00;
+      }
+
+      [data-file-preview-warning] {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--dout--file-preview-border);
+        background: var(--dout--file-preview-bg);
+        color: var(--dout--file-preview-text);
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] [data-file-preview-warning] {
+        display: block;
+      }
+
+      [data-file-preview-warning] code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing" />
+    <meta property="og:description" content="The headline numbers" />
+    <meta property="og:url" content="https://dout.dev/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html" />
+    <meta
+      property="og:image"
+      content="https://dout.dev/assets/og/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Preview image for Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-06-20T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2026-06-20T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="twitter:title" content="Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing" />
+    <meta name="twitter:description" content="The headline numbers" />
+    <meta
+      name="twitter:image"
+      content="https://dout.dev/assets/og/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Preview image for Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "description": "The headline numbers",
+        "datePublished": "2026-06-20T00:00:00.000Z",
+        "dateModified": "2026-06-20T00:00:00.000Z",
+        "author": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html"
+        },
+        "image": ["https://dout.dev/assets/og/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.png"],
+        "keywords": "agent, loop, deepseek, flash, context, model, tokens, work, cost, per, cache, read"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+            "item": "https://dout.dev/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html"
+          }
+        ]
+      }
+    </script>
+
+    <link rel="stylesheet" href="/styles/index.css" />
+    <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
+  </head>
+  <body data-site-shell="">
+    <p data-file-preview-warning="" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a data-skip-link="" href="#main">Skip to main content</a>
+    <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" data-site-header="">
+      <div data-container="" data-header-bar="">
+        <a data-brand="" href="/">
+          <span data-brand-mark="">dout.dev</span>
+          <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <nav id="mainmenu" data-main-nav="" aria-label="Main">
+          <ul data-main-links="" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div data-header-actions="">
+          <color-scheme-switcher></color-scheme-switcher>
+          <display-preferences-popover></display-preferences-popover>
+          <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting">
+        <header data-post-hero="" data-reveal="">
+          <p data-eyebrow="">Article</p>
+          <p data-post-meta="">
+            <time datetime="2026-06-20" itemprop="datePublished"> June 20, 2026 </time>
+            <span data-post-divider="">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 itemprop="headline" tabindex="0">
+            Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing
+          </h1>
+
+          <p data-post-description="">The headline numbers</p>
+
+          <ul data-tag-list="" aria-label="Tags">
+            <li><a data-tag="" href="/tags/ai.html">ai</a></li>
+
+            <li><a data-tag="" href="/tags/workflow.html">workflow</a></li>
+
+            <li><a data-tag="" href="/tags/tooling.html">tooling</a></li>
+
+            <li><a data-tag="" href="/tags/making-of.html">making-of</a></li>
+          </ul>
+
+          <figure data-post-cover="">
+            <img
+              src="/assets/og/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop-card.png"
+              alt="Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="900"
+            />
+          </figure>
+        </header>
+
+        <section data-post-shell="" role="region">
+          <h2 data-visually-hidden="">Article content</h2>
+
+          <section data-prose="" itemprop="articleBody">
+            <h2 id="the-headline-numbers" tabindex="0" data-toc-anchor="true">The headline numbers</h2>
+            <p>I will get the math out of the way first, because the cost is the part that surprises people.</p>
+            <ul>
+              <li>
+                <strong>Pi</strong> is an open-source terminal coding agent. MIT-licensed, written in TypeScript, four
+                core tools (<code>read</code>, <code>write</code>, <code>edit</code>, <code>bash</code>) plus three
+                opt-in read-only ones (<code>grep</code>, <code>find</code>, <code>ls</code>). No plan mode, no
+                sub-agents, no permission popups, no IDE lock-in.
+              </li>
+              <li>
+                <strong>DeepSeek V4 Flash</strong> is a 284B-parameter Mixture-of-Experts model with only 13B active per
+                token, a 1M-token context window, and pricing that lands at
+                <strong>$0.14 per million input tokens</strong> (cache miss),
+                <strong>$0.0028 per million input tokens</strong> (cache hit), and
+                <strong>$0.28 per million output tokens</strong> on the official API. Open weights, MIT license.
+              </li>
+              <li>
+                A typical agent-loop session of mine reads, edits, and writes across a few hundred kilobytes of context,
+                runs a few tool calls, and produces a few thousand tokens of reasoning. The bill is
+                <strong>fractions of a cent</strong>.
+              </li>
+              <li>
+                A heavy day, the kind where I ship two milestones and refactor a subsystem end-to-end, lands somewhere
+                between <strong>$0.30 and $0.90</strong>.
+              </li>
+            </ul>
+            <p>
+              That is the actual economic story of this combination. It is not a benchmark artifact. It is the loop I
+              work in every day. This post is the full setup, the daily workflow, the cost math, the things it does not
+              do well, and why I now treat it as the default.
+            </p>
+            <h2 id="what-pi-dev-is-and-what-it-deliberately-is-not" tabindex="0" data-toc-anchor="true">
+              What pi.dev is, and what it deliberately is not
+            </h2>
+            <p>
+              Pi is the work of Mario Zechner, now maintained under the <code>earendil-works</code> GitHub organization.
+              It is a terminal-native coding harness: you run it, it reads your repo, it proposes edits, it runs shell
+              commands, and you review every change before it lands on disk. The repository sits at around 66.5K stars,
+              and it has a very strong opinion about what a coding agent should be.
+            </p>
+            <p>The opinion is <strong>minimalism without being stupid</strong>.</p>
+            <p>
+              Pi ships with exactly four core tools: <code>read</code>, <code>write</code>, <code>edit</code>, and
+              <code>bash</code>. Three more, <code>grep</code>, <code>find</code>, and <code>ls</code>, are available as
+              opt-in read-only tools. That is the entire built-in surface. Everything else is a TypeScript extension, a
+              skill, a prompt template, or a theme. There is no plan mode because you can write a prompt template that
+              asks the model to plan first. There is no sub-agent system because you can write a skill that delegates.
+              There is no permission system because you are expected to read the diff before the model writes to disk.
+            </p>
+            <p>
+              That last point is the one most people miss. Pi does not remove safety. Pi removes
+              <strong>friction</strong>. You still review every change. You still see the exact command before it runs.
+              You still decide when the loop is done. What you give up is a layer of confirmation dialogs that, in my
+              experience, do not actually catch the kind of mistakes that matter and mostly just slow down the parts of
+              the work that are already correct.
+            </p>
+            <p>
+              The other thing Pi gets right is the provider model. It supports 20+ providers out of the box, including
+              Anthropic, OpenAI, Google, xAI, Mistral, Groq, OpenRouter, and DeepSeek. DeepSeek is a first-class native
+              provider because it speaks the OpenAI-compatible API, and you can switch models mid-session. The
+              configuration lives in <code>~/.pi/agent/models.json</code> and you can register as many models as you
+              want.
+            </p>
+            <p>
+              I have seven models registered at any given time. I switch between them depending on the task. The default
+              for almost everything I do is DeepSeek V4 Flash.
+            </p>
+            <h2 id="what-deepseek-v4-flash-actually-is" tabindex="0" data-toc-anchor="true">
+              What DeepSeek V4 Flash actually is
+            </h2>
+            <p>
+              DeepSeek V4 launched in preview on <strong>April 24, 2026</strong>, in two variants. V4-Pro is the
+              flagship: 1.6T total parameters, 49B active, around $1.74 per million input tokens and $3.48 per million
+              output tokens. V4-Flash is the cost-optimized tier: 284B total, <strong>13B active per token</strong>, 1M
+              context window, 2,500 concurrent requests, and the pricing I quoted above.
+            </p>
+            <p>
+              The interesting design choice is the MoE split. 284B sounds enormous, but only 13B parameters run on any
+              given token, which is what gives Flash its cost and latency profile. The model is not a "small model that
+              tries to look big" — it is a properly sparse MoE that pays a small compute bill per token while still
+              benefiting from a much larger knowledge base when routing. DeepSeek also uses a sparse attention scheme
+              (CSA / HCA) to keep the 1M-context long-tail cheap, which is exactly what an agent loop needs.
+            </p>
+            <p>
+              On coding benchmarks, V4-Flash lands around <strong>79% on SWE-bench Verified</strong> and
+              <strong>96% on HumanEval</strong> in third-party reporting, with a gap of about 1.6 percentage points to
+              V4-Pro on SWE-bench Verified and around 1.9 points on LiveCodeBench. That is not the kind of gap I care
+              about for the kind of work I do with it.
+            </p>
+            <p>
+              The other important fact is that V4-Flash ships under an <strong>MIT license for the weights</strong>. The
+              API name is <code>deepseek-v4-flash</code>, the older <code>deepseek-chat</code> and
+              <code>deepseek-reasoner</code> aliases retire on <strong>July 24, 2026</strong>, and the integration with
+              Pi is officially documented on the DeepSeek API docs, not just tolerated.
+            </p>
+            <h2 id="the-daily-loop" tabindex="0" data-toc-anchor="true">The daily loop</h2>
+            <p>Here is the loop, condensed.</p>
+            <ol>
+              <li>
+                <strong>Start the agent in the project root.</strong> <code>pi</code> runs in the terminal, reads the
+                project context, and shows me the current state of the working tree.
+              </li>
+              <li>
+                <strong>State the outcome in one paragraph.</strong> Not a task list. A paragraph a smart colleague
+                could act on cold. "Refactor the search indexer to use a prebuilt JSON dataset. Match the conventions in
+                <code>scripts/cms/_index.js</code>. Do not touch the post template. Return the new file and the minimal
+                diff to wire it up."
+              </li>
+              <li>
+                <strong>Let the agent run the tool loop.</strong> It reads files, runs <code>pnpm test</code>, runs
+                <code>pnpm lint</code>, edits the right places, and reports back. Most of my sessions are 5 to 20 tool
+                calls.
+              </li>
+              <li>
+                <strong>Read the diff.</strong> This is the part I never skip. Pi shows me exactly what changed, in
+                which files, and I approve, reject, or steer.
+              </li>
+              <li><strong>Ship.</strong> Commit, push, let CI do the rest.</li>
+            </ol>
+            <p>
+              The 1M context window matters more than I expected. Most of my projects are well under that, but the
+              long-context behavior is what makes the agent loop feel cheap rather than expensive. When the model can
+              hold the whole architecture in memory, it stops asking redundant questions, stops re-reading files, and
+              stops producing context-degrading summaries of files it has already read.
+            </p>
+            <h2 id="the-cost-math-in-real-numbers" tabindex="0" data-toc-anchor="true">
+              The cost math, in real numbers
+            </h2>
+            <p>Let me be specific, because vague cost claims are useless.</p>
+            <p>
+              A typical milestone on dout.dev has been something like a CMS build step, a new template, or a content
+              migration. The agent loop for one of those usually looks like:
+            </p>
+            <ul>
+              <li>
+                200k–500k tokens of input across the session, most of which is the system prompt, the project context,
+                and the files being read.
+              </li>
+              <li>5k–20k tokens of output, which includes reasoning, diffs, and the final response.</li>
+              <li>
+                Most of those input tokens are <strong>cache hits</strong> after the first turn, because Pi re-sends the
+                same system prompt and the same long project context on every iteration.
+              </li>
+            </ul>
+            <p>
+              At the cache-miss rate, 500k input tokens cost <strong>$0.07</strong>. 20k output tokens cost
+              <strong>$0.0056</strong>. Total: <strong>$0.0756</strong> before cache.
+            </p>
+            <p>
+              At the cache-hit rate for everything except the first turn, the same session lands closer to
+              <strong>$0.02–$0.04</strong>. That is for a milestone that would have taken me hours and a significant
+              amount of attention.
+            </p>
+            <p>
+              A heavy day, two milestones plus a refactor plus a documentation pass, has been landing somewhere in the
+              <strong>$0.30–$0.90</strong> range. I have had monthly totals that look like rounding errors. I am not
+              being clever about it. I just do not have to think about the meter.
+            </p>
+            <p>
+              There is also <code>pi-deepseek-cache</code>, a small extension that pins the system prompt and tool
+              definitions to keep the prefix-cache hot, and the developer reports a 95%+ cache hit rate once the loop
+              stabilizes. I have not measured my own hit rate that carefully, but I have watched my daily bill drop when
+              I started using it, and the savings are real.
+            </p>
+            <h2 id="what-i-stopped-using" tabindex="0" data-toc-anchor="true">What I stopped using</h2>
+            <p>
+              I am not going to pretend the alternatives do not work. They do. They are just more expensive in ways that
+              matter at the personal-tooling scale.
+            </p>
+            <ul>
+              <li>
+                <strong>Cursor and the heavy IDE agents.</strong> Great for some workflows, expensive at the per-month
+                subscription rate for the kind of agent-loop-heavy work I do, and they want to own the editor.
+              </li>
+              <li>
+                <strong>Claude Code and the Anthropic-native loops.</strong> Excellent model, very good tool harness,
+                but at Opus-class pricing, an output-heavy agent loop is roughly an order of magnitude more expensive
+                than the same loop on V4-Flash, and for the work I do day-to-day the quality delta is not worth that
+                multiplier.
+              </li>
+              <li>
+                <strong>ChatGPT-style web UIs.</strong> Fine for one-shot questions. Useless for in-repo work, because
+                the context does not survive a session and the tools are limited to copy-paste.
+              </li>
+            </ul>
+            <p>
+              I am not saying these tools are bad. I am saying that for a developer who lives inside agent loops and who
+              cares about the difference between a $0.30 day and a $5 day, the combination of Pi and DeepSeek V4 Flash
+              is a structurally better default.
+            </p>
+            <h2 id="the-honest-trade-offs" tabindex="0" data-toc-anchor="true">The honest trade-offs</h2>
+            <p>Nothing is free. Here is what I give up.</p>
+            <ul>
+              <li>
+                <strong>V4-Flash is still labeled Preview.</strong> The model is fast, cheap, and very good, but the
+                weights are still in the preview line and the API name change in July 2026 means I will need to update
+                configuration at some point.
+              </li>
+              <li>
+                <strong>Pi does not babysit me.</strong> No permission popups, no dry-run confirmation, no safe-mode. If
+                I let the agent run a destructive command, it runs. This is a feature for me, but it is a sharp edge for
+                someone used to a more guided harness.
+              </li>
+              <li>
+                <strong>No plan mode out of the box.</strong> I write my own prompt template when I want a planning
+                step. Some people will hate this. I do not, because I find that hardcoded plan modes get in the way of
+                the kind of small, fast, in-the-flow work I do most of the time.
+              </li>
+              <li>
+                <strong>The model is Chinese-trained on a large multilingual corpus.</strong> I do not consider this a
+                trade-off, but it is a fact. V4-Flash is excellent at English, very good at the rest of the languages I
+                touch, and explicitly licensed for commercial use.
+              </li>
+              <li>
+                <strong>Long-context reasoning still degrades past a point.</strong> The 1M context is a budget, not a
+                free pass. The agent loop is at its best when the relevant files are well within the first 200k–400k
+                tokens, and the rest of the context is supporting material.
+              </li>
+            </ul>
+            <p>None of these trade-offs are dealbreakers for me. They are constraints I work with.</p>
+            <h2 id="why-this-is-the-new-default" tabindex="0" data-toc-anchor="true">Why this is the new default</h2>
+            <p>
+              Five years ago, the choice of a coding agent was a tooling preference. Today, it is a budget question, a
+              workflow question, and a philosophical question.
+            </p>
+            <p>
+              Pi is a small, transparent, customizable harness that does not try to be my IDE, my project manager, or my
+              safety net. It gives me a loop and gets out of the way. DeepSeek V4 Flash is a fast, open, properly sparse
+              model that charges cents for what used to cost dollars. Together, they make the kind of agent-driven,
+              multi-file, context-heavy work I do every day economically trivial.
+            </p>
+            <p>
+              I am not saying Pi + V4-Flash is the right answer for every team. A regulated environment, a large
+              enterprise, a security-sensitive codebase, or a team that needs deep IDE integration will make a different
+              choice. But for an independent developer who ships a lot, who reads every diff, who does not need
+              permission popups, and who used to flinch at the monthly AI bill, the answer is: this loop, this model,
+              this cost.
+            </p>
+            <p>
+              The model is becoming part of the abstraction layer. The agent harness is becoming part of the editor. The
+              bill is becoming rounding error.
+            </p>
+            <p>That is the new default. I am not going back.</p>
+            <h2 id="sources" tabindex="0" data-toc-anchor="true">Sources</h2>
+            <ul>
+              <li>
+                <a
+                  href="https://pi.dev/?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >pi.dev — official site</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/earendil-works/pi?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >earendil-works/pi on GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://api-docs.deepseek.com/news/news260424?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >DeepSeek V4 Preview release notes (April 24, 2026)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://api-docs.deepseek.com/quick_start/pricing?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >DeepSeek API — Models and pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://api-docs.deepseek.com/quick_start/agent_integrations/pi_mono?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >DeepSeek API — Integrate with Pi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >DeepSeek V4 Flash on Hugging Face</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://huggingface.co/blog/deepseekv4?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Hugging Face — DeepSeek V4 blog post</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://hokai.io/hub/models/deepseek-v4-flash?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >HokAI — DeepSeek V4 Flash model profile</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://codersera.com/blog/deepseek-v4-flash-deep-dive/amp/?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Codersera — DeepSeek V4 Flash deep dive</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.runlocalai.co/models/deepseek-v4-flash?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >RunLocalAI — DeepSeek V4 Flash model profile</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/rohaquinlop/pi-deepseek-cache?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >rohaquinlop/pi-deepseek-cache on GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/TheTrebor/pi-reasonix?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >thetrebor/pi-reasonix on GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://pick-right.com/tools/pi/?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Pi Review — Pick Right</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://shenxianpeng.github.io/en/posts/2026/pi-deepseek/?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Xianpeng Shen — Writing an Article for Twenty-Four Cents: Pi + DeepSeek</a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <aside data-post-sidebar="" role="complementary">
+          <nav data-post-toc="">
+            <h2>TOC</h2>
+            <ol data-post-toc-list="">
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-headline-numbers">The headline numbers</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#what-pi-dev-is-and-what-it-deliberately-is-not"
+                  >What pi.dev is, and what it deliberately is not</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#what-deepseek-v4-flash-actually-is"
+                  >What DeepSeek V4 Flash actually is</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-daily-loop">The daily loop</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-cost-math-in-real-numbers"
+                  >The cost math, in real numbers</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#what-i-stopped-using">What I stopped using</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-honest-trade-offs">The honest trade-offs</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#why-this-is-the-new-default"
+                  >Why this is the new default</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#sources">Sources</a>
+              </li>
+            </ol>
+          </nav>
+        </aside>
+
+        <section data-comments-shell="" data-reveal="">
+          <header data-section-heading="">
+            <p data-eyebrow="">Discussion</p>
+            <h2>Comments live in GitHub Discussions</h2>
+          </header>
+          <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
+
+        <nav data-series-navigation="" data-reveal="" aria-label="Series navigation">
+          <section data-series-navigation-group="">
+            <p data-eyebrow="" data-muted="">Series</p>
+            <h2>In this series: Bold Opinions</h2>
+            <ol data-series-navigation-links="">
+              <li>
+                <a href="/posts/2026-05-26-vibe-coding-with-rigor.html" aria-current="false"
+                  >Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-13-the-end-of-borrowed-abstractions.html" aria-current="false"
+                  >The End of Borrowed Abstractions</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html" aria-current="page"
+                  >Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing (you are here)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false"
+                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
+                >
+              </li>
+            </ol>
+          </section>
+
+          <section data-series-navigation-group="">
+            <p data-eyebrow="" data-muted="">Series</p>
+            <h2>In this series: The Future of Software</h2>
+            <ol data-series-navigation-links="">
+              <li>
+                <a href="/posts/2026-06-13-the-end-of-borrowed-abstractions.html" aria-current="false"
+                  >The End of Borrowed Abstractions</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html" aria-current="page"
+                  >Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing (you are here)</a
+                >
+              </li>
+            </ol>
+          </section>
+        </nav>
+      </article>
+
+      <nav data-post-nav="" aria-label="Post navigation">
+        <a
+          data-post-nav-card=""
+          data-reveal=""
+          rel="prev"
+          href="/posts/2026-06-16-client-side-search-static-dataset.html"
+        >
+          <span data-post-nav-label="">Previous</span>
+          <strong>Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</strong>
+        </a>
+
+        <a
+          data-post-nav-card=""
+          data-reveal=""
+          rel="next"
+          href="/posts/2026-06-23-custom-element-syntax-highlight.html"
+        >
+          <span data-post-nav-label="">Next</span>
+          <strong>A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</strong>
+        </a>
+      </nav>
+    </main>
+
+    <footer role="contentinfo" data-site-footer="">
+      <div data-container="" data-footer-grid="">
+        <div data-footer-copy="">
+          <p data-footer-brand="">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav data-footer-nav="" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
+</html>

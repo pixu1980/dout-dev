@@ -6,12 +6,12 @@
     <description>RSS feed for posts tagged with markdown</description>
     <atom:link href="https://dout.dev/tags/markdown.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Tue, 21 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>CMS and Markdown Processing</title>
-      <link>https://dout.dev/posts/2026-04-21-cms-and-markdown-processing.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-04-21-cms-and-markdown-processing.html</guid>
-      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <title>CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)</title>
+      <link>https://dout.dev/posts/2026-04-07-cms-and-markdown-processing.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-07-cms-and-markdown-processing.html</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
       <description>The useful distinction</description>
     </item>
   </channel>

@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</title>
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="description" content="The case against most service workers" />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2026-07-04-pragmatic-service-worker.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
+    <script>
+      document.documentElement.dataset.userPreferences = 'ready';
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      :root {
+        --dout--file-preview-border: #d9a441;
+        --dout--file-preview-bg: #fff3cd;
+        --dout--file-preview-text: #5c3b00;
+      }
+
+      [data-file-preview-warning] {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--dout--file-preview-border);
+        background: var(--dout--file-preview-bg);
+        color: var(--dout--file-preview-text);
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] [data-file-preview-warning] {
+        display: block;
+      }
+
+      [data-file-preview-warning] code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)"
+    />
+    <meta property="og:description" content="The case against most service workers" />
+    <meta property="og:url" content="https://dout.dev/posts/2026-07-04-pragmatic-service-worker.html" />
+    <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-07-04-pragmatic-service-worker.png" />
+    <meta
+      property="og:image:alt"
+      content="Preview image for A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-07-04T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2026-07-04T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta
+      name="twitter:title"
+      content="A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)"
+    />
+    <meta name="twitter:description" content="The case against most service workers" />
+    <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-07-04-pragmatic-service-worker.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Preview image for A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)",
+        "description": "The case against most service workers",
+        "datePublished": "2026-07-04T00:00:00.000Z",
+        "dateModified": "2026-07-04T00:00:00.000Z",
+        "author": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2026-07-04-pragmatic-service-worker.html"
+        },
+        "image": ["https://dout.dev/assets/og/posts/2026-07-04-pragmatic-service-worker.png"],
+        "keywords": "cache, page, offline, precache, network, blog, list, caching, background, version, first, navigation"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)",
+            "item": "https://dout.dev/posts/2026-07-04-pragmatic-service-worker.html"
+          }
+        ]
+      }
+    </script>
+
+    <link rel="stylesheet" href="/styles/index.css" />
+    <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
+  </head>
+  <body data-site-shell="">
+    <p data-file-preview-warning="" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a data-skip-link="" href="#main">Skip to main content</a>
+    <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" data-site-header="">
+      <div data-container="" data-header-bar="">
+        <a data-brand="" href="/">
+          <span data-brand-mark="">dout.dev</span>
+          <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <nav id="mainmenu" data-main-nav="" aria-label="Main">
+          <ul data-main-links="" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div data-header-actions="">
+          <color-scheme-switcher></color-scheme-switcher>
+          <display-preferences-popover></display-preferences-popover>
+          <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting">
+        <header data-post-hero="" data-reveal="">
+          <p data-eyebrow="">Article</p>
+          <p data-post-meta="">
+            <time datetime="2026-07-04" itemprop="datePublished"> July 4, 2026 </time>
+            <span data-post-divider="">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 itemprop="headline" tabindex="0">
+            A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)
+          </h1>
+
+          <p data-post-description="">The case against most service workers</p>
+
+          <ul data-tag-list="" aria-label="Tags">
+            <li><a data-tag="" href="/tags/performance.html">performance</a></li>
+
+            <li><a data-tag="" href="/tags/vanilla-js.html">vanilla-js</a></li>
+
+            <li><a data-tag="" href="/tags/architecture.html">architecture</a></li>
+          </ul>
+
+          <figure data-post-cover="">
+            <img
+              src="/assets/og/posts/2026-07-04-pragmatic-service-worker-card.png"
+              alt="A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="900"
+            />
+          </figure>
+        </header>
+
+        <section data-post-shell="" role="region">
+          <h2 data-visually-hidden="">Article content</h2>
+
+          <section data-prose="" itemprop="articleBody">
+            <h2 id="the-case-against-most-service-workers" tabindex="0" data-toc-anchor="true">
+              The case against most service workers
+            </h2>
+            <p>
+              Service workers are the feature most likely to end up on a "cool feature I added and then forgot about"
+              list. The tradeoffs are real:
+            </p>
+            <ul>
+              <li>
+                A bug in your SW can break the site for returning visitors in ways that are hard to debug and slow to
+                fix.
+              </li>
+              <li>A greedy caching strategy can serve stale content to users who would prefer fresh.</li>
+              <li>
+                Registering an SW at all commits you to a lifecycle - updates, skip-waiting, claim - that requires
+                careful thought.
+              </li>
+            </ul>
+            <p>
+              Given all that, why ship one? For a blog: the offline page. For a PWA: the install experience and the
+              background resilience. For dout.dev, both.
+            </p>
+            <p>
+              What I refuse to do is cache everything, intercept every request, and ship an SW that tries to be a
+              runtime framework. The dout.dev SW is about 80 lines. This post is what is in it.
+            </p>
+            <h2 id="the-scope" tabindex="0" data-toc-anchor="true">The scope</h2>
+            <p>Three jobs, in order of importance.</p>
+            <ol>
+              <li>
+                <strong>Serve an offline fallback page</strong> when the network is unreachable and the user requests a
+                page that is not in cache.
+              </li>
+              <li>
+                <strong>Cache the critical shell</strong> - the home page, the main CSS, the primary script bundle - so
+                the next visit is instant even on a cold network.
+              </li>
+              <li>
+                <strong>Cache visited posts</strong> on a stale-while-revalidate basis, so re-reading a post is instant
+                and returning to it offline works.
+              </li>
+            </ol>
+            <p>Everything else - images, feeds, analytics beacons, third-party assets - is not intercepted.</p>
+            <h2 id="the-precache-list" tabindex="0" data-toc-anchor="true">The precache list</h2>
+            <p>
+              At install time, the SW precaches exactly the files needed to render the offline experience. That list is
+              generated by the build and inlined into the SW file, so there is no manifest to drift.
+            </p>
+            <pre is="pix-highlighter" data-lang="js"><code>const PRECACHE = 'dout-precache-v1';
+const RUNTIME = 'dout-runtime-v1';
+
+const PRECACHE_URLS = ['/', '/offline.html', '/styles/index.css', '/scripts/main.js', '/assets/favicon.svg'];
+
+self.addEventListener('install', (event) =&gt; {
+  event.waitUntil(caches.open(PRECACHE).then((cache) =&gt; cache.addAll(PRECACHE_URLS)));
+});</code></pre>
+            <p>
+              The precache name includes a version (<code>-v1</code>). Bumping that version on a release invalidates the
+              precache cleanly.
+            </p>
+            <h2 id="the-activate-cleanup" tabindex="0" data-toc-anchor="true">The activate cleanup</h2>
+            <p>On activation, old caches get deleted. Without this, users accumulate dead caches forever.</p>
+            <pre is="pix-highlighter" data-lang="js"><code>self.addEventListener('activate', (event) =&gt; {
+  const valid = new Set([PRECACHE, RUNTIME]);
+  event.waitUntil(
+    caches.keys().then((names) =&gt; Promise.all(names.filter((n) =&gt; !valid.has(n)).map((n) =&gt; caches.delete(n))))
+  );
+  self.clients.claim();
+});</code></pre>
+            <p>
+              <code>self.clients.claim()</code> takes control of existing tabs on the first activation, so the new SW is
+              in charge immediately instead of after a full reload. That is a judgment call - some projects prefer to
+              wait for a reload to avoid mid-session inconsistencies. For a read-only blog, claiming is safe.
+            </p>
+            <h2 id="the-fetch-handler-in-three-cases" tabindex="0" data-toc-anchor="true">
+              The fetch handler, in three cases
+            </h2>
+            <p>The fetch handler has three branches, and each is small.</p>
+            <h3 id="1-html-navigation-requests" tabindex="0" data-toc-anchor="true">1. HTML navigation requests</h3>
+            <p>
+              For navigation (a page load), try the network first. If the network wins, cache the response for later. If
+              the network fails, serve the cached version, and if that is missing, the offline page.
+            </p>
+            <pre is="pix-highlighter" data-lang="js"><code>self.addEventListener('fetch', (event) =&gt; {
+  const req = event.request;
+  if (req.mode === 'navigate') {
+    event.respondWith(
+      fetch(req)
+        .then((res) =&gt; {
+          const copy = res.clone();
+          caches.open(RUNTIME).then((cache) =&gt; cache.put(req, copy));
+          return res;
+        })
+        .catch(() =&gt; caches.match(req).then((cached) =&gt; cached || caches.match('/offline.html')))
+    );
+    return;
+  }
+  // ...
+});</code></pre>
+            <p>
+              Network-first for HTML means readers always get the freshest post when they are online. The cache is a
+              fallback, not a source of truth.
+            </p>
+            <h3 id="2-same-origin-static-assets" tabindex="0" data-toc-anchor="true">2. Same-origin static assets</h3>
+            <p>
+              For CSS, JS, and fonts on the same origin, cache-first with a background revalidate. This is the classic
+              stale-while-revalidate pattern:
+            </p>
+            <pre
+              is="pix-highlighter"
+              data-lang="js"
+            ><code>if (req.destination === 'style' || req.destination === 'script' || req.destination === 'font') {
+  event.respondWith(
+    caches.match(req).then((cached) =&gt; {
+      const networkFetch = fetch(req).then((res) =&gt; {
+        const copy = res.clone();
+        caches.open(RUNTIME).then((cache) =&gt; cache.put(req, copy));
+        return res;
+      });
+      return cached || networkFetch;
+    })
+  );
+  return;
+}</code></pre>
+            <p>
+              Returning cached content immediately keeps the page fast; the background fetch updates the cache for next
+              time. The trade-off is that the first load after a deploy serves the old bundle, and the fresh one is
+              picked up on the next navigation. For a blog, that is acceptable.
+            </p>
+            <h3 id="3-everything-else" tabindex="0" data-toc-anchor="true">3. Everything else</h3>
+            <p>
+              Images, feeds, third-party URLs, analytics beacons - pass through to the network without touching the
+              cache. The SW explicitly does not intercept.
+            </p>
+            <pre is="pix-highlighter" data-lang="js"><code>// fall through to the network</code></pre>
+            <p>
+              Not caching something is a decision too. It avoids the trap of caching things you never meant to cache and
+              then not being able to invalidate them.
+            </p>
+            <h2 id="the-offline-page" tabindex="0" data-toc-anchor="true">The offline page</h2>
+            <p>
+              <code>offline.html</code> is a static page with the branding and a short message. It links to the home
+              (which might be cached) and includes a small retry button that reloads the page.
+            </p>
+            <p>
+              The only trick: the offline page must not reference uncached resources. If the offline CSS is not in the
+              precache, the page still renders but unstyled. The precache list above includes the main CSS, so this
+              works.
+            </p>
+            <h2 id="update-strategy" tabindex="0" data-toc-anchor="true">Update strategy</h2>
+            <p>
+              The SW updates itself when the browser fetches <code>/sw.js</code> and notices it differs byte-for-byte
+              from the registered one. Because the precache list contains a version string, a deploy that bumps the
+              precache version triggers an update.
+            </p>
+            <p>
+              For a blog, that is enough. I do not ship an explicit "update available" banner. The user gets the new SW
+              on the next navigation after a deploy, and the cleanup handler deletes the old cache.
+            </p>
+            <h2 id="what-i-did-not-add" tabindex="0" data-toc-anchor="true">What I did not add</h2>
+            <ul>
+              <li><strong>Background sync.</strong> The blog has nothing to sync. Readers do not post content.</li>
+              <li><strong>Push notifications.</strong> Reader-initiated subscriptions belong to the RSS layer.</li>
+              <li><strong>Periodic background sync.</strong> Same reason.</li>
+              <li>
+                <strong>Navigation preload.</strong> A legitimate optimization, but it adds complexity I did not need
+                for the current page load times.
+              </li>
+            </ul>
+            <p>
+              Each of these is a feature I could add later without restructuring the SW. Keeping the current one small
+              is the point.
+            </p>
+            <h2 id="the-takeaway" tabindex="0" data-toc-anchor="true">The takeaway</h2>
+            <p>
+              A service worker on a blog is worth the 80 lines if you ship the three jobs: offline fallback, shell
+              precache, and a conservative runtime cache for repeat visits. Resist the urge to intercept every request.
+              The bugs you avoid by caching less are worth more than the performance gains from caching more.
+            </p>
+            <h2 id="references" tabindex="0" data-toc-anchor="true">References</h2>
+            <ul>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Service Worker API - MDN</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://web.dev/articles/service-worker-lifecycle?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >The Service Worker Lifecycle - web.dev</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://web.dev/articles/offline-cookbook?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Offline cookbook - Jake Archibald</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://developer.chrome.com/docs/workbox?from=dout.dev"
+                  target="_blank"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  rel="noopener"
+                  >Workbox</a
+                >
+                - if you want pre-built recipes
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <aside data-post-sidebar="" role="complementary">
+          <nav data-post-toc="">
+            <h2>TOC</h2>
+            <ol data-post-toc-list="">
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-case-against-most-service-workers"
+                  >The case against most service workers</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-scope">The scope</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-precache-list">The precache list</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-activate-cleanup">The activate cleanup</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-fetch-handler-in-three-cases"
+                  >The fetch handler, in three cases</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="3" href="#1-html-navigation-requests"
+                  >1. HTML navigation requests</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="3" href="#2-same-origin-static-assets"
+                  >2. Same-origin static assets</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="3" href="#3-everything-else">3. Everything else</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-offline-page">The offline page</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#update-strategy">Update strategy</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#what-i-did-not-add">What I did not add</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-takeaway">The takeaway</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#references">References</a>
+              </li>
+            </ol>
+          </nav>
+        </aside>
+
+        <section data-comments-shell="" data-reveal="">
+          <header data-section-heading="">
+            <p data-eyebrow="">Discussion</p>
+            <h2>Comments live in GitHub Discussions</h2>
+          </header>
+          <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2026-07-04-pragmatic-service-worker.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
+
+        <nav data-series-navigation="" data-reveal="" aria-label="Series navigation">
+          <section data-series-navigation-group="">
+            <p data-eyebrow="" data-muted="">Series</p>
+            <h2>In this series: How I made it</h2>
+            <ol data-series-navigation-links="">
+              <li>
+                <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="false"
+                  >How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-07-cms-and-markdown-processing.html" aria-current="false"
+                  >CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false"
+                  >Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-14-why-no-astro-eleventy-next.html" aria-current="false"
+                  >Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-18-custom-ssg-pipeline.html" aria-current="false"
+                  >Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-21-template-engine-and-template-structure.html" aria-current="false"
+                  >Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-25-archives-tags-months-series.html" aria-current="false"
+                  >Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-28-progressive-enhancement-as-contract.html" aria-current="false"
+                  >Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-02-design-tokens-before-pages.html" aria-current="false"
+                  >Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-05-build-assets-pipeline.html" aria-current="false"
+                  >Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html" aria-current="false"
+                  >Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-12-og-images-at-build-time.html" aria-current="false"
+                  >OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-16-seo-metadata-without-rituals.html" aria-current="false"
+                  >SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-19-quality-gate-lint-format-verify.html" aria-current="false"
+                  >Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-23-ci-cd-around-github-pages.html" aria-current="false"
+                  >CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-26-vibe-coding-with-rigor.html" aria-current="false"
+                  >Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="false"
+                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="false"
+                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-06-how-pixhighlighter-is-built.html" aria-current="false"
+                  >How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-09-why-display-preferences-popover-exists.html" aria-current="false"
+                  >Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-16-client-side-search-static-dataset.html" aria-current="false"
+                  >Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-23-custom-element-syntax-highlight.html" aria-current="false"
+                  >A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-27-accessible-scrollspy-outline.html" aria-current="false"
+                  >Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-30-honest-lazy-loading.html" aria-current="false"
+                  >Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-04-pragmatic-service-worker.html" aria-current="page"
+                  >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama) (you are here)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false"
+                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
+                >
+              </li>
+            </ol>
+          </section>
+        </nav>
+      </article>
+
+      <nav data-post-nav="" aria-label="Post navigation">
+        <a data-post-nav-card="" data-reveal="" rel="prev" href="/posts/2026-06-30-honest-lazy-loading.html">
+          <span data-post-nav-label="">Previous</span>
+          <strong>Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</strong>
+        </a>
+
+        <a data-post-nav-card="" data-reveal="" rel="next" href="/posts/2026-07-05-css-properties-hierarchy.html">
+          <span data-post-nav-label="">Next</span>
+          <strong>CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</strong>
+        </a>
+      </nav>
+    </main>
+
+    <footer role="contentinfo" data-site-footer="">
+      <div data-container="" data-footer-grid="">
+        <div data-footer-copy="">
+          <p data-footer-brand="">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav data-footer-nav="" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
+</html>

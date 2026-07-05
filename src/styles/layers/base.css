@@ -7,22 +7,22 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    color: var(--dout--text);
+    accent-color: var(--dout--accent);
+    background-color: var(--dout--bg);
     font-family: var(--dout--font-sans);
     font-size: var(--dout--step-0);
     line-height: var(--dout--line-copy);
-    color: var(--dout--text);
-    background-color: var(--dout--bg);
-    accent-color: var(--dout--accent);
   }
 
   a {
     color: inherit;
     text-decoration-thickness: 0.08em;
     text-underline-offset: 0.18em;
-  }
 
-  a:hover {
-    color: var(--dout--accent-strong);
+    &:hover {
+      color: var(--dout--accent-strong);
+    }
   }
 
   p {
@@ -39,11 +39,11 @@
   h2,
   h3 {
     max-inline-size: 100%;
+    overflow-wrap: anywhere;
     font-family: var(--dout--font-display);
     font-weight: var(--dout--font-weight-strong);
     line-height: var(--dout--line-heading);
     letter-spacing: -0.03em;
-    overflow-wrap: anywhere;
   }
 
   h1 {

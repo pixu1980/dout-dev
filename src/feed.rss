@@ -6,146 +6,146 @@
     <description>Vanilla-first static blog with WCAG 2.2 AA accessibility</description>
     <atom:link href="https://dout.dev/feed.rss" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Tue, 23 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking</title>
-      <link>https://dout.dev/posts/2026-06-23-client-side-search-static-dataset.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-23-client-side-search-static-dataset.html</guid>
+      <title>CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</title>
+      <link>https://dout.dev/posts/2026-07-05-css-properties-hierarchy.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-07-05-css-properties-hierarchy.html</guid>
+      <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
+      <description>:root { --border-radius: 5px; } .element { /* css custom properties */ --var--example: 1; ​ /* position */ position: absolute; inset: 0; /* top, right, bottom, left */ z-index: 1; </description>
+    </item>
+    <item>
+      <title>A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</title>
+      <link>https://dout.dev/posts/2026-07-04-pragmatic-service-worker.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-07-04-pragmatic-service-worker.html</guid>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 GMT</pubDate>
+      <description>The case against most service workers</description>
+    </item>
+    <item>
+      <title>Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</title>
+      <link>https://dout.dev/posts/2026-06-30-honest-lazy-loading.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-30-honest-lazy-loading.html</guid>
+      <pubDate>Tue, 30 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The two tools, in one paragraph</description>
+    </item>
+    <item>
+      <title>Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</title>
+      <link>https://dout.dev/posts/2026-06-27-accessible-scrollspy-outline.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-27-accessible-scrollspy-outline.html</guid>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The feature and its trap</description>
+    </item>
+    <item>
+      <title>A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</title>
+      <link>https://dout.dev/posts/2026-06-23-custom-element-syntax-highlight.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-23-custom-element-syntax-highlight.html</guid>
       <pubDate>Tue, 23 Jun 2026 00:00:00 GMT</pubDate>
-      <description>The constraint</description>
+      <description>The stack I did not want</description>
+    </item>
+    <item>
+      <title>Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing</title>
+      <link>https://dout.dev/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html</guid>
+      <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The headline numbers</description>
+    </item>
+    <item>
+      <title>Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</title>
+      <link>https://dout.dev/posts/2026-06-16-client-side-search-static-dataset.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-16-client-side-search-static-dataset.html</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The constraint (no backend, no excuses)</description>
     </item>
     <item>
       <title>The End of Borrowed Abstractions</title>
-      <link>https://dout.dev/posts/2026-06-16-the-end-of-borrowed-abstractions.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-16-the-end-of-borrowed-abstractions.html</guid>
-      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <link>https://dout.dev/posts/2026-06-13-the-end-of-borrowed-abstractions.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-13-the-end-of-borrowed-abstractions.html</guid>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
       <description>The reflex that shaped software</description>
     </item>
     <item>
-      <title>Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences</title>
-      <link>https://dout.dev/posts/2026-06-14-why-display-preferences-popover-exists.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-14-why-display-preferences-popover-exists.html</guid>
-      <pubDate>Sun, 14 Jun 2026 00:00:00 GMT</pubDate>
-      <description>Accessibility is not one feature</description>
-    </item>
-    <item>
-      <title>How PixHighlighter Is Built Around the CSS Custom Highlight API</title>
-      <link>https://dout.dev/posts/2026-06-13-how-pixhighlighter-is-built.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-13-how-pixhighlighter-is-built.html</guid>
-      <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
-      <description>The contract stays plain</description>
-    </item>
-    <item>
-      <title>WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links</title>
-      <link>https://dout.dev/posts/2026-06-09-wcag-22-aa-without-aria-spam.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-09-wcag-22-aa-without-aria-spam.html</guid>
+      <title>Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It&apos;s User Preferences)</title>
+      <link>https://dout.dev/posts/2026-06-09-why-display-preferences-popover-exists.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-09-why-display-preferences-popover-exists.html</guid>
       <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
-      <description>The unpopular opinion</description>
+      <description>Accessibility is not one feature (it&apos;s ALL of them)</description>
     </item>
     <item>
-      <title>Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production</title>
-      <link>https://dout.dev/posts/2026-06-02-modern-css-is-enough.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-02-modern-css-is-enough.html</guid>
+      <title>How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</title>
+      <link>https://dout.dev/posts/2026-06-06-how-pixhighlighter-is-built.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-06-how-pixhighlighter-is-built.html</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The contract stays plain (because HTML should be readable)</description>
+    </item>
+    <item>
+      <title>WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That&apos;s 80% of It)</title>
+      <link>https://dout.dev/posts/2026-06-02-wcag-22-aa-without-aria-spam.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-02-wcag-22-aa-without-aria-spam.html</guid>
       <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
-      <description>The short version</description>
+      <description>The unpopular opinion (brace yourself)</description>
     </item>
     <item>
-      <title>Vibe Coding With Rigor</title>
-      <link>https://dout.dev/posts/2026-05-23-vibe-coding-with-rigor.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-23-vibe-coding-with-rigor.html</guid>
+      <title>Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</title>
+      <link>https://dout.dev/posts/2026-05-30-modern-css-is-enough.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-30-modern-css-is-enough.html</guid>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <description>The short version (for the impatient)</description>
+    </item>
+    <item>
+      <title>Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</title>
+      <link>https://dout.dev/posts/2026-05-26-vibe-coding-with-rigor.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-26-vibe-coding-with-rigor.html</guid>
+      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+      <description>The term I am reclaiming (because &quot;vibe coding&quot; got a bad rap)</description>
+    </item>
+    <item>
+      <title>CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)</title>
+      <link>https://dout.dev/posts/2026-05-23-ci-cd-around-github-pages.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-23-ci-cd-around-github-pages.html</guid>
       <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
-      <description>The term I am reclaiming</description>
+      <description>The gap GitHub Pages leaves open (it&apos;s not that bad)</description>
     </item>
     <item>
-      <title>CI/CD Around GitHub Pages</title>
-      <link>https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-22-ci-cd-around-github-pages.html</guid>
-      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
-      <description>The gap GitHub Pages leaves open</description>
-    </item>
-    <item>
-      <title>Quality Gate: Linting, Formatting, and Verify</title>
-      <link>https://dout.dev/posts/2026-05-21-quality-gate-lint-format-verify.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-21-quality-gate-lint-format-verify.html</guid>
-      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
-      <description>Why the gate exists</description>
-    </item>
-    <item>
-      <title>SEO Metadata Without Rituals</title>
-      <link>https://dout.dev/posts/2026-05-20-seo-metadata-without-rituals.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-20-seo-metadata-without-rituals.html</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>The short version</description>
-    </item>
-    <item>
-      <title>OG Images at Build Time</title>
-      <link>https://dout.dev/posts/2026-05-19-og-images-at-build-time.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-19-og-images-at-build-time.html</guid>
+      <title>Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)</title>
+      <link>https://dout.dev/posts/2026-05-19-quality-gate-lint-format-verify.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-19-quality-gate-lint-format-verify.html</guid>
       <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
-      <description>The problem and the usual solutions</description>
+      <description>Why the gate exists (because you will ship shit if you don&apos;t)</description>
     </item>
     <item>
-      <title>Feeds and Sitemaps at Build Time</title>
-      <link>https://dout.dev/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html</guid>
-      <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
-      <description>The distribution minimum</description>
-    </item>
-    <item>
-      <title>Build Assets Pipeline</title>
-      <link>https://dout.dev/posts/2026-05-17-build-assets-pipeline.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-17-build-assets-pipeline.html</guid>
-      <pubDate>Sun, 17 May 2026 00:00:00 GMT</pubDate>
-      <description>The goal</description>
-    </item>
-    <item>
-      <title>Design Tokens Before Pages</title>
-      <link>https://dout.dev/posts/2026-05-16-design-tokens-before-pages.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-16-design-tokens-before-pages.html</guid>
+      <title>SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don&apos;t Have To)</title>
+      <link>https://dout.dev/posts/2026-05-16-seo-metadata-without-rituals.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-16-seo-metadata-without-rituals.html</guid>
       <pubDate>Sat, 16 May 2026 00:00:00 GMT</pubDate>
-      <description>The mistake I kept making</description>
+      <description>The short version (TL;DR for the impatient)</description>
     </item>
     <item>
-      <title>Progressive Enhancement as Contract</title>
-      <link>https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html</guid>
-      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
-      <description>The contract</description>
-    </item>
-    <item>
-      <title>Archives, Tags, Months, and Series</title>
-      <link>https://dout.dev/posts/2026-05-14-archives-tags-months-series.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-14-archives-tags-months-series.html</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <description>Three ways to slice the same posts</description>
-    </item>
-    <item>
-      <title>Template Engine and Template Structure</title>
-      <link>https://dout.dev/posts/2026-05-13-template-engine-and-template-structure.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-13-template-engine-and-template-structure.html</guid>
-      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
-      <description>Three constraints that shaped the grammar</description>
-    </item>
-    <item>
-      <title>Custom SSG Pipeline: Markdown to Static HTML</title>
-      <link>https://dout.dev/posts/2026-05-12-custom-ssg-pipeline.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-12-custom-ssg-pipeline.html</guid>
+      <title>OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)</title>
+      <link>https://dout.dev/posts/2026-05-12-og-images-at-build-time.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-12-og-images-at-build-time.html</guid>
       <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>The pipeline, in one picture</description>
+      <description>The problem and the usual solutions (none of which I wanted)</description>
     </item>
     <item>
-      <title>Why I Skipped Astro, Eleventy and Next for My Blog</title>
-      <link>https://dout.dev/posts/2026-05-05-why-no-astro-eleventy-next.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-05-why-no-astro-eleventy-next.html</guid>
+      <title>Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)</title>
+      <link>https://dout.dev/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html</guid>
+      <pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate>
+      <description>The distribution minimum (three files, that&apos;s it)</description>
+    </item>
+    <item>
+      <title>Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)</title>
+      <link>https://dout.dev/posts/2026-05-05-build-assets-pipeline.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-05-build-assets-pipeline.html</guid>
       <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
-      <description>The default answer and why I ignored it</description>
+      <description>The goal (four non-negotiable constraints)</description>
     </item>
     <item>
-      <title>Rebuilding dout.dev in Weeks With an AI Copilot</title>
-      <link>https://dout.dev/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html</guid>
-      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
-      <description>The honest framing</description>
+      <title>Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)</title>
+      <link>https://dout.dev/posts/2026-05-02-design-tokens-before-pages.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-02-design-tokens-before-pages.html</guid>
+      <pubDate>Sat, 02 May 2026 00:00:00 GMT</pubDate>
+      <description>The mistake I kept making (repeat after me: tokens first)</description>
     </item>
   </channel>
 </rss>

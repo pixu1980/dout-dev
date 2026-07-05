@@ -5,14 +5,14 @@
     "posts": [
       {
         "name": "2026-04-04-how-i-built-dout-dev",
-        "title": "How I Built dout.dev",
+        "title": "How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)",
         "date": "2026-04-04T00:00:00.000Z",
         "dateString": "Sat Apr 04 2026",
         "path": "./src/posts/2026-04-04-how-i-built-dout-dev.html",
         "url": "/posts/2026-04-04-how-i-built-dout-dev/",
-        "excerpt": "What the stack is, exactly",
+        "excerpt": "What the stack is, exactly (TL;DR: files + Node + blood)",
         "coverImage": null,
-        "coverAlt": "How I Built dout.dev",
+        "coverAlt": "How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)",
         "tags": [
           {
             "key": "making-of",
@@ -33,15 +33,15 @@
         "pinned": true
       },
       {
-        "name": "2026-04-21-cms-and-markdown-processing",
-        "title": "CMS and Markdown Processing",
-        "date": "2026-04-21T00:00:00.000Z",
-        "dateString": "Tue Apr 21 2026",
-        "path": "./src/posts/2026-04-21-cms-and-markdown-processing.html",
-        "url": "/posts/2026-04-21-cms-and-markdown-processing/",
+        "name": "2026-04-07-cms-and-markdown-processing",
+        "title": "CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)",
+        "date": "2026-04-07T00:00:00.000Z",
+        "dateString": "Tue Apr 07 2026",
+        "path": "./src/posts/2026-04-07-cms-and-markdown-processing.html",
+        "url": "/posts/2026-04-07-cms-and-markdown-processing/",
         "excerpt": "The useful distinction",
         "coverImage": null,
-        "coverAlt": "CMS and Markdown Processing",
+        "coverAlt": "CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)",
         "tags": [
           {
             "key": "making-of",
@@ -67,15 +67,15 @@
         "pinned": false
       },
       {
-        "name": "2026-04-28-rebuilding-dout-dev-with-ai-copilot",
-        "title": "Rebuilding dout.dev in Weeks With an AI Copilot",
-        "date": "2026-04-28T00:00:00.000Z",
-        "dateString": "Tue Apr 28 2026",
-        "path": "./src/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html",
-        "url": "/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot/",
+        "name": "2026-04-11-rebuilding-dout-dev-with-ai-copilot",
+        "title": "Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread",
+        "date": "2026-04-11T00:00:00.000Z",
+        "dateString": "Sat Apr 11 2026",
+        "path": "./src/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html",
+        "url": "/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot/",
         "excerpt": "The honest framing",
         "coverImage": null,
-        "coverAlt": "Rebuilding dout.dev in Weeks With an AI Copilot",
+        "coverAlt": "Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread",
         "tags": [
           {
             "key": "making-of",
@@ -83,9 +83,9 @@
             "url": "./tags/making-of.html"
           },
           {
-            "key": "ai-copilot",
-            "label": "ai-copilot",
-            "url": "./tags/ai-copilot.html"
+            "key": "ai",
+            "label": "ai",
+            "url": "./tags/ai.html"
           },
           {
             "key": "workflow",
@@ -96,15 +96,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-05-why-no-astro-eleventy-next",
-        "title": "Why I Skipped Astro, Eleventy and Next for My Blog",
-        "date": "2026-05-05T00:00:00.000Z",
-        "dateString": "Tue May 05 2026",
-        "path": "./src/posts/2026-05-05-why-no-astro-eleventy-next.html",
-        "url": "/posts/2026-05-05-why-no-astro-eleventy-next/",
+        "name": "2026-04-14-why-no-astro-eleventy-next",
+        "title": "Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)",
+        "date": "2026-04-14T00:00:00.000Z",
+        "dateString": "Tue Apr 14 2026",
+        "path": "./src/posts/2026-04-14-why-no-astro-eleventy-next.html",
+        "url": "/posts/2026-04-14-why-no-astro-eleventy-next/",
         "excerpt": "The default answer and why I ignored it",
         "coverImage": null,
-        "coverAlt": "Why I Skipped Astro, Eleventy and Next for My Blog",
+        "coverAlt": "Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)",
         "tags": [
           {
             "key": "making-of",
@@ -125,15 +125,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-12-custom-ssg-pipeline",
-        "title": "Custom SSG Pipeline: Markdown to Static HTML",
-        "date": "2026-05-12T00:00:00.000Z",
-        "dateString": "Tue May 12 2026",
-        "path": "./src/posts/2026-05-12-custom-ssg-pipeline.html",
-        "url": "/posts/2026-05-12-custom-ssg-pipeline/",
-        "excerpt": "The pipeline, in one picture",
+        "name": "2026-04-18-custom-ssg-pipeline",
+        "title": "Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)",
+        "date": "2026-04-18T00:00:00.000Z",
+        "dateString": "Sat Apr 18 2026",
+        "path": "./src/posts/2026-04-18-custom-ssg-pipeline.html",
+        "url": "/posts/2026-04-18-custom-ssg-pipeline/",
+        "excerpt": "The pipeline, in one picture (because I know you're skimming)",
         "coverImage": null,
-        "coverAlt": "Custom SSG Pipeline: Markdown to Static HTML",
+        "coverAlt": "Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)",
         "tags": [
           {
             "key": "making-of",
@@ -159,15 +159,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-13-template-engine-and-template-structure",
-        "title": "Template Engine and Template Structure",
-        "date": "2026-05-13T00:00:00.000Z",
-        "dateString": "Wed May 13 2026",
-        "path": "./src/posts/2026-05-13-template-engine-and-template-structure.html",
-        "url": "/posts/2026-05-13-template-engine-and-template-structure/",
-        "excerpt": "Three constraints that shaped the grammar",
+        "name": "2026-04-21-template-engine-and-template-structure",
+        "title": "Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)",
+        "date": "2026-04-21T00:00:00.000Z",
+        "dateString": "Tue Apr 21 2026",
+        "path": "./src/posts/2026-04-21-template-engine-and-template-structure.html",
+        "url": "/posts/2026-04-21-template-engine-and-template-structure/",
+        "excerpt": "Three constraints that shaped the grammar (because constraints are good, actually)",
         "coverImage": null,
-        "coverAlt": "Template Engine and Template Structure",
+        "coverAlt": "Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)",
         "tags": [
           {
             "key": "making-of",
@@ -193,15 +193,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-14-archives-tags-months-series",
-        "title": "Archives, Tags, Months, and Series",
-        "date": "2026-05-14T00:00:00.000Z",
-        "dateString": "Thu May 14 2026",
-        "path": "./src/posts/2026-05-14-archives-tags-months-series.html",
-        "url": "/posts/2026-05-14-archives-tags-months-series/",
-        "excerpt": "Three ways to slice the same posts",
+        "name": "2026-04-25-archives-tags-months-series",
+        "title": "Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)",
+        "date": "2026-04-25T00:00:00.000Z",
+        "dateString": "Sat Apr 25 2026",
+        "path": "./src/posts/2026-04-25-archives-tags-months-series.html",
+        "url": "/posts/2026-04-25-archives-tags-months-series/",
+        "excerpt": "Three ways to slice the same posts (because one axis is never enough)",
         "coverImage": null,
-        "coverAlt": "Archives, Tags, Months, and Series",
+        "coverAlt": "Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)",
         "tags": [
           {
             "key": "making-of",
@@ -227,15 +227,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-15-progressive-enhancement-as-contract",
-        "title": "Progressive Enhancement as Contract",
-        "date": "2026-05-15T00:00:00.000Z",
-        "dateString": "Fri May 15 2026",
-        "path": "./src/posts/2026-05-15-progressive-enhancement-as-contract.html",
-        "url": "/posts/2026-05-15-progressive-enhancement-as-contract/",
-        "excerpt": "The contract",
+        "name": "2026-04-28-progressive-enhancement-as-contract",
+        "title": "Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)",
+        "date": "2026-04-28T00:00:00.000Z",
+        "dateString": "Tue Apr 28 2026",
+        "path": "./src/posts/2026-04-28-progressive-enhancement-as-contract.html",
+        "url": "/posts/2026-04-28-progressive-enhancement-as-contract/",
+        "excerpt": "The contract (read this part)",
         "coverImage": null,
-        "coverAlt": "Progressive Enhancement as Contract",
+        "coverAlt": "Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)",
         "tags": [
           {
             "key": "making-of",
@@ -261,15 +261,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-16-design-tokens-before-pages",
-        "title": "Design Tokens Before Pages",
-        "date": "2026-05-16T00:00:00.000Z",
-        "dateString": "Sat May 16 2026",
-        "path": "./src/posts/2026-05-16-design-tokens-before-pages.html",
-        "url": "/posts/2026-05-16-design-tokens-before-pages/",
-        "excerpt": "The mistake I kept making",
+        "name": "2026-05-02-design-tokens-before-pages",
+        "title": "Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)",
+        "date": "2026-05-02T00:00:00.000Z",
+        "dateString": "Sat May 02 2026",
+        "path": "./src/posts/2026-05-02-design-tokens-before-pages.html",
+        "url": "/posts/2026-05-02-design-tokens-before-pages/",
+        "excerpt": "The mistake I kept making (repeat after me: tokens first)",
         "coverImage": null,
-        "coverAlt": "Design Tokens Before Pages",
+        "coverAlt": "Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)",
         "tags": [
           {
             "key": "making-of",
@@ -290,15 +290,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-17-build-assets-pipeline",
-        "title": "Build Assets Pipeline",
-        "date": "2026-05-17T00:00:00.000Z",
-        "dateString": "Sun May 17 2026",
-        "path": "./src/posts/2026-05-17-build-assets-pipeline.html",
-        "url": "/posts/2026-05-17-build-assets-pipeline/",
-        "excerpt": "The goal",
+        "name": "2026-05-05-build-assets-pipeline",
+        "title": "Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)",
+        "date": "2026-05-05T00:00:00.000Z",
+        "dateString": "Tue May 05 2026",
+        "path": "./src/posts/2026-05-05-build-assets-pipeline.html",
+        "url": "/posts/2026-05-05-build-assets-pipeline/",
+        "excerpt": "The goal (four non-negotiable constraints)",
         "coverImage": null,
-        "coverAlt": "Build Assets Pipeline",
+        "coverAlt": "Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)",
         "tags": [
           {
             "key": "making-of",
@@ -324,15 +324,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-18-feeds-and-sitemaps-at-build-time",
-        "title": "Feeds and Sitemaps at Build Time",
-        "date": "2026-05-18T00:00:00.000Z",
-        "dateString": "Mon May 18 2026",
-        "path": "./src/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html",
-        "url": "/posts/2026-05-18-feeds-and-sitemaps-at-build-time/",
-        "excerpt": "The distribution minimum",
+        "name": "2026-05-09-feeds-and-sitemaps-at-build-time",
+        "title": "Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)",
+        "date": "2026-05-09T00:00:00.000Z",
+        "dateString": "Sat May 09 2026",
+        "path": "./src/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html",
+        "url": "/posts/2026-05-09-feeds-and-sitemaps-at-build-time/",
+        "excerpt": "The distribution minimum (three files, that's it)",
         "coverImage": null,
-        "coverAlt": "Feeds and Sitemaps at Build Time",
+        "coverAlt": "Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)",
         "tags": [
           {
             "key": "making-of",
@@ -358,15 +358,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-19-og-images-at-build-time",
-        "title": "OG Images at Build Time",
-        "date": "2026-05-19T00:00:00.000Z",
-        "dateString": "Tue May 19 2026",
-        "path": "./src/posts/2026-05-19-og-images-at-build-time.html",
-        "url": "/posts/2026-05-19-og-images-at-build-time/",
-        "excerpt": "The problem and the usual solutions",
+        "name": "2026-05-12-og-images-at-build-time",
+        "title": "OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)",
+        "date": "2026-05-12T00:00:00.000Z",
+        "dateString": "Tue May 12 2026",
+        "path": "./src/posts/2026-05-12-og-images-at-build-time.html",
+        "url": "/posts/2026-05-12-og-images-at-build-time/",
+        "excerpt": "The problem and the usual solutions (none of which I wanted)",
         "coverImage": null,
-        "coverAlt": "OG Images at Build Time",
+        "coverAlt": "OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)",
         "tags": [
           {
             "key": "making-of",
@@ -392,15 +392,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-20-seo-metadata-without-rituals",
-        "title": "SEO Metadata Without Rituals",
-        "date": "2026-05-20T00:00:00.000Z",
-        "dateString": "Wed May 20 2026",
-        "path": "./src/posts/2026-05-20-seo-metadata-without-rituals.html",
-        "url": "/posts/2026-05-20-seo-metadata-without-rituals/",
-        "excerpt": "The short version",
+        "name": "2026-05-16-seo-metadata-without-rituals",
+        "title": "SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)",
+        "date": "2026-05-16T00:00:00.000Z",
+        "dateString": "Sat May 16 2026",
+        "path": "./src/posts/2026-05-16-seo-metadata-without-rituals.html",
+        "url": "/posts/2026-05-16-seo-metadata-without-rituals/",
+        "excerpt": "The short version (TL;DR for the impatient)",
         "coverImage": null,
-        "coverAlt": "SEO Metadata Without Rituals",
+        "coverAlt": "SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)",
         "tags": [
           {
             "key": "making-of",
@@ -426,15 +426,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-21-quality-gate-lint-format-verify",
-        "title": "Quality Gate: Linting, Formatting, and Verify",
-        "date": "2026-05-21T00:00:00.000Z",
-        "dateString": "Thu May 21 2026",
-        "path": "./src/posts/2026-05-21-quality-gate-lint-format-verify.html",
-        "url": "/posts/2026-05-21-quality-gate-lint-format-verify/",
-        "excerpt": "Why the gate exists",
+        "name": "2026-05-19-quality-gate-lint-format-verify",
+        "title": "Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)",
+        "date": "2026-05-19T00:00:00.000Z",
+        "dateString": "Tue May 19 2026",
+        "path": "./src/posts/2026-05-19-quality-gate-lint-format-verify.html",
+        "url": "/posts/2026-05-19-quality-gate-lint-format-verify/",
+        "excerpt": "Why the gate exists (because you will ship shit if you don't)",
         "coverImage": null,
-        "coverAlt": "Quality Gate: Linting, Formatting, and Verify",
+        "coverAlt": "Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)",
         "tags": [
           {
             "key": "making-of",
@@ -460,15 +460,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-22-ci-cd-around-github-pages",
-        "title": "CI/CD Around GitHub Pages",
-        "date": "2026-05-22T00:00:00.000Z",
-        "dateString": "Fri May 22 2026",
-        "path": "./src/posts/2026-05-22-ci-cd-around-github-pages.html",
-        "url": "/posts/2026-05-22-ci-cd-around-github-pages/",
-        "excerpt": "The gap GitHub Pages leaves open",
+        "name": "2026-05-23-ci-cd-around-github-pages",
+        "title": "CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)",
+        "date": "2026-05-23T00:00:00.000Z",
+        "dateString": "Sat May 23 2026",
+        "path": "./src/posts/2026-05-23-ci-cd-around-github-pages.html",
+        "url": "/posts/2026-05-23-ci-cd-around-github-pages/",
+        "excerpt": "The gap GitHub Pages leaves open (it's not that bad)",
         "coverImage": null,
-        "coverAlt": "CI/CD Around GitHub Pages",
+        "coverAlt": "CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)",
         "tags": [
           {
             "key": "making-of",
@@ -494,15 +494,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-23-vibe-coding-with-rigor",
-        "title": "Vibe Coding With Rigor",
-        "date": "2026-05-23T00:00:00.000Z",
-        "dateString": "Sat May 23 2026",
-        "path": "./src/posts/2026-05-23-vibe-coding-with-rigor.html",
-        "url": "/posts/2026-05-23-vibe-coding-with-rigor/",
-        "excerpt": "The term I am reclaiming",
+        "name": "2026-05-26-vibe-coding-with-rigor",
+        "title": "Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)",
+        "date": "2026-05-26T00:00:00.000Z",
+        "dateString": "Tue May 26 2026",
+        "path": "./src/posts/2026-05-26-vibe-coding-with-rigor.html",
+        "url": "/posts/2026-05-26-vibe-coding-with-rigor/",
+        "excerpt": "The term I am reclaiming (because \"vibe coding\" got a bad rap)",
         "coverImage": null,
-        "coverAlt": "Vibe Coding With Rigor",
+        "coverAlt": "Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)",
         "tags": [
           {
             "key": "making-of",
@@ -510,9 +510,9 @@
             "url": "./tags/making-of.html"
           },
           {
-            "key": "ai-copilot",
-            "label": "ai-copilot",
-            "url": "./tags/ai-copilot.html"
+            "key": "ai",
+            "label": "ai",
+            "url": "./tags/ai.html"
           },
           {
             "key": "workflow",
@@ -521,12 +521,46 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-20-pi-dev-deepseek-v4-flash-daily-loop",
+        "title": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "date": "2026-06-20T00:00:00.000Z",
+        "dateString": "Sat Jun 20 2026",
+        "path": "./src/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html",
+        "url": "/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop/",
+        "excerpt": "The headline numbers",
+        "coverImage": null,
+        "coverAlt": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "tags": [
+          {
+            "key": "ai",
+            "label": "ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "workflow",
+            "label": "workflow",
+            "url": "./tags/workflow.html"
+          },
+          {
+            "key": "tooling",
+            "label": "tooling",
+            "url": "./tags/tooling.html"
+          },
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "making-of",
     "slug": "making-of",
     "url": "./tags/making-of.html",
-    "count": 16
+    "count": 17
   },
   {
     "key": "architecture",
@@ -534,14 +568,14 @@
     "posts": [
       {
         "name": "2026-04-04-how-i-built-dout-dev",
-        "title": "How I Built dout.dev",
+        "title": "How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)",
         "date": "2026-04-04T00:00:00.000Z",
         "dateString": "Sat Apr 04 2026",
         "path": "./src/posts/2026-04-04-how-i-built-dout-dev.html",
         "url": "/posts/2026-04-04-how-i-built-dout-dev/",
-        "excerpt": "What the stack is, exactly",
+        "excerpt": "What the stack is, exactly (TL;DR: files + Node + blood)",
         "coverImage": null,
-        "coverAlt": "How I Built dout.dev",
+        "coverAlt": "How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)",
         "tags": [
           {
             "key": "making-of",
@@ -562,15 +596,15 @@
         "pinned": true
       },
       {
-        "name": "2026-05-05-why-no-astro-eleventy-next",
-        "title": "Why I Skipped Astro, Eleventy and Next for My Blog",
-        "date": "2026-05-05T00:00:00.000Z",
-        "dateString": "Tue May 05 2026",
-        "path": "./src/posts/2026-05-05-why-no-astro-eleventy-next.html",
-        "url": "/posts/2026-05-05-why-no-astro-eleventy-next/",
+        "name": "2026-04-14-why-no-astro-eleventy-next",
+        "title": "Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)",
+        "date": "2026-04-14T00:00:00.000Z",
+        "dateString": "Tue Apr 14 2026",
+        "path": "./src/posts/2026-04-14-why-no-astro-eleventy-next.html",
+        "url": "/posts/2026-04-14-why-no-astro-eleventy-next/",
         "excerpt": "The default answer and why I ignored it",
         "coverImage": null,
-        "coverAlt": "Why I Skipped Astro, Eleventy and Next for My Blog",
+        "coverAlt": "Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)",
         "tags": [
           {
             "key": "making-of",
@@ -591,15 +625,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-12-custom-ssg-pipeline",
-        "title": "Custom SSG Pipeline: Markdown to Static HTML",
-        "date": "2026-05-12T00:00:00.000Z",
-        "dateString": "Tue May 12 2026",
-        "path": "./src/posts/2026-05-12-custom-ssg-pipeline.html",
-        "url": "/posts/2026-05-12-custom-ssg-pipeline/",
-        "excerpt": "The pipeline, in one picture",
+        "name": "2026-04-18-custom-ssg-pipeline",
+        "title": "Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)",
+        "date": "2026-04-18T00:00:00.000Z",
+        "dateString": "Sat Apr 18 2026",
+        "path": "./src/posts/2026-04-18-custom-ssg-pipeline.html",
+        "url": "/posts/2026-04-18-custom-ssg-pipeline/",
+        "excerpt": "The pipeline, in one picture (because I know you're skimming)",
         "coverImage": null,
-        "coverAlt": "Custom SSG Pipeline: Markdown to Static HTML",
+        "coverAlt": "Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)",
         "tags": [
           {
             "key": "making-of",
@@ -625,15 +659,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-13-template-engine-and-template-structure",
-        "title": "Template Engine and Template Structure",
-        "date": "2026-05-13T00:00:00.000Z",
-        "dateString": "Wed May 13 2026",
-        "path": "./src/posts/2026-05-13-template-engine-and-template-structure.html",
-        "url": "/posts/2026-05-13-template-engine-and-template-structure/",
-        "excerpt": "Three constraints that shaped the grammar",
+        "name": "2026-04-21-template-engine-and-template-structure",
+        "title": "Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)",
+        "date": "2026-04-21T00:00:00.000Z",
+        "dateString": "Tue Apr 21 2026",
+        "path": "./src/posts/2026-04-21-template-engine-and-template-structure.html",
+        "url": "/posts/2026-04-21-template-engine-and-template-structure/",
+        "excerpt": "Three constraints that shaped the grammar (because constraints are good, actually)",
         "coverImage": null,
-        "coverAlt": "Template Engine and Template Structure",
+        "coverAlt": "Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)",
         "tags": [
           {
             "key": "making-of",
@@ -659,15 +693,15 @@
         "pinned": false
       },
       {
-        "name": "2026-06-13-how-pixhighlighter-is-built",
-        "title": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
-        "date": "2026-06-13T00:00:00.000Z",
-        "dateString": "Sat Jun 13 2026",
-        "path": "./src/posts/2026-06-13-how-pixhighlighter-is-built.html",
-        "url": "/posts/2026-06-13-how-pixhighlighter-is-built/",
-        "excerpt": "The contract stays plain",
+        "name": "2026-06-06-how-pixhighlighter-is-built",
+        "title": "How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)",
+        "date": "2026-06-06T00:00:00.000Z",
+        "dateString": "Sat Jun 06 2026",
+        "path": "./src/posts/2026-06-06-how-pixhighlighter-is-built.html",
+        "url": "/posts/2026-06-06-how-pixhighlighter-is-built/",
+        "excerpt": "The contract stays plain (because HTML should be readable)",
         "coverImage": null,
-        "coverAlt": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
+        "coverAlt": "How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)",
         "tags": [
           {
             "key": "vanilla-js",
@@ -688,12 +722,12 @@
         "pinned": false
       },
       {
-        "name": "2026-06-16-the-end-of-borrowed-abstractions",
+        "name": "2026-06-13-the-end-of-borrowed-abstractions",
         "title": "The End of Borrowed Abstractions",
-        "date": "2026-06-16T00:00:00.000Z",
-        "dateString": "Tue Jun 16 2026",
-        "path": "./src/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
-        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
+        "date": "2026-06-13T00:00:00.000Z",
+        "dateString": "Sat Jun 13 2026",
+        "path": "./src/posts/2026-06-13-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-13-the-end-of-borrowed-abstractions/",
         "excerpt": "The reflex that shaped software",
         "coverImage": null,
         "coverAlt": "The End of Borrowed Abstractions",
@@ -707,11 +741,6 @@
             "key": "ai",
             "label": "ai",
             "url": "./tags/ai.html"
-          },
-          {
-            "key": "ai-copilot",
-            "label": "ai-copilot",
-            "url": "./tags/ai-copilot.html"
           },
           {
             "key": "vanilla-js",
@@ -732,15 +761,15 @@
         "pinned": false
       },
       {
-        "name": "2026-06-23-client-side-search-static-dataset",
-        "title": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
-        "date": "2026-06-23T00:00:00.000Z",
-        "dateString": "Tue Jun 23 2026",
-        "path": "./src/posts/2026-06-23-client-side-search-static-dataset.html",
-        "url": "/posts/2026-06-23-client-side-search-static-dataset/",
-        "excerpt": "The constraint",
+        "name": "2026-06-16-client-side-search-static-dataset",
+        "title": "Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)",
+        "date": "2026-06-16T00:00:00.000Z",
+        "dateString": "Tue Jun 16 2026",
+        "path": "./src/posts/2026-06-16-client-side-search-static-dataset.html",
+        "url": "/posts/2026-06-16-client-side-search-static-dataset/",
+        "excerpt": "The constraint (no backend, no excuses)",
         "coverImage": null,
-        "coverAlt": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "coverAlt": "Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)",
         "tags": [
           {
             "key": "vanilla-js",
@@ -764,12 +793,70 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-23-custom-element-syntax-highlight",
+        "title": "A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`",
+        "date": "2026-06-23T00:00:00.000Z",
+        "dateString": "Tue Jun 23 2026",
+        "path": "./src/posts/2026-06-23-custom-element-syntax-highlight.html",
+        "url": "/posts/2026-06-23-custom-element-syntax-highlight/",
+        "excerpt": "The stack I did not want",
+        "coverImage": null,
+        "coverAlt": "A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-07-04-pragmatic-service-worker",
+        "title": "A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)",
+        "date": "2026-07-04T00:00:00.000Z",
+        "dateString": "Sat Jul 04 2026",
+        "path": "./src/posts/2026-07-04-pragmatic-service-worker.html",
+        "url": "/posts/2026-07-04-pragmatic-service-worker/",
+        "excerpt": "The case against most service workers",
+        "coverImage": null,
+        "coverAlt": "A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)",
+        "tags": [
+          {
+            "key": "performance",
+            "label": "performance",
+            "url": "./tags/performance.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "architecture",
     "slug": "architecture",
     "url": "./tags/architecture.html",
-    "count": 7
+    "count": 9
   },
   {
     "key": "static-site",
@@ -777,14 +864,14 @@
     "posts": [
       {
         "name": "2026-04-04-how-i-built-dout-dev",
-        "title": "How I Built dout.dev",
+        "title": "How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)",
         "date": "2026-04-04T00:00:00.000Z",
         "dateString": "Sat Apr 04 2026",
         "path": "./src/posts/2026-04-04-how-i-built-dout-dev.html",
         "url": "/posts/2026-04-04-how-i-built-dout-dev/",
-        "excerpt": "What the stack is, exactly",
+        "excerpt": "What the stack is, exactly (TL;DR: files + Node + blood)",
         "coverImage": null,
-        "coverAlt": "How I Built dout.dev",
+        "coverAlt": "How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)",
         "tags": [
           {
             "key": "making-of",
@@ -805,15 +892,15 @@
         "pinned": true
       },
       {
-        "name": "2026-04-21-cms-and-markdown-processing",
-        "title": "CMS and Markdown Processing",
-        "date": "2026-04-21T00:00:00.000Z",
-        "dateString": "Tue Apr 21 2026",
-        "path": "./src/posts/2026-04-21-cms-and-markdown-processing.html",
-        "url": "/posts/2026-04-21-cms-and-markdown-processing/",
+        "name": "2026-04-07-cms-and-markdown-processing",
+        "title": "CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)",
+        "date": "2026-04-07T00:00:00.000Z",
+        "dateString": "Tue Apr 07 2026",
+        "path": "./src/posts/2026-04-07-cms-and-markdown-processing.html",
+        "url": "/posts/2026-04-07-cms-and-markdown-processing/",
         "excerpt": "The useful distinction",
         "coverImage": null,
-        "coverAlt": "CMS and Markdown Processing",
+        "coverAlt": "CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)",
         "tags": [
           {
             "key": "making-of",
@@ -839,15 +926,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-05-why-no-astro-eleventy-next",
-        "title": "Why I Skipped Astro, Eleventy and Next for My Blog",
-        "date": "2026-05-05T00:00:00.000Z",
-        "dateString": "Tue May 05 2026",
-        "path": "./src/posts/2026-05-05-why-no-astro-eleventy-next.html",
-        "url": "/posts/2026-05-05-why-no-astro-eleventy-next/",
+        "name": "2026-04-14-why-no-astro-eleventy-next",
+        "title": "Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)",
+        "date": "2026-04-14T00:00:00.000Z",
+        "dateString": "Tue Apr 14 2026",
+        "path": "./src/posts/2026-04-14-why-no-astro-eleventy-next.html",
+        "url": "/posts/2026-04-14-why-no-astro-eleventy-next/",
         "excerpt": "The default answer and why I ignored it",
         "coverImage": null,
-        "coverAlt": "Why I Skipped Astro, Eleventy and Next for My Blog",
+        "coverAlt": "Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)",
         "tags": [
           {
             "key": "making-of",
@@ -868,15 +955,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-12-custom-ssg-pipeline",
-        "title": "Custom SSG Pipeline: Markdown to Static HTML",
-        "date": "2026-05-12T00:00:00.000Z",
-        "dateString": "Tue May 12 2026",
-        "path": "./src/posts/2026-05-12-custom-ssg-pipeline.html",
-        "url": "/posts/2026-05-12-custom-ssg-pipeline/",
-        "excerpt": "The pipeline, in one picture",
+        "name": "2026-04-18-custom-ssg-pipeline",
+        "title": "Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)",
+        "date": "2026-04-18T00:00:00.000Z",
+        "dateString": "Sat Apr 18 2026",
+        "path": "./src/posts/2026-04-18-custom-ssg-pipeline.html",
+        "url": "/posts/2026-04-18-custom-ssg-pipeline/",
+        "excerpt": "The pipeline, in one picture (because I know you're skimming)",
         "coverImage": null,
-        "coverAlt": "Custom SSG Pipeline: Markdown to Static HTML",
+        "coverAlt": "Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)",
         "tags": [
           {
             "key": "making-of",
@@ -902,15 +989,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-18-feeds-and-sitemaps-at-build-time",
-        "title": "Feeds and Sitemaps at Build Time",
-        "date": "2026-05-18T00:00:00.000Z",
-        "dateString": "Mon May 18 2026",
-        "path": "./src/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html",
-        "url": "/posts/2026-05-18-feeds-and-sitemaps-at-build-time/",
-        "excerpt": "The distribution minimum",
+        "name": "2026-05-09-feeds-and-sitemaps-at-build-time",
+        "title": "Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)",
+        "date": "2026-05-09T00:00:00.000Z",
+        "dateString": "Sat May 09 2026",
+        "path": "./src/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html",
+        "url": "/posts/2026-05-09-feeds-and-sitemaps-at-build-time/",
+        "excerpt": "The distribution minimum (three files, that's it)",
         "coverImage": null,
-        "coverAlt": "Feeds and Sitemaps at Build Time",
+        "coverAlt": "Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)",
         "tags": [
           {
             "key": "making-of",
@@ -936,15 +1023,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-19-og-images-at-build-time",
-        "title": "OG Images at Build Time",
-        "date": "2026-05-19T00:00:00.000Z",
-        "dateString": "Tue May 19 2026",
-        "path": "./src/posts/2026-05-19-og-images-at-build-time.html",
-        "url": "/posts/2026-05-19-og-images-at-build-time/",
-        "excerpt": "The problem and the usual solutions",
+        "name": "2026-05-12-og-images-at-build-time",
+        "title": "OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)",
+        "date": "2026-05-12T00:00:00.000Z",
+        "dateString": "Tue May 12 2026",
+        "path": "./src/posts/2026-05-12-og-images-at-build-time.html",
+        "url": "/posts/2026-05-12-og-images-at-build-time/",
+        "excerpt": "The problem and the usual solutions (none of which I wanted)",
         "coverImage": null,
-        "coverAlt": "OG Images at Build Time",
+        "coverAlt": "OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)",
         "tags": [
           {
             "key": "making-of",
@@ -970,15 +1057,15 @@
         "pinned": false
       },
       {
-        "name": "2026-06-23-client-side-search-static-dataset",
-        "title": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
-        "date": "2026-06-23T00:00:00.000Z",
-        "dateString": "Tue Jun 23 2026",
-        "path": "./src/posts/2026-06-23-client-side-search-static-dataset.html",
-        "url": "/posts/2026-06-23-client-side-search-static-dataset/",
-        "excerpt": "The constraint",
+        "name": "2026-06-16-client-side-search-static-dataset",
+        "title": "Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)",
+        "date": "2026-06-16T00:00:00.000Z",
+        "dateString": "Tue Jun 16 2026",
+        "path": "./src/posts/2026-06-16-client-side-search-static-dataset.html",
+        "url": "/posts/2026-06-16-client-side-search-static-dataset/",
+        "excerpt": "The constraint (no backend, no excuses)",
         "coverImage": null,
-        "coverAlt": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "coverAlt": "Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)",
         "tags": [
           {
             "key": "vanilla-js",
@@ -1014,15 +1101,15 @@
     "label": "cms",
     "posts": [
       {
-        "name": "2026-04-21-cms-and-markdown-processing",
-        "title": "CMS and Markdown Processing",
-        "date": "2026-04-21T00:00:00.000Z",
-        "dateString": "Tue Apr 21 2026",
-        "path": "./src/posts/2026-04-21-cms-and-markdown-processing.html",
-        "url": "/posts/2026-04-21-cms-and-markdown-processing/",
+        "name": "2026-04-07-cms-and-markdown-processing",
+        "title": "CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)",
+        "date": "2026-04-07T00:00:00.000Z",
+        "dateString": "Tue Apr 07 2026",
+        "path": "./src/posts/2026-04-07-cms-and-markdown-processing.html",
+        "url": "/posts/2026-04-07-cms-and-markdown-processing/",
         "excerpt": "The useful distinction",
         "coverImage": null,
-        "coverAlt": "CMS and Markdown Processing",
+        "coverAlt": "CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)",
         "tags": [
           {
             "key": "making-of",
@@ -1048,15 +1135,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-12-custom-ssg-pipeline",
-        "title": "Custom SSG Pipeline: Markdown to Static HTML",
-        "date": "2026-05-12T00:00:00.000Z",
-        "dateString": "Tue May 12 2026",
-        "path": "./src/posts/2026-05-12-custom-ssg-pipeline.html",
-        "url": "/posts/2026-05-12-custom-ssg-pipeline/",
-        "excerpt": "The pipeline, in one picture",
+        "name": "2026-04-18-custom-ssg-pipeline",
+        "title": "Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)",
+        "date": "2026-04-18T00:00:00.000Z",
+        "dateString": "Sat Apr 18 2026",
+        "path": "./src/posts/2026-04-18-custom-ssg-pipeline.html",
+        "url": "/posts/2026-04-18-custom-ssg-pipeline/",
+        "excerpt": "The pipeline, in one picture (because I know you're skimming)",
         "coverImage": null,
-        "coverAlt": "Custom SSG Pipeline: Markdown to Static HTML",
+        "coverAlt": "Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)",
         "tags": [
           {
             "key": "making-of",
@@ -1092,15 +1179,15 @@
     "label": "markdown",
     "posts": [
       {
-        "name": "2026-04-21-cms-and-markdown-processing",
-        "title": "CMS and Markdown Processing",
-        "date": "2026-04-21T00:00:00.000Z",
-        "dateString": "Tue Apr 21 2026",
-        "path": "./src/posts/2026-04-21-cms-and-markdown-processing.html",
-        "url": "/posts/2026-04-21-cms-and-markdown-processing/",
+        "name": "2026-04-07-cms-and-markdown-processing",
+        "title": "CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)",
+        "date": "2026-04-07T00:00:00.000Z",
+        "dateString": "Tue Apr 07 2026",
+        "path": "./src/posts/2026-04-07-cms-and-markdown-processing.html",
+        "url": "/posts/2026-04-07-cms-and-markdown-processing/",
         "excerpt": "The useful distinction",
         "coverImage": null,
-        "coverAlt": "CMS and Markdown Processing",
+        "coverAlt": "CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)",
         "tags": [
           {
             "key": "making-of",
@@ -1132,19 +1219,19 @@
     "count": 1
   },
   {
-    "key": "ai-copilot",
-    "label": "ai-copilot",
+    "key": "ai",
+    "label": "ai",
     "posts": [
       {
-        "name": "2026-04-28-rebuilding-dout-dev-with-ai-copilot",
-        "title": "Rebuilding dout.dev in Weeks With an AI Copilot",
-        "date": "2026-04-28T00:00:00.000Z",
-        "dateString": "Tue Apr 28 2026",
-        "path": "./src/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html",
-        "url": "/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot/",
+        "name": "2026-04-11-rebuilding-dout-dev-with-ai-copilot",
+        "title": "Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread",
+        "date": "2026-04-11T00:00:00.000Z",
+        "dateString": "Sat Apr 11 2026",
+        "path": "./src/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html",
+        "url": "/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot/",
         "excerpt": "The honest framing",
         "coverImage": null,
-        "coverAlt": "Rebuilding dout.dev in Weeks With an AI Copilot",
+        "coverAlt": "Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread",
         "tags": [
           {
             "key": "making-of",
@@ -1152,9 +1239,9 @@
             "url": "./tags/making-of.html"
           },
           {
-            "key": "ai-copilot",
-            "label": "ai-copilot",
-            "url": "./tags/ai-copilot.html"
+            "key": "ai",
+            "label": "ai",
+            "url": "./tags/ai.html"
           },
           {
             "key": "workflow",
@@ -1165,15 +1252,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-23-vibe-coding-with-rigor",
-        "title": "Vibe Coding With Rigor",
-        "date": "2026-05-23T00:00:00.000Z",
-        "dateString": "Sat May 23 2026",
-        "path": "./src/posts/2026-05-23-vibe-coding-with-rigor.html",
-        "url": "/posts/2026-05-23-vibe-coding-with-rigor/",
-        "excerpt": "The term I am reclaiming",
+        "name": "2026-05-26-vibe-coding-with-rigor",
+        "title": "Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)",
+        "date": "2026-05-26T00:00:00.000Z",
+        "dateString": "Tue May 26 2026",
+        "path": "./src/posts/2026-05-26-vibe-coding-with-rigor.html",
+        "url": "/posts/2026-05-26-vibe-coding-with-rigor/",
+        "excerpt": "The term I am reclaiming (because \"vibe coding\" got a bad rap)",
         "coverImage": null,
-        "coverAlt": "Vibe Coding With Rigor",
+        "coverAlt": "Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)",
         "tags": [
           {
             "key": "making-of",
@@ -1181,9 +1268,9 @@
             "url": "./tags/making-of.html"
           },
           {
-            "key": "ai-copilot",
-            "label": "ai-copilot",
-            "url": "./tags/ai-copilot.html"
+            "key": "ai",
+            "label": "ai",
+            "url": "./tags/ai.html"
           },
           {
             "key": "workflow",
@@ -1194,12 +1281,12 @@
         "pinned": false
       },
       {
-        "name": "2026-06-16-the-end-of-borrowed-abstractions",
+        "name": "2026-06-13-the-end-of-borrowed-abstractions",
         "title": "The End of Borrowed Abstractions",
-        "date": "2026-06-16T00:00:00.000Z",
-        "dateString": "Tue Jun 16 2026",
-        "path": "./src/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
-        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
+        "date": "2026-06-13T00:00:00.000Z",
+        "dateString": "Sat Jun 13 2026",
+        "path": "./src/posts/2026-06-13-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-13-the-end-of-borrowed-abstractions/",
         "excerpt": "The reflex that shaped software",
         "coverImage": null,
         "coverAlt": "The End of Borrowed Abstractions",
@@ -1213,11 +1300,6 @@
             "key": "ai",
             "label": "ai",
             "url": "./tags/ai.html"
-          },
-          {
-            "key": "ai-copilot",
-            "label": "ai-copilot",
-            "url": "./tags/ai-copilot.html"
           },
           {
             "key": "vanilla-js",
@@ -1236,27 +1318,61 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-20-pi-dev-deepseek-v4-flash-daily-loop",
+        "title": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "date": "2026-06-20T00:00:00.000Z",
+        "dateString": "Sat Jun 20 2026",
+        "path": "./src/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html",
+        "url": "/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop/",
+        "excerpt": "The headline numbers",
+        "coverImage": null,
+        "coverAlt": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "tags": [
+          {
+            "key": "ai",
+            "label": "ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "workflow",
+            "label": "workflow",
+            "url": "./tags/workflow.html"
+          },
+          {
+            "key": "tooling",
+            "label": "tooling",
+            "url": "./tags/tooling.html"
+          },
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          }
+        ],
+        "pinned": false
       }
     ],
-    "name": "ai-copilot",
-    "slug": "ai-copilot",
-    "url": "./tags/ai-copilot.html",
-    "count": 3
+    "name": "ai",
+    "slug": "ai",
+    "url": "./tags/ai.html",
+    "count": 4
   },
   {
     "key": "workflow",
     "label": "workflow",
     "posts": [
       {
-        "name": "2026-04-28-rebuilding-dout-dev-with-ai-copilot",
-        "title": "Rebuilding dout.dev in Weeks With an AI Copilot",
-        "date": "2026-04-28T00:00:00.000Z",
-        "dateString": "Tue Apr 28 2026",
-        "path": "./src/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot.html",
-        "url": "/posts/2026-04-28-rebuilding-dout-dev-with-ai-copilot/",
+        "name": "2026-04-11-rebuilding-dout-dev-with-ai-copilot",
+        "title": "Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread",
+        "date": "2026-04-11T00:00:00.000Z",
+        "dateString": "Sat Apr 11 2026",
+        "path": "./src/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html",
+        "url": "/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot/",
         "excerpt": "The honest framing",
         "coverImage": null,
-        "coverAlt": "Rebuilding dout.dev in Weeks With an AI Copilot",
+        "coverAlt": "Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread",
         "tags": [
           {
             "key": "making-of",
@@ -1264,9 +1380,9 @@
             "url": "./tags/making-of.html"
           },
           {
-            "key": "ai-copilot",
-            "label": "ai-copilot",
-            "url": "./tags/ai-copilot.html"
+            "key": "ai",
+            "label": "ai",
+            "url": "./tags/ai.html"
           },
           {
             "key": "workflow",
@@ -1277,15 +1393,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-23-vibe-coding-with-rigor",
-        "title": "Vibe Coding With Rigor",
-        "date": "2026-05-23T00:00:00.000Z",
-        "dateString": "Sat May 23 2026",
-        "path": "./src/posts/2026-05-23-vibe-coding-with-rigor.html",
-        "url": "/posts/2026-05-23-vibe-coding-with-rigor/",
-        "excerpt": "The term I am reclaiming",
+        "name": "2026-05-26-vibe-coding-with-rigor",
+        "title": "Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)",
+        "date": "2026-05-26T00:00:00.000Z",
+        "dateString": "Tue May 26 2026",
+        "path": "./src/posts/2026-05-26-vibe-coding-with-rigor.html",
+        "url": "/posts/2026-05-26-vibe-coding-with-rigor/",
+        "excerpt": "The term I am reclaiming (because \"vibe coding\" got a bad rap)",
         "coverImage": null,
-        "coverAlt": "Vibe Coding With Rigor",
+        "coverAlt": "Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)",
         "tags": [
           {
             "key": "making-of",
@@ -1293,9 +1409,9 @@
             "url": "./tags/making-of.html"
           },
           {
-            "key": "ai-copilot",
-            "label": "ai-copilot",
-            "url": "./tags/ai-copilot.html"
+            "key": "ai",
+            "label": "ai",
+            "url": "./tags/ai.html"
           },
           {
             "key": "workflow",
@@ -1304,27 +1420,61 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-20-pi-dev-deepseek-v4-flash-daily-loop",
+        "title": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "date": "2026-06-20T00:00:00.000Z",
+        "dateString": "Sat Jun 20 2026",
+        "path": "./src/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html",
+        "url": "/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop/",
+        "excerpt": "The headline numbers",
+        "coverImage": null,
+        "coverAlt": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "tags": [
+          {
+            "key": "ai",
+            "label": "ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "workflow",
+            "label": "workflow",
+            "url": "./tags/workflow.html"
+          },
+          {
+            "key": "tooling",
+            "label": "tooling",
+            "url": "./tags/tooling.html"
+          },
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "workflow",
     "slug": "workflow",
     "url": "./tags/workflow.html",
-    "count": 2
+    "count": 3
   },
   {
     "key": "template-engine",
     "label": "template-engine",
     "posts": [
       {
-        "name": "2026-05-13-template-engine-and-template-structure",
-        "title": "Template Engine and Template Structure",
-        "date": "2026-05-13T00:00:00.000Z",
-        "dateString": "Wed May 13 2026",
-        "path": "./src/posts/2026-05-13-template-engine-and-template-structure.html",
-        "url": "/posts/2026-05-13-template-engine-and-template-structure/",
-        "excerpt": "Three constraints that shaped the grammar",
+        "name": "2026-04-21-template-engine-and-template-structure",
+        "title": "Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)",
+        "date": "2026-04-21T00:00:00.000Z",
+        "dateString": "Tue Apr 21 2026",
+        "path": "./src/posts/2026-04-21-template-engine-and-template-structure.html",
+        "url": "/posts/2026-04-21-template-engine-and-template-structure/",
+        "excerpt": "Three constraints that shaped the grammar (because constraints are good, actually)",
         "coverImage": null,
-        "coverAlt": "Template Engine and Template Structure",
+        "coverAlt": "Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)",
         "tags": [
           {
             "key": "making-of",
@@ -1360,15 +1510,15 @@
     "label": "html",
     "posts": [
       {
-        "name": "2026-05-13-template-engine-and-template-structure",
-        "title": "Template Engine and Template Structure",
-        "date": "2026-05-13T00:00:00.000Z",
-        "dateString": "Wed May 13 2026",
-        "path": "./src/posts/2026-05-13-template-engine-and-template-structure.html",
-        "url": "/posts/2026-05-13-template-engine-and-template-structure/",
-        "excerpt": "Three constraints that shaped the grammar",
+        "name": "2026-04-21-template-engine-and-template-structure",
+        "title": "Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)",
+        "date": "2026-04-21T00:00:00.000Z",
+        "dateString": "Tue Apr 21 2026",
+        "path": "./src/posts/2026-04-21-template-engine-and-template-structure.html",
+        "url": "/posts/2026-04-21-template-engine-and-template-structure/",
+        "excerpt": "Three constraints that shaped the grammar (because constraints are good, actually)",
         "coverImage": null,
-        "coverAlt": "Template Engine and Template Structure",
+        "coverAlt": "Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)",
         "tags": [
           {
             "key": "making-of",
@@ -1394,15 +1544,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-20-seo-metadata-without-rituals",
-        "title": "SEO Metadata Without Rituals",
-        "date": "2026-05-20T00:00:00.000Z",
-        "dateString": "Wed May 20 2026",
-        "path": "./src/posts/2026-05-20-seo-metadata-without-rituals.html",
-        "url": "/posts/2026-05-20-seo-metadata-without-rituals/",
-        "excerpt": "The short version",
+        "name": "2026-05-16-seo-metadata-without-rituals",
+        "title": "SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)",
+        "date": "2026-05-16T00:00:00.000Z",
+        "dateString": "Sat May 16 2026",
+        "path": "./src/posts/2026-05-16-seo-metadata-without-rituals.html",
+        "url": "/posts/2026-05-16-seo-metadata-without-rituals/",
+        "excerpt": "The short version (TL;DR for the impatient)",
         "coverImage": null,
-        "coverAlt": "SEO Metadata Without Rituals",
+        "coverAlt": "SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)",
         "tags": [
           {
             "key": "making-of",
@@ -1428,25 +1578,20 @@
         "pinned": false
       },
       {
-        "name": "2026-06-09-wcag-22-aa-without-aria-spam",
-        "title": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
-        "date": "2026-06-09T00:00:00.000Z",
-        "dateString": "Tue Jun 09 2026",
-        "path": "./src/posts/2026-06-09-wcag-22-aa-without-aria-spam.html",
-        "url": "/posts/2026-06-09-wcag-22-aa-without-aria-spam/",
-        "excerpt": "The unpopular opinion",
+        "name": "2026-06-02-wcag-22-aa-without-aria-spam",
+        "title": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)",
+        "date": "2026-06-02T00:00:00.000Z",
+        "dateString": "Tue Jun 02 2026",
+        "path": "./src/posts/2026-06-02-wcag-22-aa-without-aria-spam.html",
+        "url": "/posts/2026-06-02-wcag-22-aa-without-aria-spam/",
+        "excerpt": "The unpopular opinion (brace yourself)",
         "coverImage": null,
-        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
+        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)",
         "tags": [
           {
             "key": "accessibility",
             "label": "accessibility",
             "url": "./tags/accessibility.html"
-          },
-          {
-            "key": "a11y",
-            "label": "a11y",
-            "url": "./tags/a11y.html"
           },
           {
             "key": "html",
@@ -1460,27 +1605,51 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-07-05-css-properties-hierarchy",
+        "title": "CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)",
+        "date": "2026-07-05T00:00:00.000Z",
+        "dateString": "Sun Jul 05 2026",
+        "path": "./src/posts/2026-07-05-css-properties-hierarchy.html",
+        "url": "/posts/2026-07-05-css-properties-hierarchy/",
+        "excerpt": ":root { --border-radius: 5px; } .element { /* css custom properties */ --var--example: 1; ​ /* position */ position: absolute; inset: 0; /* top, right, bottom, left */ z-index: 1; ",
+        "coverImage": null,
+        "coverAlt": "CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)",
+        "tags": [
+          {
+            "key": "html",
+            "label": "html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "css",
+            "label": "css",
+            "url": "./tags/css.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "html",
     "slug": "html",
     "url": "./tags/html.html",
-    "count": 3
+    "count": 4
   },
   {
     "key": "archives",
     "label": "archives",
     "posts": [
       {
-        "name": "2026-05-14-archives-tags-months-series",
-        "title": "Archives, Tags, Months, and Series",
-        "date": "2026-05-14T00:00:00.000Z",
-        "dateString": "Thu May 14 2026",
-        "path": "./src/posts/2026-05-14-archives-tags-months-series.html",
-        "url": "/posts/2026-05-14-archives-tags-months-series/",
-        "excerpt": "Three ways to slice the same posts",
+        "name": "2026-04-25-archives-tags-months-series",
+        "title": "Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)",
+        "date": "2026-04-25T00:00:00.000Z",
+        "dateString": "Sat Apr 25 2026",
+        "path": "./src/posts/2026-04-25-archives-tags-months-series.html",
+        "url": "/posts/2026-04-25-archives-tags-months-series/",
+        "excerpt": "Three ways to slice the same posts (because one axis is never enough)",
         "coverImage": null,
-        "coverAlt": "Archives, Tags, Months, and Series",
+        "coverAlt": "Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)",
         "tags": [
           {
             "key": "making-of",
@@ -1516,15 +1685,15 @@
     "label": "seo",
     "posts": [
       {
-        "name": "2026-05-14-archives-tags-months-series",
-        "title": "Archives, Tags, Months, and Series",
-        "date": "2026-05-14T00:00:00.000Z",
-        "dateString": "Thu May 14 2026",
-        "path": "./src/posts/2026-05-14-archives-tags-months-series.html",
-        "url": "/posts/2026-05-14-archives-tags-months-series/",
-        "excerpt": "Three ways to slice the same posts",
+        "name": "2026-04-25-archives-tags-months-series",
+        "title": "Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)",
+        "date": "2026-04-25T00:00:00.000Z",
+        "dateString": "Sat Apr 25 2026",
+        "path": "./src/posts/2026-04-25-archives-tags-months-series.html",
+        "url": "/posts/2026-04-25-archives-tags-months-series/",
+        "excerpt": "Three ways to slice the same posts (because one axis is never enough)",
         "coverImage": null,
-        "coverAlt": "Archives, Tags, Months, and Series",
+        "coverAlt": "Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)",
         "tags": [
           {
             "key": "making-of",
@@ -1550,15 +1719,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-18-feeds-and-sitemaps-at-build-time",
-        "title": "Feeds and Sitemaps at Build Time",
-        "date": "2026-05-18T00:00:00.000Z",
-        "dateString": "Mon May 18 2026",
-        "path": "./src/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html",
-        "url": "/posts/2026-05-18-feeds-and-sitemaps-at-build-time/",
-        "excerpt": "The distribution minimum",
+        "name": "2026-05-09-feeds-and-sitemaps-at-build-time",
+        "title": "Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)",
+        "date": "2026-05-09T00:00:00.000Z",
+        "dateString": "Sat May 09 2026",
+        "path": "./src/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html",
+        "url": "/posts/2026-05-09-feeds-and-sitemaps-at-build-time/",
+        "excerpt": "The distribution minimum (three files, that's it)",
         "coverImage": null,
-        "coverAlt": "Feeds and Sitemaps at Build Time",
+        "coverAlt": "Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)",
         "tags": [
           {
             "key": "making-of",
@@ -1584,15 +1753,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-19-og-images-at-build-time",
-        "title": "OG Images at Build Time",
-        "date": "2026-05-19T00:00:00.000Z",
-        "dateString": "Tue May 19 2026",
-        "path": "./src/posts/2026-05-19-og-images-at-build-time.html",
-        "url": "/posts/2026-05-19-og-images-at-build-time/",
-        "excerpt": "The problem and the usual solutions",
+        "name": "2026-05-12-og-images-at-build-time",
+        "title": "OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)",
+        "date": "2026-05-12T00:00:00.000Z",
+        "dateString": "Tue May 12 2026",
+        "path": "./src/posts/2026-05-12-og-images-at-build-time.html",
+        "url": "/posts/2026-05-12-og-images-at-build-time/",
+        "excerpt": "The problem and the usual solutions (none of which I wanted)",
         "coverImage": null,
-        "coverAlt": "OG Images at Build Time",
+        "coverAlt": "OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)",
         "tags": [
           {
             "key": "making-of",
@@ -1618,15 +1787,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-20-seo-metadata-without-rituals",
-        "title": "SEO Metadata Without Rituals",
-        "date": "2026-05-20T00:00:00.000Z",
-        "dateString": "Wed May 20 2026",
-        "path": "./src/posts/2026-05-20-seo-metadata-without-rituals.html",
-        "url": "/posts/2026-05-20-seo-metadata-without-rituals/",
-        "excerpt": "The short version",
+        "name": "2026-05-16-seo-metadata-without-rituals",
+        "title": "SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)",
+        "date": "2026-05-16T00:00:00.000Z",
+        "dateString": "Sat May 16 2026",
+        "path": "./src/posts/2026-05-16-seo-metadata-without-rituals.html",
+        "url": "/posts/2026-05-16-seo-metadata-without-rituals/",
+        "excerpt": "The short version (TL;DR for the impatient)",
         "coverImage": null,
-        "coverAlt": "SEO Metadata Without Rituals",
+        "coverAlt": "SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)",
         "tags": [
           {
             "key": "making-of",
@@ -1662,15 +1831,15 @@
     "label": "accessibility",
     "posts": [
       {
-        "name": "2026-05-14-archives-tags-months-series",
-        "title": "Archives, Tags, Months, and Series",
-        "date": "2026-05-14T00:00:00.000Z",
-        "dateString": "Thu May 14 2026",
-        "path": "./src/posts/2026-05-14-archives-tags-months-series.html",
-        "url": "/posts/2026-05-14-archives-tags-months-series/",
-        "excerpt": "Three ways to slice the same posts",
+        "name": "2026-04-25-archives-tags-months-series",
+        "title": "Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)",
+        "date": "2026-04-25T00:00:00.000Z",
+        "dateString": "Sat Apr 25 2026",
+        "path": "./src/posts/2026-04-25-archives-tags-months-series.html",
+        "url": "/posts/2026-04-25-archives-tags-months-series/",
+        "excerpt": "Three ways to slice the same posts (because one axis is never enough)",
         "coverImage": null,
-        "coverAlt": "Archives, Tags, Months, and Series",
+        "coverAlt": "Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)",
         "tags": [
           {
             "key": "making-of",
@@ -1696,15 +1865,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-15-progressive-enhancement-as-contract",
-        "title": "Progressive Enhancement as Contract",
-        "date": "2026-05-15T00:00:00.000Z",
-        "dateString": "Fri May 15 2026",
-        "path": "./src/posts/2026-05-15-progressive-enhancement-as-contract.html",
-        "url": "/posts/2026-05-15-progressive-enhancement-as-contract/",
-        "excerpt": "The contract",
+        "name": "2026-04-28-progressive-enhancement-as-contract",
+        "title": "Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)",
+        "date": "2026-04-28T00:00:00.000Z",
+        "dateString": "Tue Apr 28 2026",
+        "path": "./src/posts/2026-04-28-progressive-enhancement-as-contract.html",
+        "url": "/posts/2026-04-28-progressive-enhancement-as-contract/",
+        "excerpt": "The contract (read this part)",
         "coverImage": null,
-        "coverAlt": "Progressive Enhancement as Contract",
+        "coverAlt": "Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)",
         "tags": [
           {
             "key": "making-of",
@@ -1730,25 +1899,20 @@
         "pinned": false
       },
       {
-        "name": "2026-06-09-wcag-22-aa-without-aria-spam",
-        "title": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
-        "date": "2026-06-09T00:00:00.000Z",
-        "dateString": "Tue Jun 09 2026",
-        "path": "./src/posts/2026-06-09-wcag-22-aa-without-aria-spam.html",
-        "url": "/posts/2026-06-09-wcag-22-aa-without-aria-spam/",
-        "excerpt": "The unpopular opinion",
+        "name": "2026-06-02-wcag-22-aa-without-aria-spam",
+        "title": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)",
+        "date": "2026-06-02T00:00:00.000Z",
+        "dateString": "Tue Jun 02 2026",
+        "path": "./src/posts/2026-06-02-wcag-22-aa-without-aria-spam.html",
+        "url": "/posts/2026-06-02-wcag-22-aa-without-aria-spam/",
+        "excerpt": "The unpopular opinion (brace yourself)",
         "coverImage": null,
-        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
+        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)",
         "tags": [
           {
             "key": "accessibility",
             "label": "accessibility",
             "url": "./tags/accessibility.html"
-          },
-          {
-            "key": "a11y",
-            "label": "a11y",
-            "url": "./tags/a11y.html"
           },
           {
             "key": "html",
@@ -1764,25 +1928,20 @@
         "pinned": false
       },
       {
-        "name": "2026-06-14-why-display-preferences-popover-exists",
-        "title": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
-        "date": "2026-06-14T00:00:00.000Z",
-        "dateString": "Sun Jun 14 2026",
-        "path": "./src/posts/2026-06-14-why-display-preferences-popover-exists.html",
-        "url": "/posts/2026-06-14-why-display-preferences-popover-exists/",
-        "excerpt": "Accessibility is not one feature",
+        "name": "2026-06-09-why-display-preferences-popover-exists",
+        "title": "Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)",
+        "date": "2026-06-09T00:00:00.000Z",
+        "dateString": "Tue Jun 09 2026",
+        "path": "./src/posts/2026-06-09-why-display-preferences-popover-exists.html",
+        "url": "/posts/2026-06-09-why-display-preferences-popover-exists/",
+        "excerpt": "Accessibility is not one feature (it's ALL of them)",
         "coverImage": null,
-        "coverAlt": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "coverAlt": "Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)",
         "tags": [
           {
             "key": "accessibility",
             "label": "accessibility",
             "url": "./tags/accessibility.html"
-          },
-          {
-            "key": "a11y",
-            "label": "a11y",
-            "url": "./tags/a11y.html"
           },
           {
             "key": "frontend",
@@ -1796,27 +1955,56 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-27-accessible-scrollspy-outline",
+        "title": "Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)",
+        "date": "2026-06-27T00:00:00.000Z",
+        "dateString": "Sat Jun 27 2026",
+        "path": "./src/posts/2026-06-27-accessible-scrollspy-outline.html",
+        "url": "/posts/2026-06-27-accessible-scrollspy-outline/",
+        "excerpt": "The feature and its trap",
+        "coverImage": null,
+        "coverAlt": "Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "accessibility",
     "slug": "accessibility",
     "url": "./tags/accessibility.html",
-    "count": 4
+    "count": 5
   },
   {
     "key": "progressive-enhancement",
     "label": "progressive-enhancement",
     "posts": [
       {
-        "name": "2026-05-15-progressive-enhancement-as-contract",
-        "title": "Progressive Enhancement as Contract",
-        "date": "2026-05-15T00:00:00.000Z",
-        "dateString": "Fri May 15 2026",
-        "path": "./src/posts/2026-05-15-progressive-enhancement-as-contract.html",
-        "url": "/posts/2026-05-15-progressive-enhancement-as-contract/",
-        "excerpt": "The contract",
+        "name": "2026-04-28-progressive-enhancement-as-contract",
+        "title": "Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)",
+        "date": "2026-04-28T00:00:00.000Z",
+        "dateString": "Tue Apr 28 2026",
+        "path": "./src/posts/2026-04-28-progressive-enhancement-as-contract.html",
+        "url": "/posts/2026-04-28-progressive-enhancement-as-contract/",
+        "excerpt": "The contract (read this part)",
         "coverImage": null,
-        "coverAlt": "Progressive Enhancement as Contract",
+        "coverAlt": "Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)",
         "tags": [
           {
             "key": "making-of",
@@ -1852,15 +2040,15 @@
     "label": "vanilla-js",
     "posts": [
       {
-        "name": "2026-05-15-progressive-enhancement-as-contract",
-        "title": "Progressive Enhancement as Contract",
-        "date": "2026-05-15T00:00:00.000Z",
-        "dateString": "Fri May 15 2026",
-        "path": "./src/posts/2026-05-15-progressive-enhancement-as-contract.html",
-        "url": "/posts/2026-05-15-progressive-enhancement-as-contract/",
-        "excerpt": "The contract",
+        "name": "2026-04-28-progressive-enhancement-as-contract",
+        "title": "Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)",
+        "date": "2026-04-28T00:00:00.000Z",
+        "dateString": "Tue Apr 28 2026",
+        "path": "./src/posts/2026-04-28-progressive-enhancement-as-contract.html",
+        "url": "/posts/2026-04-28-progressive-enhancement-as-contract/",
+        "excerpt": "The contract (read this part)",
         "coverImage": null,
-        "coverAlt": "Progressive Enhancement as Contract",
+        "coverAlt": "Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)",
         "tags": [
           {
             "key": "making-of",
@@ -1886,15 +2074,15 @@
         "pinned": false
       },
       {
-        "name": "2026-06-02-modern-css-is-enough",
-        "title": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
-        "date": "2026-06-02T00:00:00.000Z",
-        "dateString": "Tue Jun 02 2026",
-        "path": "./src/posts/2026-06-02-modern-css-is-enough.html",
-        "url": "/posts/2026-06-02-modern-css-is-enough/",
-        "excerpt": "The short version",
+        "name": "2026-05-30-modern-css-is-enough",
+        "title": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)",
+        "date": "2026-05-30T00:00:00.000Z",
+        "dateString": "Sat May 30 2026",
+        "path": "./src/posts/2026-05-30-modern-css-is-enough.html",
+        "url": "/posts/2026-05-30-modern-css-is-enough/",
+        "excerpt": "The short version (for the impatient)",
         "coverImage": null,
-        "coverAlt": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
+        "coverAlt": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)",
         "tags": [
           {
             "key": "css",
@@ -1915,15 +2103,15 @@
         "pinned": false
       },
       {
-        "name": "2026-06-13-how-pixhighlighter-is-built",
-        "title": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
-        "date": "2026-06-13T00:00:00.000Z",
-        "dateString": "Sat Jun 13 2026",
-        "path": "./src/posts/2026-06-13-how-pixhighlighter-is-built.html",
-        "url": "/posts/2026-06-13-how-pixhighlighter-is-built/",
-        "excerpt": "The contract stays plain",
+        "name": "2026-06-06-how-pixhighlighter-is-built",
+        "title": "How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)",
+        "date": "2026-06-06T00:00:00.000Z",
+        "dateString": "Sat Jun 06 2026",
+        "path": "./src/posts/2026-06-06-how-pixhighlighter-is-built.html",
+        "url": "/posts/2026-06-06-how-pixhighlighter-is-built/",
+        "excerpt": "The contract stays plain (because HTML should be readable)",
         "coverImage": null,
-        "coverAlt": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
+        "coverAlt": "How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)",
         "tags": [
           {
             "key": "vanilla-js",
@@ -1944,12 +2132,12 @@
         "pinned": false
       },
       {
-        "name": "2026-06-16-the-end-of-borrowed-abstractions",
+        "name": "2026-06-13-the-end-of-borrowed-abstractions",
         "title": "The End of Borrowed Abstractions",
-        "date": "2026-06-16T00:00:00.000Z",
-        "dateString": "Tue Jun 16 2026",
-        "path": "./src/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
-        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
+        "date": "2026-06-13T00:00:00.000Z",
+        "dateString": "Sat Jun 13 2026",
+        "path": "./src/posts/2026-06-13-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-13-the-end-of-borrowed-abstractions/",
         "excerpt": "The reflex that shaped software",
         "coverImage": null,
         "coverAlt": "The End of Borrowed Abstractions",
@@ -1963,11 +2151,6 @@
             "key": "ai",
             "label": "ai",
             "url": "./tags/ai.html"
-          },
-          {
-            "key": "ai-copilot",
-            "label": "ai-copilot",
-            "url": "./tags/ai-copilot.html"
           },
           {
             "key": "vanilla-js",
@@ -1988,15 +2171,15 @@
         "pinned": false
       },
       {
-        "name": "2026-06-23-client-side-search-static-dataset",
-        "title": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
-        "date": "2026-06-23T00:00:00.000Z",
-        "dateString": "Tue Jun 23 2026",
-        "path": "./src/posts/2026-06-23-client-side-search-static-dataset.html",
-        "url": "/posts/2026-06-23-client-side-search-static-dataset/",
-        "excerpt": "The constraint",
+        "name": "2026-06-16-client-side-search-static-dataset",
+        "title": "Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)",
+        "date": "2026-06-16T00:00:00.000Z",
+        "dateString": "Tue Jun 16 2026",
+        "path": "./src/posts/2026-06-16-client-side-search-static-dataset.html",
+        "url": "/posts/2026-06-16-client-side-search-static-dataset/",
+        "excerpt": "The constraint (no backend, no excuses)",
         "coverImage": null,
-        "coverAlt": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "coverAlt": "Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)",
         "tags": [
           {
             "key": "vanilla-js",
@@ -2020,27 +2203,143 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-23-custom-element-syntax-highlight",
+        "title": "A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`",
+        "date": "2026-06-23T00:00:00.000Z",
+        "dateString": "Tue Jun 23 2026",
+        "path": "./src/posts/2026-06-23-custom-element-syntax-highlight.html",
+        "url": "/posts/2026-06-23-custom-element-syntax-highlight/",
+        "excerpt": "The stack I did not want",
+        "coverImage": null,
+        "coverAlt": "A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-06-27-accessible-scrollspy-outline",
+        "title": "Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)",
+        "date": "2026-06-27T00:00:00.000Z",
+        "dateString": "Sat Jun 27 2026",
+        "path": "./src/posts/2026-06-27-accessible-scrollspy-outline.html",
+        "url": "/posts/2026-06-27-accessible-scrollspy-outline/",
+        "excerpt": "The feature and its trap",
+        "coverImage": null,
+        "coverAlt": "Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-06-30-honest-lazy-loading",
+        "title": "Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)",
+        "date": "2026-06-30T00:00:00.000Z",
+        "dateString": "Tue Jun 30 2026",
+        "path": "./src/posts/2026-06-30-honest-lazy-loading.html",
+        "url": "/posts/2026-06-30-honest-lazy-loading/",
+        "excerpt": "The two tools, in one paragraph",
+        "coverImage": null,
+        "coverAlt": "Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)",
+        "tags": [
+          {
+            "key": "performance",
+            "label": "performance",
+            "url": "./tags/performance.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-07-04-pragmatic-service-worker",
+        "title": "A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)",
+        "date": "2026-07-04T00:00:00.000Z",
+        "dateString": "Sat Jul 04 2026",
+        "path": "./src/posts/2026-07-04-pragmatic-service-worker.html",
+        "url": "/posts/2026-07-04-pragmatic-service-worker/",
+        "excerpt": "The case against most service workers",
+        "coverImage": null,
+        "coverAlt": "A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)",
+        "tags": [
+          {
+            "key": "performance",
+            "label": "performance",
+            "url": "./tags/performance.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "vanilla-js",
     "slug": "vanilla-js",
     "url": "./tags/vanilla-js.html",
-    "count": 5
+    "count": 9
   },
   {
     "key": "design-systems",
     "label": "design-systems",
     "posts": [
       {
-        "name": "2026-05-16-design-tokens-before-pages",
-        "title": "Design Tokens Before Pages",
-        "date": "2026-05-16T00:00:00.000Z",
-        "dateString": "Sat May 16 2026",
-        "path": "./src/posts/2026-05-16-design-tokens-before-pages.html",
-        "url": "/posts/2026-05-16-design-tokens-before-pages/",
-        "excerpt": "The mistake I kept making",
+        "name": "2026-05-02-design-tokens-before-pages",
+        "title": "Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)",
+        "date": "2026-05-02T00:00:00.000Z",
+        "dateString": "Sat May 02 2026",
+        "path": "./src/posts/2026-05-02-design-tokens-before-pages.html",
+        "url": "/posts/2026-05-02-design-tokens-before-pages/",
+        "excerpt": "The mistake I kept making (repeat after me: tokens first)",
         "coverImage": null,
-        "coverAlt": "Design Tokens Before Pages",
+        "coverAlt": "Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)",
         "tags": [
           {
             "key": "making-of",
@@ -2071,15 +2370,15 @@
     "label": "css",
     "posts": [
       {
-        "name": "2026-05-16-design-tokens-before-pages",
-        "title": "Design Tokens Before Pages",
-        "date": "2026-05-16T00:00:00.000Z",
-        "dateString": "Sat May 16 2026",
-        "path": "./src/posts/2026-05-16-design-tokens-before-pages.html",
-        "url": "/posts/2026-05-16-design-tokens-before-pages/",
-        "excerpt": "The mistake I kept making",
+        "name": "2026-05-02-design-tokens-before-pages",
+        "title": "Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)",
+        "date": "2026-05-02T00:00:00.000Z",
+        "dateString": "Sat May 02 2026",
+        "path": "./src/posts/2026-05-02-design-tokens-before-pages.html",
+        "url": "/posts/2026-05-02-design-tokens-before-pages/",
+        "excerpt": "The mistake I kept making (repeat after me: tokens first)",
         "coverImage": null,
-        "coverAlt": "Design Tokens Before Pages",
+        "coverAlt": "Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)",
         "tags": [
           {
             "key": "making-of",
@@ -2100,15 +2399,15 @@
         "pinned": false
       },
       {
-        "name": "2026-06-02-modern-css-is-enough",
-        "title": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
-        "date": "2026-06-02T00:00:00.000Z",
-        "dateString": "Tue Jun 02 2026",
-        "path": "./src/posts/2026-06-02-modern-css-is-enough.html",
-        "url": "/posts/2026-06-02-modern-css-is-enough/",
-        "excerpt": "The short version",
+        "name": "2026-05-30-modern-css-is-enough",
+        "title": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)",
+        "date": "2026-05-30T00:00:00.000Z",
+        "dateString": "Sat May 30 2026",
+        "path": "./src/posts/2026-05-30-modern-css-is-enough.html",
+        "url": "/posts/2026-05-30-modern-css-is-enough/",
+        "excerpt": "The short version (for the impatient)",
         "coverImage": null,
-        "coverAlt": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
+        "coverAlt": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)",
         "tags": [
           {
             "key": "css",
@@ -2127,27 +2426,51 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-07-05-css-properties-hierarchy",
+        "title": "CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)",
+        "date": "2026-07-05T00:00:00.000Z",
+        "dateString": "Sun Jul 05 2026",
+        "path": "./src/posts/2026-07-05-css-properties-hierarchy.html",
+        "url": "/posts/2026-07-05-css-properties-hierarchy/",
+        "excerpt": ":root { --border-radius: 5px; } .element { /* css custom properties */ --var--example: 1; ​ /* position */ position: absolute; inset: 0; /* top, right, bottom, left */ z-index: 1; ",
+        "coverImage": null,
+        "coverAlt": "CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)",
+        "tags": [
+          {
+            "key": "html",
+            "label": "html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "css",
+            "label": "css",
+            "url": "./tags/css.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "css",
     "slug": "css",
     "url": "./tags/css.html",
-    "count": 2
+    "count": 3
   },
   {
     "key": "build-assets",
     "label": "build-assets",
     "posts": [
       {
-        "name": "2026-05-17-build-assets-pipeline",
-        "title": "Build Assets Pipeline",
-        "date": "2026-05-17T00:00:00.000Z",
-        "dateString": "Sun May 17 2026",
-        "path": "./src/posts/2026-05-17-build-assets-pipeline.html",
-        "url": "/posts/2026-05-17-build-assets-pipeline/",
-        "excerpt": "The goal",
+        "name": "2026-05-05-build-assets-pipeline",
+        "title": "Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)",
+        "date": "2026-05-05T00:00:00.000Z",
+        "dateString": "Tue May 05 2026",
+        "path": "./src/posts/2026-05-05-build-assets-pipeline.html",
+        "url": "/posts/2026-05-05-build-assets-pipeline/",
+        "excerpt": "The goal (four non-negotiable constraints)",
         "coverImage": null,
-        "coverAlt": "Build Assets Pipeline",
+        "coverAlt": "Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)",
         "tags": [
           {
             "key": "making-of",
@@ -2183,15 +2506,15 @@
     "label": "performance",
     "posts": [
       {
-        "name": "2026-05-17-build-assets-pipeline",
-        "title": "Build Assets Pipeline",
-        "date": "2026-05-17T00:00:00.000Z",
-        "dateString": "Sun May 17 2026",
-        "path": "./src/posts/2026-05-17-build-assets-pipeline.html",
-        "url": "/posts/2026-05-17-build-assets-pipeline/",
-        "excerpt": "The goal",
+        "name": "2026-05-05-build-assets-pipeline",
+        "title": "Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)",
+        "date": "2026-05-05T00:00:00.000Z",
+        "dateString": "Tue May 05 2026",
+        "path": "./src/posts/2026-05-05-build-assets-pipeline.html",
+        "url": "/posts/2026-05-05-build-assets-pipeline/",
+        "excerpt": "The goal (four non-negotiable constraints)",
         "coverImage": null,
-        "coverAlt": "Build Assets Pipeline",
+        "coverAlt": "Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)",
         "tags": [
           {
             "key": "making-of",
@@ -2215,27 +2538,85 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-30-honest-lazy-loading",
+        "title": "Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)",
+        "date": "2026-06-30T00:00:00.000Z",
+        "dateString": "Tue Jun 30 2026",
+        "path": "./src/posts/2026-06-30-honest-lazy-loading.html",
+        "url": "/posts/2026-06-30-honest-lazy-loading/",
+        "excerpt": "The two tools, in one paragraph",
+        "coverImage": null,
+        "coverAlt": "Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)",
+        "tags": [
+          {
+            "key": "performance",
+            "label": "performance",
+            "url": "./tags/performance.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-07-04-pragmatic-service-worker",
+        "title": "A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)",
+        "date": "2026-07-04T00:00:00.000Z",
+        "dateString": "Sat Jul 04 2026",
+        "path": "./src/posts/2026-07-04-pragmatic-service-worker.html",
+        "url": "/posts/2026-07-04-pragmatic-service-worker/",
+        "excerpt": "The case against most service workers",
+        "coverImage": null,
+        "coverAlt": "A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)",
+        "tags": [
+          {
+            "key": "performance",
+            "label": "performance",
+            "url": "./tags/performance.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "performance",
     "slug": "performance",
     "url": "./tags/performance.html",
-    "count": 1
+    "count": 3
   },
   {
     "key": "images",
     "label": "images",
     "posts": [
       {
-        "name": "2026-05-17-build-assets-pipeline",
-        "title": "Build Assets Pipeline",
-        "date": "2026-05-17T00:00:00.000Z",
-        "dateString": "Sun May 17 2026",
-        "path": "./src/posts/2026-05-17-build-assets-pipeline.html",
-        "url": "/posts/2026-05-17-build-assets-pipeline/",
-        "excerpt": "The goal",
+        "name": "2026-05-05-build-assets-pipeline",
+        "title": "Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)",
+        "date": "2026-05-05T00:00:00.000Z",
+        "dateString": "Tue May 05 2026",
+        "path": "./src/posts/2026-05-05-build-assets-pipeline.html",
+        "url": "/posts/2026-05-05-build-assets-pipeline/",
+        "excerpt": "The goal (four non-negotiable constraints)",
         "coverImage": null,
-        "coverAlt": "Build Assets Pipeline",
+        "coverAlt": "Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)",
         "tags": [
           {
             "key": "making-of",
@@ -2271,15 +2652,15 @@
     "label": "feeds",
     "posts": [
       {
-        "name": "2026-05-18-feeds-and-sitemaps-at-build-time",
-        "title": "Feeds and Sitemaps at Build Time",
-        "date": "2026-05-18T00:00:00.000Z",
-        "dateString": "Mon May 18 2026",
-        "path": "./src/posts/2026-05-18-feeds-and-sitemaps-at-build-time.html",
-        "url": "/posts/2026-05-18-feeds-and-sitemaps-at-build-time/",
-        "excerpt": "The distribution minimum",
+        "name": "2026-05-09-feeds-and-sitemaps-at-build-time",
+        "title": "Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)",
+        "date": "2026-05-09T00:00:00.000Z",
+        "dateString": "Sat May 09 2026",
+        "path": "./src/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html",
+        "url": "/posts/2026-05-09-feeds-and-sitemaps-at-build-time/",
+        "excerpt": "The distribution minimum (three files, that's it)",
         "coverImage": null,
-        "coverAlt": "Feeds and Sitemaps at Build Time",
+        "coverAlt": "Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)",
         "tags": [
           {
             "key": "making-of",
@@ -2315,15 +2696,15 @@
     "label": "opengraph",
     "posts": [
       {
-        "name": "2026-05-19-og-images-at-build-time",
-        "title": "OG Images at Build Time",
-        "date": "2026-05-19T00:00:00.000Z",
-        "dateString": "Tue May 19 2026",
-        "path": "./src/posts/2026-05-19-og-images-at-build-time.html",
-        "url": "/posts/2026-05-19-og-images-at-build-time/",
-        "excerpt": "The problem and the usual solutions",
+        "name": "2026-05-12-og-images-at-build-time",
+        "title": "OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)",
+        "date": "2026-05-12T00:00:00.000Z",
+        "dateString": "Tue May 12 2026",
+        "path": "./src/posts/2026-05-12-og-images-at-build-time.html",
+        "url": "/posts/2026-05-12-og-images-at-build-time/",
+        "excerpt": "The problem and the usual solutions (none of which I wanted)",
         "coverImage": null,
-        "coverAlt": "OG Images at Build Time",
+        "coverAlt": "OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)",
         "tags": [
           {
             "key": "making-of",
@@ -2349,15 +2730,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-20-seo-metadata-without-rituals",
-        "title": "SEO Metadata Without Rituals",
-        "date": "2026-05-20T00:00:00.000Z",
-        "dateString": "Wed May 20 2026",
-        "path": "./src/posts/2026-05-20-seo-metadata-without-rituals.html",
-        "url": "/posts/2026-05-20-seo-metadata-without-rituals/",
-        "excerpt": "The short version",
+        "name": "2026-05-16-seo-metadata-without-rituals",
+        "title": "SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)",
+        "date": "2026-05-16T00:00:00.000Z",
+        "dateString": "Sat May 16 2026",
+        "path": "./src/posts/2026-05-16-seo-metadata-without-rituals.html",
+        "url": "/posts/2026-05-16-seo-metadata-without-rituals/",
+        "excerpt": "The short version (TL;DR for the impatient)",
         "coverImage": null,
-        "coverAlt": "SEO Metadata Without Rituals",
+        "coverAlt": "SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)",
         "tags": [
           {
             "key": "making-of",
@@ -2393,15 +2774,15 @@
     "label": "tooling",
     "posts": [
       {
-        "name": "2026-05-21-quality-gate-lint-format-verify",
-        "title": "Quality Gate: Linting, Formatting, and Verify",
-        "date": "2026-05-21T00:00:00.000Z",
-        "dateString": "Thu May 21 2026",
-        "path": "./src/posts/2026-05-21-quality-gate-lint-format-verify.html",
-        "url": "/posts/2026-05-21-quality-gate-lint-format-verify/",
-        "excerpt": "Why the gate exists",
+        "name": "2026-05-19-quality-gate-lint-format-verify",
+        "title": "Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)",
+        "date": "2026-05-19T00:00:00.000Z",
+        "dateString": "Tue May 19 2026",
+        "path": "./src/posts/2026-05-19-quality-gate-lint-format-verify.html",
+        "url": "/posts/2026-05-19-quality-gate-lint-format-verify/",
+        "excerpt": "Why the gate exists (because you will ship shit if you don't)",
         "coverImage": null,
-        "coverAlt": "Quality Gate: Linting, Formatting, and Verify",
+        "coverAlt": "Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)",
         "tags": [
           {
             "key": "making-of",
@@ -2425,27 +2806,61 @@
           }
         ],
         "pinned": false
+      },
+      {
+        "name": "2026-06-20-pi-dev-deepseek-v4-flash-daily-loop",
+        "title": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "date": "2026-06-20T00:00:00.000Z",
+        "dateString": "Sat Jun 20 2026",
+        "path": "./src/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html",
+        "url": "/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop/",
+        "excerpt": "The headline numbers",
+        "coverImage": null,
+        "coverAlt": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "tags": [
+          {
+            "key": "ai",
+            "label": "ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "workflow",
+            "label": "workflow",
+            "url": "./tags/workflow.html"
+          },
+          {
+            "key": "tooling",
+            "label": "tooling",
+            "url": "./tags/tooling.html"
+          },
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          }
+        ],
+        "pinned": false
       }
     ],
     "name": "tooling",
     "slug": "tooling",
     "url": "./tags/tooling.html",
-    "count": 1
+    "count": 2
   },
   {
     "key": "linting",
     "label": "linting",
     "posts": [
       {
-        "name": "2026-05-21-quality-gate-lint-format-verify",
-        "title": "Quality Gate: Linting, Formatting, and Verify",
-        "date": "2026-05-21T00:00:00.000Z",
-        "dateString": "Thu May 21 2026",
-        "path": "./src/posts/2026-05-21-quality-gate-lint-format-verify.html",
-        "url": "/posts/2026-05-21-quality-gate-lint-format-verify/",
-        "excerpt": "Why the gate exists",
+        "name": "2026-05-19-quality-gate-lint-format-verify",
+        "title": "Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)",
+        "date": "2026-05-19T00:00:00.000Z",
+        "dateString": "Tue May 19 2026",
+        "path": "./src/posts/2026-05-19-quality-gate-lint-format-verify.html",
+        "url": "/posts/2026-05-19-quality-gate-lint-format-verify/",
+        "excerpt": "Why the gate exists (because you will ship shit if you don't)",
         "coverImage": null,
-        "coverAlt": "Quality Gate: Linting, Formatting, and Verify",
+        "coverAlt": "Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)",
         "tags": [
           {
             "key": "making-of",
@@ -2481,15 +2896,15 @@
     "label": "ci",
     "posts": [
       {
-        "name": "2026-05-21-quality-gate-lint-format-verify",
-        "title": "Quality Gate: Linting, Formatting, and Verify",
-        "date": "2026-05-21T00:00:00.000Z",
-        "dateString": "Thu May 21 2026",
-        "path": "./src/posts/2026-05-21-quality-gate-lint-format-verify.html",
-        "url": "/posts/2026-05-21-quality-gate-lint-format-verify/",
-        "excerpt": "Why the gate exists",
+        "name": "2026-05-19-quality-gate-lint-format-verify",
+        "title": "Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)",
+        "date": "2026-05-19T00:00:00.000Z",
+        "dateString": "Tue May 19 2026",
+        "path": "./src/posts/2026-05-19-quality-gate-lint-format-verify.html",
+        "url": "/posts/2026-05-19-quality-gate-lint-format-verify/",
+        "excerpt": "Why the gate exists (because you will ship shit if you don't)",
         "coverImage": null,
-        "coverAlt": "Quality Gate: Linting, Formatting, and Verify",
+        "coverAlt": "Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)",
         "tags": [
           {
             "key": "making-of",
@@ -2515,15 +2930,15 @@
         "pinned": false
       },
       {
-        "name": "2026-05-22-ci-cd-around-github-pages",
-        "title": "CI/CD Around GitHub Pages",
-        "date": "2026-05-22T00:00:00.000Z",
-        "dateString": "Fri May 22 2026",
-        "path": "./src/posts/2026-05-22-ci-cd-around-github-pages.html",
-        "url": "/posts/2026-05-22-ci-cd-around-github-pages/",
-        "excerpt": "The gap GitHub Pages leaves open",
+        "name": "2026-05-23-ci-cd-around-github-pages",
+        "title": "CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)",
+        "date": "2026-05-23T00:00:00.000Z",
+        "dateString": "Sat May 23 2026",
+        "path": "./src/posts/2026-05-23-ci-cd-around-github-pages.html",
+        "url": "/posts/2026-05-23-ci-cd-around-github-pages/",
+        "excerpt": "The gap GitHub Pages leaves open (it's not that bad)",
         "coverImage": null,
-        "coverAlt": "CI/CD Around GitHub Pages",
+        "coverAlt": "CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)",
         "tags": [
           {
             "key": "making-of",
@@ -2559,15 +2974,15 @@
     "label": "deployment",
     "posts": [
       {
-        "name": "2026-05-22-ci-cd-around-github-pages",
-        "title": "CI/CD Around GitHub Pages",
-        "date": "2026-05-22T00:00:00.000Z",
-        "dateString": "Fri May 22 2026",
-        "path": "./src/posts/2026-05-22-ci-cd-around-github-pages.html",
-        "url": "/posts/2026-05-22-ci-cd-around-github-pages/",
-        "excerpt": "The gap GitHub Pages leaves open",
+        "name": "2026-05-23-ci-cd-around-github-pages",
+        "title": "CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)",
+        "date": "2026-05-23T00:00:00.000Z",
+        "dateString": "Sat May 23 2026",
+        "path": "./src/posts/2026-05-23-ci-cd-around-github-pages.html",
+        "url": "/posts/2026-05-23-ci-cd-around-github-pages/",
+        "excerpt": "The gap GitHub Pages leaves open (it's not that bad)",
         "coverImage": null,
-        "coverAlt": "CI/CD Around GitHub Pages",
+        "coverAlt": "CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)",
         "tags": [
           {
             "key": "making-of",
@@ -2603,15 +3018,15 @@
     "label": "github-pages",
     "posts": [
       {
-        "name": "2026-05-22-ci-cd-around-github-pages",
-        "title": "CI/CD Around GitHub Pages",
-        "date": "2026-05-22T00:00:00.000Z",
-        "dateString": "Fri May 22 2026",
-        "path": "./src/posts/2026-05-22-ci-cd-around-github-pages.html",
-        "url": "/posts/2026-05-22-ci-cd-around-github-pages/",
-        "excerpt": "The gap GitHub Pages leaves open",
+        "name": "2026-05-23-ci-cd-around-github-pages",
+        "title": "CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)",
+        "date": "2026-05-23T00:00:00.000Z",
+        "dateString": "Sat May 23 2026",
+        "path": "./src/posts/2026-05-23-ci-cd-around-github-pages.html",
+        "url": "/posts/2026-05-23-ci-cd-around-github-pages/",
+        "excerpt": "The gap GitHub Pages leaves open (it's not that bad)",
         "coverImage": null,
-        "coverAlt": "CI/CD Around GitHub Pages",
+        "coverAlt": "CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)",
         "tags": [
           {
             "key": "making-of",
@@ -2647,15 +3062,15 @@
     "label": "frontend",
     "posts": [
       {
-        "name": "2026-06-02-modern-css-is-enough",
-        "title": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
-        "date": "2026-06-02T00:00:00.000Z",
-        "dateString": "Tue Jun 02 2026",
-        "path": "./src/posts/2026-06-02-modern-css-is-enough.html",
-        "url": "/posts/2026-06-02-modern-css-is-enough/",
-        "excerpt": "The short version",
+        "name": "2026-05-30-modern-css-is-enough",
+        "title": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)",
+        "date": "2026-05-30T00:00:00.000Z",
+        "dateString": "Sat May 30 2026",
+        "path": "./src/posts/2026-05-30-modern-css-is-enough.html",
+        "url": "/posts/2026-05-30-modern-css-is-enough/",
+        "excerpt": "The short version (for the impatient)",
         "coverImage": null,
-        "coverAlt": "Modern CSS Is Enough: Container Queries, Nesting, `:has()` in Production",
+        "coverAlt": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)",
         "tags": [
           {
             "key": "css",
@@ -2676,25 +3091,20 @@
         "pinned": false
       },
       {
-        "name": "2026-06-09-wcag-22-aa-without-aria-spam",
-        "title": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
-        "date": "2026-06-09T00:00:00.000Z",
-        "dateString": "Tue Jun 09 2026",
-        "path": "./src/posts/2026-06-09-wcag-22-aa-without-aria-spam.html",
-        "url": "/posts/2026-06-09-wcag-22-aa-without-aria-spam/",
-        "excerpt": "The unpopular opinion",
+        "name": "2026-06-02-wcag-22-aa-without-aria-spam",
+        "title": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)",
+        "date": "2026-06-02T00:00:00.000Z",
+        "dateString": "Tue Jun 02 2026",
+        "path": "./src/posts/2026-06-02-wcag-22-aa-without-aria-spam.html",
+        "url": "/posts/2026-06-02-wcag-22-aa-without-aria-spam/",
+        "excerpt": "The unpopular opinion (brace yourself)",
         "coverImage": null,
-        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
+        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)",
         "tags": [
           {
             "key": "accessibility",
             "label": "accessibility",
             "url": "./tags/accessibility.html"
-          },
-          {
-            "key": "a11y",
-            "label": "a11y",
-            "url": "./tags/a11y.html"
           },
           {
             "key": "html",
@@ -2710,15 +3120,15 @@
         "pinned": false
       },
       {
-        "name": "2026-06-13-how-pixhighlighter-is-built",
-        "title": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
-        "date": "2026-06-13T00:00:00.000Z",
-        "dateString": "Sat Jun 13 2026",
-        "path": "./src/posts/2026-06-13-how-pixhighlighter-is-built.html",
-        "url": "/posts/2026-06-13-how-pixhighlighter-is-built/",
-        "excerpt": "The contract stays plain",
+        "name": "2026-06-06-how-pixhighlighter-is-built",
+        "title": "How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)",
+        "date": "2026-06-06T00:00:00.000Z",
+        "dateString": "Sat Jun 06 2026",
+        "path": "./src/posts/2026-06-06-how-pixhighlighter-is-built.html",
+        "url": "/posts/2026-06-06-how-pixhighlighter-is-built/",
+        "excerpt": "The contract stays plain (because HTML should be readable)",
         "coverImage": null,
-        "coverAlt": "How PixHighlighter Is Built Around the CSS Custom Highlight API",
+        "coverAlt": "How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)",
         "tags": [
           {
             "key": "vanilla-js",
@@ -2739,25 +3149,20 @@
         "pinned": false
       },
       {
-        "name": "2026-06-14-why-display-preferences-popover-exists",
-        "title": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
-        "date": "2026-06-14T00:00:00.000Z",
-        "dateString": "Sun Jun 14 2026",
-        "path": "./src/posts/2026-06-14-why-display-preferences-popover-exists.html",
-        "url": "/posts/2026-06-14-why-display-preferences-popover-exists/",
-        "excerpt": "Accessibility is not one feature",
+        "name": "2026-06-09-why-display-preferences-popover-exists",
+        "title": "Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)",
+        "date": "2026-06-09T00:00:00.000Z",
+        "dateString": "Tue Jun 09 2026",
+        "path": "./src/posts/2026-06-09-why-display-preferences-popover-exists.html",
+        "url": "/posts/2026-06-09-why-display-preferences-popover-exists/",
+        "excerpt": "Accessibility is not one feature (it's ALL of them)",
         "coverImage": null,
-        "coverAlt": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "coverAlt": "Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)",
         "tags": [
           {
             "key": "accessibility",
             "label": "accessibility",
             "url": "./tags/accessibility.html"
-          },
-          {
-            "key": "a11y",
-            "label": "a11y",
-            "url": "./tags/a11y.html"
           },
           {
             "key": "frontend",
@@ -2773,12 +3178,12 @@
         "pinned": false
       },
       {
-        "name": "2026-06-16-the-end-of-borrowed-abstractions",
+        "name": "2026-06-13-the-end-of-borrowed-abstractions",
         "title": "The End of Borrowed Abstractions",
-        "date": "2026-06-16T00:00:00.000Z",
-        "dateString": "Tue Jun 16 2026",
-        "path": "./src/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
-        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
+        "date": "2026-06-13T00:00:00.000Z",
+        "dateString": "Sat Jun 13 2026",
+        "path": "./src/posts/2026-06-13-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-13-the-end-of-borrowed-abstractions/",
         "excerpt": "The reflex that shaped software",
         "coverImage": null,
         "coverAlt": "The End of Borrowed Abstractions",
@@ -2792,11 +3197,6 @@
             "key": "ai",
             "label": "ai",
             "url": "./tags/ai.html"
-          },
-          {
-            "key": "ai-copilot",
-            "label": "ai-copilot",
-            "url": "./tags/ai-copilot.html"
           },
           {
             "key": "vanilla-js",
@@ -2815,42 +3215,27 @@
           }
         ],
         "pinned": false
-      }
-    ],
-    "name": "frontend",
-    "slug": "frontend",
-    "url": "./tags/frontend.html",
-    "count": 5
-  },
-  {
-    "key": "a11y",
-    "label": "a11y",
-    "posts": [
+      },
       {
-        "name": "2026-06-09-wcag-22-aa-without-aria-spam",
-        "title": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
-        "date": "2026-06-09T00:00:00.000Z",
-        "dateString": "Tue Jun 09 2026",
-        "path": "./src/posts/2026-06-09-wcag-22-aa-without-aria-spam.html",
-        "url": "/posts/2026-06-09-wcag-22-aa-without-aria-spam/",
-        "excerpt": "The unpopular opinion",
+        "name": "2026-06-23-custom-element-syntax-highlight",
+        "title": "A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`",
+        "date": "2026-06-23T00:00:00.000Z",
+        "dateString": "Tue Jun 23 2026",
+        "path": "./src/posts/2026-06-23-custom-element-syntax-highlight.html",
+        "url": "/posts/2026-06-23-custom-element-syntax-highlight/",
+        "excerpt": "The stack I did not want",
         "coverImage": null,
-        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links",
+        "coverAlt": "A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`",
         "tags": [
           {
-            "key": "accessibility",
-            "label": "accessibility",
-            "url": "./tags/accessibility.html"
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
           },
           {
-            "key": "a11y",
-            "label": "a11y",
-            "url": "./tags/a11y.html"
-          },
-          {
-            "key": "html",
-            "label": "html",
-            "url": "./tags/html.html"
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
           },
           {
             "key": "frontend",
@@ -2861,15 +3246,15 @@
         "pinned": false
       },
       {
-        "name": "2026-06-14-why-display-preferences-popover-exists",
-        "title": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
-        "date": "2026-06-14T00:00:00.000Z",
-        "dateString": "Sun Jun 14 2026",
-        "path": "./src/posts/2026-06-14-why-display-preferences-popover-exists.html",
-        "url": "/posts/2026-06-14-why-display-preferences-popover-exists/",
-        "excerpt": "Accessibility is not one feature",
+        "name": "2026-06-27-accessible-scrollspy-outline",
+        "title": "Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)",
+        "date": "2026-06-27T00:00:00.000Z",
+        "dateString": "Sat Jun 27 2026",
+        "path": "./src/posts/2026-06-27-accessible-scrollspy-outline.html",
+        "url": "/posts/2026-06-27-accessible-scrollspy-outline/",
+        "excerpt": "The feature and its trap",
         "coverImage": null,
-        "coverAlt": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "coverAlt": "Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)",
         "tags": [
           {
             "key": "accessibility",
@@ -2877,9 +3262,33 @@
             "url": "./tags/accessibility.html"
           },
           {
-            "key": "a11y",
-            "label": "a11y",
-            "url": "./tags/a11y.html"
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false
+      },
+      {
+        "name": "2026-06-30-honest-lazy-loading",
+        "title": "Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)",
+        "date": "2026-06-30T00:00:00.000Z",
+        "dateString": "Tue Jun 30 2026",
+        "path": "./src/posts/2026-06-30-honest-lazy-loading.html",
+        "url": "/posts/2026-06-30-honest-lazy-loading/",
+        "excerpt": "The two tools, in one paragraph",
+        "coverImage": null,
+        "coverAlt": "Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)",
+        "tags": [
+          {
+            "key": "performance",
+            "label": "performance",
+            "url": "./tags/performance.html"
           },
           {
             "key": "frontend",
@@ -2887,43 +3296,38 @@
             "url": "./tags/frontend.html"
           },
           {
-            "key": "responsive-design",
-            "label": "responsive-design",
-            "url": "./tags/responsive-design.html"
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
           }
         ],
         "pinned": false
       }
     ],
-    "name": "a11y",
-    "slug": "a11y",
-    "url": "./tags/a11y.html",
-    "count": 2
+    "name": "frontend",
+    "slug": "frontend",
+    "url": "./tags/frontend.html",
+    "count": 8
   },
   {
     "key": "responsive-design",
     "label": "responsive-design",
     "posts": [
       {
-        "name": "2026-06-14-why-display-preferences-popover-exists",
-        "title": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
-        "date": "2026-06-14T00:00:00.000Z",
-        "dateString": "Sun Jun 14 2026",
-        "path": "./src/posts/2026-06-14-why-display-preferences-popover-exists.html",
-        "url": "/posts/2026-06-14-why-display-preferences-popover-exists/",
-        "excerpt": "Accessibility is not one feature",
+        "name": "2026-06-09-why-display-preferences-popover-exists",
+        "title": "Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)",
+        "date": "2026-06-09T00:00:00.000Z",
+        "dateString": "Tue Jun 09 2026",
+        "path": "./src/posts/2026-06-09-why-display-preferences-popover-exists.html",
+        "url": "/posts/2026-06-09-why-display-preferences-popover-exists/",
+        "excerpt": "Accessibility is not one feature (it's ALL of them)",
         "coverImage": null,
-        "coverAlt": "Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences",
+        "coverAlt": "Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)",
         "tags": [
           {
             "key": "accessibility",
             "label": "accessibility",
             "url": "./tags/accessibility.html"
-          },
-          {
-            "key": "a11y",
-            "label": "a11y",
-            "url": "./tags/a11y.html"
           },
           {
             "key": "frontend",
@@ -2945,70 +3349,16 @@
     "count": 1
   },
   {
-    "key": "ai",
-    "label": "ai",
-    "posts": [
-      {
-        "name": "2026-06-16-the-end-of-borrowed-abstractions",
-        "title": "The End of Borrowed Abstractions",
-        "date": "2026-06-16T00:00:00.000Z",
-        "dateString": "Tue Jun 16 2026",
-        "path": "./src/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
-        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
-        "excerpt": "The reflex that shaped software",
-        "coverImage": null,
-        "coverAlt": "The End of Borrowed Abstractions",
-        "tags": [
-          {
-            "key": "architecture",
-            "label": "architecture",
-            "url": "./tags/architecture.html"
-          },
-          {
-            "key": "ai",
-            "label": "ai",
-            "url": "./tags/ai.html"
-          },
-          {
-            "key": "ai-copilot",
-            "label": "ai-copilot",
-            "url": "./tags/ai-copilot.html"
-          },
-          {
-            "key": "vanilla-js",
-            "label": "vanilla-js",
-            "url": "./tags/vanilla-js.html"
-          },
-          {
-            "key": "frontend",
-            "label": "frontend",
-            "url": "./tags/frontend.html"
-          },
-          {
-            "key": "security",
-            "label": "security",
-            "url": "./tags/security.html"
-          }
-        ],
-        "pinned": false
-      }
-    ],
-    "name": "ai",
-    "slug": "ai",
-    "url": "./tags/ai.html",
-    "count": 1
-  },
-  {
     "key": "security",
     "label": "security",
     "posts": [
       {
-        "name": "2026-06-16-the-end-of-borrowed-abstractions",
+        "name": "2026-06-13-the-end-of-borrowed-abstractions",
         "title": "The End of Borrowed Abstractions",
-        "date": "2026-06-16T00:00:00.000Z",
-        "dateString": "Tue Jun 16 2026",
-        "path": "./src/posts/2026-06-16-the-end-of-borrowed-abstractions.html",
-        "url": "/posts/2026-06-16-the-end-of-borrowed-abstractions/",
+        "date": "2026-06-13T00:00:00.000Z",
+        "dateString": "Sat Jun 13 2026",
+        "path": "./src/posts/2026-06-13-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-13-the-end-of-borrowed-abstractions/",
         "excerpt": "The reflex that shaped software",
         "coverImage": null,
         "coverAlt": "The End of Borrowed Abstractions",
@@ -3022,11 +3372,6 @@
             "key": "ai",
             "label": "ai",
             "url": "./tags/ai.html"
-          },
-          {
-            "key": "ai-copilot",
-            "label": "ai-copilot",
-            "url": "./tags/ai-copilot.html"
           },
           {
             "key": "vanilla-js",
@@ -3057,15 +3402,15 @@
     "label": "search",
     "posts": [
       {
-        "name": "2026-06-23-client-side-search-static-dataset",
-        "title": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
-        "date": "2026-06-23T00:00:00.000Z",
-        "dateString": "Tue Jun 23 2026",
-        "path": "./src/posts/2026-06-23-client-side-search-static-dataset.html",
-        "url": "/posts/2026-06-23-client-side-search-static-dataset/",
-        "excerpt": "The constraint",
+        "name": "2026-06-16-client-side-search-static-dataset",
+        "title": "Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)",
+        "date": "2026-06-16T00:00:00.000Z",
+        "dateString": "Tue Jun 16 2026",
+        "path": "./src/posts/2026-06-16-client-side-search-static-dataset.html",
+        "url": "/posts/2026-06-16-client-side-search-static-dataset/",
+        "excerpt": "The constraint (no backend, no excuses)",
         "coverImage": null,
-        "coverAlt": "Client-Side Search on a Static Dataset: Prebuilt Index, Light Ranking",
+        "coverAlt": "Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)",
         "tags": [
           {
             "key": "vanilla-js",

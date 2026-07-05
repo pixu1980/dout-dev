@@ -6,13 +6,13 @@
     <description>RSS feed for posts tagged with images</description>
     <atom:link href="https://dout.dev/tags/images.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Sun, 17 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>Build Assets Pipeline</title>
-      <link>https://dout.dev/posts/2026-05-17-build-assets-pipeline.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-17-build-assets-pipeline.html</guid>
-      <pubDate>Sun, 17 May 2026 00:00:00 GMT</pubDate>
-      <description>The goal</description>
+      <title>Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)</title>
+      <link>https://dout.dev/posts/2026-05-05-build-assets-pipeline.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-05-build-assets-pipeline.html</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+      <description>The goal (four non-negotiable constraints)</description>
     </item>
   </channel>
 </rss>

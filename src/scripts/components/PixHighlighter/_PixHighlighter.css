@@ -127,16 +127,16 @@
       min-height: 20rem;
       max-height: min(25rem, calc(100vh - 1.5rem));
       padding: 0.5rem;
+      border: var(--dout--border-width, 1px) solid var(--pix-highlighter--toolbar-border);
+      border-radius: var(--dout--radius-md, 0.85rem);
       margin: 0;
       overflow-x: hidden;
       overflow-y: auto;
-      list-style: none;
-      border: var(--dout--border-width, 1px) solid var(--pix-highlighter--toolbar-border);
-      border-radius: var(--dout--radius-md, 0.85rem);
+      color: var(--pix-highlighter--toolbar-color, var(--pix-highlighter--fg));
       background: var(--pix-highlighter--toolbar-menu-bg, var(--pix-highlighter--bg));
       box-shadow: var(--pix-highlighter--toolbar-shadow, 0 18px 32px rgba(0, 0, 0, 0.18));
-      color: var(--pix-highlighter--toolbar-color, var(--pix-highlighter--fg));
       backdrop-filter: blur(var(--dout--blur-panel, 16px));
+      list-style: none;
 
       &:where([data-open='true'], :popover-open) {
         display: flex;
@@ -192,8 +192,8 @@
     @supports (anchor-name: --pix-highlighter--anchor) and
       (position-anchor: --pix-highlighter--anchor) {
       [data-theme-list][data-anchor-positioning='true'] {
-        left: anchor(left);
         top: calc(anchor(bottom) + var(--pix-highlighter--anchor-offset, 8px));
+        left: anchor(left);
         min-width: max(14rem, anchor-size(width));
         position-try-fallbacks: flip-block, flip-inline;
       }

@@ -6,12 +6,12 @@
     <description>RSS feed for posts tagged with security</description>
     <atom:link href="https://dout.dev/tags/security.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Tue, 16 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2026 00:00:00 GMT</lastBuildDate>
     <item>
       <title>The End of Borrowed Abstractions</title>
-      <link>https://dout.dev/posts/2026-06-16-the-end-of-borrowed-abstractions.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-16-the-end-of-borrowed-abstractions.html</guid>
-      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <link>https://dout.dev/posts/2026-06-13-the-end-of-borrowed-abstractions.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-13-the-end-of-borrowed-abstractions.html</guid>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
       <description>The reflex that shaped software</description>
     </item>
   </channel>

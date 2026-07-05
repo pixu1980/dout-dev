@@ -5,13 +5,13 @@
   }
 
   [data-site-main] {
-    flex: 1;
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: var(--dout--space-7);
     width: var(--dout--container);
-    margin-inline: auto;
     padding: var(--dout--space-7) 0 var(--dout--space-9);
+    margin-inline: auto;
     view-transition-name: site-main;
   }
 
@@ -39,28 +39,28 @@
 
   [data-main-nav] {
     display: flex;
+    flex: 1 0 auto;
     align-items: center;
     justify-content: flex-end;
     gap: var(--dout--space-5);
-    flex: 1 0 auto;
     min-width: 0;
   }
 
   [data-main-links] {
     display: flex;
+    flex: 0 0 auto;
     flex-wrap: wrap;
     gap: var(--dout--space-2);
-    flex: 0 0 auto;
     min-width: 0;
   }
 
   [data-header-actions] {
     display: flex;
     flex-wrap: wrap;
+    flex-shrink: 0;
     align-items: center;
     justify-content: flex-end;
     gap: var(--dout--space-2);
-    flex-shrink: 0;
   }
 
   [data-hero] {
@@ -146,17 +146,17 @@
     align-items: stretch;
     gap: var(--dout--post-feed-gap-list);
     margin: 0;
-    padding-inline-start: 0;
     list-style: none;
+    padding-inline-start: 0;
   }
 
   [data-post-feed-item] {
     display: flex;
     min-width: 0;
-  }
 
-  [data-post-feed-item][hidden] {
-    display: none !important;
+    &[hidden] {
+      display: none !important;
+    }
   }
 
   :root[data-post-feed-layout='grid'] [data-post-feed] {
@@ -230,35 +230,29 @@
     }
 
     [data-main-nav] {
-      /* Overlay: positioned below header, above content */
       position: absolute;
       top: 100%;
-      left: 0;
       right: 0;
+      left: 0;
       z-index: calc(var(--dout--z-header) - 1);
 
       display: flex;
       flex-direction: column;
       align-items: stretch;
-
-      background: var(--dout--bg-elevated);
+      gap: 0;
+      opacity: 0;
+      max-height: 0;
+      padding-block: 0;
+      padding-inline: var(--dout--space-4);
+      border-top: none;
+      border-width: 0;
       border-style: solid;
       border-color: var(--dout--border);
-      border-top: none;
-      box-shadow: var(--dout--shadow-strong);
-      padding-inline: var(--dout--space-4);
-
-      /* Collapsed: hidden */
-      max-height: 0;
       overflow: hidden;
-      opacity: 0;
-      transform: translateY(-8px);
-      pointer-events: none;
-      gap: 0;
-      border-width: 0;
-      padding-block: 0;
 
-      /* Closing: visual fades first, then collapses */
+      background: var(--dout--bg-elevated);
+      box-shadow: var(--dout--shadow-strong);
+      transform: translateY(-8px);
       transition:
         max-height 0s ease 0.25s,
         opacity 0.22s ease 0s,
@@ -266,31 +260,37 @@
         gap 0s ease 0.25s,
         border-width 0s ease 0.25s,
         padding-block 0s ease 0.25s;
-    }
+      pointer-events: none;
+      /* Overlay: positioned below header, above content */
 
-    [data-main-nav][data-open='true'] {
-      max-height: 320px;
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-      gap: var(--dout--space-2);
-      border-width: 0 var(--dout--border-width) var(--dout--border-width);
-      padding-block: var(--dout--space-4);
+      /* Collapsed: hidden */
 
-      /* Opening: visual animates instantly */
-      transition:
-        max-height 0s ease 0s,
-        opacity 0.22s ease 0s,
-        transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s,
-        gap 0s ease 0s,
-        border-width 0s ease 0s,
-        padding-block 0s ease 0s;
+      /* Closing: visual fades first, then collapses */
+
+      &[data-open='true'] {
+        gap: var(--dout--space-2);
+        opacity: 1;
+        max-height: 320px;
+        padding-block: var(--dout--space-4);
+        border-width: 0 var(--dout--border-width) var(--dout--border-width);
+        transform: translateY(0);
+        transition:
+          max-height 0s ease 0s,
+          opacity 0.22s ease 0s,
+          transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+          gap 0s ease 0s,
+          border-width 0s ease 0s,
+          padding-block 0s ease 0s;
+        pointer-events: auto;
+
+        /* Opening: visual animates instantly */
+      }
     }
 
     [data-main-links] {
       flex-direction: column;
-      width: 100%;
       gap: var(--dout--space-3);
+      width: 100%;
     }
 
     [data-main-links] li {

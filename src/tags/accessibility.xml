@@ -6,34 +6,41 @@
     <description>RSS feed for posts tagged with accessibility</description>
     <atom:link href="https://dout.dev/tags/accessibility.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Sun, 14 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>Why DisplayPreferencesPopover Exists: Accessibility Starts With User Preferences</title>
-      <link>https://dout.dev/posts/2026-06-14-why-display-preferences-popover-exists.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-14-why-display-preferences-popover-exists.html</guid>
-      <pubDate>Sun, 14 Jun 2026 00:00:00 GMT</pubDate>
-      <description>Accessibility is not one feature</description>
+      <title>Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</title>
+      <link>https://dout.dev/posts/2026-06-27-accessible-scrollspy-outline.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-27-accessible-scrollspy-outline.html</guid>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The feature and its trap</description>
     </item>
     <item>
-      <title>WCAG 2.2 AA Without ARIA-Spam: Landmarks, Heading Order, Skip-Links</title>
-      <link>https://dout.dev/posts/2026-06-09-wcag-22-aa-without-aria-spam.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-06-09-wcag-22-aa-without-aria-spam.html</guid>
+      <title>Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It&apos;s User Preferences)</title>
+      <link>https://dout.dev/posts/2026-06-09-why-display-preferences-popover-exists.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-09-why-display-preferences-popover-exists.html</guid>
       <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
-      <description>The unpopular opinion</description>
+      <description>Accessibility is not one feature (it&apos;s ALL of them)</description>
     </item>
     <item>
-      <title>Progressive Enhancement as Contract</title>
-      <link>https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-15-progressive-enhancement-as-contract.html</guid>
-      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
-      <description>The contract</description>
+      <title>WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That&apos;s 80% of It)</title>
+      <link>https://dout.dev/posts/2026-06-02-wcag-22-aa-without-aria-spam.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-06-02-wcag-22-aa-without-aria-spam.html</guid>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The unpopular opinion (brace yourself)</description>
     </item>
     <item>
-      <title>Archives, Tags, Months, and Series</title>
-      <link>https://dout.dev/posts/2026-05-14-archives-tags-months-series.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-14-archives-tags-months-series.html</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <description>Three ways to slice the same posts</description>
+      <title>Progressive Enhancement as Contract (Yes, It Works Without JS. No, I&apos;m Not Kidding.)</title>
+      <link>https://dout.dev/posts/2026-04-28-progressive-enhancement-as-contract.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-28-progressive-enhancement-as-contract.html</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The contract (read this part)</description>
+    </item>
+    <item>
+      <title>Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)</title>
+      <link>https://dout.dev/posts/2026-04-25-archives-tags-months-series.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-04-25-archives-tags-months-series.html</guid>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Three ways to slice the same posts (because one axis is never enough)</description>
     </item>
   </channel>
 </rss>

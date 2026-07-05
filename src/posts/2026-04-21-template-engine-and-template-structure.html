@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)</title>
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta
+      name="description"
+      content="Three constraints that shaped the grammar (because constraints are good, actually)"
+    />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/posts/2026-04-21-template-engine-and-template-structure.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
+    <script>
+      document.documentElement.dataset.userPreferences = 'ready';
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+    </script>
+    <style>
+      :root {
+        --dout--file-preview-border: #d9a441;
+        --dout--file-preview-bg: #fff3cd;
+        --dout--file-preview-text: #5c3b00;
+      }
+
+      [data-file-preview-warning] {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--dout--file-preview-border);
+        background: var(--dout--file-preview-bg);
+        color: var(--dout--file-preview-text);
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] [data-file-preview-warning] {
+        display: block;
+      }
+
+      [data-file-preview-warning] code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)"
+    />
+    <meta
+      property="og:description"
+      content="Three constraints that shaped the grammar (because constraints are good, actually)"
+    />
+    <meta property="og:url" content="https://dout.dev/posts/2026-04-21-template-engine-and-template-structure.html" />
+    <meta
+      property="og:image"
+      content="https://dout.dev/assets/og/posts/2026-04-21-template-engine-and-template-structure.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Preview image for Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-04-21T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2026-04-21T00:00:00.000Z" />
+    <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
+    <meta
+      name="twitter:title"
+      content="Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)"
+    />
+    <meta
+      name="twitter:description"
+      content="Three constraints that shaped the grammar (because constraints are good, actually)"
+    />
+    <meta
+      name="twitter:image"
+      content="https://dout.dev/assets/og/posts/2026-04-21-template-engine-and-template-structure.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Preview image for Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)",
+        "description": "Three constraints that shaped the grammar (because constraints are good, actually)",
+        "datePublished": "2026-04-21T00:00:00.000Z",
+        "dateModified": "2026-04-21T00:00:00.000Z",
+        "author": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://dout.dev"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dout.dev/posts/2026-04-21-template-engine-and-template-structure.html"
+        },
+        "image": ["https://dout.dev/assets/og/posts/2026-04-21-template-engine-and-template-structure.png"],
+        "keywords": "like, template, engine, base, layout, templates, have, features, use, grammar, expressions, expression"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dout.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Archive", "item": "https://dout.dev/archive.html" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)",
+            "item": "https://dout.dev/posts/2026-04-21-template-engine-and-template-structure.html"
+          }
+        ]
+      }
+    </script>
+
+    <link rel="stylesheet" href="/styles/index.css" />
+    <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
+  </head>
+  <body data-site-shell="">
+    <p data-file-preview-warning="" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a data-skip-link="" href="#main">Skip to main content</a>
+    <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" data-site-header="">
+      <div data-container="" data-header-bar="">
+        <a data-brand="" href="/">
+          <span data-brand-mark="">dout.dev</span>
+          <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <nav id="mainmenu" data-main-nav="" aria-label="Main">
+          <ul data-main-links="" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div data-header-actions="">
+          <color-scheme-switcher></color-scheme-switcher>
+          <display-preferences-popover></display-preferences-popover>
+          <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      <article data-post-layout="" itemscope="" itemtype="https://schema.org/BlogPosting">
+        <header data-post-hero="" data-reveal="">
+          <p data-eyebrow="">Article</p>
+          <p data-post-meta="">
+            <time datetime="2026-04-21" itemprop="datePublished"> April 21, 2026 </time>
+            <span data-post-divider="">/</span>
+            <a href="/archive.html">Archive</a>
+          </p>
+          <h1 itemprop="headline" tabindex="0">
+            Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)
+          </h1>
+
+          <p data-post-description="">
+            Three constraints that shaped the grammar (because constraints are good, actually)
+          </p>
+
+          <ul data-tag-list="" aria-label="Tags">
+            <li><a data-tag="" href="/tags/making-of.html">making-of</a></li>
+
+            <li><a data-tag="" href="/tags/template-engine.html">template-engine</a></li>
+
+            <li><a data-tag="" href="/tags/html.html">html</a></li>
+
+            <li><a data-tag="" href="/tags/architecture.html">architecture</a></li>
+          </ul>
+
+          <figure data-post-cover="">
+            <img
+              src="/assets/og/posts/2026-04-21-template-engine-and-template-structure-card.png"
+              alt="Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="900"
+            />
+          </figure>
+        </header>
+
+        <section data-post-shell="" role="region">
+          <h2 data-visually-hidden="">Article content</h2>
+
+          <section data-prose="" itemprop="articleBody">
+            <h2
+              id="three-constraints-that-shaped-the-grammar-because-constraints-are-good-actually"
+              tabindex="0"
+              data-toc-anchor="true"
+            >
+              Three constraints that shaped the grammar (because constraints are good, actually)
+            </h2>
+            <p>
+              Three constraints that usually pull in different directions. Like a tug of war where everyone's right.
+            </p>
+            <p>
+              <strong>Readable LIKE HTML.</strong> A template should look like a document, not a programming language
+              wearing angle brackets. No curly-heavy logic mixed into markup. If I wanted PHP, I'd use PHP.
+            </p>
+            <p>
+              <strong>Expressive enough for a real blog.</strong> Conditionals, loops, nested layouts, inline
+              expressions — the minimum viable set has to cover these or the CMS ends up exporting special-case data
+              structures for every page type. And I'm lazy, so I want fewer page types.
+            </p>
+            <p>
+              <strong>No <code>eval</code>.</strong> Anything user-controlled that turns into runtime code is a
+              liability. The expression evaluator had to parse and interpret, not delegate to the JavaScript engine.
+              <code>eval</code> is the devil, and I don't make deals with the devil.
+            </p>
+            <p>
+              <strong>The resulting engine is a few hundred lines</strong> and lives under
+              <code>scripts/template-engine/</code>. It runs during the CMS build. It does NOT ship to the browser.
+              Because nothing that ships to the browser should be trusted.
+            </p>
+            <h2 id="the-four-primitives-that-s-it-just-four" tabindex="0" data-toc-anchor="true">
+              The four primitives (that's it, just four)
+            </h2>
+            <p>The grammar has exactly four things. That's the whole language.</p>
+            <p>
+              <strong><code>&lt;extends src="..."&gt;</code></strong> — a template declares that it extends a base
+              layout. The base layout contains named slots. Like inheritance, but without the existential crisis.
+            </p>
+            <p>
+              <strong><code>&lt;block name="..."&gt;</code></strong> — inside an extending template, a block overrides
+              the same-named slot in the base layout. Simple. Predictable.
+            </p>
+            <p>
+              <strong><code>&lt;include src="..."&gt;</code></strong> — inline composition. The included fragment is
+              inserted with access to the current context. Typical uses: the pagination component, the post card, the
+              footer. You know, stuff you don't want to repeat.
+            </p>
+            <p>
+              <strong>Expression references</strong> — an expression reference can use an optional filter pipeline.
+              Filters are ordinary functions. The grammar for expressions supports member access, ternary, logical
+              operators, and literal values. No, you can't execute arbitrary code. Yes, that's on purpose.
+            </p>
+            <p>
+              Control flow is expressed with custom elements that look like HTML:
+              <code>&lt;if condition="..."&gt;</code>, <code>&lt;for each="item in collection"&gt;</code>,
+              <code>&lt;switch&gt;</code> with <code>&lt;case&gt;</code> and <code>&lt;default&gt;</code>. That keeps
+              the templates in ONE grammar instead of mixing angle brackets with mustache-style blocks. Consistency is a
+              feature.
+            </p>
+            <h2 id="how-extends-and-blocks-work-the-boring-but-important-part" tabindex="0" data-toc-anchor="true">
+              How extends and blocks work (the boring but important part)
+            </h2>
+            <p>
+              The engine parses the base layout once and indexes its blocks by name. When an extending template is
+              rendered, the engine walks the child template, collects its <code>&lt;block&gt;</code> elements, and uses
+              them to override the parent slots. Anything in the extending template outside of a block is discarded by
+              design — it would have no stable place to land. Like my uncle's advice.
+            </p>
+            <p>The practical upshot is that a post template reads like this:</p>
+            <pre is="pix-highlighter" data-lang="html"><code>&lt;extends src="./layouts/base.html"&gt;
+  &lt;block name="title"&gt;Title from context - dout.dev&lt;&#x2F;block&gt;
+  &lt;block name="content"&gt;
+    &lt;article&gt;...&lt;&#x2F;article&gt;
+  &lt;&#x2F;block&gt;
+&lt;&#x2F;extends&gt;</code></pre>
+            <p>The base layout declares the slots:</p>
+            <pre
+              is="pix-highlighter"
+              data-lang="html"
+            ><code>&lt;title&gt;&lt;block name="title"&gt;dout.dev&lt;&#x2F;block&gt;&lt;&#x2F;title&gt;
+&lt;main&gt;&lt;block name="content"&gt;&lt;&#x2F;block&gt;&lt;&#x2F;main&gt;</code></pre>
+            <p>
+              Slots can have default content. Blocks are required only if the parent says so. It's like a contract
+              between templates.
+            </p>
+            <h2 id="expressions-without-eval-because-i-m-not-a-psychopath" tabindex="0" data-toc-anchor="true">
+              Expressions without eval (because I'm not a psychopath)
+            </h2>
+            <p>
+              Expressions for values like post cover dimensions or tag counts look like JavaScript. They are NOT
+              JavaScript — they are parsed into a small AST and walked by an interpreter. Like a tiny court judge for
+              strings.
+            </p>
+            <p>The interpreter supports:</p>
+            <ul>
+              <li>literal values (strings, numbers, booleans, null);</li>
+              <li>member access and optional chaining;</li>
+              <li>arithmetic and comparison operators;</li>
+              <li>logical <code>&amp;&amp;</code>, <code>||</code>, <code>!</code>;</li>
+              <li>ternary conditional;</li>
+              <li>function calls for a whitelisted set of filters.</li>
+            </ul>
+            <p>
+              Everything else is a syntax error. No global lookup, no prototype walk, no
+              <code>Function</code> constructor. The evaluator is stateless and only reads from the context object
+              passed in. It's sandboxed tighter than a cargo ship container.
+            </p>
+            <p>
+              This matters for two reasons. First, it means rendering a template is deterministic and side-effect-free.
+              Second, it means I can treat the template language as a safe expression surface, even when the inputs are
+              derived from user content. Security by fucking design.
+            </p>
+            <h2 id="why-custom-elements-for-control-flow" tabindex="0" data-toc-anchor="true">
+              Why custom elements for control flow
+            </h2>
+            <p>
+              A common alternative is to use curly-brace blocks for conditionals, loops, and closing statements. I tried
+              that. It sucked. The mix of angle brackets and curlies made templates hard to read for non-trivial
+              layouts. Using custom elements like <code>&lt;if&gt;</code> and <code>&lt;for&gt;</code> keeps the
+              document shape consistent. Editors and formatters treat them as HTML; the indentation logic is obvious.
+              Your syntax highlighter doesn't have an aneurysm.
+            </p>
+            <p>
+              There is one rule I learned the hard way: do NOT nest <code>&lt;if&gt;</code> inside an opening tag to
+              conditionally add attributes. The parser gets confused, and so does the reader. Use inline expressions in
+              the attribute value instead:
+            </p>
+            <pre
+              is="pix-highlighter"
+              data-lang="html"
+            ><code>&lt;img width="expression: cover width or empty" height="expression: cover height or empty" /&gt;</code></pre>
+            <p>
+              That rule is documented in the repository README, because it's one of those things that tripped me up
+              twice before I wrote it down. Learn from my pain.
+            </p>
+            <h2 id="what-the-engine-does-not-do-the-features-i-didn-t-add" tabindex="0" data-toc-anchor="true">
+              What the engine does not do (the features I didn't add)
+            </h2>
+            <p>
+              It does not support runtime templates from untrusted content. It does not re-parse the base layout per
+              render; that is cached. It does not allow templates to import JavaScript. It does not have a plugin
+              system.
+            </p>
+            <p>
+              It does what a blog needs. The features I do not add are the features I do not have to maintain. And
+              maintaining features you don't need is how open source projects die.
+            </p>
+            <h2 id="the-takeaway" tabindex="0" data-toc-anchor="true">The takeaway</h2>
+            <p>
+              If you are building a custom SSG and want templates that read like HTML, you do not need a full templating
+              library. A few hundred lines of parser, a four-primitive grammar, a small set of filters, and a sandboxed
+              expression interpreter covers the whole surface of a well-behaved blog. The features you do not add are
+              the features you do not have to maintain. Repeat that until it sticks.
+            </p>
+          </section>
+        </section>
+
+        <aside data-post-sidebar="" role="complementary">
+          <nav data-post-toc="">
+            <h2>TOC</h2>
+            <ol data-post-toc-list="">
+              <li data-post-toc-item="">
+                <a
+                  data-post-toc-link=""
+                  data-level="2"
+                  href="#three-constraints-that-shaped-the-grammar-because-constraints-are-good-actually"
+                  >Three constraints that shaped the grammar (because constraints are good, actually)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-four-primitives-that-s-it-just-four"
+                  >The four primitives (that's it, just four)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a
+                  data-post-toc-link=""
+                  data-level="2"
+                  href="#how-extends-and-blocks-work-the-boring-but-important-part"
+                  >How extends and blocks work (the boring but important part)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#expressions-without-eval-because-i-m-not-a-psychopath"
+                  >Expressions without eval (because I'm not a psychopath)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#why-custom-elements-for-control-flow"
+                  >Why custom elements for control flow</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#what-the-engine-does-not-do-the-features-i-didn-t-add"
+                  >What the engine does not do (the features I didn't add)</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-takeaway">The takeaway</a>
+              </li>
+            </ol>
+          </nav>
+        </aside>
+
+        <section data-comments-shell="" data-reveal="">
+          <header data-section-heading="">
+            <p data-eyebrow="">Discussion</p>
+            <h2>Comments live in GitHub Discussions</h2>
+          </header>
+          <p data-comments-note="">Each thread is keyed to the source markdown entry for this post.</p>
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="pixu1980/dout-dev"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkzNDU3NDQ3MDU="
+            data-category="General"
+            data-category-id="DIC_kwDOFJulQc4CjlkE"
+            data-mapping="url"
+            data-term="data/posts/2026-04-21-template-engine-and-template-structure.md"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async=""
+          ></script>
+        </section>
+
+        <nav data-series-navigation="" data-reveal="" aria-label="Series navigation">
+          <section data-series-navigation-group="">
+            <p data-eyebrow="" data-muted="">Series</p>
+            <h2>In this series: How I made it</h2>
+            <ol data-series-navigation-links="">
+              <li>
+                <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="false"
+                  >How I Built dout.dev (And Why I Didn't Use a Framework Like a Normal Person)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-07-cms-and-markdown-processing.html" aria-current="false"
+                  >CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false"
+                  >Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-14-why-no-astro-eleventy-next.html" aria-current="false"
+                  >Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-18-custom-ssg-pipeline.html" aria-current="false"
+                  >Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-21-template-engine-and-template-structure.html" aria-current="page"
+                  >Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person) (you
+                  are here)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-25-archives-tags-months-series.html" aria-current="false"
+                  >Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-04-28-progressive-enhancement-as-contract.html" aria-current="false"
+                  >Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-02-design-tokens-before-pages.html" aria-current="false"
+                  >Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-05-build-assets-pipeline.html" aria-current="false"
+                  >Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html" aria-current="false"
+                  >Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-12-og-images-at-build-time.html" aria-current="false"
+                  >OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-16-seo-metadata-without-rituals.html" aria-current="false"
+                  >SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-19-quality-gate-lint-format-verify.html" aria-current="false"
+                  >Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-23-ci-cd-around-github-pages.html" aria-current="false"
+                  >CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-26-vibe-coding-with-rigor.html" aria-current="false"
+                  >Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="false"
+                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="false"
+                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-06-how-pixhighlighter-is-built.html" aria-current="false"
+                  >How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-09-why-display-preferences-popover-exists.html" aria-current="false"
+                  >Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-16-client-side-search-static-dataset.html" aria-current="false"
+                  >Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-23-custom-element-syntax-highlight.html" aria-current="false"
+                  >A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-27-accessible-scrollspy-outline.html" aria-current="false"
+                  >Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-06-30-honest-lazy-loading.html" aria-current="false"
+                  >Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-04-pragmatic-service-worker.html" aria-current="false"
+                  >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
+                >
+              </li>
+
+              <li>
+                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false"
+                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
+                >
+              </li>
+            </ol>
+          </section>
+        </nav>
+      </article>
+
+      <nav data-post-nav="" aria-label="Post navigation">
+        <a data-post-nav-card="" data-reveal="" rel="prev" href="/posts/2026-04-18-custom-ssg-pipeline.html">
+          <span data-post-nav-label="">Previous</span>
+          <strong>Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)</strong>
+        </a>
+
+        <a data-post-nav-card="" data-reveal="" rel="next" href="/posts/2026-04-25-archives-tags-months-series.html">
+          <span data-post-nav-label="">Next</span>
+          <strong>Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)</strong>
+        </a>
+      </nav>
+    </main>
+
+    <footer role="contentinfo" data-site-footer="">
+      <div data-container="" data-footer-grid="">
+        <div data-footer-copy="">
+          <p data-footer-brand="">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav data-footer-nav="" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
+</html>

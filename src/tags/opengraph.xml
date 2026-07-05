@@ -6,20 +6,20 @@
     <description>RSS feed for posts tagged with opengraph</description>
     <atom:link href="https://dout.dev/tags/opengraph.xml" rel="self" type="application/rss+xml" />
     <language>en</language>
-    <lastBuildDate>Wed, 20 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 16 May 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>SEO Metadata Without Rituals</title>
-      <link>https://dout.dev/posts/2026-05-20-seo-metadata-without-rituals.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-20-seo-metadata-without-rituals.html</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>The short version</description>
+      <title>SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don&apos;t Have To)</title>
+      <link>https://dout.dev/posts/2026-05-16-seo-metadata-without-rituals.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-16-seo-metadata-without-rituals.html</guid>
+      <pubDate>Sat, 16 May 2026 00:00:00 GMT</pubDate>
+      <description>The short version (TL;DR for the impatient)</description>
     </item>
     <item>
-      <title>OG Images at Build Time</title>
-      <link>https://dout.dev/posts/2026-05-19-og-images-at-build-time.html</link>
-      <guid isPermaLink="true">https://dout.dev/posts/2026-05-19-og-images-at-build-time.html</guid>
-      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
-      <description>The problem and the usual solutions</description>
+      <title>OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)</title>
+      <link>https://dout.dev/posts/2026-05-12-og-images-at-build-time.html</link>
+      <guid isPermaLink="true">https://dout.dev/posts/2026-05-12-og-images-at-build-time.html</guid>
+      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+      <description>The problem and the usual solutions (none of which I wanted)</description>
     </item>
   </channel>
 </rss>
