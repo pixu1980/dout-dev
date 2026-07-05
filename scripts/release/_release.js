@@ -200,6 +200,7 @@ export async function release() {
     },
   });
   amendGeneratedArtifactsIfNeeded();
+  run('git', ['pull', '--rebase']);
   run('pnpm', ['version', detectedRelease.releaseType, '--message', 'chore(release): v%s']);
   run('git', ['push']);
   run('git', ['push', '--tags']);
