@@ -7,6 +7,9 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    min-height: 100dvh;
+    padding-left: var(--dout--safe-left);
+    padding-right: var(--dout--safe-right);
     color: var(--dout--text);
     accent-color: var(--dout--accent);
     background-color: var(--dout--bg);
@@ -47,15 +50,15 @@
   }
 
   h1 {
-    font-size: var(--dout--step-4);
+    font-size: clamp(var(--dout--step-2), 1.2rem + 2vw, var(--dout--step-4));
   }
 
   h2 {
-    font-size: var(--dout--step-3);
+    font-size: clamp(var(--dout--step-1), 1rem + 1.5vw, var(--dout--step-3));
   }
 
   h3 {
-    font-size: var(--dout--step-2);
+    font-size: clamp(var(--dout--step-0), 0.9rem + 1vw, var(--dout--step-2));
   }
 
   code,

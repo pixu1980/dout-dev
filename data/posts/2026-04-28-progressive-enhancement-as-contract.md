@@ -1,6 +1,8 @@
 ---
 title: 'Progressive Enhancement as Contract (Yes, It Works Without JS. No, I''m Not Kidding.)'
 date: '2026-04-28'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['making-of', 'progressive-enhancement', 'accessibility', 'vanilla-js']
 series: 'How I made it'
@@ -58,17 +60,17 @@ That's the graceful-degradation path for search. It's not as good as the JS path
 
 The button is `hidden` in the initial markup. Only the JS that actually implements the theme switch removes the `hidden` attribute. Readers without JS never see a button that does nothing.
 
-This is a general pattern: any UI element that requires JS to function is HIDDEN BY DEFAULT and revealed by the enhancement script. The opposite pattern — show the button, have it do nothing when clicked — is worse, because it breaks the "visible things work" contract that users assume.
+This is a general pattern: any UI element that requires JS to function is HIDDEN BY DEFAULT and revealed by the enhancement script. The opposite pattern - show the button, have it do nothing when clicked - is worse, because it breaks the "visible things work" contract that users assume.
 
 ### Code blocks
 
 Fenced code blocks render as plain `<pre><code>` in the markdown output, upgraded by `<pre is="pix-highlighter">` when JS runs. Without JS, the code is monospaced and unhighlighted. Readable. Not pretty. Functional.
 
-The copy button is added by the custom element's `connectedCallback` — no element in the pre-JS DOM, nothing to fail.
+The copy button is added by the custom element's `connectedCallback` - no element in the pre-JS DOM, nothing to fail.
 
 ## How the build verifies it (because trust is not a strategy)
 
-Writing the contract is not enough. The build enforces it with a small no-JS check. And I mean literally enforces — it blocks the deploy if it fails.
+Writing the contract is not enough. The build enforces it with a small no-JS check. And I mean literally enforces - it blocks the deploy if it fails.
 
 ```js
 import { test } from 'node:test';
@@ -109,6 +111,6 @@ That is the difference between "we care about progressive enhancement" and "the 
 
 ## The takeaway (the part where I sound like a fortune cookie)
 
-Progressive enhancement is a testable contract, not a stance. Pick a clear line — "the core experience works without JS" — and let the build verify it. The result is a more resilient site and a simpler mental model. The enhancements can then be as ambitious as you want, because you know what they are enhancing.
+Progressive enhancement is a testable contract, not a stance. Pick a clear line - "the core experience works without JS" - and let the build verify it. The result is a more resilient site and a simpler mental model. The enhancements can then be as ambitious as you want, because you know what they are enhancing.
 
 Your users with shitty internet connections will thank you. The ones with screen readers will thank you. The ones using Lynx will silently judge everyone else.

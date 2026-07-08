@@ -209,7 +209,7 @@ export async function validateOpenGraph(targetDir = resolveTargetDir(process.arg
       } catch (error) {
         errorCount += 1;
         const relativeFile = `./${relative(projectRoot, filePath)}`;
-        console.error(`❌ ${relativeFile} (${route}) — ${error.message}`);
+        console.error(`❌ ${relativeFile} (${route}) - ${error.message}`);
       }
     }
   } finally {

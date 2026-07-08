@@ -194,6 +194,12 @@ function applyAccentColor(accentColor, targetDocument = document) {
   root.style.setProperty('--dout--accent-s', `${accent.s}%`);
   root.style.setProperty('--dout--accent-l', `${accent.l}%`);
 
+  // Keep the theme-color meta tag in sync with the accent
+  const meta = targetDocument.querySelector('meta[name="theme-color"]');
+  if (meta) {
+    meta.content = `hsl(${accent.h}, ${accent.s}%, 58%)`;
+  }
+
   return accent.id;
 }
 

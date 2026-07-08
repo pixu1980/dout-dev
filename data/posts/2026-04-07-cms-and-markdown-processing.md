@@ -1,6 +1,8 @@
 ---
 title: 'CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)'
 date: '2026-04-07'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['making-of', 'cms', 'markdown', 'static-site']
 series: 'How I made it'
@@ -34,7 +36,7 @@ For a blog, documentation site, changelog, or engineering handbook, this is a st
 
 The OpenReplay article is right about the breaking points. I'm not too proud to admit it.
 
-Plain files don't give you content relationships for free. "Posts by author", "localized variants", "schedule this for next Tuesday", "send it through approval", "let marketing edit it without Git" — none of that is inherent in Markdown. At that point Markdown is a storage format, not the whole publishing system.
+Plain files don't give you content relationships for free. "Posts by author", "localized variants", "schedule this for next Tuesday", "send it through approval", "let marketing edit it without Git" - none of that is inherent in Markdown. At that point Markdown is a storage format, not the whole publishing system.
 
 This is also where a lot of Markdown debates get sloppy. People say "Markdown cannot do X" when what they really mean is "a directory full of `.md` files without surrounding tooling cannot do X." That's true. It's also incomplete, because a project can add a lot of structure around Markdown before it reaches for a headless CMS. Like, say, a custom pipeline with actual engineering behind it.
 

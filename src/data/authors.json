@@ -1,0 +1,1062 @@
+[
+  {
+    "slug": "emiliano-pixu1980-pisu",
+    "name": "Emiliano \"pixu1980\" Pisu",
+    "url": "https://pixu.dev",
+    "posts": [
+      {
+        "name": "2026-07-05-css-properties-hierarchy",
+        "title": "CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)",
+        "date": "2026-07-05T00:00:00.000Z",
+        "dateString": "Sun Jul 05 2026",
+        "path": "./src/posts/2026-07-05-css-properties-hierarchy.html",
+        "url": "/posts/2026-07-05-css-properties-hierarchy/",
+        "excerpt": "Context - The chaos of unorganized CSS",
+        "coverImage": "/assets/og/posts/2026-07-05-css-properties-hierarchy-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)",
+        "tags": [
+          {
+            "key": "html",
+            "label": "html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "css",
+            "label": "css",
+            "url": "./tags/css.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-07-04-pragmatic-service-worker",
+        "title": "A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)",
+        "date": "2026-07-04T00:00:00.000Z",
+        "dateString": "Sat Jul 04 2026",
+        "path": "./src/posts/2026-07-04-pragmatic-service-worker.html",
+        "url": "/posts/2026-07-04-pragmatic-service-worker/",
+        "excerpt": "The case against most service workers",
+        "coverImage": "/assets/og/posts/2026-07-04-pragmatic-service-worker-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)",
+        "tags": [
+          {
+            "key": "performance",
+            "label": "performance",
+            "url": "./tags/performance.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-06-30-honest-lazy-loading",
+        "title": "Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)",
+        "date": "2026-06-30T00:00:00.000Z",
+        "dateString": "Tue Jun 30 2026",
+        "path": "./src/posts/2026-06-30-honest-lazy-loading.html",
+        "url": "/posts/2026-06-30-honest-lazy-loading/",
+        "excerpt": "The two tools, in one paragraph",
+        "coverImage": "/assets/og/posts/2026-06-30-honest-lazy-loading-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)",
+        "tags": [
+          {
+            "key": "performance",
+            "label": "performance",
+            "url": "./tags/performance.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-06-27-accessible-scrollspy-outline",
+        "title": "Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)",
+        "date": "2026-06-27T00:00:00.000Z",
+        "dateString": "Sat Jun 27 2026",
+        "path": "./src/posts/2026-06-27-accessible-scrollspy-outline.html",
+        "url": "/posts/2026-06-27-accessible-scrollspy-outline/",
+        "excerpt": "The feature and its trap",
+        "coverImage": "/assets/og/posts/2026-06-27-accessible-scrollspy-outline-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-06-23-custom-element-syntax-highlight",
+        "title": "A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`",
+        "date": "2026-06-23T00:00:00.000Z",
+        "dateString": "Tue Jun 23 2026",
+        "path": "./src/posts/2026-06-23-custom-element-syntax-highlight.html",
+        "url": "/posts/2026-06-23-custom-element-syntax-highlight/",
+        "excerpt": "The stack I did not want",
+        "coverImage": "/assets/og/posts/2026-06-23-custom-element-syntax-highlight-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-06-20-pi-dev-deepseek-v4-flash-daily-loop",
+        "title": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "date": "2026-06-20T00:00:00.000Z",
+        "dateString": "Sat Jun 20 2026",
+        "path": "./src/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html",
+        "url": "/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop/",
+        "excerpt": "The headline numbers",
+        "coverImage": "/assets/og/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing",
+        "tags": [
+          {
+            "key": "ai",
+            "label": "ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "workflow",
+            "label": "workflow",
+            "url": "./tags/workflow.html"
+          },
+          {
+            "key": "tooling",
+            "label": "tooling",
+            "url": "./tags/tooling.html"
+          },
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-06-16-client-side-search-static-dataset",
+        "title": "Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)",
+        "date": "2026-06-16T00:00:00.000Z",
+        "dateString": "Tue Jun 16 2026",
+        "path": "./src/posts/2026-06-16-client-side-search-static-dataset.html",
+        "url": "/posts/2026-06-16-client-side-search-static-dataset/",
+        "excerpt": "The constraint (no backend, no excuses)",
+        "coverImage": "/assets/og/posts/2026-06-16-client-side-search-static-dataset-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "search",
+            "label": "search",
+            "url": "./tags/search.html"
+          },
+          {
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-06-13-the-end-of-borrowed-abstractions",
+        "title": "The End of Borrowed Abstractions",
+        "date": "2026-06-13T00:00:00.000Z",
+        "dateString": "Sat Jun 13 2026",
+        "path": "./src/posts/2026-06-13-the-end-of-borrowed-abstractions.html",
+        "url": "/posts/2026-06-13-the-end-of-borrowed-abstractions/",
+        "excerpt": "The reflex that shaped software",
+        "coverImage": "/assets/og/posts/2026-06-13-the-end-of-borrowed-abstractions-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "The End of Borrowed Abstractions",
+        "tags": [
+          {
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "ai",
+            "label": "ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "security",
+            "label": "security",
+            "url": "./tags/security.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-06-09-why-display-preferences-popover-exists",
+        "title": "Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)",
+        "date": "2026-06-09T00:00:00.000Z",
+        "dateString": "Tue Jun 09 2026",
+        "path": "./src/posts/2026-06-09-why-display-preferences-popover-exists.html",
+        "url": "/posts/2026-06-09-why-display-preferences-popover-exists/",
+        "excerpt": "Accessibility is not one feature (it's ALL of them)",
+        "coverImage": "/assets/og/posts/2026-06-09-why-display-preferences-popover-exists-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "responsive-design",
+            "label": "responsive-design",
+            "url": "./tags/responsive-design.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-06-06-how-pixhighlighter-is-built",
+        "title": "How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)",
+        "date": "2026-06-06T00:00:00.000Z",
+        "dateString": "Sat Jun 06 2026",
+        "path": "./src/posts/2026-06-06-how-pixhighlighter-is-built.html",
+        "url": "/posts/2026-06-06-how-pixhighlighter-is-built/",
+        "excerpt": "The contract stays plain (because HTML should be readable)",
+        "coverImage": "/assets/og/posts/2026-06-06-how-pixhighlighter-is-built-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)",
+        "tags": [
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          },
+          {
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-06-02-wcag-22-aa-without-aria-spam",
+        "title": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)",
+        "date": "2026-06-02T00:00:00.000Z",
+        "dateString": "Tue Jun 02 2026",
+        "path": "./src/posts/2026-06-02-wcag-22-aa-without-aria-spam.html",
+        "url": "/posts/2026-06-02-wcag-22-aa-without-aria-spam/",
+        "excerpt": "The unpopular opinion (brace yourself)",
+        "coverImage": "/assets/og/posts/2026-06-02-wcag-22-aa-without-aria-spam-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)",
+        "tags": [
+          {
+            "key": "accessibility",
+            "label": "accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "html",
+            "label": "html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-05-30-modern-css-is-enough",
+        "title": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)",
+        "date": "2026-05-30T00:00:00.000Z",
+        "dateString": "Sat May 30 2026",
+        "path": "./src/posts/2026-05-30-modern-css-is-enough.html",
+        "url": "/posts/2026-05-30-modern-css-is-enough/",
+        "excerpt": "The short version (for the impatient)",
+        "coverImage": "/assets/og/posts/2026-05-30-modern-css-is-enough-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)",
+        "tags": [
+          {
+            "key": "css",
+            "label": "css",
+            "url": "./tags/css.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          },
+          {
+            "key": "frontend",
+            "label": "frontend",
+            "url": "./tags/frontend.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-05-26-vibe-coding-with-rigor",
+        "title": "Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)",
+        "date": "2026-05-26T00:00:00.000Z",
+        "dateString": "Tue May 26 2026",
+        "path": "./src/posts/2026-05-26-vibe-coding-with-rigor.html",
+        "url": "/posts/2026-05-26-vibe-coding-with-rigor/",
+        "excerpt": "The term I am reclaiming (because \"vibe coding\" got a bad rap)",
+        "coverImage": "/assets/og/posts/2026-05-26-vibe-coding-with-rigor-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "ai",
+            "label": "ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "workflow",
+            "label": "workflow",
+            "url": "./tags/workflow.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-05-23-ci-cd-around-github-pages",
+        "title": "CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)",
+        "date": "2026-05-23T00:00:00.000Z",
+        "dateString": "Sat May 23 2026",
+        "path": "./src/posts/2026-05-23-ci-cd-around-github-pages.html",
+        "url": "/posts/2026-05-23-ci-cd-around-github-pages/",
+        "excerpt": "The gap GitHub Pages leaves open (it's not that bad)",
+        "coverImage": "/assets/og/posts/2026-05-23-ci-cd-around-github-pages-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "ci",
+            "label": "ci",
+            "url": "./tags/ci.html"
+          },
+          {
+            "key": "deployment",
+            "label": "deployment",
+            "url": "./tags/deployment.html"
+          },
+          {
+            "key": "github-pages",
+            "label": "github-pages",
+            "url": "./tags/github-pages.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-05-19-quality-gate-lint-format-verify",
+        "title": "Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)",
+        "date": "2026-05-19T00:00:00.000Z",
+        "dateString": "Tue May 19 2026",
+        "path": "./src/posts/2026-05-19-quality-gate-lint-format-verify.html",
+        "url": "/posts/2026-05-19-quality-gate-lint-format-verify/",
+        "excerpt": "Why the gate exists (because you will ship shit if you don't)",
+        "coverImage": "/assets/og/posts/2026-05-19-quality-gate-lint-format-verify-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "tooling",
+            "label": "tooling",
+            "url": "./tags/tooling.html"
+          },
+          {
+            "key": "linting",
+            "label": "linting",
+            "url": "./tags/linting.html"
+          },
+          {
+            "key": "ci",
+            "label": "ci",
+            "url": "./tags/ci.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-05-16-seo-metadata-without-rituals",
+        "title": "SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)",
+        "date": "2026-05-16T00:00:00.000Z",
+        "dateString": "Sat May 16 2026",
+        "path": "./src/posts/2026-05-16-seo-metadata-without-rituals.html",
+        "url": "/posts/2026-05-16-seo-metadata-without-rituals/",
+        "excerpt": "The short version (TL;DR for the impatient)",
+        "coverImage": "/assets/og/posts/2026-05-16-seo-metadata-without-rituals-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "seo",
+            "label": "seo",
+            "url": "./tags/seo.html"
+          },
+          {
+            "key": "opengraph",
+            "label": "opengraph",
+            "url": "./tags/opengraph.html"
+          },
+          {
+            "key": "html",
+            "label": "html",
+            "url": "./tags/html.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-05-12-og-images-at-build-time",
+        "title": "OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)",
+        "date": "2026-05-12T00:00:00.000Z",
+        "dateString": "Tue May 12 2026",
+        "path": "./src/posts/2026-05-12-og-images-at-build-time.html",
+        "url": "/posts/2026-05-12-og-images-at-build-time/",
+        "excerpt": "The problem and the usual solutions (none of which I wanted)",
+        "coverImage": "/assets/og/posts/2026-05-12-og-images-at-build-time-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "opengraph",
+            "label": "opengraph",
+            "url": "./tags/opengraph.html"
+          },
+          {
+            "key": "seo",
+            "label": "seo",
+            "url": "./tags/seo.html"
+          },
+          {
+            "key": "static-site",
+            "label": "static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-05-09-feeds-and-sitemaps-at-build-time",
+        "title": "Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)",
+        "date": "2026-05-09T00:00:00.000Z",
+        "dateString": "Sat May 09 2026",
+        "path": "./src/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html",
+        "url": "/posts/2026-05-09-feeds-and-sitemaps-at-build-time/",
+        "excerpt": "The distribution minimum (three files, that's it)",
+        "coverImage": "/assets/og/posts/2026-05-09-feeds-and-sitemaps-at-build-time-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "feeds",
+            "label": "feeds",
+            "url": "./tags/feeds.html"
+          },
+          {
+            "key": "seo",
+            "label": "seo",
+            "url": "./tags/seo.html"
+          },
+          {
+            "key": "static-site",
+            "label": "static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-05-05-build-assets-pipeline",
+        "title": "Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)",
+        "date": "2026-05-05T00:00:00.000Z",
+        "dateString": "Tue May 05 2026",
+        "path": "./src/posts/2026-05-05-build-assets-pipeline.html",
+        "url": "/posts/2026-05-05-build-assets-pipeline/",
+        "excerpt": "The goal (four non-negotiable constraints)",
+        "coverImage": "/assets/og/posts/2026-05-05-build-assets-pipeline-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "build-assets",
+            "label": "build-assets",
+            "url": "./tags/build-assets.html"
+          },
+          {
+            "key": "performance",
+            "label": "performance",
+            "url": "./tags/performance.html"
+          },
+          {
+            "key": "images",
+            "label": "images",
+            "url": "./tags/images.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-05-02-design-tokens-before-pages",
+        "title": "Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)",
+        "date": "2026-05-02T00:00:00.000Z",
+        "dateString": "Sat May 02 2026",
+        "path": "./src/posts/2026-05-02-design-tokens-before-pages.html",
+        "url": "/posts/2026-05-02-design-tokens-before-pages/",
+        "excerpt": "The mistake I kept making (repeat after me: tokens first)",
+        "coverImage": "/assets/og/posts/2026-05-02-design-tokens-before-pages-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "design-systems",
+            "label": "design-systems",
+            "url": "./tags/design-systems.html"
+          },
+          {
+            "key": "css",
+            "label": "css",
+            "url": "./tags/css.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-04-28-progressive-enhancement-as-contract",
+        "title": "Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)",
+        "date": "2026-04-28T00:00:00.000Z",
+        "dateString": "Tue Apr 28 2026",
+        "path": "./src/posts/2026-04-28-progressive-enhancement-as-contract.html",
+        "url": "/posts/2026-04-28-progressive-enhancement-as-contract/",
+        "excerpt": "The contract (read this part)",
+        "coverImage": "/assets/og/posts/2026-04-28-progressive-enhancement-as-contract-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "progressive-enhancement",
+            "label": "progressive-enhancement",
+            "url": "./tags/progressive-enhancement.html"
+          },
+          {
+            "key": "accessibility",
+            "label": "accessibility",
+            "url": "./tags/accessibility.html"
+          },
+          {
+            "key": "vanilla-js",
+            "label": "vanilla-js",
+            "url": "./tags/vanilla-js.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-04-25-archives-tags-months-series",
+        "title": "Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)",
+        "date": "2026-04-25T00:00:00.000Z",
+        "dateString": "Sat Apr 25 2026",
+        "path": "./src/posts/2026-04-25-archives-tags-months-series.html",
+        "url": "/posts/2026-04-25-archives-tags-months-series/",
+        "excerpt": "Three ways to slice the same posts (because one axis is never enough)",
+        "coverImage": "/assets/og/posts/2026-04-25-archives-tags-months-series-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "archives",
+            "label": "archives",
+            "url": "./tags/archives.html"
+          },
+          {
+            "key": "seo",
+            "label": "seo",
+            "url": "./tags/seo.html"
+          },
+          {
+            "key": "accessibility",
+            "label": "accessibility",
+            "url": "./tags/accessibility.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-04-21-template-engine-and-template-structure",
+        "title": "Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)",
+        "date": "2026-04-21T00:00:00.000Z",
+        "dateString": "Tue Apr 21 2026",
+        "path": "./src/posts/2026-04-21-template-engine-and-template-structure.html",
+        "url": "/posts/2026-04-21-template-engine-and-template-structure/",
+        "excerpt": "Three constraints that shaped the grammar (because constraints are good, actually)",
+        "coverImage": "/assets/og/posts/2026-04-21-template-engine-and-template-structure-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "template-engine",
+            "label": "template-engine",
+            "url": "./tags/template-engine.html"
+          },
+          {
+            "key": "html",
+            "label": "html",
+            "url": "./tags/html.html"
+          },
+          {
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-04-18-custom-ssg-pipeline",
+        "title": "Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)",
+        "date": "2026-04-18T00:00:00.000Z",
+        "dateString": "Sat Apr 18 2026",
+        "path": "./src/posts/2026-04-18-custom-ssg-pipeline.html",
+        "url": "/posts/2026-04-18-custom-ssg-pipeline/",
+        "excerpt": "The pipeline, in one picture (because I know you're skimming)",
+        "coverImage": "/assets/og/posts/2026-04-18-custom-ssg-pipeline-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "static-site",
+            "url": "./tags/static-site.html"
+          },
+          {
+            "key": "cms",
+            "label": "cms",
+            "url": "./tags/cms.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-04-14-why-no-astro-eleventy-next",
+        "title": "Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)",
+        "date": "2026-04-14T00:00:00.000Z",
+        "dateString": "Tue Apr 14 2026",
+        "path": "./src/posts/2026-04-14-why-no-astro-eleventy-next.html",
+        "url": "/posts/2026-04-14-why-no-astro-eleventy-next/",
+        "excerpt": "The default answer and why I ignored it",
+        "coverImage": "/assets/og/posts/2026-04-14-why-no-astro-eleventy-next-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-04-11-rebuilding-dout-dev-with-ai-copilot",
+        "title": "Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread",
+        "date": "2026-04-11T00:00:00.000Z",
+        "dateString": "Sat Apr 11 2026",
+        "path": "./src/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html",
+        "url": "/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot/",
+        "excerpt": "The honest framing",
+        "coverImage": "/assets/og/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "ai",
+            "label": "ai",
+            "url": "./tags/ai.html"
+          },
+          {
+            "key": "workflow",
+            "label": "workflow",
+            "url": "./tags/workflow.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-04-07-cms-and-markdown-processing",
+        "title": "CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)",
+        "date": "2026-04-07T00:00:00.000Z",
+        "dateString": "Tue Apr 07 2026",
+        "path": "./src/posts/2026-04-07-cms-and-markdown-processing.html",
+        "url": "/posts/2026-04-07-cms-and-markdown-processing/",
+        "excerpt": "The useful distinction",
+        "coverImage": "/assets/og/posts/2026-04-07-cms-and-markdown-processing-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "cms",
+            "label": "cms",
+            "url": "./tags/cms.html"
+          },
+          {
+            "key": "markdown",
+            "label": "markdown",
+            "url": "./tags/markdown.html"
+          },
+          {
+            "key": "static-site",
+            "label": "static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      },
+      {
+        "name": "2026-04-04-how-i-built-dout-dev",
+        "title": "How I Built dout.dev (and why I did not use a framework like a normal person)",
+        "date": "2026-04-04T00:00:00.000Z",
+        "dateString": "Sat Apr 04 2026",
+        "path": "./src/posts/2026-04-04-how-i-built-dout-dev.html",
+        "url": "/posts/2026-04-04-how-i-built-dout-dev/",
+        "excerpt": "What the stack is, exactly (TL;DR: files + Node + blood)",
+        "coverImage": "/assets/og/posts/2026-04-04-how-i-built-dout-dev-card.png",
+        "coverWidth": 1200,
+        "coverHeight": 900,
+        "coverAlt": "How I Built dout.dev (and why I did not use a framework like a normal person)",
+        "tags": [
+          {
+            "key": "making-of",
+            "label": "making-of",
+            "url": "./tags/making-of.html"
+          },
+          {
+            "key": "architecture",
+            "label": "architecture",
+            "url": "./tags/architecture.html"
+          },
+          {
+            "key": "static-site",
+            "label": "static-site",
+            "url": "./tags/static-site.html"
+          }
+        ],
+        "pinned": true,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
+      }
+    ],
+    "description": "Articles by Emiliano \"pixu1980\" Pisu.",
+    "pageUrl": "./authors/emiliano-pixu1980-pisu.html",
+    "count": 28
+  }
+]

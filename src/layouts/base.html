@@ -2,9 +2,11 @@
 <html lang="{{ site.language | default:'en' }}">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{{ title | default: site.title }}</title>
     <meta name="theme-color" content="#ff6b3d" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="description" content="{{ description | default: site.description }}" />
     <meta name="author" content="{{ site.author | default:'Emiliano Pisu' }}" />
     <meta name="robots" content="{{ robots | default:'index,follow' }}" />
@@ -36,6 +38,36 @@
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
       }
+
+      (function () {
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (!meta) return;
+
+        function updateThemeColor() {
+          var root = document.documentElement;
+          var scheme = root.getAttribute('data-color-scheme') || '';
+          var isDark = scheme === 'dark' || (!scheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var h = root.style.getPropertyValue('--dout--accent-h').trim() || '16';
+          var s = root.style.getPropertyValue('--dout--accent-s').trim() || '95%';
+          var l = isDark ? '22%' : '58%';
+          meta.content = 'hsl(' + h + ', ' + s + ', ' + l + ')';
+        }
+
+        updateThemeColor();
+
+        var observer = new MutationObserver(function () {
+          updateThemeColor();
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-color-scheme', 'style'],
+        });
+
+        var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', updateThemeColor);
+        }
+      })();
     </script>
     <style>
       :root {

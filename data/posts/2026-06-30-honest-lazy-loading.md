@@ -1,6 +1,8 @@
 ---
 title: 'Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)'
 date: '2026-06-30'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['performance', 'frontend', 'vanilla-js']
 series: 'How I made it'

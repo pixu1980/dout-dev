@@ -1,6 +1,8 @@
 ---
 title: 'SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don''t Have To)'
 date: '2026-05-16'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['making-of', 'seo', 'opengraph', 'html']
 series: 'How I made it'
@@ -83,6 +85,6 @@ Drafts (`published: false`) never render, so there is no need for a `noindex` pa
 
 ## The takeaway
 
-SEO on a blog is not magic. Three tags — canonical, structured data, Open Graph — cover most of the actual behavior. Hreflang only when you have multiple languages. Skip the dozens of "recommended" tags unless you can point at the consumer behavior they enable.
+SEO on a blog is not magic. Three tags - canonical, structured data, Open Graph - cover most of the actual behavior. Hreflang only when you have multiple languages. Skip the dozens of "recommended" tags unless you can point at the consumer behavior they enable.
 
 The goal is a clean, honest document, not a Christmas tree of meta tags.

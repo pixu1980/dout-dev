@@ -1,6 +1,8 @@
 ---
 title: 'Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)'
 date: '2026-05-02'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['making-of', 'design-systems', 'css']
 series: 'How I made it'
@@ -50,9 +52,9 @@ That is a single source of truth. It does not know about pages. It does not know
 
 Raw tokens alone are not enough for a theme-able site. You need two layers. I use two layers. You should too.
 
-**Primitive tokens** — the raw decisions above. They never change at runtime. They're the concrete values.
+**Primitive tokens** - the raw decisions above. They never change at runtime. They're the concrete values.
 
-**Semantic tokens** — aliases that map intent to primitives. These are the ones components actually read, and these are the ones that flip between themes.
+**Semantic tokens** - aliases that map intent to primitives. These are the ones components actually read, and these are the ones that flip between themes.
 
 ```css
 :root {
@@ -108,7 +110,7 @@ Without the two-layer setup, theming a site usually means touching every compone
 
 I did not build an elaborate token pipeline. No Style Dictionary, no JSON sources compiled into multiple formats, no cross-platform tokens. This is a single-target CSS project. A flat `.css` file that declares custom properties is enough, and any tooling beyond that would be overhead without a matching benefit.
 
-If the project grew multiplatform — iOS, Android, email, a design tool plugin — I would pull in Style Dictionary. Until then, one file and discipline. Discipline over tools. Every time.
+If the project grew multiplatform - iOS, Android, email, a design tool plugin - I would pull in Style Dictionary. Until then, one file and discipline. Discipline over tools. Every time.
 
 ## The takeaway
 

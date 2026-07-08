@@ -1,6 +1,8 @@
 ---
 title: 'Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)'
 date: '2026-04-25'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['making-of', 'archives', 'seo', 'accessibility']
 series: 'How I made it'
@@ -14,9 +16,9 @@ A blog is a time-ordered list of posts. That linear view is useful for the home 
 
 dout.dev ships three archives:
 
-- **By tag** — `/tags/<slug>.html`. Topical similarity. "Show me all the accessibility posts."
-- **By month** — `/months/<YYYY-MM>.html`. Temporal browsing. "What did you write in January 2026?"
-- **By series** — `/series/<slug>.html`. Intentional groupings. "Read the making-of series in order, you animal."
+- **By tag** - `/tags/<slug>.html`. Topical similarity. "Show me all the accessibility posts."
+- **By month** - `/months/<YYYY-MM>.html`. Temporal browsing. "What did you write in January 2026?"
+- **By series** - `/series/<slug>.html`. Intentional groupings. "Read the making-of series in order, you animal."
 
 **Each is a first-class surface** with its own page, its own RSS feed, its own OG image, and its own pagination. All three are generated from the same normalized dataset the post generator uses, so there is zero drift between what a tag page shows and what the post pages claim. Consistency is a feature.
 
@@ -103,7 +105,7 @@ if (archive.kind === 'series') {
 }
 ```
 
-That's a six-line difference in the generator. The templates do not need to know — they receive posts in the correct order and render them.
+That's a six-line difference in the generator. The templates do not need to know - they receive posts in the correct order and render them.
 
 ## The takeaway (stop skimming and read this)
 

@@ -1,6 +1,8 @@
 ---
 title: 'Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)'
 date: '2026-05-26'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['making-of', 'ai', 'workflow']
 series: ['How I made it', 'Bold Opinions']
@@ -33,13 +35,13 @@ Acceptance criteria:
 2. <checkable thing>
 ```
 
-That's it. No system prompts. No "act as a senior engineer" preamble. The copilot does not need a persona; it needs context, a task, and constraints. The acceptance criteria are the most important part — they turn the output from "looks right" to "provably right."
+That's it. No system prompts. No "act as a senior engineer" preamble. The copilot does not need a persona; it needs context, a task, and constraints. The acceptance criteria are the most important part - they turn the output from "looks right" to "provably right."
 
 ## The review loop (read every diff)
 
 I read every diff. Every single one. If the copilot produced 200 lines and I needed 40, I kept the 40 and deleted the rest. If the copilot produced a pattern that was technically correct but did not match the rest of the codebase, I rewrote it.
 
-That is not a criticism of the copilot. It is the job. The copilot generates proposals; the engineer curates them. Anyone who skips the curation step is not engineering — they are editing.
+That is not a criticism of the copilot. It is the job. The copilot generates proposals; the engineer curates them. Anyone who skips the curation step is not engineering - they are editing.
 
 ## What I never delegated (the line in the sand)
 

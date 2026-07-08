@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Archive</title>
     <meta name="theme-color" content="#ff6b3d" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="description" content="Browse the complete dout.dev archive by month, topic, and series." />
     <meta name="author" content='Emiliano "pixu1980" Pisu' />
     <meta name="robots" content="index,follow" />
@@ -29,6 +31,36 @@
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
       }
+
+      (function () {
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (!meta) return;
+
+        function updateThemeColor() {
+          var root = document.documentElement;
+          var scheme = root.getAttribute('data-color-scheme') || '';
+          var isDark = scheme === 'dark' || (!scheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var h = root.style.getPropertyValue('--dout--accent-h').trim() || '16';
+          var s = root.style.getPropertyValue('--dout--accent-s').trim() || '95%';
+          var l = isDark ? '22%' : '58%';
+          meta.content = 'hsl(' + h + ', ' + s + ', ' + l + ')';
+        }
+
+        updateThemeColor();
+
+        var observer = new MutationObserver(function () {
+          updateThemeColor();
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-color-scheme', 'style'],
+        });
+
+        var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', updateThemeColor);
+        }
+      })();
     </script>
     <style>
       :root {
@@ -115,7 +147,14 @@
           <color-scheme-switcher></color-scheme-switcher>
           <display-preferences-popover></display-preferences-popover>
           <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-            <span aria-hidden="true">☰</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path
+                d="M2.5 5h15M2.5 10h15M2.5 15h15"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              ></path>
+            </svg>
           </button>
         </div>
       </div>
@@ -128,210 +167,220 @@
         <p>Browse everything by time, by topic, or by longer-running series.</p>
       </section>
 
-      <section data-archive-grid="" aria-label="Archive navigation">
-        <article data-card="" data-archive-panel="">
-          <h2>By month</h2>
-          <ul data-archive-links="" role="list">
-            <li>
-              <a href="/months/2026-07.html">July 2026</a>
-              <span>2 posts</span>
-            </li>
+      <section data-archive-bento="" aria-label="Archive navigation">
+        <article data-archive-bento-panel="" data-archive-bento-months="" data-bento-accent="sky">
+          <h2>Months</h2>
+          <div data-archive-tag-group="">
+            <a data-archive-tag="" href="/months/2026-07.html">
+              <span data-archive-tag-label="">July 2026</span>
+              <span data-archive-tag-count="">2</span>
+            </a>
 
-            <li>
-              <a href="/months/2026-06.html">June 2026</a>
-              <span>9 posts</span>
-            </li>
+            <a data-archive-tag="" href="/months/2026-06.html">
+              <span data-archive-tag-label="">June 2026</span>
+              <span data-archive-tag-count="">9</span>
+            </a>
 
-            <li>
-              <a href="/months/2026-05.html">May 2026</a>
-              <span>9 posts</span>
-            </li>
+            <a data-archive-tag="" href="/months/2026-05.html">
+              <span data-archive-tag-label="">May 2026</span>
+              <span data-archive-tag-count="">9</span>
+            </a>
 
-            <li>
-              <a href="/months/2026-04.html">April 2026</a>
-              <span>8 posts</span>
-            </li>
-          </ul>
+            <a data-archive-tag="" href="/months/2026-04.html">
+              <span data-archive-tag-label="">April 2026</span>
+              <span data-archive-tag-count="">8</span>
+            </a>
+          </div>
         </article>
 
-        <article data-card="" data-archive-panel="">
-          <h2>By topic</h2>
-          <ul data-archive-links="" role="list">
-            <li>
-              <a href="/tags/making-of.html">making-of</a>
-              <span>17 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/architecture.html">architecture</a>
-              <span>9 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/vanilla-js.html">vanilla-js</a>
-              <span>9 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/frontend.html">frontend</a>
-              <span>8 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/static-site.html">static-site</a>
-              <span>7 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/accessibility.html">accessibility</a>
-              <span>5 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/ai.html">ai</a>
-              <span>4 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/html.html">html</a>
-              <span>4 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/seo.html">seo</a>
-              <span>4 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/workflow.html">workflow</a>
-              <span>3 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/css.html">css</a>
-              <span>3 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/performance.html">performance</a>
-              <span>3 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/cms.html">cms</a>
-              <span>2 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/opengraph.html">opengraph</a>
-              <span>2 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/tooling.html">tooling</a>
-              <span>2 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/ci.html">ci</a>
-              <span>2 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/markdown.html">markdown</a>
-              <span>1 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/template-engine.html">template-engine</a>
-              <span>1 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/archives.html">archives</a>
-              <span>1 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/progressive-enhancement.html">progressive-enhancement</a>
-              <span>1 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/design-systems.html">design-systems</a>
-              <span>1 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/build-assets.html">build-assets</a>
-              <span>1 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/images.html">images</a>
-              <span>1 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/feeds.html">feeds</a>
-              <span>1 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/linting.html">linting</a>
-              <span>1 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/deployment.html">deployment</a>
-              <span>1 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/github-pages.html">github-pages</a>
-              <span>1 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/responsive-design.html">responsive-design</a>
-              <span>1 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/security.html">security</a>
-              <span>1 posts</span>
-            </li>
-
-            <li>
-              <a href="/tags/search.html">search</a>
-              <span>1 posts</span>
-            </li>
-          </ul>
+        <article data-archive-bento-panel="" data-archive-bento-authors="" data-bento-accent="rose">
+          <h2>Authors</h2>
+          <div data-archive-tag-group="">
+            <a data-archive-tag="" href="/authors/emiliano-pixu1980-pisu.html">
+              <span data-archive-tag-label="">Emiliano "pixu1980" Pisu</span>
+              <span data-archive-tag-count="">28</span>
+            </a>
+          </div>
         </article>
 
-        <article data-card="" data-archive-panel="">
-          <h2>By series</h2>
-          <ul data-archive-links="" role="list">
-            <li>
-              <a href="/series/how-i-made-it.html">How I made it</a>
-              <span>26 posts</span>
-            </li>
+        <article data-archive-bento-panel="" data-archive-bento-series="" data-bento-accent="mint">
+          <h2>Series</h2>
+          <div data-archive-tag-group="">
+            <a data-archive-tag="" href="/series/how-i-made-it.html">
+              <span data-archive-tag-label="">How I made it</span>
+              <span data-archive-tag-count="">25</span>
+            </a>
 
-            <li>
-              <a href="/series/bold-opinions.html">Bold Opinions</a>
-              <span>4 posts</span>
-            </li>
+            <a data-archive-tag="" href="/series/bold-opinions.html">
+              <span data-archive-tag-label="">Bold Opinions</span>
+              <span data-archive-tag-count="">4</span>
+            </a>
 
-            <li>
-              <a href="/series/pix-components.html">pix-components</a>
-              <span>3 posts</span>
-            </li>
+            <a data-archive-tag="" href="/series/pix-components.html">
+              <span data-archive-tag-label="">pix-components</span>
+              <span data-archive-tag-count="">3</span>
+            </a>
 
-            <li>
-              <a href="/series/the-future-of-software.html">The Future of Software</a>
-              <span>2 posts</span>
-            </li>
-          </ul>
+            <a data-archive-tag="" href="/series/the-future-of-software.html">
+              <span data-archive-tag-label="">The Future of Software</span>
+              <span data-archive-tag-count="">2</span>
+            </a>
+          </div>
+        </article>
+
+        <article data-archive-bento-panel="" data-archive-bento-topics="">
+          <h2>Topics</h2>
+          <div data-tag-list="">
+            <a data-tag="" href="/tags/making-of.html">
+              making-of
+              <span data-tag-count="">17</span>
+            </a>
+
+            <a data-tag="" href="/tags/architecture.html">
+              architecture
+              <span data-tag-count="">9</span>
+            </a>
+
+            <a data-tag="" href="/tags/vanilla-js.html">
+              vanilla-js
+              <span data-tag-count="">9</span>
+            </a>
+
+            <a data-tag="" href="/tags/frontend.html">
+              frontend
+              <span data-tag-count="">8</span>
+            </a>
+
+            <a data-tag="" href="/tags/static-site.html">
+              static-site
+              <span data-tag-count="">7</span>
+            </a>
+
+            <a data-tag="" href="/tags/accessibility.html">
+              accessibility
+              <span data-tag-count="">5</span>
+            </a>
+
+            <a data-tag="" href="/tags/ai.html">
+              ai
+              <span data-tag-count="">4</span>
+            </a>
+
+            <a data-tag="" href="/tags/html.html">
+              html
+              <span data-tag-count="">4</span>
+            </a>
+
+            <a data-tag="" href="/tags/seo.html">
+              seo
+              <span data-tag-count="">4</span>
+            </a>
+
+            <a data-tag="" href="/tags/workflow.html">
+              workflow
+              <span data-tag-count="">3</span>
+            </a>
+
+            <a data-tag="" href="/tags/css.html">
+              css
+              <span data-tag-count="">3</span>
+            </a>
+
+            <a data-tag="" href="/tags/performance.html">
+              performance
+              <span data-tag-count="">3</span>
+            </a>
+
+            <a data-tag="" href="/tags/cms.html">
+              cms
+              <span data-tag-count="">2</span>
+            </a>
+
+            <a data-tag="" href="/tags/opengraph.html">
+              opengraph
+              <span data-tag-count="">2</span>
+            </a>
+
+            <a data-tag="" href="/tags/tooling.html">
+              tooling
+              <span data-tag-count="">2</span>
+            </a>
+
+            <a data-tag="" href="/tags/ci.html">
+              ci
+              <span data-tag-count="">2</span>
+            </a>
+
+            <a data-tag="" href="/tags/markdown.html">
+              markdown
+              <span data-tag-count="">1</span>
+            </a>
+
+            <a data-tag="" href="/tags/template-engine.html">
+              template-engine
+              <span data-tag-count="">1</span>
+            </a>
+
+            <a data-tag="" href="/tags/archives.html">
+              archives
+              <span data-tag-count="">1</span>
+            </a>
+
+            <a data-tag="" href="/tags/progressive-enhancement.html">
+              progressive-enhancement
+              <span data-tag-count="">1</span>
+            </a>
+
+            <a data-tag="" href="/tags/design-systems.html">
+              design-systems
+              <span data-tag-count="">1</span>
+            </a>
+
+            <a data-tag="" href="/tags/build-assets.html">
+              build-assets
+              <span data-tag-count="">1</span>
+            </a>
+
+            <a data-tag="" href="/tags/images.html">
+              images
+              <span data-tag-count="">1</span>
+            </a>
+
+            <a data-tag="" href="/tags/feeds.html">
+              feeds
+              <span data-tag-count="">1</span>
+            </a>
+
+            <a data-tag="" href="/tags/linting.html">
+              linting
+              <span data-tag-count="">1</span>
+            </a>
+
+            <a data-tag="" href="/tags/deployment.html">
+              deployment
+              <span data-tag-count="">1</span>
+            </a>
+
+            <a data-tag="" href="/tags/github-pages.html">
+              github-pages
+              <span data-tag-count="">1</span>
+            </a>
+
+            <a data-tag="" href="/tags/responsive-design.html">
+              responsive-design
+              <span data-tag-count="">1</span>
+            </a>
+
+            <a data-tag="" href="/tags/security.html">
+              security
+              <span data-tag-count="">1</span>
+            </a>
+
+            <a data-tag="" href="/tags/search.html">
+              search
+              <span data-tag-count="">1</span>
+            </a>
+          </div>
         </article>
       </section>
     </main>

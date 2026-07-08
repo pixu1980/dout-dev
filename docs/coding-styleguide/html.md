@@ -288,7 +288,7 @@ This project uses a **custom template engine** with specific syntax. **NEVER use
 
 ### Template syntax
 
-This project uses a custom template engine. Never use Liquid/Jekyll `{% %}` syntax in templates — use the engine's tags instead.
+This project uses a custom template engine. Never use Liquid/Jekyll `{% %}` syntax in templates - use the engine's tags instead.
 
 Examples (custom engine):
 

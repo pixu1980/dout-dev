@@ -1,6 +1,8 @@
 ---
-title: 'WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That''s 80% of It)'
+title: 'WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That''s 80% of It)'
 date: '2026-06-02'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['accessibility', 'html', 'frontend']
 series: 'How I made it'
@@ -53,6 +55,6 @@ That is the single highest-impact accessibility fix for keyboard users. One link
 
 ## The takeaway
 
-WCAG 2.2 AA is not a checklist of ARIA attributes you need to add. It is a checklist of semantic HTML patterns you need to follow. Landmarks, heading order, skip-links — these three things cover more ground than any ARIA-based remediation.
+WCAG 2.2 AA is not a checklist of ARIA attributes you need to add. It is a checklist of semantic HTML patterns you need to follow. Landmarks, heading order, skip-links - these three things cover more ground than any ARIA-based remediation.
 
 Write good HTML first. Add ARIA only when the native element genuinely does not cover the case. That is the entire accessibility strategy for dout.dev, and it works.

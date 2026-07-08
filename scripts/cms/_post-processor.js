@@ -33,6 +33,25 @@ export function processMarkdown(filePath, raw) {
   // Determine cover dimensions if coverImage points to a local asset
   const coverSize = readCoverSize(data);
   const keywords = extractKeywords(`${title}\n${content}`);
+
+  // Normalize author: support separate `author` + `author_link` fields,
+  // or object {name, url}, or plain string (name only)
+  const DEFAULT_AUTHOR = { name: 'Emiliano "pixu1980" Pisu', url: 'https://pixu.dev' };
+  let author;
+  if (data.author && typeof data.author === 'object') {
+    author = {
+      name: data.author.name || DEFAULT_AUTHOR.name,
+      url: data.author.url || '',
+    };
+  } else if (typeof data.author === 'string' && data.author.trim()) {
+    author = {
+      name: data.author.trim(),
+      url: String(data.author_link || '').trim(),
+    };
+  } else {
+    author = { ...DEFAULT_AUTHOR };
+  }
+
   return {
     name: slug,
     title,
@@ -42,6 +61,7 @@ export function processMarkdown(filePath, raw) {
     tags: tagList,
     series: data.series || null,
     description: data.description ? String(data.description).trim() : null,
+    author,
     excerpt: buildExcerpt(articleContent.content),
     content: articleContent.content,
     toc: articleContent.toc,

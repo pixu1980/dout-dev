@@ -4,10 +4,10 @@
 
 ### In `src/styles/`
 
-- **[index.css](../src/styles/index.css)** — Entry point degli stili
+- **[index.css](../src/styles/index.css)** - Entry point degli stili
   - Importa tutti i layer CSS nell'ordine corretto
   - Costituisce il singolo punto di ingresso per Vite e i template HTML
-- **[layers/](../src/styles/layers/)** — Struttura modulare degli stili
+- **[layers/](../src/styles/layers/)** - Struttura modulare degli stili
   - `tokens.css` definisce custom properties, tema, type scale, spacing scale e radii
   - `reset.css`, `base.css`, `layout.css`, `components.css`, `utilities.css`, `overrides.css` separano i layer visivi
 
@@ -145,7 +145,7 @@ background: linear-gradient(
 );
 ```
 
-**Uso:** `.feature-card` — Componente card con sfondo sfumato 160°
+**Uso:** `.feature-card` - Componente card con sfondo sfumato 160°
 
 ---
 
@@ -393,6 +393,6 @@ Questo approccio mantiene la coerenza di colore attraverso i calcoli percentuali
 
 ⚠️ **Considerazioni:**
 
-- Pre code block ha colori hardcoded (#111014, #f5f2ee) — considerare la variabilizzazione se serve più flessibilità
-- Copy button ha rgba hardcoded — potrebbe beneficiare da custom property
-- Nessun SCSS — il progetto usa CSS puro per mantenere dipendenze minime (vanilla JS/CSS/HTML per il sito)
+- Pre code block ha colori hardcoded (#111014, #f5f2ee) - considerare la variabilizzazione se serve più flessibilità
+- Copy button ha rgba hardcoded - potrebbe beneficiare da custom property
+- Nessun SCSS - il progetto usa CSS puro per mantenere dipendenze minime (vanilla JS/CSS/HTML per il sito)

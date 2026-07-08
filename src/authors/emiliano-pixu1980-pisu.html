@@ -1,0 +1,1067 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Articles by Emiliano "pixu1980" Pisu</title>
+    <meta name="theme-color" content="#ff6b3d" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="description" content='Articles by Emiliano "pixu1980" Pisu.' />
+    <meta name="author" content='Emiliano "pixu1980" Pisu' />
+    <meta name="robots" content="index,follow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https:; font-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app; frame-src https://giscus.app https://codepen.io"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="dout:analytics-endpoint" content="" />
+    <meta name="dout:analytics-dashboard" content="/privacy.html" />
+    <link rel="canonical" href="https://dout.dev/authors/emiliano-pixu1980-pisu.html" />
+    <meta property="og:site_name" content="dout.dev" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="dout.dev" href="/feed.rss" />
+    <link rel="alternate" type="application/feed+json" title="dout.dev JSON Feed" href="/feed.json" />
+    <script>
+      document.documentElement.dataset.userPreferences = 'ready';
+      if (location.protocol === 'file:') {
+        document.documentElement.dataset.previewMode = 'file';
+      }
+
+      (function () {
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (!meta) return;
+
+        function updateThemeColor() {
+          var root = document.documentElement;
+          var scheme = root.getAttribute('data-color-scheme') || '';
+          var isDark = scheme === 'dark' || (!scheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var h = root.style.getPropertyValue('--dout--accent-h').trim() || '16';
+          var s = root.style.getPropertyValue('--dout--accent-s').trim() || '95%';
+          var l = isDark ? '22%' : '58%';
+          meta.content = 'hsl(' + h + ', ' + s + ', ' + l + ')';
+        }
+
+        updateThemeColor();
+
+        var observer = new MutationObserver(function () {
+          updateThemeColor();
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-color-scheme', 'style'],
+        });
+
+        var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', updateThemeColor);
+        }
+      })();
+    </script>
+    <style>
+      :root {
+        --dout--file-preview-border: #d9a441;
+        --dout--file-preview-bg: #fff3cd;
+        --dout--file-preview-text: #5c3b00;
+      }
+
+      [data-file-preview-warning] {
+        display: none;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--dout--file-preview-border);
+        background: var(--dout--file-preview-bg);
+        color: var(--dout--file-preview-text);
+        font:
+          600 0.95rem/1.4 'Avenir Next',
+          'Segoe UI Variable Text',
+          'Helvetica Neue',
+          sans-serif;
+      }
+
+      html[data-preview-mode='file'] [data-file-preview-warning] {
+        display: block;
+      }
+
+      [data-file-preview-warning] code {
+        font:
+          700 0.92em/1.2 'SFMono-Regular',
+          'SF Mono',
+          'Consolas',
+          'Liberation Mono',
+          monospace;
+      }
+    </style>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content='Articles by Emiliano "pixu1980" Pisu' />
+    <meta property="og:description" content='Articles by Emiliano "pixu1980" Pisu.' />
+    <meta property="og:url" content="https://dout.dev/authors/emiliano-pixu1980-pisu.html" />
+    <meta property="og:image" content="https://dout.dev/assets/og/pages/emiliano-pixu1980-pisu.png" />
+    <meta property="og:image:alt" content='Preview image for Articles by Emiliano "pixu1980" Pisu' />
+    <meta name="twitter:title" content='Articles by Emiliano "pixu1980" Pisu' />
+    <meta name="twitter:description" content='Articles by Emiliano "pixu1980" Pisu.' />
+    <meta name="twitter:image" content="https://dout.dev/assets/og/pages/emiliano-pixu1980-pisu.png" />
+    <meta name="twitter:image:alt" content='Preview image for Articles by Emiliano "pixu1980" Pisu' />
+
+    <link rel="stylesheet" href="/styles/index.css" />
+    <script type="module" src="/scripts/user-preferences-bootstrap.js"></script>
+  </head>
+  <body data-site-shell="">
+    <p data-file-preview-warning="" role="alert">
+      This page was opened from <code>file://</code>. Chromium blocks the local CSS and JS for this site in that mode.
+      Preview it over HTTP with <code>pnpm dev</code> or <code>pnpm preview</code>.
+    </p>
+    <a data-skip-link="" href="#main">Skip to main content</a>
+    <div id="page-announcer" data-visually-hidden="" aria-live="polite" aria-atomic="true"></div>
+    <header role="banner" data-site-header="">
+      <div data-container="" data-header-bar="">
+        <a data-brand="" href="/">
+          <span data-brand-mark="">dout.dev</span>
+          <span data-brand-tag="">Frontend notes, design systems, and the sharp edges of shipping.</span>
+        </a>
+        <nav id="mainmenu" data-main-nav="" aria-label="Main">
+          <ul data-main-links="" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div data-header-actions="">
+          <color-scheme-switcher></color-scheme-switcher>
+          <display-preferences-popover></display-preferences-popover>
+          <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path
+                d="M2.5 5h15M2.5 10h15M2.5 15h15"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main data-site-main="" id="main" tabindex="-1" aria-label="Main content">
+      <section data-page-hero="">
+        <p data-eyebrow="">Author</p>
+        <h1>Emiliano "pixu1980" Pisu</h1>
+
+        <p data-hero-lede=""><a href="https://pixu.dev" rel="author">https://pixu.dev</a></p>
+
+        <p>28 articles</p>
+      </section>
+
+      <section data-post-feed-shell="">
+        <header data-reveal="">
+          <p data-eyebrow="">Articles by Emiliano "pixu1980" Pisu</p>
+        </header>
+        <ul data-post-feed="" data-post-feed-variant="feature-list">
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-07-05">July 5, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-07-05-css-properties-hierarchy.html"
+                      >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">Context - The chaos of unorganized CSS</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/html.html">html</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/css.html">css</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-07-04">July 4, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-07-04-pragmatic-service-worker.html"
+                      >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The case against most service workers</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/performance.html">performance</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/vanilla-js.html">vanilla-js</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/architecture.html">architecture</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-06-30">June 30, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-06-30-honest-lazy-loading.html"
+                      >Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The two tools, in one paragraph</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/performance.html">performance</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/frontend.html">frontend</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/vanilla-js.html">vanilla-js</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-06-27">June 27, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-06-27-accessible-scrollspy-outline.html"
+                      >Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The feature and its trap</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/accessibility.html">accessibility</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/vanilla-js.html">vanilla-js</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/frontend.html">frontend</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-06-23">June 23, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-06-23-custom-element-syntax-highlight.html"
+                      >A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The stack I did not want</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/vanilla-js.html">vanilla-js</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/architecture.html">architecture</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/frontend.html">frontend</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-06-20">June 20, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-06-20-pi-dev-deepseek-v4-flash-daily-loop.html"
+                      >Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The headline numbers</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/ai.html">ai</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/workflow.html">workflow</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/tooling.html">tooling</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-06-16">June 16, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-06-16-client-side-search-static-dataset.html"
+                      >Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The constraint (no backend, no excuses)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/vanilla-js.html">vanilla-js</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/search.html">search</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/architecture.html">architecture</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/static-site.html">static-site</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-06-13">June 13, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-06-13-the-end-of-borrowed-abstractions.html"
+                      >The End of Borrowed Abstractions</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The reflex that shaped software</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/architecture.html">architecture</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/ai.html">ai</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/vanilla-js.html">vanilla-js</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/frontend.html">frontend</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/security.html">security</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-06-09">June 9, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-06-09-why-display-preferences-popover-exists.html"
+                      >Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">Accessibility is not one feature (it's ALL of them)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/accessibility.html">accessibility</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/frontend.html">frontend</a></li>
+
+                    <li>
+                      <a data-tag="" data-tag-size="small" href="/tags/responsive-design.html">responsive-design</a>
+                    </li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-06-06">June 6, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-06-06-how-pixhighlighter-is-built.html"
+                      >How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The contract stays plain (because HTML should be readable)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/vanilla-js.html">vanilla-js</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/frontend.html">frontend</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/architecture.html">architecture</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-06-02">June 2, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html"
+                      >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The unpopular opinion (brace yourself)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/accessibility.html">accessibility</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/html.html">html</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/frontend.html">frontend</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-05-30">May 30, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-05-30-modern-css-is-enough.html"
+                      >Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The short version (for the impatient)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/css.html">css</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/vanilla-js.html">vanilla-js</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/frontend.html">frontend</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-05-26">May 26, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-05-26-vibe-coding-with-rigor.html"
+                      >Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The term I am reclaiming (because "vibe coding" got a bad rap)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/ai.html">ai</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/workflow.html">workflow</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-05-23">May 23, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-05-23-ci-cd-around-github-pages.html"
+                      >CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The gap GitHub Pages leaves open (it's not that bad)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/ci.html">ci</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/deployment.html">deployment</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/github-pages.html">github-pages</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-05-19">May 19, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-05-19-quality-gate-lint-format-verify.html"
+                      >Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">Why the gate exists (because you will ship shit if you don't)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/tooling.html">tooling</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/linting.html">linting</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/ci.html">ci</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-05-16">May 16, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-05-16-seo-metadata-without-rituals.html"
+                      >SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The short version (TL;DR for the impatient)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/seo.html">seo</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/opengraph.html">opengraph</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/html.html">html</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-05-12">May 12, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-05-12-og-images-at-build-time.html"
+                      >OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The problem and the usual solutions (none of which I wanted)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/opengraph.html">opengraph</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/seo.html">seo</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/static-site.html">static-site</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-05-09">May 9, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html"
+                      >Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The distribution minimum (three files, that's it)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/feeds.html">feeds</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/seo.html">seo</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/static-site.html">static-site</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-05-05">May 5, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-05-05-build-assets-pipeline.html"
+                      >Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The goal (four non-negotiable constraints)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/build-assets.html">build-assets</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/performance.html">performance</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/images.html">images</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-05-02">May 2, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-05-02-design-tokens-before-pages.html"
+                      >Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The mistake I kept making (repeat after me: tokens first)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/design-systems.html">design-systems</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/css.html">css</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-04-28">April 28, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-04-28-progressive-enhancement-as-contract.html"
+                      >Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The contract (read this part)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li>
+                      <a data-tag="" data-tag-size="small" href="/tags/progressive-enhancement.html"
+                        >progressive-enhancement</a
+                      >
+                    </li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/accessibility.html">accessibility</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/vanilla-js.html">vanilla-js</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-04-25">April 25, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-04-25-archives-tags-months-series.html"
+                      >Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">Three ways to slice the same posts (because one axis is never enough)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/archives.html">archives</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/seo.html">seo</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/accessibility.html">accessibility</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-04-21">April 21, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-04-21-template-engine-and-template-structure.html"
+                      >Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">
+                  Three constraints that shaped the grammar (because constraints are good, actually)
+                </p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/template-engine.html">template-engine</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/html.html">html</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/architecture.html">architecture</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-04-18">April 18, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-04-18-custom-ssg-pipeline.html"
+                      >Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The pipeline, in one picture (because I know you're skimming)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/architecture.html">architecture</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/static-site.html">static-site</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/cms.html">cms</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-04-14">April 14, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-04-14-why-no-astro-eleventy-next.html"
+                      >Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The default answer and why I ignored it</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/architecture.html">architecture</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/static-site.html">static-site</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-04-11">April 11, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html"
+                      >Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The honest framing</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/ai.html">ai</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/workflow.html">workflow</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-04-07">April 7, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-04-07-cms-and-markdown-processing.html"
+                      >CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">The useful distinction</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/cms.html">cms</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/markdown.html">markdown</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/static-site.html">static-site</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li data-post-feed-item="" data-reveal="">
+            <article data-post-card="" data-post-card-variant="default">
+              <section data-post-card-content="">
+                <header data-post-card-header="">
+                  <p data-post-card-meta="">
+                    <time datetime="2026-04-04">April 4, 2026</time>
+                  </p>
+
+                  <h3 data-post-card-title="">
+                    <a href="/posts/2026-04-04-how-i-built-dout-dev.html"
+                      >How I Built dout.dev (and why I did not use a framework like a normal person)</a
+                    >
+                  </h3>
+                </header>
+
+                <p data-post-card-excerpt="">What the stack is, exactly (TL;DR: files + Node + blood)</p>
+
+                <footer data-post-card-footer="">
+                  <ul data-post-card-tags="" aria-label="Post topics">
+                    <li><a data-tag="" data-tag-size="small" href="/tags/making-of.html">making-of</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/architecture.html">architecture</a></li>
+
+                    <li><a data-tag="" data-tag-size="small" href="/tags/static-site.html">static-site</a></li>
+                  </ul>
+                </footer>
+              </section>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer role="contentinfo" data-site-footer="">
+      <div data-container="" data-footer-grid="">
+        <div data-footer-copy="">
+          <p data-footer-brand="">dout.dev</p>
+          <p>Independent writing about interfaces, systems, accessibility, and the texture of the modern web.</p>
+          <p>© 2026 dout.dev</p>
+        </div>
+        <nav data-footer-nav="" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/archive.html">Archive</a>
+          <a href="/search.html">Search</a>
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/feed.rss">RSS</a>
+          <a href="/feed.json">JSON Feed</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
+</html>

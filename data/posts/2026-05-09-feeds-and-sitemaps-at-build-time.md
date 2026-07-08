@@ -1,6 +1,8 @@
 ---
 title: 'Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)'
 date: '2026-05-09'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['making-of', 'feeds', 'seo', 'static-site']
 series: 'How I made it'
@@ -71,7 +73,7 @@ JSON Feed is worth shipping alongside RSS. The format is human-readable, trivial
 }
 ```
 
-The cost of adding it is an extra file and twenty lines of generator code. The benefit is any reader that speaks JSON Feed gets richer metadata — tags, summaries, author — without the ceremony of extension namespaces in XML. Twenty lines. Do it.
+The cost of adding it is an extra file and twenty lines of generator code. The benefit is any reader that speaks JSON Feed gets richer metadata - tags, summaries, author - without the ceremony of extension namespaces in XML. Twenty lines. Do it.
 
 ## Sitemap: every URL or no URL (pick one)
 

@@ -31,41 +31,55 @@
     <p>Browse everything by time, by topic, or by longer-running series.</p>
   </section>
 
-  <section data-archive-grid aria-label="Archive navigation">
-    <article data-card data-archive-panel>
-      <h2>By month</h2>
-      <ul data-archive-links role="list">
+  <section data-archive-bento aria-label="Archive navigation">
+    <article data-archive-bento-panel data-archive-bento-months data-bento-accent="sky">
+      <h2>Months</h2>
+      <div data-archive-tag-group>
         <for each="month in months">
-          <li>
-            <a href="/months/{{ month.slug }}.html">{{ month.name }}</a>
-            <span>{{ month.count }} posts</span>
-          </li>
+          <a data-archive-tag href="/months/{{ month.slug }}.html">
+            <span data-archive-tag-label>{{ month.name }}</span>
+            <span data-archive-tag-count>{{ month.count }}</span>
+          </a>
         </for>
-      </ul>
+      </div>
     </article>
 
-    <article data-card data-archive-panel>
-      <h2>By topic</h2>
-      <ul data-archive-links role="list">
-        <for each="tag in tags">
-          <li>
-            <a href="/tags/{{ tag.slug }}.html">{{ tag.name }}</a>
-            <span>{{ tag.count }} posts</span>
-          </li>
-        </for>
-      </ul>
-    </article>
+    <if condition="authors && authors.length">
+      <article data-archive-bento-panel data-archive-bento-authors data-bento-accent="rose">
+        <h2>Authors</h2>
+        <div data-archive-tag-group>
+          <for each="author in authors">
+            <a data-archive-tag href="/authors/{{ author.slug }}.html">
+              <span data-archive-tag-label>{{ author.name }}</span>
+              <span data-archive-tag-count>{{ author.count }}</span>
+            </a>
+          </for>
+        </div>
+      </article>
+    </if>
 
-    <article data-card data-archive-panel>
-      <h2>By series</h2>
-      <ul data-archive-links role="list">
+    <article data-archive-bento-panel data-archive-bento-series data-bento-accent="mint">
+      <h2>Series</h2>
+      <div data-archive-tag-group>
         <for each="entry in series">
-          <li>
-            <a href="/series/{{ entry.slug }}.html">{{ entry.title }}</a>
-            <span>{{ entry.count }} posts</span>
-          </li>
+          <a data-archive-tag href="/series/{{ entry.slug }}.html">
+            <span data-archive-tag-label>{{ entry.title }}</span>
+            <span data-archive-tag-count>{{ entry.count }}</span>
+          </a>
         </for>
-      </ul>
+      </div>
+    </article>
+
+    <article data-archive-bento-panel data-archive-bento-topics>
+      <h2>Topics</h2>
+      <div data-tag-list>
+        <for each="tag in tags">
+          <a data-tag href="/tags/{{ tag.slug }}.html">
+            {{ tag.name }}
+            <span data-tag-count>{{ tag.count }}</span>
+          </a>
+        </for>
+      </div>
     </article>
   </section>
 </block>

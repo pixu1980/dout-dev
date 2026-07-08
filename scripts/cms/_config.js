@@ -120,6 +120,7 @@ export const defaultConfig = {
   tagsOutputDir: 'src/tags',
   monthsOutputDir: 'src/months',
   seriesOutputDir: 'src/series',
+  authorsOutputDir: 'src/authors',
   site: buildSiteMeta(),
   PAGE_SIZE: 10,
   SITE_META: buildSiteMeta(),

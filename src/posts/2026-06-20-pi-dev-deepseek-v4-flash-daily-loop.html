@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing</title>
     <meta name="theme-color" content="#ff6b3d" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="description" content="The headline numbers" />
     <meta name="author" content='Emiliano "pixu1980" Pisu' />
     <meta name="robots" content="index,follow" />
@@ -29,6 +31,36 @@
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
       }
+
+      (function () {
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (!meta) return;
+
+        function updateThemeColor() {
+          var root = document.documentElement;
+          var scheme = root.getAttribute('data-color-scheme') || '';
+          var isDark = scheme === 'dark' || (!scheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var h = root.style.getPropertyValue('--dout--accent-h').trim() || '16';
+          var s = root.style.getPropertyValue('--dout--accent-s').trim() || '95%';
+          var l = isDark ? '22%' : '58%';
+          meta.content = 'hsl(' + h + ', ' + s + ', ' + l + ')';
+        }
+
+        updateThemeColor();
+
+        var observer = new MutationObserver(function () {
+          updateThemeColor();
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-color-scheme', 'style'],
+        });
+
+        var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', updateThemeColor);
+        }
+      })();
     </script>
     <style>
       :root {
@@ -103,12 +135,12 @@
         "author": {
           "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url": "https://dout.dev"
+          "url": "https://pixu.dev"
         },
         "publisher": {
           "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url": "https://dout.dev"
+          "url": "https://pixu.dev"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -163,7 +195,14 @@
           <color-scheme-switcher></color-scheme-switcher>
           <display-preferences-popover></display-preferences-popover>
           <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-            <span aria-hidden="true">☰</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path
+                d="M2.5 5h15M2.5 10h15M2.5 15h15"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              ></path>
+            </svg>
           </button>
         </div>
       </div>
@@ -177,6 +216,13 @@
             <time datetime="2026-06-20" itemprop="datePublished"> June 20, 2026 </time>
             <span data-post-divider="">/</span>
             <a href="/archive.html">Archive</a>
+
+            <span data-post-divider="">/</span>
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+              <a href="https://pixu.dev" itemprop="url" rel="author"
+                ><span itemprop="name">Emiliano "pixu1980" Pisu</span></a
+              >
+            </span>
           </p>
           <h1 itemprop="headline" tabindex="0">
             Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing
@@ -275,14 +321,14 @@
                 rel="noopener"
                 >github.com/earendil-works/pi</a
               >
-              is MIT-licensed, and everything — the core loop, the tool harness, the MCP bridge, the provider
-              abstraction — is readable, forkable, and hackable. You can strip it down, patch it, or build your own
+              is MIT-licensed, and everything - the core loop, the tool harness, the MCP bridge, the provider
+              abstraction - is readable, forkable, and hackable. You can strip it down, patch it, or build your own
               distribution. There is no proprietary layer, no closed-source enterprise edition, no telemetry-gated
               feature. The CLI, the TUI, the extension system, and the skill loader are all there in plain TypeScript.
             </p>
             <p>
               The consequence is that the extension API is unusually clean. Pi exposes a small, well-documented set of
-              primitives — tools, MCP servers, skills, prompt templates, and themes — and you wire them together with a
+              primitives - tools, MCP servers, skills, prompt templates, and themes - and you wire them together with a
               <code>package.json</code> and a single <code>main</code> file. The package manager (<code
                 >pi packages</code
               >) discovers, installs, and updates extensions from
@@ -309,8 +355,8 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 rel="noopener"
                 >github.com/pixu1980/pi-coding-agent-extensions</a
-              >, and the entire implementation — registering a custom tool, hooking into the prompt lifecycle, handling
-              tab-completion in the TUI — fits in a handful of files. It is a good example of how little ceremony is
+              >, and the entire implementation - registering a custom tool, hooking into the prompt lifecycle, handling
+              tab-completion in the TUI - fits in a handful of files. It is a good example of how little ceremony is
               involved: you write a TypeScript class, export it, publish it, and it works. No build step beyond
               TypeScript, no configuration wizard, no permission manifest.
             </p>
@@ -337,7 +383,7 @@
             <p>
               The interesting design choice is the MoE split. 284B sounds enormous, but only 13B parameters run on any
               given token, which is what gives Flash its cost and latency profile. The model is not a "small model that
-              tries to look big" — it is a properly sparse MoE that pays a small compute bill per token while still
+              tries to look big" - it is a properly sparse MoE that pays a small compute bill per token while still
               benefiting from a much larger knowledge base when routing. DeepSeek also uses a sparse attention scheme
               (CSA / HCA) to keep the 1M-context long-tail cheap, which is exactly what an agent loop needs.
             </p>
@@ -434,14 +480,14 @@
             </p>
             <p>
               <strong>Claude Code</strong> is a genuinely good tool harness owned by Anthropic, which means it exists to
-              sell Anthropic models. You are not the customer of the tool — you are the inventory. The pricing is
+              sell Anthropic models. You are not the customer of the tool - you are the inventory. The pricing is
               opaque, the model access is gated, and the open-source contributions are decorative. When Anthropic raises
-              Opus pricing next quarter — and it will — your loop cost triples and you have no alternative provider to
+              Opus pricing next quarter - and it will - your loop cost triples and you have no alternative provider to
               switch to within the same harness. That is not a product. That is <strong>addiction by design</strong>:
               low-dose introductory offer, price escalates after the habit forms.
             </p>
             <p>
-              <strong>ChatGPT, GitHub Copilot, Codex</strong> — all proprietary. All trained on public data the
+              <strong>ChatGPT, GitHub Copilot, Codex</strong> - all proprietary. All trained on public data the
               companies would never let you train on. All designed to make you dependent on a closed API that can change
               terms, pricing, or access at any time with zero recourse. The open-weight models from DeepSeek, Mistral,
               and Llama are structurally more aligned with your interest as a developer: you can run them, fork them,
@@ -454,7 +500,7 @@
               <strong>"AI you control"</strong> as a property of the software.
             </p>
             <p>
-              Pi is the only one of these that is open source at its core — MIT-licensed from day one, with a package
+              Pi is the only one of these that is open source at its core - MIT-licensed from day one, with a package
               registry where anyone can publish an extension without a review board or a commercial agreement. My
               <code>@pixu1980/pi-path-picker</code> is a small example, but the fact that I can write it, publish it,
               and use it without asking anyone is the entire difference between a platform and a prison.
@@ -467,8 +513,8 @@
               runs it.
             </p>
             <p>
-              DeepSeek V4 Flash reads the Pi extension documentation — a few pages of TypeScript interfaces and a
-              <code>package.json</code> schema — and generates working extensions on the first try. I have done it. You
+              DeepSeek V4 Flash reads the Pi extension documentation - a few pages of TypeScript interfaces and a
+              <code>package.json</code> schema - and generates working extensions on the first try. I have done it. You
               describe what you want in plain English, the model reads the API docs from the repository, and it produces
               a complete extension: tool registration, prompt hooks, TUI integration, the whole thing. One prompt.
             </p>
@@ -543,7 +589,7 @@
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  >pi.dev — official site</a
+                  >pi.dev - official site</a
                 >
               </li>
               <li data-reveal="">
@@ -570,7 +616,7 @@
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  >DeepSeek API — Models and pricing</a
+                  >DeepSeek API - Models and pricing</a
                 >
               </li>
               <li data-reveal="">
@@ -579,7 +625,7 @@
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  >DeepSeek API — Integrate with Pi</a
+                  >DeepSeek API - Integrate with Pi</a
                 >
               </li>
               <li data-reveal="">
@@ -597,7 +643,7 @@
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  >Hugging Face — DeepSeek V4 blog post</a
+                  >Hugging Face - DeepSeek V4 blog post</a
                 >
               </li>
               <li data-reveal="">
@@ -606,7 +652,7 @@
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  >HokAI — DeepSeek V4 Flash model profile</a
+                  >HokAI - DeepSeek V4 Flash model profile</a
                 >
               </li>
               <li data-reveal="">
@@ -615,7 +661,7 @@
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  >Codersera — DeepSeek V4 Flash deep dive</a
+                  >Codersera - DeepSeek V4 Flash deep dive</a
                 >
               </li>
               <li data-reveal="">
@@ -624,7 +670,7 @@
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  >RunLocalAI — DeepSeek V4 Flash model profile</a
+                  >RunLocalAI - DeepSeek V4 Flash model profile</a
                 >
               </li>
               <li data-reveal="">
@@ -651,7 +697,7 @@
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  >Pi Review — Pick Right</a
+                  >Pi Review - Pick Right</a
                 >
               </li>
               <li data-reveal="">
@@ -660,7 +706,7 @@
                   target="_blank"
                   referrerpolicy="strict-origin-when-cross-origin"
                   rel="noopener"
-                  >Xianpeng Shen — Writing an Article for Twenty-Four Cents: Pi + DeepSeek</a
+                  >Xianpeng Shen - Writing an Article for Twenty-Four Cents: Pi + DeepSeek</a
                 >
               </li>
             </ul>

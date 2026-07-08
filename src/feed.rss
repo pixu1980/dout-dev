@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>dout.dev — Latest Posts</title>
+    <title>dout.dev - Latest Posts</title>
     <link>https://dout.dev/</link>
     <description>Vanilla-first static blog with WCAG 2.2 AA accessibility</description>
     <atom:link href="https://dout.dev/feed.rss" rel="self" type="application/rss+xml" />
@@ -12,7 +12,7 @@
       <link>https://dout.dev/posts/2026-07-05-css-properties-hierarchy.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2026-07-05-css-properties-hierarchy.html</guid>
       <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
-      <description>I&apos;ve been writing CSS since before border-radius was a thing, back when we used -moz-border-radius and prayed everything to work well.</description>
+      <description>Context - The chaos of unorganized CSS</description>
     </item>
     <item>
       <title>A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</title>
@@ -78,14 +78,14 @@
       <description>The contract stays plain (because HTML should be readable)</description>
     </item>
     <item>
-      <title>WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That&apos;s 80% of It)</title>
+      <title>WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That&apos;s 80% of It)</title>
       <link>https://dout.dev/posts/2026-06-02-wcag-22-aa-without-aria-spam.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2026-06-02-wcag-22-aa-without-aria-spam.html</guid>
       <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
       <description>The unpopular opinion (brace yourself)</description>
     </item>
     <item>
-      <title>Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</title>
+      <title>Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)</title>
       <link>https://dout.dev/posts/2026-05-30-modern-css-is-enough.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2026-05-30-modern-css-is-enough.html</guid>
       <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>

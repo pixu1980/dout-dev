@@ -1,0 +1,46 @@
+<extends src="../layouts/base.html" />
+
+<block name="head">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:url" content="{{ canonicalUrl }}" />
+  <meta property="og:image" content="{{ ogImageUrl }}" />
+  <meta property="og:image:alt" content="Preview image for {{ title }}" />
+  <meta name="twitter:title" content="{{ title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:image" content="{{ ogImageUrl }}" />
+  <meta name="twitter:image:alt" content="Preview image for {{ title }}" />
+</block>
+
+<block name="content">
+  <section data-page-hero>
+    <p data-eyebrow>Author</p>
+    <h1>{{ author.name }}</h1>
+    <if condition="author.url">
+      <p data-hero-lede><a href="{{ author.url }}" rel="author">{{ author.url }}</a></p>
+    </if>
+    <p>{{ author.count }} {{ author.count == 1 ? 'article' : 'articles' }}</p>
+  </section>
+
+  <if condition="posts && posts.length">
+    <section data-post-feed-shell>
+      <header data-reveal>
+        <p data-eyebrow>Articles by {{ author.name }}</p>
+      </header>
+      <ul data-post-feed data-post-feed-variant="feature-list">
+        <for each="p in posts">
+          <li data-post-feed-item data-reveal>
+            <include
+              src="../components/post-card.html"
+              data='{"post": {{ p | json | raw }}, "headingLevel": "3", "showCover": false, "showExcerpt": true, "showTags": true}'
+            ></include>
+          </li>
+        </for>
+      </ul>
+    </section>
+  </if>
+  <if condition="!posts || posts.length == 0">
+    <p>No articles found.</p>
+  </if>
+</block>

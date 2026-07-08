@@ -1,6 +1,8 @@
 ---
 title: 'Pi and DeepSeek V4 Flash: The Daily Coding Loop That Costs Almost Nothing'
 date: '2026-06-20'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['ai', 'workflow', 'tooling', 'making-of']
 series: ['Bold Opinions', 'The Future of Software']
@@ -29,11 +31,11 @@ Pi ships with exactly four core tools: `read`, `write`, `edit`, and `bash`. Thre
 
 That last point is the one most people miss. Pi does not remove safety. Pi removes **friction**. You still review every change. You still see the exact command before it runs. You still decide when the loop is done. What you give up is a layer of confirmation dialogs that, in my experience, do not actually catch the kind of mistakes that matter and mostly just slow down the parts of the work that are already correct.
 
-And the entire thing is **open source at its core**. The repository at [github.com/earendil-works/pi](https://github.com/earendil-works/pi) is MIT-licensed, and everything — the core loop, the tool harness, the MCP bridge, the provider abstraction — is readable, forkable, and hackable. You can strip it down, patch it, or build your own distribution. There is no proprietary layer, no closed-source enterprise edition, no telemetry-gated feature. The CLI, the TUI, the extension system, and the skill loader are all there in plain TypeScript.
+And the entire thing is **open source at its core**. The repository at [github.com/earendil-works/pi](https://github.com/earendil-works/pi) is MIT-licensed, and everything - the core loop, the tool harness, the MCP bridge, the provider abstraction - is readable, forkable, and hackable. You can strip it down, patch it, or build your own distribution. There is no proprietary layer, no closed-source enterprise edition, no telemetry-gated feature. The CLI, the TUI, the extension system, and the skill loader are all there in plain TypeScript.
 
-The consequence is that the extension API is unusually clean. Pi exposes a small, well-documented set of primitives — tools, MCP servers, skills, prompt templates, and themes — and you wire them together with a `package.json` and a single `main` file. The package manager (`pi packages`) discovers, installs, and updates extensions from [pi.dev/packages](https://pi.dev/packages/), where anyone can publish.
+The consequence is that the extension API is unusually clean. Pi exposes a small, well-documented set of primitives - tools, MCP servers, skills, prompt templates, and themes - and you wire them together with a `package.json` and a single `main` file. The package manager (`pi packages`) discovers, installs, and updates extensions from [pi.dev/packages](https://pi.dev/packages/), where anyone can publish.
 
-I maintain a small extension myself: [`@pixu1980/pi-path-picker`](https://pi.dev/packages/@pixu1980/pi-path-picker), a tool that autocompletes file paths inside the agent prompt. The source lives at [github.com/pixu1980/pi-coding-agent-extensions](https://github.com/pixu1980/pi-coding-agent-extensions), and the entire implementation — registering a custom tool, hooking into the prompt lifecycle, handling tab-completion in the TUI — fits in a handful of files. It is a good example of how little ceremony is involved: you write a TypeScript class, export it, publish it, and it works. No build step beyond TypeScript, no configuration wizard, no permission manifest.
+I maintain a small extension myself: [`@pixu1980/pi-path-picker`](https://pi.dev/packages/@pixu1980/pi-path-picker), a tool that autocompletes file paths inside the agent prompt. The source lives at [github.com/pixu1980/pi-coding-agent-extensions](https://github.com/pixu1980/pi-coding-agent-extensions), and the entire implementation - registering a custom tool, hooking into the prompt lifecycle, handling tab-completion in the TUI - fits in a handful of files. It is a good example of how little ceremony is involved: you write a TypeScript class, export it, publish it, and it works. No build step beyond TypeScript, no configuration wizard, no permission manifest.
 
 The other thing Pi gets right is the provider model. It supports 20+ providers out of the box, including Anthropic, OpenAI, Google, xAI, Mistral, Groq, OpenRouter, and DeepSeek. DeepSeek is a first-class native provider because it speaks the OpenAI-compatible API, and you can switch models mid-session. The configuration lives in `~/.pi/agent/models.json` and you can register as many models as you want.
 
@@ -43,7 +45,7 @@ I have seven models registered at any given time. I switch between them dependin
 
 DeepSeek V4 launched in preview on **April 24, 2026**, in two variants. V4-Pro is the flagship: 1.6T total parameters, 49B active, around $1.74 per million input tokens and $3.48 per million output tokens. V4-Flash is the cost-optimized tier: 284B total, **13B active per token**, 1M context window, 2,500 concurrent requests, and the pricing I quoted above.
 
-The interesting design choice is the MoE split. 284B sounds enormous, but only 13B parameters run on any given token, which is what gives Flash its cost and latency profile. The model is not a "small model that tries to look big" — it is a properly sparse MoE that pays a small compute bill per token while still benefiting from a much larger knowledge base when routing. DeepSeek also uses a sparse attention scheme (CSA / HCA) to keep the 1M-context long-tail cheap, which is exactly what an agent loop needs.
+The interesting design choice is the MoE split. 284B sounds enormous, but only 13B parameters run on any given token, which is what gives Flash its cost and latency profile. The model is not a "small model that tries to look big" - it is a properly sparse MoE that pays a small compute bill per token while still benefiting from a much larger knowledge base when routing. DeepSeek also uses a sparse attention scheme (CSA / HCA) to keep the 1M-context long-tail cheap, which is exactly what an agent loop needs.
 
 On coding benchmarks, V4-Flash lands around **79% on SWE-bench Verified** and **96% on HumanEval** in third-party reporting, with a gap of about 1.6 percentage points to V4-Pro on SWE-bench Verified and around 1.9 points on LiveCodeBench. That is not the kind of gap I care about for the kind of work I do with it.
 
@@ -85,19 +87,19 @@ Let me be direct, because the marketing is designed to obscure this.
 
 **Cursor** is a VS Code fork with proprietary extensions glued to someone else's APIs. You do not own the loop, you do not own the integrations, and you pay a per-month subscription that rises without your consent. The model is venture-funded price suppression: lose money on every seat, make it up on the locked-in base when the music stops. The usual playbook.
 
-**Claude Code** is a genuinely good tool harness owned by Anthropic, which means it exists to sell Anthropic models. You are not the customer of the tool — you are the inventory. The pricing is opaque, the model access is gated, and the open-source contributions are decorative. When Anthropic raises Opus pricing next quarter — and it will — your loop cost triples and you have no alternative provider to switch to within the same harness. That is not a product. That is **addiction by design**: low-dose introductory offer, price escalates after the habit forms.
+**Claude Code** is a genuinely good tool harness owned by Anthropic, which means it exists to sell Anthropic models. You are not the customer of the tool - you are the inventory. The pricing is opaque, the model access is gated, and the open-source contributions are decorative. When Anthropic raises Opus pricing next quarter - and it will - your loop cost triples and you have no alternative provider to switch to within the same harness. That is not a product. That is **addiction by design**: low-dose introductory offer, price escalates after the habit forms.
 
-**ChatGPT, GitHub Copilot, Codex** — all proprietary. All trained on public data the companies would never let you train on. All designed to make you dependent on a closed API that can change terms, pricing, or access at any time with zero recourse. The open-weight models from DeepSeek, Mistral, and Llama are structurally more aligned with your interest as a developer: you can run them, fork them, audit them, and switch between them without asking for permission.
+**ChatGPT, GitHub Copilot, Codex** - all proprietary. All trained on public data the companies would never let you train on. All designed to make you dependent on a closed API that can change terms, pricing, or access at any time with zero recourse. The open-weight models from DeepSeek, Mistral, and Llama are structurally more aligned with your interest as a developer: you can run them, fork them, audit them, and switch between them without asking for permission.
 
 **OpenCode** and the emerging ecosystem of open-agent toolkits are moving in the right direction: tools that assume you want transparency, portability, and the freedom to change the model without changing the harness. That is the principle that matters. Not "AI for everyone" as a slogan, but **"AI you control"** as a property of the software.
 
-Pi is the only one of these that is open source at its core — MIT-licensed from day one, with a package registry where anyone can publish an extension without a review board or a commercial agreement. My `@pixu1980/pi-path-picker` is a small example, but the fact that I can write it, publish it, and use it without asking anyone is the entire difference between a platform and a prison.
+Pi is the only one of these that is open source at its core - MIT-licensed from day one, with a package registry where anyone can publish an extension without a review board or a commercial agreement. My `@pixu1980/pi-path-picker` is a small example, but the fact that I can write it, publish it, and use it without asking anyone is the entire difference between a platform and a prison.
 
 ### The extension potential is genuinely infinite
 
 The most surreal part of this setup is that the model itself can write extensions for the harness that runs it.
 
-DeepSeek V4 Flash reads the Pi extension documentation — a few pages of TypeScript interfaces and a `package.json` schema — and generates working extensions on the first try. I have done it. You describe what you want in plain English, the model reads the API docs from the repository, and it produces a complete extension: tool registration, prompt hooks, TUI integration, the whole thing. One prompt.
+DeepSeek V4 Flash reads the Pi extension documentation - a few pages of TypeScript interfaces and a `package.json` schema - and generates working extensions on the first try. I have done it. You describe what you want in plain English, the model reads the API docs from the repository, and it produces a complete extension: tool registration, prompt hooks, TUI integration, the whole thing. One prompt.
 
 That is the loop squared. You use an open-source agent to call an open-weight model, and the model extends the agent while you watch. The harness grows its own capabilities. There is no approval queue, no marketplace gatekeeper, no SDK version lock. You just describe, generate, publish, and use.
 
@@ -129,17 +131,17 @@ That is the new default. I am not going back.
 
 ## Sources
 
-* [pi.dev — official site](https://pi.dev/)
+* [pi.dev - official site](https://pi.dev/)
 * [earendil-works/pi on GitHub](https://github.com/earendil-works/pi)
 * [DeepSeek V4 Preview release notes (April 24, 2026)](https://api-docs.deepseek.com/news/news260424)
-* [DeepSeek API — Models and pricing](https://api-docs.deepseek.com/quick_start/pricing)
-* [DeepSeek API — Integrate with Pi](https://api-docs.deepseek.com/quick_start/agent_integrations/pi_mono)
+* [DeepSeek API - Models and pricing](https://api-docs.deepseek.com/quick_start/pricing)
+* [DeepSeek API - Integrate with Pi](https://api-docs.deepseek.com/quick_start/agent_integrations/pi_mono)
 * [DeepSeek V4 Flash on Hugging Face](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash)
-* [Hugging Face — DeepSeek V4 blog post](https://huggingface.co/blog/deepseekv4)
-* [HokAI — DeepSeek V4 Flash model profile](https://hokai.io/hub/models/deepseek-v4-flash)
-* [Codersera — DeepSeek V4 Flash deep dive](https://codersera.com/blog/deepseek-v4-flash-deep-dive/amp/)
-* [RunLocalAI — DeepSeek V4 Flash model profile](https://www.runlocalai.co/models/deepseek-v4-flash)
+* [Hugging Face - DeepSeek V4 blog post](https://huggingface.co/blog/deepseekv4)
+* [HokAI - DeepSeek V4 Flash model profile](https://hokai.io/hub/models/deepseek-v4-flash)
+* [Codersera - DeepSeek V4 Flash deep dive](https://codersera.com/blog/deepseek-v4-flash-deep-dive/amp/)
+* [RunLocalAI - DeepSeek V4 Flash model profile](https://www.runlocalai.co/models/deepseek-v4-flash)
 * [rohaquinlop/pi-deepseek-cache on GitHub](https://github.com/rohaquinlop/pi-deepseek-cache)
 * [thetrebor/pi-reasonix on GitHub](https://github.com/TheTrebor/pi-reasonix)
-* [Pi Review — Pick Right](https://pick-right.com/tools/pi/)
-* [Xianpeng Shen — Writing an Article for Twenty-Four Cents: Pi + DeepSeek](https://shenxianpeng.github.io/en/posts/2026/pi-deepseek/)
+* [Pi Review - Pick Right](https://pick-right.com/tools/pi/)
+* [Xianpeng Shen - Writing an Article for Twenty-Four Cents: Pi + DeepSeek](https://shenxianpeng.github.io/en/posts/2026/pi-deepseek/)

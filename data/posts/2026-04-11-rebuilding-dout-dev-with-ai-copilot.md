@@ -1,6 +1,8 @@
 ---
 title: 'Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread'
 date: '2026-04-11'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['making-of', 'ai', 'workflow']
 series: 'How I made it'
@@ -58,6 +60,6 @@ The more honest measure is that I FINISHED. The previous rewrites stalled around
 
 ## What actually changed
 
-Writing posts is no longer a project. The pipeline turns markdown into a pre-rendered, accessible, fast page with feeds, sitemap, OG image, and comments — in the time it takes to run one build command. That's what nineteen milestones of engineering bought.
+Writing posts is no longer a project. The pipeline turns markdown into a pre-rendered, accessible, fast page with feeds, sitemap, OG image, and comments - in the time it takes to run one build command. That's what nineteen milestones of engineering bought.
 
 The rest of this series walks through each layer: what it does, why it's shaped that way, and where the tradeoffs landed. Read it or don't. I wrote it either way.

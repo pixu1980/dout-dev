@@ -628,7 +628,7 @@ export function renderIssues(validationResult, options = {}) {
       .map((issue) => {
         const command = issue.severity === 'error' ? 'error' : 'warning';
         const title = escapeCiText(schemaLabel(issue.schema));
-        const message = escapeCiText(`${urlLabel} — ${issue.message}`);
+        const message = escapeCiText(`${urlLabel} - ${issue.message}`);
         return `::${command} title=${title}::${message}`;
       })
       .join('\n');

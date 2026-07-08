@@ -1,4 +1,4 @@
-# M3 — Implementation Report (COMPLETED)
+# M3 - Implementation Report (COMPLETED)
 
 This report summarizes what was implemented for M3 (Layouts & fundamental components), key decisions, and follow‑ups. Status: COMPLETED (2025‑09‑07).
 
@@ -23,7 +23,7 @@ This report summarizes what was implemented for M3 (Layouts & fundamental compon
 ## Quality gates
 
 - Build: CMS generates posts/tags/months/series successfully.
-- Validators: HTML, Links, Structure — all green.
+- Validators: HTML, Links, Structure - all green.
 - Accessibility: no critical issues; 6 warnings left on a few pages.
 - Lint: no errors (Biome) after fixes; warnings tracked for future refactors.
 - Tests: 189/189 passing.

@@ -1,6 +1,8 @@
 ---
 title: 'Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)'
 date: '2026-04-18'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['making-of', 'architecture', 'static-site', 'cms']
 series: 'How I made it'
@@ -54,7 +56,7 @@ The final stage produces everything that is derived but not a page:
 - `src/data/*.json` for the client-side search index;
 - `src/assets/og/posts/*.png` for social previews.
 
-OG images are worth their own post; they are rendered server-side at build time from an SVG template and rasterized with Sharp. That one decision — "generate them at build, never at runtime" — eliminated an entire category of infrastructure I did not want to maintain. No runtime image service. No cloud function. No fucking around.
+OG images are worth their own post; they are rendered server-side at build time from an SVG template and rasterized with Sharp. That one decision - "generate them at build, never at runtime" - eliminated an entire category of infrastructure I did not want to maintain. No runtime image service. No cloud function. No fucking around.
 
 ## Why the pipeline stays small (the discipline part)
 
@@ -70,4 +72,4 @@ The result is a build that runs in under a few seconds on a cold cache and is ch
 
 ## What's next
 
-The next post in this series goes into how `extends`, `block`, `include`, and the expression grammar work without `eval` — and why the grammar is close to HTML instead of curly-brace syntax. Stay tuned, or don't. I'm writing it either way.
+The next post in this series goes into how `extends`, `block`, `include`, and the expression grammar work without `eval` - and why the grammar is close to HTML instead of curly-brace syntax. Stay tuned, or don't. I'm writing it either way.

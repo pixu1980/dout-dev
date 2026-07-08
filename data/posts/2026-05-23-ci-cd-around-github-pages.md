@@ -1,6 +1,8 @@
 ---
 title: 'CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)'
 date: '2026-05-23'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['making-of', 'ci', 'deployment', 'github-pages']
 series: 'How I made it'
@@ -16,7 +18,7 @@ GitHub Pages is excellent for serving a static site. It is also, by default, mis
 
 ## The production pipeline (boring, stable, working)
 
-Production deploys run from `main` or from `workflow_dispatch`. The workflow has two jobs — build and deploy — and produces a site at `https://dout.dev`.
+Production deploys run from `main` or from `workflow_dispatch`. The workflow has two jobs - build and deploy - and produces a site at `https://dout.dev`.
 
 ```yaml
 name: Deploy Pages
@@ -74,13 +76,13 @@ jobs:
           retention-days: 14
 ```
 
-The artifact is named with the PR number, so CI history stays navigable. Retention is two weeks — long enough to review, short enough to not accumulate forever.
+The artifact is named with the PR number, so CI history stays navigable. Retention is two weeks - long enough to review, short enough to not accumulate forever.
 
 ## Rollback in one minute (the feature you hope you never need)
 
 This is the feature I use more often than I expected.
 
-When a bad deploy reaches production — wrong content, broken CSP, accidentally unpublished post — the recovery path is:
+When a bad deploy reaches production - wrong content, broken CSP, accidentally unpublished post - the recovery path is:
 
 1. Go to Actions → Deploy Pages in the repo.
 2. Find the last known-good run.
@@ -109,6 +111,6 @@ The Pages environment in the repo settings also tracks "Active deployment" and s
 
 ## The takeaway
 
-GitHub Pages with GitHub Actions is a complete deploy pipeline, including previews and rollback, if you accept that previews come as artifacts rather than live URLs. For most personal projects that is the right trade-off — no third-party service, no extra auth, and the same UI you are already using for the repo.
+GitHub Pages with GitHub Actions is a complete deploy pipeline, including previews and rollback, if you accept that previews come as artifacts rather than live URLs. For most personal projects that is the right trade-off - no third-party service, no extra auth, and the same UI you are already using for the repo.
 
 If your blog is not on GitHub Pages with a proper deploy pipeline in 2026, what are you even doing?

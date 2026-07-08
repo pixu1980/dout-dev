@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>dout.dev — build-assets</title>
+    <title>dout.dev - build-assets</title>
     <link>https://dout.dev/tags/build-assets/</link>
     <description>RSS feed for posts tagged with build-assets</description>
     <atom:link href="https://dout.dev/tags/build-assets.xml" rel="self" type="application/rss+xml" />

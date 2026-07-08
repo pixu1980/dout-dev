@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)</title>
     <meta name="theme-color" content="#ff6b3d" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="description" content="The unpopular opinion (brace yourself)" />
     <meta name="author" content='Emiliano "pixu1980" Pisu' />
     <meta name="robots" content="index,follow" />
@@ -29,6 +31,36 @@
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
       }
+
+      (function () {
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (!meta) return;
+
+        function updateThemeColor() {
+          var root = document.documentElement;
+          var scheme = root.getAttribute('data-color-scheme') || '';
+          var isDark = scheme === 'dark' || (!scheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var h = root.style.getPropertyValue('--dout--accent-h').trim() || '16';
+          var s = root.style.getPropertyValue('--dout--accent-s').trim() || '95%';
+          var l = isDark ? '22%' : '58%';
+          meta.content = 'hsl(' + h + ', ' + s + ', ' + l + ')';
+        }
+
+        updateThemeColor();
+
+        var observer = new MutationObserver(function () {
+          updateThemeColor();
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-color-scheme', 'style'],
+        });
+
+        var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', updateThemeColor);
+        }
+      })();
     </script>
     <style>
       :root {
@@ -68,14 +100,14 @@
     <meta property="og:type" content="article" />
     <meta
       property="og:title"
-      content="WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)"
+      content="WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)"
     />
     <meta property="og:description" content="The unpopular opinion (brace yourself)" />
     <meta property="og:url" content="https://dout.dev/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" />
     <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-06-02-wcag-22-aa-without-aria-spam.png" />
     <meta
       property="og:image:alt"
-      content="Preview image for WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)"
+      content="Preview image for WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -84,31 +116,31 @@
     <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
     <meta
       name="twitter:title"
-      content="WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)"
+      content="WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)"
     />
     <meta name="twitter:description" content="The unpopular opinion (brace yourself)" />
     <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-06-02-wcag-22-aa-without-aria-spam.png" />
     <meta
       name="twitter:image:alt"
-      content="Preview image for WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)"
+      content="Preview image for WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)"
     />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "headline": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)",
+        "headline": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)",
         "description": "The unpopular opinion (brace yourself)",
         "datePublished": "2026-06-02T00:00:00.000Z",
         "dateModified": "2026-06-02T00:00:00.000Z",
         "author": {
           "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url": "https://dout.dev"
+          "url": "https://pixu.dev"
         },
         "publisher": {
           "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url": "https://dout.dev"
+          "url": "https://pixu.dev"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -128,7 +160,7 @@
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)",
+            "name": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)",
             "item": "https://dout.dev/posts/2026-06-02-wcag-22-aa-without-aria-spam.html"
           }
         ]
@@ -163,7 +195,14 @@
           <color-scheme-switcher></color-scheme-switcher>
           <display-preferences-popover></display-preferences-popover>
           <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-            <span aria-hidden="true">☰</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path
+                d="M2.5 5h15M2.5 10h15M2.5 15h15"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              ></path>
+            </svg>
           </button>
         </div>
       </div>
@@ -177,9 +216,16 @@
             <time datetime="2026-06-02" itemprop="datePublished"> June 2, 2026 </time>
             <span data-post-divider="">/</span>
             <a href="/archive.html">Archive</a>
+
+            <span data-post-divider="">/</span>
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+              <a href="https://pixu.dev" itemprop="url" rel="author"
+                ><span itemprop="name">Emiliano "pixu1980" Pisu</span></a
+              >
+            </span>
           </p>
           <h1 itemprop="headline" tabindex="0">
-            WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)
+            WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)
           </h1>
 
           <p data-post-description="">The unpopular opinion (brace yourself)</p>
@@ -195,7 +241,7 @@
           <figure data-post-cover="">
             <img
               src="/assets/og/posts/2026-06-02-wcag-22-aa-without-aria-spam-card.png"
-              alt="WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)"
+              alt="WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)"
               fetchpriority="high"
               decoding="async"
               width="1200"
@@ -275,7 +321,7 @@
             <h2 id="the-takeaway" tabindex="0" data-toc-anchor="true">The takeaway</h2>
             <p>
               WCAG 2.2 AA is not a checklist of ARIA attributes you need to add. It is a checklist of semantic HTML
-              patterns you need to follow. Landmarks, heading order, skip-links — these three things cover more ground
+              patterns you need to follow. Landmarks, heading order, skip-links - these three things cover more ground
               than any ARIA-based remediation.
             </p>
             <p>
@@ -452,13 +498,13 @@
 
               <li>
                 <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="false" data-reveal=""
-                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
+                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)</a
                 >
               </li>
 
               <li>
                 <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="page" data-reveal=""
-                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It) (you are
+                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It) (you are
                   here)</a
                 >
               </li>
@@ -507,12 +553,6 @@
                   >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
                 >
               </li>
-
-              <li>
-                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false" data-reveal=""
-                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
-                >
-              </li>
             </ol>
           </section>
         </nav>
@@ -521,7 +561,7 @@
       <nav data-post-nav="" aria-label="Post navigation">
         <a data-post-nav-card="" data-reveal="" rel="prev" href="/posts/2026-05-30-modern-css-is-enough.html">
           <span data-post-nav-label="">Previous</span>
-          <strong>Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</strong>
+          <strong>Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)</strong>
         </a>
 
         <a data-post-nav-card="" data-reveal="" rel="next" href="/posts/2026-06-06-how-pixhighlighter-is-built.html">

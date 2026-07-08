@@ -492,10 +492,10 @@ Architecture is fundamental to avoid conflicts when writing CSS as an app grows 
 
 It must be something you like or the team agrees with, here some examples:
 
-- BEM — Block Element Modifiers
-- OOCSS — Object-Oriented CSS
+- BEM - Block Element Modifiers
+- OOCSS - Object-Oriented CSS
 - ITCSS - Inverted Triangle CSS
-- SMACSS — Scalable Modular Architecture for CSS
+- SMACSS - Scalable Modular Architecture for CSS
 - CUBE CSS - Composition Utility Block Element CSS
 
 All these are CSS structure guidelines you can follow to better structure your selectors and style in general. This is totally optional concept to adopt but it is worth mentioning in case you come across things like this out there.
@@ -593,11 +593,11 @@ CSS methodologies will ensure consistency and future proof your styles.
 15. Be specific & not too specific
 
     Being specific is good as it defines which style applies to what but once you are too specific it becomes overkill, reduces performance, and increases your bundle size as well. Sometimes it is even an indication of bad CSS or design system. Example of over specific selectors:
-    - `section#sample-section` — (ask why you need to specify "section” along with id)
-    - `main div p.title` — (ask why you need to specify anything besides the .title )
-    - `[disabled]` — not specific enough and expensive
-    - `#sample` — the most specific and efficient selector
-    - `*` — global and super expensive (slowest)
+    - `section#sample-section` - (ask why you need to specify "section” along with id)
+    - `main div p.title` - (ask why you need to specify anything besides the .title )
+    - `[disabled]` - not specific enough and expensive
+    - `#sample` - the most specific and efficient selector
+    - `*` - global and super expensive (slowest)
 
     Being overly specific sometimes is needed but look at it as an exception rather than a common practice. Not being specific enough can cause style conflict and be too specific makes it hard for the browsers.
 

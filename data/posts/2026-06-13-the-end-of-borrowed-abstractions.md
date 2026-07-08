@@ -1,6 +1,8 @@
 ---
 title: 'The End of Borrowed Abstractions'
 date: '2026-06-13'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['architecture', 'ai', 'vanilla-js', 'frontend', 'security']
 series: ['The Future of Software', 'Bold Opinions']

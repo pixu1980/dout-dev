@@ -102,6 +102,10 @@
     --dout--post-sidebar-width: minmax(16rem, 20rem);
     --dout--article-flow-gap: var(--dout--space-6);
     --dout--article-scroll-offset: calc(var(--dout--space-7) + 5rem);
+    --dout--safe-top: env(safe-area-inset-top, 0px);
+    --dout--safe-bottom: env(safe-area-inset-bottom, 0px);
+    --dout--safe-left: env(safe-area-inset-left, 0px);
+    --dout--safe-right: env(safe-area-inset-right, 0px);
     --dout--container: min(76rem, calc(100% - 2rem));
     --dout--reading-width: min(46rem, 100%);
     --dout--media-ratio-card: 4 / 3;

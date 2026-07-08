@@ -1,6 +1,8 @@
 ---
 title: 'Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)'
 date: '2026-06-16'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['vanilla-js', 'search', 'architecture', 'static-site']
 series: 'How I made it'

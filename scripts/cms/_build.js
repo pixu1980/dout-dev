@@ -113,6 +113,7 @@ export function buildSearchIndexes(dataset = {}) {
     tags: searchDataset.tags || [],
     months: searchDataset.months || [],
     series: searchDataset.series || [],
+    authors: searchDataset.authors || [],
   };
 }
 
@@ -224,6 +225,11 @@ export async function build(userConfig = {}, runtimeOptions = {}) {
       JSON.stringify(searchIndexes.series, null, 2),
       'utf8'
     );
+    writeFileSync(
+      join(outDir, 'authors.json'),
+      JSON.stringify(searchIndexes.authors, null, 2),
+      'utf8'
+    );
   } catch (e) {
     console.warn('Warning: failed to write search indexes to src/data', e?.message || e);
   }
@@ -236,7 +242,7 @@ export async function build(userConfig = {}, runtimeOptions = {}) {
     const jsonFeedPath = config.SITE_META.jsonFeedPath || '/feed.json';
     const legacyRssFeedPath = config.SITE_META.legacyRssFeedPath || '/feed.xml';
     const xml = buildRssFeed({
-      title: `${config.SITE_META.title} — Latest Posts`,
+      title: `${config.SITE_META.title} - Latest Posts`,
       link: `${config.SITE_META.url}/`,
       description: config.SITE_META.description,
       items: posts,
@@ -245,7 +251,7 @@ export async function build(userConfig = {}, runtimeOptions = {}) {
       language: config.SITE_META.language,
     });
     const json = buildJsonFeed({
-      title: `${config.SITE_META.title} — Latest Posts`,
+      title: `${config.SITE_META.title} - Latest Posts`,
       homePageUrl: `${config.SITE_META.url}/`,
       feedUrl: `${config.SITE_META.url}${jsonFeedPath}`,
       description: config.SITE_META.description,

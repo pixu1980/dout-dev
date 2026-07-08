@@ -14,6 +14,7 @@ export function generatePages(dataset, config) {
   generateTags(presentationDataset.tags, config, renderer);
   generateMonths(presentationDataset.months, config, renderer);
   generateSeries(presentationDataset.series, config, renderer);
+  generateAuthors(presentationDataset.authors, config, renderer);
 }
 
 function getSiteMeta(config) {
@@ -105,6 +106,10 @@ export function withDatasetPostMediaFallbacks(dataset = {}) {
     tags: withEntryPostMediaFallbacks(dataset.tags),
     months: withEntryPostMediaFallbacks(dataset.months),
     series: withEntryPostMediaFallbacks(dataset.series),
+    authors: (dataset.authors || []).map((author) => ({
+      ...author,
+      posts: withPostCollectionMediaFallbacks(author.posts),
+    })),
   };
 }
 
@@ -404,7 +409,7 @@ function generateTags(tags, config, renderer) {
           title:
             ctx.page === 1
               ? `${tagForTpl.name} Posts`
-              : `${tagForTpl.name} Posts — Page ${ctx.page}`,
+              : `${tagForTpl.name} Posts - Page ${ctx.page}`,
           current: 'tags',
           canonicalUrl:
             ctx.page === 1
@@ -412,7 +417,7 @@ function generateTags(tags, config, renderer) {
               : joinUrl(url, `tags/${tagForTpl.slug}/${ctx.page}/`),
           ogImageUrl,
           feedUrl: joinUrl(url, `tags/${tagForTpl.slug}.xml`),
-          description: `Posts tagged with ${tagForTpl.name}${ctx.page > 1 ? ` — Page ${ctx.page}` : ''}`,
+          description: `Posts tagged with ${tagForTpl.name}${ctx.page > 1 ? ` - Page ${ctx.page}` : ''}`,
           sortBy: 'date-desc',
           viewMode: 'list',
           pagination: loadMore ? null : ctx.pagination,
@@ -425,7 +430,7 @@ function generateTags(tags, config, renderer) {
 
     // Feed
     const tagFeedXml = buildRssFeed({
-      title: `${title} — ${tagForTpl.name}`,
+      title: `${title} - ${tagForTpl.name}`,
       link: `${url}/tags/${tagForTpl.slug}/`,
       description: `RSS feed for posts tagged with ${tagForTpl.name}`,
       items,
@@ -486,7 +491,7 @@ function generateMonths(months, config, renderer) {
           month: monthForTpl,
           monthTags,
           posts: loadMore ? ctx.items : ctx.itemsPage,
-          title: ctx.page === 1 ? `${monthForTpl.name}` : `${monthForTpl.name} — Page ${ctx.page}`,
+          title: ctx.page === 1 ? `${monthForTpl.name}` : `${monthForTpl.name} - Page ${ctx.page}`,
           current: 'posts',
           canonicalUrl:
             ctx.page === 1
@@ -494,7 +499,7 @@ function generateMonths(months, config, renderer) {
               : joinUrl(url, `months/${monthForTpl.slug}/${ctx.page}/`),
           ogImageUrl,
           feedUrl: joinUrl(url, `months/${monthForTpl.slug}.xml`),
-          description: `Posts from ${monthForTpl.name}${ctx.page > 1 ? ` — Page ${ctx.page}` : ''}`,
+          description: `Posts from ${monthForTpl.name}${ctx.page > 1 ? ` - Page ${ctx.page}` : ''}`,
           showStats: true,
           variant: 'month',
           pagination: loadMore ? null : ctx.pagination,
@@ -506,7 +511,7 @@ function generateMonths(months, config, renderer) {
 
     // Feed
     const monthFeedXml = buildRssFeed({
-      title: `${title} — ${monthForTpl.name}`,
+      title: `${title} - ${monthForTpl.name}`,
       link: `${url}/months/${monthForTpl.slug}/`,
       description: `RSS feed for posts from ${monthForTpl.name}`,
       items,
@@ -548,7 +553,7 @@ function generateSeries(series, config, renderer) {
         return renderer.render('src/templates/series.html', {
           series: serie,
           posts: loadMore ? ctx.items : ctx.itemsPage,
-          title: ctx.page === 1 ? `${serie.title}` : `${serie.title} — Page ${ctx.page}`,
+          title: ctx.page === 1 ? `${serie.title}` : `${serie.title} - Page ${ctx.page}`,
           current: 'posts',
           canonicalUrl:
             ctx.page === 1
@@ -687,9 +692,17 @@ export function buildSitemap({ dataset, siteUrl }) {
     (month) => `/months/${month.slug || month.key}.html`
   );
   const seriesPages = (dataset.series || []).map((entry) => `/series/${entry.slug}.html`);
+  const authorPages = (dataset.authors || []).map((entry) => `/authors/${entry.slug}.html`);
 
   const urls = [
-    ...new Set([...staticPages, ...postPages, ...tagPages, ...monthPages, ...seriesPages]),
+    ...new Set([
+      ...staticPages,
+      ...postPages,
+      ...tagPages,
+      ...monthPages,
+      ...seriesPages,
+      ...authorPages,
+    ]),
   ];
   const body = urls
     .map(
@@ -704,6 +717,36 @@ export function buildSitemap({ dataset, siteUrl }) {
     `${body}\n` +
     `</urlset>\n`
   );
+}
+
+function generateAuthors(authors, config, renderer) {
+  if (!authors || !Array.isArray(authors)) return;
+
+  const site = getSiteContext(config);
+  const { url } = getSiteMeta(config);
+
+  for (const author of authors) {
+    try {
+      const ogImageUrl = getOgImageUrl(config, 'author', author.slug);
+      const html = renderer.render('src/templates/author.html', {
+        author,
+        posts: author.posts,
+        title: `Articles by ${author.name}`,
+        description: author.description,
+        canonicalUrl: joinUrl(url, `authors/${author.slug}.html`),
+        ogImageUrl,
+        robots: 'index,follow',
+        site,
+      });
+      ensureDir(config.authorsOutputDir);
+      writeFileSync(join(config.authorsOutputDir, `${author.slug}.html`), html, 'utf8');
+    } catch (error) {
+      console.warn(
+        `Warning: Failed to render author page for ${author.slug}`,
+        error?.message || error
+      );
+    }
+  }
 }
 
 // M7: generate static site pages
@@ -771,6 +814,7 @@ function generateStaticPages(dataset, config, renderer) {
       .sort((a, b) => String(b.key).localeCompare(String(a.key)));
     const tags = (dataset.tags || []).slice().sort((a, b) => (b.count || 0) - (a.count || 0));
     const series = (dataset.series || []).slice().sort((a, b) => (b.count || 0) - (a.count || 0));
+    const authors = (dataset.authors || []).slice().sort((a, b) => (b.count || 0) - (a.count || 0));
     const html = renderer.render('src/templates/archive.html', {
       title: 'Archive',
       description: 'Browse the complete dout.dev archive by month, topic, and series.',
@@ -779,6 +823,7 @@ function generateStaticPages(dataset, config, renderer) {
       months,
       tags,
       series,
+      authors,
       site,
     });
     writeFileSync(join('src', 'archive.html'), html, 'utf8');

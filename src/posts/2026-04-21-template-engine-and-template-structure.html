@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)</title>
     <meta name="theme-color" content="#ff6b3d" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta
       name="description"
       content="Three constraints that shaped the grammar (because constraints are good, actually)"
@@ -32,6 +34,36 @@
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
       }
+
+      (function () {
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (!meta) return;
+
+        function updateThemeColor() {
+          var root = document.documentElement;
+          var scheme = root.getAttribute('data-color-scheme') || '';
+          var isDark = scheme === 'dark' || (!scheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var h = root.style.getPropertyValue('--dout--accent-h').trim() || '16';
+          var s = root.style.getPropertyValue('--dout--accent-s').trim() || '95%';
+          var l = isDark ? '22%' : '58%';
+          meta.content = 'hsl(' + h + ', ' + s + ', ' + l + ')';
+        }
+
+        updateThemeColor();
+
+        var observer = new MutationObserver(function () {
+          updateThemeColor();
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-color-scheme', 'style'],
+        });
+
+        var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', updateThemeColor);
+        }
+      })();
     </script>
     <style>
       :root {
@@ -118,12 +150,12 @@
         "author": {
           "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url": "https://dout.dev"
+          "url": "https://pixu.dev"
         },
         "publisher": {
           "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url": "https://dout.dev"
+          "url": "https://pixu.dev"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -178,7 +210,14 @@
           <color-scheme-switcher></color-scheme-switcher>
           <display-preferences-popover></display-preferences-popover>
           <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-            <span aria-hidden="true">☰</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path
+                d="M2.5 5h15M2.5 10h15M2.5 15h15"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              ></path>
+            </svg>
           </button>
         </div>
       </div>
@@ -192,6 +231,13 @@
             <time datetime="2026-04-21" itemprop="datePublished"> April 21, 2026 </time>
             <span data-post-divider="">/</span>
             <a href="/archive.html">Archive</a>
+
+            <span data-post-divider="">/</span>
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+              <a href="https://pixu.dev" itemprop="url" rel="author"
+                ><span itemprop="name">Emiliano "pixu1980" Pisu</span></a
+              >
+            </span>
           </p>
           <h1 itemprop="headline" tabindex="0">
             Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)
@@ -243,7 +289,7 @@
             </p>
             <p>
               <strong>Expressive enough for a real blog.</strong> Conditionals, loops, nested layouts, inline
-              expressions — the minimum viable set has to cover these or the CMS ends up exporting special-case data
+              expressions - the minimum viable set has to cover these or the CMS ends up exporting special-case data
               structures for every page type. And I'm lazy, so I want fewer page types.
             </p>
             <p>
@@ -261,20 +307,20 @@
             </h2>
             <p>The grammar has exactly four things. That's the whole language.</p>
             <p>
-              <strong><code>&lt;extends src="..."&gt;</code></strong> — a template declares that it extends a base
+              <strong><code>&lt;extends src="..."&gt;</code></strong> - a template declares that it extends a base
               layout. The base layout contains named slots. Like inheritance, but without the existential crisis.
             </p>
             <p>
-              <strong><code>&lt;block name="..."&gt;</code></strong> — inside an extending template, a block overrides
+              <strong><code>&lt;block name="..."&gt;</code></strong> - inside an extending template, a block overrides
               the same-named slot in the base layout. Simple. Predictable.
             </p>
             <p>
-              <strong><code>&lt;include src="..."&gt;</code></strong> — inline composition. The included fragment is
+              <strong><code>&lt;include src="..."&gt;</code></strong> - inline composition. The included fragment is
               inserted with access to the current context. Typical uses: the pagination component, the post card, the
               footer. You know, stuff you don't want to repeat.
             </p>
             <p>
-              <strong>Expression references</strong> — an expression reference can use an optional filter pipeline.
+              <strong>Expression references</strong> - an expression reference can use an optional filter pipeline.
               Filters are ordinary functions. The grammar for expressions supports member access, ternary, logical
               operators, and literal values. No, you can't execute arbitrary code. Yes, that's on purpose.
             </p>
@@ -292,7 +338,7 @@
               The engine parses the base layout once and indexes its blocks by name. When an extending template is
               rendered, the engine walks the child template, collects its <code>&lt;block&gt;</code> elements, and uses
               them to override the parent slots. Anything in the extending template outside of a block is discarded by
-              design — it would have no stable place to land. Like my uncle's advice.
+              design - it would have no stable place to land. Like my uncle's advice.
             </p>
             <p>The practical upshot is that a post template reads like this:</p>
             <pre is="pix-highlighter" data-lang="html"><code>&lt;extends src="./layouts/base.html"&gt;
@@ -316,7 +362,7 @@
             </h2>
             <p>
               Expressions for values like post cover dimensions or tag counts look like JavaScript. They are NOT
-              JavaScript — they are parsed into a small AST and walked by an interpreter. Like a tiny court judge for
+              JavaScript - they are parsed into a small AST and walked by an interpreter. Like a tiny court judge for
               strings.
             </p>
             <p>The interpreter supports:</p>
@@ -569,13 +615,13 @@
 
               <li>
                 <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="false" data-reveal=""
-                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
+                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)</a
                 >
               </li>
 
               <li>
                 <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="false" data-reveal=""
-                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
+                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)</a
                 >
               </li>
 
@@ -621,12 +667,6 @@
               <li>
                 <a href="/posts/2026-07-04-pragmatic-service-worker.html" aria-current="false" data-reveal=""
                   >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false" data-reveal=""
-                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
                 >
               </li>
             </ol>

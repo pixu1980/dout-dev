@@ -1,6 +1,8 @@
 ---
 title: 'Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)'
 date: '2026-05-05'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['making-of', 'build-assets', 'performance', 'images']
 series: 'How I made it'

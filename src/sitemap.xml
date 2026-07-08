@@ -284,4 +284,8 @@
     <loc>https://dout.dev/series/the-future-of-software.html</loc>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://dout.dev/authors/emiliano-pixu1980-pisu.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>

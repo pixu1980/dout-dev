@@ -36,12 +36,12 @@ const cssAssets = Object.values(manifest).filter((entry) => {
 
 if (cssAssets.length === 0) {
   console.error(
-    '❌ No CSS assets found in dist/manifest.json — build may have missed CSS extraction.'
+    '❌ No CSS assets found in dist/manifest.json - build may have missed CSS extraction.'
   );
   process.exit(1);
 }
 
-console.log('✅ Manifest verification passed — CSS assets found:');
+console.log('✅ Manifest verification passed - CSS assets found:');
 cssAssets.forEach((a) => {
   console.log('  -', a.file || a.src);
 });

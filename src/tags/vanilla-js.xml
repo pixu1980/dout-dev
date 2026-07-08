@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>dout.dev — vanilla-js</title>
+    <title>dout.dev - vanilla-js</title>
     <link>https://dout.dev/tags/vanilla-js/</link>
     <description>RSS feed for posts tagged with vanilla-js</description>
     <atom:link href="https://dout.dev/tags/vanilla-js.xml" rel="self" type="application/rss+xml" />
@@ -57,7 +57,7 @@
       <description>The contract stays plain (because HTML should be readable)</description>
     </item>
     <item>
-      <title>Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</title>
+      <title>Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)</title>
       <link>https://dout.dev/posts/2026-05-30-modern-css-is-enough.html</link>
       <guid isPermaLink="true">https://dout.dev/posts/2026-05-30-modern-css-is-enough.html</guid>
       <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>

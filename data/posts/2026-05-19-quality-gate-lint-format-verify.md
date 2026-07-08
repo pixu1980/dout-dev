@@ -1,6 +1,8 @@
 ---
 title: 'Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)'
 date: '2026-05-19'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['making-of', 'tooling', 'linting', 'ci']
 series: 'How I made it'
@@ -28,19 +30,19 @@ pnpm validate:all
 
 Five commands, each doing one thing. No overlap. No ambiguity.
 
-**`pnpm test`** — Node's built-in test runner on the CMS and template-engine code. Fast. No Jest, no Vitest, no configuration surface. Just tests.
+**`pnpm test`** - Node's built-in test runner on the CMS and template-engine code. Fast. No Jest, no Vitest, no configuration surface. Just tests.
 
-**`pnpm spellcheck`** — cspell against the markdown and HTML files. Catches typos in posts and navigation labels BEFORE they reach the reader.
+**`pnpm spellcheck`** - cspell against the markdown and HTML files. Catches typos in posts and navigation labels BEFORE they reach the reader.
 
-**`pnpm format:check`** — Biome in check mode over JavaScript. Enforces the single formatter.
+**`pnpm format:check`** - Biome in check mode over JavaScript. Enforces the single formatter.
 
-**`pnpm format:check:html`** — Prettier in check mode over HTML templates. HTML formatting is one of those things everyone forgets to verify until a diff becomes impossible to review.
+**`pnpm format:check:html`** - Prettier in check mode over HTML templates. HTML formatting is one of those things everyone forgets to verify until a diff becomes impossible to review.
 
-**`pnpm validate:all`** — a composite of HTML validation, structural validation, link checking, and accessibility validation. The one that catches the most real bugs.
+**`pnpm validate:all`** - a composite of HTML validation, structural validation, link checking, and accessibility validation. The one that catches the most real bugs.
 
 ## HTML validation (the one nobody does but everyone should)
 
-HTML validation is underrated. Bad nesting, missing alt text, heading skips, unused IDs — all of these slip past manual review and all of them matter. The validator on dout.dev runs against every file under `src/` and `dist/` and reports problems with file and line.
+HTML validation is underrated. Bad nesting, missing alt text, heading skips, unused IDs - all of these slip past manual review and all of them matter. The validator on dout.dev runs against every file under `src/` and `dist/` and reports problems with file and line.
 
 ```js
 import { HTMLHint } from 'htmlhint';
@@ -68,7 +70,7 @@ External links are checked only occasionally, not on every build, because networ
 
 ## Accessibility validation (axe me anything)
 
-The a11y check runs axe-core over every generated page, using Playwright as the headless browser. It catches a significant fraction of WCAG issues automatically — missing labels, insufficient contrast, heading order problems, keyboard trap candidates.
+The a11y check runs axe-core over every generated page, using Playwright as the headless browser. It catches a significant fraction of WCAG issues automatically - missing labels, insufficient contrast, heading order problems, keyboard trap candidates.
 
 Axe does not catch everything. Nothing does. What it catches is the base rate of failures that keep creeping in through drive-by edits. That's good enough.
 
@@ -90,7 +92,7 @@ All of this is wired in `.github/workflows/deploy-pages.yml` as a single step:
   run: pnpm quality:check
 ```
 
-Locally I run `pnpm quality:check` before any push. If I am about to merge something significant, I also run `pnpm test:visual` — the Playwright visual regression suite — which is slower and therefore not on the default path.
+Locally I run `pnpm quality:check` before any push. If I am about to merge something significant, I also run `pnpm test:visual` - the Playwright visual regression suite - which is slower and therefore not on the default path.
 
 ## What I did NOT add (because scope is a feature)
 

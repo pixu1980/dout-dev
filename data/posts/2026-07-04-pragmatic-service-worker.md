@@ -1,6 +1,8 @@
 ---
 title: 'A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)'
 date: '2026-07-04'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['performance', 'vanilla-js', 'architecture']
 series: 'How I made it'

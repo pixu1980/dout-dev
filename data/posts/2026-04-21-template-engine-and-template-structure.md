@@ -1,6 +1,8 @@
 ---
 title: 'Template Engine and Template Structure (Or: Why I Didn''t Use Handlebars Like a Normal Person)'
 date: '2026-04-21'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['making-of', 'template-engine', 'html', 'architecture']
 series: 'How I made it'
@@ -14,7 +16,7 @@ Three constraints that usually pull in different directions. Like a tug of war w
 
 **Readable LIKE HTML.** A template should look like a document, not a programming language wearing angle brackets. No curly-heavy logic mixed into markup. If I wanted PHP, I'd use PHP.
 
-**Expressive enough for a real blog.** Conditionals, loops, nested layouts, inline expressions — the minimum viable set has to cover these or the CMS ends up exporting special-case data structures for every page type. And I'm lazy, so I want fewer page types.
+**Expressive enough for a real blog.** Conditionals, loops, nested layouts, inline expressions - the minimum viable set has to cover these or the CMS ends up exporting special-case data structures for every page type. And I'm lazy, so I want fewer page types.
 
 **No `eval`.** Anything user-controlled that turns into runtime code is a liability. The expression evaluator had to parse and interpret, not delegate to the JavaScript engine. `eval` is the devil, and I don't make deals with the devil.
 
@@ -24,19 +26,19 @@ Three constraints that usually pull in different directions. Like a tug of war w
 
 The grammar has exactly four things. That's the whole language.
 
-**`<extends src="...">`** — a template declares that it extends a base layout. The base layout contains named slots. Like inheritance, but without the existential crisis.
+**`<extends src="...">`** - a template declares that it extends a base layout. The base layout contains named slots. Like inheritance, but without the existential crisis.
 
-**`<block name="...">`** — inside an extending template, a block overrides the same-named slot in the base layout. Simple. Predictable.
+**`<block name="...">`** - inside an extending template, a block overrides the same-named slot in the base layout. Simple. Predictable.
 
-**`<include src="...">`** — inline composition. The included fragment is inserted with access to the current context. Typical uses: the pagination component, the post card, the footer. You know, stuff you don't want to repeat.
+**`<include src="...">`** - inline composition. The included fragment is inserted with access to the current context. Typical uses: the pagination component, the post card, the footer. You know, stuff you don't want to repeat.
 
-**Expression references** — an expression reference can use an optional filter pipeline. Filters are ordinary functions. The grammar for expressions supports member access, ternary, logical operators, and literal values. No, you can't execute arbitrary code. Yes, that's on purpose.
+**Expression references** - an expression reference can use an optional filter pipeline. Filters are ordinary functions. The grammar for expressions supports member access, ternary, logical operators, and literal values. No, you can't execute arbitrary code. Yes, that's on purpose.
 
 Control flow is expressed with custom elements that look like HTML: `<if condition="...">`, `<for each="item in collection">`, `<switch>` with `<case>` and `<default>`. That keeps the templates in ONE grammar instead of mixing angle brackets with mustache-style blocks. Consistency is a feature.
 
 ## How extends and blocks work (the boring but important part)
 
-The engine parses the base layout once and indexes its blocks by name. When an extending template is rendered, the engine walks the child template, collects its `<block>` elements, and uses them to override the parent slots. Anything in the extending template outside of a block is discarded by design — it would have no stable place to land. Like my uncle's advice.
+The engine parses the base layout once and indexes its blocks by name. When an extending template is rendered, the engine walks the child template, collects its `<block>` elements, and uses them to override the parent slots. Anything in the extending template outside of a block is discarded by design - it would have no stable place to land. Like my uncle's advice.
 
 The practical upshot is that a post template reads like this:
 
@@ -60,7 +62,7 @@ Slots can have default content. Blocks are required only if the parent says so. 
 
 ## Expressions without eval (because I'm not a psychopath)
 
-Expressions for values like post cover dimensions or tag counts look like JavaScript. They are NOT JavaScript — they are parsed into a small AST and walked by an interpreter. Like a tiny court judge for strings.
+Expressions for values like post cover dimensions or tag counts look like JavaScript. They are NOT JavaScript - they are parsed into a small AST and walked by an interpreter. Like a tiny court judge for strings.
 
 The interpreter supports:
 

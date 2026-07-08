@@ -30,7 +30,11 @@
             "url": "./tags/static-site.html"
           }
         ],
-        "pinned": true
+        "pinned": true,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-04-07-cms-and-markdown-processing",
@@ -64,7 +68,11 @@
             "url": "./tags/static-site.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-04-11-rebuilding-dout-dev-with-ai-copilot",
@@ -93,7 +101,11 @@
             "url": "./tags/workflow.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-04-14-why-no-astro-eleventy-next",
@@ -122,7 +134,11 @@
             "url": "./tags/static-site.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-04-18-custom-ssg-pipeline",
@@ -156,7 +172,11 @@
             "url": "./tags/cms.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-04-21-template-engine-and-template-structure",
@@ -190,7 +210,11 @@
             "url": "./tags/architecture.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-04-25-archives-tags-months-series",
@@ -224,7 +248,11 @@
             "url": "./tags/accessibility.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-04-28-progressive-enhancement-as-contract",
@@ -258,7 +286,11 @@
             "url": "./tags/vanilla-js.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-05-02-design-tokens-before-pages",
@@ -287,7 +319,11 @@
             "url": "./tags/css.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-05-05-build-assets-pipeline",
@@ -321,7 +357,11 @@
             "url": "./tags/images.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-05-09-feeds-and-sitemaps-at-build-time",
@@ -355,7 +395,11 @@
             "url": "./tags/static-site.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-05-12-og-images-at-build-time",
@@ -389,7 +433,11 @@
             "url": "./tags/static-site.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-05-16-seo-metadata-without-rituals",
@@ -423,7 +471,11 @@
             "url": "./tags/html.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-05-19-quality-gate-lint-format-verify",
@@ -457,7 +509,11 @@
             "url": "./tags/ci.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-05-23-ci-cd-around-github-pages",
@@ -491,7 +547,11 @@
             "url": "./tags/github-pages.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-05-26-vibe-coding-with-rigor",
@@ -520,18 +580,22 @@
             "url": "./tags/workflow.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-05-30-modern-css-is-enough",
-        "title": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)",
+        "title": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)",
         "date": "2026-05-30T00:00:00.000Z",
         "dateString": "Sat May 30 2026",
         "path": "./src/posts/2026-05-30-modern-css-is-enough.html",
         "url": "/posts/2026-05-30-modern-css-is-enough/",
         "excerpt": "The short version (for the impatient)",
         "coverImage": null,
-        "coverAlt": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)",
+        "coverAlt": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)",
         "tags": [
           {
             "key": "css",
@@ -549,18 +613,22 @@
             "url": "./tags/frontend.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-06-02-wcag-22-aa-without-aria-spam",
-        "title": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)",
+        "title": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)",
         "date": "2026-06-02T00:00:00.000Z",
         "dateString": "Tue Jun 02 2026",
         "path": "./src/posts/2026-06-02-wcag-22-aa-without-aria-spam.html",
         "url": "/posts/2026-06-02-wcag-22-aa-without-aria-spam/",
         "excerpt": "The unpopular opinion (brace yourself)",
         "coverImage": null,
-        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)",
+        "coverAlt": "WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)",
         "tags": [
           {
             "key": "accessibility",
@@ -578,7 +646,11 @@
             "url": "./tags/frontend.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-06-06-how-pixhighlighter-is-built",
@@ -607,7 +679,11 @@
             "url": "./tags/architecture.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-06-09-why-display-preferences-popover-exists",
@@ -636,7 +712,11 @@
             "url": "./tags/responsive-design.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-06-16-client-side-search-static-dataset",
@@ -670,7 +750,11 @@
             "url": "./tags/static-site.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-06-23-custom-element-syntax-highlight",
@@ -699,7 +783,11 @@
             "url": "./tags/frontend.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-06-27-accessible-scrollspy-outline",
@@ -728,7 +816,11 @@
             "url": "./tags/frontend.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-06-30-honest-lazy-loading",
@@ -757,7 +849,11 @@
             "url": "./tags/vanilla-js.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-07-04-pragmatic-service-worker",
@@ -786,36 +882,16 @@
             "url": "./tags/architecture.html"
           }
         ],
-        "pinned": false
-      },
-      {
-        "name": "2026-07-05-css-properties-hierarchy",
-        "title": "CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)",
-        "date": "2026-07-05T00:00:00.000Z",
-        "dateString": "Sun Jul 05 2026",
-        "path": "./src/posts/2026-07-05-css-properties-hierarchy.html",
-        "url": "/posts/2026-07-05-css-properties-hierarchy/",
-        "excerpt": "I've been writing CSS since before border-radius was a thing, back when we used -moz-border-radius and prayed everything to work well.",
-        "coverImage": null,
-        "coverAlt": "CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)",
-        "tags": [
-          {
-            "key": "html",
-            "label": "html",
-            "url": "./tags/html.html"
-          },
-          {
-            "key": "css",
-            "label": "css",
-            "url": "./tags/css.html"
-          }
-        ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       }
     ],
     "description": "A series of posts about How I made it.",
     "url": "./series/how-i-made-it.html",
-    "count": 26
+    "count": 25
   },
   {
     "slug": "bold-opinions",
@@ -848,7 +924,11 @@
             "url": "./tags/workflow.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-06-13-the-end-of-borrowed-abstractions",
@@ -887,7 +967,11 @@
             "url": "./tags/security.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-06-20-pi-dev-deepseek-v4-flash-daily-loop",
@@ -921,7 +1005,11 @@
             "url": "./tags/making-of.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-07-05-css-properties-hierarchy",
@@ -930,7 +1018,7 @@
         "dateString": "Sun Jul 05 2026",
         "path": "./src/posts/2026-07-05-css-properties-hierarchy.html",
         "url": "/posts/2026-07-05-css-properties-hierarchy/",
-        "excerpt": "I've been writing CSS since before border-radius was a thing, back when we used -moz-border-radius and prayed everything to work well.",
+        "excerpt": "Context - The chaos of unorganized CSS",
         "coverImage": null,
         "coverAlt": "CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)",
         "tags": [
@@ -945,7 +1033,11 @@
             "url": "./tags/css.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       }
     ],
     "description": "A series of posts about Bold Opinions.",
@@ -983,7 +1075,11 @@
             "url": "./tags/architecture.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-06-23-custom-element-syntax-highlight",
@@ -1012,7 +1108,11 @@
             "url": "./tags/frontend.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-06-27-accessible-scrollspy-outline",
@@ -1041,7 +1141,11 @@
             "url": "./tags/frontend.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       }
     ],
     "description": "A series of posts about pix-components.",
@@ -1089,7 +1193,11 @@
             "url": "./tags/security.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       },
       {
         "name": "2026-06-20-pi-dev-deepseek-v4-flash-daily-loop",
@@ -1123,7 +1231,11 @@
             "url": "./tags/making-of.html"
           }
         ],
-        "pinned": false
+        "pinned": false,
+        "author": {
+          "name": "Emiliano \"pixu1980\" Pisu",
+          "url": "https://pixu.dev"
+        }
       }
     ],
     "description": "A series of posts about The Future of Software.",

@@ -1,6 +1,8 @@
 ---
 title: 'How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)'
 date: '2026-06-06'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['vanilla-js', 'frontend', 'architecture']
 series: ['How I made it', 'pix-components']  

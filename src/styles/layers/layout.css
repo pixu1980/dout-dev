@@ -10,7 +10,7 @@
     flex-direction: column;
     gap: var(--dout--space-7);
     width: var(--dout--container);
-    padding: var(--dout--space-7) 0 var(--dout--space-9);
+    padding: var(--dout--space-7) 0 calc(var(--dout--space-9) + var(--dout--safe-bottom));
     margin-inline: auto;
     view-transition-name: site-main;
   }
@@ -24,6 +24,7 @@
     position: sticky;
     top: 0;
     z-index: var(--dout--z-header);
+    padding-top: var(--dout--safe-top);
     border-bottom: var(--dout--border-width) solid var(--dout--border);
     background: color-mix(in srgb, var(--dout--bg-elevated) 92%, transparent);
     backdrop-filter: blur(var(--dout--blur-header));
@@ -117,6 +118,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--dout--space-4);
+    margin-block-end: 0;
   }
 
   [data-post-feed-shell] > header {
@@ -180,7 +182,6 @@
   }
 
   [data-info-grid],
-  [data-archive-grid],
   [data-privacy-grid] {
     display: flex;
     flex-wrap: wrap;
@@ -190,6 +191,34 @@
     > * {
       flex: 1 1 min(100%, 18rem);
     }
+  }
+
+  [data-archive-bento] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: var(--dout--space-5);
+  }
+
+  [data-archive-bento-panel] {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dout--space-4);
+    padding: var(--dout--panel-padding);
+    border: var(--dout--border-width) solid var(--dout--border);
+    border-radius: var(--dout--radius-lg);
+    background: var(--dout--surface);
+    box-shadow: var(--dout--shadow);
+    backdrop-filter: blur(var(--dout--blur-panel));
+    corner-shape: var(--dout--corner-shape);
+  }
+
+  [data-archive-bento-months] {
+    grid-row: 1 / 3;
+  }
+
+  [data-archive-bento-topics] {
+    grid-column: 1 / -1;
   }
 
   [data-post-nav] {
@@ -210,6 +239,7 @@
     justify-content: space-between;
     gap: var(--dout--space-6);
     padding-block: var(--dout--space-6);
+    padding-bottom: calc(var(--dout--space-6) + var(--dout--safe-bottom));
   }
 
   @media (max-width: 860px) {
@@ -239,51 +269,41 @@
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      gap: 0;
-      opacity: 0;
-      max-height: 0;
+      gap: var(--dout--space-2);
+      padding: var(--dout--space-4);
       padding-block: 0;
-      padding-inline: var(--dout--space-4);
+      border: 0 solid var(--dout--border);
       border-top: none;
-      border-width: 0;
-      border-style: solid;
-      border-color: var(--dout--border);
       overflow: hidden;
-
+      -webkit-overflow-scrolling: touch;
       background: var(--dout--bg-elevated);
       box-shadow: var(--dout--shadow-strong);
-      transform: translateY(-8px);
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-0.5rem);
       transition:
-        max-height 0s ease 0.25s,
-        opacity 0.22s ease 0s,
-        transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s,
-        gap 0s ease 0.25s,
-        border-width 0s ease 0.25s,
-        padding-block 0s ease 0.25s;
+        opacity var(--dout--motion-base) var(--dout--motion-ease),
+        transform var(--dout--motion-base) var(--dout--motion-ease),
+        max-height 0s ease var(--dout--motion-base),
+        padding-block 0s ease var(--dout--motion-base),
+        border-width 0s ease var(--dout--motion-base);
       pointer-events: none;
-      /* Overlay: positioned below header, above content */
-
-      /* Collapsed: hidden */
-
-      /* Closing: visual fades first, then collapses */
 
       &[data-open='true'] {
-        gap: var(--dout--space-2);
-        opacity: 1;
-        max-height: 320px;
+        max-height: 100vh;
+        overscroll-behavior: contain;
+        overflow-y: auto;
         padding-block: var(--dout--space-4);
         border-width: 0 var(--dout--border-width) var(--dout--border-width);
+        opacity: 1;
         transform: translateY(0);
         transition:
+          opacity var(--dout--motion-base) var(--dout--motion-ease),
+          transform var(--dout--motion-base) var(--dout--motion-ease),
           max-height 0s ease 0s,
-          opacity 0.22s ease 0s,
-          transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s,
-          gap 0s ease 0s,
-          border-width 0s ease 0s,
-          padding-block 0s ease 0s;
+          padding-block 0s ease 0s,
+          border-width 0s ease 0s;
         pointer-events: auto;
-
-        /* Opening: visual animates instantly */
       }
     }
 
@@ -306,6 +326,18 @@
 
     [data-brand-tag] {
       display: none;
+    }
+
+    [data-archive-bento] {
+      grid-template-columns: 1fr;
+    }
+
+    [data-archive-bento-months] {
+      grid-row: auto;
+    }
+
+    [data-archive-bento-topics] {
+      grid-column: auto;
     }
   }
 }

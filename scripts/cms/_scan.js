@@ -88,12 +88,40 @@ export function scanContent(userConfig = {}) {
     posts: s.posts.sort((a, b) => new Date(a.date) - new Date(b.date)),
   }));
 
+  // Build authors index
+  const authorsMap = new Map();
+  for (const p of published) {
+    if (!p.author) continue;
+    const key = p.author.name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '');
+    if (!authorsMap.has(key)) {
+      authorsMap.set(key, {
+        slug: key,
+        name: p.author.name,
+        url: p.author.url || '',
+        posts: [],
+        description: `Articles by ${p.author.name}.`,
+      });
+    }
+    authorsMap.get(key).posts.push(minPost(p));
+  }
+  const authors = [...authorsMap.values()].map((a) => ({
+    ...a,
+    pageUrl: `./authors/${a.slug}.html`,
+    count: a.posts.length,
+    // Sort posts by date desc
+    posts: a.posts.sort((a, b) => new Date(b.date) - new Date(a.date)),
+  }));
+
   ensureDir(config.dataDir);
   writeJson(join(config.dataDir, 'posts.json'), posts);
   writeJson(join(config.dataDir, 'tags.json'), tags);
   writeJson(join(config.dataDir, 'months.json'), months);
   writeJson(join(config.dataDir, 'series.json'), series);
-  return { posts, tags, months, series };
+  writeJson(join(config.dataDir, 'authors.json'), authors);
+  return { posts, tags, months, series, authors };
 }
 function minPost(p) {
   return {
@@ -111,6 +139,7 @@ function minPost(p) {
     coverTitle: p.coverTitle,
     tags: p.tags,
     pinned: p.pinned,
+    author: p.author,
   };
 }
 if (import.meta.url === `file://${process.argv[1]}`) {

@@ -709,13 +709,13 @@ Questa sezione integra e dettaglia funzioni già accennate nel canvas, rendendol
 **Criteri di accettazione**
 
 - Tastiera: è possibile raggiungere tutti i controlli e identificare la pagina corrente.
-- SEO: no duplicati—`rel=prev/next`, canonical coerenti (pagina 1 = canonical "flat").
+- SEO: no duplicati-`rel=prev/next`, canonical coerenti (pagina 1 = canonical "flat").
 
 ### 20.2 Skip to content (rafforzamento)
 
 **Component**: `./src/components/skip-link.html` incluso in tutti i layout, posizionato per primo nel `<body>`.
 
-**Target**: l’elemento `<main id="main">` in tutti i layout (uniformato—ref §7).
+**Target**: l’elemento `<main id="main">` in tutti i layout (uniformato-ref §7).
 
 **Stile**: visibile al focus, contrasto AAA, focus ring evidente; invisibile _off-focus_ ma non con `display:none`.
 

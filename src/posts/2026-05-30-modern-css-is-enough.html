@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)</title>
     <meta name="theme-color" content="#ff6b3d" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="description" content="The short version (for the impatient)" />
     <meta name="author" content='Emiliano "pixu1980" Pisu' />
     <meta name="robots" content="index,follow" />
@@ -29,6 +31,36 @@
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
       }
+
+      (function () {
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (!meta) return;
+
+        function updateThemeColor() {
+          var root = document.documentElement;
+          var scheme = root.getAttribute('data-color-scheme') || '';
+          var isDark = scheme === 'dark' || (!scheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var h = root.style.getPropertyValue('--dout--accent-h').trim() || '16';
+          var s = root.style.getPropertyValue('--dout--accent-s').trim() || '95%';
+          var l = isDark ? '22%' : '58%';
+          meta.content = 'hsl(' + h + ', ' + s + ', ' + l + ')';
+        }
+
+        updateThemeColor();
+
+        var observer = new MutationObserver(function () {
+          updateThemeColor();
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-color-scheme', 'style'],
+        });
+
+        var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', updateThemeColor);
+        }
+      })();
     </script>
     <style>
       :root {
@@ -68,14 +100,14 @@
     <meta property="og:type" content="article" />
     <meta
       property="og:title"
-      content="Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)"
+      content="Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)"
     />
     <meta property="og:description" content="The short version (for the impatient)" />
     <meta property="og:url" content="https://dout.dev/posts/2026-05-30-modern-css-is-enough.html" />
     <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-05-30-modern-css-is-enough.png" />
     <meta
       property="og:image:alt"
-      content="Preview image for Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)"
+      content="Preview image for Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -84,31 +116,31 @@
     <meta property="article:author" content='Emiliano "pixu1980" Pisu' />
     <meta
       name="twitter:title"
-      content="Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)"
+      content="Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)"
     />
     <meta name="twitter:description" content="The short version (for the impatient)" />
     <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-05-30-modern-css-is-enough.png" />
     <meta
       name="twitter:image:alt"
-      content="Preview image for Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)"
+      content="Preview image for Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)"
     />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "headline": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)",
+        "headline": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)",
         "description": "The short version (for the impatient)",
         "datePublished": "2026-05-30T00:00:00.000Z",
         "dateModified": "2026-05-30T00:00:00.000Z",
         "author": {
           "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url": "https://dout.dev"
+          "url": "https://pixu.dev"
         },
         "publisher": {
           "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url": "https://dout.dev"
+          "url": "https://pixu.dev"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -128,7 +160,7 @@
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)",
+            "name": "Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)",
             "item": "https://dout.dev/posts/2026-05-30-modern-css-is-enough.html"
           }
         ]
@@ -163,7 +195,14 @@
           <color-scheme-switcher></color-scheme-switcher>
           <display-preferences-popover></display-preferences-popover>
           <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-            <span aria-hidden="true">☰</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path
+                d="M2.5 5h15M2.5 10h15M2.5 15h15"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              ></path>
+            </svg>
           </button>
         </div>
       </div>
@@ -177,9 +216,16 @@
             <time datetime="2026-05-30" itemprop="datePublished"> May 30, 2026 </time>
             <span data-post-divider="">/</span>
             <a href="/archive.html">Archive</a>
+
+            <span data-post-divider="">/</span>
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+              <a href="https://pixu.dev" itemprop="url" rel="author"
+                ><span itemprop="name">Emiliano "pixu1980" Pisu</span></a
+              >
+            </span>
           </p>
           <h1 itemprop="headline" tabindex="0">
-            Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)
+            Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)
           </h1>
 
           <p data-post-description="">The short version (for the impatient)</p>
@@ -195,7 +241,7 @@
           <figure data-post-cover="">
             <img
               src="/assets/og/posts/2026-05-30-modern-css-is-enough-card.png"
-              alt="Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)"
+              alt="Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)"
               fetchpriority="high"
               decoding="async"
               width="1200"
@@ -247,25 +293,25 @@
             </p>
             <h2 id="the-features-i-actually-use" tabindex="0" data-toc-anchor="true">The features I actually use</h2>
             <p>
-              <strong>Native nesting</strong> — <code>header { h1 { ... } }</code> works in every modern browser. No
+              <strong>Native nesting</strong> - <code>header { h1 { ... } }</code> works in every modern browser. No
               Sass compilation step. No <code>&amp;</code> prefix needed for simple selectors.
             </p>
             <p>
-              <strong><code>:has()</code> selector</strong> — the "parent selector" CSS always needed.
+              <strong><code>:has()</code> selector</strong> - the "parent selector" CSS always needed.
               <code>post-card:has(&gt; img)</code> to style cards differently when they have cover images. No
               JavaScript, no extra class.
             </p>
             <p>
-              <strong>Cascade layers</strong> — <code>@layer base, components, utilities</code> lets you control
+              <strong>Cascade layers</strong> - <code>@layer base, components, utilities</code> lets you control
               specificity order explicitly instead of fighting it with <code>!important</code>.
             </p>
             <p>
-              <strong><code>color-mix()</code></strong> —
+              <strong><code>color-mix()</code></strong> -
               <code>color-mix(in srgb, var(--color-accent), white 20%)</code> gives you tinted variants without
               maintaining color scales.
             </p>
             <p>
-              <strong><code>clamp()</code></strong> — <code>font-size: clamp(1rem, 2.5vw, 1.5rem)</code> gives you fluid
+              <strong><code>clamp()</code></strong> - <code>font-size: clamp(1rem, 2.5vw, 1.5rem)</code> gives you fluid
               typography without breakpoints.
             </p>
             <h2 id="what-i-removed" tabindex="0" data-toc-anchor="true">What I removed</h2>
@@ -463,13 +509,13 @@
 
               <li>
                 <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="page" data-reveal=""
-                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required) (you are here)</a
+                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required) (you are here)</a
                 >
               </li>
 
               <li>
                 <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="false" data-reveal=""
-                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
+                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)</a
                 >
               </li>
 
@@ -517,12 +563,6 @@
                   >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
                 >
               </li>
-
-              <li>
-                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false" data-reveal=""
-                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
-                >
-              </li>
             </ol>
           </section>
         </nav>
@@ -536,7 +576,7 @@
 
         <a data-post-nav-card="" data-reveal="" rel="next" href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html">
           <span data-post-nav-label="">Next</span>
-          <strong>WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</strong>
+          <strong>WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)</strong>
         </a>
       </nav>
     </main>

@@ -4,7 +4,7 @@ import { buildJsonFeed, buildRssFeed } from '../_page-generator.js';
 
 test('buildRssFeed emits a self-referencing RSS document', () => {
   const xml = buildRssFeed({
-    title: 'dout.dev — Latest Posts',
+    title: 'dout.dev - Latest Posts',
     link: 'https://dout.dev/',
     description: 'Latest posts',
     siteUrl: 'https://dout.dev',
@@ -27,7 +27,7 @@ test('buildRssFeed emits a self-referencing RSS document', () => {
 
 test('buildJsonFeed emits JSON Feed 1.1 with image and tags', () => {
   const raw = buildJsonFeed({
-    title: 'dout.dev — Latest Posts',
+    title: 'dout.dev - Latest Posts',
     homePageUrl: 'https://dout.dev/',
     feedUrl: 'https://dout.dev/feed.json',
     description: 'Latest posts',

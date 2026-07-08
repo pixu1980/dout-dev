@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</title>
     <meta name="theme-color" content="#ff6b3d" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="description" content='The term I am reclaiming (because "vibe coding" got a bad rap)' />
     <meta name="author" content='Emiliano "pixu1980" Pisu' />
     <meta name="robots" content="index,follow" />
@@ -29,6 +31,36 @@
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
       }
+
+      (function () {
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (!meta) return;
+
+        function updateThemeColor() {
+          var root = document.documentElement;
+          var scheme = root.getAttribute('data-color-scheme') || '';
+          var isDark = scheme === 'dark' || (!scheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var h = root.style.getPropertyValue('--dout--accent-h').trim() || '16';
+          var s = root.style.getPropertyValue('--dout--accent-s').trim() || '95%';
+          var l = isDark ? '22%' : '58%';
+          meta.content = 'hsl(' + h + ', ' + s + ', ' + l + ')';
+        }
+
+        updateThemeColor();
+
+        var observer = new MutationObserver(function () {
+          updateThemeColor();
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-color-scheme', 'style'],
+        });
+
+        var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', updateThemeColor);
+        }
+      })();
     </script>
     <style>
       :root {
@@ -103,12 +135,12 @@
         "author": {
           "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url": "https://dout.dev"
+          "url": "https://pixu.dev"
         },
         "publisher": {
           "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url": "https://dout.dev"
+          "url": "https://pixu.dev"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -163,7 +195,14 @@
           <color-scheme-switcher></color-scheme-switcher>
           <display-preferences-popover></display-preferences-popover>
           <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-            <span aria-hidden="true">☰</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path
+                d="M2.5 5h15M2.5 10h15M2.5 15h15"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              ></path>
+            </svg>
           </button>
         </div>
       </div>
@@ -177,6 +216,13 @@
             <time datetime="2026-05-26" itemprop="datePublished"> May 26, 2026 </time>
             <span data-post-divider="">/</span>
             <a href="/archive.html">Archive</a>
+
+            <span data-post-divider="">/</span>
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+              <a href="https://pixu.dev" itemprop="url" rel="author"
+                ><span itemprop="name">Emiliano "pixu1980" Pisu</span></a
+              >
+            </span>
           </p>
           <h1 itemprop="headline" tabindex="0">
             Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)
@@ -256,7 +302,7 @@ Acceptance criteria:
 2. &lt;checkable thing&gt;</code></pre>
             <p>
               That's it. No system prompts. No "act as a senior engineer" preamble. The copilot does not need a persona;
-              it needs context, a task, and constraints. The acceptance criteria are the most important part — they turn
+              it needs context, a task, and constraints. The acceptance criteria are the most important part - they turn
               the output from "looks right" to "provably right."
             </p>
             <h2 id="the-review-loop-read-every-diff" tabindex="0" data-toc-anchor="true">
@@ -269,7 +315,7 @@ Acceptance criteria:
             </p>
             <p>
               That is not a criticism of the copilot. It is the job. The copilot generates proposals; the engineer
-              curates them. Anyone who skips the curation step is not engineering — they are editing.
+              curates them. Anyone who skips the curation step is not engineering - they are editing.
             </p>
             <h2 id="what-i-never-delegated-the-line-in-the-sand" tabindex="0" data-toc-anchor="true">
               What I never delegated (the line in the sand)
@@ -472,13 +518,13 @@ Acceptance criteria:
 
               <li>
                 <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="false" data-reveal=""
-                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
+                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)</a
                 >
               </li>
 
               <li>
                 <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="false" data-reveal=""
-                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
+                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)</a
                 >
               </li>
 
@@ -526,12 +572,6 @@ Acceptance criteria:
                   >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
                 >
               </li>
-
-              <li>
-                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false" data-reveal=""
-                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
-                >
-              </li>
             </ol>
           </section>
 
@@ -576,7 +616,7 @@ Acceptance criteria:
 
         <a data-post-nav-card="" data-reveal="" rel="next" href="/posts/2026-05-30-modern-css-is-enough.html">
           <span data-post-nav-label="">Next</span>
-          <strong>Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</strong>
+          <strong>Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)</strong>
         </a>
       </nav>
     </main>

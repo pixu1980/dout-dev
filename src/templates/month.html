@@ -4,7 +4,7 @@
   <link
     rel="alternate"
     type="application/rss+xml"
-    title="{{ site.title }} — {{ month.name }}"
+    title="{{ site.title }} - {{ month.name }}"
     href="/months/{{ month.slug }}.xml"
   />
   <meta property="og:type" content="website" />
@@ -48,7 +48,11 @@
     <h1>{{ month.name }}</h1>
     <p>Everything published in {{ month.name }}.</p>
     <if condition="monthTags && monthTags.length">
-      <p>Topics: {{ monthTags | join:", " }}</p>
+      <div data-tag-list>
+        <for each="tag in monthTags">
+          <a data-tag href="/tags/{{ tag | tagHref }}">{{ tag | tagLabel }}</a>
+        </for>
+      </div>
     </if>
     <a data-text-link href="/months/{{ month.slug }}.xml">RSS feed</a>
   </section>

@@ -105,6 +105,11 @@ function scoreMonth(month, query) {
   return normalizeText(haystack).includes(query) ? 1 : 0;
 }
 
+function scoreAuthor(author, query) {
+  const haystack = [author.name, author.slug].join(' ');
+  return normalizeText(haystack).includes(query) ? 1 : 0;
+}
+
 function renderResultItem(post) {
   const item = document.createElement('li');
   const tagsMarkup =
@@ -195,6 +200,24 @@ function renderMonthItem(month) {
     </article>
   `;
 
+  return item;
+}
+
+function renderAuthorItem(author) {
+  const item = document.createElement('li');
+  item.dataset.postFeedItem = '';
+  item.dataset.reveal = '';
+  item.innerHTML = `
+    <article data-post-card data-post-card-variant="default">
+      <section data-post-card-content>
+        <header data-post-card-header>
+          <p data-post-card-meta>Author</p>
+          <h2 data-post-card-title><a href="/authors/${escapeHtml(author.slug)}.html">${escapeHtml(author.name)}</a></h2>
+        </header>
+        <p data-post-card-excerpt>${escapeHtml(String(author.count || 0))} article(s)</p>
+      </section>
+    </article>
+  `;
   return item;
 }
 
@@ -331,7 +354,8 @@ export function preloadSearchIndexes() {
       loadJson('/data/tags.json'),
       loadJson('/data/months.json'),
       loadJson('/data/series.json'),
-    ]).then(([posts, tags, months, series]) => ({ posts, tags, months, series }));
+      loadJson('/data/authors.json'),
+    ]).then(([posts, tags, months, series, authors]) => ({ posts, tags, months, series, authors }));
   }
 
   return searchIndexesPromise;
@@ -348,7 +372,7 @@ function warmSearchIndexes() {
 }
 
 function buildResults(indexes, term, types) {
-  const { posts, tags, months, series } = indexes;
+  const { posts, tags, months, series, authors = [] } = indexes;
   const postResults = posts
     .map((post) => ({
       type: 'post',
@@ -413,7 +437,14 @@ function updateSummary(summary, total, counts, page) {
   }
 
   const label = total === 1 ? 'result' : 'results';
-  summary.textContent = `${total} ${label} — posts ${counts.posts}, tags ${counts.tags}, series ${counts.series}, months ${counts.months}${page > 1 ? ` — page ${page}` : ''}`;
+  const summaryParts = [
+    `posts ${counts.posts}`,
+    `tags ${counts.tags}`,
+    `series ${counts.series}`,
+    `months ${counts.months}`,
+  ];
+  if (counts.authors > 0) summaryParts.push(`authors ${counts.authors}`);
+  summary.textContent = `${total} ${label} - ${summaryParts.join(', ')}${page > 1 ? ` - page ${page}` : ''}`;
 }
 
 export function destroyClientSearch() {
@@ -442,6 +473,7 @@ async function initClientSearch() {
     tag: renderTagItem,
     series: renderSeriesItem,
     month: renderMonthItem,
+    author: renderAuthorItem,
   };
 
   const initialQuery = normalizeText(getQueryParam('q'));
@@ -464,7 +496,7 @@ async function initClientSearch() {
     if (!term) {
       resultsList.innerHTML = '';
       pagination.innerHTML = '';
-      summary.textContent = 'Type a query to search posts, tags, series, and months.';
+      summary.textContent = 'Type a query to search posts, tags, series, months, and authors.';
       if (options.focusSummary) {
         focusSummary(summary);
       }
@@ -547,7 +579,7 @@ async function initClientSearch() {
   if (initialQuery) {
     void apply(initialQuery, initialPage);
   } else {
-    summary.textContent = 'Type a query to search posts, tags, series, and months.';
+    summary.textContent = 'Type a query to search posts, tags, series, months, and authors.';
     warmSearchIndexes();
   }
 }

@@ -1,6 +1,8 @@
 ---
 title: 'Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)'
 date: '2026-06-27'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['accessibility', 'vanilla-js', 'frontend']
 series: ['How I made it', 'pix-components']

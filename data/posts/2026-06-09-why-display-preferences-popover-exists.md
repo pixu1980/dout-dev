@@ -1,6 +1,8 @@
 ---
 title: 'Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It''s User Preferences)'
 date: '2026-06-09'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['accessibility', 'frontend', 'responsive-design']
 series: 'How I made it'

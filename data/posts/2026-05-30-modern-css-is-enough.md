@@ -1,6 +1,8 @@
 ---
-title: 'Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)'
+title: 'Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)'
 date: '2026-05-30'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['css', 'vanilla-js', 'frontend']
 series: 'How I made it'
@@ -33,15 +35,15 @@ The component queries its own parent, not the viewport. That is the correct beha
 
 ## The features I actually use
 
-**Native nesting** — `header { h1 { ... } }` works in every modern browser. No Sass compilation step. No `&` prefix needed for simple selectors.
+**Native nesting** - `header { h1 { ... } }` works in every modern browser. No Sass compilation step. No `&` prefix needed for simple selectors.
 
-**`:has()` selector** — the "parent selector" CSS always needed. `post-card:has(> img)` to style cards differently when they have cover images. No JavaScript, no extra class.
+**`:has()` selector** - the "parent selector" CSS always needed. `post-card:has(> img)` to style cards differently when they have cover images. No JavaScript, no extra class.
 
-**Cascade layers** — `@layer base, components, utilities` lets you control specificity order explicitly instead of fighting it with `!important`.
+**Cascade layers** - `@layer base, components, utilities` lets you control specificity order explicitly instead of fighting it with `!important`.
 
-**`color-mix()`** — `color-mix(in srgb, var(--color-accent), white 20%)` gives you tinted variants without maintaining color scales.
+**`color-mix()`** - `color-mix(in srgb, var(--color-accent), white 20%)` gives you tinted variants without maintaining color scales.
 
-**`clamp()`** — `font-size: clamp(1rem, 2.5vw, 1.5rem)` gives you fluid typography without breakpoints.
+**`clamp()`** - `font-size: clamp(1rem, 2.5vw, 1.5rem)` gives you fluid typography without breakpoints.
 
 ## What I removed
 

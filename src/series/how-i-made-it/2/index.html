@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>How I made it — Page 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>How I made it - Page 2</title>
     <meta name="theme-color" content="#ff6b3d" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="description" content="A series of posts about How I made it." />
     <meta name="author" content='Emiliano "pixu1980" Pisu' />
     <meta name="robots" content="index,follow" />
@@ -29,6 +31,36 @@
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
       }
+
+      (function () {
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (!meta) return;
+
+        function updateThemeColor() {
+          var root = document.documentElement;
+          var scheme = root.getAttribute('data-color-scheme') || '';
+          var isDark = scheme === 'dark' || (!scheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var h = root.style.getPropertyValue('--dout--accent-h').trim() || '16';
+          var s = root.style.getPropertyValue('--dout--accent-s').trim() || '95%';
+          var l = isDark ? '22%' : '58%';
+          meta.content = 'hsl(' + h + ', ' + s + ', ' + l + ')';
+        }
+
+        updateThemeColor();
+
+        var observer = new MutationObserver(function () {
+          updateThemeColor();
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-color-scheme', 'style'],
+        });
+
+        var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', updateThemeColor);
+        }
+      })();
     </script>
     <style>
       :root {
@@ -66,22 +98,22 @@
     </style>
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="How I made it — Page 2" />
+    <meta property="og:title" content="How I made it - Page 2" />
     <meta property="og:description" content="A series of posts about How I made it." />
     <meta property="og:url" content="https://dout.dev/series/how-i-made-it/2/" />
     <meta property="og:image" content="https://dout.dev/assets/og/series/how-i-made-it.png" />
-    <meta property="og:image:alt" content="Preview image for How I made it — Page 2" />
+    <meta property="og:image:alt" content="Preview image for How I made it - Page 2" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta name="twitter:title" content="How I made it — Page 2" />
+    <meta name="twitter:title" content="How I made it - Page 2" />
     <meta name="twitter:description" content="A series of posts about How I made it." />
     <meta name="twitter:image" content="https://dout.dev/assets/og/series/how-i-made-it.png" />
-    <meta name="twitter:image:alt" content="Preview image for How I made it — Page 2" />
+    <meta name="twitter:image:alt" content="Preview image for How I made it - Page 2" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "How I made it — Page 2",
+        "name": "How I made it - Page 2",
         "url": "https://dout.dev/series/how-i-made-it/2/",
         "description": "A series of posts about How I made it.",
         "isPartOf": { "@type": "Blog", "name": "dout.dev", "url": "https://dout.dev" }
@@ -132,7 +164,14 @@
           <color-scheme-switcher></color-scheme-switcher>
           <display-preferences-popover></display-preferences-popover>
           <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-            <span aria-hidden="true">☰</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path
+                d="M2.5 5h15M2.5 10h15M2.5 15h15"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              ></path>
+            </svg>
           </button>
         </div>
       </div>
@@ -360,7 +399,7 @@
 
                   <h2 data-post-card-title="">
                     <a href="/posts/2026-05-30-modern-css-is-enough.html"
-                      >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
+                      >Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)</a
                     >
                   </h2>
                 </header>
@@ -390,7 +429,7 @@
 
                   <h2 data-post-card-title="">
                     <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html"
-                      >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
+                      >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)</a
                     >
                   </h2>
                 </header>

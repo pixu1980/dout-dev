@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)</title>
     <meta name="theme-color" content="#ff6b3d" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="description" content="Why the gate exists (because you will ship shit if you don't)" />
     <meta name="author" content='Emiliano "pixu1980" Pisu' />
     <meta name="robots" content="index,follow" />
@@ -29,6 +31,36 @@
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
       }
+
+      (function () {
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (!meta) return;
+
+        function updateThemeColor() {
+          var root = document.documentElement;
+          var scheme = root.getAttribute('data-color-scheme') || '';
+          var isDark = scheme === 'dark' || (!scheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var h = root.style.getPropertyValue('--dout--accent-h').trim() || '16';
+          var s = root.style.getPropertyValue('--dout--accent-s').trim() || '95%';
+          var l = isDark ? '22%' : '58%';
+          meta.content = 'hsl(' + h + ', ' + s + ', ' + l + ')';
+        }
+
+        updateThemeColor();
+
+        var observer = new MutationObserver(function () {
+          updateThemeColor();
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-color-scheme', 'style'],
+        });
+
+        var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', updateThemeColor);
+        }
+      })();
     </script>
     <style>
       :root {
@@ -109,12 +141,12 @@
         "author": {
           "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url": "https://dout.dev"
+          "url": "https://pixu.dev"
         },
         "publisher": {
           "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url": "https://dout.dev"
+          "url": "https://pixu.dev"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -169,7 +201,14 @@
           <color-scheme-switcher></color-scheme-switcher>
           <display-preferences-popover></display-preferences-popover>
           <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-            <span aria-hidden="true">☰</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path
+                d="M2.5 5h15M2.5 10h15M2.5 15h15"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              ></path>
+            </svg>
           </button>
         </div>
       </div>
@@ -183,6 +222,13 @@
             <time datetime="2026-05-19" itemprop="datePublished"> May 19, 2026 </time>
             <span data-post-divider="">/</span>
             <a href="/archive.html">Archive</a>
+
+            <span data-post-divider="">/</span>
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+              <a href="https://pixu.dev" itemprop="url" rel="author"
+                ><span itemprop="name">Emiliano "pixu1980" Pisu</span></a
+              >
+            </span>
           </p>
           <h1 itemprop="headline" tabindex="0">
             Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)
@@ -242,30 +288,30 @@ pnpm format:check:html
 pnpm validate:all</code></pre>
             <p>Five commands, each doing one thing. No overlap. No ambiguity.</p>
             <p>
-              <strong><code>pnpm test</code></strong> — Node's built-in test runner on the CMS and template-engine code.
+              <strong><code>pnpm test</code></strong> - Node's built-in test runner on the CMS and template-engine code.
               Fast. No Jest, no Vitest, no configuration surface. Just tests.
             </p>
             <p>
-              <strong><code>pnpm spellcheck</code></strong> — cspell against the markdown and HTML files. Catches typos
+              <strong><code>pnpm spellcheck</code></strong> - cspell against the markdown and HTML files. Catches typos
               in posts and navigation labels BEFORE they reach the reader.
             </p>
             <p>
-              <strong><code>pnpm format:check</code></strong> — Biome in check mode over JavaScript. Enforces the single
+              <strong><code>pnpm format:check</code></strong> - Biome in check mode over JavaScript. Enforces the single
               formatter.
             </p>
             <p>
-              <strong><code>pnpm format:check:html</code></strong> — Prettier in check mode over HTML templates. HTML
+              <strong><code>pnpm format:check:html</code></strong> - Prettier in check mode over HTML templates. HTML
               formatting is one of those things everyone forgets to verify until a diff becomes impossible to review.
             </p>
             <p>
-              <strong><code>pnpm validate:all</code></strong> — a composite of HTML validation, structural validation,
+              <strong><code>pnpm validate:all</code></strong> - a composite of HTML validation, structural validation,
               link checking, and accessibility validation. The one that catches the most real bugs.
             </p>
             <h2 id="html-validation-the-one-nobody-does-but-everyone-should" tabindex="0" data-toc-anchor="true">
               HTML validation (the one nobody does but everyone should)
             </h2>
             <p>
-              HTML validation is underrated. Bad nesting, missing alt text, heading skips, unused IDs — all of these
+              HTML validation is underrated. Bad nesting, missing alt text, heading skips, unused IDs - all of these
               slip past manual review and all of them matter. The validator on dout.dev runs against every file under
               <code>src/</code> and <code>dist/</code> and reports problems with file and line.
             </p>
@@ -302,7 +348,7 @@ function validateHtml(file) {
             </h2>
             <p>
               The a11y check runs axe-core over every generated page, using Playwright as the headless browser. It
-              catches a significant fraction of WCAG issues automatically — missing labels, insufficient contrast,
+              catches a significant fraction of WCAG issues automatically - missing labels, insufficient contrast,
               heading order problems, keyboard trap candidates.
             </p>
             <p>
@@ -332,7 +378,7 @@ function validateHtml(file) {
   run: pnpm quality:check</code></pre>
             <p>
               Locally I run <code>pnpm quality:check</code> before any push. If I am about to merge something
-              significant, I also run <code>pnpm test:visual</code> — the Playwright visual regression suite — which is
+              significant, I also run <code>pnpm test:visual</code> - the Playwright visual regression suite - which is
               slower and therefore not on the default path.
             </p>
             <h2 id="what-i-did-not-add-because-scope-is-a-feature" tabindex="0" data-toc-anchor="true">
@@ -557,13 +603,13 @@ function validateHtml(file) {
 
               <li>
                 <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="false" data-reveal=""
-                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
+                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` - No Framework Required)</a
                 >
               </li>
 
               <li>
                 <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="false" data-reveal=""
-                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
+                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links - That's 80% of It)</a
                 >
               </li>
 
@@ -609,12 +655,6 @@ function validateHtml(file) {
               <li>
                 <a href="/posts/2026-07-04-pragmatic-service-worker.html" aria-current="false" data-reveal=""
                   >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="false" data-reveal=""
-                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</a
                 >
               </li>
             </ol>

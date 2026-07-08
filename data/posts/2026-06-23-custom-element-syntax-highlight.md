@@ -1,6 +1,8 @@
 ---
 title: 'A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`'
 date: '2026-06-23'
+author: 'Emiliano "pixu1980" Pisu'
+author_link: "https://pixu.dev"
 published: true
 tags: ['vanilla-js', 'architecture', 'frontend']
 series: ['How I made it', 'pix-components']

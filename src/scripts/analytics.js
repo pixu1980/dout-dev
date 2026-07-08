@@ -235,6 +235,7 @@ function renderDashboard(container, snapshot) {
     .join('');
 
   container.innerHTML = `
+    <div data-table-wrapper>
     <table data-analytics-table>
       <caption data-visually-hidden>Local page-hit counts stored in this browser</caption>
       <thead>
@@ -246,6 +247,7 @@ function renderDashboard(container, snapshot) {
       </thead>
       <tbody>${rows}</tbody>
     </table>
+    </div>
   `;
 }
 

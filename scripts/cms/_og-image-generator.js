@@ -332,7 +332,7 @@ function renderOgSvg(entry, config, size = OG_SOCIAL_SIZE) {
   const titleY = isCard ? 320 : 252;
   const descriptionY = isCard ? 574 : 446;
   const footerY = height - 110;
-  const titleLines = wrapLines(entry.title, 25, 3);
+  const titleLines = wrapLines(entry.title, 22, 3);
   const descriptionLines = getDescriptionLines(entry, site.description);
   const masthead = `${site.title || 'dout.dev'} / EDITORIAL`;
 
@@ -370,10 +370,10 @@ function renderOgSvg(entry, config, size = OG_SOCIAL_SIZE) {
   <text x="998" y="${isCard ? 736 : 548}" text-anchor="middle" fill="#FFFFFF" fill-opacity="0.05" font-family="Georgia, Times New Roman, serif" font-size="${isCard ? 176 : 150}" font-weight="700" letter-spacing="0">DOUT</text>
   ${buildTextBlock(
     titleLines,
-    138,
+    120,
     titleY,
-    82,
-    'fill="#FFF8F0" font-family="Georgia, Times New Roman, serif" font-size="70" font-weight="700" letter-spacing="0"'
+    72,
+    'fill="#FFF8F0" font-family="Georgia, Times New Roman, serif" font-size="58" font-weight="700" letter-spacing="-0.02em"'
   )}
   ${buildTextBlock(
     descriptionLines,

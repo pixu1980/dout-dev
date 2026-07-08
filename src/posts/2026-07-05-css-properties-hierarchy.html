@@ -2,13 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)</title>
     <meta name="theme-color" content="#ff6b3d" />
-    <meta
-      name="description"
-      content="I've been writing CSS since before border-radius was a thing, back when we used -moz-border-radius and prayed everything to work well."
-    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="description" content="Context - The chaos of unorganized CSS" />
     <meta name="author" content='Emiliano "pixu1980" Pisu' />
     <meta name="robots" content="index,follow" />
     <meta
@@ -32,6 +31,36 @@
       if (location.protocol === 'file:') {
         document.documentElement.dataset.previewMode = 'file';
       }
+
+      (function () {
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (!meta) return;
+
+        function updateThemeColor() {
+          var root = document.documentElement;
+          var scheme = root.getAttribute('data-color-scheme') || '';
+          var isDark = scheme === 'dark' || (!scheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var h = root.style.getPropertyValue('--dout--accent-h').trim() || '16';
+          var s = root.style.getPropertyValue('--dout--accent-s').trim() || '95%';
+          var l = isDark ? '22%' : '58%';
+          meta.content = 'hsl(' + h + ', ' + s + ', ' + l + ')';
+        }
+
+        updateThemeColor();
+
+        var observer = new MutationObserver(function () {
+          updateThemeColor();
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-color-scheme', 'style'],
+        });
+
+        var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', updateThemeColor);
+        }
+      })();
     </script>
     <style>
       :root {
@@ -73,10 +102,7 @@
       property="og:title"
       content="CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)"
     />
-    <meta
-      property="og:description"
-      content="I've been writing CSS since before border-radius was a thing, back when we used -moz-border-radius and prayed everything to work well."
-    />
+    <meta property="og:description" content="Context - The chaos of unorganized CSS" />
     <meta property="og:url" content="https://dout.dev/posts/2026-07-05-css-properties-hierarchy.html" />
     <meta property="og:image" content="https://dout.dev/assets/og/posts/2026-07-05-css-properties-hierarchy.png" />
     <meta
@@ -92,10 +118,7 @@
       name="twitter:title"
       content="CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)"
     />
-    <meta
-      name="twitter:description"
-      content="I've been writing CSS since before border-radius was a thing, back when we used -moz-border-radius and prayed everything to work well."
-    />
+    <meta name="twitter:description" content="Context - The chaos of unorganized CSS" />
     <meta name="twitter:image" content="https://dout.dev/assets/og/posts/2026-07-05-css-properties-hierarchy.png" />
     <meta
       name="twitter:image:alt"
@@ -106,25 +129,25 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)",
-        "description": "I've been writing CSS since before border-radius was a thing, back when we used -moz-border-radius and prayed everything to work well.",
+        "description": "Context - The chaos of unorganized CSS",
         "datePublished": "2026-07-05T00:00:00.000Z",
         "dateModified": "2026-07-05T00:00:00.000Z",
         "author": {
           "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url": "https://dout.dev"
+          "url": "https://pixu.dev"
         },
         "publisher": {
           "@type": "Person",
           "name": "Emiliano \"pixu1980\" Pisu",
-          "url": "https://dout.dev"
+          "url": "https://pixu.dev"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://dout.dev/posts/2026-07-05-css-properties-hierarchy.html"
         },
         "image": ["https://dout.dev/assets/og/posts/2026-07-05-css-properties-hierarchy.png"],
-        "keywords": "hierarchy, css, order, properties, one, ruleset, sass, every, border, thing, time, layout"
+        "keywords": "hierarchy, css, order, properties, ruleset, one, sass, every, thing, time, layout, last"
       }
     </script>
     <script type="application/ld+json">
@@ -172,7 +195,14 @@
           <color-scheme-switcher></color-scheme-switcher>
           <display-preferences-popover></display-preferences-popover>
           <button data-menu-toggle="" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle menu">
-            <span aria-hidden="true">☰</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path
+                d="M2.5 5h15M2.5 10h15M2.5 15h15"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              ></path>
+            </svg>
           </button>
         </div>
       </div>
@@ -186,15 +216,19 @@
             <time datetime="2026-07-05" itemprop="datePublished"> July 5, 2026 </time>
             <span data-post-divider="">/</span>
             <a href="/archive.html">Archive</a>
+
+            <span data-post-divider="">/</span>
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+              <a href="https://pixu.dev" itemprop="url" rel="author"
+                ><span itemprop="name">Emiliano "pixu1980" Pisu</span></a
+              >
+            </span>
           </p>
           <h1 itemprop="headline" tabindex="0">
             CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors)
           </h1>
 
-          <p data-post-description="">
-            I've been writing CSS since before border-radius was a thing, back when we used -moz-border-radius and
-            prayed everything to work well.
-          </p>
+          <p data-post-description="">Context - The chaos of unorganized CSS</p>
 
           <ul data-tag-list="" aria-label="Tags">
             <li><a data-tag="" href="/tags/html.html">html</a></li>
@@ -218,6 +252,9 @@
           <h2 data-visually-hidden="">Article content</h2>
 
           <section data-prose="" itemprop="articleBody">
+            <h2 id="context-the-chaos-of-unorganized-css" tabindex="0" data-toc-anchor="true">
+              Context - The chaos of unorganized CSS
+            </h2>
             <p>
               I've been writing CSS since before <code>border-radius</code> was a thing, back when we used
               <code>-moz-border-radius</code> and prayed everything to work well.
@@ -241,76 +278,77 @@
               So I developed a system. A hierarchy that mirrors the browser's own rendering pipeline:
               <strong>outside-in, layout-first, paint-last</strong>.
             </p>
-            <p>The way I see it, every CSS ruleset tells a story, and the story has a logical narrative arc:</p>
-            <ol>
-              <li data-reveal="">
-                <strong>Custom properties</strong> come first because they're the inputs. They're resolved by the
-                cascade before <em>any</em> property does anything. You want them declared before they're consumed, and
-                grouping them at the top makes the ruleset's "API surface" immediately visible.
-              </li>
-              <li data-reveal="">
-                <strong>Position</strong> comes next because it takes the element <em>out of flow</em> before you even
-                think about sizing or coloring it. Setting <code>position: absolute</code> after <code>width</code> is
-                technically fine, but logically backwards, you're picking a layout strategy for the element before you
-                decide its dimensions.
-              </li>
-              <li data-reveal="">
-                <strong>Display</strong> right after position, because it determines the formatting context. Flex, grid,
-                block, the element needs to know <em>how to be a box</em> before you can meaningfully set
-                <code>gap</code>, <code>place-content</code>, or <code>align-items</code>.
-              </li>
-              <li data-reveal="">
-                <strong>Opacity &amp; visibility</strong> live here because they affect the box's presence without
-                touching layout. They're the border between layout and paint.
-              </li>
-              <li data-reveal="">
-                <strong>Box-model</strong> (width, padding, border, margin), the geometry. Inside-out: content size
-                first, then padding, then border, then margin. <code>box-sizing</code> at the top of the section because
-                it changes the math for everything below.
-              </li>
-              <li data-reveal="">
-                <strong>Colors &amp; background</strong>, the paint. Text color, background, shadows, filters. These
-                trigger repaints but not re-layouts (mostly).
-              </li>
-              <li data-reveal="">
-                <strong>Typography</strong>, because after you've painted the background, you render the text on top.
-                <code>font</code>, <code>line-height</code>, <code>text-align</code>, <code>white-space</code>,
-                <code>text-shadow</code>.
-              </li>
-              <li data-reveal="">
-                <strong>Transforms &amp; animations</strong>, the compositor stage. <code>transform</code>,
-                <code>transition</code>, <code>animation</code>. These are the last thing that happens visually, but
-                they're also the most performance-sensitive, so having them in one block makes it easy to audit
-                <code>will-change</code> usage.
-              </li>
-              <li data-reveal="">
-                <strong>Helpers</strong>, <code>appearance</code>, <code>cursor</code>, <code>pointer-events</code>.
-                Utility properties that don't fit anywhere else.
-              </li>
-              <li data-reveal="">
-                <strong>Pseudo-elements</strong> (<code>&amp;::before</code>, <code>&amp;::after</code>), they're part
-                of the element's visual tree, nested in.
-              </li>
-              <li data-reveal="">
-                <strong>Variants &amp; pseudo-selectors</strong>, state changes: <code>&amp;.error</code>,
-                <code>&amp;[aria-hidden]</code>, <code>&amp;:hover</code>. These override everything above, so they come
-                last in the declaration block.
-              </li>
-              <li data-reveal="">
-                <strong>Media queries</strong> and <strong>children</strong>, scoping. <code>@media</code>,
-                <code>&amp; span</code>, <code>&amp; &gt; *</code>. These are <em>new contexts</em> that restart the
-                hierarchy. The comment says "repeat css hierarchy here" because each of these blocks is a fresh ruleset
-                that follows the same order.
-              </li>
-            </ol>
+            <h2 id="the-hierarchy-every-ruleset-tells-a-story" tabindex="0" data-toc-anchor="true">
+              The hierarchy - every ruleset tells a story
+            </h2>
             <p>
-              The order isn't arbitrary. It's the same order the browser processes properties: computed values → layout
-              → paint → compositing.
+              The way I see it, every CSS ruleset tells a story, and the story has a logical narrative arc. The order
+              isn't arbitrary - it's the same order the browser processes properties:
+              <strong>computed values → layout → paint → compositing</strong>.
             </p>
             <p>
               Every time I break this order, I introduce a subtle cognitive tax on the next reader, myself included.
+              Every time I follow it, the ruleset reads like a coherent paragraph instead of a shopping list.
             </p>
-            <p>Every time I follow it, the ruleset reads like a coherent paragraph instead of a shopping list.</p>
+            <p>
+              <strong>1. Custom properties.</strong> These come first because they're the inputs. They're resolved by
+              the cascade before <em>any</em> property does anything. You want them declared before they're consumed,
+              and grouping them at the top makes the ruleset's "API surface" immediately visible.
+            </p>
+            <p>
+              <strong>2. Position.</strong> Next, because it takes the element <em>out of flow</em> before you even
+              think about sizing or coloring it. Setting <code>position: absolute</code> after <code>width</code> is
+              technically fine, but logically backwards - you're picking a layout strategy for the element before you
+              decide its dimensions.
+            </p>
+            <p>
+              <strong>3. Display.</strong> Right after position, because it determines the formatting context. Flex,
+              grid, block - the element needs to know <em>how to be a box</em> before you can meaningfully set
+              <code>gap</code>, <code>place-content</code>, or <code>align-items</code>.
+            </p>
+            <p>
+              <strong>4. Opacity &amp; visibility.</strong> These affect the box's presence without touching layout.
+              They're the border between layout and paint.
+            </p>
+            <p>
+              <strong>5. Box-model.</strong> The geometry: <strong>inside-out</strong> - content size first, then
+              padding, then border, then margin. <code>box-sizing</code> at the top of the section because it changes
+              the math for everything below.
+            </p>
+            <p>
+              <strong>6. Colors &amp; background.</strong> The paint layer. Text color, background, shadows, filters.
+              These trigger repaints but not re-layouts (mostly).
+            </p>
+            <p>
+              <strong>7. Typography.</strong> After you've painted the background, you render the text on top.
+              <code>font</code>, <code>line-height</code>, <code>text-align</code>, <code>white-space</code>,
+              <code>text-shadow</code>.
+            </p>
+            <p>
+              <strong>8. Transforms &amp; animations.</strong> The compositor stage. <code>transform</code>,
+              <code>transition</code>, <code>animation</code>. These are the last thing that happens visually, but also
+              the most performance-sensitive - having them in one block makes it easy to audit
+              <code>will-change</code> usage.
+            </p>
+            <p>
+              <strong>9. Helpers.</strong> <code>appearance</code>, <code>cursor</code>, <code>pointer-events</code> -
+              utility properties that don't fit anywhere else.
+            </p>
+            <p>
+              <strong>10. Pseudo-elements.</strong> <code>&amp;::before</code>, <code>&amp;::after</code> - they're part
+              of the element's visual tree, nested inside.
+            </p>
+            <p>
+              <strong>11. Variants &amp; pseudo-selectors.</strong> State changes: <code>&amp;.error</code>,
+              <code>&amp;[aria-hidden]</code>, <code>&amp;:hover</code>. These override everything above, so they come
+              last in the declaration block.
+            </p>
+            <p>
+              <strong>12. Media queries &amp; children.</strong> Scoping. <code>@media</code>, <code>&amp; span</code>,
+              <code>&amp; &gt; *</code>. These are <em>new contexts</em> that restart the hierarchy - each is a fresh
+              ruleset that follows the same order.
+            </p>
+            <h2 id="the-complete-example" tabindex="0" data-toc-anchor="true">The complete example</h2>
             <pre is="pix-highlighter" data-lang="css"><code>:root {
   --border-radius: 5px;
 }
@@ -318,12 +356,12 @@
 .element {
   /* css custom properties */
   --var--example: 1;
-​
+
   /* position */
   position: absolute;
   inset: 0; /* top, right, bottom, left */
   z-index: 1;
-​
+
   /* display */
   display: block;
   display: flex;
@@ -334,7 +372,7 @@
 
   opacity: 1;
   visibility: visible;
-​
+
   /* box-model */
   box-sizing: border-box;
   width: 10rem;
@@ -345,14 +383,14 @@
   margin: 1rem;
   outline: 0.3rem solid black;
   outline-offset: 0.3rem;
-​
+
   /* colors &amp; background */
   color: white;
   background-color: black;
   background-image: url();
   box-shadow: rgba(50, 50, 50, 1);
   filter: drop-shadow();
-​
+
   /* text */
   font-family: 'Courier New', Courier, monospace;
   font-size: 1rem;
@@ -361,22 +399,22 @@
   white-space: nowrap;
   text-align: center;
   text-shadow: none;
-​
+
   /* transform &amp; animations */
   transform: translate();
   transition: opacity 300ms ease-in, width 500ms linear;
   will-change: opacity, width;
   animation: test 300ms forwards alternate-reverse;
-​
+
   /* helpers */
   appearance: none;
   cursor: pointer;
   pointer-event: none;
-​
+
   /* pseudo elements */
   &amp;::after {
   }
-​
+
   /* variants &amp; pseudo selectors */
   &amp;.error {
     color: red;
@@ -385,11 +423,11 @@
   &amp;[aria-hidden=true] {
     display: none;
   }
-​
+
   /* pseudo selectors */
   &amp;:hover {
   }
-​
+
   /* media queries */
   @media screen and (width &gt;= 1024px) {
     /* repeat css hierarchy here */
@@ -399,11 +437,11 @@
   span {
     /* repeat css hierarchy here */
   }
-​
+
   input {
     /* repeat css hierarchy here */
   }
-​
+
   &gt; * {
     /* repeat css hierarchy here */
   }
@@ -412,8 +450,9 @@
               Look at that ruleset. Now look at your last project's CSS. If the two don't look alike, you know what to
               do.
             </p>
+            <h2 id="why-the-hierarchy-holds" tabindex="0" data-toc-anchor="true">Why the hierarchy holds</h2>
             <p>
-              I'm not going to tell you this hierarchy is the One True Way™, I've been in this game long enough to know
+              I'm not going to tell you this hierarchy is the One True Way™ - I've been in this game long enough to know
               that CSS is a language, not a religion, and anyone who tells you there's exactly one correct way to order
               properties is selling something (probably a linter rule they wrote). But I <em>will</em> tell you this:
               having <em>any</em> consistent order is infinitely better than having no order at all. The specific
@@ -422,7 +461,7 @@
             <p>
               What I <em>will</em> claim is that this specific hierarchy has survived three major migrations, six
               codebases, twelve team members with varying skill levels, and zero arguments. Because it's not "my
-              opinion", it's the browser's rendering pipeline encoded as property order. You can't argue with the spec.
+              opinion" - it's the browser's rendering pipeline encoded as property order. You can't argue with the spec.
               Well, you can, but you'll lose.
             </p>
             <p>
@@ -431,10 +470,11 @@
               becomes as automatic as indenting nested blocks or putting spaces after commas. The ruleset writes itself,
               and the next person who opens that file doesn't curse your name. That's the real win.
             </p>
+            <h2 id="the-preprocessor-epiphany" tabindex="0" data-toc-anchor="true">The preprocessor epiphany</h2>
             <p>
               And yeah, about the preprocessor thing: I started using this hierarchy back when I was writing Sass. When
               CSS custom properties landed in browsers, I realized <code>--my-var</code> slotted perfectly into the top
-              section of the hierarchy, custom properties first, always. Nesting (<code>&amp;</code> at the bottom for
+              section of the hierarchy - custom properties first, always. Nesting (<code>&amp;</code> at the bottom for
               variants, pseudo-elements, children) was already how I organized Sass. The hierarchy didn't change when
               the tooling changed. The <em>language</em> caught up to the <em>discipline</em>.
             </p>
@@ -444,9 +484,10 @@
               <code>@use 'sass'</code>, not because I hate Sass (I don't), but because the hierarchy made it irrelevant.
               Discipline beats tooling every time. Always has.
             </p>
+            <h2 id="a-challenge-for-you" tabindex="0" data-toc-anchor="true">A challenge for you</h2>
             <p>
-              So here's my challenge to you: pick any ruleset in your current project. Reorder it using this hierarchy.
-              Don't change a single value, just move the lines around. Then read it again. I bet you find a bug, or a
+              So here's my challenge: pick any ruleset in your current project. Reorder it using this hierarchy. Don't
+              change a single value, just move the lines around. Then read it again. I bet you find a bug, or a
               duplicate property you didn't notice, or an override that doesn't do what you thought. The hierarchy
               surfaces that stuff because <em>related things are next to each other</em> instead of scattered across 80
               lines.
@@ -459,6 +500,41 @@
             <p>Told you. CSS is a language, not a config file.</p>
           </section>
         </section>
+
+        <aside data-post-sidebar="" role="complementary">
+          <nav data-post-toc="">
+            <h2>TOC</h2>
+            <ol data-post-toc-list="">
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#context-the-chaos-of-unorganized-css"
+                  >Context - The chaos of unorganized CSS</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-hierarchy-every-ruleset-tells-a-story"
+                  >The hierarchy - every ruleset tells a story</a
+                >
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-complete-example">The complete example</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#why-the-hierarchy-holds">Why the hierarchy holds</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#the-preprocessor-epiphany">The preprocessor epiphany</a>
+              </li>
+
+              <li data-post-toc-item="">
+                <a data-post-toc-link="" data-level="2" href="#a-challenge-for-you">A challenge for you</a>
+              </li>
+            </ol>
+          </nav>
+        </aside>
 
         <section data-comments-shell="" data-reveal="">
           <header data-section-heading="">
@@ -487,175 +563,6 @@
         </section>
 
         <nav data-series-navigation="" aria-label="Series navigation">
-          <section data-series-navigation-group="">
-            <p data-eyebrow="" data-muted="">Series</p>
-            <h2>In this series: How I made it</h2>
-            <ol data-series-navigation-links="">
-              <li>
-                <a href="/posts/2026-04-04-how-i-built-dout-dev.html" aria-current="false" data-reveal=""
-                  >How I Built dout.dev (and why I did not use a framework like a normal person)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-04-07-cms-and-markdown-processing.html" aria-current="false" data-reveal=""
-                  >CMS and Markdown Processing (Or: How I Learned to Stop Worrying and Love the Flat File)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-04-11-rebuilding-dout-dev-with-ai-copilot.html" aria-current="false" data-reveal=""
-                  >Rebuilding dout.dev With an AI Copilot: Less Boilerplate, Same Amount of Existential Dread</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-04-14-why-no-astro-eleventy-next.html" aria-current="false" data-reveal=""
-                  >Why I Skipped Astro, Eleventy and Next.js (And Built My Own SSG Like a Goddamn Caveman)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-04-18-custom-ssg-pipeline.html" aria-current="false" data-reveal=""
-                  >Custom SSG Pipeline: From Markdown to Static HTML (Without Losing Your Mind)</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="/posts/2026-04-21-template-engine-and-template-structure.html"
-                  aria-current="false"
-                  data-reveal=""
-                  >Template Engine and Template Structure (Or: Why I Didn't Use Handlebars Like a Normal Person)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-04-25-archives-tags-months-series.html" aria-current="false" data-reveal=""
-                  >Archives, Tags, Months, and Series (Or: How I Learned to Stop Worrying and Love Pagination)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-04-28-progressive-enhancement-as-contract.html" aria-current="false" data-reveal=""
-                  >Progressive Enhancement as Contract (Yes, It Works Without JS. No, I'm Not Kidding.)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-05-02-design-tokens-before-pages.html" aria-current="false" data-reveal=""
-                  >Design Tokens Before Pages (Yes, I Wrote the CSS Before the First Line of HTML)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-05-05-build-assets-pipeline.html" aria-current="false" data-reveal=""
-                  >Build Assets Pipeline (Or: How I Turned a Simple Blog Into an Image Processing Factory)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-05-09-feeds-and-sitemaps-at-build-time.html" aria-current="false" data-reveal=""
-                  >Feeds and Sitemaps at Build Time (RSS Is Dead, Long Live RSS. Also JSON Feed.)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-05-12-og-images-at-build-time.html" aria-current="false" data-reveal=""
-                  >OG Images at Build Time (Or: How I Stopped Worrying and Learned to Love Sharp)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-05-16-seo-metadata-without-rituals.html" aria-current="false" data-reveal=""
-                  >SEO Metadata Without Rituals (Or: I Read 47 SEO Blog Posts So You Don't Have To)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-05-19-quality-gate-lint-format-verify.html" aria-current="false" data-reveal=""
-                  >Quality Gate: Linting, Formatting, and Verify (Or: How I Stopped Shipping Broken HTML)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-05-23-ci-cd-around-github-pages.html" aria-current="false" data-reveal=""
-                  >CI/CD Around GitHub Pages (Or: How I Got Deploy Previews Without Paying Netlify)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-05-26-vibe-coding-with-rigor.html" aria-current="false" data-reveal=""
-                  >Vibe Coding With Rigor (Or: How to Use AI Without Your Codebase Turning Into a Dumpster Fire)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-05-30-modern-css-is-enough.html" aria-current="false" data-reveal=""
-                  >Modern CSS Is Enough (Container Queries, Nesting, `:has()` — No Framework Required)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-06-02-wcag-22-aa-without-aria-spam.html" aria-current="false" data-reveal=""
-                  >WCAG 2.2 AA Without ARIA-Spam (Landmarks, Heading Order, Skip-Links — That's 80% of It)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-06-06-how-pixhighlighter-is-built.html" aria-current="false" data-reveal=""
-                  >How PixHighlighter Is Built (Or: I Wrote a Syntax Highlighter Because Prism Was Too Bloaty)</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="/posts/2026-06-09-why-display-preferences-popover-exists.html"
-                  aria-current="false"
-                  data-reveal=""
-                  >Why DisplayPreferencesPopover Exists (Accessibility Is Not a Checklist, It's User Preferences)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-06-16-client-side-search-static-dataset.html" aria-current="false" data-reveal=""
-                  >Client-Side Search on a Static Dataset (No Server, No Algolia, No Bullshit)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-06-23-custom-element-syntax-highlight.html" aria-current="false" data-reveal=""
-                  >A Custom Element for Syntax Highlight: Why I Wrote `pix-highlighter`</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-06-27-accessible-scrollspy-outline.html" aria-current="false" data-reveal=""
-                  >Accessible Scrollspy and Outline Without contenteditable (Yes, It Can Be Done)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-06-30-honest-lazy-loading.html" aria-current="false" data-reveal=""
-                  >Honest Lazy Loading: IntersectionObserver vs Native loading=lazy (The Real Difference)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-07-04-pragmatic-service-worker.html" aria-current="false" data-reveal=""
-                  >A Pragmatic Service Worker: Cache Strategy, Offline, No Abuse (80 Lines, No Drama)</a
-                >
-              </li>
-
-              <li>
-                <a href="/posts/2026-07-05-css-properties-hierarchy.html" aria-current="page" data-reveal=""
-                  >CSS Properties Hierarchy (Or: How I Learned Custom Properties Can Replace Preprocessors) (you are
-                  here)</a
-                >
-              </li>
-            </ol>
-          </section>
-
           <section data-series-navigation-group="">
             <p data-eyebrow="" data-muted="">Series</p>
             <h2>In this series: Bold Opinions</h2>
