@@ -1618,8 +1618,14 @@
 
   @media (prefers-reduced-motion: no-preference) {
     @supports (animation-timeline: view()) {
-      :root:not([data-reduce-motion='true']) [data-reveal] {
-        animation: dout-reveal-fade-up 0.4s var(--dout--motion-ease-emphasis) both;
+      :root:not([data-reduce-motion='true'])
+        :where(
+          [data-reveal],
+          [data-prose] > :where(p, ul, ol, blockquote, pre, figure, h2, h3, h4, h5, h6)
+        ) {
+        will-change: opacity, transform, filter;
+        animation: dout-reveal-fade-up var(--dout--motion-reveal, 0.4s)
+          var(--dout--motion-ease-emphasis) both;
         animation-timeline: view();
         animation-range: entry 0% cover 50%;
       }
@@ -1654,7 +1660,11 @@
 
     @media (prefers-reduced-motion: no-preference) {
       @supports (animation-timeline: view()) {
-        :root:not([data-reduce-motion='true']) [data-reveal] {
+        :root:not([data-reduce-motion='true'])
+          :where(
+            [data-reveal],
+            [data-prose] > :where(p, ul, ol, blockquote, pre, figure, h2, h3, h4, h5, h6)
+          ) {
           animation-name: dout-reveal-fade-up-mobile;
           animation-range: entry 0% cover 40%;
         }
